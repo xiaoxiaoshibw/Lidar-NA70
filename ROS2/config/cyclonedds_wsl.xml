@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  WSL2 (mirrored networking) Cyclone DDS profile for ROS 2 Humble.
+
+  发现层：WSL2 networkingMode=mirrored 下，Hyper-V 虚拟交换机丢弃 DDS 组播
+  发现流量。所有节点在同一 WSL2 实例内，只需 lo 接口即可完成发现和通信。
+
+  数据层（已确认的 WSL2 限制）：mirrored 模式下 lo 的 UDP 数据报超过约 1KB
+  会被静默丢弃（raw socket 验证，与 DDS 无关）。Cyclone DDS 将大消息切成
+  ~1340B 的 DDSI 分片：
+    - RELIABLE：有 ACK/重传，分片丢了能补，最终能重组 → 通
+    - BEST_EFFORT：无重传，分片丢失即整包丢弃 → 大包不通
+  因此本项目中点云等大消息的 QoS 统一使用 RELIABLE（见各节点代码注释）。
+
+  内核参数：WSL2 默认 net.core.rmem_max=208KiB，需在 %USERPROFILE%\.wslconfig
+  中设置 sysctl 抬到 16MiB，否则 Cyclone 申请 4MiB socket buffer 会失败。
+
+  Usage (must be exported in EVERY shell that runs a node or CLI):
+      export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
+      export CYCLONEDDS_URI=file:///mnt/d/Code/radar/ROS2/config/cyclonedds_wsl.xml
+-->
+<CycloneDDS xmlns="https://cdds.io/config">
+  <Domain Id="any">
+    <General>
+      <Interfaces>
+        <NetworkInterface name="lo" multicast="false"/>
+      </Interfaces>
+    </General>
+    <Internal>
+      <!-- 需配合 .wslconfig 的 sysctl: net.core.rmem_max=16777216 -->
+      <SocketReceiveBufferSize min="4MiB" max="8MiB"/>
+      <SocketSendBufferSize min="4MiB" max="8MiB"/>
+    </Internal>
+  </Domain>
+</CycloneDDS>

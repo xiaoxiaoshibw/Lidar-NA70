@@ -1,0 +1,12 @@
+{
+  "configurations": [
+    {
+      "name": "ROS2 Humble",
+      "//": "compile_commands.json 由 colcon build 生成（CMakeLists 已设置 CMAKE_EXPORT_COMPILE_COMMANDS）。路径按打开 src/double_wedge_driver 作为工作区根解析；若直接打开 ROS2/ 目录，请改为 ${workspaceFolder}/build/double_wedge_driver/compile_commands.json。构建前该文件不存在属正常现象。",
+      "compileCommands": "${workspaceFolder}/../../build/double_wedge_driver/compile_commands.json",
+      "cStandard": "gnu11",
+      "cppStandard": "c++17"
+    }
+  ],
+  "version": 4
+}

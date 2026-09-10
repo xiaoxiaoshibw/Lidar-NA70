@@ -1,0 +1,24 @@
+na70_motion_detector:
+  ros__parameters:
+    input_topic: /inno_lidar_cloud
+    moving_points_topic: /motion_detector/moving_points
+    has_motion_topic: /motion_detector/has_motion
+
+    # Empty-scene background learning: 100 frames is about 10 seconds at 10 Hz.
+    voxel_size: 0.15
+    warmup_frames: 100
+    background_min_hits: 3
+    background_margin_voxels: 1
+
+    # Keep broad defaults until the real NA70 coordinate range is frozen.
+    min_range: 0.5
+    max_range: 100.0
+    min_z: -1000.0
+    max_z: 1000.0
+
+    # A positive state requires both thresholds for two consecutive frames.
+    min_moving_points: 30
+    min_moving_ratio: 0.001
+    confirmation_frames: 2
+    clear_frames: 3
+

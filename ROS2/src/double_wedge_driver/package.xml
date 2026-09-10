@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<package format="3">
+  <name>double_wedge_driver</name>
+  <version>0.1.0</version>
+  <description>ROS2 driver for the Inno double-wedge LiDAR and millimeter-wave radar.</description>
+
+  <maintainer email="ly@todo.todo">ly</maintainer>
+  <license>TODO</license>
+
+  <buildtool_depend>ament_cmake</buildtool_depend>
+  <buildtool_depend>rosidl_default_generators</buildtool_depend>
+
+  <depend>rclcpp</depend>
+  <depend>builtin_interfaces</depend>
+  <depend>std_msgs</depend>
+  <depend>sensor_msgs</depend>
+  <depend>pcl_conversions</depend>
+
+  <!-- PCL：编译期需要头文件，运行期需要 libpcl_common / libpcl_filters 等共享库 -->
+  <build_depend>libpcl-all-dev</build_depend>
+  <exec_depend>libpcl-all</exec_depend>
+
+  <!-- Eigen3：仅在 .cpp 内部使用的头文件库，本包不导出任何头文件 -->
+  <build_depend>eigen</build_depend>
+
+  <!-- Boost：asio 头文件，并链接 boost_system -->
+  <depend>boost</depend>
+
+  <exec_depend>launch</exec_depend>
+  <exec_depend>launch_ros</exec_depend>
+  <exec_depend>rviz2</exec_depend>
+  <exec_depend>rosidl_default_runtime</exec_depend>
+
+  <member_of_group>rosidl_interface_packages</member_of_group>
+
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
+</package>

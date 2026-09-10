@@ -1,0 +1,59 @@
+{
+ "event1": {
+  "activity_yaw_range": [
+   208,
+   339
+  ],
+  "activity_yaw_span_deg": 132,
+  "dominant_band_yaw": [
+   208,
+   251
+  ],
+  "dominant_band_width_deg": 44,
+  "pitch_range": [
+   2138,
+   3331
+  ],
+  "pitch_span_deg": 11.9
+ },
+ "middle": {
+  "activity_yaw_range": [
+   209,
+   273
+  ],
+  "activity_yaw_span_deg": 65,
+  "dominant_band_yaw": [
+   255,
+   273
+  ],
+  "dominant_band_width_deg": 19,
+  "pitch_range": [
+   2138,
+   3331
+  ],
+  "pitch_span_deg": 11.9
+ },
+ "event2": {
+  "activity_yaw_range": [
+   218,
+   323
+  ],
+  "activity_yaw_span_deg": 106,
+  "dominant_band_yaw": [
+   218,
+   251
+  ],
+  "dominant_band_width_deg": 34,
+  "pitch_range": [
+   2138,
+   3331
+  ],
+  "pitch_span_deg": 11.9
+ },
+ "pitch_code_range": [
+  2138,
+  3331
+ ],
+ "note": "正视图=从雷达视点看的角空间遮挡足迹（遮挡带来自 walk4_summary 权威口径）；竖向跨度=被遮挡的墙体俯仰跨度（人贴近雷达时盖满墙全高）",
+ "pitch_res_note": "俯仰主假设 0.01°/码（若为 0.0258°/码，竖向跨度×2.58）"
+}

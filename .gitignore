@@ -1,0 +1,31 @@
+# ===== Python =====
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.mypy_cache/
+
+# ===== 测试与构建缓存 =====
+.pytest_cache/
+*.tsbuildinfo
+test-results/
+
+# ===== ROS2 (colcon) 构建产物 =====
+ROS2/build/
+ROS2/install/
+ROS2/log/
+
+# ===== Web 前端产物 =====
+web/frontend/node_modules/
+web/frontend/dist/
+web/data/
+web/.venv/
+
+# ===== 大数据文件（不入库） =====
+*.pcap
+
+# ===== 操作系统文件 =====
+Thumbs.db
+.DS_Store
+desktop.ini
