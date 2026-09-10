@@ -14,7 +14,7 @@ test('real PCAP import, playback, seek, display controls, persistence and cancel
   for (const name of ['1.pcap', '2.pcap']) {
     const started = performance.now();
     await page.getByTestId('file-input').setInputFiles(path.join(captures, name));
-    await expect(page.locator('.canvas-meta')).toContainText('FRAME 00001', { timeout: 45000 });
+    await expect(page.locator('.canvas-meta')).toContainText('200 帧叠加', { timeout: 45000 });
     await expect(page.locator('.processing')).toHaveCount(0);
     const firstFrameMs = performance.now() - started;
     await page.waitForTimeout(1500);
@@ -58,7 +58,7 @@ test('real PCAP import, playback, seek, display controls, persistence and cancel
   await page.getByRole('button', { name: '距离', exact: true }).click();
   await page.getByLabel('最小距离', { exact: true }).fill('5');
   await page.getByLabel('最大距离', { exact: true }).fill('100');
-  await page.getByLabel('渲染点数上限').selectOption('100000');
+  await page.getByLabel('渲染点数上限').selectOption('1000000');
   await page.getByLabel('坐标网格', { exact: true }).uncheck();
   await page.getByLabel('坐标轴', { exact: true }).uncheck();
   await page.getByTitle('重置显示设置').click();
