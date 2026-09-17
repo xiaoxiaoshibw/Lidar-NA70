@@ -1,0 +1,44 @@
+{
+  "version": 1,
+  "accumulation": {
+    "enabled": true,
+    "window_size": 10,
+    "voxel_size": 0.5,
+    "max_points": 200000,
+    "roi": null,
+    "range": {
+      "min": 50.0,
+      "max": 130.0
+    }
+  },
+  "goal_detection": {
+    "enabled": true,
+    "ground_z": [-2.0, 1.0],
+    "pole": {
+      "height": [1.8, 4.0],
+      "min_points": 8,
+      "max_radius": 1.2
+    },
+    "frame": {
+      "width": [5.0, 9.5],
+      "crossbar_z": [1.8, 3.2]
+    },
+    "scoring": {
+      "min_confidence": 0.5,
+      "lock_confidence": 0.7
+    }
+  },
+  "locking": {
+    "min_frames": 3
+  },
+  "tracking": {
+    "lost_frame_threshold": 5,
+    "reacquire": true,
+    "max_center_jump": 3.0,
+    "kalman": true
+  },
+  "webui": {
+    "enable": true,
+    "fps_target": 10
+  }
+}
