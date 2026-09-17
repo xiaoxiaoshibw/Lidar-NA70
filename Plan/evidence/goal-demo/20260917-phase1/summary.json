@@ -69,21 +69,26 @@
   "memory_samples_kb": [
     null,
     null,
+    null,
+    null,
+    null,
+    null,
+    null,
     null
   ],
   "frames_per_capture": [
     {
       "pcap": "radar_capture_data\\2\\9.14_caochangyou.pcap",
-      "frames": 300,
+      "frames": 1211,
       "duration_s": 121.049
     }
   ],
-  "total_frames": 300,
-  "wall_time_s": 9.38,
-  "frame_ms_p50": 30.38,
-  "frame_ms_p95": 40.85,
-  "frame_ms_max": 52.53,
-  "accumulated_points_p50": 10747,
-  "accumulated_points_max": 12754,
+  "total_frames": 1211,
+  "wall_time_s": 25.97,
+  "frame_ms_p50": 20.34,
+  "frame_ms_p95": 28.16,
+  "frame_ms_max": 45.57,
+  "accumulated_points_p50": 9101,
+  "accumulated_points_max": 13293,
   "non_monotonic_frames": 0
 }
