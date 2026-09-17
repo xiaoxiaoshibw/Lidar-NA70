@@ -1,0 +1,89 @@
+{
+  "label": "REAL_PCAP_WINDOWS",
+  "config_version": "975820c6b63e2c70",
+  "config": {
+    "version": 1,
+    "accumulation": {
+      "enabled": true,
+      "window_size": 10,
+      "voxel_size": 0.5,
+      "max_points": 200000,
+      "roi": null,
+      "range": {
+        "min": 50.0,
+        "max": 130.0
+      }
+    },
+    "goal_detection": {
+      "enabled": true,
+      "ground_z": [
+        -2.0,
+        1.0
+      ],
+      "pole": {
+        "height": [
+          1.8,
+          4.0
+        ],
+        "min_points": 8,
+        "max_radius": 1.2
+      },
+      "frame": {
+        "width": [
+          5.0,
+          9.5
+        ],
+        "crossbar_z": [
+          1.8,
+          3.2
+        ]
+      },
+      "scoring": {
+        "min_confidence": 0.5,
+        "lock_confidence": 0.7
+      }
+    },
+    "locking": {
+      "min_frames": 3
+    },
+    "tracking": {
+      "lost_frame_threshold": 5,
+      "reacquire": true,
+      "max_center_jump": 3.0,
+      "kalman": true
+    },
+    "webui": {
+      "enable": true,
+      "fps_target": 10
+    }
+  },
+  "captures": [
+    "radar_capture_data/2/9.14_caochangyou.pcap"
+  ],
+  "window_size": 10,
+  "voxel_size": 0.5,
+  "range": [
+    50.0,
+    130.0
+  ],
+  "memory_samples_kb": [
+    null,
+    null,
+    null
+  ],
+  "frames_per_capture": [
+    {
+      "pcap": "radar_capture_data\\2\\9.14_caochangyou.pcap",
+      "frames": 300,
+      "duration_s": 121.049
+    }
+  ],
+  "total_frames": 300,
+  "wall_time_s": 9.38,
+  "frame_ms_p50": 30.38,
+  "frame_ms_p95": 40.85,
+  "frame_ms_max": 52.53,
+  "accumulated_points_p50": 10747,
+  "accumulated_points_max": 12754,
+  "non_monotonic_frames": 0
+}
