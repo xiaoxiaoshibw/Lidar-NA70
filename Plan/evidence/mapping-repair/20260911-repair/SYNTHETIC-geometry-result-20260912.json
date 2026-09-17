@@ -1,0 +1,59 @@
+{
+  "stage": "point_cloud_odometry",
+  "r7": "NOT_EVALUATED",
+  "contract": {
+    "source": "SYNTHETIC",
+    "regions": [
+      {
+        "name": "SYNTHETIC wall",
+        "segment_id": 0,
+        "minimum": [
+          -1,
+          -1,
+          -1
+        ],
+        "maximum": [
+          1,
+          1,
+          1
+        ],
+        "origin": [
+          0,
+          0,
+          0
+        ],
+        "normal": [
+          1,
+          0,
+          0
+        ],
+        "histogram_bin_m": 0.01,
+        "max_thickness_m": 0.05,
+        "min_layer_separation_m": 0.1,
+        "min_peak_fraction": 0.1,
+        "min_points": 20
+      }
+    ]
+  },
+  "contract_sha256": "079706541374ce92f0dce68d774fe48d9c6ac89a6fe1e486014b5651d3a13968",
+  "input_chunks_sha256": {
+    "0_0_0.jsonl": "a576d67a15be543f7fea16d4f9f03a9ea7387108dadd9582f0980a2d534dda56"
+  },
+  "regions": [
+    {
+      "name": "SYNTHETIC wall",
+      "segment_id": 0,
+      "measurement": {
+        "status": "MEASURED",
+        "points": 1000,
+        "thickness_p95_p05_m": 0.0031988234049021903,
+        "thickness_within_frozen_limit": true,
+        "layer_peak_offsets_m": [
+          -0.0035292099530237378
+        ],
+        "double_layer_candidate": false,
+        "note": "ROI and plane are supplied; peaks are candidates, not fixed-object semantic truth or R7 PASS"
+      }
+    }
+  ]
+}

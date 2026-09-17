@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "mode": "turntable",
+  "development_label": "DEVELOPMENT / DIAGNOSTIC / ESTIMATED_ANGLE",
+  "angle_unit": "deg",
+  "positive_direction": "counter_clockwise_about_positive_z",
+  "min_segment_seconds": 3.0,
+  "frame_stride": 2,
+  "min_range_m": 1.0,
+  "max_range_m": 80.0,
+  "submap_voxel_size_m": 0.25,
+  "map_voxel_size_m": 0.25,
+  "max_submap_voxels": 250000,
+  "max_map_voxels": 600000,
+  "minimum_submap_points": 200,
+  "rigid_height_min_m": 0.5,
+  "rigid_height_max_m": 4.5,
+  "quality_overlap_distance_m": [
+    0.3,
+    0.5,
+    1.0
+  ],
+  "stability_max_median_m": 1.5,
+  "stability_min_overlap_1m": 0.05,
+  "refinement_enabled": true,
+  "refinement_max_yaw_deg": 1.0,
+  "refinement_max_translation_m": 0.25,
+  "refinement_min_fit_improvement_m": 0.001,
+  "preview_size_px": 1200,
+  "preview_max_points_per_source": 80000
+}

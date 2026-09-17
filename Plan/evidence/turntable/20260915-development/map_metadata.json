@@ -1,0 +1,59 @@
+{
+  "version": "na70-voxel-map-v1",
+  "voxel_size": 0.25,
+  "chunk_voxels": 32,
+  "fused_points": 209164,
+  "dropped_points": 0,
+  "voxel_count": 149890,
+  "chunk_count": 127,
+  "max_voxels": 600000,
+  "segments": [
+    {
+      "segment_id": 0,
+      "voxels": 10448,
+      "observations": 10448.0
+    },
+    {
+      "segment_id": 1,
+      "voxels": 27962,
+      "observations": 28728.0
+    },
+    {
+      "segment_id": 2,
+      "voxels": 38785,
+      "observations": 46046.0
+    },
+    {
+      "segment_id": 3,
+      "voxels": 47391,
+      "observations": 87471.0
+    },
+    {
+      "segment_id": 4,
+      "voxels": 25304,
+      "observations": 36471.0
+    }
+  ],
+  "minimum": [
+    6.627096736084489,
+    -52.40141652916513,
+    -3.0119824409484863
+  ],
+  "maximum": [
+    79.9646625223569,
+    56.48923440081416,
+    22.198606491088867
+  ],
+  "schema_version": 1,
+  "coordinate_frame": "map",
+  "stage": "fixed_point_turntable_multi_view",
+  "label": "DEVELOPMENT / DIAGNOSTIC / ESTIMATED_ANGLE",
+  "angle_status": "ESTIMATED_ANGLE",
+  "source_segments": [
+    "center_reference",
+    "right_initial_zero",
+    "right_final_estimated",
+    "left_initial_zero",
+    "left_final_estimated"
+  ]
+}

@@ -9,7 +9,8 @@ $webRoot = $PSScriptRoot
 if ($Port -lt 1024 -or $Port -gt 65535) { throw 'Port must be between 1024 and 65535.' }
 Push-Location $webRoot
 try {
-    $version = & $Python -c 'import sys; print(str(sys.version_info.major)+"."+str(sys.version_info.minor))'
+    # Avoid embedded quotes: Windows PowerShell 5.1 strips them in native arguments.
+    $version = & $Python -c 'import sys; print(sys.version_info.major, sys.version_info.minor, sep=chr(46))'
     if ($LASTEXITCODE -ne 0 -or $version -ne '3.12') { throw 'Python 3.12 is required. Use -Python C:\path\to\python.exe' }
     if (!(Test-Path -LiteralPath '.venv\Scripts\python.exe')) {
         & $Python -m venv .venv

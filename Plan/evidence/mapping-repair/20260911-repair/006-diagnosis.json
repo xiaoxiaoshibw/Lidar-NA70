@@ -1,0 +1,78 @@
+{
+  "job_id": "c9f3f49c-d5c8-454f-aee7-3ffcc1a2c7b1",
+  "job_directory": "D:\\Code\\radar\\web\\data\\defcea4d-51db-4f7f-b226-c5ffac4805df\\mapping\\c9f3f49c-d5c8-454f-aee7-3ffcc1a2c7b1",
+  "metrics": {
+    "frame_count": 1551,
+    "initialization_frames": 30,
+    "registered_frames": 8,
+    "recovered_frames": 3,
+    "total_failure_ratio": 0.9736,
+    "accepted_frames": 41,
+    "rejected_frames": 10,
+    "tracking_lost_frames": 1500,
+    "keyframe_count": 4,
+    "accepted_ratio": 0.0264,
+    "rejected_ratio": 0.0064,
+    "first_tracking_lost_time": 3.600044012069702,
+    "max_continuous_tracking_s": 3.3001,
+    "mean_overlap": 0.0145,
+    "mean_rmse_m": 0.1774,
+    "max_translation_step_m": 0.12904,
+    "max_rotation_step_deg": 0.72567,
+    "trajectory_length_m": 0.36966,
+    "closure_translation_m": 0.01203,
+    "closure_rotation_deg": 0.04858,
+    "segment_count": 4,
+    "map_point_count": 88432,
+    "map_voxel_count": 47521,
+    "map_bounds": {
+      "minimum": [
+        6.498880624771118,
+        -40.748863220214844,
+        -12.202873101601234
+      ],
+      "maximum": [
+        78.80940246582031,
+        45.652427673339844,
+        24.261388460795086
+      ]
+    },
+    "initialization_failed": false,
+    "chunk_count": 141
+  },
+  "periods": {
+    "stationary": {
+      "frames": 600,
+      "states": {
+        "reference": 30,
+        "accepted": 8,
+        "quality_failed": 9,
+        "tracking_lost": 549,
+        "reinitialized": 3,
+        "degenerate_geometry": 1
+      },
+      "reasons": {
+        "stationary_assumption": 30,
+        "accepted": 8,
+        "rmse_high": 9,
+        "tracking_lost_after_3_failures": 4,
+        "reinitialized": 3,
+        "reinit_failed": 545,
+        "unobservable_direction": 1
+      },
+      "registered_frames": 8
+    },
+    "moving": {
+      "frames": 951,
+      "states": {
+        "tracking_lost": 951
+      },
+      "reasons": {
+        "reinit_failed": 951
+      },
+      "registered_frames": 0
+    }
+  },
+  "geometric_acceptance": "NOT_EVALUATED",
+  "note": "Period labels use user-declared motion boundary; no external trajectory truth or closure claim."
+}

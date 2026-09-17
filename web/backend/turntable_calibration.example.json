@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "status": "measured",
+  "angle_unit": "deg",
+  "positive_direction": "counter_clockwise_about_positive_z",
+  "map_turntable": {
+    "translation_m": [0.0, 0.0, 0.0],
+    "rpy_deg": [0.0, 0.0, 0.0]
+  },
+  "turntable_lidar": {
+    "translation_m": [0.0, 0.0, 0.0],
+    "rpy_deg": [0.0, 0.0, 0.0]
+  },
+  "zero_reference": "describe the measured zero direction",
+  "device": "turntable or encoder model",
+  "angular_resolution_deg": 0.1,
+  "repeatability_deg": 0.1
+}

@@ -1,0 +1,30 @@
+{
+  "version": "na70-turntable-map-v1",
+  "status": "ready",
+  "label": "DEVELOPMENT / DIAGNOSTIC / ESTIMATED_ANGLE",
+  "created_at": 1789442010.616375,
+  "elapsed_seconds": 18.799,
+  "command": "tools\\build_turntable_map.py --pcap 2\\9.14_caochangzhong2.pcap --pcap 2\\9.14_caochangzuo.pcap --pcap 2\\9.14_caochangyou.pcap --angle-log web\\backend\\angle_log.20260914-development.csv --calibration web\\backend\\turntable_calibration.20260914-assumed.json --output Plan\\evidence\\turntable\\20260915-development",
+  "sources": [
+    "D:\\Code\\radar\\2\\9.14_caochangzhong2.pcap",
+    "D:\\Code\\radar\\2\\9.14_caochangzuo.pcap",
+    "D:\\Code\\radar\\2\\9.14_caochangyou.pcap"
+  ],
+  "source_hashes": {
+    "D:\\Code\\radar\\2\\9.14_caochangzhong2.pcap": "2caa68d6491cb2ba6fd9bae86e04104038fbbf4c7a4e349fa6dcc211adc743ce",
+    "D:\\Code\\radar\\2\\9.14_caochangzuo.pcap": "b2365c97bd22bba7d24ad14ceee365b59b4dba4f6f8e9721e694f3b8c6ef63c6",
+    "D:\\Code\\radar\\2\\9.14_caochangyou.pcap": "ceca9fc08758f3c35f7b8b1c024bdab90e65f49ab65e39102cdd58dc0c5292db"
+  },
+  "code_hashes": {
+    "D:\\Code\\radar\\web\\backend\\turntable.py": "75e9e93ca77c04f931c9b7bd76989c576e04f40a97f9c906b0c1f3db96bc3e5b",
+    "D:\\Code\\radar\\web\\backend\\turntable.yaml": "a8f7708d1f6d08ce8a85184bfd2b708d89eae98d0ab8237b70f22d6dcf07cc39"
+  },
+  "python": "3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]",
+  "numpy": "2.5.3",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "decoder_version": "ros2-na70-16mm-v1",
+  "map_version": "na70-voxel-map-v1",
+  "accepted_submaps": 5,
+  "rejected_submaps": 0,
+  "output_directory": "D:\\Code\\radar\\Plan\\evidence\\turntable\\20260915-development"
+}

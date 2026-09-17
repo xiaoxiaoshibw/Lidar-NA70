@@ -1,0 +1,23 @@
+{
+  "web/backend/preflight.py": "3356ca7e326cd39f2a3ed835d9fde0da33f90d9f5542d83fa4fc4bb61b018e83",
+  "web/backend/preflight.yaml": "9634220894c6ea8a88efe66f7e02c7bf4d11b9424894db0d1a5560e292c49d48",
+  "web/backend/capture_validation.py": "71d65dbf6b9b16b0d9f5b411c3c3f59bf4662d34f485fca904c393db174dab53",
+  "web/backend/decoder.py": "983fb71caa54aa4e8a55c11a3d61cd327449af2963e0e217eb4275f4a6ae33a5",
+  "web/backend/app.py": "fb85312aeacd678dfed1d6286c9f94b62de52ce42dc775992b73c4d436a24ece",
+  "web/backend/mapping_jobs.py": "8c4a6c763496070fb19e502af80d8139b82f1f2c9333a399335fd05529e4e1c3",
+  "web/frontend/src/CollectionWorkbench.tsx": "291a043195bae70e04819fa771f8c07de9e128df419f4c31562f0130f2e7741a",
+  "web/frontend/src/main.tsx": "6d82923396e93173f4082f9b512ee1f8261bab6ccde2d594717c8138566230f8",
+  "web/frontend/src/api.ts": "7e1f2f7a29f5f1ed1749bdd3079a19ae7eba8033bb8890f715f2359ac5e8cc2a",
+  "web/frontend/src/style.css": "cdf0e6295671c350af2e9130d4ad9da5a255d8b8864174c50fd42d02b1cdd0f8",
+  "web/frontend/playwright.config.ts": "436a13ea2703c8991c6bc6ca6e5a93581de69f58d31f8cf6fa3891216f6470b5",
+  "web/frontend/tests/mapping.spec.ts": "868f5c6cc82185c868ad447001262abe2e9d98e52e861551d96516f0ee201a04",
+  "web/tests/test_preflight.py": "049820f6218e46e7c05111533129f6c238ac24916cfaf4e28e7f1ec9e5f5c2e0",
+  "tools/preflight_capture.py": "20df677ee16c332a879bc45df564a69e609abfa7b819978be840cf825fab2fa7",
+  "web/backend/geometry_validation.py": "0f7abf4a173cc803271779d0f37802bf041002b0a19fcdcc0bf3db0b4576871e",
+  "tools/measure_mapping_geometry.py": "32b2b449098e973ab41a72d4ee42cbd27771a700251af604f6dea82bc4a9e91d",
+  "web/tests/test_geometry_validation.py": "32d00b8538dbf5f8a4abf13aacf8aaaa65ad9cf833ec8038c2f88b3297d74cc5",
+  "Plan/README.md": "9f247b62a58e227c10bcf7172dc557d2c5f69060d69f35b5583143dbf9f51267",
+  "Plan/MASTER_\u5f00\u53d1\u4e0e\u9a8c\u6536\u603b\u8ba1\u5212.md": "15b5ec8d85b7e6cd64b2ba1142d0140ef17e5d1b52756f1df9e2385031a1346e",
+  "web/README.md": "2ab88e195951bb0e40c6f353bc6d52b2e58799721f9d51f652146d76e66a5535",
+  "web/VALIDATION.md": "fbf9d639e37fbb2aa7315f0d3f7450c9f225983f66506f9a824e44b041c638f1"
+}

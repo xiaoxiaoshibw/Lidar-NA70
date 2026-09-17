@@ -1,0 +1,56 @@
+ D "Plan/01_\347\263\273\347\273\237\346\236\266\346\236\204\344\270\216\346\216\245\345\217\243.md"
+ M "Plan/02_\345\210\206\351\230\266\346\256\265\345\256\236\346\226\275\350\256\241\345\210\222.md"
+ M "Plan/04_\351\252\214\346\224\266\347\237\251\351\230\265\344\270\216\344\273\273\345\212\241\347\234\213\346\235\277.md"
+ M "Plan/05_\345\274\200\345\217\221\346\211\247\350\241\214\350\247\204\350\214\203.md"
+ M "Plan/07_WebUI\345\256\236\346\226\275\344\270\216\351\252\214\346\224\266.md"
+ M Plan/README.md
+ M web/README.md
+ M web/VALIDATION.md
+ M web/backend/app.py
+ M web/backend/decoder.py
+ M web/frontend/package-lock.json
+ M web/frontend/package.json
+ M web/frontend/playwright.config.ts
+ M web/frontend/src/CloudView.tsx
+ M web/frontend/src/api.ts
+ M web/frontend/src/main.tsx
+ M web/frontend/src/style.css
+ M web/frontend/tests/density.spec.ts
+ M web/frontend/tests/full-playback.spec.ts
+ M web/frontend/tests/viewer.spec.ts
+ M web/requirements.in
+ M web/requirements.lock
+ M web/tests/test_api.py
+ M web/tests/test_decoder.py
+?? .workbuddy/
+?? 2/
+?? AGENTS.md
+?? "Plan/08_\346\200\247\350\203\275\346\217\220\351\200\237\350\256\241\345\210\222.md"
+?? "Plan/09_\346\227\240IMU\351\235\231\346\200\201\347\216\257\345\242\203\345\273\272\345\233\276.md"
+?? "Plan/10_\345\273\272\345\233\276\346\255\243\347\241\256\346\200\247\344\277\256\345\244\215\344\270\216\351\252\214\346\224\266\346\211\247\350\241\214\350\256\241\345\210\222.md"
+?? Plan/evidence/
+?? radar_capture_data/video/003.mp4
+?? radar_capture_data/video/003real.mp4
+?? tools/analyze_ray_motion.py
+?? tools/png_canvas.py
+?? transparent_red_box.png
+?? web/THIRD_PARTY_NOTICES.md
+?? web/backend/bands.py
+?? web/backend/mapping.py
+?? web/backend/mapping.yaml
+?? web/backend/mapping_jobs.py
+?? web/backend/motion.py
+?? web/backend/registration.py
+?? web/backend/registration.yaml
+?? web/backend/spatial.py
+?? web/frontend/scripts/dense-latest.mjs
+?? web/frontend/tests/mapping.spec.ts
+?? web/frontend/tests/motion.spec.ts
+?? web/tests/benchmark_analysis.py
+?? web/tests/test_bands.py
+?? web/tests/test_mapping.py
+?? web/tests/test_mapping_api.py
+?? web/tests/test_motion.py
+?? web/tests/test_registration.py
+?? web/tests/test_spatial.py
+?? "\346\226\207\346\241\243/NA70_\351\241\271\347\233\256\344\270\212\346\211\213\346\225\231\347\250\213.md"

@@ -1,0 +1,13 @@
+{
+  "environment": "WSL2_HUMBLE_X86_64",
+  "algorithm": "GLIM CT CPU",
+  "imu_used": false,
+  "loop_closure_used": false,
+  "optimization": false,
+  "trajectory_samples": 1540,
+  "duration": 153.99700000000007,
+  "static_max_translation": 22.867080529535162,
+  "static_max_rotation_deg": 179.94969430397168,
+  "status": "FAIL",
+  "dump": "/home/radar/na70-glim-eval/dump-ct-map"
+}

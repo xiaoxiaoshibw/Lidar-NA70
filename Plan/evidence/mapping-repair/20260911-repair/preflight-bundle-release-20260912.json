@@ -1,0 +1,14 @@
+[
+  {
+    "job_id": "7dfdbee5-c810-43b9-8721-abcbf6a34d08",
+    "members": 1066,
+    "source": "SYNTHETIC",
+    "hashes": "PASS"
+  },
+  {
+    "job_id": "84e99eab-42dc-4a3c-946b-8f2b2ddab2cb",
+    "members": 1066,
+    "source": "SYNTHETIC",
+    "hashes": "PASS"
+  }
+]

@@ -1,0 +1,77 @@
+[
+  {
+    "algorithm": "KISS-ICP",
+    "version": "1.3.0",
+    "config": {
+      "out_dir": "results",
+      "data": {
+        "max_range": 100.0,
+        "min_range": 0.0,
+        "deskew": false
+      },
+      "registration": {
+        "max_num_iterations": 500,
+        "convergence_criterion": 0.0001,
+        "max_num_threads": 4
+      },
+      "mapping": {
+        "voxel_size": 1.0,
+        "max_points_per_voxel": 20
+      },
+      "adaptive_threshold": {
+        "fixed_threshold": null,
+        "initial_threshold": 2.0,
+        "min_motion_th": 0.1
+      }
+    },
+    "data_source": "REAL",
+    "imu_used": false,
+    "deskew": false,
+    "loop_closure": false,
+    "stationary_declaration": "User confirmed first 60 seconds stationary",
+    "elapsed_seconds": 58.193848299997626,
+    "static_max_displacement": 2.302308360498306,
+    "static_max_rotation": 37.82829058166214,
+    "final_displacement": 1.7327478459547812,
+    "geometric_acceptance": "NOT_EVALUATED",
+    "note": "Outputs are ungated candidate poses; pose count is not tracking success."
+  },
+  {
+    "algorithm": "KISS-ICP",
+    "version": "1.3.0",
+    "config": {
+      "out_dir": "results",
+      "data": {
+        "max_range": 80.0,
+        "min_range": 0.0,
+        "deskew": false
+      },
+      "registration": {
+        "max_num_iterations": 500,
+        "convergence_criterion": 0.0001,
+        "max_num_threads": 4
+      },
+      "mapping": {
+        "voxel_size": 0.25,
+        "max_points_per_voxel": 20
+      },
+      "adaptive_threshold": {
+        "fixed_threshold": null,
+        "initial_threshold": 2.0,
+        "min_motion_th": 0.1
+      }
+    },
+    "data_source": "REAL",
+    "imu_used": false,
+    "deskew": false,
+    "loop_closure": false,
+    "stationary_declaration": "User confirmed first 60 seconds stationary",
+    "bootstrap_frames": 30,
+    "elapsed_seconds": 43.982110199998715,
+    "static_max_displacement": 0.28093803663157724,
+    "static_max_rotation": 13.60793332012566,
+    "final_displacement": 0.035811957410912525,
+    "geometric_acceptance": "NOT_EVALUATED",
+    "note": "Outputs are ungated candidate poses; pose count is not tracking success."
+  }
+]

@@ -1,0 +1,116 @@
+{
+  "version": "na70-turntable-map-v1",
+  "status": "PASS",
+  "label": "DEVELOPMENT / DIAGNOSTIC / ESTIMATED_ANGLE",
+  "decoder_version": "ros2-na70-16mm-v1",
+  "python": "3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "inputs": {
+    "9.14_caochangzhong2.pcap": {
+      "path": "D:\\Code\\radar\\2\\9.14_caochangzhong2.pcap",
+      "sha256": "2caa68d6491cb2ba6fd9bae86e04104038fbbf4c7a4e349fa6dcc211adc743ce",
+      "duration_s": 129.90086698532104,
+      "frame_count": 1298,
+      "valid_packets": 129738,
+      "warnings": []
+    },
+    "9.14_caochangzuo.pcap": {
+      "path": "D:\\Code\\radar\\2\\9.14_caochangzuo.pcap",
+      "sha256": "b2365c97bd22bba7d24ad14ceee365b59b4dba4f6f8e9721e694f3b8c6ef63c6",
+      "duration_s": 122.57177710533142,
+      "frame_count": 1221,
+      "valid_packets": 122095,
+      "warnings": []
+    },
+    "9.14_caochangyou.pcap": {
+      "path": "D:\\Code\\radar\\2\\9.14_caochangyou.pcap",
+      "sha256": "ceca9fc08758f3c35f7b8b1c024bdab90e65f49ab65e39102cdd58dc0c5292db",
+      "duration_s": 121.04929780960083,
+      "frame_count": 1211,
+      "valid_packets": 121036,
+      "warnings": []
+    }
+  },
+  "segments": [
+    {
+      "segment_id": "center_reference",
+      "source_pcap": "9.14_caochangzhong2.pcap",
+      "valid": true,
+      "yaw_deg": 0.0,
+      "angle_source": "MANUAL",
+      "valid_start_s": 0.0,
+      "valid_end_s": 129.9,
+      "estimated": false
+    },
+    {
+      "segment_id": "right_initial_estimated",
+      "source_pcap": "9.14_caochangyou.pcap",
+      "valid": true,
+      "yaw_deg": 60.0,
+      "angle_source": "ESTIMATED_GEOMETRY",
+      "valid_start_s": 0.0,
+      "valid_end_s": 20.0,
+      "estimated": true
+    },
+    {
+      "segment_id": "right_final_estimated",
+      "source_pcap": "9.14_caochangyou.pcap",
+      "valid": true,
+      "yaw_deg": 30.5,
+      "angle_source": "ESTIMATED_GEOMETRY",
+      "valid_start_s": 82.0,
+      "valid_end_s": 120.0,
+      "estimated": true
+    },
+    {
+      "segment_id": "left_initial_estimated",
+      "source_pcap": "9.14_caochangzuo.pcap",
+      "valid": true,
+      "yaw_deg": 0.0,
+      "angle_source": "ESTIMATED_GEOMETRY",
+      "valid_start_s": 0.0,
+      "valid_end_s": 20.0,
+      "estimated": true
+    },
+    {
+      "segment_id": "left_final_estimated",
+      "source_pcap": "9.14_caochangzuo.pcap",
+      "valid": true,
+      "yaw_deg": -0.5,
+      "angle_source": "ESTIMATED_GEOMETRY",
+      "valid_start_s": 113.0,
+      "valid_end_s": 122.0,
+      "estimated": true
+    }
+  ],
+  "calibration_status": "assumed-development",
+  "excluded_rotation_intervals": {
+    "9.14_caochangzhong2.pcap": [
+      [
+        129.9,
+        129.90086698532104
+      ]
+    ],
+    "9.14_caochangzuo.pcap": [
+      [
+        20.0,
+        113.0
+      ],
+      [
+        122.0,
+        122.57177710533142
+      ]
+    ],
+    "9.14_caochangyou.pcap": [
+      [
+        20.0,
+        82.0
+      ],
+      [
+        120.0,
+        121.04929780960083
+      ]
+    ]
+  },
+  "note": "This preflight validates contracts and time bounds; it does not claim measured turntable accuracy."
+}

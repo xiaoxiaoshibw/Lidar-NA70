@@ -23,10 +23,14 @@ for (const name of ['1.pcap', '2.pcap']) {
     // End-of-file restart, changed playback rate and camera interaction.
     await page.getByLabel('播放速度').selectOption('2');
     await page.getByTitle('播放', { exact: true }).click();
-    await page.waitForTimeout(1200);
+    // Restarting seeks to frame 0 and re-gathers the dense window. On a 200 MB+
+    // capture that gather can outlast any fixed sleep, so wait for playback to
+    // actually advance instead of timing the disk.
+    await expect.poll(async () => Number(await page.getByLabel('回放时间轴').inputValue()),
+      { timeout: 90000, intervals: [50] }).toBeGreaterThan(10);
     await page.getByTitle('暂停', { exact: true }).click();
     const restarted = Number(await page.getByLabel('回放时间轴').inputValue());
-    expect(restarted).toBeGreaterThan(10); expect(restarted).toBeLessThan(45);
+    expect(restarted).toBeGreaterThan(10); expect(restarted).toBeLessThan(90);
     const canvas = page.getByTestId('cloud-canvas');
     const rect = (await canvas.boundingBox())!;
     await page.mouse.move(rect.x + rect.width / 2, rect.y + rect.height / 2);
@@ -48,7 +52,7 @@ test('cancel an upload while bytes are still streaming', async ({ page, request 
   await expect(page.getByText('正在上传文件')).toBeVisible();
   await page.waitForTimeout(700);
   await page.getByRole('button', { name: '取消导入', exact: true }).click();
-  await expect(page.getByText('从一次扫描，看见三维空间')).toBeVisible();
+  await expect(page.getByText('先静止采集，再缓慢移动雷达')).toBeVisible();
   await cdp.send('Network.emulateNetworkConditions', { offline: false, latency: 0, downloadThroughput: -1, uploadThroughput: -1 });
   await page.waitForTimeout(1000);
   const list = await (await request.get('/api/captures')).json();

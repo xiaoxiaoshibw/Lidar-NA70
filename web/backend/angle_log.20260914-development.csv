@@ -1,0 +1,6 @@
+segment_id,source_pcap,yaw_deg,settle_start_s,valid_start_s,valid_end_s,direction,valid,angle_source,note
+center_reference,9.14_caochangzhong2.pcap,0.0,0.0,0.0,129.9,reference,true,MANUAL,development coordinate definition only; center capture is the fixed reference; not an encoder measurement
+right_initial_estimated,9.14_caochangyou.pcap,60.0,0.0,0.0,20.0,start,true,ESTIMATED_GEOMETRY,development yaw-grid candidate; 10.1 degree temporal prior did not explain the center overlap
+right_final_estimated,9.14_caochangyou.pcap,30.5,80.0,82.0,120.0,right,true,ESTIMATED_GEOMETRY,development yaw-grid candidate with weak held-out overlap; retain as diagnostic only
+left_initial_estimated,9.14_caochangzuo.pcap,0.0,0.0,0.0,20.0,start,true,ESTIMATED_GEOMETRY,center overlap selects approximately zero yaw; no measured angle exists
+left_final_estimated,9.14_caochangzuo.pcap,-0.5,110.0,113.0,122.0,left,true,ESTIMATED_GEOMETRY,development yaw-grid candidate; 6.2 degree temporal prior worsened independent fixed-structure metrics

@@ -5,7 +5,7 @@ import struct
 import numpy as np
 import pytest
 
-from backend.decoder import CaptureError, MAGICS, decode_frame, device_time, scan_pcap
+from backend.decoder import CaptureError, MAGICS, decode_frame, decode_frame_codes, device_time, scan_pcap
 
 
 def payload(distance=1000, pitch=0, yaw=0, intensity=77, factory=0):
@@ -38,6 +38,7 @@ def test_container_precision_and_incomplete_tail(tmp_path, magic):
     points = decode_frame(p, scan.frames[0])
     assert points.shape == (20000, 4)
     np.testing.assert_array_equal(points[0], [0, -16, 0, 77])
+    np.testing.assert_array_equal(decode_frame_codes(p, scan.frames[0])[0], [1000, 0, 0, 77])
     assert scan.frames[0]["device_time"] == 1.123
 
 

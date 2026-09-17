@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "algorithm": "SHA-256",
+  "files": {
+    "web/backend/decoder.py": "4149f6567dce67e7916b3d09eeb9c3c0a8aaab4cf88e7378ef56e2c061f19212",
+    "web/backend/sweeps.py": "0f2e3c5807a2759b6fe68c26d6f84b0d5eca2427f24db02a8c25e36eadacc457",
+    "web/backend/registration_se2.py": "ba70758b3a6fd04c317353ce7d1027bf4047284949c009a31878807bdac8a21b",
+    "web/backend/mapping.py": "f6e5722c3d31eef3b1c5132e50b77c9ae27ec560e8d8da23f1e3abe825d95860",
+    "web/backend/mapping.yaml": "f25d2b83cdedb414e6e369f24f6e69145db5193f8aa032b96c560edf06cf7e0f",
+    "web/tests/test_sweeps.py": "017be2a64d969f41db174b42146a7f87f3a006955c9b6f4c3263b28ad679d674",
+    "web/tests/test_registration_se2.py": "19fd30e03ff856ba6aaf29b5e598fbc21ef778ef6eb6b7cfb279532a0ec828ee",
+    "tools/analyze_sweep_coverage.py": "e25d7ae32ca9706161dc6e954430d9a24db65487fc07db1dd9130811b1a1cd3b",
+    "tools/verify_sweep_streaming.py": "a0133474befbc0af374d8d9d0927bcaa9f93f5dfd90d75fef42fefd3fa0120e0",
+    "tools/compare_se2_registration.py": "29be100302f3bcb208e040e96e5fa1be56126bde5f4dfafdbddb95bb6b2a30db"
+  }
+}

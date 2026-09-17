@@ -1,0 +1,35 @@
+[
+  {
+    "name": "dump-ct-map",
+    "trajectory_samples": 1540,
+    "static_max_translation": 22.867080529535162,
+    "static_max_rotation_deg": 179.94969430397168,
+    "final_translation": 20.51712106074936,
+    "environment": "WSL2_HUMBLE_X86_64",
+    "imu_used": false,
+    "global_optimization": false,
+    "geometric_acceptance": "NOT_EVALUATED"
+  },
+  {
+    "name": "dump-ct-bootstrap",
+    "trajectory_samples": 1511,
+    "static_max_translation": 4.233270456269597,
+    "static_max_rotation_deg": 179.45522967636143,
+    "final_translation": 11.639063778415943,
+    "environment": "WSL2_HUMBLE_X86_64",
+    "imu_used": false,
+    "global_optimization": false,
+    "geometric_acceptance": "NOT_EVALUATED"
+  },
+  {
+    "name": "dump-ct-snapshot",
+    "trajectory_samples": 1511,
+    "static_max_translation": 19.765479697674454,
+    "static_max_rotation_deg": 179.46772029423173,
+    "final_translation": 29.94412207638768,
+    "environment": "WSL2_HUMBLE_X86_64",
+    "imu_used": false,
+    "global_optimization": false,
+    "geometric_acceptance": "NOT_EVALUATED"
+  }
+]

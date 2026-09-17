@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "command": "tools\\analyze_sweep_coverage.py 2\\9.14_caochangyou.pcap 2\\9.14_caochangyidong.pcap --output-dir Plan\\evidence\\mapping-repair\\20260914-sweeps",
+  "environment": {
+    "platform": "Windows-11-10.0.26200-SP0",
+    "python": "3.12.10",
+    "numpy": "2.5.3",
+    "pid": 60988
+  },
+  "reports": [
+    {
+      "input": "D:\\Code\\radar\\2\\9.14_caochangyidong.pcap",
+      "json": "9.14_caochangyidong-sweeps.json",
+      "markdown": "9.14_caochangyidong-sweeps.md",
+      "sha256": "02d55634baec13211fcc251e2f77135caf983c10f4893560fe69ea1ed3423f9c"
+    },
+    {
+      "input": "D:\\Code\\radar\\2\\9.14_caochangyou.pcap",
+      "json": "9.14_caochangyou-sweeps.json",
+      "markdown": "9.14_caochangyou-sweeps.md",
+      "sha256": "ceca9fc08758f3c35f7b8b1c024bdab90e65f49ab65e39102cdd58dc0c5292db"
+    },
+    {
+      "input": "D:\\Code\\radar\\2\\9.14_caochangzhong2.pcap",
+      "json": "9.14_caochangzhong2-sweeps.json",
+      "markdown": "9.14_caochangzhong2-sweeps.md",
+      "sha256": "2caa68d6491cb2ba6fd9bae86e04104038fbbf4c7a4e349fa6dcc211adc743ce"
+    },
+    {
+      "input": "D:\\Code\\radar\\2\\9.14_caochangzuo.pcap",
+      "json": "9.14_caochangzuo-sweeps.json",
+      "markdown": "9.14_caochangzuo-sweeps.md",
+      "sha256": "b2365c97bd22bba7d24ad14ceee365b59b4dba4f6f8e9721e694f3b8c6ef63c6"
+    }
+  ]
+}

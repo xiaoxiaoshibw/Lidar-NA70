@@ -1,0 +1,212 @@
+{
+  "version": "capture-preflight-v1",
+  "status": "时间戳异常",
+  "reasons": [
+    "设备或采集时间异常，不能进行真实移动验收"
+  ],
+  "can_enter_mapping": false,
+  "real_movement_acceptance": "NOT_EVALUATED",
+  "diagnostics": {
+    "config": {
+      "sample_frames": 12,
+      "sample_points": 2000,
+      "near_range_m": 10.0
+    },
+    "packet_time_anomalies": [
+      {
+        "frame": 1277,
+        "packet": 1,
+        "kind": "device_backwards",
+        "time": 687.512,
+        "previous": 687.766
+      }
+    ],
+    "packet_time_diagnostics_available": true,
+    "repeated_ray_range_std_m": 0.008000000000002672,
+    "repeated_ray_count": 8036,
+    "sampled_frame_distances": [
+      {
+        "to_frame": 140,
+        "nearest_distance_median_m": 2.7470643578136644,
+        "note": "sampled frame distances; not motion or registration coverage"
+      },
+      {
+        "to_frame": 281,
+        "nearest_distance_median_m": 1.782840743263689,
+        "note": "sampled frame distances; not motion or registration coverage"
+      },
+      {
+        "to_frame": 422,
+        "nearest_distance_median_m": 1.128319644431461,
+        "note": "sampled frame distances; not motion or registration coverage"
+      },
+      {
+        "to_frame": 563,
+        "nearest_distance_median_m": 1.175953389152972,
+        "note": "sampled frame distances; not motion or registration coverage"
+      },
+      {
+        "to_frame": 704,
+        "nearest_distance_median_m": 1.1584871211741912,
+        "note": "sampled frame distances; not motion or registration coverage"
+      },
+      {
+        "to_frame": 845,
+        "nearest_distance_median_m": 1.0553919226819162,
+        "note": "sampled frame distances; not motion or registration coverage"
+      },
+      {
+        "to_frame": 986,
+        "nearest_distance_median_m": 0.7085710730219228,
+        "note": "sampled frame distances; not motion or registration coverage"
+      },
+      {
+        "to_frame": 1127,
+        "nearest_distance_median_m": 1.4487034335825395,
+        "note": "sampled frame distances; not motion or registration coverage"
+      },
+      {
+        "to_frame": 1268,
+        "nearest_distance_median_m": 0.5277382972906367,
+        "note": "sampled frame distances; not motion or registration coverage"
+      },
+      {
+        "to_frame": 1409,
+        "nearest_distance_median_m": 1.3189871633365775,
+        "note": "sampled frame distances; not motion or registration coverage"
+      },
+      {
+        "to_frame": 1550,
+        "nearest_distance_median_m": 2.2760467367241515,
+        "note": "sampled frame distances; not motion or registration coverage"
+      }
+    ],
+    "near_geometry_hint": "近距点只提示距离，固定结构及多方向约束须现场确认",
+    "sha256": "5ce9d5999051ae9ee6f42d067c70e50aaa3fa8272634cdf8ad64f82657673409",
+    "size": 227542960,
+    "frame_count": 1551,
+    "duration": 155.0078580379486,
+    "fps": 10.005944341352606,
+    "valid_packets": 155002,
+    "invalid_packets": 0,
+    "warnings": [],
+    "timestamp_backwards": [],
+    "device_timestamp_backwards": [],
+    "samples": [
+      {
+        "frame": 0,
+        "points": 15272,
+        "sampled_points": 1909,
+        "spacing_m": 0.050689362963577775,
+        "near_points": 84,
+        "range_p25_m": 23.82400131225586
+      },
+      {
+        "frame": 140,
+        "points": 16316,
+        "sampled_points": 1813,
+        "spacing_m": 0.05012458768141022,
+        "near_points": 0,
+        "range_p25_m": 28.527999877929688
+      },
+      {
+        "frame": 281,
+        "points": 15311,
+        "sampled_points": 1914,
+        "spacing_m": 0.05233812825355548,
+        "near_points": 0,
+        "range_p25_m": 24.535999298095703
+      },
+      {
+        "frame": 422,
+        "points": 15186,
+        "sampled_points": 1899,
+        "spacing_m": 0.05117187186513968,
+        "near_points": 0,
+        "range_p25_m": 24.104001998901367
+      },
+      {
+        "frame": 563,
+        "points": 15687,
+        "sampled_points": 1961,
+        "spacing_m": 0.0474957189174071,
+        "near_points": 0,
+        "range_p25_m": 24.511999130249023
+      },
+      {
+        "frame": 704,
+        "points": 15700,
+        "sampled_points": 1963,
+        "spacing_m": 0.05037277314366718,
+        "near_points": 0,
+        "range_p25_m": 26.360000610351562
+      },
+      {
+        "frame": 845,
+        "points": 15135,
+        "sampled_points": 1892,
+        "spacing_m": 0.05209587209039725,
+        "near_points": 0,
+        "range_p25_m": 24.30400276184082
+      },
+      {
+        "frame": 986,
+        "points": 16059,
+        "sampled_points": 1785,
+        "spacing_m": 0.049774135286484604,
+        "near_points": 0,
+        "range_p25_m": 26.560001373291016
+      },
+      {
+        "frame": 1127,
+        "points": 15826,
+        "sampled_points": 1979,
+        "spacing_m": 0.050610552566497095,
+        "near_points": 0,
+        "range_p25_m": 27.631999969482422
+      },
+      {
+        "frame": 1268,
+        "points": 15057,
+        "sampled_points": 1883,
+        "spacing_m": 0.05188692224951163,
+        "near_points": 0,
+        "range_p25_m": 24.50400161743164
+      },
+      {
+        "frame": 1409,
+        "points": 16279,
+        "sampled_points": 1809,
+        "spacing_m": 0.04924885608469573,
+        "near_points": 0,
+        "range_p25_m": 26.81599998474121
+      },
+      {
+        "frame": 1550,
+        "points": 313,
+        "sampled_points": 313,
+        "spacing_m": 0.05676313062351996,
+        "near_points": 0,
+        "range_p25_m": 41.02399826049805
+      }
+    ],
+    "stationary_noise": null,
+    "stationary_noise_reason": "需要可信静止区间和重复射线对应；帧间差异不能作为噪声或真实运动真值",
+    "motion_evidence": "user_record_only; point_cloud_motion_not_verified"
+  },
+  "metadata": {
+    "mode": "manual",
+    "scene_static": false,
+    "near_geometry": false,
+    "translation": false,
+    "start_return": false,
+    "no_imu": false,
+    "movement_start": null,
+    "return_time": null,
+    "pauses": "",
+    "route": "用户确认全程静止；负向回归",
+    "scene": "",
+    "device": "",
+    "initialization_frames": 0
+  }
+}

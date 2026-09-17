@@ -1,0 +1,367 @@
+{
+  "environment": "Windows-11-10.0.26200-SP0",
+  "python": "3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]",
+  "numpy": "2.5.3",
+  "analysis_version": "na70-ray-history-v3",
+  "results": [
+    {
+      "file": "2.pcap",
+      "folder": "04dbe3d2-071a-47d1-9e58-08b59bad3991",
+      "size": 225157460,
+      "frames": 1534,
+      "wall_seconds": 25.885,
+      "reported_seconds": 25.644,
+      "stable_ray_count": 880467,
+      "candidate_points": 922020,
+      "moving_points": 2000,
+      "moving_frames": 159,
+      "moving_tracks": 11,
+      "band_count": 11,
+      "masks_sha256": "2fc24982d32207f379891948298565ca741321db8f25ec41d342025cfcf14b84",
+      "masks_bytes": 30675400,
+      "bands": [
+        {
+          "band_id": 1,
+          "label": "B001",
+          "score": 0.6341,
+          "time_start": 20.7008,
+          "time_end": 22.3008,
+          "point_count": 146,
+          "displacement": 1.4747,
+          "speed": 0.9216
+        },
+        {
+          "band_id": 8,
+          "label": "B008",
+          "score": 0.5988,
+          "time_start": 120.6045,
+          "time_end": 122.0045,
+          "point_count": 167,
+          "displacement": 1.1311,
+          "speed": 0.8079
+        },
+        {
+          "band_id": 7,
+          "label": "B007",
+          "score": 0.5814,
+          "time_start": 90.9049,
+          "time_end": 92.2034,
+          "point_count": 81,
+          "displacement": 1.1084,
+          "speed": 0.8536
+        },
+        {
+          "band_id": 3,
+          "label": "B003",
+          "score": 0.5628,
+          "time_start": 28.301,
+          "time_end": 29.6011,
+          "point_count": 165,
+          "displacement": 1.443,
+          "speed": 1.11
+        },
+        {
+          "band_id": 6,
+          "label": "B006",
+          "score": 0.5491,
+          "time_start": 151.9057,
+          "time_end": 153.2057,
+          "point_count": 503,
+          "displacement": 1.5937,
+          "speed": 1.2259
+        },
+        {
+          "band_id": 0,
+          "label": "B000",
+          "score": 0.5389,
+          "time_start": 6.9003,
+          "time_end": 8.5003,
+          "point_count": 254,
+          "displacement": 1.0397,
+          "speed": 0.6498
+        },
+        {
+          "band_id": 2,
+          "label": "B002",
+          "score": 0.533,
+          "time_start": 141.1053,
+          "time_end": 142.4053,
+          "point_count": 182,
+          "displacement": 1.1059,
+          "speed": 0.8507
+        },
+        {
+          "band_id": 9,
+          "label": "B009",
+          "score": 0.5249,
+          "time_start": 131.9049,
+          "time_end": 133.1056,
+          "point_count": 229,
+          "displacement": 1.1289,
+          "speed": 0.9402
+        },
+        {
+          "band_id": 5,
+          "label": "B005",
+          "score": 0.5146,
+          "time_start": 141.0052,
+          "time_end": 142.4053,
+          "point_count": 92,
+          "displacement": 1.4327,
+          "speed": 1.0233
+        },
+        {
+          "band_id": 4,
+          "label": "B004",
+          "score": 0.4726,
+          "time_start": 54.9021,
+          "time_end": 56.6024,
+          "point_count": 96,
+          "displacement": 1.1038,
+          "speed": 0.6492
+        },
+        {
+          "band_id": 10,
+          "label": "B010",
+          "score": 0.4659,
+          "time_start": 53.102,
+          "time_end": 54.502,
+          "point_count": 85,
+          "displacement": 1.2742,
+          "speed": 0.9101
+        }
+      ]
+    },
+    {
+      "file": "1.pcap",
+      "folder": "4c0d511d-2ca0-4060-9158-d8c6bf9b4010",
+      "size": 97141988,
+      "frames": 662,
+      "wall_seconds": 3.9028,
+      "reported_seconds": 3.853,
+      "stable_ray_count": 136534,
+      "candidate_points": 119203,
+      "moving_points": 1611,
+      "moving_frames": 120,
+      "moving_tracks": 7,
+      "band_count": 7,
+      "masks_sha256": "d61c4d09d6e90c121bd67389781a2bdcb286650e49d8baa8898dc7089367b2d3",
+      "masks_bytes": 13234600,
+      "bands": [
+        {
+          "band_id": 1,
+          "label": "B001",
+          "score": 0.8338,
+          "time_start": 36.4013,
+          "time_end": 39.1016,
+          "point_count": 335,
+          "displacement": 3.6878,
+          "speed": 1.3657
+        },
+        {
+          "band_id": 0,
+          "label": "B000",
+          "score": 0.7327,
+          "time_start": 6.3002,
+          "time_end": 7.9003,
+          "point_count": 129,
+          "displacement": 2.66,
+          "speed": 1.6624
+        },
+        {
+          "band_id": 2,
+          "label": "B002",
+          "score": 0.7027,
+          "time_start": 17.1006,
+          "time_end": 19.4007,
+          "point_count": 159,
+          "displacement": 2.7398,
+          "speed": 1.1912
+        },
+        {
+          "band_id": 4,
+          "label": "B004",
+          "score": 0.6053,
+          "time_start": 46.5018,
+          "time_end": 47.9018,
+          "point_count": 333,
+          "displacement": 2.6772,
+          "speed": 1.9124
+        },
+        {
+          "band_id": 3,
+          "label": "B003",
+          "score": 0.5879,
+          "time_start": 37.2016,
+          "time_end": 38.8014,
+          "point_count": 115,
+          "displacement": 1.8957,
+          "speed": 1.1849
+        },
+        {
+          "band_id": 5,
+          "label": "B005",
+          "score": 0.5274,
+          "time_start": 42.4015,
+          "time_end": 43.8016,
+          "point_count": 218,
+          "displacement": 2.0898,
+          "speed": 1.4927
+        },
+        {
+          "band_id": 6,
+          "label": "B006",
+          "score": 0.5162,
+          "time_start": 1.8001,
+          "time_end": 3.2001,
+          "point_count": 322,
+          "displacement": 1.6523,
+          "speed": 1.1802
+        }
+      ]
+    },
+    {
+      "file": "002.pcap",
+      "folder": "7939e3ee-3b4d-4bd9-a522-c51fd394fe1f",
+      "size": 182639424,
+      "frames": 1245,
+      "wall_seconds": 16.3242,
+      "reported_seconds": 16.15,
+      "stable_ray_count": 727603,
+      "candidate_points": 545776,
+      "moving_points": 525,
+      "moving_frames": 63,
+      "moving_tracks": 4,
+      "band_count": 4,
+      "masks_sha256": "5db317d876df2a1c039f587fbf382d265fffede5765ed111dbeeb675e9d284f9",
+      "masks_bytes": 24881800,
+      "bands": [
+        {
+          "band_id": 0,
+          "label": "B000",
+          "score": 0.6268,
+          "time_start": 36.0014,
+          "time_end": 37.3014,
+          "point_count": 166,
+          "displacement": 1.6423,
+          "speed": 1.2632
+        },
+        {
+          "band_id": 3,
+          "label": "B003",
+          "score": 0.5417,
+          "time_start": 17.7007,
+          "time_end": 19.0007,
+          "point_count": 68,
+          "displacement": 1.4192,
+          "speed": 1.0917
+        },
+        {
+          "band_id": 1,
+          "label": "B001",
+          "score": 0.5094,
+          "time_start": 5.2002,
+          "time_end": 6.5003,
+          "point_count": 92,
+          "displacement": 1.3237,
+          "speed": 1.0182
+        },
+        {
+          "band_id": 2,
+          "label": "B002",
+          "score": 0.4619,
+          "time_start": 120.4045,
+          "time_end": 122.0046,
+          "point_count": 199,
+          "displacement": 1.1918,
+          "speed": 0.7448
+        }
+      ]
+    },
+    {
+      "file": "4.pcap",
+      "folder": "a06c1535-cb4f-43ad-a88a-6a0a01d5213d",
+      "size": 34337668,
+      "frames": 234,
+      "wall_seconds": 0.5863,
+      "reported_seconds": 0.575,
+      "stable_ray_count": 14005,
+      "candidate_points": 1,
+      "moving_points": 0,
+      "moving_frames": 0,
+      "moving_tracks": 0,
+      "band_count": 0,
+      "masks_sha256": "19473af9ca8fb243a4c13116d9ce0cfbd690ba35a7b8964aa56d6477d2fef147",
+      "masks_bytes": 4677800,
+      "bands": []
+    },
+    {
+      "file": "003.pcap",
+      "folder": "defd2235-d6fc-406e-99bb-32d10b63c06e",
+      "size": 65756148,
+      "frames": 448,
+      "wall_seconds": 2.9174,
+      "reported_seconds": 2.88,
+      "stable_ray_count": 111600,
+      "candidate_points": 65691,
+      "moving_points": 666,
+      "moving_frames": 84,
+      "moving_tracks": 5,
+      "band_count": 5,
+      "masks_sha256": "ac3a5a6d626d9d7cfbd1412cd8c220e9cf9cd9a1e6ea4c8b8e0fe8857992c137",
+      "masks_bytes": 8958600,
+      "bands": [
+        {
+          "band_id": 1,
+          "label": "B001",
+          "score": 0.6543,
+          "time_start": 36.7014,
+          "time_end": 38.5015,
+          "point_count": 204,
+          "displacement": 1.9553,
+          "speed": 1.0863
+        },
+        {
+          "band_id": 0,
+          "label": "B000",
+          "score": 0.6312,
+          "time_start": 21.0011,
+          "time_end": 22.6009,
+          "point_count": 115,
+          "displacement": 1.932,
+          "speed": 1.2077
+        },
+        {
+          "band_id": 2,
+          "label": "B002",
+          "score": 0.5798,
+          "time_start": 4.2002,
+          "time_end": 5.5002,
+          "point_count": 128,
+          "displacement": 1.0802,
+          "speed": 0.8309
+        },
+        {
+          "band_id": 4,
+          "label": "B004",
+          "score": 0.5516,
+          "time_start": 2.9001,
+          "time_end": 4.1001,
+          "point_count": 148,
+          "displacement": 1.0814,
+          "speed": 0.9012
+        },
+        {
+          "band_id": 3,
+          "label": "B003",
+          "score": 0.5065,
+          "time_start": 13.5005,
+          "time_end": 14.8005,
+          "point_count": 71,
+          "displacement": 1.2438,
+          "speed": 0.9567
+        }
+      ]
+    }
+  ]
+}

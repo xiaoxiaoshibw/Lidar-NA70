@@ -1,0 +1,51 @@
+{
+  "version": "na70-turntable-map-v1",
+  "status": "ready",
+  "label": "DEVELOPMENT / DIAGNOSTIC / ESTIMATED_ANGLE",
+  "created_at": 1789444403.550226,
+  "elapsed_seconds": 82.577,
+  "command": "tools\\build_turntable_map.py --pcap 2\\9.14_caochangzhong2.pcap --pcap 2\\9.14_caochangzuo.pcap --pcap 2\\9.14_caochangyou.pcap --angle-log web\\backend\\angle_log.20260914-development.csv --calibration web\\backend\\turntable_calibration.20260914-assumed.json --output Plan\\evidence\\turntable\\20260915-development-final",
+  "sources": [
+    "D:\\Code\\radar\\2\\9.14_caochangzhong2.pcap",
+    "D:\\Code\\radar\\2\\9.14_caochangzuo.pcap",
+    "D:\\Code\\radar\\2\\9.14_caochangyou.pcap"
+  ],
+  "source_hashes": {
+    "D:\\Code\\radar\\2\\9.14_caochangzhong2.pcap": "2caa68d6491cb2ba6fd9bae86e04104038fbbf4c7a4e349fa6dcc211adc743ce",
+    "D:\\Code\\radar\\2\\9.14_caochangzuo.pcap": "b2365c97bd22bba7d24ad14ceee365b59b4dba4f6f8e9721e694f3b8c6ef63c6",
+    "D:\\Code\\radar\\2\\9.14_caochangyou.pcap": "ceca9fc08758f3c35f7b8b1c024bdab90e65f49ab65e39102cdd58dc0c5292db"
+  },
+  "code_hashes": {
+    "D:\\Code\\radar\\web\\backend\\turntable.py": "928f6ee23f35cc467bd308391b8a1a0a11b4a0dd560808504b5d749bf12ed037",
+    "D:\\Code\\radar\\web\\backend\\turntable_jobs.py": "14ae91c3c6952cafeb0da1f98dbf06578afd2314b8c4d8f5588bd948c0b8b5bd",
+    "D:\\Code\\radar\\web\\backend\\decoder.py": "4149f6567dce67e7916b3d09eeb9c3c0a8aaab4cf88e7378ef56e2c061f19212",
+    "D:\\Code\\radar\\web\\backend\\mapping.py": "f6e5722c3d31eef3b1c5132e50b77c9ae27ec560e8d8da23f1e3abe825d95860",
+    "D:\\Code\\radar\\tools\\build_turntable_map.py": "0db62d0042cfc58c3ad85199ab71ddd1c96841651e73fdc2b0111f2973f99d28"
+  },
+  "python": "3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]",
+  "numpy": "2.5.3",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "decoder_version": "ros2-na70-16mm-v1",
+  "map_version": "na70-voxel-map-v1",
+  "accepted_submaps": 5,
+  "rejected_submaps": 0,
+  "output_directory": "D:\\Code\\radar\\Plan\\evidence\\turntable\\20260915-development-final",
+  "artifacts": {
+    "angle_log.csv": "angle_log.csv",
+    "turntable_calibration.json": "turntable_calibration.json",
+    "config.yaml": "config.yaml",
+    "source_hashes.json": "source_hashes.json",
+    "submap_quality.jsonl": "submap_quality.jsonl",
+    "transforms.json": "transforms.json",
+    "validation.json": "validation.json",
+    "map_metadata.json": "map_metadata.json",
+    "map.ply": "map.ply",
+    "map.pcd": "map.pcd",
+    "source_colored_preview.png": "source_colored_preview.png",
+    "baseline_preview.png": "baseline_preview.png",
+    "geometry_measurements.json": "geometry_measurements.json",
+    "README.md": "README.md",
+    "evidence_zip": "turntable-development-evidence.zip",
+    "preflight": "preflight.json"
+  }
+}

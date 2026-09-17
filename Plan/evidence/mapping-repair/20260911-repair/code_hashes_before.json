@@ -1,0 +1,26 @@
+[
+  {
+    "Path": "D:\\Code\\radar\\web\\backend\\mapping.py",
+    "Hash": "9E8B7790EEAE7E3B4FCD054E6CD6FF7C10B2EA2D193D4463FB0C717B4726FA10"
+  },
+  {
+    "Path": "D:\\Code\\radar\\web\\backend\\mapping_jobs.py",
+    "Hash": "3D71B8D6D44B37A6EAF9D757F14647CA2150940BDCAC07B23B2AACB18A0F0224"
+  },
+  {
+    "Path": "D:\\Code\\radar\\web\\backend\\app.py",
+    "Hash": "36BB77A899339271B23B1CC00122E53C523AC8ADEA4EE92242513DDE0CA5870E"
+  },
+  {
+    "Path": "D:\\Code\\radar\\web\\backend\\mapping.yaml",
+    "Hash": "519CEFAB15BF4F679842E325499DE68B8DCFE045C3613436058BF5BDD1E53191"
+  },
+  {
+    "Path": "D:\\Code\\radar\\web\\frontend\\src\\main.tsx",
+    "Hash": "12127A20B4DB85EFF77C91D31BD5EEE3D350079DFFA313F4C09DD51626D1EF3F"
+  },
+  {
+    "Path": "D:\\Code\\radar\\web\\frontend\\src\\CloudView.tsx",
+    "Hash": "B0744FE0E863B8D23CA374AD0E350A7356BB83045DBC7A1EC2E10AAE0AF4AAAD"
+  }
+]

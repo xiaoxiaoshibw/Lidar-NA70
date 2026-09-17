@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "status": "assumed-development",
+  "angle_unit": "deg",
+  "positive_direction": "counter_clockwise_about_positive_z",
+  "map_turntable": {"translation_m": [0.0, 0.0, 0.0], "rpy_deg": [0.0, 0.0, 0.0]},
+  "turntable_lidar": {"translation_m": [0.0, 0.0, 0.0], "rpy_deg": [0.0, 0.0, 0.0]},
+  "zero_reference": "center capture first stationary view; DEVELOPMENT assumption",
+  "device": "unknown; no encoder log was recorded",
+  "angular_resolution_deg": null,
+  "repeatability_deg": null,
+  "limitations": [
+    "Rotation-axis offset and mounting attitude were not measured.",
+    "This calibration is assumed and must not be used for formal accuracy acceptance."
+  ]
+}

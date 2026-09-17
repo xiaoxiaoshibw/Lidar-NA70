@@ -59,6 +59,15 @@ test('dense default, full real capture, camera controls and sparse-mode recovery
   await page.getByTitle('暂停', { exact: true }).click();
   expect(Number(await page.getByLabel('回放时间轴').inputValue())).toBeGreaterThan(15);
   await expect(page.getByTestId('point-count')).toContainText('原始 4,000,000 点');
+  await page.getByLabel('回放时间轴').fill('400');
+  await expect(page.locator('.loading-frame')).toHaveCount(0);
+  await page.getByTitle('播放', { exact: true }).click();
+  await page.waitForTimeout(3000);
+  await page.getByTitle('暂停', { exact: true }).click();
+  const rollingFrame = Number(await page.getByLabel('回放时间轴').inputValue());
+  expect(rollingFrame).toBeGreaterThan(420);
+  const rollingFPS = Number(await page.getByTestId('fps').textContent());
+  expect(rollingFPS).toBeGreaterThanOrEqual(30);
   await page.getByLabel('回放时间轴').fill('1533');
   await expect(page.locator('.canvas-meta')).toContainText('不完整帧');
   await page.locator('.file-select').filter({ hasText: '1.pcap' }).first().click();
@@ -66,6 +75,6 @@ test('dense default, full real capture, camera controls and sparse-mode recovery
   await expect(page.locator('.canvas-meta')).toContainText('200 帧叠加', { timeout: 60000 });
   await expect(page.getByTestId('point-count')).toContainText('原始 4,000,000 点');
   await page.screenshot({ path: path.resolve('../test-results/dense-file1.png') });
-  fs.writeFileSync(path.resolve('../test-results/density-metrics.json'), JSON.stringify({ defaultCount, defaultFPS, fullCount, fullFPS, loadSeconds, errors }, null, 2));
+  fs.writeFileSync(path.resolve('../test-results/density-metrics.json'), JSON.stringify({ defaultCount, defaultFPS, fullCount, fullFPS, loadSeconds, rollingFrame, rollingFPS, errors }, null, 2));
   expect(errors).toEqual([]);
 });

@@ -1,0 +1,72 @@
+{
+  "job_id": "f48f7a3c-2682-4899-a78d-8f3e79adeb48",
+  "job_directory": "D:\\Code\\radar\\web\\data\\defcea4d-51db-4f7f-b226-c5ffac4805df\\mapping\\f48f7a3c-2682-4899-a78d-8f3e79adeb48",
+  "metrics": {
+    "frame_count": 1551,
+    "initialization_frames": 300,
+    "registered_frames": 0,
+    "recovered_frames": 0,
+    "total_failure_ratio": 0.8066,
+    "accepted_frames": 300,
+    "rejected_frames": 2,
+    "tracking_lost_frames": 1249,
+    "keyframe_count": 1,
+    "accepted_ratio": 0.1934,
+    "rejected_ratio": 0.0013,
+    "first_tracking_lost_time": 30.20107913017273,
+    "max_continuous_tracking_s": 29.9011,
+    "mean_overlap": 0.0024,
+    "mean_rmse_m": 0.27776,
+    "max_translation_step_m": 0.26684,
+    "max_rotation_step_deg": 0.65374,
+    "trajectory_length_m": 0.0,
+    "closure_translation_m": 0.0,
+    "closure_rotation_deg": 0.0,
+    "segment_count": 1,
+    "map_point_count": 40000,
+    "map_voxel_count": 39053,
+    "map_bounds": {
+      "minimum": [
+        6.655248359992463,
+        -44.89459457397461,
+        -12.296019887593056
+      ],
+      "maximum": [
+        78.80940246582031,
+        45.24896176656087,
+        24.256927490234375
+      ]
+    },
+    "initialization_failed": false,
+    "chunk_count": 182
+  },
+  "periods": {
+    "stationary": {
+      "frames": 600,
+      "states": {
+        "reference": 300,
+        "quality_failed": 2,
+        "tracking_lost": 298
+      },
+      "reasons": {
+        "stationary_assumption": 300,
+        "rmse_high": 2,
+        "tracking_lost_after_3_failures": 1,
+        "reinit_failed": 297
+      },
+      "registered_frames": 0
+    },
+    "moving": {
+      "frames": 951,
+      "states": {
+        "tracking_lost": 951
+      },
+      "reasons": {
+        "reinit_failed": 951
+      },
+      "registered_frames": 0
+    }
+  },
+  "geometric_acceptance": "NOT_EVALUATED",
+  "note": "Period labels use user-declared motion boundary; no external trajectory truth or closure claim."
+}

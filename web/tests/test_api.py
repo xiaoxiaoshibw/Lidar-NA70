@@ -16,6 +16,14 @@ def wait_ready(client, identifier):
     raise AssertionError("indexing did not finish")
 
 
+def wait_analysis(client, identifier):
+    for _ in range(300):
+        meta = client.get(f"/api/captures/{identifier}").json()
+        if meta["analysis_status"] in ("ready", "error"): return meta
+        time.sleep(.01)
+    raise AssertionError("analysis did not finish")
+
+
 def test_upload_binary_pagination_delete_and_restart(tmp_path):
     source = make_pcap(tmp_path / "source.pcap", [payload()] * 101)
     root = tmp_path / "store"
@@ -50,3 +58,28 @@ def test_invalid_upload_and_path_id(tmp_path):
             assert client.post('/api/captures', params=dict(id=identifier, filename="bad.pcap"), content=data).status_code == 202
             assert wait_ready(client, identifier)["status"] == "error"
         assert client.post('/api/captures?id=not-uuid&filename=bad', content=b"x").status_code == 422
+
+
+def test_analysis_job_mask_and_restart(tmp_path):
+    source = make_pcap(tmp_path / "motion.pcap", [payload()] * 600)
+    root = tmp_path / "store"
+    identifier = str(uuid4())
+    with TestClient(create_app(root)) as client:
+        assert client.post('/api/captures', params=dict(id=identifier, filename="motion.pcap"), content=source.read_bytes()).status_code == 202
+        assert wait_ready(client, identifier)["frame_count"] == 6
+        response = client.post(f"/api/captures/{identifier}/analysis", params={"background_seconds": .2})
+        assert response.status_code == 202
+        meta = wait_analysis(client, identifier)
+        assert meta["analysis_status"] == "ready" and meta["analysis_progress"] == 100
+        summary = client.get(f"/api/captures/{identifier}/analysis").json()
+        assert summary["frame_count"] == 6 and "frames" not in summary
+        csv_text = client.get(f"/api/captures/{identifier}/analysis.csv").text
+        assert "foreground_points" in csv_text and len(csv_text.splitlines()) == 7
+        data = client.get(f"/api/captures/{identifier}/analysis/frames/5").content
+        length, = struct.unpack_from("<I", data)
+        header = json.loads(data[4:4 + length])
+        assert header["version"] == 1 and header["point_count"] == 20000
+        assert len(data) - length - 4 == 20000
+    with TestClient(create_app(root)) as client:
+        assert client.get(f"/api/captures/{identifier}").json()["analysis_status"] == "ready"
+        assert client.get(f"/api/captures/{identifier}/analysis").status_code == 200

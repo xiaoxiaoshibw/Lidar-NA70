@@ -1,0 +1,85 @@
+FFF                                                                      [100%]
+================================== FAILURES ===================================
+______________ test_moving_sensor_preserves_world_surfaces[0.0] _______________
+
+rotation = 0.0
+
+    @pytest.mark.parametrize('rotation', [0.0, 1.0])
+    def test_moving_sensor_preserves_world_surfaces(rotation):
+        rng = np.random.default_rng(3)
+        cfg = synthetic_config()
+        world = room(rng)
+        poses = [pose_from([i * .12, 0, 0], i * rotation) for i in range(4)]
+        report = m.run_odometry(load(drive(poses, world, cfg, rng)), list(range(4)), cfg)
+        assert all(f['pose'] is not None for f in report['frames'])
+        bounds = report['map'].bounds()
+        # Noiseless fixture: 2 cm is already much larger than the ICP residual.
+>       np.testing.assert_allclose(bounds['minimum'], [0, 0, 0], atol=.02)
+E       AssertionError: 
+E       Not equal to tolerance rtol=1e-07, atol=0.02
+E       
+E       Mismatched elements: 1 / 3 (33.3%)
+E       Mismatch at index:
+E        [0]: -0.36000000000000004 (ACTUAL), 0 (DESIRED)
+E       Max absolute difference among violations: 0.36
+E       Max relative difference among violations: inf
+E        ACTUAL: array([-0.36,  0.  ,  0.  ])
+E        DESIRED: array([0, 0, 0])
+
+tests\test_mapping_repair.py:18: AssertionError
+______________ test_moving_sensor_preserves_world_surfaces[1.0] _______________
+
+rotation = 1.0
+
+    @pytest.mark.parametrize('rotation', [0.0, 1.0])
+    def test_moving_sensor_preserves_world_surfaces(rotation):
+        rng = np.random.default_rng(3)
+        cfg = synthetic_config()
+        world = room(rng)
+        poses = [pose_from([i * .12, 0, 0], i * rotation) for i in range(4)]
+        report = m.run_odometry(load(drive(poses, world, cfg, rng)), list(range(4)), cfg)
+        assert all(f['pose'] is not None for f in report['frames'])
+        bounds = report['map'].bounds()
+        # Noiseless fixture: 2 cm is already much larger than the ICP residual.
+>       np.testing.assert_allclose(bounds['minimum'], [0, 0, 0], atol=.02)
+E       AssertionError: 
+E       Not equal to tolerance rtol=1e-07, atol=0.02
+E       
+E       Mismatched elements: 2 / 3 (66.7%)
+E       Mismatch at indices:
+E        [0]: -0.3588542818251493 (ACTUAL), 0 (DESIRED)
+E        [1]: -0.4519678616833239 (ACTUAL), 0 (DESIRED)
+E       Max absolute difference among violations: 0.45196786
+E       Max relative difference among violations: inf
+E        ACTUAL: array([-0.358854, -0.451968,  0.      ])
+E        DESIRED: array([0, 0, 0])
+
+tests\test_mapping_repair.py:18: AssertionError
+_________________ test_constant_velocity_initial_is_one_step __________________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x0000022CD959F440>
+
+    def test_constant_velocity_initial_is_one_step(monkeypatch):
+        rng = np.random.default_rng(3)
+        cfg = synthetic_config()
+        poses = [pose_from([i * .12, 0, 0]) for i in range(4)]
+        initial = []
+        register = m.register
+        def spy(source, target, guess, *args, **kwargs):
+            initial.append(guess.copy())
+            return register(source, target, guess, *args, **kwargs)
+        monkeypatch.setattr(m, 'register', spy)
+        m.run_odometry(load(drive(poses, room(rng), cfg, rng)), list(range(4)), cfg)
+>       assert initial[-1][0, 3] == pytest.approx(.36, abs=.005)
+E       assert np.float64(0....3279946731104) == 0.36 ¡À 0.005
+E         
+E         comparison failed
+E         Obtained: 0.47993279946731104
+E         Expected: 0.36 ¡À 0.005
+
+tests\test_mapping_repair.py:33: AssertionError
+=========================== short test summary info ===========================
+FAILED tests/test_mapping_repair.py::test_moving_sensor_preserves_world_surfaces[0.0]
+FAILED tests/test_mapping_repair.py::test_moving_sensor_preserves_world_surfaces[1.0]
+FAILED tests/test_mapping_repair.py::test_constant_velocity_initial_is_one_step
+3 failed in 3.80s

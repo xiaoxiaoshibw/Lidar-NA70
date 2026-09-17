@@ -1,0 +1,2084 @@
+{
+  "data_source": "REAL",
+  "stationary_declaration": "User confirmed first 60s stationary",
+  "policy": "candidate max_rmse = p95 identity nearest-neighbor RMSE on sampled fit frames; not applied automatically",
+  "proposed_max_rmse": 0.3754579294517101,
+  "rows": [
+    {
+      "frame": 30,
+      "time": 3.0000150203704834,
+      "split": "fit",
+      "identity_rmse": 0.18471226390013698,
+      "identity_overlap": 0.9913734392735528,
+      "candidate_translation": 0.0030390608978800933,
+      "candidate_rotation": 0.26865797417922344,
+      "quality": {
+        "state": "accepted",
+        "reason": "accepted",
+        "overlap": 0.9964,
+        "rmse": 0.1586998929869017,
+        "translation_step_m": 0.003039,
+        "rotation_step_m_deg": 0.268658,
+        "iterations": 19,
+        "method": "point_to_plane",
+        "point_count": 4405,
+        "candidate_pose": [
+          [
+            0.9999912746213911,
+            -0.004177170517714089,
+            -4.390388010196131e-05,
+            0.0001728008296639359
+          ],
+          [
+            0.00417725454675662,
+            0.9999890075964604,
+            0.0021296081090947084,
+            0.001044623575560759
+          ],
+          [
+            3.500766128514967e-05,
+            -0.002129772925140394,
+            0.9999977314183022,
+            0.0028486475035837395
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ]
+      }
+    },
+    {
+      "frame": 40,
+      "time": 4.00007700920105,
+      "split": "fit",
+      "identity_rmse": 0.1788099389839358,
+      "identity_overlap": 0.9938583022592674,
+      "candidate_translation": 0.02478395530105989,
+      "candidate_rotation": 0.2130353825689278,
+      "quality": {
+        "state": "accepted",
+        "reason": "accepted",
+        "overlap": 0.9943,
+        "rmse": 0.1759910563423056,
+        "translation_step_m": 0.024784,
+        "rotation_step_m_deg": 0.213035,
+        "iterations": 14,
+        "method": "point_to_plane",
+        "point_count": 4559,
+        "candidate_pose": [
+          [
+            0.9999931847137916,
+            -0.003683114258090792,
+            0.0002553337641052257,
+            -0.005088816989198702
+          ],
+          [
+            0.0036832264189409552,
+            0.9999931200090626,
+            -0.000440201870874179,
+            -0.02271115553348944
+          ],
+          [
+            -0.0002537106936241799,
+            0.00044113932283801593,
+            0.9999998705134825,
+            0.008517734226249915
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ]
+      }
+    },
+    {
+      "frame": 50,
+      "time": 5.000427007675171,
+      "split": "fit",
+      "identity_rmse": 0.16843698093360812,
+      "identity_overlap": 0.9875,
+      "candidate_translation": 0.015785884730925227,
+      "candidate_rotation": 0.018962940692426194,
+      "quality": {
+        "state": "accepted",
+        "reason": "accepted",
+        "overlap": 0.9889,
+        "rmse": 0.16923855410291375,
+        "translation_step_m": 0.015786,
+        "rotation_step_m_deg": 0.018963,
+        "iterations": 9,
+        "method": "point_to_plane",
+        "point_count": 4400,
+        "candidate_pose": [
+          [
+            0.9999999456776464,
+            -0.00032835182290400194,
+            2.880598000680728e-05,
+            -0.00696426324969052
+          ],
+          [
+            0.00032835096164625903,
+            0.9999999456458701,
+            2.9898210436973437e-05,
+            -0.012614521356191778
+          ],
+          [
+            -2.8815795573047424e-05,
+            -2.9888750341616198e-05,
+            0.9999999991381561,
+            -0.006447250970859577
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ]
+      }
+    },
+    {
+      "frame": 60,
+      "time": 6.000170946121216,
+      "split": "fit",
+      "identity_rmse": 0.18056569538301462,
+      "identity_overlap": 0.9951779563719862,
+      "candidate_translation": 0.006266191105044625,
+      "candidate_rotation": 0.10764933005038042,
+      "quality": {
+        "state": "accepted",
+        "reason": "accepted",
+        "overlap": 0.9952,
+        "rmse": 0.17762785762943134,
+        "translation_step_m": 0.006266,
+        "rotation_step_m_deg": 0.107649,
+        "iterations": 11,
+        "method": "point_to_plane",
+        "point_count": 4355,
+        "candidate_pose": [
+          [
+            0.9999988637685646,
+            0.0015062110356165984,
+            -6.156212805596997e-05,
+            -0.0007592497335063553
+          ],
+          [
+            -0.0015062791248707907,
+            0.9999982368328899,
+            -0.0011213627018211187,
+            0.004290403191884814
+          ],
+          [
+            5.987301063517823e-05,
+            0.001121454157441982,
+            0.9999993693776988,
+            0.004503457700276034
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ]
+      }
+    },
+    {
+      "frame": 70,
+      "time": 7.000178098678589,
+      "split": "fit",
+      "identity_rmse": 0.17291016535635675,
+      "identity_overlap": 0.9922779922779923,
+      "candidate_translation": 0.0379121168900595,
+      "candidate_rotation": 0.2359468120744248,
+      "quality": {
+        "state": "accepted",
+        "reason": "accepted",
+        "overlap": 0.9959,
+        "rmse": 0.15798032908937398,
+        "translation_step_m": 0.037912,
+        "rotation_step_m_deg": 0.235947,
+        "iterations": 28,
+        "method": "point_to_plane",
+        "point_count": 4921,
+        "candidate_pose": [
+          [
+            0.9999915410130145,
+            0.0036557604416257486,
+            -0.0018850246710443925,
+            -0.009797348020456452
+          ],
+          [
+            -0.0036553818223917624,
+            0.9999932982078179,
+            0.00020426253319204366,
+            0.036609783742878946
+          ],
+          [
+            0.0018857587728892873,
+            -0.00019737032042070753,
+            0.9999982024777879,
+            -0.0010316555390386792
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ]
+      }
+    },
+    {
+      "frame": 80,
+      "time": 8.000275135040283,
+      "split": "fit",
+      "identity_rmse": 0.2413015580727634,
+      "identity_overlap": 0.9346281383230697,
+      "candidate_translation": 0.01591548224008456,
+      "candidate_rotation": 0.5650868839915031,
+      "quality": {
+        "state": "quality_failed",
+        "reason": "rmse_high",
+        "overlap": 0.9581,
+        "rmse": 0.1879638134320401,
+        "translation_step_m": 0.015915,
+        "rotation_step_m_deg": 0.565087,
+        "iterations": 30,
+        "method": "point_to_plane",
+        "point_count": 4222,
+        "candidate_pose": [
+          [
+            0.9999569168625783,
+            0.00915899406539733,
+            -0.0015090548029819436,
+            -0.010545401767868764
+          ],
+          [
+            -0.009163971909343016,
+            0.9999524804232778,
+            -0.003325434434685364,
+            -0.007441276327743847
+          ],
+          [
+            0.0014785254590844346,
+            0.0033391201003608547,
+            0.9999933320974812,
+            0.009312598085541782
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ]
+      }
+    },
+    {
+      "frame": 90,
+      "time": 9.000246047973633,
+      "split": "fit",
+      "identity_rmse": 0.25229037125196846,
+      "identity_overlap": 0.9372979961215255,
+      "candidate_translation": 0.01747358022012375,
+      "candidate_rotation": 0.7250789463440903,
+      "quality": {
+        "state": "quality_failed",
+        "reason": "rmse_high",
+        "overlap": 0.9683,
+        "rmse": 0.18698639194387062,
+        "translation_step_m": 0.017474,
+        "rotation_step_m_deg": 0.725079,
+        "iterations": 30,
+        "method": "point_to_plane",
+        "point_count": 4641,
+        "candidate_pose": [
+          [
+            0.9999279156829518,
+            0.011747108427060336,
+            -0.0024837233239971995,
+            -0.007369569071311596
+          ],
+          [
+            -0.011756942988460996,
+            0.9999229528650289,
+            -0.00398279113770371,
+            -0.01396365854361689
+          ],
+          [
+            0.0024367456808941238,
+            0.004011705034444065,
+            0.9999889841859277,
+            0.007485432351544074
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ]
+      }
+    },
+    {
+      "frame": 100,
+      "time": 10.000332117080688,
+      "split": "fit",
+      "identity_rmse": 0.22668794374102083,
+      "identity_overlap": 0.9652347209920283,
+      "candidate_translation": 0.05727113804864346,
+      "candidate_rotation": 0.6754994242044952,
+      "quality": {
+        "state": "accepted",
+        "reason": "accepted",
+        "overlap": 0.9962,
+        "rmse": 0.16750988815203144,
+        "translation_step_m": 0.057271,
+        "rotation_step_m_deg": 0.675499,
+        "iterations": 29,
+        "method": "point_to_plane",
+        "point_count": 4516,
+        "candidate_pose": [
+          [
+            0.9999342338978795,
+            0.010992807619886897,
+            -0.0032689539141748515,
+            -0.007088979832763875
+          ],
+          [
+            -0.011001696998973621,
+            0.9999357966426974,
+            -0.002713900454616333,
+            0.054361314536239005
+          ],
+          [
+            0.003238910650761714,
+            0.002749686012429233,
+            0.9999909743015831,
+            -0.016570368137417264
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ]
+      }
+    },
+    {
+      "frame": 110,
+      "time": 11.00034499168396,
+      "split": "fit",
+      "identity_rmse": 0.21074908803184844,
+      "identity_overlap": 0.9646892655367232,
+      "candidate_translation": 0.038203221308975875,
+      "candidate_rotation": 0.3274779863498887,
+      "quality": {
+        "state": "quality_failed",
+        "reason": "rmse_high",
+        "overlap": 0.9609,
+        "rmse": 0.19410854141067457,
+        "translation_step_m": 0.038203,
+        "rotation_step_m_deg": 0.327478,
+        "iterations": 29,
+        "method": "point_to_plane",
+        "point_count": 4248,
+        "candidate_pose": [
+          [
+            0.9999990050209066,
+            -0.0013676987868621658,
+            -0.0003454811507147717,
+            -0.004507794375800205
+          ],
+          [
+            0.001369591332657074,
+            0.9999837245562514,
+            0.005538487355587733,
+            -0.03625671275120906
+          ],
+          [
+            0.00033790054541838583,
+            -0.00553895501289828,
+            0.9999846027817558,
+            -0.011163184524337448
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ]
+      }
+    },
+    {
+      "frame": 120,
+      "time": 12.00040316581726,
+      "split": "fit",
+      "identity_rmse": 0.32698651788581784,
+      "identity_overlap": 0.772168284789644,
+      "candidate_translation": 0.07519445786858193,
+      "candidate_rotation": 1.52879831995888,
+      "quality": {
+        "state": "quality_failed",
+        "reason": "rmse_high",
+        "overlap": 0.9717,
+        "rmse": 0.20632564984023735,
+        "translation_step_m": 0.075194,
+        "rotation_step_m_deg": 1.528798,
+        "iterations": 30,
+        "method": "point_to_plane",
+        "point_count": 4635,
+        "candidate_pose": [
+          [
+            0.999809991661093,
+            -0.015848994773482693,
+            -0.01134856551792981,
+            -0.004772205146771216
+          ],
+          [
+            0.016053115283368585,
+            0.9997068091158473,
+            0.018127142552255122,
+            -0.07358317357126536
+          ],
+          [
+            0.011057941234402874,
+            -0.01830587807456976,
+            0.9997712822258777,
+            -0.014729192760233347
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ]
+      }
+    },
+    {
+      "frame": 130,
+      "time": 13.000396966934204,
+      "split": "fit",
+      "identity_rmse": 0.3764472220937382,
+      "identity_overlap": 0.44782608695652176,
+      "candidate_translation": 1.9504024368427562,
+      "candidate_rotation": 2.8956984980918725,
+      "quality": {
+        "state": "quality_failed",
+        "reason": "rmse_high",
+        "overlap": 0.5847,
+        "rmse": 0.29404674660658786,
+        "translation_step_m": 1.950402,
+        "rotation_step_m_deg": 2.895698,
+        "iterations": 30,
+        "method": "point_to_plane",
+        "point_count": 4370,
+        "candidate_pose": [
+          [
+            0.9997673399283359,
+            0.018722068428012693,
+            -0.010712150409488998,
+            0.1567607077996935
+          ],
+          [
+            -0.018213084418860683,
+            0.9987851780983871,
+            0.04578702400162023,
+            1.939443523501112
+          ],
+          [
+            0.011556364851031554,
+            -0.04558126988961922,
+            0.9988937872800493,
+            -0.13436727757118422
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ]
+      }
+    },
+    {
+      "frame": 140,
+      "time": 14.000442028045654,
+      "split": "fit",
+      "identity_rmse": 0.3529796251202339,
+      "identity_overlap": 0.29666818804198997,
+      "candidate_translation": null,
+      "candidate_rotation": null,
+      "quality": {
+        "state": "degenerate_geometry",
+        "reason": "unobservable_direction",
+        "overlap": 0.0,
+        "rmse": null,
+        "translation_step_m": 0.0,
+        "rotation_step_m_deg": 0.0,
+        "iterations": 5,
+        "method": "point_to_plane",
+        "point_count": 4382
+      }
+    },
+    {
+      "frame": 150,
+      "time": 15.00051498413086,
+      "split": "fit",
+      "identity_rmse": 0.36735057732986903,
+      "identity_overlap": 0.20817426454075905,
+      "candidate_translation": 1.690515473785967,
+      "candidate_rotation": 2.098034879530091,
+      "quality": {
+        "state": "quality_failed",
+        "reason": "overlap_low",
+        "overlap": 0.2459,
+        "rmse": 0.3450931302366012,
+        "translation_step_m": 1.690515,
+        "rotation_step_m_deg": 2.098035,
+        "iterations": 30,
+        "method": "point_to_plane",
+        "point_count": 4453,
+        "candidate_pose": [
+          [
+            0.9995471269025941,
+            0.029172823276957114,
+            0.007381563711155856,
+            -0.17649055258757074
+          ],
+          [
+            -0.029320433030059167,
+            0.9993546970619349,
+            0.02074853409709638,
+            1.6558029850611975
+          ],
+          [
+            -0.0067715070479349064,
+            -0.020955568288643235,
+            0.9997574760160587,
+            0.2915649612342918
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ]
+      }
+    },
+    {
+      "frame": 160,
+      "time": 16.000524044036865,
+      "split": "fit",
+      "identity_rmse": 0.3661606529964398,
+      "identity_overlap": 0.21522866572371524,
+      "candidate_translation": 0.5048479605853264,
+      "candidate_rotation": 1.3705204635830204,
+      "quality": {
+        "state": "quality_failed",
+        "reason": "overlap_low",
+        "overlap": 0.2315,
+        "rmse": 0.3478281722634457,
+        "translation_step_m": 0.504848,
+        "rotation_step_m_deg": 1.37052,
+        "iterations": 30,
+        "method": "point_to_plane",
+        "point_count": 4242,
+        "candidate_pose": [
+          [
+            0.999911378750347,
+            -0.01039223642684715,
+            -0.008320821331406863,
+            -0.3543509961040242
+          ],
+          [
+            0.010224836524448333,
+            0.9997494088652933,
+            -0.01991412040602717,
+            -0.20245739098814505
+          ],
+          [
+            0.008525688454839928,
+            0.019827276553928314,
+            0.9997670687419268,
+            -0.2971831753338714
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ]
+      }
+    },
+    {
+      "frame": 170,
+      "time": 17.00055694580078,
+      "split": "fit",
+      "identity_rmse": 0.367772571904917,
+      "identity_overlap": 0.19304629068122095,
+      "candidate_translation": 0.5631165414616524,
+      "candidate_rotation": 1.5944971358466038,
+      "quality": {
+        "state": "quality_failed",
+        "reason": "overlap_low",
+        "overlap": 0.1971,
+        "rmse": 0.34186720968619905,
+        "translation_step_m": 0.563117,
+        "rotation_step_m_deg": 1.594497,
+        "iterations": 16,
+        "method": "point_to_plane",
+        "point_count": 4947,
+        "candidate_pose": [
+          [
+            0.9999066485817807,
+            0.013645047577934916,
+            0.0007118978486616934,
+            0.04745973381423718
+          ],
+          [
+            -0.01365829523117291,
+            0.9996129414185418,
+            0.024236714297714772,
+            0.500492200365409
+          ],
+          [
+            -0.0003809111827650615,
+            -0.024244175077053592,
+            0.9997059942210531,
+            0.25368360275627966
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ]
+      }
+    },
+    {
+      "frame": 180,
+      "time": 18.00059413909912,
+      "split": "fit",
+      "identity_rmse": 0.3547775577901381,
+      "identity_overlap": 0.22240073445030983,
+      "candidate_translation": 0.8152646159361574,
+      "candidate_rotation": 2.2856254835467307,
+      "quality": {
+        "state": "quality_failed",
+        "reason": "overlap_low",
+        "overlap": 0.2437,
+        "rmse": 0.3391522111903378,
+        "translation_step_m": 0.815265,
+        "rotation_step_m_deg": 2.285625,
+        "iterations": 30,
+        "method": "point_to_plane",
+        "point_count": 4357,
+        "candidate_pose": [
+          [
+            0.9999027100164645,
+            0.01217348164945315,
+            0.006810054791346203,
+            -0.23189163042724048
+          ],
+          [
+            -0.012419437823859084,
+            0.9992260904762129,
+            0.03732261614306667,
+            0.744104581893726
+          ],
+          [
+            -0.006350438242358516,
+            -0.037403562078414936,
+            0.9992800635847672,
+            0.23914647590982713
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ]
+      }
+    },
+    {
+      "frame": 190,
+      "time": 19.00063395500183,
+      "split": "fit",
+      "identity_rmse": 0.35728684422468704,
+      "identity_overlap": 0.21501782531194297,
+      "candidate_translation": 0.3999327395351231,
+      "candidate_rotation": 2.383980990652902,
+      "quality": {
+        "state": "quality_failed",
+        "reason": "overlap_low",
+        "overlap": 0.2623,
+        "rmse": 0.3333433805586344,
+        "translation_step_m": 0.399933,
+        "rotation_step_m_deg": 2.383981,
+        "iterations": 30,
+        "method": "point_to_plane",
+        "point_count": 4488,
+        "candidate_pose": [
+          [
+            0.9995681747308329,
+            -0.02915022695023667,
+            -0.003705176651839683,
+            -0.02567699306081503
+          ],
+          [
+            0.029028461968692992,
+            0.999143045945881,
+            -0.029504612075385576,
+            -0.28279266527872826
+          ],
+          [
+            0.004562067623762961,
+            0.029384315658809158,
+            0.9995577769855328,
+            -0.28162953794653117
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ]
+      }
+    },
+    {
+      "frame": 200,
+      "time": 20.00071406364441,
+      "split": "fit",
+      "identity_rmse": 0.37635128712577537,
+      "identity_overlap": 0.21866725507502208,
+      "candidate_translation": null,
+      "candidate_rotation": null,
+      "quality": {
+        "state": "degenerate_geometry",
+        "reason": "unobservable_direction",
+        "overlap": 0.0,
+        "rmse": null,
+        "translation_step_m": 0.0,
+        "rotation_step_m_deg": 0.0,
+        "iterations": 2,
+        "method": "point_to_plane",
+        "point_count": 4532
+      }
+    },
+    {
+      "frame": 210,
+      "time": 21.00070810317993,
+      "split": "fit",
+      "identity_rmse": 0.356706607414642,
+      "identity_overlap": 0.260837975296682,
+      "candidate_translation": 0.751221385169353,
+      "candidate_rotation": 2.5174160224644253,
+      "quality": {
+        "state": "quality_failed",
+        "reason": "overlap_low",
+        "overlap": 0.302,
+        "rmse": 0.33227706179391076,
+        "translation_step_m": 0.751221,
+        "rotation_step_m_deg": 2.517416,
+        "iterations": 30,
+        "method": "point_to_plane",
+        "point_count": 4129,
+        "candidate_pose": [
+          [
+            0.9990524727599612,
+            -0.040640410537662555,
+            0.015572851490216524,
+            -0.3625088460712803
+          ],
+          [
+            0.04054739724318528,
+            0.9991581135263735,
+            0.006242815968853239,
+            -0.5490915072727083
+          ],
+          [
+            -0.015813451521076414,
+            -0.005605462135085122,
+            0.9998592468668991,
+            0.36251816878167026
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ]
+      }
+    },
+    {
+      "frame": 220,
+      "time": 22.000750064849854,
+      "split": "fit",
+      "identity_rmse": 0.37337342821222436,
+      "identity_overlap": 0.20583501006036217,
+      "candidate_translation": 0.5195512279131315,
+      "candidate_rotation": 2.752673537832992,
+      "quality": {
+        "state": "quality_failed",
+        "reason": "overlap_low",
+        "overlap": 0.2531,
+        "rmse": 0.3347902057774823,
+        "translation_step_m": 0.519551,
+        "rotation_step_m_deg": 2.752674,
+        "iterations": 30,
+        "method": "point_to_plane",
+        "point_count": 4970,
+        "candidate_pose": [
+          [
+            0.9999369909436147,
+            -0.011225416241771605,
+            6.459744718849196e-05,
+            -0.3793419622587783
+          ],
+          [
+            0.011210154197013994,
+            0.9988462000232465,
+            0.04669690719951747,
+            -0.35437648301102465
+          ],
+          [
+            -0.0005887151351733425,
+            -0.04669324072411505,
+            0.9989091023137042,
+            -0.02122409914317254
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ]
+      }
+    },
+    {
+      "frame": 230,
+      "time": 23.000797033309937,
+      "split": "fit",
+      "identity_rmse": 0.3515046493765428,
+      "identity_overlap": 0.2522711390635919,
+      "candidate_translation": 0.5489520209735513,
+      "candidate_rotation": 1.6113553382251078,
+      "quality": {
+        "state": "quality_failed",
+        "reason": "overlap_low",
+        "overlap": 0.2877,
+        "rmse": 0.32972637568304175,
+        "translation_step_m": 0.548952,
+        "rotation_step_m_deg": 1.611355,
+        "iterations": 30,
+        "method": "point_to_plane",
+        "point_count": 4293,
+        "candidate_pose": [
+          [
+            0.9999788692089822,
+            0.0016668274792769867,
+            0.006283535762629498,
+            -0.4744021971804474
+          ],
+          [
+            -0.0018381111455637734,
+            0.9996241565869537,
+            0.02735264000490296,
+            0.2392063326675822
+          ],
+          [
+            -0.006235582005111604,
+            -0.027363611859102032,
+            0.9996060975519724,
+            0.1380985410966977
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ]
+      }
+    },
+    {
+      "frame": 240,
+      "time": 24.000833988189697,
+      "split": "fit",
+      "identity_rmse": 0.3607542052713142,
+      "identity_overlap": 0.23157425963037184,
+      "candidate_translation": null,
+      "candidate_rotation": null,
+      "quality": {
+        "state": "degenerate_geometry",
+        "reason": "unobservable_direction",
+        "overlap": 0.0,
+        "rmse": null,
+        "translation_step_m": 0.0,
+        "rotation_step_m_deg": 0.0,
+        "iterations": 1,
+        "method": "point_to_plane",
+        "point_count": 4491
+      }
+    },
+    {
+      "frame": 250,
+      "time": 25.000905990600586,
+      "split": "fit",
+      "identity_rmse": 0.3397770047661512,
+      "identity_overlap": 0.281431334622824,
+      "candidate_translation": null,
+      "candidate_rotation": null,
+      "quality": {
+        "state": "degenerate_geometry",
+        "reason": "unobservable_direction",
+        "overlap": 0.0,
+        "rmse": null,
+        "translation_step_m": 0.0,
+        "rotation_step_m_deg": 0.0,
+        "iterations": 1,
+        "method": "point_to_plane",
+        "point_count": 4136
+      }
+    },
+    {
+      "frame": 260,
+      "time": 26.00090503692627,
+      "split": "fit",
+      "identity_rmse": 0.35559455560204534,
+      "identity_overlap": 0.27252891119354133,
+      "candidate_translation": 1.4428341250773171,
+      "candidate_rotation": 1.600625033558587,
+      "quality": {
+        "state": "quality_failed",
+        "reason": "overlap_low",
+        "overlap": 0.3234,
+        "rmse": 0.3174871550029984,
+        "translation_step_m": 1.442834,
+        "rotation_step_m_deg": 1.600625,
+        "iterations": 30,
+        "method": "point_to_plane",
+        "point_count": 4583,
+        "candidate_pose": [
+          [
+            0.9998124773635059,
+            0.016523184239764982,
+            0.010099232190031641,
+            0.02992046601069969
+          ],
+          [
+            -0.016723161355906842,
+            0.999659141125731,
+            0.020048377441319185,
+            1.4214324675599954
+          ],
+          [
+            -0.009764526742945076,
+            -0.020213509006208562,
+            0.9997480022841462,
+            0.2457739171833177
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ]
+      }
+    },
+    {
+      "frame": 270,
+      "time": 27.000944137573242,
+      "split": "fit",
+      "identity_rmse": 0.3650320360338433,
+      "identity_overlap": 0.24338861497086509,
+      "candidate_translation": null,
+      "candidate_rotation": null,
+      "quality": {
+        "state": "degenerate_geometry",
+        "reason": "unobservable_direction",
+        "overlap": 0.0,
+        "rmse": null,
+        "translation_step_m": 0.0,
+        "rotation_step_m_deg": 0.0,
+        "iterations": 24,
+        "method": "point_to_plane",
+        "point_count": 4462
+      }
+    },
+    {
+      "frame": 280,
+      "time": 28.00099515914917,
+      "split": "fit",
+      "identity_rmse": 0.3459400534332645,
+      "identity_overlap": 0.20916429249762583,
+      "candidate_translation": 0.538067049601967,
+      "candidate_rotation": 1.0056848654882873,
+      "quality": {
+        "state": "quality_failed",
+        "reason": "overlap_low",
+        "overlap": 0.2372,
+        "rmse": 0.3431508025401425,
+        "translation_step_m": 0.538067,
+        "rotation_step_m_deg": 1.005685,
+        "iterations": 30,
+        "method": "point_to_plane",
+        "point_count": 4212,
+        "candidate_pose": [
+          [
+            0.9999970427386029,
+            -0.001869989703476126,
+            0.0015548802388665448,
+            -0.5105343987087725
+          ],
+          [
+            0.0018967346399150055,
+            0.9998471422119907,
+            -0.017380869029517233,
+            0.13363221099639103
+          ],
+          [
+            -0.0015221405171899028,
+            0.017383766824954138,
+            0.9998477322768807,
+            -0.10494384110872744
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ]
+      }
+    },
+    {
+      "frame": 290,
+      "time": 29.001060962677002,
+      "split": "fit",
+      "identity_rmse": 0.37221529336724735,
+      "identity_overlap": 0.1936056838365897,
+      "candidate_translation": 0.8084087352366298,
+      "candidate_rotation": 1.8569712024132945,
+      "quality": {
+        "state": "quality_failed",
+        "reason": "overlap_low",
+        "overlap": 0.2277,
+        "rmse": 0.3387239889199161,
+        "translation_step_m": 0.808409,
+        "rotation_step_m_deg": 1.856971,
+        "iterations": 30,
+        "method": "point_to_plane",
+        "point_count": 5067,
+        "candidate_pose": [
+          [
+            0.9999902153076825,
+            0.003123414651073472,
+            0.00313266177742083,
+            -0.697874576711066
+          ],
+          [
+            -0.0032223678800674845,
+            0.9994795831954371,
+            0.032096403548074436,
+            0.4027486568370788
+          ],
+          [
+            -0.0030307811104999757,
+            -0.03210618408333181,
+            0.9994798683862858,
+            0.06549257822965067
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ]
+      }
+    },
+    {
+      "frame": 300,
+      "time": 30.001098155975342,
+      "split": "holdout",
+      "identity_rmse": 0.33622775356031,
+      "identity_overlap": 0.234375,
+      "candidate_translation": 0.9171520365859465,
+      "candidate_rotation": 2.3891492948471345,
+      "quality": {
+        "state": "quality_failed",
+        "reason": "overlap_low",
+        "overlap": 0.2961,
+        "rmse": 0.32219621745550225,
+        "translation_step_m": 0.917152,
+        "rotation_step_m_deg": 2.389149,
+        "iterations": 30,
+        "method": "point_to_plane",
+        "point_count": 3968,
+        "candidate_pose": [
+          [
+            0.9998963158868523,
+            -0.005776503240744635,
+            0.013190507428059994,
+            -0.8814567247428414
+          ],
+          [
+            0.005256023289005747,
+            0.9992192055329664,
+            0.03915805808838154,
+            0.08216899729061015
+          ],
+          [
+            -0.013406405002291837,
+            -0.03908466840562038,
+            0.9991459638113628,
+            0.23968762275851382
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ]
+      }
+    },
+    {
+      "frame": 310,
+      "time": 31.00110912322998,
+      "split": "holdout",
+      "identity_rmse": 0.3691523230474572,
+      "identity_overlap": 0.22758765483938695,
+      "candidate_translation": 1.5438523188617541,
+      "candidate_rotation": 2.5828258852205233,
+      "quality": {
+        "state": "quality_failed",
+        "reason": "overlap_low",
+        "overlap": 0.2637,
+        "rmse": 0.31193931807082387,
+        "translation_step_m": 1.543852,
+        "rotation_step_m_deg": 2.582826,
+        "iterations": 30,
+        "method": "point_to_plane",
+        "point_count": 4763,
+        "candidate_pose": [
+          [
+            0.999715899496108,
+            0.023184011102234833,
+            0.005533707970202585,
+            0.2238236231356864
+          ],
+          [
+            -0.0229553669455048,
+            0.999001982229454,
+            -0.03831567081519981,
+            1.4934823019724734
+          ],
+          [
+            -0.006416496168880443,
+            0.03817775701678897,
+            0.9992503627450333,
+            0.3207702945664256
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ]
+      }
+    },
+    {
+      "frame": 320,
+      "time": 32.00115203857422,
+      "split": "holdout",
+      "identity_rmse": 0.3587992033744092,
+      "identity_overlap": 0.24837334529952884,
+      "candidate_translation": 0.433902762758062,
+      "candidate_rotation": 2.7573665366856432,
+      "quality": {
+        "state": "quality_failed",
+        "reason": "overlap_low",
+        "overlap": 0.3334,
+        "rmse": 0.3363829974596038,
+        "translation_step_m": 0.433903,
+        "rotation_step_m_deg": 2.757367,
+        "iterations": 30,
+        "method": "point_to_plane",
+        "point_count": 4457,
+        "candidate_pose": [
+          [
+            0.9995373724184395,
+            -0.030363876264922252,
+            -0.0017538976620950922,
+            -0.31278935529945
+          ],
+          [
+            0.030408157442939534,
+            0.9988429148327859,
+            0.03725822659854498,
+            -0.1745962810659591
+          ],
+          [
+            0.0006205640708366668,
+            -0.03729432271152827,
+            0.9993041320807805,
+            -0.24484804548611386
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ]
+      }
+    },
+    {
+      "frame": 330,
+      "time": 33.00122308731079,
+      "split": "holdout",
+      "identity_rmse": 0.36357626807987287,
+      "identity_overlap": 0.28558310376492196,
+      "candidate_translation": 0.49339007984033156,
+      "candidate_rotation": 1.9826296518785094,
+      "quality": {
+        "state": "quality_failed",
+        "reason": "overlap_low",
+        "overlap": 0.3664,
+        "rmse": 0.3303079293034337,
+        "translation_step_m": 0.49339,
+        "rotation_step_m_deg": 1.98263,
+        "iterations": 30,
+        "method": "point_to_plane",
+        "point_count": 4356,
+        "candidate_pose": [
+          [
+            0.9998168474273337,
+            -0.01682886574780516,
+            0.009113774086982059,
+            0.143191812060247
+          ],
+          [
+            0.01708457662765407,
+            0.9994407058946331,
+            -0.02874704580110265,
+            0.43790462277105396
+          ],
+          [
+            -0.008624896632424876,
+            0.028897485677463832,
+            0.9995451698045471,
+            0.17654862559502577
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ]
+      }
+    },
+    {
+      "frame": 340,
+      "time": 34.0012571811676,
+      "split": "holdout",
+      "identity_rmse": 0.3703151296316528,
+      "identity_overlap": 0.2528124360809982,
+      "candidate_translation": null,
+      "candidate_rotation": null,
+      "quality": {
+        "state": "degenerate_geometry",
+        "reason": "unobservable_direction",
+        "overlap": 0.0,
+        "rmse": null,
+        "translation_step_m": 0.0,
+        "rotation_step_m_deg": 0.0,
+        "iterations": 6,
+        "method": "point_to_plane",
+        "point_count": 4889
+      }
+    },
+    {
+      "frame": 350,
+      "time": 35.001266956329346,
+      "split": "holdout",
+      "identity_rmse": 0.3515151893767652,
+      "identity_overlap": 0.3,
+      "candidate_translation": null,
+      "candidate_rotation": null,
+      "quality": {
+        "state": "degenerate_geometry",
+        "reason": "unobservable_direction",
+        "overlap": 0.0,
+        "rmse": null,
+        "translation_step_m": 0.0,
+        "rotation_step_m_deg": 0.0,
+        "iterations": 1,
+        "method": "point_to_plane",
+        "point_count": 4070
+      }
+    },
+    {
+      "frame": 360,
+      "time": 36.00131916999817,
+      "split": "holdout",
+      "identity_rmse": 0.3701983973406639,
+      "identity_overlap": 0.2835538752362949,
+      "candidate_translation": 2.512790471349007,
+      "candidate_rotation": 3.512171925292759,
+      "quality": {
+        "state": "quality_failed",
+        "reason": "overlap_low",
+        "overlap": 0.4144,
+        "rmse": 0.3084921021447379,
+        "translation_step_m": 2.51279,
+        "rotation_step_m_deg": 3.512172,
+        "iterations": 30,
+        "method": "point_to_plane",
+        "point_count": 4761,
+        "candidate_pose": [
+          [
+            0.9991823616533201,
+            0.038034328378381894,
+            -0.013711237205261675,
+            -0.06879819621328367
+          ],
+          [
+            -0.037362534824102234,
+            0.9982281912743873,
+            0.046308953093138476,
+            2.49706770177451
+          ],
+          [
+            0.015448273444345921,
+            -0.04575880253973172,
+            0.9988330605450133,
+            -0.27209493537133067
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ]
+      }
+    },
+    {
+      "frame": 370,
+      "time": 37.001352071762085,
+      "split": "holdout",
+      "identity_rmse": 0.3428831410348897,
+      "identity_overlap": 0.2928505957836847,
+      "candidate_translation": null,
+      "candidate_rotation": null,
+      "quality": {
+        "state": "degenerate_geometry",
+        "reason": "unobservable_direction",
+        "overlap": 0.0,
+        "rmse": null,
+        "translation_step_m": 0.0,
+        "rotation_step_m_deg": 0.0,
+        "iterations": 3,
+        "method": "point_to_plane",
+        "point_count": 4364
+      }
+    },
+    {
+      "frame": 380,
+      "time": 38.00141501426697,
+      "split": "holdout",
+      "identity_rmse": 0.3549042601437552,
+      "identity_overlap": 0.3293822657852747,
+      "candidate_translation": null,
+      "candidate_rotation": null,
+      "quality": {
+        "state": "degenerate_geometry",
+        "reason": "unobservable_direction",
+        "overlap": 0.0,
+        "rmse": null,
+        "translation_step_m": 0.0,
+        "rotation_step_m_deg": 0.0,
+        "iterations": 5,
+        "method": "point_to_plane",
+        "point_count": 4387
+      }
+    },
+    {
+      "frame": 390,
+      "time": 39.001436948776245,
+      "split": "holdout",
+      "identity_rmse": 0.37244914438676596,
+      "identity_overlap": 0.30528375733855184,
+      "candidate_translation": null,
+      "candidate_rotation": null,
+      "quality": {
+        "state": "degenerate_geometry",
+        "reason": "unobservable_direction",
+        "overlap": 0.0,
+        "rmse": null,
+        "translation_step_m": 0.0,
+        "rotation_step_m_deg": 0.0,
+        "iterations": 4,
+        "method": "point_to_plane",
+        "point_count": 4599
+      }
+    },
+    {
+      "frame": 400,
+      "time": 40.00145196914673,
+      "split": "holdout",
+      "identity_rmse": 0.3523506138679914,
+      "identity_overlap": 0.3283170303486331,
+      "candidate_translation": null,
+      "candidate_rotation": null,
+      "quality": {
+        "state": "degenerate_geometry",
+        "reason": "unobservable_direction",
+        "overlap": 0.0,
+        "rmse": null,
+        "translation_step_m": 0.0,
+        "rotation_step_m_deg": 0.0,
+        "iterations": 1,
+        "method": "point_to_plane",
+        "point_count": 3987
+      }
+    },
+    {
+      "frame": 410,
+      "time": 41.00191116333008,
+      "split": "holdout",
+      "identity_rmse": 0.3730482898464674,
+      "identity_overlap": 0.273542600896861,
+      "candidate_translation": null,
+      "candidate_rotation": null,
+      "quality": {
+        "state": "degenerate_geometry",
+        "reason": "unobservable_direction",
+        "overlap": 0.0,
+        "rmse": null,
+        "translation_step_m": 0.0,
+        "rotation_step_m_deg": 0.0,
+        "iterations": 8,
+        "method": "point_to_plane",
+        "point_count": 4683
+      }
+    },
+    {
+      "frame": 420,
+      "time": 42.001535177230835,
+      "split": "holdout",
+      "identity_rmse": 0.36249263950451555,
+      "identity_overlap": 0.2789233774690688,
+      "candidate_translation": 3.5109684403809345,
+      "candidate_rotation": 3.7058378285089937,
+      "quality": {
+        "state": "quality_failed",
+        "reason": "overlap_low",
+        "overlap": 0.3603,
+        "rmse": 0.32629973313971217,
+        "translation_step_m": 3.510968,
+        "rotation_step_m_deg": 3.705838,
+        "iterations": 30,
+        "method": "point_to_plane",
+        "point_count": 4607,
+        "candidate_pose": [
+          [
+            0.9979416593425976,
+            0.06143451127453223,
+            0.018391448366067622,
+            0.3191922692694919
+          ],
+          [
+            -0.06158113370168166,
+            0.9980737927744598,
+            0.007514529181502178,
+            3.45806153642875
+          ],
+          [
+            -0.017894371197612755,
+            -0.008631627961364921,
+            0.999802623760399,
+            0.5165521221150453
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ]
+      }
+    },
+    {
+      "frame": 430,
+      "time": 43.00159311294556,
+      "split": "holdout",
+      "identity_rmse": 0.36451352824002237,
+      "identity_overlap": 0.28070994862213916,
+      "candidate_translation": 1.0346942403515382,
+      "candidate_rotation": 2.5233214768988104,
+      "quality": {
+        "state": "quality_failed",
+        "reason": "overlap_low",
+        "overlap": 0.2968,
+        "rmse": 0.3377257715985,
+        "translation_step_m": 1.034694,
+        "rotation_step_m_deg": 2.523321,
+        "iterations": 30,
+        "method": "point_to_plane",
+        "point_count": 4282,
+        "candidate_pose": [
+          [
+            0.9990319661743312,
+            -0.043916357998585,
+            0.0025463821372960246,
+            -0.07527081587918456
+          ],
+          [
+            0.043911757926779975,
+            0.9990337280294672,
+            0.0018351499456388406,
+            -1.0048999432224244
+          ],
+          [
+            -0.00262451474160436,
+            -0.0017215573424142145,
+            0.999995074069212,
+            -0.23473938613938833
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ]
+      }
+    },
+    {
+      "frame": 440,
+      "time": 44.001611948013306,
+      "split": "holdout",
+      "identity_rmse": 0.3561402374381966,
+      "identity_overlap": 0.1983908532712259,
+      "candidate_translation": 2.126843579225486,
+      "candidate_rotation": 2.876658423483532,
+      "quality": {
+        "state": "quality_failed",
+        "reason": "overlap_low",
+        "overlap": 0.271,
+        "rmse": 0.3451153194892154,
+        "translation_step_m": 2.126844,
+        "rotation_step_m_deg": 2.876658,
+        "iterations": 30,
+        "method": "point_to_plane",
+        "point_count": 4723,
+        "candidate_pose": [
+          [
+            0.9992888169901999,
+            0.03683805938479718,
+            0.008050939019063352,
+            0.44658033587095747
+          ],
+          [
+            -0.03708460142506203,
+            0.9987675676246291,
+            0.03298603035112965,
+            2.0724990660518703
+          ],
+          [
+            -0.006825875436220474,
+            -0.0332611371114026,
+            0.9994233858493538,
+            0.16963854314448437
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ]
+      }
+    },
+    {
+      "frame": 450,
+      "time": 45.00164604187012,
+      "split": "holdout",
+      "identity_rmse": 0.3670462451986157,
+      "identity_overlap": 0.267982017982018,
+      "candidate_translation": null,
+      "candidate_rotation": null,
+      "quality": {
+        "state": "degenerate_geometry",
+        "reason": "unobservable_direction",
+        "overlap": 0.0,
+        "rmse": null,
+        "translation_step_m": 0.0,
+        "rotation_step_m_deg": 0.0,
+        "iterations": 3,
+        "method": "point_to_plane",
+        "point_count": 4004
+      }
+    },
+    {
+      "frame": 460,
+      "time": 46.00171709060669,
+      "split": "holdout",
+      "identity_rmse": 0.3505900282750413,
+      "identity_overlap": 0.20827943078913325,
+      "candidate_translation": null,
+      "candidate_rotation": null,
+      "quality": {
+        "state": "degenerate_geometry",
+        "reason": "unobservable_direction",
+        "overlap": 0.0,
+        "rmse": null,
+        "translation_step_m": 0.0,
+        "rotation_step_m_deg": 0.0,
+        "iterations": 1,
+        "method": "point_to_plane",
+        "point_count": 4638
+      }
+    },
+    {
+      "frame": 470,
+      "time": 47.00172805786133,
+      "split": "holdout",
+      "identity_rmse": 0.3829409519395018,
+      "identity_overlap": 0.22782258064516128,
+      "candidate_translation": null,
+      "candidate_rotation": null,
+      "quality": {
+        "state": "degenerate_geometry",
+        "reason": "unobservable_direction",
+        "overlap": 0.0,
+        "rmse": null,
+        "translation_step_m": 0.0,
+        "rotation_step_m_deg": 0.0,
+        "iterations": 1,
+        "method": "point_to_plane",
+        "point_count": 4464
+      }
+    },
+    {
+      "frame": 480,
+      "time": 48.00178003311157,
+      "split": "holdout",
+      "identity_rmse": 0.3764476419582957,
+      "identity_overlap": 0.23832179930795847,
+      "candidate_translation": null,
+      "candidate_rotation": null,
+      "quality": {
+        "state": "degenerate_geometry",
+        "reason": "unobservable_direction",
+        "overlap": 0.0,
+        "rmse": null,
+        "translation_step_m": 0.0,
+        "rotation_step_m_deg": 0.0,
+        "iterations": 28,
+        "method": "point_to_plane",
+        "point_count": 4624
+      }
+    },
+    {
+      "frame": 490,
+      "time": 49.00190615653992,
+      "split": "holdout",
+      "identity_rmse": 0.35375373472056026,
+      "identity_overlap": 0.2663498529078977,
+      "candidate_translation": 0.8364561116378738,
+      "candidate_rotation": 0.6089584090196103,
+      "quality": {
+        "state": "quality_failed",
+        "reason": "overlap_low",
+        "overlap": 0.3019,
+        "rmse": 0.3311684678318624,
+        "translation_step_m": 0.836456,
+        "rotation_step_m_deg": 0.608958,
+        "iterations": 30,
+        "method": "point_to_plane",
+        "point_count": 4419,
+        "candidate_pose": [
+          [
+            0.9999614642295445,
+            -0.005719416932596739,
+            -0.00666020464080928,
+            -0.005938190159319974
+          ],
+          [
+            0.005679414643639914,
+            0.9999658134820189,
+            -0.006009668588989253,
+            0.8029262226402424
+          ],
+          [
+            0.006694348751890816,
+            0.005971610938013427,
+            0.9999597619692466,
+            -0.2343779972408989
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ]
+      }
+    },
+    {
+      "frame": 500,
+      "time": 50.00185298919678,
+      "split": "holdout",
+      "identity_rmse": 0.36593860520820687,
+      "identity_overlap": 0.28815516047102285,
+      "candidate_translation": 1.8285319854528628,
+      "candidate_rotation": 4.886648233356644,
+      "quality": {
+        "state": "quality_failed",
+        "reason": "overlap_low",
+        "overlap": 0.4018,
+        "rmse": 0.3137982139402303,
+        "translation_step_m": 1.828532,
+        "rotation_step_m_deg": 4.886648,
+        "iterations": 30,
+        "method": "point_to_plane",
+        "point_count": 4331,
+        "candidate_pose": [
+          [
+            0.9996253228443763,
+            0.022677677366657566,
+            -0.015327650750483994,
+            -0.2647636596068073
+          ],
+          [
+            -0.021366941756558268,
+            0.9964969186266508,
+            0.08085384942946221,
+            1.7801821904814976
+          ],
+          [
+            0.01710753425385647,
+            -0.08049605031828636,
+            0.9966081066070597,
+            -0.3230801681754786
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ]
+      }
+    },
+    {
+      "frame": 510,
+      "time": 51.001919984817505,
+      "split": "holdout",
+      "identity_rmse": 0.3531981982694704,
+      "identity_overlap": 0.2660389752572805,
+      "candidate_translation": 1.0732814484419992,
+      "candidate_rotation": 2.1746201800426714,
+      "quality": {
+        "state": "quality_failed",
+        "reason": "overlap_low",
+        "overlap": 0.2952,
+        "rmse": 0.3455342890749969,
+        "translation_step_m": 1.073281,
+        "rotation_step_m_deg": 2.17462,
+        "iterations": 30,
+        "method": "point_to_plane",
+        "point_count": 4567,
+        "candidate_pose": [
+          [
+            0.9992874690714675,
+            -0.03677792808677413,
+            -0.008481636775142664,
+            -0.05811717483680581
+          ],
+          [
+            0.0368108208644533,
+            0.9993151967889781,
+            0.003755121022211859,
+            -0.9697305397042558
+          ],
+          [
+            0.008337722952132334,
+            -0.0040646613943104105,
+            0.9999569795264813,
+            -0.4562654292444656
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ]
+      }
+    },
+    {
+      "frame": 520,
+      "time": 52.00193405151367,
+      "split": "holdout",
+      "identity_rmse": 0.35543542485239354,
+      "identity_overlap": 0.28164347249834326,
+      "candidate_translation": null,
+      "candidate_rotation": null,
+      "quality": {
+        "state": "degenerate_geometry",
+        "reason": "unobservable_direction",
+        "overlap": 0.0,
+        "rmse": null,
+        "translation_step_m": 0.0,
+        "rotation_step_m_deg": 0.0,
+        "iterations": 1,
+        "method": "point_to_plane",
+        "point_count": 4527
+      }
+    },
+    {
+      "frame": 530,
+      "time": 53.00200009346008,
+      "split": "holdout",
+      "identity_rmse": 0.3373538630826391,
+      "identity_overlap": 0.31731417022232206,
+      "candidate_translation": 1.5491535423882965,
+      "candidate_rotation": 2.03080578943352,
+      "quality": {
+        "state": "quality_failed",
+        "reason": "overlap_low",
+        "overlap": 0.3842,
+        "rmse": 0.3235688619644564,
+        "translation_step_m": 1.549154,
+        "rotation_step_m_deg": 2.030806,
+        "iterations": 30,
+        "method": "point_to_plane",
+        "point_count": 4453,
+        "candidate_pose": [
+          [
+            0.9996367960443375,
+            0.01825124993068985,
+            -0.019828461114756946,
+            -0.15499561340349793
+          ],
+          [
+            -0.018702805963171996,
+            0.9995643684696409,
+            -0.022831520645636073,
+            1.4517832283702434
+          ],
+          [
+            0.019403119422295657,
+            0.023194076007801375,
+            0.9995426723231123,
+            -0.5178595519470068
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ]
+      }
+    },
+    {
+      "frame": 540,
+      "time": 54.00202798843384,
+      "split": "holdout",
+      "identity_rmse": 0.3693154939117486,
+      "identity_overlap": 0.26600346020761245,
+      "candidate_translation": null,
+      "candidate_rotation": null,
+      "quality": {
+        "state": "degenerate_geometry",
+        "reason": "unobservable_direction",
+        "overlap": 0.0,
+        "rmse": null,
+        "translation_step_m": 0.0,
+        "rotation_step_m_deg": 0.0,
+        "iterations": 1,
+        "method": "point_to_plane",
+        "point_count": 4624
+      }
+    },
+    {
+      "frame": 550,
+      "time": 55.00206899642944,
+      "split": "holdout",
+      "identity_rmse": 0.3670613525784372,
+      "identity_overlap": 0.3124561813507829,
+      "candidate_translation": null,
+      "candidate_rotation": null,
+      "quality": {
+        "state": "degenerate_geometry",
+        "reason": "unobservable_direction",
+        "overlap": 0.0,
+        "rmse": null,
+        "translation_step_m": 0.0,
+        "rotation_step_m_deg": 0.0,
+        "iterations": 2,
+        "method": "point_to_plane",
+        "point_count": 4279
+      }
+    },
+    {
+      "frame": 560,
+      "time": 56.00208115577698,
+      "split": "holdout",
+      "identity_rmse": 0.35113266214873634,
+      "identity_overlap": 0.3099208003334723,
+      "candidate_translation": 1.5763377872718127,
+      "candidate_rotation": 4.9756797933611105,
+      "quality": {
+        "state": "quality_failed",
+        "reason": "overlap_low",
+        "overlap": 0.4058,
+        "rmse": 0.31577135434368053,
+        "translation_step_m": 1.576338,
+        "rotation_step_m_deg": 4.97568,
+        "iterations": 30,
+        "method": "point_to_plane",
+        "point_count": 4798,
+        "candidate_pose": [
+          [
+            0.9995556151422188,
+            0.028214806992223437,
+            -0.009617531078874116,
+            -0.29647769704586735
+          ],
+          [
+            -0.027337395401064973,
+            0.9962895038891947,
+            0.08160815677925343,
+            1.5255295775166653
+          ],
+          [
+            0.011884403659728144,
+            -0.08130897310022407,
+            0.9966180872546113,
+            -0.2640100430991183
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ]
+      }
+    },
+    {
+      "frame": 570,
+      "time": 57.002156019210815,
+      "split": "holdout",
+      "identity_rmse": 0.3615676041651711,
+      "identity_overlap": 0.2820175438596491,
+      "candidate_translation": null,
+      "candidate_rotation": null,
+      "quality": {
+        "state": "degenerate_geometry",
+        "reason": "unobservable_direction",
+        "overlap": 0.0,
+        "rmse": null,
+        "translation_step_m": 0.0,
+        "rotation_step_m_deg": 0.0,
+        "iterations": 1,
+        "method": "point_to_plane",
+        "point_count": 4560
+      }
+    },
+    {
+      "frame": 580,
+      "time": 58.00216603279114,
+      "split": "holdout",
+      "identity_rmse": 0.3383908864351564,
+      "identity_overlap": 0.35819828408007626,
+      "candidate_translation": null,
+      "candidate_rotation": null,
+      "quality": {
+        "state": "degenerate_geometry",
+        "reason": "unobservable_direction",
+        "overlap": 0.0,
+        "rmse": null,
+        "translation_step_m": 0.0,
+        "rotation_step_m_deg": 0.0,
+        "iterations": 5,
+        "method": "point_to_plane",
+        "point_count": 4196
+      }
+    },
+    {
+      "frame": 590,
+      "time": 59.00221395492554,
+      "split": "holdout",
+      "identity_rmse": 0.34944504312155383,
+      "identity_overlap": 0.2612359550561798,
+      "candidate_translation": 0.252474160412886,
+      "candidate_rotation": 0.37024041141815245,
+      "quality": {
+        "state": "quality_failed",
+        "reason": "overlap_low",
+        "overlap": 0.2632,
+        "rmse": 0.34817678387392625,
+        "translation_step_m": 0.252474,
+        "rotation_step_m_deg": 0.37024,
+        "iterations": 30,
+        "method": "point_to_plane",
+        "point_count": 4984,
+        "candidate_pose": [
+          [
+            0.9999844785077088,
+            0.00013473295752827527,
+            0.005569972234736254,
+            0.03039576777796319
+          ],
+          [
+            -0.00015296337670840028,
+            0.9999946330511005,
+            0.003272685625128272,
+            0.20592031629582175
+          ],
+          [
+            -0.005569501402366569,
+            -0.003273486829924795,
+            0.9999791322513203,
+            0.14288499681215155
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ]
+      }
+    }
+  ]
+}

@@ -21,6 +21,7 @@ web/frontend/node_modules/
 web/frontend/dist/
 web/data/
 web/.venv/
+web/.venv-kiss/
 
 # ===== 大数据文件（不入库） =====
 *.pcap

@@ -1,0 +1,154 @@
+[
+  {
+    "path": "D:\\Code\\radar\\web\\data\\320b5387-e20c-484c-a3a7-1a25bf3baf10\\mapping\\3a45a698-9223-4476-861c-3ccef61bcf50\\validation.json",
+    "hash": "954D5DCCE76316A92BA204329BB621FE3F43C3E7C34575FAD605D2248204F709",
+    "metrics": {
+      "frame_count": 662,
+      "accepted_frames": 1,
+      "rejected_frames": 2,
+      "tracking_lost_frames": 659,
+      "keyframe_count": 1,
+      "accepted_ratio": 0.0015,
+      "rejected_ratio": 0.003,
+      "first_tracking_lost_time": 0.3000469207763672,
+      "max_continuous_tracking_s": 0.0,
+      "mean_overlap": null,
+      "mean_rmse_m": null,
+      "max_translation_step_m": null,
+      "max_rotation_step_deg": null,
+      "trajectory_length_m": 0.0,
+      "closure_translation_m": null,
+      "closure_rotation_deg": null,
+      "segment_count": 1,
+      "map_point_count": 1579,
+      "map_voxel_count": 1579,
+      "map_bounds": {
+        "minimum": [
+          7.2144695520401,
+          -38.16077995300293,
+          -18.429277420043945
+        ],
+        "maximum": [
+          79.51103973388672,
+          37.5479736328125,
+          1.616669774055481
+        ]
+      },
+      "chunk_count": 54
+    }
+  },
+  {
+    "path": "D:\\Code\\radar\\web\\data\\4c0d511d-2ca0-4060-9158-d8c6bf9b4010\\mapping\\fca343d2-a0c0-46f4-847c-73507120f42f\\validation.json",
+    "hash": "75F60BB296E7964A4BE6F75F308A50E306F564BFF2854FA820CC7EEB2A67FEE7",
+    "metrics": {
+      "frame_count": 662,
+      "accepted_frames": 1,
+      "rejected_frames": 2,
+      "tracking_lost_frames": 659,
+      "keyframe_count": 1,
+      "accepted_ratio": 0.0015,
+      "rejected_ratio": 0.003,
+      "first_tracking_lost_time": 0.3000469207763672,
+      "max_continuous_tracking_s": 0.0,
+      "mean_overlap": null,
+      "mean_rmse_m": null,
+      "max_translation_step_m": null,
+      "max_rotation_step_deg": null,
+      "trajectory_length_m": 0.0,
+      "closure_translation_m": null,
+      "closure_rotation_deg": null,
+      "segment_count": 1,
+      "map_point_count": 1579,
+      "map_voxel_count": 1579,
+      "map_bounds": {
+        "minimum": [
+          7.2144695520401,
+          -38.16077995300293,
+          -18.429277420043945
+        ],
+        "maximum": [
+          79.51103973388672,
+          37.5479736328125,
+          1.616669774055481
+        ]
+      },
+      "chunk_count": 54
+    }
+  },
+  {
+    "path": "D:\\Code\\radar\\web\\data\\a06c1535-cb4f-43ad-a88a-6a0a01d5213d\\mapping\\dbd4a0e9-1602-4958-afc3-0d8d7a935c54\\validation.json",
+    "hash": "11F27115C99BC86BC7466AA96EA81918DFE14D59A2A427DC2AD0C181B9AE04D5",
+    "metrics": {
+      "frame_count": 234,
+      "accepted_frames": 1,
+      "rejected_frames": 2,
+      "tracking_lost_frames": 231,
+      "keyframe_count": 1,
+      "accepted_ratio": 0.0043,
+      "rejected_ratio": 0.0085,
+      "first_tracking_lost_time": 0.30005908012390137,
+      "max_continuous_tracking_s": 0.0,
+      "mean_overlap": null,
+      "mean_rmse_m": null,
+      "max_translation_step_m": null,
+      "max_rotation_step_deg": null,
+      "trajectory_length_m": 0.0,
+      "closure_translation_m": null,
+      "closure_rotation_deg": null,
+      "segment_count": 1,
+      "map_point_count": 296,
+      "map_voxel_count": 296,
+      "map_bounds": {
+        "minimum": [
+          6.6202110052108765,
+          -3.3509790003299713,
+          -0.8561151504516602
+        ],
+        "maximum": [
+          11.419475396474203,
+          2.2741222381591797,
+          2.3894757429758706
+        ]
+      },
+      "chunk_count": 5
+    }
+  },
+  {
+    "path": "D:\\Code\\radar\\web\\data\\a06c1535-cb4f-43ad-a88a-6a0a01d5213d\\mapping\\f6758a51-785b-41d7-b628-9630dbfd02b2\\validation.json",
+    "hash": "A6A6E791D7CE4103B19BB3417938BF9E42C98B7EDF8FA44D031371B97BEC9EE3",
+    "metrics": {
+      "frame_count": 234,
+      "accepted_frames": 1,
+      "rejected_frames": 2,
+      "tracking_lost_frames": 231,
+      "keyframe_count": 1,
+      "accepted_ratio": 0.0043,
+      "rejected_ratio": 0.0085,
+      "first_tracking_lost_time": 0.30005908012390137,
+      "max_continuous_tracking_s": 0.0,
+      "mean_overlap": null,
+      "mean_rmse_m": null,
+      "max_translation_step_m": null,
+      "max_rotation_step_deg": null,
+      "trajectory_length_m": 0.0,
+      "closure_translation_m": null,
+      "closure_rotation_deg": null,
+      "segment_count": 1,
+      "map_point_count": 296,
+      "map_voxel_count": 296,
+      "map_bounds": {
+        "minimum": [
+          6.6202110052108765,
+          -3.3509790003299713,
+          -0.8561151504516602
+        ],
+        "maximum": [
+          11.419475396474203,
+          2.2741222381591797,
+          2.3894757429758706
+        ]
+      },
+      "chunk_count": 5
+    }
+  }
+]

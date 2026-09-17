@@ -1,0 +1,433 @@
+{
+  "schema_version": 1,
+  "versions": {
+    "decoder": "ros2-na70-16mm-v1",
+    "sweep": "na70-coverage-sweep-v1",
+    "cross_capture": "na70-cross-capture-validation-v1"
+  },
+  "environment": {
+    "platform": "Windows-11-10.0.26200-SP0",
+    "python": "3.12.10"
+  },
+  "inputs": {
+    "zhong2": {
+      "path": "D:\\Code\\radar\\2\\9.14_caochangzhong2.pcap",
+      "sha256": "2caa68d6491cb2ba6fd9bae86e04104038fbbf4c7a4e349fa6dcc211adc743ce",
+      "duration_seconds": 129.90086698532104,
+      "packets": 129738,
+      "sweeps": 281,
+      "height_filter": {
+        "min_height_m": -1.5,
+        "max_height_m": 4.5,
+        "raw_points": 4908394,
+        "kept_points": 4908385,
+        "filtered_high_points": 9,
+        "filtered_fraction": 1.83359363571873e-06
+      }
+    },
+    "zuo": {
+      "path": "D:\\Code\\radar\\2\\9.14_caochangzuo.pcap",
+      "sha256": "b2365c97bd22bba7d24ad14ceee365b59b4dba4f6f8e9721e694f3b8c6ef63c6",
+      "duration_seconds": 122.57177710533142,
+      "packets": 122095,
+      "sweeps": 244,
+      "height_filter": {
+        "min_height_m": -1.5,
+        "max_height_m": 4.5,
+        "raw_points": 4316274,
+        "kept_points": 3733407,
+        "filtered_high_points": 582867,
+        "filtered_fraction": 0.1350393881389365
+      }
+    },
+    "you": {
+      "path": "D:\\Code\\radar\\2\\9.14_caochangyou.pcap",
+      "sha256": "ceca9fc08758f3c35f7b8b1c024bdab90e65f49ab65e39102cdd58dc0c5292db",
+      "duration_seconds": 121.04929780960083,
+      "packets": 121036,
+      "sweeps": 231,
+      "height_filter": {
+        "min_height_m": -1.5,
+        "max_height_m": 4.5,
+        "raw_points": 3764467,
+        "kept_points": 3215281,
+        "filtered_high_points": 546286,
+        "filtered_fraction": 0.1451164268407719
+      }
+    }
+  },
+  "alignments": {
+    "zuo": {
+      "full": {
+        "yaw_deg": 5.180686416322565,
+        "translation_xy_m": [
+          0.9999819003244472,
+          0.5522863679446038
+        ],
+        "fit_score_m": 1.6803305735532943,
+        "heldout": {
+          "median_m": 1.169402412738583,
+          "p95_m": 28.238584405590007,
+          "overlap": {
+            "0.3": 0.36224843858431643,
+            "0.5": 0.3934767522553782,
+            "1.0": 0.46911866759195003
+          }
+        },
+        "full_symmetric": {
+          "median_m": 0.18429697153873859,
+          "p95_m": 21.100404952253616,
+          "symmetric_overlap": {
+            "0.3": 0.6819210982560708,
+            "0.5": 0.6982314813765595,
+            "1.0": 0.7346001654409682
+          },
+          "source_to_reference_median_m": 1.193120717388064,
+          "reference_to_source_median_m": 0.10154470056148379
+        },
+        "coarse_best_yaw_deg": -1.5,
+        "second_peak_score_m": 1.7879176055337629,
+        "peak_margin_m": 0.021059142080237514,
+        "fit_source_points": 5763,
+        "fit_reference_points": 2450,
+        "evaluation_source_points": 1441,
+        "evaluation_reference_points": 2450,
+        "optimizer_success": true,
+        "selection": "median_z+0.5m_to_4.5m"
+      },
+      "temporal_segments": [
+        {
+          "yaw_deg": -9.5,
+          "translation_xy_m": [
+            -1.0,
+            1.0
+          ],
+          "fit_score_m": 1.823206139238949,
+          "heldout": {
+            "median_m": 1.3287382778124557,
+            "p95_m": 9.513950156329058,
+            "overlap": {
+              "0.3": 0.3786008230452675,
+              "0.5": 0.40329218106995884,
+              "1.0": 0.4691358024691358
+            }
+          },
+          "full_symmetric": {
+            "median_m": 1.405003760657775,
+            "p95_m": 8.312994905055042,
+            "symmetric_overlap": {
+              "0.3": 0.3782484954443062,
+              "0.5": 0.4083723901422183,
+              "1.0": 0.4643511078236896
+            },
+            "source_to_reference_median_m": 1.309804916466558,
+            "reference_to_source_median_m": 1.5620659603595688
+          },
+          "coarse_best_yaw_deg": -9.5,
+          "second_peak_score_m": 0.5884645030493713,
+          "peak_margin_m": 0.0019207174476518762,
+          "fit_source_points": 1942,
+          "fit_reference_points": 2450,
+          "evaluation_source_points": 486,
+          "evaluation_reference_points": 2450,
+          "optimizer_success": true,
+          "selection": "median_z+0.5m_to_4.5m"
+        },
+        {
+          "yaw_deg": 1.5750000000000002,
+          "translation_xy_m": [
+            1.0,
+            1.0
+          ],
+          "fit_score_m": 1.7325723136989155,
+          "heldout": {
+            "median_m": 0.9711644754809104,
+            "p95_m": 29.27150009691511,
+            "overlap": {
+              "0.3": 0.406496062992126,
+              "0.5": 0.43503937007874016,
+              "1.0": 0.5039370078740157
+            }
+          },
+          "full_symmetric": {
+            "median_m": 0.1662571964502245,
+            "p95_m": 20.01902380572079,
+            "symmetric_overlap": {
+              "0.3": 0.6584253228478152,
+              "0.5": 0.6993514900049854,
+              "1.0": 0.7473746803686013
+            },
+            "source_to_reference_median_m": 0.9714776929768609,
+            "reference_to_source_median_m": 0.11491948616728384
+          },
+          "coarse_best_yaw_deg": 1.5,
+          "second_peak_score_m": 1.6579062151167552,
+          "peak_margin_m": 0.012854670545795699,
+          "fit_source_points": 4060,
+          "fit_reference_points": 2450,
+          "evaluation_source_points": 1016,
+          "evaluation_reference_points": 2450,
+          "optimizer_success": true,
+          "selection": "median_z+0.5m_to_4.5m"
+        },
+        {
+          "yaw_deg": 4.098058941905501,
+          "translation_xy_m": [
+            0.9999546372479209,
+            0.9980603999504296
+          ],
+          "fit_score_m": 0.9462894495811971,
+          "heldout": {
+            "median_m": 0.3840059556661225,
+            "p95_m": 31.146585687473138,
+            "overlap": {
+              "0.3": 0.47738693467336685,
+              "0.5": 0.5155778894472361,
+              "1.0": 0.5959798994974874
+            }
+          },
+          "full_symmetric": {
+            "median_m": 0.13928711798293542,
+            "p95_m": 27.25591832540737,
+            "symmetric_overlap": {
+              "0.3": 0.7337819736782708,
+              "0.5": 0.7556537137275984,
+              "1.0": 0.7990086877300688
+            },
+            "source_to_reference_median_m": 0.3972375517159891,
+            "reference_to_source_median_m": 0.10662786123168001
+          },
+          "coarse_best_yaw_deg": 1.5,
+          "second_peak_score_m": 1.2102020739916353,
+          "peak_margin_m": 0.029907662264810675,
+          "fit_source_points": 3978,
+          "fit_reference_points": 2450,
+          "evaluation_source_points": 995,
+          "evaluation_reference_points": 2450,
+          "optimizer_success": true,
+          "selection": "median_z+0.5m_to_4.5m"
+        }
+      ],
+      "temporal_rigidity": {
+        "yaw_spread_deg": 13.598058941905501,
+        "translation_spread_m": 1.9999546372479209,
+        "maximum_yaw_spread_deg": 1.0,
+        "maximum_translation_spread_m": 0.3,
+        "rigid": false
+      },
+      "static_submap_supported": false,
+      "status": "FAIL"
+    },
+    "you": {
+      "full": {
+        "yaw_deg": 58.0,
+        "translation_xy_m": [
+          1.0,
+          -1.0
+        ],
+        "fit_score_m": 14.460078580023477,
+        "heldout": {
+          "median_m": 15.968250108734203,
+          "p95_m": 42.53015477290997,
+          "overlap": {
+            "0.3": 0.06264424662050774,
+            "0.5": 0.06660072535443455,
+            "1.0": 0.076162215628091
+          }
+        },
+        "full_symmetric": {
+          "median_m": 12.774408545055932,
+          "p95_m": 41.5459010066549,
+          "symmetric_overlap": {
+            "0.3": 0.2805696465752429,
+            "0.5": 0.31263279169083713,
+            "1.0": 0.3592981573028869
+          },
+          "source_to_reference_median_m": 15.94231307803607,
+          "reference_to_source_median_m": 0.30525238003455263
+        },
+        "coarse_best_yaw_deg": 58.0,
+        "second_peak_score_m": 4.2472111437517155,
+        "peak_margin_m": 0.008887906080415675,
+        "fit_source_points": 12130,
+        "fit_reference_points": 2450,
+        "evaluation_source_points": 3033,
+        "evaluation_reference_points": 2450,
+        "optimizer_success": true,
+        "selection": "median_z+0.5m_to_4.5m"
+      },
+      "temporal_segments": [
+        {
+          "yaw_deg": 79.99999999999994,
+          "translation_xy_m": [
+            1.0,
+            -1.0
+          ],
+          "fit_score_m": 15.468984213498478,
+          "heldout": {
+            "median_m": 16.126538185433343,
+            "p95_m": 38.075075821524216,
+            "overlap": {
+              "0.3": 0.0,
+              "0.5": 0.0,
+              "1.0": 0.0
+            }
+          },
+          "full_symmetric": {
+            "median_m": 14.892304195940326,
+            "p95_m": 32.16809691908821,
+            "symmetric_overlap": {
+              "0.3": 0.0,
+              "0.5": 0.0,
+              "1.0": 0.0
+            },
+            "source_to_reference_median_m": 16.028881330288897,
+            "reference_to_source_median_m": 14.380870071402914
+          },
+          "coarse_best_yaw_deg": 80.0,
+          "second_peak_score_m": 0.6293189617774342,
+          "peak_margin_m": 0.0368955159609059,
+          "fit_source_points": 1448,
+          "fit_reference_points": 2450,
+          "evaluation_source_points": 362,
+          "evaluation_reference_points": 2450,
+          "optimizer_success": true,
+          "selection": "median_z+0.5m_to_4.5m"
+        },
+        {
+          "yaw_deg": 64.5,
+          "translation_xy_m": [
+            1.0,
+            -1.0
+          ],
+          "fit_score_m": 18.20439564005823,
+          "heldout": {
+            "median_m": 20.587707451696204,
+            "p95_m": 42.26236080716613,
+            "overlap": {
+              "0.3": 0.02215352910870685,
+              "0.5": 0.02472952086553323,
+              "1.0": 0.030396702730551263
+            }
+          },
+          "full_symmetric": {
+            "median_m": 16.544195471582192,
+            "p95_m": 41.16996501069522,
+            "symmetric_overlap": {
+              "0.3": 0.07147701005580012,
+              "0.5": 0.09281680187276395,
+              "1.0": 0.12213821940195227
+            },
+            "source_to_reference_median_m": 20.661173546884335,
+            "reference_to_source_median_m": 4.6090079201762695
+          },
+          "coarse_best_yaw_deg": 64.5,
+          "second_peak_score_m": 3.4104061861783515,
+          "peak_margin_m": 0.006924384004876938,
+          "fit_source_points": 7762,
+          "fit_reference_points": 2450,
+          "evaluation_source_points": 1941,
+          "evaluation_reference_points": 2450,
+          "optimizer_success": true,
+          "selection": "median_z+0.5m_to_4.5m"
+        },
+        {
+          "yaw_deg": 50.0,
+          "translation_xy_m": [
+            1.0,
+            -1.0
+          ],
+          "fit_score_m": 5.538361201469981,
+          "heldout": {
+            "median_m": 6.08148616534936,
+            "p95_m": 36.12936938736796,
+            "overlap": {
+              "0.3": 0.3347921225382932,
+              "0.5": 0.35667396061269147,
+              "1.0": 0.3676148796498906
+            }
+          },
+          "full_symmetric": {
+            "median_m": 1.1582087147189544,
+            "p95_m": 31.638861746493646,
+            "symmetric_overlap": {
+              "0.3": 0.363691095026349,
+              "0.5": 0.40806010611171256,
+              "1.0": 0.4750216965348173
+            },
+            "source_to_reference_median_m": 6.196839660106286,
+            "reference_to_source_median_m": 0.6433484211302819
+          },
+          "coarse_best_yaw_deg": 50.0,
+          "second_peak_score_m": 2.561682371429987,
+          "peak_margin_m": 0.02632278288533163,
+          "fit_source_points": 1824,
+          "fit_reference_points": 2450,
+          "evaluation_source_points": 457,
+          "evaluation_reference_points": 2450,
+          "optimizer_success": true,
+          "selection": "median_z+0.5m_to_4.5m"
+        }
+      ],
+      "temporal_rigidity": {
+        "yaw_spread_deg": 29.999999999999943,
+        "translation_spread_m": 0.0,
+        "maximum_yaw_spread_deg": 1.0,
+        "maximum_translation_spread_m": 0.3,
+        "rigid": false
+      },
+      "static_submap_supported": false,
+      "status": "FAIL"
+    }
+  },
+  "angular_coverage_deg": 126.91116752795449,
+  "height_filter": {
+    "min_height_m": -1.5,
+    "max_height_m": 4.5,
+    "per_capture": {
+      "zhong2": {
+        "min_height_m": -1.5,
+        "max_height_m": 4.5,
+        "raw_points": 4908394,
+        "kept_points": 4908385,
+        "filtered_high_points": 9,
+        "filtered_fraction": 1.83359363571873e-06
+      },
+      "zuo": {
+        "min_height_m": -1.5,
+        "max_height_m": 4.5,
+        "raw_points": 4316274,
+        "kept_points": 3733407,
+        "filtered_high_points": 582867,
+        "filtered_fraction": 0.1350393881389365
+      },
+      "you": {
+        "min_height_m": -1.5,
+        "max_height_m": 4.5,
+        "raw_points": 3764467,
+        "kept_points": 3215281,
+        "filtered_high_points": 546286,
+        "filtered_fraction": 0.1451164268407719
+      }
+    }
+  },
+  "claim": "observed_coverage_map_with_unresolved_temporal_distortion",
+  "map": {
+    "ply": "map.ply",
+    "pcd": "map.pcd",
+    "metadata": "map_metadata.json",
+    "voxel_count": 182340,
+    "bounds": {
+      "minimum": [
+        -2.0255972559819044,
+        -34.2771424248105,
+        -2.8683829307556152
+      ],
+      "maximum": [
+        60.94618964257515,
+        58.9518520214405,
+        7.165094025929769
+      ]
+    }
+  }
+}

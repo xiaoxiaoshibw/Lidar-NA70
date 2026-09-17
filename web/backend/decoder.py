@@ -6,6 +6,7 @@ immediately, is essential for seek/sequential equivalence.
 """
 from dataclasses import dataclass, field
 from datetime import datetime, timezone
+import mmap
 import struct
 from pathlib import Path
 from typing import Callable
@@ -94,9 +95,11 @@ def scan_pcap(path: Path, progress: Callable = lambda *_: None, cancelled: Calla
     previous_play_time = 0.0
     nonmonotonic = 0
     bad_device_times = 0
+    packet_time_anomalies = []
+    previous_device = None
 
     def finish():
-        nonlocal packets, previous_play_time
+        nonlocal packets, previous_play_time, packet_time_anomalies
         if not packets:
             return
         relative = packets[0][1] - first_time
@@ -105,11 +108,19 @@ def scan_pcap(path: Path, progress: Callable = lambda *_: None, cancelled: Calla
         result.frames.append(dict(
             index=len(result.frames), capture_time=packets[0][1], end_time=packets[-1][1],
             time=play_time, device_time=packets[-1][2], device_start_time=packets[0][2],
+            packet_time_anomalies=packet_time_anomalies,
             frame_id="lidar_link", point_count=len(packets) * 200, complete=len(packets) == 100,
             packet_count=len(packets), offsets=[p[0] for p in packets],
+            packet_start_index=packets[0][6],
+            packet_capture_times=[p[1] for p in packets],
+            packet_device_times=[p[2] for p in packets],
+            packet_factory_codes=[p[3] for p in packets],
+            packet_pitch_offsets=[p[4] for p in packets],
+            packet_yaw_offsets=[p[5] for p in packets],
             pitch_offset=pitch_offset, yaw_offset=yaw_offset,
         ))
         packets = []
+        packet_time_anomalies = []
 
     with path.open("rb") as source:
         header = source.read(24)
@@ -121,54 +132,63 @@ def scan_pcap(path: Path, progress: Callable = lambda *_: None, cancelled: Calla
         major, minor, _, _, snaplen, network = struct.unpack(endian + "HHIIII", header[4:])
         if (major, minor) != (2, 4) or network != 1:
             raise CaptureError("仅支持 PCAP 2.4 / Ethernet 链路类型")
-        while True:
-            if cancelled():
-                raise InterruptedError("导入已取消")
-            record = source.read(16)
-            if not record:
-                break
-            if len(record) != 16:
-                result.invalid_packets += 1
-                result.warnings.append("文件尾部的记录头截断，已保留前面的完整记录")
-                break
-            sec, fraction, captured, original = struct.unpack(endian + "IIII", record)
-            offset = source.tell()
-            if captured > size - offset or captured > snaplen or captured > 16 * 1024 * 1024 or captured > original:
-                result.invalid_packets += 1
-                result.warnings.append("记录长度无效或文件截断，扫描已停止")
-                break
-            packet = source.read(captured)
-            progress(source.tell() / size, result)
-            if captured != original or fraction >= scale:
-                result.invalid_packets += 1
-                continue
-            try:
-                parsed = udp_payload(packet)
-            except CaptureError:
-                result.invalid_packets += 1
-                continue
-            if parsed is None:
-                result.ignored_packets += 1
-                continue
-            payload_offset, payload = parsed
-            timestamp = sec + fraction / scale
-            if first_time is None:
-                first_time = timestamp
-            if last_time is not None and timestamp < last_time:
-                nonmonotonic += 1
-            last_time = timestamp
-            factory = int.from_bytes(payload[1408:1410], "little")
-            if factory >> 12 == 1:
-                pitch_offset = float(np.float32((factory & 4095) - 2048) * np.float32(0.01))
-            elif factory >> 12 == 2:
-                yaw_offset = float(np.float32((factory & 4095) - 2048) * np.float32(0.01))
-            dev = device_time(payload)
-            bad_device_times += dev is None
-            packets.append((offset + payload_offset, timestamp, dev))
-            result.valid_packets += 1
-            if len(packets) == 100:
-                finish()
-        finish()
+        record_header = struct.Struct(endian + "IIII")
+        # Slice records out of one mapping instead of issuing two ``read`` calls
+        # per packet; a capture holds hundreds of thousands of them.
+        with mmap.mmap(source.fileno(), 0, access=mmap.ACCESS_READ) as mapping:
+            position = 24
+            while True:
+                if cancelled():
+                    raise InterruptedError("导入已取消")
+                if position + 16 > size:
+                    if position < size:
+                        result.invalid_packets += 1
+                        result.warnings.append("文件尾部的记录头截断，已保留前面的完整记录")
+                    break
+                sec, fraction, captured, original = record_header.unpack_from(mapping, position)
+                offset = position + 16
+                if captured > size - offset or captured > snaplen or captured > 16 * 1024 * 1024 or captured > original:
+                    result.invalid_packets += 1
+                    result.warnings.append("记录长度无效或文件截断，扫描已停止")
+                    break
+                packet = mapping[offset:offset + captured]
+                position = offset + captured
+                progress(position / size, result)
+                if captured != original or fraction >= scale:
+                    result.invalid_packets += 1
+                    continue
+                try:
+                    parsed = udp_payload(packet)
+                except CaptureError:
+                    result.invalid_packets += 1
+                    continue
+                if parsed is None:
+                    result.ignored_packets += 1
+                    continue
+                payload_offset, payload = parsed
+                timestamp = sec + fraction / scale
+                if first_time is None:
+                    first_time = timestamp
+                if last_time is not None and timestamp < last_time:
+                    nonmonotonic += 1
+                    packet_time_anomalies.append(dict(packet=len(packets), kind="capture_backwards", time=timestamp, previous=last_time))
+                last_time = timestamp
+                factory = int.from_bytes(payload[1408:1410], "little")
+                if factory >> 12 == 1:
+                    pitch_offset = float(np.float32((factory & 4095) - 2048) * np.float32(0.01))
+                elif factory >> 12 == 2:
+                    yaw_offset = float(np.float32((factory & 4095) - 2048) * np.float32(0.01))
+                dev = device_time(payload)
+                if dev is None or (previous_device is not None and dev < previous_device):
+                    packet_time_anomalies.append(dict(packet=len(packets), kind="device_invalid" if dev is None else "device_backwards", time=dev, previous=previous_device))
+                previous_device = dev
+                bad_device_times += dev is None
+                packets.append((offset + payload_offset, timestamp, dev, factory,
+                                pitch_offset, yaw_offset, result.valid_packets))
+                result.valid_packets += 1
+                if len(packets) == 100:
+                    finish()
+            finish()
     if not result.frames:
         raise CaptureError(f"未找到有效 NA70 UDP 数据（目标端口 2368）；异常记录 {result.invalid_packets} 条")
     if nonmonotonic:
@@ -181,18 +201,66 @@ def scan_pcap(path: Path, progress: Callable = lambda *_: None, cancelled: Calla
     return result
 
 
-def decode_frame(path: Path, frame: dict, install_direction: int = 1) -> np.ndarray:
+def _frame_bytes(path: Path, frame: dict, source=None) -> np.ndarray:
+    """The 100 payloads of one frame as an (N, 7) byte matrix.
+
+    ``source`` is an optional already-open binary handle.  Reusing one handle for
+    a whole analysis avoids re-opening the capture per frame, and because NA70
+    packets are evenly spaced the payloads of a frame are read as one contiguous
+    block instead of one ``seek``/``read`` per packet.  Both paths return the
+    same bytes, including for a truncated capture.
+    """
+    offsets = np.asarray(frame["offsets"], dtype=np.int64)
+    if source is None:
+        with path.open("rb") as handle:
+            return _frame_payloads(handle, offsets)
+    return _frame_payloads(source, offsets)
+
+
+def _frame_payloads(source, offsets: np.ndarray) -> np.ndarray:
+    count = len(offsets)
+    if count == 0:
+        return np.empty((0, 7), dtype=np.uint8)
+    step = int(offsets[1] - offsets[0]) if count > 1 else None
+    if step is not None and step >= 1400 and bool(np.all(np.diff(offsets) == step)):
+        # Read the whole span once, then keep the first 1400 bytes of every slot.
+        # The last slot can be shorter than ``step`` at end of file, so the tail is
+        # padded before reshaping; the padding always lands past column 1400.
+        full = step * count
+        source.seek(int(offsets[0]))
+        block = source.read(full)
+        if len(block) < step * (count - 1) + 1400:
+            raise CaptureError("缓存文件已截断，请重新导入")
+        if len(block) < full:
+            block += bytes(full - len(block))
+        grid = np.frombuffer(block, dtype=np.uint8).reshape(count, step)
+        return np.ascontiguousarray(grid[:, :1400]).reshape(-1, 7)
+    payloads = []
+    for offset in offsets:
+        source.seek(int(offset))
+        payload = source.read(1400)
+        if len(payload) != 1400:
+            raise CaptureError("缓存文件已截断，请重新导入")
+        payloads.append(payload)
+    return np.frombuffer(b"".join(payloads), dtype=np.uint8).reshape(-1, 7)
+
+
+def decode_frame_codes(path: Path, frame: dict, source=None) -> np.ndarray:
+    """Return raw distance, pitch, yaw, and intensity codes for ray matching."""
+    b = _frame_bytes(path, frame, source)
+    codes = np.empty((len(b), 4), dtype=np.uint16)
+    codes[:, 0] = (b[:, 0].astype(np.uint16) << 8) | b[:, 1]
+    codes[:, 1] = (b[:, 2].astype(np.uint16) << 8) | b[:, 3]
+    codes[:, 2] = (b[:, 4].astype(np.uint16) << 8) | b[:, 5]
+    codes[:, 3] = b[:, 6]
+    return codes
+
+
+def decode_frame(path: Path, frame: dict, install_direction: int = 1,
+                 source=None) -> np.ndarray:
     if install_direction not in (1, 2):
         raise ValueError("安装方向必须为 1 或 2")
-    with path.open("rb") as source:
-        payloads = []
-        for offset in frame["offsets"]:
-            source.seek(offset)
-            payload = source.read(1400)
-            if len(payload) != 1400:
-                raise CaptureError("缓存文件已截断，请重新导入")
-            payloads.append(payload)
-    b = np.frombuffer(b"".join(payloads), dtype=np.uint8).reshape(-1, 7)
+    b = _frame_bytes(path, frame, source)
     code = lambda i: ((b[:, i].astype(np.uint16) << 8) | b[:, i + 1]).astype(np.float32)
     distance = code(0) * np.float32(16) / np.float32(1000)
     pitch = code(2) * np.float32(0.0258) * np.float32(np.pi) / np.float32(180)
@@ -218,4 +286,8 @@ def decode_frame(path: Path, frame: dict, install_direction: int = 1) -> np.ndar
 
 
 def public_frame(frame):
-    return {k: v for k, v in frame.items() if k != "offsets"}
+    private = {
+        "offsets", "packet_capture_times", "packet_device_times",
+        "packet_factory_codes", "packet_pitch_offsets", "packet_yaw_offsets",
+    }
+    return {k: v for k, v in frame.items() if k not in private}

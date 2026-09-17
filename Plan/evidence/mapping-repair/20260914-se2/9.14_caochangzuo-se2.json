@@ -1,0 +1,3726 @@
+{
+  "schema_version": 1,
+  "versions": {
+    "decoder": "ros2-na70-16mm-v1",
+    "registration": "na70-localizable-se2-v1"
+  },
+  "input": {
+    "path": "D:\\Code\\radar\\2\\9.14_caochangzuo.pcap",
+    "sha256": "b2365c97bd22bba7d24ad14ceee365b59b4dba4f6f8e9721e694f3b8c6ef63c6",
+    "packets": 122095,
+    "sweep_count": 244,
+    "analyzed_pairs": 12
+  },
+  "summary": {
+    "point_to_plane": {
+      "states": {
+        "quality_failed": 9,
+        "insufficient_points": 3
+      },
+      "accepted_count": 0,
+      "accepted_yaw_median_deg": null,
+      "accepted_translation_median": null,
+      "candidate_yaw_median_deg": 0.009354652981140245,
+      "candidate_translation_median": 1.9109630342387535e-05
+    },
+    "gicp": {
+      "states": {
+        "insufficient_points": 7,
+        "quality_failed": 5
+      },
+      "accepted_count": 0,
+      "accepted_yaw_median_deg": null,
+      "accepted_translation_median": null,
+      "candidate_yaw_median_deg": 0.01850723100575215,
+      "candidate_translation_median": 1.8108534229985984e-05
+    },
+    "ndt": {
+      "states": {
+        "quality_failed": 8,
+        "insufficient_points": 4
+      },
+      "accepted_count": 0,
+      "accepted_yaw_median_deg": null,
+      "accepted_translation_median": null,
+      "candidate_yaw_median_deg": 0.032154648272902306,
+      "candidate_translation_median": 1.3210705627433468e-05
+    }
+  },
+  "pairs": [
+    {
+      "previous_sweep": 0,
+      "current_sweep": 1,
+      "time": 0.4400441646575928,
+      "target_points": 7033,
+      "source_points": 6745,
+      "structures": {
+        "point_count": 7033,
+        "ground_like": 6361,
+        "vertical_like": 278,
+        "thin_structure_like": 3242,
+        "irregular_or_unstable_like": 0,
+        "semantics": "geometry_candidates_only"
+      },
+      "se3_observability": {
+        "dof_scores": {
+          "x": 0.00284484,
+          "y": 0.01020565,
+          "z": 0.14207745,
+          "roll": 0.04688993,
+          "pitch": 0.87758355,
+          "yaw": 0.11665279
+        },
+        "eigenvalues": [
+          62.355422560295196,
+          128.80600323255388,
+          893.2357629018878,
+          2044.6920611318185,
+          5768.442673487289,
+          45336.76893013468
+        ],
+        "normalized_eigenvalues": [
+          0.001375383028649147,
+          0.002841093581923489,
+          0.01970223692558221,
+          0.04510008342859082,
+          0.12723541640950706,
+          1.0
+        ],
+        "eigenvectors": [
+          [
+            -0.06046411363339312,
+            0.9981279201551243,
+            -0.0016725146371506967,
+            -0.0068996405839033366,
+            -0.00558224417042462,
+            -0.0017838648932104947
+          ],
+          [
+            -0.9621343988554555,
+            -0.059597349307390364,
+            -0.01880095422664298,
+            0.029318807264249205,
+            -0.2636257267076516,
+            -0.005827724531594921
+          ],
+          [
+            -0.013135114745915536,
+            0.0023115862563725526,
+            0.9246945510716327,
+            0.14266753965883633,
+            -0.010457782281830042,
+            0.3525602366482383
+          ],
+          [
+            0.011909265103593403,
+            -0.006661937198894602,
+            0.14360026461755257,
+            -0.9762405537006419,
+            -0.16108294052500804,
+            0.0141215998137075
+          ],
+          [
+            -0.004334882611322837,
+            -0.0010128738939104525,
+            0.3512981164697958,
+            0.03551850620262396,
+            0.015625415460804207,
+            -0.9354486080767913
+          ],
+          [
+            0.2651571919817175,
+            0.011749902576240224,
+            -0.023501306345167013,
+            0.15630608643141833,
+            -0.9508780585443766,
+            -0.020015420386793447
+          ]
+        ],
+        "observable_eigendirections": [
+          false,
+          false,
+          true,
+          true,
+          true,
+          true
+        ],
+        "rank": 4,
+        "condition_number": 50.75565803909089,
+        "rotation_scale_m": 14.47360349921171
+      },
+      "methods": {
+        "point_to_plane": {
+          "quality": {
+            "state": "quality_failed",
+            "reason": "overlap_low",
+            "method": "se2_point_to_plane",
+            "point_count": 6745,
+            "overlap": 0.364407,
+            "rmse": 0.2723574393508172,
+            "iterations": 8,
+            "observability": {
+              "dof_scores": {
+                "yaw": 0.9996969,
+                "x": 0.00012619,
+                "y": 0.00033721
+              },
+              "eigenvalues": [
+                7.656267850139665,
+                34.46973630728792,
+                262784.46926001296
+              ],
+              "normalized_eigenvalues": [
+                2.9135161113970345e-05,
+                0.00013117113200925782,
+                1.0
+              ],
+              "eigenvectors": [
+                [
+                  0.01711297867088872,
+                  -0.0032018706683209913,
+                  -0.9998484355067186
+                ],
+                [
+                  0.24889169316948664,
+                  0.9685306310646282,
+                  0.001158343981413141
+                ],
+                [
+                  -0.9683801273426855,
+                  0.24887379274197668,
+                  -0.017371363043459504
+                ]
+              ],
+              "observable_eigendirections": [
+                false,
+                false,
+                true
+              ],
+              "rank": 1,
+              "condition_number": 1.0
+            },
+            "source_structure_points": 590,
+            "target_structure_points": 567,
+            "structure_selection": "abs(normal_z)<=se2_structure_normal_z_max",
+            "resolutions_m": [],
+            "translation_step_m": 0.00021400438237975357,
+            "rotation_step_deg": 0.6145608167566315,
+            "frozen_directions": [
+              "x",
+              "y"
+            ],
+            "candidate_pose": [
+              [
+                0.9999424758367992,
+                0.0107259040351989,
+                0.0,
+                -2.2543702756571036e-05
+              ],
+              [
+                -0.010725904035198902,
+                0.9999424758367993,
+                0.0,
+                -0.00021281366766202577
+              ],
+              [
+                0.0,
+                0.0,
+                1.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+              ]
+            ]
+          },
+          "accepted_pose": null,
+          "candidate_pose": {
+            "x": -2.2543702756571036e-05,
+            "y": -0.00021281366766202577,
+            "translation_m": 0.00021400438237975357,
+            "yaw_deg": -0.614560816756668
+          }
+        },
+        "gicp": {
+          "quality": {
+            "state": "insufficient_points",
+            "reason": "no_correspondence",
+            "method": "se2_gicp",
+            "point_count": 6745,
+            "overlap": 0.0,
+            "rmse": null,
+            "iterations": 1,
+            "observability": null,
+            "source_structure_points": 590,
+            "target_structure_points": 567,
+            "structure_selection": "abs(normal_z)<=se2_structure_normal_z_max",
+            "resolutions_m": [
+              0.8,
+              0.4,
+              0.25
+            ]
+          },
+          "accepted_pose": null,
+          "candidate_pose": null
+        },
+        "ndt": {
+          "quality": {
+            "state": "quality_failed",
+            "reason": "overlap_low",
+            "method": "se2_ndt",
+            "point_count": 6745,
+            "overlap": 0.376271,
+            "rmse": 0.28673675736584425,
+            "iterations": 7,
+            "observability": {
+              "dof_scores": {
+                "yaw": 0.99958757,
+                "x": 0.00030683,
+                "y": 0.00052457
+              },
+              "eigenvalues": [
+                238.74740981567993,
+                652.1008819430791,
+                2126309.2110233805
+              ],
+              "normalized_eigenvalues": [
+                0.00011228254506820866,
+                0.000306682056665327,
+                1.0
+              ],
+              "eigenvectors": [
+                [
+                  0.020309255137667067,
+                  -9.486914920227617e-05,
+                  -0.9997937413064745
+                ],
+                [
+                  0.03528610536044831,
+                  0.9993770579432318,
+                  0.0006219527485219438
+                ],
+                [
+                  -0.9991708687327929,
+                  0.03529145869151049,
+                  -0.020299951211294385
+                ]
+              ],
+              "observable_eigendirections": [
+                false,
+                false,
+                true
+              ],
+              "rank": 1,
+              "condition_number": 1.0
+            },
+            "source_structure_points": 590,
+            "target_structure_points": 567,
+            "structure_selection": "abs(normal_z)<=se2_structure_normal_z_max",
+            "resolutions_m": [
+              2.0,
+              1.0
+            ],
+            "translation_step_m": 0.00023904590537993952,
+            "rotation_step_deg": 0.6814185846914883,
+            "frozen_directions": [
+              "x",
+              "y"
+            ],
+            "candidate_pose": [
+              [
+                0.9999292791342175,
+                0.011892717524785186,
+                0.0,
+                8.855225532908718e-06
+              ],
+              [
+                -0.011892717524785186,
+                0.9999292791342175,
+                0.0,
+                -0.00023888183241861722
+              ],
+              [
+                0.0,
+                0.0,
+                1.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+              ]
+            ]
+          },
+          "accepted_pose": null,
+          "candidate_pose": {
+            "x": 8.855225532908718e-06,
+            "y": -0.00023888183241861722,
+            "translation_m": 0.00023904590537993952,
+            "yaw_deg": -0.6814185846912885
+          }
+        }
+      }
+    },
+    {
+      "previous_sweep": 22,
+      "current_sweep": 23,
+      "time": 10.373012065887451,
+      "target_points": 6929,
+      "source_points": 6882,
+      "structures": {
+        "point_count": 6929,
+        "ground_like": 6159,
+        "vertical_like": 340,
+        "thin_structure_like": 3534,
+        "irregular_or_unstable_like": 0,
+        "semantics": "geometry_candidates_only"
+      },
+      "se3_observability": {
+        "dof_scores": {
+          "x": 0.00352466,
+          "y": 0.01246075,
+          "z": 0.14232337,
+          "roll": 0.04433549,
+          "pitch": 0.87808319,
+          "yaw": 0.15139061
+        },
+        "eigenvalues": [
+          71.48043524426426,
+          153.26617326838596,
+          911.5372775129941,
+          1837.0391785021704,
+          7186.228055596087,
+          43768.89325310965
+        ],
+        "normalized_eigenvalues": [
+          0.0016331332581544264,
+          0.0035017146168642693,
+          0.020826144089175297,
+          0.04197134179013435,
+          0.16418573835164377,
+          1.0
+        ],
+        "eigenvectors": [
+          [
+            -0.04156300176221477,
+            0.9990125663108168,
+            0.005917948228064121,
+            0.010177617606227764,
+            0.010134405324596632,
+            0.0022576658161999226
+          ],
+          [
+            -0.9648905689572793,
+            -0.042661841927569964,
+            0.02206184734932641,
+            -0.02318049168578848,
+            0.2570842043156212,
+            0.007057532769261414
+          ],
+          [
+            -0.020606660449592844,
+            0.005965954456073265,
+            -0.9339291615819644,
+            -0.05688944726650204,
+            0.008332445121201052,
+            -0.3521508983764868
+          ],
+          [
+            0.01289153734880383,
+            -0.010608196004063146,
+            -0.05746931460633646,
+            0.9882168016769868,
+            0.14079321222722924,
+            -0.004834934854514028
+          ],
+          [
+            -0.006395142929545679,
+            4.540055475915679e-05,
+            -0.3520550792201187,
+            -0.012872922395325299,
+            -0.020629085982060355,
+            0.9356415178697265
+          ],
+          [
+            0.2581220307889709,
+            0.002393971632969695,
+            0.003012142278888911,
+            -0.13922827459639625,
+            0.955765289326154,
+            0.02205475894889975
+          ]
+        ],
+        "observable_eigendirections": [
+          false,
+          false,
+          true,
+          true,
+          true,
+          true
+        ],
+        "rank": 4,
+        "condition_number": 48.01656973648641,
+        "rotation_scale_m": 14.7117001579058
+      },
+      "methods": {
+        "point_to_plane": {
+          "quality": {
+            "state": "quality_failed",
+            "reason": "overlap_low",
+            "method": "se2_point_to_plane",
+            "point_count": 6882,
+            "overlap": 0.332773,
+            "rmse": 0.29134068049761874,
+            "iterations": 3,
+            "observability": {
+              "dof_scores": {
+                "yaw": 0.99972307,
+                "x": 0.00012243,
+                "y": 0.00028068
+              },
+              "eigenvalues": [
+                7.346468892298501,
+                34.4499974073938,
+                331258.52058372926
+              ],
+              "normalized_eigenvalues": [
+                2.217744883770197e-05,
+                0.00010399731710051571,
+                1.0
+              ],
+              "eigenvectors": [
+                [
+                  0.01640912106182278,
+                  0.0027715578216681172,
+                  -0.999861520018257
+                ],
+                [
+                  0.09919876563355388,
+                  0.9950579711051049,
+                  0.004386232662712987
+                ],
+                [
+                  -0.994932332192877,
+                  0.09925700281306767,
+                  -0.016053091596603924
+                ]
+              ],
+              "observable_eigendirections": [
+                false,
+                false,
+                true
+              ],
+              "rank": 1,
+              "condition_number": 1.0
+            },
+            "source_structure_points": 595,
+            "target_structure_points": 643,
+            "structure_selection": "abs(normal_z)<=se2_structure_normal_z_max",
+            "resolutions_m": [],
+            "translation_step_m": 1.074757537860939e-05,
+            "rotation_step_deg": 0.03693589196531203,
+            "frozen_directions": [
+              "x",
+              "y"
+            ],
+            "candidate_pose": [
+              [
+                0.9999997922113091,
+                0.0006446528825032062,
+                0.0,
+                2.8394995692698923e-06
+              ],
+              [
+                -0.0006446528825032063,
+                0.9999997922113091,
+                0.0,
+                -1.0365694319002798e-05
+              ],
+              [
+                0.0,
+                0.0,
+                1.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+              ]
+            ]
+          },
+          "accepted_pose": null,
+          "candidate_pose": {
+            "x": 2.8394995692698923e-06,
+            "y": -1.0365694319002798e-05,
+            "translation_m": 1.074757537860939e-05,
+            "yaw_deg": -0.03693589197666358
+          }
+        },
+        "gicp": {
+          "quality": {
+            "state": "quality_failed",
+            "reason": "overlap_low",
+            "method": "se2_gicp",
+            "point_count": 6882,
+            "overlap": 0.332773,
+            "rmse": 0.2911177276725537,
+            "iterations": 8,
+            "observability": {
+              "dof_scores": {
+                "yaw": 0.99974395,
+                "x": 0.00012379,
+                "y": 0.00025565
+              },
+              "eigenvalues": [
+                206.21219840757573,
+                1499.626105511108,
+                13824694.70414718
+              ],
+              "normalized_eigenvalues": [
+                1.4916220778873001e-05,
+                0.00010847444646001802,
+                1.0
+              ],
+              "eigenvectors": [
+                [
+                  0.015853574020304746,
+                  0.0021719179233170073,
+                  -0.9998719652852145
+                ],
+                [
+                  0.12179843009484276,
+                  0.9925464408674863,
+                  0.0040871931343173275
+                ],
+                [
+                  -0.992428237515043,
+                  0.12184763228647426,
+                  -0.015470872275527863
+                ]
+              ],
+              "observable_eigendirections": [
+                false,
+                false,
+                true
+              ],
+              "rank": 1,
+              "condition_number": 1.0
+            },
+            "source_structure_points": 595,
+            "target_structure_points": 643,
+            "structure_selection": "abs(normal_z)<=se2_structure_normal_z_max",
+            "resolutions_m": [
+              0.8,
+              0.4,
+              0.25
+            ],
+            "translation_step_m": 1.8108534229985984e-05,
+            "rotation_step_deg": 0.048751893825586506,
+            "frozen_directions": [
+              "x",
+              "y"
+            ],
+            "candidate_pose": [
+              [
+                0.9999996380007296,
+                0.0008508809610202193,
+                0.0,
+                1.5372910698532077e-05
+              ],
+              [
+                -0.0008508809610202182,
+                0.9999996380007294,
+                0.0,
+                -9.57040378529203e-06
+              ],
+              [
+                0.0,
+                0.0,
+                1.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+              ]
+            ]
+          },
+          "accepted_pose": null,
+          "candidate_pose": {
+            "x": 1.5372910698532077e-05,
+            "y": -9.57040378529203e-06,
+            "translation_m": 1.8108534229985984e-05,
+            "yaw_deg": -0.04875189381721086
+          }
+        },
+        "ndt": {
+          "quality": {
+            "state": "quality_failed",
+            "reason": "overlap_low",
+            "method": "se2_ndt",
+            "point_count": 6882,
+            "overlap": 0.334454,
+            "rmse": 0.29397060114554047,
+            "iterations": 7,
+            "observability": {
+              "dof_scores": {
+                "yaw": 0.9996755,
+                "x": 0.0002782,
+                "y": 0.00041011
+              },
+              "eigenvalues": [
+                222.00983984227435,
+                722.074735529084,
+                2595016.175696915
+              ],
+              "normalized_eigenvalues": [
+                8.555239151164505e-05,
+                0.0002782544256531135,
+                1.0
+              ],
+              "eigenvectors": [
+                [
+                  0.018012979063442763,
+                  -0.00023592643145570037,
+                  -0.9998377252954497
+                ],
+                [
+                  0.018880344924945152,
+                  0.9998217449690299,
+                  0.00010422379434669367
+                ],
+                [
+                  -0.9996594746016141,
+                  0.018879158503575882,
+                  -0.01801422253170475
+                ]
+              ],
+              "observable_eigendirections": [
+                false,
+                false,
+                true
+              ],
+              "rank": 1,
+              "condition_number": 1.0
+            },
+            "source_structure_points": 595,
+            "target_structure_points": 643,
+            "structure_selection": "abs(normal_z)<=se2_structure_normal_z_max",
+            "resolutions_m": [
+              2.0,
+              1.0
+            ],
+            "translation_step_m": 9.838495862576763e-06,
+            "rotation_step_deg": 0.02979024017436233,
+            "frozen_directions": [
+              "x",
+              "y"
+            ],
+            "candidate_pose": [
+              [
+                0.9999998648323577,
+                0.0005199377524702292,
+                0.0,
+                3.880434262225555e-06
+              ],
+              [
+                -0.0005199377524702292,
+                0.9999998648323577,
+                0.0,
+                -9.04091979692808e-06
+              ],
+              [
+                0.0,
+                0.0,
+                1.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+              ]
+            ]
+          },
+          "accepted_pose": null,
+          "candidate_pose": {
+            "x": 3.880434262225555e-06,
+            "y": -9.04091979692808e-06,
+            "translation_m": 9.838495862576763e-06,
+            "yaw_deg": -0.029790240168287345
+          }
+        }
+      }
+    },
+    {
+      "previous_sweep": 44,
+      "current_sweep": 45,
+      "time": 20.390108108520508,
+      "target_points": 5774,
+      "source_points": 7036,
+      "structures": {
+        "point_count": 5774,
+        "ground_like": 5608,
+        "vertical_like": 51,
+        "thin_structure_like": 3723,
+        "irregular_or_unstable_like": 0,
+        "semantics": "geometry_candidates_only"
+      },
+      "se3_observability": {
+        "dof_scores": {
+          "x": 0.000993,
+          "y": 0.00415683,
+          "z": 0.1433569,
+          "roll": 0.0555399,
+          "pitch": 0.87613563,
+          "yaw": 0.04260271
+        },
+        "eigenvalues": [
+          11.856941531589907,
+          29.03523948850153,
+          797.8552390959202,
+          1519.8995221022574,
+          2415.2810383715578,
+          38880.392956130236
+        ],
+        "normalized_eigenvalues": [
+          0.0003049594057593092,
+          0.0007467835914431923,
+          0.020520760682541484,
+          0.03909167080222671,
+          0.062120798035574964,
+          1.0
+        ],
+        "eigenvectors": [
+          [
+            -0.13275477760678855,
+            0.9885569853015751,
+            0.007133651921241138,
+            -0.0507762019018544,
+            0.05001541297051373,
+            -0.0007762925425399269
+          ],
+          [
+            0.9502672341601937,
+            0.10692800598156463,
+            0.032709886950815,
+            -0.24662506781603286,
+            0.15382241863379512,
+            0.0018406423862272125
+          ],
+          [
+            0.0019597553631281466,
+            0.00041799473693225083,
+            0.9243677308728452,
+            0.14245639985011108,
+            0.015209511922893456,
+            0.35357478367258677
+          ],
+          [
+            -0.018987818011272434,
+            0.009076394110283974,
+            0.08737788744713827,
+            -0.5674101359667367,
+            -0.8177478180638387,
+            0.035446160249623666
+          ],
+          [
+            -0.00228269792082466,
+            -0.0017244202352939767,
+            0.35466648052084865,
+            0.020178187937333416,
+            -0.016582652791788638,
+            -0.9346236459762624
+          ],
+          [
+            -0.2810671879113566,
+            -0.10599980695017862,
+            0.10488214722796466,
+            -0.7706767193322245,
+            0.5519232867132203,
+            0.01425103020747693
+          ]
+        ],
+        "observable_eigendirections": [
+          false,
+          false,
+          true,
+          true,
+          true,
+          true
+        ],
+        "rank": 4,
+        "condition_number": 48.73113699195242,
+        "rotation_scale_m": 15.216324908192753
+      },
+      "methods": {
+        "point_to_plane": {
+          "quality": {
+            "state": "insufficient_points",
+            "reason": "no_correspondence",
+            "method": "se2_point_to_plane",
+            "point_count": 7036,
+            "overlap": 0.0,
+            "rmse": null,
+            "iterations": 1,
+            "observability": null,
+            "source_structure_points": 625,
+            "target_structure_points": 126,
+            "structure_selection": "abs(normal_z)<=se2_structure_normal_z_max",
+            "resolutions_m": []
+          },
+          "accepted_pose": null,
+          "candidate_pose": null
+        },
+        "gicp": {
+          "quality": {
+            "state": "insufficient_points",
+            "reason": "no_correspondence",
+            "method": "se2_gicp",
+            "point_count": 7036,
+            "overlap": 0.0,
+            "rmse": null,
+            "iterations": 1,
+            "observability": null,
+            "source_structure_points": 625,
+            "target_structure_points": 126,
+            "structure_selection": "abs(normal_z)<=se2_structure_normal_z_max",
+            "resolutions_m": [
+              0.8,
+              0.4,
+              0.25
+            ]
+          },
+          "accepted_pose": null,
+          "candidate_pose": null
+        },
+        "ndt": {
+          "quality": {
+            "state": "insufficient_points",
+            "reason": "no_correspondence",
+            "method": "se2_ndt",
+            "point_count": 7036,
+            "overlap": 0.0,
+            "rmse": null,
+            "iterations": 1,
+            "observability": null,
+            "source_structure_points": 625,
+            "target_structure_points": 126,
+            "structure_selection": "abs(normal_z)<=se2_structure_normal_z_max",
+            "resolutions_m": [
+              2.0,
+              1.0
+            ]
+          },
+          "accepted_pose": null,
+          "candidate_pose": null
+        }
+      }
+    },
+    {
+      "previous_sweep": 66,
+      "current_sweep": 67,
+      "time": 30.48204207420349,
+      "target_points": 6837,
+      "source_points": 6919,
+      "structures": {
+        "point_count": 6837,
+        "ground_like": 6413,
+        "vertical_like": 151,
+        "thin_structure_like": 3266,
+        "irregular_or_unstable_like": 0,
+        "semantics": "geometry_candidates_only"
+      },
+      "se3_observability": {
+        "dof_scores": {
+          "x": 0.00156767,
+          "y": 0.00685571,
+          "z": 0.14496421,
+          "roll": 0.04466274,
+          "pitch": 0.87520376,
+          "yaw": 0.0864547
+        },
+        "eigenvalues": [
+          23.694016068473378,
+          69.25838342751645,
+          939.8886461360968,
+          1870.098685971171,
+          4215.817042990144,
+          44573.35729864935
+        ],
+        "normalized_eigenvalues": [
+          0.0005315735117217958,
+          0.0015538067497019143,
+          0.021086332802769985,
+          0.04195552678343658,
+          0.09458154598370112,
+          1.0
+        ],
+        "eigenvectors": [
+          [
+            -0.14195623379658337,
+            0.9896186996091195,
+            0.01206331091854001,
+            -0.013970144866760516,
+            0.012371460336650573,
+            -0.0030847400973005347
+          ],
+          [
+            0.9561516640434671,
+            0.13311988085483703,
+            0.020811035284297546,
+            -0.03930362550609092,
+            0.2570107015416347,
+            -0.004551680310775164
+          ],
+          [
+            0.013756385631373875,
+            0.011705783531049549,
+            -0.9163757819639706,
+            -0.1846069069107902,
+            -0.0049877083066571445,
+            0.3547175995110552
+          ],
+          [
+            -0.009551513140806827,
+            0.012153941151787882,
+            -0.18011065755986425,
+            0.9638323044265686,
+            0.1919086926310711,
+            0.038981328619707455
+          ],
+          [
+            0.0037437380509547525,
+            0.0016613693414758211,
+            -0.3559378943263602,
+            -0.0273863613196893,
+            -0.006697393451568314,
+            -0.9340752495353122
+          ],
+          [
+            -0.2555933056824566,
+            -0.051443395139350916,
+            0.023348875473356755,
+            -0.18562765460121575,
+            0.9470447548250561,
+            -0.011361135796270166
+          ]
+        ],
+        "observable_eigendirections": [
+          false,
+          false,
+          true,
+          true,
+          true,
+          true
+        ],
+        "rank": 4,
+        "condition_number": 47.42408314207371,
+        "rotation_scale_m": 15.575902717596168
+      },
+      "methods": {
+        "point_to_plane": {
+          "quality": {
+            "state": "insufficient_points",
+            "reason": "no_correspondence",
+            "method": "se2_point_to_plane",
+            "point_count": 6919,
+            "overlap": 0.0,
+            "rmse": null,
+            "iterations": 1,
+            "observability": null,
+            "source_structure_points": 349,
+            "target_structure_points": 328,
+            "structure_selection": "abs(normal_z)<=se2_structure_normal_z_max",
+            "resolutions_m": []
+          },
+          "accepted_pose": null,
+          "candidate_pose": null
+        },
+        "gicp": {
+          "quality": {
+            "state": "insufficient_points",
+            "reason": "no_correspondence",
+            "method": "se2_gicp",
+            "point_count": 6919,
+            "overlap": 0.0,
+            "rmse": null,
+            "iterations": 1,
+            "observability": null,
+            "source_structure_points": 349,
+            "target_structure_points": 328,
+            "structure_selection": "abs(normal_z)<=se2_structure_normal_z_max",
+            "resolutions_m": [
+              0.8,
+              0.4,
+              0.25
+            ]
+          },
+          "accepted_pose": null,
+          "candidate_pose": null
+        },
+        "ndt": {
+          "quality": {
+            "state": "insufficient_points",
+            "reason": "no_correspondence",
+            "method": "se2_ndt",
+            "point_count": 6919,
+            "overlap": 0.0,
+            "rmse": null,
+            "iterations": 1,
+            "observability": null,
+            "source_structure_points": 349,
+            "target_structure_points": 328,
+            "structure_selection": "abs(normal_z)<=se2_structure_normal_z_max",
+            "resolutions_m": [
+              2.0,
+              1.0
+            ]
+          },
+          "accepted_pose": null,
+          "candidate_pose": null
+        }
+      }
+    },
+    {
+      "previous_sweep": 88,
+      "current_sweep": 89,
+      "time": 41.716984033584595,
+      "target_points": 7706,
+      "source_points": 7842,
+      "structures": {
+        "point_count": 7706,
+        "ground_like": 6872,
+        "vertical_like": 371,
+        "thin_structure_like": 3521,
+        "irregular_or_unstable_like": 12,
+        "semantics": "geometry_candidates_only"
+      },
+      "se3_observability": {
+        "dof_scores": {
+          "x": 0.00302831,
+          "y": 0.01125201,
+          "z": 0.13270134,
+          "roll": 0.03966973,
+          "pitch": 0.88577025,
+          "yaw": 0.11741637
+        },
+        "eigenvalues": [
+          48.02932753886277,
+          157.7199987188121,
+          996.398867086341,
+          1918.9883612448311,
+          6831.749143087371,
+          52428.309424874155
+        ],
+        "normalized_eigenvalues": [
+          0.0009160952940450084,
+          0.003008298387816854,
+          0.01900497799789074,
+          0.03660214075745848,
+          0.13030649315284057,
+          1.0
+        ],
+        "eigenvectors": [
+          [
+            0.1607495033396068,
+            0.9865048033137552,
+            -0.02177468310135087,
+            0.012357207600723803,
+            -0.01789955260013689,
+            0.004542997669208735
+          ],
+          [
+            -0.9455605673411306,
+            0.158835043607805,
+            0.007141979496673649,
+            0.04024521199717565,
+            0.28109675225507574,
+            -0.0007571812505082372
+          ],
+          [
+            0.009823321462720106,
+            0.019205826237693877,
+            0.935627696782387,
+            0.09035443525477159,
+            -0.01543301405620427,
+            -0.3401960460008113
+          ],
+          [
+            0.011404051488232135,
+            0.01567416075708746,
+            0.10645481442610415,
+            -0.979628888365609,
+            0.16712589958907265,
+            0.026226237736730378
+          ],
+          [
+            0.004177706061828922,
+            0.0016015529138482065,
+            0.33572724932936676,
+            0.06144007925844736,
+            -0.0016465108359118123,
+            0.9399412755703652
+          ],
+          [
+            0.28254346108650935,
+            -0.03102569761260387,
+            -0.00550044194878437,
+            0.16314428001521813,
+            0.9447180884550243,
+            -0.008247488555712367
+          ]
+        ],
+        "observable_eigendirections": [
+          false,
+          false,
+          true,
+          true,
+          true,
+          true
+        ],
+        "rank": 4,
+        "condition_number": 52.61779309141976,
+        "rotation_scale_m": 15.729212684788685
+      },
+      "methods": {
+        "point_to_plane": {
+          "quality": {
+            "state": "quality_failed",
+            "reason": "overlap_low",
+            "method": "se2_point_to_plane",
+            "point_count": 7842,
+            "overlap": 0.338462,
+            "rmse": 0.30045000535288513,
+            "iterations": 3,
+            "observability": {
+              "dof_scores": {
+                "yaw": 0.99954085,
+                "x": 0.00035911,
+                "y": 0.0004756
+              },
+              "eigenvalues": [
+                1.3942597184995098,
+                62.47721950203972,
+                170069.96312897428
+              ],
+              "normalized_eigenvalues": [
+                8.198153823565886e-06,
+                0.00036736186891896653,
+                1.0
+              ],
+              "eigenvectors": [
+                [
+                  0.021320104095519075,
+                  -0.0021461800114152448,
+                  -0.9997703971776295
+                ],
+                [
+                  0.17272847782105272,
+                  0.9849682284691591,
+                  0.0015690302573612802
+                ],
+                [
+                  -0.9847387095625818,
+                  0.1727222707634571,
+                  -0.02137033156824321
+                ]
+              ],
+              "observable_eigendirections": [
+                false,
+                false,
+                true
+              ],
+              "rank": 1,
+              "condition_number": 1.0
+            },
+            "source_structure_points": 585,
+            "target_structure_points": 698,
+            "structure_selection": "abs(normal_z)<=se2_structure_normal_z_max",
+            "resolutions_m": [],
+            "translation_step_m": 1.9109630342387535e-05,
+            "rotation_step_deg": 0.051034203620115015,
+            "frozen_directions": [
+              "x",
+              "y"
+            ],
+            "candidate_pose": [
+              [
+                0.9999996033135237,
+                -0.0008907147664827966,
+                0.0,
+                -1.3988363408031178e-06
+              ],
+              [
+                0.0008907147664827965,
+                0.9999996033135237,
+                0.0,
+                1.9058363747036282e-05
+              ],
+              [
+                0.0,
+                0.0,
+                1.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+              ]
+            ]
+          },
+          "accepted_pose": null,
+          "candidate_pose": {
+            "x": -1.3988363408031178e-06,
+            "y": 1.9058363747036282e-05,
+            "translation_m": 1.9109630342387535e-05,
+            "yaw_deg": 0.051034203617637906
+          }
+        },
+        "gicp": {
+          "quality": {
+            "state": "insufficient_points",
+            "reason": "no_correspondence",
+            "method": "se2_gicp",
+            "point_count": 7842,
+            "overlap": 0.0,
+            "rmse": null,
+            "iterations": 1,
+            "observability": null,
+            "source_structure_points": 585,
+            "target_structure_points": 698,
+            "structure_selection": "abs(normal_z)<=se2_structure_normal_z_max",
+            "resolutions_m": [
+              0.8,
+              0.4,
+              0.25
+            ]
+          },
+          "accepted_pose": null,
+          "candidate_pose": null
+        },
+        "ndt": {
+          "quality": {
+            "state": "quality_failed",
+            "reason": "overlap_low",
+            "method": "se2_ndt",
+            "point_count": 7842,
+            "overlap": 0.34359,
+            "rmse": 0.30545690190408,
+            "iterations": 11,
+            "observability": {
+              "dof_scores": {
+                "yaw": 0.99951369,
+                "x": 0.00047917,
+                "y": 0.00051225
+              },
+              "eigenvalues": [
+                76.62582616276956,
+                873.4402147509959,
+                1880895.3855230776
+              ],
+              "normalized_eigenvalues": [
+                4.0739015445805826e-05,
+                0.0004643746916887097,
+                1.0
+              ],
+              "eigenvectors": [
+                [
+                  0.021993917312118774,
+                  0.0016119750121435443,
+                  -0.9997568049970094
+                ],
+                [
+                  0.1545190305846954,
+                  0.9879771992578029,
+                  0.004992287438958333
+                ],
+                [
+                  -0.9877449755824796,
+                  0.15459125228572115,
+                  -0.021480408010531634
+                ]
+              ],
+              "observable_eigendirections": [
+                false,
+                false,
+                true
+              ],
+              "rank": 1,
+              "condition_number": 1.0
+            },
+            "source_structure_points": 585,
+            "target_structure_points": 698,
+            "structure_selection": "abs(normal_z)<=se2_structure_normal_z_max",
+            "resolutions_m": [
+              2.0,
+              1.0
+            ],
+            "translation_step_m": 2.8315054634297943e-05,
+            "rotation_step_deg": 0.07962180006535267,
+            "frozen_directions": [
+              "x",
+              "y"
+            ],
+            "candidate_pose": [
+              [
+                0.9999990344191294,
+                -0.001389662120346934,
+                0.0,
+                -6.826481100114537e-06
+              ],
+              [
+                0.0013896621203469347,
+                0.9999990344191296,
+                0.0,
+                2.7479837603833405e-05
+              ],
+              [
+                0.0,
+                0.0,
+                1.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+              ]
+            ]
+          },
+          "accepted_pose": null,
+          "candidate_pose": {
+            "x": -6.826481100114537e-06,
+            "y": 2.7479837603833405e-05,
+            "translation_m": 2.8315054634297943e-05,
+            "yaw_deg": 0.07962180007217774
+          }
+        }
+      }
+    },
+    {
+      "previous_sweep": 110,
+      "current_sweep": 111,
+      "time": 53.64393901824951,
+      "target_points": 6461,
+      "source_points": 7931,
+      "structures": {
+        "point_count": 6461,
+        "ground_like": 6288,
+        "vertical_like": 61,
+        "thin_structure_like": 3651,
+        "irregular_or_unstable_like": 9,
+        "semantics": "geometry_candidates_only"
+      },
+      "se3_observability": {
+        "dof_scores": {
+          "x": 0.001426,
+          "y": 0.00226496,
+          "z": 0.13055757,
+          "roll": 0.05757365,
+          "pitch": 0.88659208,
+          "yaw": 0.02991731
+        },
+        "eigenvalues": [
+          19.41415488930828,
+          65.8398169039924,
+          798.4632251671153,
+          1525.1384529883883,
+          2804.8345267965838,
+          48127.15990487111
+        ],
+        "normalized_eigenvalues": [
+          0.000403392905953366,
+          0.0013680386923752078,
+          0.016590699030347315,
+          0.03168976636067868,
+          0.05827966022388737,
+          1.0
+        ],
+        "eigenvectors": [
+          [
+            0.047915141516578066,
+            0.9980975651919107,
+            -0.024613980532307383,
+            -0.029560875681044402,
+            0.0011318577315886536,
+            -0.004941159866523192
+          ],
+          [
+            0.9691434712648438,
+            -0.03884642229914053,
+            0.019109162057400285,
+            0.24258115343765282,
+            -0.005449310676589822,
+            0.0033788333426461874
+          ],
+          [
+            -0.007541686506247458,
+            0.023747901873780296,
+            0.930764130163676,
+            -0.04692546148921859,
+            -0.12511382062638143,
+            0.3394139464933406
+          ],
+          [
+            0.00014980972160077435,
+            0.002490803104094581,
+            0.13193246673772915,
+            0.011603409257785295,
+            0.9911750231076368,
+            0.005003212829098596
+          ],
+          [
+            -0.0023824631591825747,
+            0.003694649777296741,
+            0.3372589855932359,
+            -0.004257869110218808,
+            -0.04010304935429883,
+            -0.9405374346893731
+          ],
+          [
+            -0.2416660830757158,
+            0.04133265600042738,
+            0.03946297943129244,
+            0.9684656788622343,
+            -0.016714508654363382,
+            0.011253584297985394
+          ]
+        ],
+        "observable_eigendirections": [
+          false,
+          false,
+          true,
+          true,
+          true,
+          true
+        ],
+        "rank": 4,
+        "condition_number": 60.27473575229251,
+        "rotation_scale_m": 15.708611207375553
+      },
+      "methods": {
+        "point_to_plane": {
+          "quality": {
+            "state": "quality_failed",
+            "reason": "overlap_low",
+            "method": "se2_point_to_plane",
+            "point_count": 7931,
+            "overlap": 0.151773,
+            "rmse": 0.3607292962730692,
+            "iterations": 4,
+            "observability": {
+              "dof_scores": {
+                "yaw": 0.99960556,
+                "x": 0.00031959,
+                "y": 0.00032114
+              },
+              "eigenvalues": [
+                6.48311559082536,
+                21.078352977968336,
+                111909.72539571824
+              ],
+              "normalized_eigenvalues": [
+                5.7931654893269976e-05,
+                0.000188351395765062,
+                1.0
+              ],
+              "eigenvectors": [
+                [
+                  0.016707370589267353,
+                  0.010739650967125326,
+                  -0.999802742377264
+                ],
+                [
+                  0.04412324675429979,
+                  0.9989602723192643,
+                  0.011467930226513327
+                ],
+                [
+                  -0.9988863813586871,
+                  0.04430614206772387,
+                  -0.016216131203915858
+                ]
+              ],
+              "observable_eigendirections": [
+                false,
+                false,
+                true
+              ],
+              "rank": 1,
+              "condition_number": 1.0
+            },
+            "source_structure_points": 705,
+            "target_structure_points": 165,
+            "structure_selection": "abs(normal_z)<=se2_structure_normal_z_max",
+            "resolutions_m": [],
+            "translation_step_m": 5.362839434964715e-05,
+            "rotation_step_deg": 0.14557658414711366,
+            "frozen_directions": [
+              "x",
+              "y"
+            ],
+            "candidate_pose": [
+              [
+                0.9999967721930276,
+                0.002540787973402362,
+                0.0,
+                3.0815541336354495e-05
+              ],
+              [
+                -0.0025407879734023614,
+                0.9999967721930277,
+                0.0,
+                -4.389085431691543e-05
+              ],
+              [
+                0.0,
+                0.0,
+                1.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+              ]
+            ]
+          },
+          "accepted_pose": null,
+          "candidate_pose": {
+            "x": 3.0815541336354495e-05,
+            "y": -4.389085431691543e-05,
+            "translation_m": 5.362839434964715e-05,
+            "yaw_deg": -0.14557658414462443
+          }
+        },
+        "gicp": {
+          "quality": {
+            "state": "insufficient_points",
+            "reason": "no_correspondence",
+            "method": "se2_gicp",
+            "point_count": 7931,
+            "overlap": 0.0,
+            "rmse": null,
+            "iterations": 1,
+            "observability": null,
+            "source_structure_points": 705,
+            "target_structure_points": 165,
+            "structure_selection": "abs(normal_z)<=se2_structure_normal_z_max",
+            "resolutions_m": [
+              0.8,
+              0.4,
+              0.25
+            ]
+          },
+          "accepted_pose": null,
+          "candidate_pose": null
+        },
+        "ndt": {
+          "quality": {
+            "state": "insufficient_points",
+            "reason": "ndt_cells_sparse",
+            "method": "se2_ndt",
+            "point_count": 7931,
+            "overlap": 0.0,
+            "rmse": null,
+            "iterations": 5,
+            "observability": null,
+            "source_structure_points": 705,
+            "target_structure_points": 165,
+            "structure_selection": "abs(normal_z)<=se2_structure_normal_z_max",
+            "resolutions_m": [
+              2.0,
+              1.0
+            ]
+          },
+          "accepted_pose": null,
+          "candidate_pose": null
+        }
+      }
+    },
+    {
+      "previous_sweep": 132,
+      "current_sweep": 133,
+      "time": 65.29300308227539,
+      "target_points": 7147,
+      "source_points": 7294,
+      "structures": {
+        "point_count": 7147,
+        "ground_like": 6510,
+        "vertical_like": 228,
+        "thin_structure_like": 4168,
+        "irregular_or_unstable_like": 42,
+        "semantics": "geometry_candidates_only"
+      },
+      "se3_observability": {
+        "dof_scores": {
+          "x": 0.00323276,
+          "y": 0.00893472,
+          "z": 0.13971695,
+          "roll": 0.04258872,
+          "pitch": 0.88025356,
+          "yaw": 0.06637775
+        },
+        "eigenvalues": [
+          54.064506169471336,
+          148.1625090903122,
+          989.6917750479387,
+          1760.4375665373964,
+          3687.3866083622625,
+          47055.515088634405
+        ],
+        "normalized_eigenvalues": [
+          0.001148951532410913,
+          0.003148674683748149,
+          0.021032428891358257,
+          0.03741192851085388,
+          0.07836247465183732,
+          1.0
+        ],
+        "eigenvectors": [
+          [
+            -0.10598341684521721,
+            0.9939389756138632,
+            -0.023874663336131027,
+            -0.0005774560551164381,
+            -0.014178140300895266,
+            -0.009026374808081954
+          ],
+          [
+            -0.9388867626861341,
+            -0.10500441764981575,
+            -0.022245263473668373,
+            0.11816913554386449,
+            -0.3048527299095645,
+            -0.008469701958329818
+          ],
+          [
+            -0.021325347329605462,
+            0.02324361633134216,
+            0.9365070966452154,
+            0.0246251595115511,
+            -0.01079399152859282,
+            0.3481903402740709
+          ],
+          [
+            -0.00629326814681935,
+            -0.005627475042263391,
+            0.0277809046293308,
+            -0.9383600372752001,
+            -0.34391180101421853,
+            -0.019027905998809366
+          ],
+          [
+            -0.006992958930059184,
+            -0.00046222263292416667,
+            0.34801045103891026,
+            0.018532812737986647,
+            0.029512974055944833,
+            -0.9368164868626757
+          ],
+          [
+            0.3266739736637589,
+            0.022073450215470358,
+            -0.002560066872687689,
+            0.3233671269088058,
+            -0.8874688392482882,
+            -0.024961658237426278
+          ]
+        ],
+        "observable_eigendirections": [
+          false,
+          false,
+          true,
+          true,
+          true,
+          true
+        ],
+        "rank": 4,
+        "condition_number": 47.54562609793855,
+        "rotation_scale_m": 17.22331580173117
+      },
+      "methods": {
+        "point_to_plane": {
+          "quality": {
+            "state": "quality_failed",
+            "reason": "overlap_low",
+            "method": "se2_point_to_plane",
+            "point_count": 7294,
+            "overlap": 0.520107,
+            "rmse": 0.2057465315656834,
+            "iterations": 2,
+            "observability": {
+              "dof_scores": {
+                "yaw": 0.99945833,
+                "x": 0.00039972,
+                "y": 0.00052197
+              },
+              "eigenvalues": [
+                8.0051789939558,
+                47.28501618345934,
+                145493.51856446784
+              ],
+              "normalized_eigenvalues": [
+                5.502086328614511e-05,
+                0.00032499740641372596,
+                1.0
+              ],
+              "eigenvectors": [
+                [
+                  0.021827291248298443,
+                  0.008080014296302025,
+                  -0.9997291046707271
+                ],
+                [
+                  0.026453049689306996,
+                  0.9996125744332264,
+                  0.008656627352074888
+                ],
+                [
+                  -0.9994117297284925,
+                  0.02663483440814255,
+                  -0.02160509377794505
+                ]
+              ],
+              "observable_eigendirections": [
+                false,
+                false,
+                true
+              ],
+              "rank": 1,
+              "condition_number": 1.0
+            },
+            "source_structure_points": 373,
+            "target_structure_points": 512,
+            "structure_selection": "abs(normal_z)<=se2_structure_normal_z_max",
+            "resolutions_m": [],
+            "translation_step_m": 1.6189348746718648e-05,
+            "rotation_step_deg": 0.03983257133695408,
+            "frozen_directions": [
+              "x",
+              "y"
+            ],
+            "candidate_pose": [
+              [
+                0.9999997583418719,
+                -0.00069520946319985,
+                0.0,
+                -6.011205517658759e-06
+              ],
+              [
+                0.00069520946319985,
+                0.9999997583418719,
+                0.0,
+                1.5031979945015545e-05
+              ],
+              [
+                0.0,
+                0.0,
+                1.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+              ]
+            ]
+          },
+          "accepted_pose": null,
+          "candidate_pose": {
+            "x": -6.011205517658759e-06,
+            "y": 1.5031979945015545e-05,
+            "translation_m": 1.6189348746718648e-05,
+            "yaw_deg": 0.039832571327528515
+          }
+        },
+        "gicp": {
+          "quality": {
+            "state": "insufficient_points",
+            "reason": "no_correspondence",
+            "method": "se2_gicp",
+            "point_count": 7294,
+            "overlap": 0.0,
+            "rmse": null,
+            "iterations": 1,
+            "observability": null,
+            "source_structure_points": 373,
+            "target_structure_points": 512,
+            "structure_selection": "abs(normal_z)<=se2_structure_normal_z_max",
+            "resolutions_m": [
+              0.8,
+              0.4,
+              0.25
+            ]
+          },
+          "accepted_pose": null,
+          "candidate_pose": null
+        },
+        "ndt": {
+          "quality": {
+            "state": "quality_failed",
+            "reason": "overlap_low",
+            "method": "se2_ndt",
+            "point_count": 7294,
+            "overlap": 0.520107,
+            "rmse": 0.2068674060558953,
+            "iterations": 7,
+            "observability": {
+              "dof_scores": {
+                "yaw": 0.99938037,
+                "x": 0.00060116,
+                "y": 0.00060839
+              },
+              "eigenvalues": [
+                130.38436839309202,
+                1519.0116645544135,
+                2795963.509410601
+              ],
+              "normalized_eigenvalues": [
+                4.663307226802023e-05,
+                0.0005432873710410572,
+                1.0
+              ],
+              "eigenvectors": [
+                [
+                  0.024470202102525422,
+                  0.004569100446861126,
+                  -0.9996901182517349
+                ],
+                [
+                  0.15831075903399003,
+                  0.9873537097485136,
+                  0.008387813775384697
+                ],
+                [
+                  -0.9870860716184497,
+                  0.15846695291749308,
+                  -0.02343740706437922
+                ]
+              ],
+              "observable_eigendirections": [
+                false,
+                false,
+                true
+              ],
+              "rank": 1,
+              "condition_number": 1.0
+            },
+            "source_structure_points": 373,
+            "target_structure_points": 512,
+            "structure_selection": "abs(normal_z)<=se2_structure_normal_z_max",
+            "resolutions_m": [
+              2.0,
+              1.0
+            ],
+            "translation_step_m": 7.068209710011258e-06,
+            "rotation_step_deg": 0.0032074581709504594,
+            "frozen_directions": [
+              "x",
+              "y"
+            ],
+            "candidate_pose": [
+              [
+                0.9999999984330803,
+                -5.5980708802138974e-05,
+                0.0,
+                6.619175797645472e-06
+              ],
+              [
+                5.598070880213841e-05,
+                0.9999999984330803,
+                0.0,
+                -2.479132966293228e-06
+              ],
+              [
+                0.0,
+                0.0,
+                1.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+              ]
+            ]
+          },
+          "accepted_pose": null,
+          "candidate_pose": {
+            "x": 6.619175797645472e-06,
+            "y": -2.479132966293228e-06,
+            "translation_m": 7.068209710011258e-06,
+            "yaw_deg": 0.0032074583501886817
+          }
+        }
+      }
+    },
+    {
+      "previous_sweep": 154,
+      "current_sweep": 155,
+      "time": 76.86084318161011,
+      "target_points": 7396,
+      "source_points": 7642,
+      "structures": {
+        "point_count": 7396,
+        "ground_like": 6536,
+        "vertical_like": 266,
+        "thin_structure_like": 3522,
+        "irregular_or_unstable_like": 53,
+        "semantics": "geometry_candidates_only"
+      },
+      "se3_observability": {
+        "dof_scores": {
+          "x": 0.00418377,
+          "y": 0.00973493,
+          "z": 0.12711913,
+          "roll": 0.03386984,
+          "pitch": 0.8910115,
+          "yaw": 0.11510991
+        },
+        "eigenvalues": [
+          76.40394163071532,
+          215.01791598479903,
+          957.651805675041,
+          1764.4454530221983,
+          6479.615265364321,
+          52439.83386812975
+        ],
+        "normalized_eigenvalues": [
+          0.001456982907742386,
+          0.004100278359491065,
+          0.018261915323439896,
+          0.03364704505851873,
+          0.12356284883851054,
+          1.0
+        ],
+        "eigenvectors": [
+          [
+            0.03387066008238479,
+            0.9988780177009422,
+            -0.01998877163770347,
+            -0.020044343886931167,
+            0.01598529141066528,
+            -0.006215133505729126
+          ],
+          [
+            -0.9648380004066399,
+            0.036465065199327955,
+            -0.017411690925921205,
+            -0.000998476667545844,
+            -0.2596465725163671,
+            -0.006117633143111944
+          ],
+          [
+            -0.017658014633964547,
+            0.023864374099298685,
+            0.9345607785278899,
+            0.12268420811428757,
+            -0.002012361364931552,
+            0.33265503586521455
+          ],
+          [
+            0.017704842038690098,
+            -0.016647900904399607,
+            0.13232322312158926,
+            -0.9881949698445939,
+            -0.07306990054575942,
+            -0.00560729833808308
+          ],
+          [
+            -0.0052673542013442,
+            0.0015445992380196955,
+            0.3292160707191061,
+            0.04785288377551112,
+            0.019743366268192602,
+            -0.9428186193409377
+          ],
+          [
+            0.25939814845944875,
+            0.007997376530142847,
+            -0.0008812876075161158,
+            0.07567440445796418,
+            -0.9625980819445832,
+            -0.01806053773123469
+          ]
+        ],
+        "observable_eigendirections": [
+          false,
+          false,
+          true,
+          true,
+          true,
+          true
+        ],
+        "rank": 4,
+        "condition_number": 54.758768852490526,
+        "rotation_scale_m": 15.6187154305991
+      },
+      "methods": {
+        "point_to_plane": {
+          "quality": {
+            "state": "quality_failed",
+            "reason": "overlap_low",
+            "method": "se2_point_to_plane",
+            "point_count": 7642,
+            "overlap": 0.338398,
+            "rmse": 0.27258364284681713,
+            "iterations": 2,
+            "observability": {
+              "dof_scores": {
+                "yaw": 0.99936277,
+                "x": 0.00052064,
+                "y": 0.00063267
+              },
+              "eigenvalues": [
+                11.442360903282296,
+                54.63277145034185,
+                128034.13095312743
+              ],
+              "normalized_eigenvalues": [
+                8.936961432160054e-05,
+                0.00042670474695800134,
+                1.0
+              ],
+              "eigenvectors": [
+                [
+                  0.023720375338229138,
+                  0.00864029359409043,
+                  -0.9996812937733812
+                ],
+                [
+                  0.046264958843489766,
+                  0.9988818039155103,
+                  0.009731155620288362
+                ],
+                [
+                  -0.9986475341065154,
+                  0.046481040576819954,
+                  -0.023294108479877045
+                ]
+              ],
+              "observable_eigendirections": [
+                false,
+                false,
+                true
+              ],
+              "rank": 1,
+              "condition_number": 1.0
+            },
+            "source_structure_points": 724,
+            "target_structure_points": 712,
+            "structure_selection": "abs(normal_z)<=se2_structure_normal_z_max",
+            "resolutions_m": [],
+            "translation_step_m": 4.12554439662979e-06,
+            "rotation_step_deg": 0.009354653036214616,
+            "frozen_directions": [
+              "x",
+              "y"
+            ],
+            "candidate_pose": [
+              [
+                0.999999986671536,
+                -0.0001632694941770231,
+                0.0,
+                -1.592741402289468e-06
+              ],
+              [
+                0.0001632694941770231,
+                0.999999986671536,
+                0.0,
+                3.8056919730840585e-06
+              ],
+              [
+                0.0,
+                0.0,
+                1.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+              ]
+            ]
+          },
+          "accepted_pose": null,
+          "candidate_pose": {
+            "x": -1.592741402289468e-06,
+            "y": 3.8056919730840585e-06,
+            "translation_m": 4.12554439662979e-06,
+            "yaw_deg": 0.009354652981140245
+          }
+        },
+        "gicp": {
+          "quality": {
+            "state": "quality_failed",
+            "reason": "overlap_low",
+            "method": "se2_gicp",
+            "point_count": 7642,
+            "overlap": 0.337017,
+            "rmse": 0.2699914898772937,
+            "iterations": 6,
+            "observability": {
+              "dof_scores": {
+                "yaw": 0.99931993,
+                "x": 0.00049417,
+                "y": 0.00056305
+              },
+              "eigenvalues": [
+                349.7713996119989,
+                2994.2315596038748,
+                8866577.15440421
+              ],
+              "normalized_eigenvalues": [
+                3.944830045698754e-05,
+                0.0003376986978697387,
+                1.0
+              ],
+              "eigenvectors": [
+                [
+                  0.024268017613070354,
+                  0.009549162068344108,
+                  -0.9996598805718496
+                ],
+                [
+                  0.13424065993962378,
+                  0.9908670668729292,
+                  0.01272403260025111
+                ],
+                [
+                  -0.9906515575822339,
+                  0.13450378913038286,
+                  -0.02276449361315867
+                ]
+              ],
+              "observable_eigendirections": [
+                false,
+                false,
+                true
+              ],
+              "rank": 1,
+              "condition_number": 1.0
+            },
+            "source_structure_points": 724,
+            "target_structure_points": 712,
+            "structure_selection": "abs(normal_z)<=se2_structure_normal_z_max",
+            "resolutions_m": [
+              0.8,
+              0.4,
+              0.25
+            ],
+            "translation_step_m": 9.750055867704148e-06,
+            "rotation_step_deg": 0.018507231027907956,
+            "frozen_directions": [
+              "x",
+              "y"
+            ],
+            "candidate_pose": [
+              [
+                0.9999999478315866,
+                -0.00032301211086054683,
+                0.0,
+                -6.787526701040104e-06
+              ],
+              [
+                0.0003230121108605468,
+                0.9999999478315867,
+                0.0,
+                6.999505032930525e-06
+              ],
+              [
+                0.0,
+                0.0,
+                1.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+              ]
+            ]
+          },
+          "accepted_pose": null,
+          "candidate_pose": {
+            "x": -6.787526701040104e-06,
+            "y": 6.999505032930525e-06,
+            "translation_m": 9.750055867704148e-06,
+            "yaw_deg": 0.01850723100575215
+          }
+        },
+        "ndt": {
+          "quality": {
+            "state": "quality_failed",
+            "reason": "overlap_low",
+            "method": "se2_ndt",
+            "point_count": 7642,
+            "overlap": 0.348066,
+            "rmse": 0.28327275263846496,
+            "iterations": 19,
+            "observability": {
+              "dof_scores": {
+                "yaw": 0.99935055,
+                "x": 0.00066202,
+                "y": 0.00067709
+              },
+              "eigenvalues": [
+                183.75884255249724,
+                1184.218484967832,
+                1983556.9739531346
+              ],
+              "normalized_eigenvalues": [
+                9.264107104837761e-05,
+                0.0005970176307100173,
+                1.0
+              ],
+              "eigenvectors": [
+                [
+                  0.02497158167396853,
+                  0.005093205917805813,
+                  -0.9996751869293241
+                ],
+                [
+                  0.14720748126702962,
+                  0.9890672285361352,
+                  0.008716357889938197
+                ],
+                [
+                  -0.9887903607781162,
+                  0.1473773275959613,
+                  -0.023948815063701268
+                ]
+              ],
+              "observable_eigendirections": [
+                false,
+                false,
+                true
+              ],
+              "rank": 1,
+              "condition_number": 1.0
+            },
+            "source_structure_points": 724,
+            "target_structure_points": 712,
+            "structure_selection": "abs(normal_z)<=se2_structure_normal_z_max",
+            "resolutions_m": [
+              2.0,
+              1.0
+            ],
+            "translation_step_m": 1.3857389644366471e-05,
+            "rotation_step_deg": 0.09614021972085698,
+            "frozen_directions": [
+              "x",
+              "y"
+            ],
+            "candidate_pose": [
+              [
+                0.9999985922197818,
+                -0.0016779625901863662,
+                0.0,
+                4.002472444723711e-06
+              ],
+              [
+                0.0016779625901863669,
+                0.9999985922197819,
+                0.0,
+                1.3266780396351729e-05
+              ],
+              [
+                0.0,
+                0.0,
+                1.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+              ]
+            ]
+          },
+          "accepted_pose": null,
+          "candidate_pose": {
+            "x": 4.002472444723711e-06,
+            "y": 1.3266780396351729e-05,
+            "translation_m": 1.3857389644366471e-05,
+            "yaw_deg": 0.09614021971328932
+          }
+        }
+      }
+    },
+    {
+      "previous_sweep": 176,
+      "current_sweep": 177,
+      "time": 88.27994799613953,
+      "target_points": 7534,
+      "source_points": 7380,
+      "structures": {
+        "point_count": 7534,
+        "ground_like": 6516,
+        "vertical_like": 306,
+        "thin_structure_like": 3979,
+        "irregular_or_unstable_like": 64,
+        "semantics": "geometry_candidates_only"
+      },
+      "se3_observability": {
+        "dof_scores": {
+          "x": 0.00533236,
+          "y": 0.01251848,
+          "z": 0.14300047,
+          "roll": 0.04671684,
+          "pitch": 0.8780042,
+          "yaw": 0.120467
+        },
+        "eigenvalues": [
+          98.37594662843429,
+          247.27091485424887,
+          989.4616447676821,
+          2145.896596291226,
+          6169.525238069306,
+          46838.28691237235
+        ],
+        "normalized_eigenvalues": [
+          0.002100331867655225,
+          0.0052792476231433684,
+          0.02112506050058623,
+          0.04581501027793539,
+          0.13171970293472932,
+          1.0
+        ],
+        "eigenvectors": [
+          [
+            0.016846392658770082,
+            -0.9988049554398011,
+            0.039011483033586446,
+            0.02287512712941266,
+            0.007640327495496855,
+            -0.00114812428693619
+          ],
+          [
+            -0.9587437312921618,
+            -0.018777798305212777,
+            -0.004147102593267093,
+            -0.012213136890292178,
+            -0.28335175903109666,
+            -0.0018092761410427119
+          ],
+          [
+            0.005051344139238465,
+            -0.037820460474266585,
+            -0.933861189581767,
+            -0.04434312496623027,
+            -0.0012589129396639875,
+            0.3528164929411149
+          ],
+          [
+            0.017183072676936646,
+            0.020244329975996966,
+            -0.051865408647645224,
+            0.9930722118377407,
+            -0.10145696585430108,
+            -0.010906633685555929
+          ],
+          [
+            0.0014001856991096397,
+            -0.013201109925161918,
+            -0.3516351928860289,
+            -0.02753275053600365,
+            0.00844447023621234,
+            -0.9355998609828396
+          ],
+          [
+            0.283202969931714,
+            -0.004643904584150698,
+            0.005182165024960672,
+            -0.10203325358901605,
+            -0.9535654126435296,
+            -0.007062302014179106
+          ]
+        ],
+        "observable_eigendirections": [
+          false,
+          false,
+          true,
+          true,
+          true,
+          true
+        ],
+        "rank": 4,
+        "condition_number": 47.33714253610065,
+        "rotation_scale_m": 16.976538509949123
+      },
+      "methods": {
+        "point_to_plane": {
+          "quality": {
+            "state": "quality_failed",
+            "reason": "overlap_low",
+            "method": "se2_point_to_plane",
+            "point_count": 7380,
+            "overlap": 0.51341,
+            "rmse": 0.32258246533119206,
+            "iterations": 20,
+            "observability": {
+              "dof_scores": {
+                "yaw": 0.9994525,
+                "x": 0.00039709,
+                "y": 0.00056308
+              },
+              "eigenvalues": [
+                13.284141392500878,
+                82.53171642094254,
+                232186.30833067445
+              ],
+              "normalized_eigenvalues": [
+                5.7213284831515154e-05,
+                0.00035545470796410076,
+                1.0
+              ],
+              "eigenvectors": [
+                [
+                  0.02310010065693055,
+                  0.003731170973356181,
+                  -0.9997261943716427
+                ],
+                [
+                  0.13766511639692947,
+                  0.9904549537836848,
+                  0.006877517922808043
+                ],
+                [
+                  -0.9902094228379467,
+                  0.13778629426951827,
+                  -0.02236595704221469
+                ]
+              ],
+              "observable_eigendirections": [
+                false,
+                false,
+                true
+              ],
+              "rank": 1,
+              "condition_number": 1.0
+            },
+            "source_structure_points": 783,
+            "target_structure_points": 820,
+            "structure_selection": "abs(normal_z)<=se2_structure_normal_z_max",
+            "resolutions_m": [],
+            "translation_step_m": 0.0010014747481630645,
+            "rotation_step_deg": 2.308718770039514,
+            "frozen_directions": [
+              "x",
+              "y"
+            ],
+            "candidate_pose": [
+              [
+                0.999188276640963,
+                -0.04028384072133926,
+                0.0,
+                -0.0003191066590695811
+              ],
+              [
+                0.040283840721339254,
+                0.9991882766409631,
+                0.0,
+                0.0009492747817917232
+              ],
+              [
+                0.0,
+                0.0,
+                1.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+              ]
+            ]
+          },
+          "accepted_pose": null,
+          "candidate_pose": {
+            "x": -0.0003191066590695811,
+            "y": 0.0009492747817917232,
+            "translation_m": 0.0010014747481630645,
+            "yaw_deg": 2.308718770039386
+          }
+        },
+        "gicp": {
+          "quality": {
+            "state": "quality_failed",
+            "reason": "overlap_low",
+            "method": "se2_gicp",
+            "point_count": 7380,
+            "overlap": 0.512133,
+            "rmse": 0.3209373269468325,
+            "iterations": 19,
+            "observability": {
+              "dof_scores": {
+                "yaw": 0.99942551,
+                "x": 0.00045474,
+                "y": 0.00052236
+              },
+              "eigenvalues": [
+                300.48582070824204,
+                4762.1549184582855,
+                12574492.330504775
+              ],
+              "normalized_eigenvalues": [
+                2.3896457432264362e-05,
+                0.00037871548157102574,
+                1.0
+              ],
+              "eigenvectors": [
+                [
+                  0.023242282799628654,
+                  0.005858006442239926,
+                  -0.9997126987543898
+                ],
+                [
+                  0.1432360365082324,
+                  0.9896464506003525,
+                  0.009129110555612961
+                ],
+                [
+                  -0.9894156023308278,
+                  0.14340706598576983,
+                  -0.022162565051875985
+                ]
+              ],
+              "observable_eigendirections": [
+                false,
+                false,
+                true
+              ],
+              "rank": 1,
+              "condition_number": 1.0
+            },
+            "source_structure_points": 783,
+            "target_structure_points": 820,
+            "structure_selection": "abs(normal_z)<=se2_structure_normal_z_max",
+            "resolutions_m": [
+              0.8,
+              0.4,
+              0.25
+            ],
+            "translation_step_m": 0.0011570056852001046,
+            "rotation_step_deg": 2.323305120726322,
+            "frozen_directions": [
+              "x",
+              "y"
+            ],
+            "candidate_pose": [
+              [
+                0.9991779888079891,
+                -0.040538212610099204,
+                0.0,
+                -0.00048413849879746514
+              ],
+              [
+                0.040538212610099204,
+                0.999177988807989,
+                0.0,
+                0.0010508435038422707
+              ],
+              [
+                0.0,
+                0.0,
+                1.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+              ]
+            ]
+          },
+          "accepted_pose": null,
+          "candidate_pose": {
+            "x": -0.00048413849879746514,
+            "y": 0.0010508435038422707,
+            "translation_m": 0.0011570056852001046,
+            "yaw_deg": 2.3233051207259323
+          }
+        },
+        "ndt": {
+          "quality": {
+            "state": "quality_failed",
+            "reason": "overlap_low",
+            "method": "se2_ndt",
+            "point_count": 7380,
+            "overlap": 0.499361,
+            "rmse": 0.3175536234382931,
+            "iterations": 17,
+            "observability": {
+              "dof_scores": {
+                "yaw": 0.99942574,
+                "x": 0.0005587,
+                "y": 0.00064258
+              },
+              "eigenvalues": [
+                305.1005356405757,
+                1540.8996532364904,
+                2944086.4826501575
+              ],
+              "normalized_eigenvalues": [
+                0.00010363164853973159,
+                0.0005233880398273591,
+                1.0
+              ],
+              "eigenvectors": [
+                [
+                  0.02380589926909518,
+                  0.002757727732732068,
+                  -0.9997127958057463
+                ],
+                [
+                  0.17967124480819033,
+                  0.9837018630494925,
+                  0.006992025603008018
+                ],
+                [
+                  -0.9834386218514429,
+                  0.17978609393028666,
+                  -0.022922423087995438
+                ]
+              ],
+              "observable_eigendirections": [
+                false,
+                false,
+                true
+              ],
+              "rank": 1,
+              "condition_number": 1.0
+            },
+            "source_structure_points": 783,
+            "target_structure_points": 820,
+            "structure_selection": "abs(normal_z)<=se2_structure_normal_z_max",
+            "resolutions_m": [
+              2.0,
+              1.0
+            ],
+            "translation_step_m": 0.0008621828303151781,
+            "rotation_step_deg": 2.2168307075597427,
+            "frozen_directions": [
+              "x",
+              "y"
+            ],
+            "candidate_pose": [
+              [
+                0.9992515968303043,
+                -0.038681342170182424,
+                0.0,
+                -9.390161830046841e-05
+              ],
+              [
+                0.03868134217018241,
+                0.9992515968303043,
+                0.0,
+                0.0008570540933750007
+              ],
+              [
+                0.0,
+                0.0,
+                1.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+              ]
+            ]
+          },
+          "accepted_pose": null,
+          "candidate_pose": {
+            "x": -9.390161830046841e-05,
+            "y": 0.0008570540933750007,
+            "translation_m": 0.0008621828303151781,
+            "yaw_deg": 2.2168307075597014
+          }
+        }
+      }
+    },
+    {
+      "previous_sweep": 198,
+      "current_sweep": 199,
+      "time": 99.57152700424194,
+      "target_points": 7755,
+      "source_points": 7217,
+      "structures": {
+        "point_count": 7755,
+        "ground_like": 6850,
+        "vertical_like": 345,
+        "thin_structure_like": 3792,
+        "irregular_or_unstable_like": 38,
+        "semantics": "geometry_candidates_only"
+      },
+      "se3_observability": {
+        "dof_scores": {
+          "x": 0.00371262,
+          "y": 0.01165254,
+          "z": 0.1386401,
+          "roll": 0.03955403,
+          "pitch": 0.8811049,
+          "yaw": 0.1020244
+        },
+        "eigenvalues": [
+          92.26558221466675,
+          181.56993705312692,
+          1022.4552910656824,
+          1880.0345949630846,
+          5720.903099303637,
+          50355.42320807695
+        ],
+        "normalized_eigenvalues": [
+          0.001832286898541396,
+          0.003605767273623138,
+          0.020304770090814803,
+          0.03733529529072708,
+          0.11361046605971153,
+          1.0
+        ],
+        "eigenvectors": [
+          [
+            -0.02011745620892196,
+            0.9991339462984491,
+            -0.030002663330186127,
+            0.0030931632149849373,
+            -0.01909519465226061,
+            -0.007231278267597932
+          ],
+          [
+            0.9538574530670114,
+            0.012564839779226279,
+            -0.03701119541326781,
+            -0.04659821506870628,
+            -0.29393264701014504,
+            -0.007775655466730827
+          ],
+          [
+            0.03407608294198157,
+            0.031402456798566354,
+            0.9336846883824421,
+            -0.07309130707987842,
+            -0.003246820631249394,
+            0.347466153666327
+          ],
+          [
+            -0.0015254836364110166,
+            -0.003994023266092133,
+            0.08041800538925802,
+            0.9819790962654916,
+            -0.1706431637889156,
+            -0.010612739361573358
+          ],
+          [
+            0.011836530599932768,
+            0.0044223536162279285,
+            0.3456624690697533,
+            -0.03401119631803884,
+            0.02526313979844481,
+            -0.9373168136233299
+          ],
+          [
+            -0.2974014747753604,
+            -0.023491667226222524,
+            0.003649133208660361,
+            -0.16442929345380022,
+            -0.9399314417223334,
+            -0.021887907968989515
+          ]
+        ],
+        "observable_eigendirections": [
+          false,
+          false,
+          true,
+          true,
+          true,
+          true
+        ],
+        "rank": 4,
+        "condition_number": 49.249511101451304,
+        "rotation_scale_m": 16.914677317656917
+      },
+      "methods": {
+        "point_to_plane": {
+          "quality": {
+            "state": "quality_failed",
+            "reason": "overlap_low",
+            "method": "se2_point_to_plane",
+            "point_count": 7217,
+            "overlap": 0.417655,
+            "rmse": 0.3234146662616395,
+            "iterations": 4,
+            "observability": {
+              "dof_scores": {
+                "yaw": 0.99959323,
+                "x": 0.00033298,
+                "y": 0.00045961
+              },
+              "eigenvalues": [
+                12.582669793762243,
+                78.23539896515683,
+                235389.69485849145
+              ],
+              "normalized_eigenvalues": [
+                5.345463318318387e-05,
+                0.0003323654377146348,
+                1.0
+              ],
+              "eigenvectors": [
+                [
+                  -0.020157221397438432,
+                  0.0006911809506588584,
+                  -0.99979658365811
+                ],
+                [
+                  0.004831846168747903,
+                  -0.9999880155122159,
+                  -0.0007887297007014736
+                ],
+                [
+                  0.9997851467631111,
+                  0.004846761891475941,
+                  -0.020153640143436496
+                ]
+              ],
+              "observable_eigendirections": [
+                false,
+                false,
+                true
+              ],
+              "rank": 1,
+              "condition_number": 1.0
+            },
+            "source_structure_points": 759,
+            "target_structure_points": 711,
+            "structure_selection": "abs(normal_z)<=se2_structure_normal_z_max",
+            "resolutions_m": [],
+            "translation_step_m": 3.011845319809994e-05,
+            "rotation_step_deg": 0.08539177764182972,
+            "frozen_directions": [
+              "x",
+              "y"
+            ],
+            "candidate_pose": [
+              [
+                0.9999988894023037,
+                0.0014903671222670546,
+                0.0,
+                -5.807111692834546e-07
+              ],
+              [
+                -0.0014903671222670546,
+                0.9999988894023037,
+                0.0,
+                -3.0112854357964904e-05
+              ],
+              [
+                0.0,
+                0.0,
+                1.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+              ]
+            ]
+          },
+          "accepted_pose": null,
+          "candidate_pose": {
+            "x": -5.807111692834546e-07,
+            "y": -3.0112854357964904e-05,
+            "translation_m": 3.011845319809994e-05,
+            "yaw_deg": -0.08539177764293301
+          }
+        },
+        "gicp": {
+          "quality": {
+            "state": "quality_failed",
+            "reason": "overlap_low",
+            "method": "se2_gicp",
+            "point_count": 7217,
+            "overlap": 0.424242,
+            "rmse": 0.3285090687646937,
+            "iterations": 6,
+            "observability": {
+              "dof_scores": {
+                "yaw": 0.9995125,
+                "x": 0.00044769,
+                "y": 0.00050323
+              },
+              "eigenvalues": [
+                270.5776574593921,
+                4860.24019344343,
+                11071630.11007032
+              ],
+              "normalized_eigenvalues": [
+                2.4438827414698882e-05,
+                0.0004389814458326915,
+                1.0
+              ],
+              "eigenvectors": [
+                [
+                  0.022007333040525205,
+                  0.001786487402087926,
+                  -0.9997562131615914
+                ],
+                [
+                  0.06656051122555422,
+                  0.997777103372139,
+                  0.0032481274138674685
+                ],
+                [
+                  -0.9975396611853766,
+                  0.06661576727071465,
+                  -0.021839503499340218
+                ]
+              ],
+              "observable_eigendirections": [
+                false,
+                false,
+                true
+              ],
+              "rank": 1,
+              "condition_number": 1.0
+            },
+            "source_structure_points": 759,
+            "target_structure_points": 711,
+            "structure_selection": "abs(normal_z)<=se2_structure_normal_z_max",
+            "resolutions_m": [
+              0.8,
+              0.4,
+              0.25
+            ],
+            "translation_step_m": 1.3735006957708608e-05,
+            "rotation_step_deg": 0.030365155134273816,
+            "frozen_directions": [
+              "x",
+              "y"
+            ],
+            "candidate_pose": [
+              [
+                0.9999998595648775,
+                0.0005299719102272435,
+                0.0,
+                7.929764644570472e-06
+              ],
+              [
+                -0.0005299719102272437,
+                0.9999998595648772,
+                0.0,
+                -1.1214688975180008e-05
+              ],
+              [
+                0.0,
+                0.0,
+                1.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+              ]
+            ]
+          },
+          "accepted_pose": null,
+          "candidate_pose": {
+            "x": 7.929764644570472e-06,
+            "y": -1.1214688975180008e-05,
+            "translation_m": 1.3735006957708608e-05,
+            "yaw_deg": -0.030365155137951978
+          }
+        },
+        "ndt": {
+          "quality": {
+            "state": "quality_failed",
+            "reason": "overlap_low",
+            "method": "se2_ndt",
+            "point_count": 7217,
+            "overlap": 0.42556,
+            "rmse": 0.32985246822663233,
+            "iterations": 8,
+            "observability": {
+              "dof_scores": {
+                "yaw": 0.99945791,
+                "x": 0.00052303,
+                "y": 0.00061907
+              },
+              "eigenvalues": [
+                244.97688058475003,
+                1669.4310750624784,
+                3190618.1778725875
+              ],
+              "normalized_eigenvalues": [
+                7.678038139558698e-05,
+                0.0005232312304368575,
+                1.0
+              ],
+              "eigenvectors": [
+                [
+                  0.02328215842260052,
+                  -0.00027866218820466463,
+                  -0.9997288949743175
+                ],
+                [
+                  0.026443509418880115,
+                  0.9996502523950163,
+                  0.0003371886623091115
+                ],
+                [
+                  -0.9993791482259367,
+                  0.02644419093043417,
+                  -0.023281384349651834
+                ]
+              ],
+              "observable_eigendirections": [
+                false,
+                false,
+                true
+              ],
+              "rank": 1,
+              "condition_number": 1.0
+            },
+            "source_structure_points": 759,
+            "target_structure_points": 711,
+            "structure_selection": "abs(normal_z)<=se2_structure_normal_z_max",
+            "resolutions_m": [
+              2.0,
+              1.0
+            ],
+            "translation_step_m": 1.0916295991514205e-05,
+            "rotation_step_deg": 0.042301733083297974,
+            "frozen_directions": [
+              "x",
+              "y"
+            ],
+            "candidate_pose": [
+              [
+                0.999999727453229,
+                -0.0007383044542639652,
+                0.0,
+                4.098477888850496e-06
+              ],
+              [
+                0.0007383044542639648,
+                0.9999997274532293,
+                0.0,
+                1.0117707110257378e-05
+              ],
+              [
+                0.0,
+                0.0,
+                1.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+              ]
+            ]
+          },
+          "accepted_pose": null,
+          "candidate_pose": {
+            "x": 4.098477888850496e-06,
+            "y": 1.0117707110257378e-05,
+            "translation_m": 1.0916295991514205e-05,
+            "yaw_deg": 0.0423017330681017
+          }
+        }
+      }
+    },
+    {
+      "previous_sweep": 220,
+      "current_sweep": 221,
+      "time": 110.98975396156311,
+      "target_points": 6903,
+      "source_points": 6911,
+      "structures": {
+        "point_count": 6903,
+        "ground_like": 6466,
+        "vertical_like": 150,
+        "thin_structure_like": 3965,
+        "irregular_or_unstable_like": 20,
+        "semantics": "geometry_candidates_only"
+      },
+      "se3_observability": {
+        "dof_scores": {
+          "x": 0.00308271,
+          "y": 0.00560836,
+          "z": 0.14390923,
+          "roll": 0.04446248,
+          "pitch": 0.87557815,
+          "yaw": 0.0461984
+        },
+        "eigenvalues": [
+          37.02106319458865,
+          140.9670264716407,
+          971.0314891829363,
+          1901.0299205821618,
+          2325.7457414291594,
+          45235.82096294135
+        ],
+        "normalized_eigenvalues": [
+          0.000818401488168359,
+          0.0031162698823820503,
+          0.021465985772170175,
+          0.04202487940120612,
+          0.051413806402109644,
+          1.0
+        ],
+        "eigenvectors": [
+          [
+            -0.23880593477077697,
+            0.9700479323150555,
+            -0.034747468247747326,
+            -0.026537948664914972,
+            0.004469045629416274,
+            -0.006863883138077647
+          ],
+          [
+            -0.9238752094521226,
+            -0.2307182509376695,
+            0.0017552088498273962,
+            -0.07229865282528733,
+            0.29663678174447666,
+            0.00036028028172752633
+          ],
+          [
+            -0.025329211795231465,
+            0.0312413185914761,
+            0.9319347539740898,
+            0.05007475153918548,
+            -0.04832808855361562,
+            0.35360562848008326
+          ],
+          [
+            -0.006425172501352358,
+            0.02271733065615236,
+            -0.023787074633775586,
+            0.9705127846999752,
+            0.23439453230467863,
+            -0.045176908771247075
+          ],
+          [
+            -0.00544113620507684,
+            0.004044675426770595,
+            0.3546507174282164,
+            -0.02961775572566676,
+            -0.02198301138896143,
+            -0.9342464551825655
+          ],
+          [
+            0.29784872855698136,
+            0.06532718574043288,
+            0.06280279241831223,
+            -0.22088206042653397,
+            0.924244011957957,
+            0.007643605580901108
+          ]
+        ],
+        "observable_eigendirections": [
+          false,
+          false,
+          true,
+          true,
+          true,
+          true
+        ],
+        "rank": 4,
+        "condition_number": 46.58532855716608,
+        "rotation_scale_m": 17.591026854810977
+      },
+      "methods": {
+        "point_to_plane": {
+          "quality": {
+            "state": "quality_failed",
+            "reason": "rmse_high",
+            "method": "se2_point_to_plane",
+            "point_count": 6911,
+            "overlap": 0.66185,
+            "rmse": 0.23684151904784573,
+            "iterations": 2,
+            "observability": {
+              "dof_scores": {
+                "yaw": 0.99936276,
+                "x": 0.00047835,
+                "y": 0.00054529
+              },
+              "eigenvalues": [
+                8.690210557527264,
+                45.78638077528238,
+                140983.3309727309
+              ],
+              "normalized_eigenvalues": [
+                6.163998607188626e-05,
+                0.00032476449846498815,
+                1.0
+              ],
+              "eigenvectors": [
+                [
+                  0.02105107795612561,
+                  0.013935073910970305,
+                  -0.9996812821254486
+                ],
+                [
+                  -0.06928155139243215,
+                  0.9975195051409396,
+                  0.012446023462634733
+                ],
+                [
+                  -0.997375014101287,
+                  -0.06899746791347099,
+                  -0.021964304404798005
+                ]
+              ],
+              "observable_eigendirections": [
+                false,
+                false,
+                true
+              ],
+              "rank": 1,
+              "condition_number": 1.0
+            },
+            "source_structure_points": 346,
+            "target_structure_points": 354,
+            "structure_selection": "abs(normal_z)<=se2_structure_normal_z_max",
+            "resolutions_m": [],
+            "translation_step_m": 1.1001029445795691e-05,
+            "rotation_step_deg": 0.024985939110612553,
+            "frozen_directions": [
+              "x",
+              "y"
+            ],
+            "candidate_pose": [
+              [
+                0.9999999049141076,
+                -0.00043608688989487944,
+                0.0,
+                -5.436719411221663e-06
+              ],
+              [
+                0.00043608688989487944,
+                0.9999999049141076,
+                0.0,
+                9.563719512350277e-06
+              ],
+              [
+                0.0,
+                0.0,
+                1.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+              ]
+            ]
+          },
+          "accepted_pose": null,
+          "candidate_pose": {
+            "x": -5.436719411221663e-06,
+            "y": 9.563719512350277e-06,
+            "translation_m": 1.1001029445795691e-05,
+            "yaw_deg": 0.024985939083899598
+          }
+        },
+        "gicp": {
+          "quality": {
+            "state": "quality_failed",
+            "reason": "rmse_high",
+            "method": "se2_gicp",
+            "point_count": 6911,
+            "overlap": 0.66185,
+            "rmse": 0.2371751351222909,
+            "iterations": 5,
+            "observability": {
+              "dof_scores": {
+                "yaw": 0.99930438,
+                "x": 0.00043656,
+                "y": 0.00055076
+              },
+              "eigenvalues": [
+                414.1912206161106,
+                3101.4610579252158,
+                12052640.109460752
+              ],
+              "normalized_eigenvalues": [
+                3.4365186121419994e-05,
+                0.0002573262811930073,
+                1.0
+              ],
+              "eigenvectors": [
+                [
+                  0.024326069027682192,
+                  0.0101937385984549,
+                  -0.9996521045138889
+                ],
+                [
+                  0.14237818251506001,
+                  0.9897194837757227,
+                  0.013557159673959786
+                ],
+                [
+                  -0.9895133629766548,
+                  0.1426584421900903,
+                  -0.022624618505688594
+                ]
+              ],
+              "observable_eigendirections": [
+                false,
+                false,
+                true
+              ],
+              "rank": 1,
+              "condition_number": 1.0
+            },
+            "source_structure_points": 346,
+            "target_structure_points": 354,
+            "structure_selection": "abs(normal_z)<=se2_structure_normal_z_max",
+            "resolutions_m": [
+              0.8,
+              0.4,
+              0.25
+            ],
+            "translation_step_m": 2.023633917774116e-05,
+            "rotation_step_deg": 0.04003088100429456,
+            "frozen_directions": [
+              "x",
+              "y"
+            ],
+            "candidate_pose": [
+              [
+                0.9999997559296532,
+                -0.0006986706191331173,
+                0.0,
+                -1.3970032525181314e-05
+              ],
+              [
+                0.0006986706191331171,
+                0.9999997559296532,
+                0.0,
+                1.4640615238505451e-05
+              ],
+              [
+                0.0,
+                0.0,
+                1.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+              ]
+            ]
+          },
+          "accepted_pose": null,
+          "candidate_pose": {
+            "x": -1.3970032525181314e-05,
+            "y": 1.4640615238505451e-05,
+            "translation_m": 2.023633917774116e-05,
+            "yaw_deg": 0.04003088100290352
+          }
+        },
+        "ndt": {
+          "quality": {
+            "state": "quality_failed",
+            "reason": "rmse_high",
+            "method": "se2_ndt",
+            "point_count": 6911,
+            "overlap": 0.66185,
+            "rmse": 0.23679895330981263,
+            "iterations": 7,
+            "observability": {
+              "dof_scores": {
+                "yaw": 0.99947008,
+                "x": 0.00050075,
+                "y": 0.00053493
+              },
+              "eigenvalues": [
+                139.77578430012076,
+                1408.0210988406666,
+                3060269.565144558
+              ],
+              "normalized_eigenvalues": [
+                4.567433728457126e-05,
+                0.00046009708258303576,
+                1.0
+              ],
+              "eigenvectors": [
+                [
+                  0.022548655722000144,
+                  0.004637739247948796,
+                  -0.9997349896346525
+                ],
+                [
+                  0.08914667505491086,
+                  0.9959964353753857,
+                  0.0066310667451525045
+                ],
+                [
+                  -0.9957632391546619,
+                  0.0892725719030915,
+                  -0.022044941687892644
+                ]
+              ],
+              "observable_eigendirections": [
+                false,
+                false,
+                true
+              ],
+              "rank": 1,
+              "condition_number": 1.0
+            },
+            "source_structure_points": 346,
+            "target_structure_points": 354,
+            "structure_selection": "abs(normal_z)<=se2_structure_normal_z_max",
+            "resolutions_m": [
+              2.0,
+              1.0
+            ],
+            "translation_step_m": 1.2564021610500463e-05,
+            "rotation_step_deg": 0.022007563453711,
+            "frozen_directions": [
+              "x",
+              "y"
+            ],
+            "candidate_pose": [
+              [
+                0.9999999262318895,
+                -0.00038410443358268285,
+                0.0,
+                -7.553957483131934e-06
+              ],
+              [
+                0.0003841044335826832,
+                0.9999999262318894,
+                0.0,
+                1.003954009764181e-05
+              ],
+              [
+                0.0,
+                0.0,
+                1.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+              ]
+            ]
+          },
+          "accepted_pose": null,
+          "candidate_pose": {
+            "x": -7.553957483131934e-06,
+            "y": 1.003954009764181e-05,
+            "translation_m": 1.2564021610500463e-05,
+            "yaw_deg": 0.022007563477702906
+          }
+        }
+      }
+    },
+    {
+      "previous_sweep": 242,
+      "current_sweep": 243,
+      "time": 122.5102961063385,
+      "target_points": 7631,
+      "source_points": 885,
+      "structures": {
+        "point_count": 7631,
+        "ground_like": 6802,
+        "vertical_like": 295,
+        "thin_structure_like": 3452,
+        "irregular_or_unstable_like": 49,
+        "semantics": "geometry_candidates_only"
+      },
+      "se3_observability": {
+        "dof_scores": {
+          "x": 0.00355455,
+          "y": 0.00965568,
+          "z": 0.12788856,
+          "roll": 0.03496099,
+          "pitch": 0.8901237,
+          "yaw": 0.09723196
+        },
+        "eigenvalues": [
+          71.747389936917,
+          185.6855655438243,
+          1051.5048190705288,
+          1729.1963174724476,
+          5799.809747008758,
+          54082.67827583161
+        ],
+        "normalized_eigenvalues": [
+          0.0013266242025032878,
+          0.0034333648307281264,
+          0.01944254339083691,
+          0.03197320052555882,
+          0.10723969174434485,
+          1.0
+        ],
+        "eigenvectors": [
+          [
+            -0.030554126502042436,
+            0.9983559805462183,
+            -0.043667942032917774,
+            0.007453660636761605,
+            0.01823831841202279,
+            0.007529872808990243
+          ],
+          [
+            -0.958468222545341,
+            -0.035367817035344154,
+            -0.013424032138403314,
+            0.043931240695525085,
+            0.2792343970807319,
+            0.0024035032741578804
+          ],
+          [
+            -0.015162666473037925,
+            0.04311074105544173,
+            0.9417236524848063,
+            0.020977989729848084,
+            -0.0017499581379742445,
+            -0.332603339573077
+          ],
+          [
+            -0.00232980976649157,
+            0.0058237354194474854,
+            0.03502694339305237,
+            -0.9874358820257083,
+            0.14945706862604094,
+            0.03696935020498137
+          ],
+          [
+            -0.004535413478164264,
+            0.007166841686383439,
+            0.3313730286341258,
+            0.044980173471212456,
+            -0.01391674719465915,
+            0.9422860979769847
+          ],
+          [
+            0.2831063533037258,
+            -0.009520405317561344,
+            0.005873472637135538,
+            0.14325353700195104,
+            0.9482411938215974,
+            0.00653600773093071
+          ]
+        ],
+        "observable_eigendirections": [
+          false,
+          false,
+          true,
+          true,
+          true,
+          true
+        ],
+        "rank": 4,
+        "condition_number": 51.43360001301531,
+        "rotation_scale_m": 15.805275773421254
+      },
+      "methods": {
+        "point_to_plane": {
+          "quality": {
+            "state": "insufficient_points",
+            "reason": "no_correspondence",
+            "method": "se2_point_to_plane",
+            "point_count": 885,
+            "overlap": 0.0,
+            "rmse": null,
+            "iterations": 1,
+            "observability": null,
+            "source_structure_points": 113,
+            "target_structure_points": 666,
+            "structure_selection": "abs(normal_z)<=se2_structure_normal_z_max",
+            "resolutions_m": []
+          },
+          "accepted_pose": null,
+          "candidate_pose": null
+        },
+        "gicp": {
+          "quality": {
+            "state": "insufficient_points",
+            "reason": "no_correspondence",
+            "method": "se2_gicp",
+            "point_count": 885,
+            "overlap": 0.0,
+            "rmse": null,
+            "iterations": 1,
+            "observability": null,
+            "source_structure_points": 113,
+            "target_structure_points": 666,
+            "structure_selection": "abs(normal_z)<=se2_structure_normal_z_max",
+            "resolutions_m": [
+              0.8,
+              0.4,
+              0.25
+            ]
+          },
+          "accepted_pose": null,
+          "candidate_pose": null
+        },
+        "ndt": {
+          "quality": {
+            "state": "insufficient_points",
+            "reason": "no_correspondence",
+            "method": "se2_ndt",
+            "point_count": 885,
+            "overlap": 0.0,
+            "rmse": null,
+            "iterations": 1,
+            "observability": null,
+            "source_structure_points": 113,
+            "target_structure_points": 666,
+            "structure_selection": "abs(normal_z)<=se2_structure_normal_z_max",
+            "resolutions_m": [
+              2.0,
+              1.0
+            ]
+          },
+          "accepted_pose": null,
+          "candidate_pose": null
+        }
+      }
+    }
+  ],
+  "elapsed_seconds": 8.212
+}

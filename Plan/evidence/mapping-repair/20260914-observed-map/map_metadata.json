@@ -1,0 +1,95 @@
+{
+  "version": "na70-voxel-map-v1",
+  "voxel_size": 0.25,
+  "chunk_voxels": 32,
+  "fused_points": 256546,
+  "dropped_points": 0,
+  "voxel_count": 182340,
+  "chunk_count": 105,
+  "max_voxels": 400000,
+  "segments": [
+    {
+      "segment_id": 0,
+      "voxels": 11325,
+      "observations": 11325.0
+    },
+    {
+      "segment_id": 1,
+      "voxels": 78617,
+      "observations": 119506.0
+    },
+    {
+      "segment_id": 2,
+      "voxels": 92398,
+      "observations": 125715.0
+    }
+  ],
+  "minimum": [
+    -2.0255972559819044,
+    -34.2771424248105,
+    -2.8683829307556152
+  ],
+  "maximum": [
+    60.94618964257515,
+    58.9518520214405,
+    7.165094025929769
+  ],
+  "schema_version": 1,
+  "map_kind": "observed_cross_capture_coverage",
+  "coordinate_frame": "zhong2_capture_frame",
+  "source_order": [
+    "zhong2",
+    "zuo",
+    "you"
+  ],
+  "angular_coverage_deg": 126.91116752795449,
+  "claim": "observed_coverage_map_with_unresolved_temporal_distortion",
+  "loop_closure_used": false,
+  "imu_used": false,
+  "temporal_rigidity": {
+    "zuo": {
+      "yaw_spread_deg": 13.598058941905501,
+      "translation_spread_m": 1.9999546372479209,
+      "maximum_yaw_spread_deg": 1.0,
+      "maximum_translation_spread_m": 0.3,
+      "rigid": false
+    },
+    "you": {
+      "yaw_spread_deg": 29.999999999999943,
+      "translation_spread_m": 0.0,
+      "maximum_yaw_spread_deg": 1.0,
+      "maximum_translation_spread_m": 0.3,
+      "rigid": false
+    }
+  },
+  "height_filter": {
+    "min_height_m": -1.5,
+    "max_height_m": 4.5,
+    "per_capture": {
+      "zhong2": {
+        "min_height_m": -1.5,
+        "max_height_m": 4.5,
+        "raw_points": 4908394,
+        "kept_points": 4908385,
+        "filtered_high_points": 9,
+        "filtered_fraction": 1.83359363571873e-06
+      },
+      "zuo": {
+        "min_height_m": -1.5,
+        "max_height_m": 4.5,
+        "raw_points": 4316274,
+        "kept_points": 3733407,
+        "filtered_high_points": 582867,
+        "filtered_fraction": 0.1350393881389365
+      },
+      "you": {
+        "min_height_m": -1.5,
+        "max_height_m": 4.5,
+        "raw_points": 3764467,
+        "kept_points": 3215281,
+        "filtered_high_points": 546286,
+        "filtered_fraction": 0.1451164268407719
+      }
+    }
+  }
+}

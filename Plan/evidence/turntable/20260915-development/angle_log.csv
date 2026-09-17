@@ -1,0 +1,6 @@
+segment_id,source_pcap,yaw_deg,settle_start_s,valid_start_s,valid_end_s,direction,valid,angle_source,note
+center_reference,9.14_caochangzhong2.pcap,0.0,0.0,0.0,20.0,reference,true,MANUAL,development center reference; no encoder angle required for zero definition
+right_initial_zero,9.14_caochangyou.pcap,0.0,0.0,0.0,20.0,start,true,MANUAL,user-marked initial stationary candidate; boundary must pass stability analysis
+right_final_estimated,9.14_caochangyou.pcap,10.1,80.0,82.0,120.0,right,true,ESTIMATED_TEMPORAL,development-only candidate from prior ground-heading drift; not measured truth
+left_initial_zero,9.14_caochangzuo.pcap,0.0,0.0,0.0,20.0,start,true,MANUAL,user-marked initial stationary candidate; boundary must pass stability analysis
+left_final_estimated,9.14_caochangzuo.pcap,-6.2,110.0,113.0,122.0,left,true,ESTIMATED_TEMPORAL,development-only candidate from prior ground-heading drift; not measured truth

@@ -1,0 +1,9 @@
+{
+  "algorithm": "SHA-256",
+  "files": {
+    "web/backend/cross_capture.py": "433f5007a32aae43b6d76a275d2629897ed837130cba9d6a78101a3477586831",
+    "web/tests/test_cross_capture.py": "bfd82d8a9a9b6106486f9e0e035ade4300fe8f94e83acb707e065519fd7a3a0b",
+    "tools/validate_playground_stitch.py": "67ea09267730886d0bbee29416b4ea0ee0c395083c47e2e755e056d6b955ce8b",
+    "tools/analyze_playground_height.py": "c2bb16031a6c817219c170b294ea541f60b0fd934d1955290267a19017a2149b"
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "request": {
+    "capture_id": "defcea4d-51db-4f7f-b226-c5ffac4805df",
+    "config": {
+      "initialization_mode": "stationary_window",
+      "stationary_start_frame": 0,
+      "stationary_end_frame": 29,
+      "stationary_declaration": "User confirmed first 60 seconds stationary on 2026-09-11; selected frames 0-29 within existing budget."
+    }
+  },
+  "job": {
+    "job_id": "c9f3f49c-d5c8-454f-aee7-3ffcc1a2c7b1",
+    "capture_id": "defcea4d-51db-4f7f-b226-c5ffac4805df",
+    "input_sha256": "5ce9d5999051ae9ee6f42d067c70e50aaa3fa8272634cdf8ad64f82657673409",
+    "code_version": "na70-lidar-odometry-v2+ros2-na70-16mm-v1",
+    "config_version": "1641d620fb95c290",
+    "status": "running",
+    "progress": 0.0,
+    "created_at": 1789118261.3387365,
+    "started_at": 1789118261.3437376,
+    "finished_at": null,
+    "frame_count": 1551,
+    "accepted_frames": 0,
+    "rejected_frames": 0,
+    "tracking_lost_frames": 0,
+    "keyframe_count": 0,
+    "map_point_count": 0,
+    "map_bounds": null,
+    "first_frame_index": 0,
+    "last_frame_index": 1550,
+    "imu_used": false,
+    "loop_closure_used": false,
+    "stage": "point_cloud_odometry",
+    "error": null,
+    "elapsed_seconds": null,
+    "peak_memory_mb": null,
+    "artifacts": {},
+    "metrics": {}
+  }
+}

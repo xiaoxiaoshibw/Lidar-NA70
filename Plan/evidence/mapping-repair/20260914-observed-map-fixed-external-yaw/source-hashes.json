@@ -1,0 +1,11 @@
+{
+  "algorithm": "SHA-256",
+  "files": {
+    "web/backend/cross_capture.py": "433f5007a32aae43b6d76a275d2629897ed837130cba9d6a78101a3477586831",
+    "web/backend/temporal_yaw.py": "36e9c40af4c6a11496ccc106f03b101ee22f176c0a4f56fb6e4b6b0487b1e1bd",
+    "web/tests/test_cross_capture.py": "bfd82d8a9a9b6106486f9e0e035ade4300fe8f94e83acb707e065519fd7a3a0b",
+    "web/tests/test_temporal_yaw.py": "c49050b0100597395458c1f6a2370a67846dd5f9a7c9c8838e8e2e64b2222dca",
+    "tools/validate_playground_stitch.py": "28de700b476f197bded4d6807caa9b907e4dd6754ff8775c9305d4e6bc86e8e5",
+    "tools/analyze_playground_height.py": "c2bb16031a6c817219c170b294ea541f60b0fd934d1955290267a19017a2149b"
+  }
+}

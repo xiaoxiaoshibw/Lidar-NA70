@@ -1,0 +1,184 @@
+{
+  "schema_version": 1,
+  "versions": {
+    "decoder": "ros2-na70-16mm-v1",
+    "sweep": "na70-coverage-sweep-v1",
+    "cross_capture": "na70-cross-capture-validation-v1"
+  },
+  "environment": {
+    "platform": "Windows-11-10.0.26200-SP0",
+    "python": "3.12.10"
+  },
+  "inputs": {
+    "zhong2": {
+      "path": "D:\\Code\\radar\\2\\9.14_caochangzhong2.pcap",
+      "sha256": "2caa68d6491cb2ba6fd9bae86e04104038fbbf4c7a4e349fa6dcc211adc743ce",
+      "duration_seconds": 129.90086698532104,
+      "packets": 129738,
+      "sweeps": 281,
+      "height_filter": {
+        "min_height_m": -1.5,
+        "max_height_m": 4.5,
+        "raw_points": 4908394,
+        "kept_points": 4908385,
+        "filtered_high_points": 9,
+        "filtered_fraction": 1.83359363571873e-06
+      },
+      "temporal_yaw": {
+        "version": "na70-temporal-ground-yaw-v1",
+        "valid": true,
+        "reason": "fitted_ground_heading",
+        "measurement_count": 281,
+        "yaw_rate_deg_s": 0.011713926511691742,
+        "yaw_start_deg": 0.0,
+        "yaw_end_deg": 1.5171737388331439,
+        "residual_mad_deg": 3.0616212368435707,
+        "duration_s": 129.51880288124084,
+        "robust_inlier_fraction": 1.0,
+        "applied": false
+      }
+    },
+    "zuo": {
+      "path": "D:\\Code\\radar\\2\\9.14_caochangzuo.pcap",
+      "sha256": "b2365c97bd22bba7d24ad14ceee365b59b4dba4f6f8e9721e694f3b8c6ef63c6",
+      "duration_seconds": 122.57177710533142,
+      "packets": 122095,
+      "sweeps": 244,
+      "height_filter": {
+        "min_height_m": -1.5,
+        "max_height_m": 4.5,
+        "raw_points": 4316274,
+        "kept_points": 3733407,
+        "filtered_high_points": 582867,
+        "filtered_fraction": 0.1350393881389365
+      },
+      "temporal_yaw": {
+        "version": "na70-temporal-ground-yaw-v1",
+        "valid": true,
+        "reason": "fitted_ground_heading",
+        "measurement_count": 207,
+        "yaw_rate_deg_s": 0.09692499564210175,
+        "yaw_start_deg": 0.0,
+        "yaw_end_deg": 11.823973670966971,
+        "residual_mad_deg": 2.1675989370126505,
+        "duration_s": 121.99096417427063,
+        "robust_inlier_fraction": 0.893719806763285,
+        "applied": false
+      }
+    },
+    "you": {
+      "path": "D:\\Code\\radar\\2\\9.14_caochangyou.pcap",
+      "sha256": "ceca9fc08758f3c35f7b8b1c024bdab90e65f49ab65e39102cdd58dc0c5292db",
+      "duration_seconds": 121.04929780960083,
+      "packets": 121036,
+      "sweeps": 231,
+      "height_filter": {
+        "min_height_m": -1.5,
+        "max_height_m": 4.5,
+        "raw_points": 3764467,
+        "kept_points": 3215281,
+        "filtered_high_points": 546286,
+        "filtered_fraction": 0.1451164268407719
+      },
+      "temporal_yaw": {
+        "version": "na70-temporal-ground-yaw-v1",
+        "valid": true,
+        "reason": "fitted_ground_heading",
+        "measurement_count": 60,
+        "yaw_rate_deg_s": 0.11434339902770448,
+        "yaw_start_deg": 0.0,
+        "yaw_end_deg": 9.863947091738126,
+        "residual_mad_deg": 3.6891050331436657,
+        "duration_s": 86.26599502563477,
+        "robust_inlier_fraction": 0.9833333333333333,
+        "applied": false
+      }
+    }
+  },
+  "alignments": {
+    "zuo": {
+      "full": {
+        "yaw_deg": -23.0,
+        "translation_xy_m": [
+          -0.08,
+          0.0
+        ],
+        "selection": "fixed_transform_hypothesis"
+      },
+      "temporal_segments": [],
+      "temporal_rigidity": {
+        "rigid": false,
+        "reason": "external_fixed_transform_hypothesis"
+      },
+      "static_submap_supported": false,
+      "status": "FAIL"
+    },
+    "you": {
+      "full": {
+        "yaw_deg": 0.5,
+        "translation_xy_m": [
+          0.0,
+          0.0
+        ],
+        "selection": "fixed_transform_hypothesis"
+      },
+      "temporal_segments": [],
+      "temporal_rigidity": {
+        "rigid": false,
+        "reason": "external_fixed_transform_hypothesis"
+      },
+      "static_submap_supported": false,
+      "status": "FAIL"
+    }
+  },
+  "angular_coverage_deg": 93.53439124426166,
+  "height_filter": {
+    "min_height_m": -1.5,
+    "max_height_m": 4.5,
+    "per_capture": {
+      "zhong2": {
+        "min_height_m": -1.5,
+        "max_height_m": 4.5,
+        "raw_points": 4908394,
+        "kept_points": 4908385,
+        "filtered_high_points": 9,
+        "filtered_fraction": 1.83359363571873e-06
+      },
+      "zuo": {
+        "min_height_m": -1.5,
+        "max_height_m": 4.5,
+        "raw_points": 4316274,
+        "kept_points": 3733407,
+        "filtered_high_points": 582867,
+        "filtered_fraction": 0.1350393881389365
+      },
+      "you": {
+        "min_height_m": -1.5,
+        "max_height_m": 4.5,
+        "raw_points": 3764467,
+        "kept_points": 3215281,
+        "filtered_high_points": 546286,
+        "filtered_fraction": 0.1451164268407719
+      }
+    }
+  },
+  "claim": "diagnostic_fixed_transform_hypothesis",
+  "map": {
+    "ply": "map.ply",
+    "pcd": "map.pcd",
+    "metadata": "map_metadata.json",
+    "voxel_count": 177190,
+    "bounds": {
+      "minimum": [
+        4.64771110057164,
+        -50.77457304985229,
+        -2.8683829307556152
+      ],
+      "maximum": [
+        59.918709822900645,
+        34.642474925722595,
+        7.165094025929769
+      ]
+    }
+  }
+}

@@ -1,0 +1,89 @@
+{
+  "version": "na70-voxel-map-v1",
+  "voxel_size": 0.25,
+  "chunk_voxels": 32,
+  "fused_points": 256546,
+  "dropped_points": 0,
+  "voxel_count": 177190,
+  "chunk_count": 86,
+  "max_voxels": 400000,
+  "segments": [
+    {
+      "segment_id": 0,
+      "voxels": 22955,
+      "observations": 22955.0
+    },
+    {
+      "segment_id": 1,
+      "voxels": 57607,
+      "observations": 75995.0
+    },
+    {
+      "segment_id": 2,
+      "voxels": 96628,
+      "observations": 157596.0
+    }
+  ],
+  "minimum": [
+    4.64771110057164,
+    -50.77457304985229,
+    -2.8683829307556152
+  ],
+  "maximum": [
+    59.918709822900645,
+    34.642474925722595,
+    7.165094025929769
+  ],
+  "schema_version": 1,
+  "map_kind": "observed_cross_capture_coverage",
+  "coordinate_frame": "zhong2_capture_frame",
+  "source_order": [
+    "zhong2",
+    "zuo",
+    "you"
+  ],
+  "angular_coverage_deg": 93.53439124426166,
+  "claim": "diagnostic_fixed_transform_hypothesis",
+  "loop_closure_used": false,
+  "imu_used": false,
+  "temporal_rigidity": {
+    "zuo": {
+      "rigid": false,
+      "reason": "external_fixed_transform_hypothesis"
+    },
+    "you": {
+      "rigid": false,
+      "reason": "external_fixed_transform_hypothesis"
+    }
+  },
+  "height_filter": {
+    "min_height_m": -1.5,
+    "max_height_m": 4.5,
+    "per_capture": {
+      "zhong2": {
+        "min_height_m": -1.5,
+        "max_height_m": 4.5,
+        "raw_points": 4908394,
+        "kept_points": 4908385,
+        "filtered_high_points": 9,
+        "filtered_fraction": 1.83359363571873e-06
+      },
+      "zuo": {
+        "min_height_m": -1.5,
+        "max_height_m": 4.5,
+        "raw_points": 4316274,
+        "kept_points": 3733407,
+        "filtered_high_points": 582867,
+        "filtered_fraction": 0.1350393881389365
+      },
+      "you": {
+        "min_height_m": -1.5,
+        "max_height_m": 4.5,
+        "raw_points": 3764467,
+        "kept_points": 3215281,
+        "filtered_high_points": 546286,
+        "filtered_fraction": 0.1451164268407719
+      }
+    }
+  }
+}

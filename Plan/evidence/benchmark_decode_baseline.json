@@ -1,0 +1,46 @@
+{
+  "environment": "Windows-11-10.0.26200-SP0",
+  "python": "3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]",
+  "numpy": "2.5.3",
+  "decoder": "ros2-na70-16mm-v1",
+  "results": [
+    {
+      "file": "1.pcap",
+      "size": 97141988,
+      "sha256": "b17d7c17926e670b3d89ba0774c4140feb810e4935971ab57760f4bdd00636cd",
+      "valid_packets": 66173,
+      "invalid_packets": 0,
+      "frames": 662,
+      "duration_seconds": 66.17445302009583,
+      "index_seconds": 0.34205239999937476,
+      "first_frame_ready_seconds": 0.3437238000005891,
+      "points_decoded": 13234600,
+      "full_decode_seconds": 0.7345425999519648,
+      "p95_decode_ms": 1.7325649989288634,
+      "mean_decode_fps": 901.2411261692532,
+      "memory_before_bytes": 29515776,
+      "peak_working_set_bytes": 35717120,
+      "all_frames_sha256": "b835692d2bd86aad1035d609911e88360d7c7cdba9e96a64c817f83e7fc67adf",
+      "partial_tail_points": 14600
+    },
+    {
+      "file": "2.pcap",
+      "size": 225157460,
+      "sha256": "39899e0fb25c98a6dd2f2e5a1831b5256904fc23ae730ef9166329be845f8db7",
+      "valid_packets": 153377,
+      "invalid_packets": 0,
+      "frames": 1534,
+      "duration_seconds": 153.38172006607056,
+      "index_seconds": 0.9141483999992488,
+      "first_frame_ready_seconds": 0.9153847999987192,
+      "points_decoded": 30675400,
+      "full_decode_seconds": 2.296207199979108,
+      "p95_decode_ms": 2.436695002143096,
+      "mean_decode_fps": 668.0581787279289,
+      "memory_before_bytes": 35237888,
+      "peak_working_set_bytes": 44654592,
+      "all_frames_sha256": "f702ef1eda63d3e29f01a59f589df87cfef66568f1015a743b4165e2dcaf8b79",
+      "partial_tail_points": 15400
+    }
+  ]
+}
