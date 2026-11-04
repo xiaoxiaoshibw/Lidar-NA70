@@ -1,0 +1,95 @@
+{
+  "schema": "na70-capture-quality-v1",
+  "status": "ok",
+  "stop_reason": "duration",
+  "duration_s": 15.221,
+  "overlap_s": 15.084,
+  "time_level": "host_receive_only",
+  "measurement_limits": [
+    "IMU 无设备采样时间戳：主机到达时间不是采样时间",
+    "雷达包内时间未核实，PCAP 时间为主机抓包时间",
+    "两路同一主机只提供关联，不构成硬件同步"
+  ],
+  "checks": [
+    {
+      "name": "imu_frames",
+      "ok": true,
+      "detail": "3014 帧"
+    },
+    {
+      "name": "imu_rate",
+      "ok": true,
+      "detail": "199.8 Hz（期望 150–260）"
+    },
+    {
+      "name": "imu_checksum",
+      "ok": true,
+      "detail": "0 个校验错误"
+    },
+    {
+      "name": "imu_sequence",
+      "ok": true,
+      "detail": "0 次 tid 断号"
+    },
+    {
+      "name": "imu_overflow",
+      "ok": true,
+      "detail": "0 帧写队列溢出"
+    },
+    {
+      "name": "imu_worker",
+      "ok": true,
+      "detail": "采集线程正常"
+    },
+    {
+      "name": "lidar_bytes",
+      "ok": true,
+      "detail": "22080212 字节"
+    },
+    {
+      "name": "lidar_drops",
+      "ok": true,
+      "detail": "内核丢弃 0"
+    },
+    {
+      "name": "overlap",
+      "ok": true,
+      "detail": "15.08 s，覆盖较短流 100%"
+    }
+  ],
+  "imu": {
+    "state": "stopped",
+    "error": "",
+    "worker_error": "",
+    "port": "/dev/serial/by-id/usb-WCH.CN_USB_Single_Serial_0003-if00",
+    "baud": 460800,
+    "segment": 0,
+    "frames": 3014,
+    "bytes": 201938,
+    "hz": 199.8,
+    "last_frame_age_s": null,
+    "checksum_errors": 0,
+    "payload_errors": 0,
+    "sequence_breaks": 0,
+    "reconnects": 0,
+    "queue_overflow": 0,
+    "discarded_bytes": 0,
+    "first_tid": 51216,
+    "last_tid": 54229,
+    "started_unix": 1793346822.1496227,
+    "ended_unix": 1793346837.23449
+  },
+  "lidar": {
+    "state": "stopped",
+    "iface": "enP8p1s0",
+    "port": 2368,
+    "pcap": "/home/jetson/na70-sessions/20261030-155342/raw/lidar.pcap",
+    "pcap_bytes": 22080212,
+    "started_unix": 1793346822.150934,
+    "ended_unix": 1793346837.369361,
+    "captured": 15041,
+    "received": 15067,
+    "dropped": 0
+  },
+  "warnings": []
+}

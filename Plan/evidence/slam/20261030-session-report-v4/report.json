@@ -1,0 +1,109 @@
+{
+  "schema": "na70-session-report-v1",
+  "status": "REJECTED_NOT_STATIC",
+  "session": "radar_capture_data\\na70_sessions\\20261030-163303",
+  "files": {
+    "frames": "radar_capture_data\\na70_sessions\\20261030-163303\\imu_frames.jsonl",
+    "frames_sha256": "a4da1c498aa631dde7e0c6f32ba7aba0a001cb4d017c234e5da077b95e79512c",
+    "chunks": "radar_capture_data\\na70_sessions\\20261030-163303\\raw\\imu_chunks.jsonl",
+    "chunks_sha256": "86c867d8c2e2ef55dd7ee33f4cbb90b8ed942ed94ce50c544e06173a0f5c62c3",
+    "pcap": "radar_capture_data\\na70_sessions\\20261030-163303\\raw\\lidar.pcap",
+    "pcap_sha256": "4033f8e4a8d36f3c4f57eec4daba37e90186ec8ecbc1e936071e364d581a95f5"
+  },
+  "time_level": "C_HOST_RECEIVE_ONLY",
+  "device_time_present": false,
+  "saturation_suspected": false,
+  "static_baseline_usable": false,
+  "checks": {
+    "timebase": "OK_HOST_TIME_ONLY",
+    "ranges": "OK_NO_SATURATION",
+    "gyro_unit": "INCONCLUSIVE",
+    "static": "REJECTED",
+    "overlap": "observed"
+  },
+  "summary": {
+    "frames": 12020,
+    "batches": 1180,
+    "frames_per_batch_median": 10.0,
+    "batch_interval_max_s": 0.05127199999969889,
+    "host_time_bound_s": 0.05127199999969889,
+    "segments": [
+      {
+        "segment": 0,
+        "samples": 12020,
+        "host_span_s": 60.05422400000043,
+        "median_positive_dt_s": 0.05092100000001665,
+        "effective_arrival_hz": 19.638263191996877,
+        "duplicate_host_times": 10840,
+        "max_gap_s": 0.05127199999969889,
+        "gaps_over_1_5_median": 0
+      }
+    ],
+    "static_windows": [
+      [
+        0,
+        "REJECTED"
+      ],
+      [
+        1,
+        "REJECTED"
+      ],
+      [
+        2,
+        "REJECTED"
+      ],
+      [
+        3,
+        "REJECTED"
+      ],
+      [
+        4,
+        "REJECTED"
+      ],
+      [
+        5,
+        "REJECTED"
+      ]
+    ],
+    "allan": {
+      "status": "NOT_EVALUATED",
+      "reason": "segment_windows_not_static_like"
+    },
+    "range_events": 0,
+    "gyro_unit": {
+      "status": "INCONCLUSIVE",
+      "scale": 0.1828303973038259,
+      "cosine": 0.23397607368030923,
+      "reason": "scale or direction does not match either unit"
+    },
+    "overlap": {
+      "schema": "na70-host-overlap-v1",
+      "status": "observed",
+      "lidar_packets": 59995,
+      "imu_chunks": 1180,
+      "lidar_first_unix_s": 1793349184.015754,
+      "lidar_last_unix_s": 1793349244.011669,
+      "imu_first_unix_s": 1793349184.038147,
+      "imu_last_unix_s": 1793349244.092371,
+      "host_overlap_s": 59.973522,
+      "max_lidar_capture_gap_s": 0.00141,
+      "max_imu_chunk_gap_s": 0.051273,
+      "invalid_packets": 0,
+      "warnings": [],
+      "limits": [
+        "host receive times do not establish sensor sampling times or synchronization",
+        "overlap of endpoints does not prove continuous valid data"
+      ]
+    }
+  },
+  "verdicts": {
+    "may_be_used_as_static_baseline": false,
+    "may_be_used_for_dynamic_calibration": false,
+    "reason": "无设备采样时间；主机批量到达限制对齐精度"
+  },
+  "limits": [
+    "本报告只汇总诊断，不代替原始字节审计、标定或同步验证",
+    "静态窗口通过不等于物理静止；量程未知时无饱和只是无证据",
+    "主机接收时间不能升级为设备采样时间"
+  ]
+}

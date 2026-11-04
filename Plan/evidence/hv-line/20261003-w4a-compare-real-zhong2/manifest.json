@@ -1,0 +1,58 @@
+{
+  "schema_version": "na70-wire-w4a-compare-v1",
+  "command": [
+    "D:\\Code\\radar\\web\\.venv\\Scripts\\python.exe",
+    "tools/run_wire_w4_proposal_compare.py",
+    "--output",
+    "Plan/evidence/hv-line/20261003-w4a-compare-real-zhong2",
+    "--real-pcap",
+    "radar_capture_data/2/9.14_caochangzhong2.pcap",
+    "--real-end-frame",
+    "600",
+    "--real-duration",
+    "1.0",
+    "--duration",
+    "0.3"
+  ],
+  "seed": 0,
+  "duration_s": 0.3,
+  "methods": [
+    "slab",
+    "hough",
+    "pca"
+  ],
+  "scenarios": [],
+  "real_inputs": {
+    "pcap": "radar_capture_data\\2\\9.14_caochangzhong2.pcap",
+    "end_frame": 600,
+    "duration_s": 1.0,
+    "install_direction": 1
+  },
+  "environment": {
+    "python": "3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "numpy": "2.5.3"
+  },
+  "source_hashes": {
+    "packages/na70_core/na70_core/wire/pipeline.py": "81c57a0d0c748147b1fa7a49a01ca62c914179c937f78c233b9600e5caf49197",
+    "packages/na70_core/na70_core/wire/proposals.py": "c4c1119f075592a8df6bf49c168a2940232034274a839344e86f5ef072eecba5",
+    "packages/na70_core/na70_core/wire/proposal_full_fov.py": "fa6d3dede09470c6168536912ee413c5a7fea45c3974541fba07bbb3e0aadd83",
+    "packages/na70_core/na70_core/wire/proposal_hough.py": "07ef23fc34025e5487105e002c519dbdb4e6df67386a6d48f4aa8bddc5fa0ce5",
+    "packages/na70_core/na70_core/wire/proposal_pca.py": "7cb5eed884ff81c075f965835a31ac5d7b0de428960432556c1ffbd00e6e5da8",
+    "packages/na70_core/na70_core/wire/fitting.py": "9c81a9cec591140c879434de73c207fa66bd8697762bc53aecc8964839336f84",
+    "packages/na70_core/na70_core/wire/validation.py": "6a14d9f00a3c25cd37778692841e8d70f2658be050cee155816fb88f2c6da7fa",
+    "packages/na70_core/na70_core/wire/constants.py": "18b7e7abf625374fe5c3cbaf08a599a37fdfa6f5546670b9bc21233ef2c103fc",
+    "packages/na70_core/na70_core/wire/config.py": "9557969a02cd94436a50107015cbf7a71cdac4765faf6e536fb1efa5e6990140",
+    "packages/na70_core/na70_core/wire_default.yaml": "000bdbbf2b62d7bb0dbcd71d526954ae45e28413cd48aaea81731abd7ffc549a",
+    "packages/na70_core/na70_core/windows.py": "ade135a99d2682d36755e375c8442d826372523637b3c8495402bb85f61c1894",
+    "packages/na70_core/na70_core/observations.py": "2893791f2af4292eadd41f16ef92c47a3174814a9e80a30673a4c93350d320bd",
+    "packages/na70_core/na70_core/wire/synthetic.py": "233ceda114af7ae153556c590ac6f257ae27028fe997065a9c9ed2001a0823b3",
+    "tools/run_wire_w4_proposal_compare.py": "acefb826f43d6146837cda74ad8dd64ce591b19e533b679dc2e6fa48e45326f8",
+    "web/backend/decoder.py": "a1ffe8e1fc2bf763bac3d4f9cbced095cbcade103c01302f2db15db60e482f9d",
+    "web/backend/thin_wire.py": "a74fa8450913efd78c559a801c46dc4fd96f9f181d0375cc5a9ea94ff11023c8"
+  },
+  "data_labels": [
+    "REAL_PCAP_UNKNOWN_LINE"
+  ],
+  "warning": "SYNTHETIC rows are code-behaviour evidence only; real PCAP rows are REAL_PCAP_UNKNOWN_LINE, not HV-line identity."
+}

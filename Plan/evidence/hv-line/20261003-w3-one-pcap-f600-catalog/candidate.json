@@ -1,0 +1,54 @@
+{
+  "schema_version": "na70-wire-pipeline-output-v1",
+  "status": "UNKNOWN",
+  "geometry_class": null,
+  "first_blocking_stage": "fit",
+  "reject_reason": "INSUFFICIENT_SUPPORT",
+  "candidate_line": null,
+  "stage_trace": [
+    {
+      "stage": "decode",
+      "status": "completed",
+      "input_rays": 200000,
+      "source_window_id": "pcap-b17d7c17-f600-d1.0"
+    },
+    {
+      "stage": "time_quality",
+      "status": "completed"
+    },
+    {
+      "stage": "window_quality",
+      "status": "completed"
+    },
+    {
+      "stage": "valid_return",
+      "status": "completed",
+      "valid_count": 69686,
+      "direction_known_count": 80925
+    },
+    {
+      "stage": "roi_or_proposal",
+      "status": "completed",
+      "input_count": 200000,
+      "output_count": 0,
+      "aabb": [
+        120.0,
+        260.0,
+        -40.0,
+        40.0,
+        -5.0,
+        25.0
+      ]
+    },
+    {
+      "stage": "fit",
+      "status": "rejected",
+      "reject_reason": "INSUFFICIENT_SUPPORT",
+      "fitted_points": 0,
+      "iterations": 0
+    }
+  ],
+  "window_id": 600,
+  "source_window_id": "pcap-b17d7c17-f600-d1.0",
+  "capture_sha256": "b17d7c17926e670b3d89ba0774c4140feb810e4935971ab57760f4bdd00636cd"
+}

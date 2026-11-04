@@ -1,0 +1,76 @@
+{
+  "schema": "na70-scene-synthetic-v1",
+  "evidence_kind": "SYNTHETIC",
+  "scene": {
+    "ground_z": -1.0,
+    "back_x": 8.0,
+    "side_y": 4.0,
+    "span_x": [
+      -5.0,
+      15.0
+    ],
+    "span_y": [
+      -6.0,
+      6.0
+    ]
+  },
+  "trajectory": {
+    "duration_s": 8.0,
+    "nodes": 81,
+    "frames": 50
+  },
+  "map": {
+    "points": 80873,
+    "voxels": 80873,
+    "input_points": 1347701,
+    "valid_points": 1347701,
+    "frames": 50,
+    "frames_with_points": 50,
+    "dropped": {
+      "outside": 0,
+      "gap": 0,
+      "nonfinite": 0
+    },
+    "voxel_size_m": 0.05,
+    "bounds": {
+      "minimum": [
+        -1.1502685285867367,
+        -6.013987944145627,
+        -1.0201272448558565
+      ],
+      "maximum": [
+        15.010403682368032,
+        6.008232922411975,
+        3.0146153643098423
+      ]
+    },
+    "mean_points_per_voxel": 16.66441210292681,
+    "max_points_per_voxel": 128,
+    "trajectory_frame": "lidar",
+    "extrinsic_supplied": false,
+    "limitations": [
+      "地图质量取决于输入位姿；本模块不产生、不优化位姿",
+      "包级时间仍是近似：逐点时间若由包时间复制，必须随结果声明",
+      "跨轨迹缺口/超出覆盖的点被丢弃，不插值外推",
+      "体素代表点是首个实测点，不是质心；来源引用保留",
+      "当前实现把全段体素保存在内存；长录（数分钟以上）需分块/流式落盘，尚未实现"
+    ]
+  },
+  "preview": "preview.png",
+  "accuracy_synthetic": {
+    "distance_p50_m": 0.0036115646362304688,
+    "distance_p95_m": 0.010761642456054682,
+    "distance_max_m": 0.026888370513916016,
+    "points": 80873
+  },
+  "status": "SYNTHETIC_PASS",
+  "claims": {
+    "slam_validated": false,
+    "hardware_validated": false,
+    "real_scene_reconstructed": false
+  },
+  "limitations": [
+    "合成场景与位姿；不证明 NA70 SLAM、同步或真实操场重建",
+    "点云由全部场景点变换得到，未模拟回波强度/遮挡/测距噪声"
+  ]
+}

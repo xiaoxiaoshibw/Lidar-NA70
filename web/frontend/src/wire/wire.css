@@ -1,0 +1,131 @@
+.wire-root { min-height: 100vh; background: #0c131d; color: #dce7ed; font-size: 13px; }
+.wire-root * { box-sizing: border-box; }
+.wire-root button, .wire-root input, .wire-root select { font: inherit; }
+.wire-root button:focus-visible, .wire-root input:focus-visible, .wire-root select:focus-visible, .wire-root a:focus-visible, .wire-root canvas:focus-visible { outline: 2px solid #63d9c4; outline-offset: 2px; }
+.wire-root a { color: #71d9c8; }
+.wire-header { min-height: 78px; display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 12px 24px; border-bottom: 1px solid #293b49; background: #121e2a; }
+.wire-brand { display: flex; align-items: center; gap: 13px; }
+.wire-brand-mark { display: grid; place-items: center; width: 48px; height: 48px; border-radius: 10px; border: 1px solid #408779; background: #1d3b38; color: #94f2df; font-size: 12px; font-weight: 800; letter-spacing: 1px; }
+.wire-brand h1 { margin: 0; font-size: 19px; font-weight: 650; }
+.wire-brand p { margin: 5px 0 0; color: #86a0ad; font-size: 11px; letter-spacing: .08em; }
+.wire-header .page-nav { flex-wrap: wrap; justify-content: flex-end; }
+.wire-banner { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; padding: 10px 24px; background: #34291e; border-bottom: 1px solid #765534; color: #e8c99a; line-height: 1.5; }
+.wire-banner > strong { color: #ffe0ad; }
+.wire-status-badge { padding: 3px 7px; border: 1px solid #a87a41; border-radius: 4px; font: 10px/1.2 Consolas, monospace; color: #ffdc9d; }
+.wire-layout { max-width: 1900px; margin: 0 auto; display: grid; grid-template-columns: minmax(280px, 330px) minmax(0, 1fr); min-height: calc(100vh - 122px); }
+.wire-sidebar { padding: 16px; border-right: 1px solid #2c3a45; background: #101a25; display: flex; flex-direction: column; gap: 14px; min-width: 0; }
+.wire-content { min-width: 0; padding: 16px 20px 40px; display: flex; flex-direction: column; gap: 14px; }
+.wire-card { border: 1px solid #2c3d4c; border-radius: 10px; background: #14212d; padding: 16px; min-width: 0; box-shadow: 0 7px 24px #08101a28; }
+.wire-section-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 25px; margin-bottom: 14px; }
+.wire-section-head h2 { margin: 0; font-size: 14px; color: #e7f3f5; }
+.wire-section-head > span { color: #8da2b1; font-size: 11px; }
+.wire-section-head > code { overflow-wrap: anywhere; font-size: 11px; color: #77d6c5; }
+.wire-section-head button { padding: 5px 10px; font-size: 11px; }
+.wire-root label:not(.wire-check) { display: flex; flex-direction: column; gap: 6px; margin: 11px 0; color: #b7cad4; font-size: 11px; font-weight: 600; }
+.wire-root label small { color: #758b9a; font-weight: 400; }
+.wire-root select, .wire-root input[type="number"] { width: 100%; padding: 9px 10px; color: #dfebf1; border: 1px solid #3b5261; border-radius: 6px; background: #0e1924; }
+.wire-check { display: flex; align-items: center; gap: 8px; margin: 13px 0; color: #a8c2ce; font-size: 11px; }
+.wire-check input { accent-color: #69d4bd; }
+.wire-root button { border: 1px solid #3b5261; border-radius: 6px; background: #20303f; color: #dbe7ec; cursor: pointer; }
+.wire-root button:hover { background: #2b4151; }
+.wire-root button:disabled { opacity: .45; cursor: not-allowed; }
+.wire-primary { width: 100%; min-height: 39px; padding: 9px; background: #64d5bf !important; color: #102a2b !important; border-color: #64d5bf !important; font-weight: 700 !important; }
+.wire-primary:hover { background: #8cebd7 !important; }
+.wire-muted { color: #879dac; font-size: 11px; line-height: 1.6; }
+.wire-error { color: #ffc4bc; border: 1px solid #904f4d; border-radius: 6px; padding: 9px; background: #462628; font-size: 11px; overflow-wrap: anywhere; }
+.wire-runs { flex: 1; }
+.wire-run-list { max-height: 520px; overflow-y: auto; display: grid; gap: 7px; }
+.wire-run { width: 100%; padding: 9px 10px; display: flex; flex-direction: column; align-items: stretch; gap: 5px; text-align: left; }
+.wire-run.selected, .wire-window.selected { border-color: #67d5c0; background: #21413d; }
+.wire-run > span { display: flex; justify-content: space-between; align-items: center; gap: 6px; }
+.wire-run strong { overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+.wire-run small { color: #94a9b4; }
+.wire-run code { font-size: 10px; color: #668997; overflow: hidden; text-overflow: ellipsis; }
+.wire-run em { font-size: 10px; font-style: normal; white-space: nowrap; }
+.wire-run-queued, .wire-run-running { color: #e7b969 !important; }
+.wire-run-ready { color: #77dfc4 !important; }
+.wire-run-error { color: #ff9c92 !important; }
+.wire-modes { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; }
+.wire-mode { min-height: 58px; padding: 10px; display: flex; flex-direction: column; justify-content: center; gap: 6px; border: 1px dashed #3c5060; border-radius: 7px; color: #79919f; }
+.wire-mode strong { font-size: 12px; color: #91a7b1; }
+.wire-mode span { font-size: 10px; }
+.wire-mode.available { background: #1a3a37; border: 1px solid #4c9789; color: #8fe9d2; }
+.wire-mode.available strong { color: #c2f5e6; }
+.wire-empty { padding: 30px; text-align: center; color: #93a9b4; }
+.wire-empty h2 { color: #dcecef; font-size: 16px; }
+.wire-identity { display: grid; grid-template-columns: 106px minmax(0, 1fr); gap: 7px 11px; font-size: 11px; }
+.wire-identity span { color: #8198a7; }
+.wire-identity code { overflow-wrap: anywhere; color: #a2d9d0; }
+.wire-run-meta { display: flex; gap: 15px; flex-wrap: wrap; margin: 13px 0; font-size: 11px; color: #98adba; }
+.wire-callout { margin-top: 13px; padding: 10px; background: #1a3736; border-left: 3px solid #6bd7c0; font-size: 12px; }
+.wire-callout strong { margin-left: 6px; color: #f8d698; }
+.wire-gaps { margin-top: 14px; border-top: 1px solid #2d4150; padding-top: 10px; }
+.wire-gaps summary { cursor: pointer; font-size: 12px; color: #e6bd82; }
+.wire-gaps ul { margin: 9px 0 0; padding-left: 20px; color: #b7c6ce; line-height: 1.8; font-size: 11px; }
+.wire-gaps li code { margin-left: 7px; font-size: 10px; color: #718b98; }
+.wire-window-list { display: flex; gap: 8px; overflow-x: auto; padding: 2px 1px 7px; }
+.wire-window { flex: 0 0 auto; min-width: 145px; padding: 10px; display: flex; flex-direction: column; align-items: flex-start; gap: 8px; text-align: left; font-size: 11px; }
+.wire-window > span:first-child { display: flex; flex-direction: column; gap: 5px; }
+.wire-window strong { color: #e2eef1; }
+.wire-window small { color: #8e9eac; }
+.wire-stats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
+.wire-stat { min-height: 82px; padding: 11px; display: flex; flex-direction: column; gap: 5px; border: 1px solid #2c4250; border-radius: 7px; background: #101b27; }
+.wire-stat span { color: #8ba4b2; font-size: 11px; }
+.wire-stat strong { color: #e8f4f5; font-size: 20px; font-variant-numeric: tabular-nums; }
+.wire-stat small { color: #d7ad77; font-size: 10px; }
+.wire-metric-table { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 18px; margin-top: 12px; }
+.wire-metric-table > div { min-width: 0; display: flex; justify-content: space-between; gap: 10px; border-bottom: 1px solid #263a47; padding: 9px 0; font-size: 11px; }
+.wire-metric-table span { color: #829bab; }
+.wire-metric-table strong { text-align: right; font-weight: 500; overflow-wrap: anywhere; }
+.wire-timeline-canvas { display: block; width: 100%; height: 120px; border: 1px solid #334c5a; border-radius: 5px; cursor: crosshair; }
+.wire-packet-slider { display: block; width: 100%; margin: 12px 0; accent-color: #f27e65; }
+.wire-packet-selected { display: flex; gap: 14px; align-items: center; flex-wrap: wrap; margin: 10px 0; font-size: 11px; color: #afc7d1; }
+.wire-packet-selected strong { color: #e5f4f5; }
+.wire-packet-selected em { color: #f4c37e; font-style: normal; }
+.wire-packet-table-wrap { max-width: 100%; overflow-x: auto; }
+.wire-packet-table { width: 100%; border-collapse: collapse; font-size: 11px; font-variant-numeric: tabular-nums; }
+.wire-packet-table th, .wire-packet-table td { padding: 7px 8px; text-align: left; white-space: nowrap; border-bottom: 1px solid #273947; }
+.wire-packet-table th { color: #8ea7b5; font-weight: 500; }
+.wire-packet-table tbody tr { cursor: pointer; }
+.wire-packet-table tbody tr:hover, .wire-packet-table tbody tr.selected { background: #24413f; }
+.wire-projections { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 9px; }
+.wire-projection { min-width: 0; border: 1px solid #355061; border-radius: 7px; overflow: hidden; background: #0c1723; }
+.wire-projection-title { display: flex; justify-content: space-between; gap: 5px; padding: 7px 9px; border-bottom: 1px solid #2a4351; font-size: 11px; }
+.wire-projection-title span { color: #809baa; }
+.wire-projection canvas { width: 100%; height: 245px; display: block; cursor: crosshair; }
+.wire-empty-cloud { padding: 20px; text-align: center; border: 1px dashed #3e5864; color: #9fb2be; }
+.wire-point-info { display: flex; flex-direction: column; gap: 7px; padding: 10px; margin-top: 11px; background: #21392f; border: 1px solid #4d8968; border-radius: 6px; font-size: 11px; }
+.wire-point-info code { overflow-wrap: anywhere; color: #b9f0d5; }
+.wire-point-info span { color: #bed6c9; }
+@media (max-width: 1050px) { .wire-header { flex-wrap: wrap; } .wire-header .page-nav { justify-content: flex-start; } .wire-modes { grid-template-columns: repeat(2, minmax(0, 1fr)); } .wire-projections { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 740px) { .wire-layout { display: block; } .wire-sidebar { border-right: 0; border-bottom: 1px solid #2c3a45; } .wire-content { padding: 14px; } .wire-header, .wire-banner { padding-left: 14px; padding-right: 14px; } .wire-projections { grid-template-columns: 1fr; } .wire-stats { grid-template-columns: repeat(2, minmax(0, 1fr)); } .wire-metric-table { grid-template-columns: 1fr; } }
+
+/* W3/W4 detection panel */
+.wire-detect-panel { display: flex; flex-direction: column; gap: 14px; }
+.wire-detect-header h3 { margin: 0 0 4px; color: #e8f4f5; font-size: 15px; }
+.wire-detect-header p { margin: 0; color: #93aab8; font-size: 11px; line-height: 1.6; }
+.wire-detect-form { display: flex; flex-wrap: wrap; gap: 11px; align-items: flex-end; }
+.wire-detect-form label { display: flex; flex-direction: column; gap: 5px; font-size: 11px; color: #8ba3b1; }
+.wire-detect-form input, .wire-detect-form select { min-width: 130px; padding: 6px 8px; border: 1px solid #3a5666; border-radius: 5px; background: #0c1723; color: #e3eff4; font-size: 12px; }
+.wire-detect-form .wire-detect-roi input { min-width: 300px; }
+.wire-detect-form button { padding: 7px 13px; border: 1px solid #46768a; border-radius: 5px; background: #1d3d4c; color: #dff3f7; cursor: pointer; }
+.wire-detect-form button:disabled { opacity: 0.5; cursor: not-allowed; }
+.wire-detect-notice { margin: 0; color: #f0c37d; font-size: 11px; }
+.wire-detect-table { width: 100%; border-collapse: collapse; font-size: 11px; }
+.wire-detect-table th, .wire-detect-table td { padding: 6px 8px; border-bottom: 1px solid #273947; text-align: left; }
+.wire-detect-table th { color: #8ea7b5; font-weight: 500; }
+.wire-detect-row { cursor: pointer; }
+.wire-detect-row:hover, .wire-detect-row[data-active="true"] { background: #213c48; }
+.wire-detect-row small { color: #c9836d; margin-left: 7px; }
+.wire-detect-status { padding: 2px 7px; border-radius: 3px; font-size: 10px; text-transform: uppercase; }
+.wire-detect-status-queued { background: #3a4a52; color: #b7cbd6; }
+.wire-detect-status-running { background: #4a5a1f; color: #daf18e; }
+.wire-detect-status-ready { background: #24504a; color: #9de8c9; }
+.wire-detect-status-error { background: #5a2f35; color: #f0a3a3; }
+.wire-detect-detail { margin-top: 13px; padding: 12px; border: 1px solid #355061; border-radius: 6px; background: #0c1826; }
+.wire-detect-detail h4 { margin: 0 0 7px; color: #e2eef1; }
+.wire-detect-detail dl { display: grid; grid-template-columns: 180px 1fr; gap: 4px 10px; font-size: 11px; }
+.wire-detect-detail dl dt { color: #839eac; }
+.wire-detect-detail dl dd { margin: 0; color: #e6f2da; overflow-wrap: anywhere; }
+.wire-detect-trace { margin: 7px 0 0; padding-left: 22px; font-size: 11px; color: #a6bfca; }
+.wire-detect-trace code { color: #f0c37d; }

@@ -33,8 +33,10 @@ from scipy.spatial import cKDTree
 from scipy.spatial.transform import Rotation
 
 ODOMETRY_VERSION = "na70-lidar-odometry-v2"
+FIXED_SCENE_VERSION = "na70-fixed-sensor-scene-v1"
 MAP_VERSION = "na70-voxel-map-v1"
 STAGE = "point_cloud_odometry"
+FIXED_SCENE_STAGE = "fixed_sensor_static_scene"
 
 #: Stable frame states.  ``quality_failed`` covers every rejection that still
 #: produced a pose candidate; ``tracking_lost`` means the frame was not located
@@ -116,6 +118,10 @@ def validate_configuration(cfg):
         raise ValueError("点数或邻域不足")
     if cfg["max_range"] <= cfg["min_range"]:
         raise ValueError("max_range 必须大于 min_range")
+    if cfg["fixed_max_range"] <= cfg["min_range"]:
+        raise ValueError("fixed_max_range 必须大于 min_range")
+    if cfg["pose_source"] not in ("odometry", "fixed_sensor"):
+        raise ValueError("未知位姿来源")
     if cfg["method"] not in ("point_to_point", "point_to_plane"):
         raise ValueError("未知配准方法")
     if cfg["motion_model"] not in ("se2", "se3"):
@@ -134,6 +140,13 @@ def validate_configuration(cfg):
             raise ValueError("静止初始化需要明确的静止区间声明")
         if start > end or end - start + 1 > cfg["bootstrap_max_frames"]:
             raise ValueError("静止区间顺序错误或超过初始化帧数预算")
+    if cfg["pose_source"] == "fixed_sensor":
+        if cfg["initialization_mode"] != "single_frame":
+            raise ValueError("固定雷达模式不使用里程计初始化")
+        if not cfg["stationary_declaration"].strip():
+            raise ValueError("固定雷达模式需要明确的静止声明")
+        if cfg["stationary_start_frame"] > cfg["stationary_end_frame"]:
+            raise ValueError("固定雷达区间顺序错误")
     distances = cfg["diagnostic_distances"]
     if not isinstance(distances, list) or not distances or any(
             isinstance(v, bool) or not isinstance(v, (float, int)) or not np.isfinite(v) or v <= 0 for v in distances):
@@ -698,6 +711,70 @@ def _reinitialise(source, submap, previous_pose, velocity, cfg: dict):
     return best[1], dict(best[2], state="reinitialized", reason="reinitialized")
 
 
+def run_fixed_scene(loader, frames: list, cfg: dict, cancelled=lambda: False,
+                    progress=lambda *_: None):
+    """Fuse a user-declared fixed-sensor interval in its original lidar coordinates."""
+    start, end = cfg["stationary_start_frame"], cfg["stationary_end_frame"]
+    voxel_map = VoxelMap(cfg["map_voxel_size"], cfg["map_max_voxels"], cfg["chunk_voxels"])
+    records = []
+    pose = np.eye(4).tolist()
+    accepted = []
+    fixed_cfg = {**cfg, "max_range": cfg["fixed_max_range"]}
+    for index, frame in enumerate(frames):
+        if cancelled():
+            raise InterruptedError()
+        timestamp = float(frame["time"])
+        state, reason, points = "pending", "outside_fixed_interval", 0
+        if start <= index <= end:
+            device_time = frame.get("device_time")
+            if (not frame.get("complete", False)):
+                state, reason = "insufficient_points", "incomplete_frame"
+            elif (device_time is None or not np.isfinite(device_time)
+                  or frame.get("packet_time_anomalies")):
+                state, reason = "timestamp_invalid", "invalid_packet_device_time"
+            else:
+                raw = loader(index)
+                xyz, intensity = clean(raw, fixed_cfg)
+                points = len(xyz)
+                if points < cfg["min_points"]:
+                    state, reason = "insufficient_points", "too_few_valid_returns"
+                else:
+                    voxel_map.add(xyz, intensity, device_time, index, 0)
+                    state, reason = "fixed_observation", "declared_fixed_sensor"
+                    accepted.append(index)
+        record = dict(index=index, timestamp=timestamp, state=state, reason=reason,
+                      overlap=None, rmse=None, translation_step_m=0.0,
+                      rotation_step_deg=0.0, iterations=0, point_count=points,
+                      keyframe=False, segment_id=0 if state == "fixed_observation" else -1,
+                      pose=pose if state == "fixed_observation" else None,
+                      candidate_pose=None)
+        records.append(record)
+        progress(index + 1, len(frames))
+    if not accepted:
+        raise ValueError("固定雷达区间没有可融合的完整有效帧")
+    segment = dict(segment_id=0, start_frame_index=accepted[0],
+                   end_frame_index=accepted[-1], keyframe_ids=[], length_m=0.0,
+                   closure=None, map_id=0, coordinate_relation="declared_fixed_sensor")
+    trajectory = dict(version=FIXED_SCENE_VERSION, segments=[segment], frames=[
+        dict(frame_index=record["index"], timestamp=record["timestamp"],
+             state=record["state"], reason=record["reason"], pose=record["pose"],
+             candidate_pose=None, segment_id=record["segment_id"],
+             keyframe=False, map_id=0) for record in records])
+    metrics = summarise(records, [segment], voxel_map)
+    selected_count = end - start + 1
+    metrics.update(fixed_observation_frames=len(accepted), selected_frame_count=selected_count,
+                   accepted_ratio=round(len(accepted) / selected_count, 4),
+                   rejected_ratio=round((selected_count - len(accepted)) / selected_count, 4),
+                   total_failure_ratio=round((selected_count - len(accepted)) / selected_count, 4),
+                   max_continuous_tracking_s=0.0, keyframe_count=0,
+                   initialization_failed=False, pose_source="fixed_sensor")
+    return dict(version=FIXED_SCENE_VERSION, stage=FIXED_SCENE_STAGE,
+                imu_used=False, loop_closure_used=False, config=cfg,
+                config_version=configuration_version(cfg), frame_count=len(frames),
+                frames=records, trajectory=trajectory, keyframes=[], map=voxel_map,
+                metrics=metrics)
+
+
 def run_odometry(loader, timelines, cfg: dict, cancelled=lambda: False, progress=lambda *_: None):
     """Run the full odometry chain.
 
@@ -968,7 +1045,7 @@ def run_odometry(loader, timelines, cfg: dict, cancelled=lambda: False, progress
 
 def summarise(records: list, segments: list, voxel_map: VoxelMap) -> dict:
     """Derive the acceptance metrics from per-frame records."""
-    accepted = [r for r in records if r["state"] in ("reference", "accepted", "reinitialized")]
+    accepted = [r for r in records if r["state"] in ("reference", "accepted", "reinitialized", "fixed_observation")]
     rejected = [r for r in records if r["state"] in REJECTED_STATES]
     lost = [r for r in records if r["state"] == "tracking_lost"]
     overlaps = [r["overlap"] for r in records if r["state"] != "reference" and r["overlap"] is not None]
@@ -978,7 +1055,7 @@ def summarise(records: list, segments: list, voxel_map: VoxelMap) -> dict:
 
     longest, run_start = 0.0, None
     for record in records:
-        if record["state"] in ("reference", "accepted", "reinitialized"):
+        if record["state"] in ("reference", "accepted", "reinitialized", "fixed_observation"):
             if run_start is None:
                 run_start = record["timestamp"]
             elif record["timestamp"] is not None:

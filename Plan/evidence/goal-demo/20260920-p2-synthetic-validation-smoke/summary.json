@@ -1,0 +1,303 @@
+{
+  "label": "SYNTHETIC",
+  "generator": "goal-synthetic-v1",
+  "scenarios": [
+    "static",
+    "translation",
+    "yaw",
+    "translation_yaw",
+    "pitch_roll",
+    "density_drop",
+    "missing_crossbar",
+    "single_post_occlusion",
+    "disappear_reenter",
+    "tree_wall_fence",
+    "similar_pair",
+    "multi_candidate",
+    "fov_edge",
+    "empty_nan",
+    "time_jump"
+  ],
+  "development_seeds": [
+    0,
+    19
+  ],
+  "validation_seeds": [
+    1000,
+    1049
+  ],
+  "default_frames": 200,
+  "truth_not_provided_to_pipeline": true,
+  "limitations": [
+    "sparse geometric approximation, not a physical NA70 simulator",
+    "no rolling scan distortion model",
+    "intensity is randomized rather than material-calibrated"
+  ],
+  "config_version": "b3293fa3507bc3b3",
+  "cases": [
+    {
+      "scenario": "static",
+      "seed": 1000,
+      "frames": 200,
+      "metrics": {
+        "visible_frames": 200,
+        "hits": 155,
+        "misses": 45,
+        "false_outputs": 0,
+        "precision": 1.0,
+        "recall": 0.775,
+        "center_error_p95_m": 0.0163,
+        "id_switches": 0,
+        "matched_track_ids": [
+          1
+        ]
+      }
+    },
+    {
+      "scenario": "translation",
+      "seed": 1000,
+      "frames": 200,
+      "metrics": {
+        "visible_frames": 200,
+        "hits": 31,
+        "misses": 169,
+        "false_outputs": 0,
+        "precision": 1.0,
+        "recall": 0.155,
+        "center_error_p95_m": 0.244,
+        "id_switches": 0,
+        "matched_track_ids": [
+          1
+        ]
+      }
+    },
+    {
+      "scenario": "yaw",
+      "seed": 1000,
+      "frames": 200,
+      "metrics": {
+        "visible_frames": 200,
+        "hits": 183,
+        "misses": 17,
+        "false_outputs": 0,
+        "precision": 1.0,
+        "recall": 0.915,
+        "center_error_p95_m": 0.0446,
+        "id_switches": 0,
+        "matched_track_ids": [
+          1
+        ]
+      }
+    },
+    {
+      "scenario": "translation_yaw",
+      "seed": 1000,
+      "frames": 200,
+      "metrics": {
+        "visible_frames": 200,
+        "hits": 45,
+        "misses": 155,
+        "false_outputs": 0,
+        "precision": 1.0,
+        "recall": 0.225,
+        "center_error_p95_m": 0.4855,
+        "id_switches": 0,
+        "matched_track_ids": [
+          1
+        ]
+      }
+    },
+    {
+      "scenario": "pitch_roll",
+      "seed": 1000,
+      "frames": 200,
+      "metrics": {
+        "visible_frames": 200,
+        "hits": 106,
+        "misses": 94,
+        "false_outputs": 0,
+        "precision": 1.0,
+        "recall": 0.53,
+        "center_error_p95_m": 0.0582,
+        "id_switches": 0,
+        "matched_track_ids": [
+          1
+        ]
+      }
+    },
+    {
+      "scenario": "density_drop",
+      "seed": 1000,
+      "frames": 200,
+      "metrics": {
+        "visible_frames": 200,
+        "hits": 0,
+        "misses": 200,
+        "false_outputs": 0,
+        "precision": null,
+        "recall": 0.0,
+        "center_error_p95_m": null,
+        "id_switches": 0,
+        "matched_track_ids": []
+      }
+    },
+    {
+      "scenario": "missing_crossbar",
+      "seed": 1000,
+      "frames": 200,
+      "metrics": {
+        "visible_frames": 200,
+        "hits": 0,
+        "misses": 200,
+        "false_outputs": 0,
+        "precision": null,
+        "recall": 0.0,
+        "center_error_p95_m": null,
+        "id_switches": 0,
+        "matched_track_ids": []
+      }
+    },
+    {
+      "scenario": "single_post_occlusion",
+      "seed": 1000,
+      "frames": 200,
+      "metrics": {
+        "visible_frames": 200,
+        "hits": 15,
+        "misses": 185,
+        "false_outputs": 0,
+        "precision": 1.0,
+        "recall": 0.075,
+        "center_error_p95_m": 0.0102,
+        "id_switches": 0,
+        "matched_track_ids": [
+          1
+        ]
+      }
+    },
+    {
+      "scenario": "disappear_reenter",
+      "seed": 1000,
+      "frames": 200,
+      "metrics": {
+        "visible_frames": 150,
+        "hits": 25,
+        "misses": 125,
+        "false_outputs": 0,
+        "precision": 1.0,
+        "recall": 0.1667,
+        "center_error_p95_m": 0.0169,
+        "id_switches": 0,
+        "matched_track_ids": [
+          1
+        ]
+      }
+    },
+    {
+      "scenario": "tree_wall_fence",
+      "seed": 1000,
+      "frames": 200,
+      "metrics": {
+        "visible_frames": 200,
+        "hits": 186,
+        "misses": 14,
+        "false_outputs": 0,
+        "precision": 1.0,
+        "recall": 0.93,
+        "center_error_p95_m": 0.0151,
+        "id_switches": 0,
+        "matched_track_ids": [
+          1
+        ]
+      }
+    },
+    {
+      "scenario": "similar_pair",
+      "seed": 1000,
+      "frames": 200,
+      "metrics": {
+        "visible_frames": 200,
+        "hits": 198,
+        "misses": 2,
+        "false_outputs": 1,
+        "precision": 0.995,
+        "recall": 0.99,
+        "center_error_p95_m": 0.0168,
+        "id_switches": 0,
+        "matched_track_ids": [
+          1
+        ]
+      }
+    },
+    {
+      "scenario": "multi_candidate",
+      "seed": 1000,
+      "frames": 200,
+      "metrics": {
+        "visible_frames": 200,
+        "hits": 198,
+        "misses": 2,
+        "false_outputs": 1,
+        "precision": 0.995,
+        "recall": 0.99,
+        "center_error_p95_m": 0.0168,
+        "id_switches": 0,
+        "matched_track_ids": [
+          1
+        ]
+      }
+    },
+    {
+      "scenario": "fov_edge",
+      "seed": 1000,
+      "frames": 200,
+      "metrics": {
+        "visible_frames": 200,
+        "hits": 160,
+        "misses": 40,
+        "false_outputs": 1,
+        "precision": 0.9938,
+        "recall": 0.8,
+        "center_error_p95_m": 0.0577,
+        "id_switches": 0,
+        "matched_track_ids": [
+          1
+        ]
+      }
+    },
+    {
+      "scenario": "empty_nan",
+      "seed": 1000,
+      "frames": 200,
+      "metrics": {
+        "visible_frames": 200,
+        "hits": 2,
+        "misses": 198,
+        "false_outputs": 0,
+        "precision": 1.0,
+        "recall": 0.01,
+        "center_error_p95_m": 0.0062,
+        "id_switches": 0,
+        "matched_track_ids": []
+      }
+    },
+    {
+      "scenario": "time_jump",
+      "seed": 1000,
+      "frames": 200,
+      "metrics": {
+        "visible_frames": 200,
+        "hits": 155,
+        "misses": 45,
+        "false_outputs": 0,
+        "precision": 1.0,
+        "recall": 0.775,
+        "center_error_p95_m": 0.0163,
+        "id_switches": 0,
+        "matched_track_ids": [
+          1
+        ]
+      }
+    }
+  ]
+}

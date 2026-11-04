@@ -1,0 +1,19 @@
+{
+  "schema": "na70-session-audit-v1",
+  "session_id": "20261030-155552",
+  "status": "failed",
+  "errors": [
+    "大小或哈希不符: events.jsonl"
+  ],
+  "imu_chunks": 1180,
+  "imu_bytes_covered": 805206,
+  "imu_frames": 12018,
+  "max_imu_chunk_receive_gap_s": 0.053003,
+  "observed_60000_to_1": 0,
+  "sequence_breaks": 0,
+  "limits": [
+    "不验证硬件同步或标定",
+    "接收块间隔不是传感器采样间隔",
+    "未解码 PCAP，也未验证实际有效时间重叠"
+  ]
+}

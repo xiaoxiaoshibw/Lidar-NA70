@@ -1,0 +1,44 @@
+{
+  "schema": "yesense.static-check.v1",
+  "scope": "SINGLE_POSE_STATIC_CONSISTENCY",
+  "calibration_accepted": false,
+  "thresholds": {
+    "min_samples": 1000,
+    "min_host_span_s": 9.0,
+    "max_accel_axis_std_m_s2": 0.1,
+    "max_accel_norm_std_m_s2": 0.08,
+    "max_gyro_axis_std_deg_s": 0.2,
+    "max_gyro_mean_norm_deg_s": 0.8,
+    "accel_mean_norm_range_m_s2": [
+      9.3,
+      10.3
+    ],
+    "max_host_gap_s": 0.2
+  },
+  "sample_count": 0,
+  "stream_error_events": 10,
+  "clock": "HOST_RECEIVE_TIME",
+  "device_timestamp_present": false,
+  "unobserved": [
+    "LiDAR_to_IMU_rotation",
+    "LiDAR_to_IMU_translation",
+    "LiDAR_IMU_time_offset",
+    "absolute_yaw",
+    "full_accelerometer_bias_and_scale",
+    "Allan_noise_parameters"
+  ],
+  "assumptions": [
+    "Rigid assembly is physically stationary; IMU alone cannot prove this.",
+    "Units follow YESENSE reference parser; exact hardware model not confirmed.",
+    "Short-term apparent gyro bias only; temperature stability not measured."
+  ],
+  "status": "INSUFFICIENT_DATA",
+  "failed_checks": [
+    "sample_count"
+  ],
+  "port": "COM12",
+  "baud": 460800,
+  "capture_elapsed_s": 10.062000000034459,
+  "source_file": "static-20261030-131202.jsonl",
+  "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

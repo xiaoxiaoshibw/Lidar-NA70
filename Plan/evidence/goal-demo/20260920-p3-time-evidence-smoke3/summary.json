@@ -1,0 +1,105 @@
+{
+  "label": "SYNTHETIC",
+  "generator": "goal-synthetic-v1",
+  "scenarios": [
+    "static",
+    "translation",
+    "yaw",
+    "translation_yaw",
+    "pitch_roll",
+    "density_drop",
+    "missing_crossbar",
+    "single_post_occlusion",
+    "disappear_reenter",
+    "tree_wall_fence",
+    "similar_pair",
+    "multi_candidate",
+    "fov_edge",
+    "empty_nan",
+    "time_jump"
+  ],
+  "development_seeds": [
+    0,
+    19
+  ],
+  "validation_seeds": [
+    1000,
+    1049
+  ],
+  "default_frames": 200,
+  "truth_not_provided_to_pipeline": true,
+  "limitations": [
+    "sparse geometric approximation, not a physical NA70 simulator",
+    "no rolling scan distortion model",
+    "intensity is randomized rather than material-calibrated"
+  ],
+  "config_version": "df5b5fdd0d151885",
+  "env": {
+    "python": "3.12.10",
+    "platform": "Windows-11-10.0.26200-SP0"
+  },
+  "source_hashes": {
+    "tools/run_goal_synthetic_suite.py": "a021794657807917132fd34c0d240e990a711aa9edd6595b4475b857bc6dc993",
+    "web/backend/goal_detection.yaml": "4772445087c3f5f709fee16002f2b33a84daeec8ace66e995941cd9ebd3b075d",
+    "web/backend/goal_detection/__init__.py": "3fbdbb438cda71ff1b2ed382a51fd7a499c509fc3613b2a1c646755033258804",
+    "web/backend/goal_detection/accumulation.py": "c955ab31a530d25179495194f117c916aa25552d60f88344c296a809782f61b7",
+    "web/backend/goal_detection/bev.py": "1138bd4c606693c08f5c3673d1081f082edfcf15fef9e742e7d84243d584efa1",
+    "web/backend/goal_detection/buffer.py": "4aa589dedf0a21dc120611c1f5a7a36beb8fadd7e5cbe940777c2db46a39af33",
+    "web/backend/goal_detection/config.py": "1eb2897a2d6e30dcd30d25e0423a7d5d5a2bb233134e3263576c5776dc5167d1",
+    "web/backend/goal_detection/detector.py": "5a99f0c25266f8e9459fcad5fce3a602530f87d390766e5cc15966ec3bc72b6d",
+    "web/backend/goal_detection/focus.py": "28dfe44ae1480d7d74b02bd5c9e0eac3db03fd6a95ae43311c828cb3e1742bbc",
+    "web/backend/goal_detection/geometry.py": "49394ec1ca6da61487c600bfdf28d3ddadce0705171dba6cdeb8ff80e53e1093",
+    "web/backend/goal_detection/observability.py": "b31032e93b3c8f57dc58ef163153d5c8875588cdf80d0a77dbdcfdba59f42c00",
+    "web/backend/goal_detection/pipeline.py": "bb8303beff8afaf0b7b90dd348effa633b07f4ae215f6911363fffc4897c9b66",
+    "web/backend/goal_detection/synthetic.py": "a2ffe7c46e59cb37b9115abf2acff9913d61f560e750ddbcc715fed2e1ade45b",
+    "web/backend/goal_detection/tracker.py": "e0313ca9ff14873d3cfbbe50cabc4f93f70da066c93aeb8880b6dace15128a72"
+  },
+  "cases": [
+    {
+      "scenario": "disappear_reenter",
+      "seed": 0,
+      "frames": 200,
+      "input_sha256": "80488ac63dea0236e7c006de8051b9846f4cad5c6a5e88e1022771e33b245aca",
+      "metrics": {
+        "visible_frames": 150,
+        "hits": 140,
+        "misses": 10,
+        "false_outputs": 0,
+        "precision": 1.0,
+        "recall": 0.9333,
+        "center_error_p95_m": 0.0162,
+        "width_error_p95_m": 0.0428,
+        "height_error_p95_m": 0.049,
+        "id_switches": 0,
+        "matched_track_ids": [
+          1
+        ],
+        "longest_hit_streak": 70,
+        "false_confirmed_frames_while_absent": 0
+      }
+    },
+    {
+      "scenario": "disappear_reenter",
+      "seed": 1000,
+      "frames": 200,
+      "input_sha256": "258a439856f416b6007c80af1db42d9e8d5d4642ab8e0e3d411989c158688b61",
+      "metrics": {
+        "visible_frames": 150,
+        "hits": 148,
+        "misses": 2,
+        "false_outputs": 0,
+        "precision": 1.0,
+        "recall": 0.9867,
+        "center_error_p95_m": 0.0176,
+        "width_error_p95_m": 0.0456,
+        "height_error_p95_m": 0.0416,
+        "id_switches": 0,
+        "matched_track_ids": [
+          1
+        ],
+        "longest_hit_streak": 78,
+        "false_confirmed_frames_while_absent": 0
+      }
+    }
+  ]
+}

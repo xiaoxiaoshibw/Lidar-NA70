@@ -1,0 +1,49 @@
+{
+  "schema": "na70-imu-gyro-unit-v1",
+  "status": "INCONCLUSIVE",
+  "reason": "scale or direction does not match either unit",
+  "batches": 1180,
+  "stride": 5,
+  "usable_intervals": 235,
+  "median_dt_s": 0.25458400000024994,
+  "max_dt_s": 0.2567640000006577,
+  "conventions": {
+    "body": {
+      "samples": 89,
+      "scale": 0.2612720341057918,
+      "cosine": 0.47905992154783555,
+      "median_rate_deg_s": 0.07546715623955608
+    },
+    "world": {
+      "samples": 89,
+      "scale": 0.19196372225106204,
+      "cosine": 0.18268438655745106,
+      "median_rate_deg_s": 0.07546715623955608
+    }
+  },
+  "chosen_convention": "body",
+  "scale_deg_per_recorded": 0.2612720341057918,
+  "cosine": 0.47905992154783555,
+  "limitations": [
+    "四元数来自设备融合输出，不是独立角速度基准",
+    "主机批量到达时只能用批次代表样本，dt 为批次间隔，不是设备采样间隔",
+    "只能检验单位/轴向一致性，不能给出陀螺尺度准确度或零偏",
+    "四元数阶数按 (w,x,y,z) 读取；若设备实为其他顺序，本检查会判不一致"
+  ],
+  "claims": {
+    "unit_checked_device_internal": true,
+    "external_reference_used": false,
+    "scale_accuracy_validated": false
+  },
+  "source": "radar_capture_data\\na70_sessions\\a2-browser-155552\\imu_frames.jsonl",
+  "source_sha256": "f1ac58767e76e0020f4896f0cb3f532429c551e6b05429a3c9a37223d79dd3ef",
+  "config": {
+    "max_dt_s": 2.0,
+    "min_rate_deg_s": 0.05,
+    "stride": 5
+  },
+  "units": {
+    "recorded_gyro": "unknown; tested against deg/s",
+    "quaternion": "(w,x,y,z) assumed"
+  }
+}

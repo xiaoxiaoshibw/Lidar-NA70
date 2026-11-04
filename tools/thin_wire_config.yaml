@@ -1,0 +1,28 @@
+{
+  "schema_version": "thin-wire-w1-v1",
+  "window_seconds": [0.5, 1.0, 2.0, 5.0],
+  "include_single_frame": true,
+  "install_direction": 1,
+  "max_packet_gap_s": 0.05,
+  "time_epsilon_s": 0.000001,
+  "max_window_points": 2000000,
+  "max_windows": 64,
+  "render_max_points": 60000,
+  "render_dpi": 150,
+  "target_roi": null,
+  "background_rois": [],
+  "target_reference": null,
+  "acquisition": {
+    "data_label": "REAL_PCAP_DIAGNOSTIC",
+    "capture_role": "unknown",
+    "static_status": "unknown",
+    "static_evidence": null,
+    "target_distance_m": null,
+    "wire_diameter_mm": null,
+    "wire_material": null,
+    "wire_orientation": null,
+    "sensor_settings": null,
+    "background_pairing_evidence": null,
+    "notes": null
+  }
+}

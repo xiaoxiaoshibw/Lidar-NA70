@@ -1,5 +1,89 @@
 # 首版实测记录
 
+## 2026-10-30：NA70＋USB IMU SLAM 软件准备（非本机硬件 SLAM 验收）
+
+新增 ROS 无关的输入预检核心、规范化 IMU CSV/包级相对时间/外参转换和 CLI，13 项 SYNTHETIC 输入契约测试通过。Windows 后端全量 **420 passed / 2 skipped**（2 条既有依赖弃用警告）。旧 `1.pcap` 末帧 50 的 0.1 s 窗口导出 20,200 原始引用、2,204 个 50 m 内有效点；由于缺少同步 IMU、外参和误差界，正确输出 BLOCKED，不生成轨迹。
+
+WSL2 Ubuntu 22.04/Humble x86_64 完成固定 FAST-LIO2、GLIM CPU/ROS2 构建与启动检查。GLIM 作者 Ouster＋IMU 公开数据前 30 s 冒烟输出 270 行轨迹、11 子地图，约 6.64 s；保留 1 条 IMU 覆盖警告，输入质量 REQUIRES_REVIEW，精度 NOT_EVALUATED。它只证明上游环境/流程可运行，不代表 NA70 运动建图或 Jetson/ARM 能力。完整命令、哈希、失败与边界见 [SLAM 开发报告](../Plan/evidence/slam/20261030-development/REPORT.md)。本轮未改前端，未重复进行浏览器验收。
+
+## 2026-10-03：高压线分支 P0–P2 平台交付（DEVELOPMENT / NOT_EVALUATED）
+
+按用户「在静止 PCAP 中识别 200 m 外高压线」启动独立候选路线；足球门 G0/G1 主线不变。Windows 本机 Python 3.12.10 + Node.js 24.14.0：
+
+- 新增 `packages/na70_core/na70_core/windows.py`（增量因果包级时间窗，与 [thin_wire.select_window][w1] byte-compatible；10 项契约 tests）。
+- 新增 `packages/na70_core/na70_core/wire/`（manual ROI 提议 → pyRANSAC 拟合（固定 seed） → 有限支持验证 → 证据分桶；独立 `wire_default.yaml`，10 项 tests）。
+- `web/.venv` 新装 `pyransac3d==0.7.0`（Apache-2.0）；`web/requirements.in` 已加入。
+- 离线 W3 运行器 `tools/run_wire_w3_offline.py` 及文档 [../docs/HV_LINE_PLANS.md](../docs/HV_LINE_PLANS.md)。
+- 评估：[../Plan/evidence/hv-line/20261003-p0/W3_EVAL_REPORT.md](../Plan/evidence/hv-line/20261003-p0/W3_EVAL_REPORT.md)：6 个 MEASURED_CURRENT 候选 + 2 个 INSUFFICIENT_SUPPORT 拒绝；明确**不是已识别 200 m 高压线**。
+
+同日追加：合成场景矩阵 `na70_core/wire/synthetic.py`（12 场景确定性夹具）+ `tools/run_wire_synthetic_matrix.py`；证据 [../Plan/evidence/hv-line/20261003-synthetic-matrix-v2/](../Plan/evidence/hv-line/20261003-synthetic-matrix-v2/)。首轮 10/12 暴露弱点如实锁定（树冠团块伪线、150 m 垂度被直线接受），第二轮 `--strict` 全过且曲线全部 SYNTHETIC；8 项契约测试 `test_na70_core_wire_synthetic.py` 加入全量。
+
+同日加固：`validation.py` 按测量结果新增 SPARSE_SUPPORT（min_support_density_per_m=1.0）与 EXCESSIVE_SAG（max_sag_m=1.0）闸门，constants.py 显式注册这两个 reject 原因；`wire_default.yaml` 同步更新。`proposal_full_fov.py`（angular-slab 连通体）+ `tools/run_wire_w4_full_fov_offline.py`（真实 `--enable-full-fov` 离线）。真实 zhong2 全 FOV smoke `NO_CURRENT_MEASUREMENT`：2° slab 下 78k 点连成 682×393×63 m 大连通体，角 slab 模型在真实稀疏回波上不工作，见 [../Plan/evidence/hv-line/20261003-w4-zhong2-f600-fullfov/W4_FINDINGS.md](../Plan/evidence/hv-line/20261003-w4-zhong2-f600-fullfov/W4_FINDINGS.md)。strict 合成矩阵 `20261003-synthetic-matrix-v3` 全过。
+
+同日 W4-A 提案对照:新增 `opencv-python-headless==4.10.0.84`;`proposal_hough.py`、`proposal_pca.py`、SYNTHETIC 两新场景、`tools/run_wire_w4_proposal_compare.py`、6 项 tests。真实 zhong2 f600/1 s:slab 0 提案出局/hough 25 提案/18 评估/一个 MEASURED_CURRENT(span 20.36,nearest 76.53,UNKNOWN_LINE)/pca 2 提案全被 finite_support 拒。
+
+同日收尾:`tracking.py` 三桶占位;`validation.py` 结构化 `reject_counts`;pipeline `source_ids_sha256`;`na70_core/evidence/scoring.py` reviewed-only scorer + `tools/score_wire_run.py`(示例 truth unreviewed→NOT_EVALUATED);`/api/wire/detect/runs` W3/W4 REST(`WireDetectionRuns` 持久化,资源上限 400k 点/运行);前端 `/wire/` W3/W4 面板;`requirements.lock` 加 pyransac3d/opencv;新增 `test_na70_core_wire_evidence.py`、`test_na70_core_wire_w4a.py`、`test_wire_detect_api.py` 共 10 项。
+
+同日二次 review 收尾：W1 scorer 一对一（同 truth 命中多 detection 只取最佳 TP,其他 FP;detection 不重复 TP);pipeline 新增 `proposals_outcomes` stage 记录每个 proposal 的 reject 详情;前端 `openDetail` 加 catch/notice;`web/pyproject.toml` 注册 `evidence_anchored` marker；新 3 项 scorer 一对一测试。
+
+全量后端 `.\.venv\Scripts\python.exe -m pytest tests -q` **408 passed** / 1 个 integration skip / 2 warnings(httpx;opencv deprecation);前端 `npm run build` 通过;Jetson/ARM/WSL2 未运行,不声称 200 m 高压线识别。
+
+全量后端 `.\.venv\Scripts\python.exe -m pytest tests -q` 为 **392 passed** / 2 warnings；前端 `npm run build` 通过。Jetson / ARM 未运行，未做 WSL2 ROS2 集成验证；不声称能在 200 m 真实数据中识别高压线。
+
+**后续门禁**：`/api/wire/w3` REST 持久化作业 + WebUI reviewed 真值录入仍为后续；P3 必须由用户/合作方提供 200 m 独立实测数据方能进入 HV TP 评分；P4 frozen 全 FOV 要等 P2+P3。
+
+## 2026-09-27：固定传感器静态场景原型（DEVELOPMENT / OBSERVED_ONLY）
+
+这是用户提出的独立静态场景分支；足球门 G0/G1 仍是当前主线。Windows 本机 Python 3.12 WebUI 运行于 `http://127.0.0.1:8766`。输入 `radar_capture_data/2/9.14_caochangzhong2.pcap`，SHA-256 `2caa68d6491cb2ba6fd9bae86e04104038fbbf4c7a4e349fa6dcc211adc743ce`。首 10 秒（帧 0–99）持久化任务 `447b6663-e435-4c5c-b9e9-2feea4cd3dd6`，配置版本 `92d695b6b6b3bab4`：100 个固定观测、0 拒绝、0 配准，融合 610,518 个回波，生成 114,341 个体素和 257 个地图块，耗时 7.533 秒。另对全 1,298 帧运行未持久化核心冒烟：1,297 个固定观测、1 个拒绝、融合 7,967,144 个回波，生成 277,116 个体素，丢弃 0 点。已在 MAP 视图手动查看体素地图与每体素回波数着色，并导出 5,081,554 字节证据包。
+
+以上标记为 `DEVELOPMENT / OBSERVED_ONLY`：几何准确度 `NOT_EVALUATED`，没有 IMU，也没有实测转台角度；不能据此宣称完整操场重建或多视角拼接通过。Windows Python 3.12 后端全量 `pytest tests -q` 为 361 passed / 2 warnings；前端 `npm run build` 通过；Jetson 未运行。
+
+在 `127.0.0.1:8766` 重启后，真实任务 `447b6663-e435-4c5c-b9e9-2feea4cd3dd6` 从磁盘恢复为 `ready`，地图元数据与 `map/chunks` 仍可读取。最后的固定模式定向回归为 3 passed。
+
+同一 PCAP 的帧 0–99 与 100–199 分段地图一致性观察及其结论边界见[分段对照报告](../Plan/evidence/static-scene/20260928-zhong2-split/REPORT.md)；该观察不是准确度或 ghosting acceptance。
+
+## 2026-09-26：无新 PCAP 的导线观测核心前期开发（SYNTHETIC / 协议回归）
+
+新增可编辑安装的 `packages/na70_core`：`RayBatch` 保留原始码、XYZ/intensity、采集 SHA、帧/包/帧内点 ID、包级设备/抓包时间和有效/方向掩码。正式 `backend.decoder` 与 S0 几何审计共用角码坐标变换；W1 新运行增加方向可恢复/未知的逐包与逐窗计数。零距离且角码存在时方向仍可恢复；角码全零且距离为零时方向未知。原有证据不回写。
+
+Windows Python 3.12.10：`web/.venv/Scripts/python.exe -m pytest tests -q` 为 **358 passed / 2 warnings**，`pip check` 无冲突；锁文件中的本地可编辑包安装成功。前端 `npm run build` 通过，W1 页面合成浏览器用例 **1 passed**，已显示方向可恢复/未知统计。现有 `1.pcap`、`2.pcap` 各取首/中/末帧，并分别按两种安装方向与 Git HEAD 旧解码器比较，合计 **220,000 条射线逐点 `array_equal`**；随后两份文件按安装方向 1 完整解码，合计 **43,910,000 条射线的输出 SHA-256 与旧版分别相同**。安装方向 2 仍仅做抽样对账。W1 新运行的清单记录新核心源码哈希。
+
+这次重构没有速度收益。`2.pcap` 前 100 帧、预热后交替运行 8 轮的中位数：旧版 0.1038 秒，当前版 0.1134 秒；全片计时受文件缓存/系统负载影响，不能从单机少量轮次得出稳定吞吐结论。目标是单一角度变换和可追溯来源，性能优化待单独门禁。这些都是协议与迁移回归，不是导线实测；增量时间窗、StageTrace 和真值评分仍待完成。计划及输入 SHA-256 见[前期开发清单](../Plan/NA70_无新PCAP前期开发清单.md)。W1 真实回波归属仍为 `NOT_EVALUATED`。
+
+## 2026-09-26：WebUI 第一批重构与导线 W1 工作台（工程回归，非导线检出）
+
+四个工作台已有统一导航；主回放增加采集/模式/任务身份校验，球门 Demo 会话绑定采集并按实际显示的点云帧保存标注。共享二进制点云解析器检查协议版本、类型、点数、字段和载荷长度。独立 `/api/wire` 持久化 W1 原始诊断运行与 `/wire/` 页面提供窗口、逐包时间线、三视图和原始帧/包/点来源；点云响应还按运行、窗口、主/背景角色及采集身份校验。W3/W4/W5 仅是不可用的能力声明。真实导线回波归属保持 `NOT_EVALUATED`。
+
+Windows 本机回归：`web/.venv/Scripts/python.exe -m pytest tests -q` 为 **356 passed / 2 warnings**；`web/frontend/npm run build` 通过；导线工作台与二进制解析定向浏览器回归 **3 passed**，Demo 身份与可观测性、主视图、建图、转台等用例在全套中通过。新 `/api/wire` 路径曾对 `1.pcap` 的 0.5 秒窗口输出 100,000 条原始记录、35,329 个全场有效回波和 500 个包；这不是可归属的导线回波。
+
+全套 Playwright 初跑为 **15 passed / 3 failed / 3 skipped**。合成建图失败由并行测试共用 Playwright 输出目录造成 trace 文件丢失，串行独立复跑为 **2 passed / 1 skipped**。真实 `2.pcap` 的高密度 200 帧滚动回放原先在 3 秒进度检查停在约 415 帧；1× 全片播放在 210 秒内仅到第 1233/1534 帧。缩小 GPU 缓冲分组未改善，已撤回。最终改为滚动播放期间最多显示 100 万点预览，暂停后恢复所选完整密度，状态栏明确提示；原始帧和窗口数量不变，整包常驻视图不使用此预览上限。修复后高密度用例独立复跑 **1 passed**，滚动帧为 430、暂停后原始窗口 4,000,000 点、48 FPS；`2.pcap` 1× 全片 1534 帧 **1 passed**，约 160.58 秒到片尾、片尾 40 FPS。导线及解析器定向复跑 **3 passed**。这是分组定向回归，修复后未再跑完整 Playwright 套件；3 个预设跳过的场景仍未验收。测试服务仅绑定 `127.0.0.1:8765`，未进行 Jetson 性能验收。
+
+## 2026-09-24：无 IMU 移动球门标定预开发（G4 FAIL）
+
+见 [预开发报告](../Plan/evidence/goal-demo/20260924-noimu-calibration/REPORT.md)。当前单帧全场地面参考与人工球门 ROI 已分离；静止近侧 reviewed 正窗口，同一 77 个可见帧的候选命中从 19 增至 47。移动雷达 PCAP 仅有未复核旧框和原始回波；54 个多帧门形提案保留原始引用但标为 `UNCOMPENSATED_MOTION`，不进入跟踪。背景 SE(2) 位姿探针未通过真实质量门禁。目标测试 63 passed；后端全量 346 passed / 1 failed（既有转台 `job.json.tmp` 导出竞态，单项重跑通过）。没有移动段准确率或 Jetson 性能验收。
+
+## 2026-09-24：平移雷达球门识别回放（REAL_PCAP / FAIL）
+
+见 [完整报告](../Plan/evidence/goal-demo/20260924-yidong-facade-moving-944/REPORT.md)。`9.14_caochangyidong.pcap` 全 944 帧以全场 `facade` 和显式 `moving` 状态回放：59 帧有累积候选，20 帧有被选择的当前测量，0 帧 LOCKED/TRACKING。旧 frame 238–257 标注仍 `PENDING_REVIEW`，不能据此计算召回；`--reviewed-only` 为 `NOT_EVALUATED`。生产阈值未改，移动状态声明不执行位姿补偿。窗口审计工具新增移动状态与来源帧着色，地面/立面局部回归 32 passed；Windows 性能见报告，Jetson 未验收。
+
+## 2026-09-21：足球门恢复为近期主线
+
+当前执行入口改为 [足球门识别主线开发计划](../Plan/足球门识别主线开发计划.md)。顺序为 G0 可信真值、G1 高度基准、G2 人工 ROI 内含球网几何、G3 全场搜索、G4 跟踪、G5 冻结验收；第一轮只执行 G0–G1。真实基线仍是 1211 帧无 LOCKED/TRACKING、待复核标注 0/11，本条是路线和计划更新，不是算法通过。细线 W1 工具与证据保留，真实归属仍 NOT_EVALUATED，当前暂停。
+
+## 2026-09-21：细线 W1 原始数据工具（工程可用，真实归属未评价）
+
+见 [开发与验证记录](../Plan/evidence/thin-wire/20260921-w1-development/REPORT.md)。新增独立 W1 CLI、配置与契约，复用正式解码器，导出未经过球门范围/高度过滤或体素化的原始数据、无效射线、原始索引和包时间；支持目标/背景区域、独立背景 PCAP、按秒分段取窗、位置一致统计与分区三视图。绘图依赖已补入锁文件。
+
+Windows Python 3.12.10 / NumPy 2.5.3 / Matplotlib 3.11.2：24 个 W1 case + 13 个解码 case 共 37 passed；图形刻度调整后图形用例再次通过。全量后端一次为 292 passed / 1 failed，失败在既有转台 export 读到已替换的 `job.json.tmp`，单项重跑通过，失败记录保留且本轮未改转台。无前端/ROS2 变更，未重跑构建/E2E/Jetson。
+
+既有 `1.pcap` 的 frame 50 单帧及 0.5/1/2/5 秒窗口工具运行完成，5 秒窗口保留 1000000 条射线，其中有效回波 347541；这是全窗口统计，不是细线支撑点。产物位于 [最终诊断目录](../Plan/evidence/thin-wire/20260921-w1-release-v2/REPORT.md)，保留输入/源码/config 哈希，18 个产物哈希及导出点与解码器对应已核验。因未指定已知细线位置、静止依据和背景配对，W1 仍 IN_PROGRESS / NOT_EVALUATED，不进入 W2–W5，不能宣称 200 米导线可测。
+
+## 2026-09-20：球门真实失败归因与地面回退修复（P3 FAIL）
+
+见 [根因报告](../Plan/evidence/goal-demo/20260920-root-cause-audit-final/REPORT.md)。已复现绝对高度截断、体素后 BEV 密度口径不相容、球网连接成宽组件三处阻断；旧 7.32 米默认框不足以证明目标缺柱或时间错位。
+
+修复地面估计在 ROI/低分位筛选后点数不足时不尝试累积云的问题，保留全部生产阈值。Windows Python 3.12.10，后端 270 passed，前端构建通过，7 场景×2 seed×200 帧 SYNTHETIC 指标与上轮相同；未重跑浏览器 E2E。主 PCAP 1211 帧地面归一化 13→470 帧，但 LOCKED/TRACKING 仍 0，待复核标注仍 0/11。当前测量候选 24→6 不作准确率改善声明；真实验收仍 FAIL，不进入 P4，也不构成 Jetson 性能验收。
+
 ## 2026-09-10：本机离线运动分析（W2 PARTIAL）
 
 Windows Web 后端已接入固定雷达运动分析。首版启动体素背景在 003.pcap 上把双楔镜后续扫描方向误判为前景，现已改为使用原始俯仰码和航向码建立全片射线距离众数背景，只比较重复扫描方向；随后执行时序窗口、加权 DBSCAN、恒速 Kalman、匈牙利匹配和自适应事件阈值。分析结果随导入记录持久化；浏览器显示红色移动点、前景目标框、速度箭头、事件跳转和逐帧 CSV 导出。

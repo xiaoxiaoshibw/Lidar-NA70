@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>NA70 虚拟球门扫描 · SYNTHETIC</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#101927;color:#e8f1f5;font:15px system-ui,sans-serif}header{padding:14px 20px;background:#18283a}h1{font-size:20px;margin:0 0 5px}p{margin:5px 0;color:#a9bdcb}main{display:flex;gap:14px;padding:14px}aside{width:290px;flex-shrink:0;background:#18283a;padding:16px;border-radius:9px}label{display:block;margin:16px 0 5px}input[type=range]{width:100%}button{background:#21a9a0;border:0;border-radius:5px;color:#071b23;padding:9px 12px;cursor:pointer;font-weight:700;margin:8px 5px 0 0}canvas{width:100%;height:70vh;min-height:430px;background:#0c1723;border-radius:9px;touch-action:none}.view{flex:1;min-width:0}.legend{line-height:1.8}.small{font-size:12px;line-height:1.6}strong{color:#75e2d2}@media(max-width:800px){main{flex-direction:column}aside{width:auto}canvas{height:55vh}}
+</style></head><body>
+<header><h1>NA70 虚拟球门扫描 <strong>SYNTHETIC</strong></h1><p>简化三维射线仿真 · 拖动视角 · 滚轮缩放</p></header>
+<main><aside><label>球门距离：<b id="distVal">15</b> m</label><input id="dist" type="range" min="8" max="28" value="15" step="1"><label>累计帧数：<b id="framesVal">5</b></label><input id="frames" type="range" min="1" max="20" value="5"><label><input type="checkbox" id="net" checked> 模拟球网回波</label><button id="run">重新扫描</button><button id="export">导出点云 CSV</button><p id="stats" class="legend"></p><p class="legend">● <span style="color:#f8ce65">球门框</span>　● <span style="color:#7be1d3">球网</span><br>● <span style="color:#70a677">地面</span>　● <span style="color:#8294a8">背景墙</span></p><p class="small">每帧 20,000 条随机角度射线，10 Hz 名义帧率；使用 7.488 m 经验近距下限。坐标：X 向前、Y 向左、Z 向上，单位米。</p><p class="small">扫描轨迹、球网回波、噪声和材质均未经实测校准；不代表真实 NA70 性能或球门识别结果。</p></aside><div class="view"><canvas id="scene"></canvas><p>线框是场景真值，彩色点是模拟回波；显示所有累计帧。距离过近时部分回波会被近距下限剔除。</p></div></main>
+<script>
+'use strict';
+const canvas=document.getElementById('scene'), ctx=canvas.getContext('2d');
+const dist=document.getElementById('dist'), frames=document.getElementById('frames'), net=document.getElementById('net');
+let points=[], yaw=-0.85, pitch=0.55, scale=19, drag=null;
+const colors={frame:'#f8ce65',net:'#7be1d3',ground:'#70a677',wall:'#8294a8'};
+// ponytail: uniform angular sampling approximates coverage, not the device's non-repetitive scan trajectory.
+function simulate(){
+  points=[]; const d=+dist.value, n=+frames.value, floor=7.488, sensorZ=1.2;
+  const counts={frame:0,net:0,ground:0,wall:0};
+  for(let f=0;f<n;f++) for(let i=0;i<20000;i++){
+    const a=(Math.random()*2-1)*25*Math.PI/180, e=(Math.random()*2-1)*12*Math.PI/180;
+    const dx=Math.cos(e)*Math.cos(a), dy=Math.cos(e)*Math.sin(a), dz=Math.sin(e);
+    let t=Infinity, type='';
+    if(dz<0){const g=-sensorZ/dz; if(g>0 && g<t){t=g;type='ground'}}
+    const goal=d/dx, y=goal*dy, z=sensorZ+goal*dz;
+    if(goal>0 && goal<t && Math.abs(y)<=3.72 && z>=0 && z<=2.44){
+      const bar=Math.abs(Math.abs(y)-3.66)<0.06 || z>2.32;
+      const mesh=net.checked && (Math.abs(y/0.2-Math.round(y/0.2))<0.035 || Math.abs(z/0.2-Math.round(z/0.2))<0.035);
+      if(bar||mesh){t=goal;type=bar?'frame':'net'}
+    }
+    const wall=35/dx; if(wall>0 && wall<t){t=wall;type='wall'}
+    if(t>=floor && t<50 && Number.isFinite(t)){
+      // Quantize range as the device protocol does; no noise or intensity model is implied.
+      t=Math.round(t/0.016)*0.016;
+      points.push({x:t*dx,y:t*dy,z:sensorZ+t*dz,type,frame:f,time:f/10}); counts[type]++;
+    }
+  }
+  document.getElementById('distVal').textContent=d; document.getElementById('framesVal').textContent=n;
+  document.getElementById('stats').textContent=`有效回波 ${points.length.toLocaleString()} 点｜门框 ${counts.frame}｜球网 ${counts.net}｜地面 ${counts.ground}｜背景 ${counts.wall}`;
+  draw();
+}
+function project(x,y,z){const cx=canvas.width/2,cy=canvas.height*.62, X=x-14, Y=y, Z=z-1; const u=X*Math.cos(yaw)-Y*Math.sin(yaw),v=X*Math.sin(yaw)+Y*Math.cos(yaw); return [cx+u*scale,cy-(Z*Math.cos(pitch)-v*Math.sin(pitch))*scale,v*Math.cos(pitch)+Z*Math.sin(pitch)]}
+function line(a,b,color,width=1){const p=project(...a),q=project(...b);ctx.strokeStyle=color;ctx.lineWidth=width;ctx.beginPath();ctx.moveTo(p[0],p[1]);ctx.lineTo(q[0],q[1]);ctx.stroke()}
+function draw(){
+  const ratio=1, rect=canvas.getBoundingClientRect(); canvas.width=Math.round(rect.width);canvas.height=Math.round(rect.height);
+  const w=rect.width,h=rect.height;
+  ctx.clearRect(0,0,w,h);ctx.save();ctx.scale(1/ratio,1/ratio);
+  for(let x=0;x<=35;x+=5)line([x,-12,0],[x,12,0],'#284b48'); for(let y=-10;y<=10;y+=5)line([0,y,0],[35,y,0],'#284b48');
+  const d=+dist.value; line([d,-3.66,0],[d,-3.66,2.44],'#f5f8fb',2*ratio);line([d,3.66,0],[d,3.66,2.44],'#f5f8fb',2*ratio);line([d,-3.66,2.44],[d,3.66,2.44],'#f5f8fb',2*ratio);
+  line([0,0,0],[0,0,1.2],'#f66',2*ratio);
+  for(const p of points){const q=project(p.x,p.y,p.z);if(q[0]>=0&&q[0]<canvas.width&&q[1]>=0&&q[1]<canvas.height){ctx.fillStyle=colors[p.type];ctx.fillRect(q[0],q[1],2*ratio,2*ratio)}}ctx.restore();
+}
+canvas.addEventListener('pointerdown',e=>{drag=[e.clientX,e.clientY];canvas.setPointerCapture(e.pointerId)});canvas.addEventListener('pointerup',()=>drag=null);canvas.addEventListener('pointermove',e=>{if(!drag)return;yaw+=(e.clientX-drag[0])*0.008;pitch=Math.max(-1.3,Math.min(1.3,pitch+(e.clientY-drag[1])*0.008));drag=[e.clientX,e.clientY];draw()});canvas.addEventListener('wheel',e=>{e.preventDefault();scale=Math.max(5,Math.min(50,scale*Math.exp(-e.deltaY*.001)));draw()},{passive:false});
+document.getElementById('run').onclick=simulate; dist.oninput=simulate; frames.oninput=simulate; net.onchange=simulate;window.onresize=draw;
+document.getElementById('export').onclick=()=>{const rows=['# SYNTHETIC; approximate ray model; coordinates in metres; nominal frame time in seconds','x,y,z,intensity,frame,time_s,object'];for(const p of points)rows.push(`${p.x.toFixed(3)},${p.y.toFixed(3)},${p.z.toFixed(3)},,${p.frame},${p.time.toFixed(1)},${p.type}`);const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([rows.join('\n')],{type:'text/csv'}));a.download='na70_synthetic_goal.csv';a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000)};
+simulate();
+</script></body></html>

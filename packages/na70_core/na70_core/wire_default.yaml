@@ -1,0 +1,27 @@
+{
+  "schema_version": "na70-wire-config-v1",
+  "fit": {
+    "thresh_m": 0.6,
+    "max_iteration": 400,
+    "min_points": 6,
+    "fixed_seed": 7
+  },
+  "proposal": {
+    "use_manual_roi": true
+  },
+  "validation": {
+    "min_unique_packets": 4,
+    "min_span_m": 1.0,
+    "min_coverage_fraction": 0.25,
+    "max_internal_gap_m": 50.0,
+    "max_bin_lateral_spread_m": 1.0,
+    "max_sag_m": 1.0,
+    "min_span_for_density_check_m": 25.0,
+    "min_support_density_per_m": 1.0,
+    "max_rms_orthogonal_m": 0.5,
+    "max_p95_orthogonal_m": 1.0,
+    "max_window_age_s": 5.0,
+    "span_bin_m": 1.0,
+    "require_direction_known": true
+  }
+}

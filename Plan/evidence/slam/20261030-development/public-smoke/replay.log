@@ -1,0 +1,27 @@
+[2026-10-30 10:48:18.776] [glim] [info] config_path: /home/radar/na70_lio_ws/public-smoke-30s-final/config
+[2026-10-30 10:48:18.776] [glim] [info] load libodometry_estimation_cpu.so
+[2026-10-30 10:48:18.781] [glim] [info] load libsub_mapping_passthrough.so
+[2026-10-30 10:48:18.782] [glim] [info] load libglobal_mapping_pose_graph.so
+[2026-10-30 10:48:18.792] [glim] [info] topics:
+[2026-10-30 10:48:18.792] [glim] [info] - /os_cloud_node/imu
+[2026-10-30 10:48:18.792] [glim] [info] - /os_cloud_node/points
+[2026-10-30 10:48:18.792] [glim] [info] - /image
+[2026-10-30 10:48:18.794] [glim] [info] bag_filenames:
+[2026-10-30 10:48:18.794] [glim] [info] - /home/radar/na70_lio_ws/public-zenodo-example/bag/os1_128_01_downsampled
+[2026-10-30 10:48:18.794] [glim] [warning] param glim_ros/playback_speed not found
+[2026-10-30 10:48:18.794] [glim] [warning] use default_value=100
+[2026-10-30 10:48:18.794] [glim] [info] opening /home/radar/na70_lio_ws/public-zenodo-example/bag/os1_128_01_downsampled
+[2026-10-30 10:48:18.795] [glim] [info] detected storage_id=sqlite3 from metadata.yaml
+[INFO] [1793328498.803650827] [rosbag2_storage]: Opened database '/home/radar/na70_lio_ws/public-zenodo-example/bag/os1_128_01_downsampled/os1_128_01_downsampled.db3' for READ_ONLY.
+[2026-10-30 10:48:20.096] [odom] [warning] not enough IMU measurements integrated between 508.4654704 and 508.56578615. N=0
+[2026-10-30 10:48:20.102] [odom] [info] initial IMU state estimation result
+[2026-10-30 10:48:20.102] [odom] [info] T_world_imu=se3(-0.053127,0.061037,0.157539,0.037015,-0.050702,-0.098913,0.993114)
+[2026-10-30 10:48:20.102] [odom] [info] v_world_imu=vec(-0.025564,0.065617,0.060455)
+[2026-10-30 10:48:20.102] [odom] [info] imu_bias=vec(0.000000,0.000000,0.000000,0.017068,0.010209,0.004500)
+[2026-10-30 10:48:24.166] [glim] [info] reached playback_duration (30.00807804 > 30)
+[2026-10-30 10:48:24.166] [glim] [info] waiting for odometry estimation
+[2026-10-30 10:48:24.255] [glim] [info] waiting for local mapping
+[2026-10-30 10:48:24.515] [glim] [info] waiting for global mapping
+[2026-10-30 10:48:24.542] [global] [info] saving to /home/radar/na70_lio_ws/public-smoke-30s-final/dump...
+[2026-10-30 10:48:24.543] [global] [info] serializing factor graph to /home/radar/na70_lio_ws/public-smoke-30s-final/dump/graph.bin
+[2026-10-30 10:48:24.592] [global] [info] saved

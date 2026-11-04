@@ -1,0 +1,175 @@
+{
+  "schema_version": "na70-slam-code-survey-v1",
+  "survey_date": "2026-10-30",
+  "status": "SOURCE_REVIEW_ONLY",
+  "context": {
+    "lidar": "NA70",
+    "imu_transport": "USB",
+    "imu_model": "UNKNOWN",
+    "platform": "handheld_or_cart",
+    "scene": "outdoor_playground"
+  },
+  "repositories": [
+    {
+      "key": "fast-lio",
+      "branch": "ROS2",
+      "sha": "cc3c9e8b1469b33b8072764d6db2348ed6dc597f",
+      "date": "2026-10-25T17:57:51Z",
+      "subject": "Merge pull request #454 from pranavvkumar21/fix/ouster-nan-points",
+      "repo": "https://github.com/hku-mars/FAST_LIO/tree/ROS2"
+    },
+    {
+      "key": "point-lio",
+      "branch": "point-lio-with-grid-map",
+      "sha": "4b86a469eb5572e70ed575af25b5f15dd06e8e3c",
+      "date": "2026-06-13T13:09:52Z",
+      "subject": "Fix formatting issues in README.md",
+      "repo": "https://github.com/hku-mars/Point-LIO/tree/point-lio-with-grid-map"
+    },
+    {
+      "key": "faster-lio",
+      "branch": "main",
+      "sha": "8038fbac95283708fe2aa30658b7e116a7ace6d8",
+      "date": "2026-09-04T07:19:09Z",
+      "subject": "Merge pull request #112 from LIOBench/deterministic",
+      "repo": "https://github.com/gaoxiang12/faster-lio/tree/main"
+    },
+    {
+      "key": "glim",
+      "branch": "master",
+      "sha": "1a197c999e4865f5cab7c9cd25474128413ebbca",
+      "date": "2026-10-08T00:28:49Z",
+      "subject": "fix build with fmt >= 11 (#326) (#327)",
+      "repo": "https://github.com/koide3/glim/tree/master"
+    },
+    {
+      "key": "glim_ros2",
+      "branch": "master",
+      "sha": "4d4ec524ccf1b02aa09b0af2af767ecc54343798",
+      "date": "2026-08-14T00:43:55Z",
+      "subject": "rviz: stop appending a duplicate submap on every optimize() (#76)",
+      "repo": "https://github.com/koide3/glim_ros2/tree/master"
+    },
+    {
+      "key": "voxel",
+      "branch": "main",
+      "sha": "70fc8a28d63823d5989ff184daeea0787b672398",
+      "date": "2025-04-07T13:49:41Z",
+      "subject": "mid360",
+      "repo": "https://github.com/hku-mars/Voxel-SLAM/tree/main"
+    },
+    {
+      "key": "voxel-ros2",
+      "branch": "main",
+      "sha": "6b2f97c946047b72e72001e8aa375e413904e4a7",
+      "date": "2026-07-16T18:57:12Z",
+      "subject": "update imu fallback feature",
+      "repo": "https://github.com/tanakon-apit/Voxel-SLAM-ROS2/tree/main"
+    },
+    {
+      "key": "fast-lio-slam",
+      "branch": "main",
+      "sha": "10eab538db70678f41aaa24247d16831ca921374",
+      "date": "2022-03-12T08:02:28Z",
+      "subject": "Update README.md",
+      "repo": "https://github.com/gisbi-kim/FAST_LIO_SLAM/tree/main"
+    }
+  ],
+  "inspected_files": [
+    {
+      "key": "fast-preprocess",
+      "url": "https://github.com/hku-mars/FAST_LIO/blob/cc3c9e8b1469b33b8072764d6db2348ed6dc597f/src/preprocess.cpp",
+      "git_blob_sha": "5f171a3caa095470ae04cc3f66bc743a87c30670",
+      "review": "selected code paths; not a full audit"
+    },
+    {
+      "key": "fast-mapping",
+      "url": "https://github.com/hku-mars/FAST_LIO/blob/cc3c9e8b1469b33b8072764d6db2348ed6dc597f/src/laserMapping.cpp",
+      "git_blob_sha": "e5d99506360e06d6a97ae33e0c9bc248b06992ce",
+      "review": "selected code paths; not a full audit"
+    },
+    {
+      "key": "glim-input",
+      "url": "https://github.com/koide3/glim_ros2/blob/4d4ec524ccf1b02aa09b0af2af767ecc54343798/src/glim_ros/glim_ros.cpp",
+      "git_blob_sha": "4cb85f3d491acc20393354d57104395fef679530",
+      "review": "selected code paths; not a full audit"
+    },
+    {
+      "key": "glim-cloud",
+      "url": "https://github.com/koide3/glim/blob/1a197c999e4865f5cab7c9cd25474128413ebbca/src/glim/preprocess/cloud_preprocessor.cpp",
+      "git_blob_sha": "9cb24e69633190e5008fb43ce603356839a17718",
+      "review": "selected code paths; not a full audit"
+    },
+    {
+      "key": "glim-global",
+      "url": "https://github.com/koide3/glim/blob/1a197c999e4865f5cab7c9cd25474128413ebbca/src/glim/mapping/global_mapping_pose_graph.cpp",
+      "git_blob_sha": "4e2d1df8cd6b01edb70bf1d48e420bc3b2a4c32c",
+      "review": "selected code paths; not a full audit"
+    },
+    {
+      "key": "glim-time",
+      "url": "https://github.com/koide3/glim/blob/1a197c999e4865f5cab7c9cd25474128413ebbca/src/glim/util/time_keeper.cpp",
+      "git_blob_sha": "a8490748eead23d40ded5a3595fef42e6bbf938f",
+      "review": "selected code paths; not a full audit"
+    },
+    {
+      "key": "glim-sensors",
+      "url": "https://github.com/koide3/glim/blob/1a197c999e4865f5cab7c9cd25474128413ebbca/config/config_sensors.json",
+      "git_blob_sha": "be7fafcc4c2d756e4f55c2b16656038ea0272a08",
+      "review": "selected code paths; not a full audit"
+    },
+    {
+      "key": "glim-roscfg",
+      "url": "https://github.com/koide3/glim/blob/1a197c999e4865f5cab7c9cd25474128413ebbca/config/config_ros.json",
+      "git_blob_sha": "b5bced47357e965f8a5f590c949c493ad8ccd459",
+      "review": "selected code paths; not a full audit"
+    },
+    {
+      "key": "glim-install",
+      "url": "https://github.com/koide3/glim/blob/1a197c999e4865f5cab7c9cd25474128413ebbca/docs/installation.md",
+      "git_blob_sha": "7761d124b22b48b277e4a406470cd319301cf94d",
+      "review": "selected code paths; not a full audit"
+    },
+    {
+      "key": "fast-slam-pgo",
+      "url": "https://github.com/gisbi-kim/FAST_LIO_SLAM/blob/10eab538db70678f41aaa24247d16831ca921374/SC-PGO/src/laserPosegraphOptimization.cpp",
+      "git_blob_sha": "705ee3b42dcfd06c1b0bb9f581e90f254962acb7",
+      "review": "selected code paths; not a full audit"
+    }
+  ],
+  "additional_documentation": [
+    {
+      "key": "engcang_reference",
+      "sha": "ac1c21cd0ce0a64766bf0673d01b994506759c37",
+      "display_url": "https://github.com/engcang/FAST-LIO-SAM-SC-QN/blob/master/README.md"
+    },
+    {
+      "key": "livox_vendor_reference",
+      "sha": "a1fe2e796d7d99be67d41ab7a444c9878ef9b5a4",
+      "display_url": "https://github.com/Livox-SDK/LIO-Livox/blob/master/README.md"
+    },
+    {
+      "key": "glim_humble_ci",
+      "sha": "1d7109078651b8f1bbd959a9e2be03eedb481f9a",
+      "display_url": "https://github.com/koide3/glim_ros2/blob/4d4ec524ccf1b02aa09b0af2af767ecc54343798/.github/workflows/build.yml"
+    }
+  ],
+  "checks": {
+    "repository_and_selected_source_read": true,
+    "na70_lio_integration_run": false,
+    "source_built": false,
+    "public_dataset_downloaded": false,
+    "public_dataset_replay_run": false,
+    "jetson_validated": false,
+    "dependency_installation": false
+  },
+  "searches": {
+    "github_repository_queries": [
+      "NA70 SLAM",
+      "NA70 lidar",
+      "non-repetitive SLAM"
+    ],
+    "direct_na70_repository_found": false,
+    "limitation": "Keyword search did not find a direct NA70 SLAM repository. This is not proof that no such code exists."
+  }
+}

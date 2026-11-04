@@ -1,0 +1,40 @@
+{
+  "status": "READ_ONLY_AUDIT",
+  "capture_id": "c4cc19fb-3020-4ccc-8407-1521f71b7212",
+  "capture_sha256": "ceca9fc08758f3c35f7b8b1c024bdab90e65f49ab65e39102cdd58dc0c5292db",
+  "decoder": {
+    "frames": 1211,
+    "frame_index_range": [0, 1210],
+    "frame_0_device_time": 18.944,
+    "frame_74_device_time": 26.344,
+    "frame_83_device_time": 27.243,
+    "frame_595_device_time": 78.451
+  },
+  "labels": [
+    {
+      "frame_range": [0, 0],
+      "center_xy": [79.75, 6.7],
+      "frame_0_nearest_m": 6.403,
+      "frame_0_points_within_3m": 0,
+      "strongest_nearest_frames": [
+        {"frame": 23, "device_time": 21.244, "nearest_m": 0.011, "within_1_5m": 2},
+        {"frame": 613, "device_time": 80.251, "nearest_m": 0.019, "within_1_5m": 22},
+        {"frame": 687, "device_time": 87.651, "nearest_m": 0.017, "within_1_5m": 17},
+        {"frame": 733, "device_time": 92.251, "nearest_m": 0.029, "within_1_5m": 14}
+      ]
+    },
+    {
+      "frame_range": [74, 83],
+      "center_xy": [93.84, -26.53],
+      "frame_74_nearest_m": 5.748,
+      "frame_74_points_within_3m": 0,
+      "strongest_nearest_frames": [
+        {"frame": 595, "device_time": 78.451, "nearest_m": 0.023, "within_1_5m": 17},
+        {"frame": 599, "device_time": 78.851, "nearest_m": 0.025, "within_1_5m": 9},
+        {"frame": 688, "device_time": 87.751, "nearest_m": 0.025, "within_1_5m": 8},
+        {"frame": 650, "device_time": 83.951, "nearest_m": 0.025, "within_1_5m": 10}
+      ]
+    }
+  ],
+  "interpretation": "Evidence supports a replay/window or frame attribution mismatch; manual cloud review is required. Labels remain PENDING_REVIEW and are not rewritten."
+}

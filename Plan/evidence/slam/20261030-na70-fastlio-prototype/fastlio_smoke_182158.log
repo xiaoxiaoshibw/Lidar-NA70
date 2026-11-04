@@ -1,0 +1,15 @@
+﻿[INFO] [launch]: All log files can be found below /home/radar/.ros/log/2026-10-30-18-21-58-267379-localhost-294
+[INFO] [launch]: Default logging verbosity is set to INFO
+[INFO] [fastlio_mapping-1]: process started with pid [296]
+[fastlio_mapping-1] [INFO] [1793355718.428378925] [laser_mapping]: p_pre->lidar_type 5
+[fastlio_mapping-1] Multi thread started 
+[fastlio_mapping-1] ~~~~/home/radar/na70_lio_ws/src/fast_lio/ file opened
+[fastlio_mapping-1] [INFO] [1793355718.433392234] [laser_mapping]: Node init finished.
+[fastlio_mapping-1] IMU Initial Done
+[fastlio_mapping-1] [WARN] [1793355727.143170824] [laser_mapping]: No point, skip this scan!
+[fastlio_mapping-1] 
+[fastlio_mapping-1] [INFO] [1793355727.368779052] [laser_mapping]: Initialize the map kdtree
+[fastlio_mapping-1] [ mapping ]: time: IMU + Map + Input Downsample: 0.000879 ave match: 0.000851 ave solve: 0.001711  ave ICP: 0.002732  map incre: 0.000180 ave total: 0.003791 icp: 0.002567 construct H: 0.000009 
+[fastlio_mapping-1] catch sig %d2
+[fastlio_mapping-1] Rebuild thread terminated normally
+[INFO] [fastlio_mapping-1]: process has finished cleanly [pid 296]

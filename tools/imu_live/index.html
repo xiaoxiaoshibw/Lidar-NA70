@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="zh-CN">
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>YESENSE · 实时 IMU 数据流</title>
+<style>
+:root{color-scheme:dark;--bg:#0b1017;--panel:#121a25;--line:#243144;--muted:#8a9bb2;--text:#e7eef8;--green:#63e5bb;--blue:#68aeff;--orange:#ffb975}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,"Segoe UI","Microsoft YaHei",sans-serif;font-size:14px}main{max-width:1500px;margin:auto;padding:32px}header{display:flex;align-items:center;justify-content:space-between;gap:20px;margin-bottom:28px}.eyebrow{color:var(--green);font-size:11px;letter-spacing:3px;font-weight:700}h1{font-size:29px;letter-spacing:-.7px;margin:9px 0}p{color:var(--muted);line-height:1.7;margin:0}.actions{display:flex;gap:10px;flex-wrap:wrap}button,.button{font:inherit;border:1px solid var(--line);background:#192638;color:var(--text);padding:10px 16px;border-radius:9px;cursor:pointer;text-decoration:none}button:hover,.button:hover{border-color:var(--green)}button:focus-visible,a:focus-visible{outline:2px solid var(--green);outline-offset:3px}.status{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line);padding:9px 12px;border-radius:30px;white-space:nowrap;color:var(--muted)}.dot{width:7px;height:7px;border-radius:50%;background:currentColor}.live{color:var(--green)}.warning{color:var(--orange)}.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:18px}.card{background:var(--panel);border:1px solid var(--line);border-radius:13px;padding:20px;min-width:0}.label{color:var(--muted);font-size:12px}.big{font-family:Consolas,monospace;font-size:32px;letter-spacing:-1px;margin:10px 0 5px}.unit{font-size:13px;color:var(--muted);letter-spacing:0;margin-left:7px}.small{font-size:12px;color:var(--muted)}.layout{display:grid;grid-template-columns:minmax(0,1.9fr) minmax(300px,1fr);gap:18px}.charts{display:grid;gap:16px}.card-head{display:flex;justify-content:space-between;gap:10px;align-items:center;margin-bottom:12px}h2{font-size:15px;margin:0;font-weight:600}.legend{display:flex;gap:14px;font:12px Consolas,monospace}.x{color:var(--green)}.y{color:var(--blue)}.z{color:var(--orange)}canvas{display:block;width:100%;height:145px}.readings{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:8px}.reading{font:21px Consolas,monospace}.reading small{font:11px "Segoe UI",sans-serif;margin-right:9px;opacity:.8}.side{display:flex;flex-direction:column;gap:16px}.attitude{height:242px;position:relative;perspective:700px;display:grid;place-items:center;overflow:hidden;background:radial-gradient(ellipse at center,#1c3045 0,transparent 65%)}.grid{position:absolute;width:290px;height:190px;background-image:linear-gradient(#253448 1px,transparent 1px),linear-gradient(90deg,#253448 1px,transparent 1px);background-size:24px 24px;transform:rotateX(65deg);bottom:0;opacity:.6}.device{position:relative;width:150px;height:95px;border:2px solid #69e4bb;border-radius:12px;background:linear-gradient(135deg,#204a49,#152a37);box-shadow:0 12px 0 #0b191f,0 14px 0 #365557;display:flex;flex-direction:column;justify-content:center;align-items:center;transform-style:preserve-3d;transition:transform .1s linear;font:600 16px Consolas,monospace;color:#bdf9e4}.device span{font-size:10px;margin-top:7px;letter-spacing:3px;color:#77a99c}.angles{display:grid;grid-template-columns:repeat(3,1fr);text-align:center;gap:8px}.angles b{display:block;font:22px Consolas,monospace;margin-top:7px}.detail{display:grid;grid-template-columns:1fr auto;gap:13px;font-size:12px;margin-top:18px}.detail dt{color:var(--muted)}.detail dd{margin:0;font-family:Consolas,monospace;max-width:210px;overflow-wrap:anywhere;text-align:right}.raw{margin-top:18px}.hex{font:12px/1.9 Consolas,monospace;color:#91b0d2;overflow-wrap:anywhere;min-height:48px;margin:0}.error{color:var(--orange);font-size:12px;overflow-wrap:anywhere;margin-top:12px}.footer{display:flex;justify-content:space-between;gap:20px;margin-top:20px;color:var(--muted);font-size:11px;line-height:1.8}.footer a{color:#9ab9d9}.paused{color:var(--orange)}@media(max-width:950px){main{padding:20px}.layout{grid-template-columns:1fr}.side{display:grid;grid-template-columns:1fr 1fr}.stats{grid-template-columns:repeat(2,1fr)}}@media(max-width:620px){header{align-items:flex-start;flex-direction:column}main{padding:14px}.side{display:flex}.card{padding:15px}.big{font-size:26px}.footer{flex-direction:column}.legend{gap:8px}.reading{font-size:17px}h1{font-size:25px}}
+</style>
+<main>
+<header><div><div class="eyebrow">SENSOR TELEMETRY / LIVE</div><h1>YESENSE 实时数据流</h1><p>USB 惯导监视器 <span style="color:#46576d">/</span> <span id="connection">COM12 · 460800 · 8N1</span></p></div><div class="actions"><span class="status" id="status" role="status"><i class="dot"></i><span>正在连接</span></span><a class="button" href="/model">装配模型与标定 ↗</a><button id="pause">暂停显示</button><a class="button" href="/api/export.csv">导出最近 CSV ↓</a></div></header>
+<section class="stats"><div class="card"><div class="label">主机接收频率 · 最近 2 秒</div><div class="big"><span id="hz">—</span><span class="unit">Hz</span></div><div class="small">校验通过的数据帧</div></div><div class="card"><div class="label">累计有效帧</div><div class="big" id="frames">—</div><div class="small" id="bytes">等待串口数据</div></div><div class="card"><div class="label">校验 / 载荷错误</div><div class="big" id="errors">—</div><div class="small" id="gaps">序号不连续：—</div></div><div class="card"><div class="label">最新帧距今</div><div class="big"><span id="age">—</span><span class="unit">ms</span></div><div class="small" id="uptime">运行时长 —</div></div></section>
+<div class="layout"><section class="charts">
+<article class="card"><div class="card-head"><h2>加速度 <span class="unit">m/s²</span></h2><div class="legend"><span class="x">● X</span><span class="y">● Y</span><span class="z">● Z</span></div></div><div class="readings" id="accel-values"></div><canvas id="accel" aria-label="最近10秒三轴加速度曲线"></canvas></article>
+<article class="card"><div class="card-head"><h2>角速度 <span class="unit">°/s</span></h2><div class="legend"><span class="x">● X</span><span class="y">● Y</span><span class="z">● Z</span></div></div><div class="readings" id="gyro-values"></div><canvas id="gyro" aria-label="最近10秒三轴角速度曲线"></canvas></article>
+<article class="card"><div class="card-head"><h2>欧拉角 <span class="unit">°</span></h2><div class="legend"><span class="x">● Pitch</span><span class="y">● Roll</span><span class="z">● Yaw</span></div></div><div class="readings" id="euler-values"></div><canvas id="euler" aria-label="最近10秒欧拉角曲线"></canvas></article>
+</section><aside class="side"><article class="card"><div class="card-head"><h2>姿态示意</h2><span class="small">设备原始坐标</span></div><div class="attitude"><div class="grid"></div><div class="device" id="device">YESENSE<span>IMU / USB</span></div></div><div class="angles"><div class="label">Pitch<b id="pitch">—</b></div><div class="label">Roll<b id="roll">—</b></div><div class="label">Yaw<b id="yaw">—</b></div></div><p class="small" style="margin-top:18px">姿态模型仅作变化示意，安装方向与雷达外参尚未标定。</p></article>
+<article class="card"><h2>数据链路</h2><dl class="detail"><dt>协议帧头</dt><dd>59 53 · YESENSE</dd><dt>帧序号 TID</dt><dd id="tid">—</dd><dt>四元数 [w,x,y,z]</dt><dd id="quat">—</dd><dt>设备采样时间戳</dt><dd id="sample">—</dd><dt>串口重试次数</dt><dd id="reconnects">0</dd><dt>趋势窗口</dt><dd>最近 10 秒</dd><dt>导出缓冲区</dt><dd>最近 6000 帧</dd></dl><p class="small">横轴使用主机接收时间；频率为接收统计。未输出设备时间戳时无法验证采样时序或雷达同步。</p><p class="error" id="error" role="alert"></p></article></aside></div>
+<article class="card raw"><div class="card-head"><h2>最新有效原始帧</h2><span class="small" id="raw-label">HEX / 等待数据</span></div><pre class="hex" id="hex">等待校验通过的数据帧…</pre></article>
+<footer class="footer"><span>LOCAL ONLY · 127.0.0.1 · 只读取串口，不发送配置命令<br><span id="view-state">实时显示</span> · 暂停只冻结页面，采集继续运行</span><span>字段换算：int32 × 10⁻⁶；欧拉角顺序 Pitch / Roll / Yaw<br>协议参考：<a href="https://github.com/HViktorTsoi/yesense_ros_driver/blob/master/src/analysis_data.c" target="_blank" rel="noreferrer">YESENSE 驱动解析源码 ↗</a></span></footer>
+</main>
+<script>
+'use strict';
+const $=id=>document.getElementById(id),colors=['#63e5bb','#68aeff','#ffb975'];
+let cursor=0,history=[],paused=false,last=null;
+const format=(x,n=3)=>typeof x==='number'&&Number.isFinite(x)?x.toFixed(n):'—';
+for(const key of ['accel','gyro','euler']){
+ const names=key==='euler'?['P','R','Y']:['X','Y','Z'];
+ $(key+'-values').innerHTML=names.map((n,i)=>`<div class="reading" style="color:${colors[i]}"><small>${n}</small><span>—</span></div>`).join('');
+}
+function plot(key){
+ const canvas=$(key),r=canvas.getBoundingClientRect(),dpr=window.devicePixelRatio||1;
+ canvas.width=r.width*dpr;canvas.height=r.height*dpr;
+ const ctx=canvas.getContext('2d');ctx.scale(dpr,dpr);
+ const w=r.width,h=r.height,left=49,right=w-10,top=10,bottom=h-23;
+ const end=last?.latest?.t??0,begin=end-10;
+ const rows=history.filter(v=>v.t>=begin&&v.fields[key]);
+ let low=Infinity,high=-Infinity;
+ for(const row of rows)for(const value of row.fields[key]){low=Math.min(low,value);high=Math.max(high,value)}
+ if(!rows.length){low=-1;high=1}else{const pad=Math.max((high-low)*.12,key==='accel'?.1:key==='gyro'?.2:1);low-=pad;high+=pad}
+ ctx.font='10px Consolas,monospace';ctx.lineWidth=1;
+ for(let i=0;i<=4;i++){const y=top+(bottom-top)*i/4;ctx.strokeStyle='#243144';ctx.beginPath();ctx.moveTo(left,y);ctx.lineTo(right,y);ctx.stroke();ctx.fillStyle='#8293aa';ctx.fillText((high-(high-low)*i/4).toFixed(1),1,y+3)}
+ for(let i=0;i<=5;i++){const x=left+(right-left)*i/5;ctx.fillStyle='#8293aa';ctx.fillText(`${-10+2*i}s`,x-8,h-5)}
+ for(let axis=0;axis<3;axis++){ctx.strokeStyle=colors[axis];ctx.lineWidth=1.4;ctx.beginPath();let prev=null;
+  for(const row of rows){const x=left+(row.t-begin)/10*(right-left),y=bottom-(row.fields[key][axis]-low)/(high-low)*(bottom-top);
+   if(prev===null||row.t-prev>.15)ctx.moveTo(x,y);else ctx.lineTo(x,y);prev=row.t;
+  }ctx.stroke();
+ }
+ if(!rows.length){ctx.fillStyle='#8293aa';ctx.fillText('等待实时数据…',left+15,65)}
+}
+function render(s){
+ const live=s.status==='live'&&s.age_ms<1000;
+ $('status').className='status '+(live?'live':'warning');$('status').lastElementChild.textContent=live?'数据接收中':s.status==='disconnected'?'串口已断开':'等待数据';
+ $('connection').textContent=`${s.port} · ${s.baud} · 8N1`;
+ $('hz').textContent=format(s.hz,1);$('frames').textContent=s.frames.toLocaleString();$('bytes').textContent=(s.bytes/1024).toFixed(1)+' KiB 已接收';
+ $('errors').textContent=s.checksum_errors+' / '+s.payload_errors;$('gaps').textContent='序号不连续：'+s.sequence_breaks;
+ $('age').textContent=format(s.age_ms,0);$('uptime').textContent='运行时长 '+Math.floor(s.uptime_s/60)+'分 '+Math.floor(s.uptime_s%60)+'秒';$('reconnects').textContent=s.reconnects;
+ $('error').textContent=s.error;
+ const f=s.latest?.fields??{};
+ for(const key of ['accel','gyro','euler']){const spans=$(key+'-values').querySelectorAll('span');spans.forEach((el,i)=>el.textContent=format(f[key]?.[i]));plot(key)}
+ $('tid').textContent=s.latest?.tid??'—';$('quat').textContent=f.quaternion?f.quaternion.map(v=>v.toFixed(5)).join(', '):'本帧未输出';
+ $('sample').textContent=f.sample_us===undefined?'本帧未输出':f.sample_us+' μs';
+ $('hex').textContent=s.latest?.hex??'等待校验通过的数据帧…';$('raw-label').textContent=s.latest?'HEX / '+(s.latest.hex.split(' ').length)+' bytes':'HEX / 等待数据';
+ ['pitch','roll','yaw'].forEach((k,i)=>$(k).textContent=format(f.euler?.[i],1)+'°');
+ if(f.euler){const [p,r,y]=f.euler;$('device').style.transform=`rotateX(${55-p}deg) rotateY(${r}deg) rotateZ(${-y}deg)`}
+}
+async function poll(){
+ try{
+  const response=await fetch('/api/data?after='+cursor,{cache:'no-store',signal:AbortSignal.timeout(2500)});
+  if(!response.ok)throw new Error('HTTP '+response.status);
+  const s=await response.json();
+  if(!paused){if(s.frames<cursor){history=[];cursor=0}for(const row of s.rows){if(row.id>cursor){history.push(row);cursor=row.id}}history=history.filter(v=>v.t>=(s.latest?.t??0)-11).slice(-3000);last=s;render(s)}
+ }catch(e){$('status').className='status warning';$('status').lastElementChild.textContent='服务连接中断';$('error').textContent='无法访问本机采集服务：'+e.message}
+ finally{setTimeout(poll,100)}
+}
+$('pause').onclick=()=>{paused=!paused;$('pause').textContent=paused?'恢复显示':'暂停显示';$('view-state').textContent=paused?'显示已暂停 · 数值冻结':'实时显示';$('view-state').className=paused?'paused':''};
+window.addEventListener('resize',()=>{if(last)render(last)});poll();
+</script>
+</html>

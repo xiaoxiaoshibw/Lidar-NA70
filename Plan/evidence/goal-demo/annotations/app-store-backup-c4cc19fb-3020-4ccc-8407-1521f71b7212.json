@@ -1,0 +1,57 @@
+{
+  "version": 2,
+  "method": "MANUAL",
+  "labeler": "",
+  "saved_at": 1789975885.0185273,
+  "capture_id": "c4cc19fb-3020-4ccc-8407-1521f71b7212",
+  "capture_sha256": "ceca9fc08758f3c35f7b8b1c024bdab90e65f49ab65e39102cdd58dc0c5292db",
+  "config_version": "962e8c1cfc7afbf2",
+  "labels": [
+    {
+      "capture_id": "c4cc19fb-3020-4ccc-8407-1521f71b7212",
+      "note": "",
+      "labeler": "",
+      "type": "goal",
+      "frame_range": [
+        74,
+        83
+      ],
+      "box": {
+        "center": [
+          93.84,
+          -26.53,
+          -0.08
+        ],
+        "size": [
+          0.6,
+          7.32,
+          2.44
+        ],
+        "yaw": 1.605
+      }
+    },
+    {
+      "capture_id": "c4cc19fb-3020-4ccc-8407-1521f71b7212",
+      "note": "",
+      "labeler": "",
+      "type": "goal",
+      "frame_range": [
+        0,
+        0
+      ],
+      "box": {
+        "center": [
+          79.75,
+          6.7,
+          1
+        ],
+        "size": [
+          0.6,
+          7.32,
+          2.44
+        ],
+        "yaw": 0.826
+      }
+    }
+  ]
+}

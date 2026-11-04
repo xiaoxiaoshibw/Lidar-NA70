@@ -1,0 +1,42 @@
+{
+  "schema": "na70.mounting-visual.v1",
+  "status": "APPROXIMATE_NOT_CALIBRATED",
+  "usable_for_sensor_fusion": false,
+  "units": "mm",
+  "body_dimensions": {
+    "width": 90,
+    "depth": 130,
+    "height": 110,
+    "source": "user-provided 9cm 13cm 11cm, interpreted W D H"
+  },
+  "body_frame": "Geometric housing center, X front optical window, Y left, Z up; not verified LiDAR frame",
+  "imu_visual_center_mm": [
+    -43,
+    0,
+    60
+  ],
+  "imu_position_source": "user-confirmed rear-top centerline Y=0, moved further toward negative X; X/Z photo-estimate / editable illustration",
+  "imu_board_dimensions_estimated_mm": [
+    40,
+    30,
+    8
+  ],
+  "T_IL": null,
+  "time_offset_s": null,
+  "notes": [
+    "Visible board center is not confirmed inertial measurement origin.",
+    "Optical origin and IMU axes unknown.",
+    "Mesh details and sensor geometry are approximate."
+  ],
+  "housing_connector": {
+    "face": "+Y LEFT",
+    "view": "from +Y toward body center",
+    "screen_corner": "lower-right",
+    "center_estimated_mm": [
+      -39,
+      49,
+      -35.2
+    ],
+    "source": "user-confirmed housing large connector at Y LEFT lower-right; numeric position is illustrative"
+  }
+}

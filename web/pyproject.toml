@@ -1,0 +1,4 @@
+[tool.pytest.ini_options]
+markers = [
+    "evidence_anchored: test pins numbers recorded in a checked-in evidence bundle; not a behavioural gate",
+]

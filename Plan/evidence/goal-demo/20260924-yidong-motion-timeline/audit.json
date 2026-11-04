@@ -1,0 +1,1464 @@
+{
+  "input_sha256": "02d55634baec13211fcc251e2f77135caf983c10f4893560fe69ea1ed3423f9c",
+  "source_hashes": {
+    "tools/run_goal_demo_offline.py": "92e6cca83af4b115cb209624db5e54b1d8f57602015c62e49ce7bf7c1006f3cf",
+    "tools/score_goal_detection.py": "6f00b90be01c6ea56c363b24fc243cf94af062faae5ff7c69b5a49c40ceacbc0",
+    "web/backend/goal_detection.yaml": "ed0d4e69d7a1bcc68bd2ce998500bacd5ac052a8ca35c95090c591b90e828826",
+    "web/backend/goal_detection/__init__.py": "3fbdbb438cda71ff1b2ed382a51fd7a499c509fc3613b2a1c646755033258804",
+    "web/backend/goal_detection/accumulation.py": "695b7782d1b1a04498c5337682a929575af18eccc05c7b6b39778aba4a30f196",
+    "web/backend/goal_detection/annotate_analysis.py": "f09d4a2d1c9565dc4efc8a4cd6c6cfc80ad9fd94f7900cf74862ca9421a025bd",
+    "web/backend/goal_detection/bev.py": "1138bd4c606693c08f5c3673d1081f082edfcf15fef9e742e7d84243d584efa1",
+    "web/backend/goal_detection/buffer.py": "4aa589dedf0a21dc120611c1f5a7a36beb8fadd7e5cbe940777c2db46a39af33",
+    "web/backend/goal_detection/config.py": "892f9a6e40666ef8fd1a660ff611a695ba8d2dc482daff807a70f82b6c014da2",
+    "web/backend/goal_detection/detector.py": "460182e7a26063bf124d9caaf0ea4d6dac1a13f4615cc73e6f0b981f4a6c4e34",
+    "web/backend/goal_detection/facade.py": "1344852cd90f391250db8ef73526c42fb8e957e29772e5ee8ab2a8eb4d36596a",
+    "web/backend/goal_detection/focus.py": "28dfe44ae1480d7d74b02bd5c9e0eac3db03fd6a95ae43311c828cb3e1742bbc",
+    "web/backend/goal_detection/geometry.py": "49394ec1ca6da61487c600bfdf28d3ddadce0705171dba6cdeb8ff80e53e1093",
+    "web/backend/goal_detection/ground.py": "9c7f2d2270716a12cfae52b5e66c72e120590d53399b8b195658c908b23248e3",
+    "web/backend/goal_detection/observability.py": "b31032e93b3c8f57dc58ef163153d5c8875588cdf80d0a77dbdcfdba59f42c00",
+    "web/backend/goal_detection/pipeline.py": "9c789756cacfce59d46f5569468b5f392b3f6ba1c3c4dfffdf445b0a33a7ebab",
+    "web/backend/goal_detection/synthetic.py": "80f2b922543d2efb14f93ec94c9cf50e359f5f998fa087b17b6a2495e79795cf",
+    "web/backend/goal_detection/tracker.py": "4d34e204f9153e0f02cf9005454e75fb5dc0948ad676a4a0681ee82ed5950b05",
+    "web/backend/goal_detection/window_annotation.py": "9d59bd23311ce05a483f0c99d0441427b46cd0205e09dd5e17027940a004e29b"
+  },
+  "tool_sha256": "f23d25f5b2835dd15c1987777e203dc7957a3212009cc1934513854376ebafd4",
+  "command": [
+    "tools\\audit_goal_static.py",
+    "--pcap",
+    "radar_capture_data\\2\\9.14_caochangyidong.pcap",
+    "--output",
+    "Plan\\evidence\\goal-demo\\20260924-yidong-motion-timeline",
+    "--motion-status",
+    "moving",
+    "--windows",
+    "238:257,253:257,258:277,273:282",
+    "--roi",
+    "88,101,-28,-15,-3,6"
+  ],
+  "python": "3.12.10",
+  "numpy": "2.5.3",
+  "config": {
+    "version": 1,
+    "accumulation": {
+      "enabled": true,
+      "window_size": 20,
+      "voxel_size": 0.5,
+      "max_points": 200000,
+      "roi": [
+        88.0,
+        101.0,
+        -28.0,
+        -15.0,
+        -3.0,
+        6.0
+      ],
+      "range": {
+        "min": 50.0,
+        "max": 130.0
+      }
+    },
+    "goal_detection": {
+      "enabled": true,
+      "cell_size": 0.8,
+      "ground_z": [
+        -2.0,
+        0.3
+      ],
+      "pole": {
+        "height": [
+          1.8,
+          4.0
+        ],
+        "min_points": 5,
+        "max_radius": 1.2,
+        "height_tol": 1.2,
+        "base_tol": 1.2,
+        "grid_offsets": [
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.4,
+            0.0
+          ],
+          [
+            0.0,
+            0.4
+          ],
+          [
+            0.4,
+            0.4
+          ]
+        ],
+        "neighbor_radius": 0.8,
+        "neighbor_xy_radius": 0.65,
+        "neighbor_min_seed_points": 2,
+        "neighbor_max_base_gap": 0.65
+      },
+      "frame": {
+        "width": [
+          4.8,
+          6.0
+        ],
+        "crossbar_z": [
+          1.8,
+          3.2
+        ]
+      },
+      "scoring": {
+        "min_confidence": 0.5,
+        "lock_confidence": 0.7,
+        "crossbar_weight": 0.3,
+        "geometry_weight": 0.7,
+        "nms_distance": 1.5
+      },
+      "diagnostics": {
+        "enabled": true,
+        "max_rejected_candidates": 64,
+        "max_raw_refs_per_candidate": 4096
+      },
+      "z_leveling": {
+        "enabled": true,
+        "fit_quantile": 0.35,
+        "min_points": 100,
+        "min_abs_slope": 0.005,
+        "min_xy_span": 1.0,
+        "min_xy_minor_std": 0.25,
+        "max_source_age_seconds": 20.0,
+        "max_below_plane_fraction": 0.1,
+        "max_abs_slope": 0.12,
+        "max_residual": 0.15
+      },
+      "facade": {
+        "enabled": true,
+        "z_band": [
+          0.25,
+          4.0
+        ],
+        "min_points": 30,
+        "edge_bin_size": 0.2,
+        "edge_bin_min_points": 3,
+        "edge_continuity_bins": 2,
+        "edge_fit_band": 0.35,
+        "edge_inlier_band": 0.2,
+        "edge_min_points": 15,
+        "edge_min_height": 1.0,
+        "edge_max_residual": 0.45,
+        "edge_min_inlier": 0.6,
+        "top_bin_min_points": 3,
+        "top_margin": 0.3,
+        "top_tol": 0.35,
+        "top_min_coverage": 0.7,
+        "top_max_residual": 0.35,
+        "top_min_bins": 4,
+        "width_band": [
+          2.0,
+          12.0
+        ],
+        "min_height": 1.2,
+        "max_height": 5.0,
+        "lateral_max": 1.5,
+        "facade_trim_sigma": 3.0,
+        "proposal_cell_size": 1.0,
+        "proposal_min_points": 12,
+        "proposal_max_span": 24.0,
+        "proposal_max_regions": 8
+      }
+    },
+    "strategy": {
+      "mode": "staged"
+    },
+    "bev": {
+      "cell_size": 0.8,
+      "min_window_frames": 5,
+      "min_cell_density": 0.55,
+      "min_cell_points": 10,
+      "max_blob_cells": 8,
+      "min_contrast": 1.5,
+      "contrast_ref": 2.5,
+      "span_density_floor": 0.05,
+      "nms_distance": 2.5,
+      "max_regions": 5,
+      "score_weights": {
+        "density": 0.3,
+        "contrast": 0.4,
+        "width": 0.3
+      }
+    },
+    "focus": {
+      "half_size": 6.0,
+      "prefer_single_frame": true,
+      "single_min_confidence": 0.45,
+      "accumulated_min_current_points": 1
+    },
+    "zrefine": {
+      "bin_size": 0.25,
+      "min_points": 30,
+      "max_base_shift": 1.0,
+      "min_height": 0.5
+    },
+    "locking": {
+      "min_frames": 3,
+      "candidate_gap": 3
+    },
+    "tracking": {
+      "lost_frame_threshold": 5,
+      "reacquire": true,
+      "reacquire_min_frames": 2,
+      "reacquire_timeout": 30,
+      "max_center_jump": 6.5,
+      "kalman": true,
+      "nominal_dt": 0.1,
+      "min_dt": 0.01,
+      "max_dt": 0.5,
+      "evidence": {
+        "recent_max_age_frames": 3,
+        "recent_max_age_seconds": 0.35,
+        "signature_history_size": 256
+      },
+      "association": {
+        "min_score": 0.35,
+        "bearing_scale_rad": 0.5235987756,
+        "weights": {
+          "center": 0.35,
+          "bearing": 0.1,
+          "size": 0.15,
+          "yaw": 0.1,
+          "detection": 0.25,
+          "history": 0.05
+        }
+      }
+    },
+    "webui": {
+      "enable": true,
+      "demo_roi": [
+        84.0,
+        104.0,
+        -36.0,
+        -17.0,
+        -2.0,
+        6.0
+      ],
+      "fps_target": 10,
+      "capture_name_filter": [
+        "9.14_caochang"
+      ],
+      "window_choices": [
+        1,
+        5,
+        10,
+        20,
+        30,
+        60,
+        100
+      ],
+      "speed_choices": [
+        0.5,
+        1,
+        2,
+        5
+      ]
+    },
+    "annotate_analysis": {
+      "brush_radius": 1.0,
+      "min_region_points": 40,
+      "trim_percentile": 1.0,
+      "end_band_fraction": 0.3,
+      "post_bin_size": 0.15,
+      "post_column_radius": 0.6,
+      "base_z_quantile": 0.05,
+      "top_z_quantile": 0.95,
+      "min_post_points": 8,
+      "min_width": 1.0,
+      "min_thickness": 0.1,
+      "max_thickness": 2.0,
+      "multi_split_width_threshold": 8.0,
+      "cluster_cell_size": 1.0,
+      "cluster_link_cells": 1,
+      "cluster_min_cell_points": 3,
+      "min_cluster_points": 20,
+      "max_clusters": 4
+    }
+  },
+  "config_version": "a09649e36e44c011",
+  "annotation_version": "diagnostic-window-v2",
+  "windows": [
+    {
+      "frame_range": [
+        238,
+        257
+      ],
+      "device_time_range": [
+        30.099,
+        32.098
+      ],
+      "duration_seconds": 1.9989999999999988,
+      "cloud_id": "raw-window:43dc3134183eb73d2040058e",
+      "coordinate_frame": "lidar_link",
+      "motion_status": "moving",
+      "motion_source": "CLI --motion-status",
+      "review_status": "PENDING_REVIEW",
+      "observation_unit": "accumulated_window",
+      "raw_points": 400000,
+      "range_points": 56883,
+      "roi_points": 498,
+      "ground_model": {
+        "enabled": false,
+        "source": "accumulated",
+        "input_points": 0,
+        "source_age_seconds": 1.9989999999999988,
+        "source_frame_range": [
+          238,
+          257
+        ],
+        "motion_status": "moving",
+        "reason": "moving_ground_window",
+        "source_attempts": [
+          {
+            "enabled": false,
+            "source": "single",
+            "input_points": 0,
+            "source_frame_range": [
+              257,
+              257
+            ],
+            "source_age_seconds": 0.0,
+            "motion_status": "single_frame",
+            "reason": "insufficient_ground_points"
+          },
+          {
+            "enabled": false,
+            "source": "accumulated",
+            "input_points": 0,
+            "source_age_seconds": 1.9989999999999988,
+            "source_frame_range": [
+              238,
+              257
+            ],
+            "motion_status": "moving",
+            "reason": "moving_ground_window"
+          }
+        ],
+        "height_reference": "sensor_z",
+        "latency_ms": 0.143
+      },
+      "absolute_filtered": {
+        "points": 375,
+        "z_span": 2.978339672088623,
+        "z_min": 0.3652611970901489,
+        "z_max": 3.3436009883880615
+      },
+      "relative_filtered": null,
+      "components": {
+        "edge_a": {
+          "raw": {
+            "points": 38,
+            "z_span": 2.9085137844085693,
+            "z_min": 0.14669112861156464,
+            "z_max": 3.0552048683166504
+          },
+          "absolute": {
+            "points": 37,
+            "z_span": 2.594926595687866,
+            "z_min": 0.4602782726287842,
+            "z_max": 3.0552048683166504
+          },
+          "relative": null,
+          "raw_refs": [
+            [
+              240,
+              13989
+            ],
+            [
+              244,
+              2842
+            ],
+            [
+              244,
+              2843
+            ],
+            [
+              244,
+              2844
+            ],
+            [
+              244,
+              2845
+            ],
+            [
+              244,
+              2846
+            ],
+            [
+              244,
+              2847
+            ],
+            [
+              244,
+              2848
+            ],
+            [
+              245,
+              2239
+            ],
+            [
+              245,
+              2241
+            ],
+            [
+              245,
+              2242
+            ],
+            [
+              245,
+              2243
+            ],
+            [
+              250,
+              15308
+            ],
+            [
+              250,
+              15309
+            ],
+            [
+              250,
+              15310
+            ],
+            [
+              250,
+              15311
+            ],
+            [
+              252,
+              7336
+            ],
+            [
+              252,
+              7337
+            ],
+            [
+              252,
+              7338
+            ],
+            [
+              252,
+              7339
+            ],
+            [
+              253,
+              3875
+            ],
+            [
+              253,
+              3876
+            ],
+            [
+              253,
+              3877
+            ],
+            [
+              253,
+              3878
+            ],
+            [
+              253,
+              3879
+            ],
+            [
+              253,
+              3880
+            ],
+            [
+              253,
+              3881
+            ],
+            [
+              253,
+              3882
+            ],
+            [
+              253,
+              3883
+            ],
+            [
+              256,
+              8038
+            ],
+            [
+              256,
+              8039
+            ],
+            [
+              256,
+              8040
+            ],
+            [
+              256,
+              8041
+            ],
+            [
+              256,
+              8042
+            ],
+            [
+              257,
+              4550
+            ],
+            [
+              257,
+              4551
+            ],
+            [
+              257,
+              4553
+            ],
+            [
+              257,
+              4554
+            ]
+          ],
+          "role": "diagnostic_neighborhood_not_truth"
+        },
+        "edge_b": {
+          "raw": {
+            "points": 44,
+            "z_span": 4.1018781661987305,
+            "z_min": -1.2182872295379639,
+            "z_max": 2.8835909366607666
+          },
+          "absolute": {
+            "points": 34,
+            "z_span": 2.4382147789001465,
+            "z_min": 0.4453761875629425,
+            "z_max": 2.8835909366607666
+          },
+          "relative": null,
+          "raw_refs": [
+            [
+              238,
+              15680
+            ],
+            [
+              238,
+              15681
+            ],
+            [
+              238,
+              15682
+            ],
+            [
+              238,
+              15683
+            ],
+            [
+              238,
+              15684
+            ],
+            [
+              238,
+              15685
+            ],
+            [
+              238,
+              15686
+            ],
+            [
+              238,
+              15687
+            ],
+            [
+              238,
+              15688
+            ],
+            [
+              239,
+              14242
+            ],
+            [
+              244,
+              2887
+            ],
+            [
+              244,
+              2888
+            ],
+            [
+              244,
+              2889
+            ],
+            [
+              245,
+              2284
+            ],
+            [
+              245,
+              2285
+            ],
+            [
+              245,
+              2286
+            ],
+            [
+              245,
+              2287
+            ],
+            [
+              245,
+              2288
+            ],
+            [
+              250,
+              15352
+            ],
+            [
+              250,
+              15354
+            ],
+            [
+              250,
+              15355
+            ],
+            [
+              250,
+              15356
+            ],
+            [
+              252,
+              7292
+            ],
+            [
+              252,
+              7293
+            ],
+            [
+              252,
+              7294
+            ],
+            [
+              252,
+              7295
+            ],
+            [
+              253,
+              3829
+            ],
+            [
+              253,
+              3830
+            ],
+            [
+              253,
+              3831
+            ],
+            [
+              253,
+              3832
+            ],
+            [
+              253,
+              3833
+            ],
+            [
+              255,
+              11569
+            ],
+            [
+              255,
+              11570
+            ],
+            [
+              255,
+              11571
+            ],
+            [
+              256,
+              8083
+            ],
+            [
+              256,
+              8084
+            ],
+            [
+              256,
+              8085
+            ],
+            [
+              256,
+              8086
+            ],
+            [
+              256,
+              8087
+            ],
+            [
+              257,
+              4592
+            ],
+            [
+              257,
+              4594
+            ],
+            [
+              257,
+              4595
+            ],
+            [
+              257,
+              4596
+            ],
+            [
+              257,
+              4597
+            ]
+          ],
+          "role": "diagnostic_neighborhood_not_truth"
+        }
+      },
+      "geometry_after": null
+    },
+    {
+      "frame_range": [
+        253,
+        257
+      ],
+      "device_time_range": [
+        31.599,
+        32.098
+      ],
+      "duration_seconds": 0.4989999999999988,
+      "cloud_id": "raw-window:94aa682dfdbfc30c4608874d",
+      "coordinate_frame": "lidar_link",
+      "motion_status": "moving",
+      "motion_source": "CLI --motion-status",
+      "review_status": "PENDING_REVIEW",
+      "observation_unit": "accumulated_window",
+      "raw_points": 100000,
+      "range_points": 14539,
+      "roi_points": 239,
+      "ground_model": {
+        "enabled": false,
+        "source": "accumulated",
+        "input_points": 0,
+        "source_age_seconds": 0.4989999999999988,
+        "source_frame_range": [
+          253,
+          257
+        ],
+        "motion_status": "moving",
+        "reason": "moving_ground_window",
+        "source_attempts": [
+          {
+            "enabled": false,
+            "source": "single",
+            "input_points": 0,
+            "source_frame_range": [
+              257,
+              257
+            ],
+            "source_age_seconds": 0.0,
+            "motion_status": "single_frame",
+            "reason": "insufficient_ground_points"
+          },
+          {
+            "enabled": false,
+            "source": "accumulated",
+            "input_points": 0,
+            "source_age_seconds": 0.4989999999999988,
+            "source_frame_range": [
+              253,
+              257
+            ],
+            "motion_status": "moving",
+            "reason": "moving_ground_window"
+          }
+        ],
+        "height_reference": "sensor_z",
+        "latency_ms": 0.086
+      },
+      "absolute_filtered": {
+        "points": 239,
+        "z_span": 2.978339672088623,
+        "z_min": 0.3652611970901489,
+        "z_max": 3.3436009883880615
+      },
+      "relative_filtered": null,
+      "components": {
+        "edge_a": {
+          "raw": {
+            "points": 18,
+            "z_span": 2.159630060195923,
+            "z_min": 0.4602782726287842,
+            "z_max": 2.619908332824707
+          },
+          "absolute": {
+            "points": 18,
+            "z_span": 2.159630060195923,
+            "z_min": 0.4602782726287842,
+            "z_max": 2.619908332824707
+          },
+          "relative": null,
+          "raw_refs": [
+            [
+              253,
+              3875
+            ],
+            [
+              253,
+              3876
+            ],
+            [
+              253,
+              3877
+            ],
+            [
+              253,
+              3878
+            ],
+            [
+              253,
+              3879
+            ],
+            [
+              253,
+              3880
+            ],
+            [
+              253,
+              3881
+            ],
+            [
+              253,
+              3882
+            ],
+            [
+              253,
+              3883
+            ],
+            [
+              256,
+              8038
+            ],
+            [
+              256,
+              8039
+            ],
+            [
+              256,
+              8040
+            ],
+            [
+              256,
+              8041
+            ],
+            [
+              256,
+              8042
+            ],
+            [
+              257,
+              4550
+            ],
+            [
+              257,
+              4551
+            ],
+            [
+              257,
+              4553
+            ],
+            [
+              257,
+              4554
+            ]
+          ],
+          "role": "diagnostic_neighborhood_not_truth"
+        },
+        "edge_b": {
+          "raw": {
+            "points": 18,
+            "z_span": 2.394080638885498,
+            "z_min": 0.48951035737991333,
+            "z_max": 2.8835909366607666
+          },
+          "absolute": {
+            "points": 18,
+            "z_span": 2.394080638885498,
+            "z_min": 0.48951035737991333,
+            "z_max": 2.8835909366607666
+          },
+          "relative": null,
+          "raw_refs": [
+            [
+              253,
+              3829
+            ],
+            [
+              253,
+              3830
+            ],
+            [
+              253,
+              3831
+            ],
+            [
+              253,
+              3832
+            ],
+            [
+              253,
+              3833
+            ],
+            [
+              255,
+              11569
+            ],
+            [
+              255,
+              11570
+            ],
+            [
+              255,
+              11571
+            ],
+            [
+              256,
+              8083
+            ],
+            [
+              256,
+              8084
+            ],
+            [
+              256,
+              8085
+            ],
+            [
+              256,
+              8086
+            ],
+            [
+              256,
+              8087
+            ],
+            [
+              257,
+              4592
+            ],
+            [
+              257,
+              4594
+            ],
+            [
+              257,
+              4595
+            ],
+            [
+              257,
+              4596
+            ],
+            [
+              257,
+              4597
+            ]
+          ],
+          "role": "diagnostic_neighborhood_not_truth"
+        }
+      },
+      "geometry_after": null
+    },
+    {
+      "frame_range": [
+        258,
+        277
+      ],
+      "device_time_range": [
+        32.099,
+        34.097
+      ],
+      "duration_seconds": 1.9980000000000047,
+      "cloud_id": "raw-window:513bff5c49ffac9a33c93be8",
+      "coordinate_frame": "lidar_link",
+      "motion_status": "moving",
+      "motion_source": "CLI --motion-status",
+      "review_status": "PENDING_REVIEW",
+      "observation_unit": "accumulated_window",
+      "raw_points": 400000,
+      "range_points": 56809,
+      "roi_points": 332,
+      "ground_model": {
+        "enabled": false,
+        "source": "accumulated",
+        "input_points": 0,
+        "source_age_seconds": 1.9980000000000047,
+        "source_frame_range": [
+          258,
+          277
+        ],
+        "motion_status": "moving",
+        "reason": "moving_ground_window",
+        "source_attempts": [
+          {
+            "enabled": false,
+            "source": "single",
+            "input_points": 0,
+            "source_frame_range": [
+              277,
+              277
+            ],
+            "source_age_seconds": 0.0,
+            "motion_status": "single_frame",
+            "reason": "insufficient_ground_points"
+          },
+          {
+            "enabled": false,
+            "source": "accumulated",
+            "input_points": 0,
+            "source_age_seconds": 1.9980000000000047,
+            "source_frame_range": [
+              258,
+              277
+            ],
+            "motion_status": "moving",
+            "reason": "moving_ground_window"
+          }
+        ],
+        "height_reference": "sensor_z",
+        "latency_ms": 0.103
+      },
+      "absolute_filtered": {
+        "points": 206,
+        "z_span": 1.9532002210617065,
+        "z_min": 0.41967281699180603,
+        "z_max": 2.372873067855835
+      },
+      "relative_filtered": null,
+      "components": {
+        "edge_a": {
+          "raw": {
+            "points": 3,
+            "z_span": 0.954740047454834,
+            "z_min": 1.418133020401001,
+            "z_max": 2.372873067855835
+          },
+          "absolute": {
+            "points": 3,
+            "z_span": 0.954740047454834,
+            "z_min": 1.418133020401001,
+            "z_max": 2.372873067855835
+          },
+          "relative": null,
+          "raw_refs": [
+            [
+              258,
+              1071
+            ],
+            [
+              260,
+              17248
+            ],
+            [
+              260,
+              17250
+            ]
+          ],
+          "role": "diagnostic_neighborhood_not_truth"
+        },
+        "edge_b": {
+          "raw": {
+            "points": 46,
+            "z_span": 2.0309412479400635,
+            "z_min": -0.22005432844161987,
+            "z_max": 1.8108868598937988
+          },
+          "absolute": {
+            "points": 35,
+            "z_span": 1.3364059925079346,
+            "z_min": 0.47448092699050903,
+            "z_max": 1.8108868598937988
+          },
+          "relative": null,
+          "raw_refs": [
+            [
+              258,
+              1114
+            ],
+            [
+              260,
+              17291
+            ],
+            [
+              260,
+              17292
+            ],
+            [
+              260,
+              17293
+            ],
+            [
+              260,
+              17294
+            ],
+            [
+              264,
+              6316
+            ],
+            [
+              264,
+              6317
+            ],
+            [
+              264,
+              6318
+            ],
+            [
+              264,
+              6319
+            ],
+            [
+              264,
+              6320
+            ],
+            [
+              264,
+              6321
+            ],
+            [
+              264,
+              6322
+            ],
+            [
+              264,
+              6323
+            ],
+            [
+              265,
+              5007
+            ],
+            [
+              265,
+              5009
+            ],
+            [
+              265,
+              5010
+            ],
+            [
+              265,
+              5013
+            ],
+            [
+              267,
+              13569
+            ],
+            [
+              267,
+              13570
+            ],
+            [
+              267,
+              13571
+            ],
+            [
+              267,
+              13572
+            ],
+            [
+              267,
+              13573
+            ],
+            [
+              267,
+              13574
+            ],
+            [
+              267,
+              13575
+            ],
+            [
+              269,
+              3836
+            ],
+            [
+              269,
+              3837
+            ],
+            [
+              269,
+              3840
+            ],
+            [
+              272,
+              8087
+            ],
+            [
+              272,
+              8088
+            ],
+            [
+              272,
+              8090
+            ],
+            [
+              272,
+              8091
+            ],
+            [
+              273,
+              4455
+            ],
+            [
+              273,
+              4456
+            ],
+            [
+              273,
+              4457
+            ],
+            [
+              273,
+              4458
+            ],
+            [
+              273,
+              4459
+            ],
+            [
+              273,
+              4460
+            ],
+            [
+              273,
+              4461
+            ],
+            [
+              276,
+              9676
+            ],
+            [
+              276,
+              9677
+            ],
+            [
+              276,
+              9678
+            ],
+            [
+              276,
+              9679
+            ],
+            [
+              276,
+              9680
+            ],
+            [
+              276,
+              9681
+            ],
+            [
+              276,
+              9682
+            ],
+            [
+              276,
+              9683
+            ]
+          ],
+          "role": "diagnostic_neighborhood_not_truth"
+        }
+      },
+      "geometry_after": null
+    },
+    {
+      "frame_range": [
+        273,
+        282
+      ],
+      "device_time_range": [
+        33.599,
+        34.597
+      ],
+      "duration_seconds": 0.9980000000000047,
+      "cloud_id": "raw-window:c07c69665608b93db75831b1",
+      "coordinate_frame": "lidar_link",
+      "motion_status": "moving",
+      "motion_source": "CLI --motion-status",
+      "review_status": "PENDING_REVIEW",
+      "observation_unit": "accumulated_window",
+      "raw_points": 200000,
+      "range_points": 27742,
+      "roi_points": 119,
+      "ground_model": {
+        "enabled": false,
+        "source": "accumulated",
+        "input_points": 0,
+        "source_age_seconds": 0.9980000000000047,
+        "source_frame_range": [
+          273,
+          282
+        ],
+        "motion_status": "moving",
+        "reason": "moving_ground_window",
+        "source_attempts": [
+          {
+            "enabled": false,
+            "source": "single",
+            "input_points": 0,
+            "source_frame_range": [
+              282,
+              282
+            ],
+            "source_age_seconds": 0.0,
+            "motion_status": "single_frame",
+            "reason": "insufficient_ground_points"
+          },
+          {
+            "enabled": false,
+            "source": "accumulated",
+            "input_points": 0,
+            "source_age_seconds": 0.9980000000000047,
+            "source_frame_range": [
+              273,
+              282
+            ],
+            "motion_status": "moving",
+            "reason": "moving_ground_window"
+          }
+        ],
+        "height_reference": "sensor_z",
+        "latency_ms": 0.114
+      },
+      "absolute_filtered": {
+        "points": 85,
+        "z_span": 0.8331895470619202,
+        "z_min": 0.32919567823410034,
+        "z_max": 1.1623852252960205
+      },
+      "relative_filtered": null,
+      "components": {
+        "edge_a": {
+          "raw": {
+            "points": 1,
+            "z_span": 0.0,
+            "z_min": 0.6716441512107849,
+            "z_max": 0.6716441512107849
+          },
+          "absolute": {
+            "points": 1,
+            "z_span": 0.0,
+            "z_min": 0.6716441512107849,
+            "z_max": 0.6716441512107849
+          },
+          "relative": null,
+          "raw_refs": [
+            [
+              281,
+              12419
+            ]
+          ],
+          "role": "diagnostic_neighborhood_not_truth"
+        },
+        "edge_b": {
+          "raw": {
+            "points": 20,
+            "z_span": 0.9544723033905029,
+            "z_min": 0.11170626431703568,
+            "z_max": 1.066178560256958
+          },
+          "absolute": {
+            "points": 18,
+            "z_span": 0.7311057448387146,
+            "z_min": 0.3350728154182434,
+            "z_max": 1.066178560256958
+          },
+          "relative": null,
+          "raw_refs": [
+            [
+              273,
+              4455
+            ],
+            [
+              273,
+              4456
+            ],
+            [
+              273,
+              4457
+            ],
+            [
+              273,
+              4458
+            ],
+            [
+              273,
+              4459
+            ],
+            [
+              273,
+              4460
+            ],
+            [
+              273,
+              4461
+            ],
+            [
+              276,
+              9676
+            ],
+            [
+              276,
+              9677
+            ],
+            [
+              276,
+              9678
+            ],
+            [
+              276,
+              9679
+            ],
+            [
+              276,
+              9680
+            ],
+            [
+              276,
+              9681
+            ],
+            [
+              276,
+              9682
+            ],
+            [
+              276,
+              9683
+            ],
+            [
+              278,
+              17903
+            ],
+            [
+              278,
+              17904
+            ],
+            [
+              281,
+              12459
+            ],
+            [
+              281,
+              12460
+            ],
+            [
+              281,
+              12464
+            ]
+          ],
+          "role": "diagnostic_neighborhood_not_truth"
+        }
+      },
+      "geometry_after": null
+    }
+  ]
+}

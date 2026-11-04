@@ -1,0 +1,2320 @@
+{
+  "version": 2,
+  "method": "MANUAL",
+  "labeler": "user-visual + facade measurement",
+  "saved_at": 1790162016.6057937,
+  "capture_id": "c4cc19fb-3020-4ccc-8407-1521f71b7212",
+  "capture_sha256": "ceca9fc08758f3c35f7b8b1c024bdab90e65f49ab65e39102cdd58dc0c5292db",
+  "config_version": "dd7165eb0628cbce",
+  "review_status": "reviewed",
+  "provenance": {
+    "positive": "用户 2026-09-21 目视确认 ROI 模式(frame 33 锁定/TRACKING)识别正确;逐可见段标签由 raw-0-199.npz 的 relative_keep 原始引用派生",
+    "source_windows": "Plan/evidence/goal-demo/20260921-g0-g1-static/windows/raw-0-199.npz; Plan/evidence/goal-demo/20260923-g0-window-truth/far-structure-window/",
+    "window_device_time_range": [
+      18.845,
+      38.843
+    ],
+    "correction_20260923": "用户 2026-09-23 指出截图红叉处也是球门，撤销 2026-09-22 非球门判断；对面球门可见帧由 far-structure-window/raw-0-199.npz 的 relative_keep 原始引用按每帧>=5点划段。",
+    "previous_negative_label": {
+      "capture_id": "c4cc19fb-3020-4ccc-8407-1521f71b7212",
+      "type": "non_goal_structure",
+      "frame_range": [
+        0,
+        199
+      ],
+      "review_status": "reviewed",
+      "note": "用户 2026-09-22 目视判定非球门;(92.7,+29.1) facade 实测与真球门不可区分的孪生结构",
+      "box": {
+        "center": [
+          92.7,
+          29.1,
+          -1.05
+        ],
+        "size": [
+          1.0,
+          5.1,
+          1.95
+        ],
+        "yaw": 1.57
+      }
+    },
+    "superseded_negative_assessment": "用户 2026-09-22 对全场模式两段视频的目视复核:该结构非球门"
+  },
+  "labels": [
+    {
+      "capture_id": "c4cc19fb-3020-4ccc-8407-1521f71b7212",
+      "type": "goal",
+      "frame_range": [
+        4,
+        4
+      ],
+      "visibility": "visible",
+      "review_status": "reviewed",
+      "note": "近侧球门;可见性=原始结构回波>=5点(客观判定);框=facade实测",
+      "estimated_error_m": 0.3,
+      "box": {
+        "center": [
+          94.3,
+          -26.3,
+          -0.3
+        ],
+        "size": [
+          1.2,
+          4.9,
+          1.9
+        ],
+        "yaw": 1.62
+      }
+    },
+    {
+      "capture_id": "c4cc19fb-3020-4ccc-8407-1521f71b7212",
+      "type": "goal",
+      "frame_range": [
+        7,
+        8
+      ],
+      "visibility": "visible",
+      "review_status": "reviewed",
+      "note": "近侧球门;可见性=原始结构回波>=5点(客观判定);框=facade实测",
+      "estimated_error_m": 0.3,
+      "box": {
+        "center": [
+          94.3,
+          -26.3,
+          -0.3
+        ],
+        "size": [
+          1.2,
+          4.9,
+          1.9
+        ],
+        "yaw": 1.62
+      }
+    },
+    {
+      "capture_id": "c4cc19fb-3020-4ccc-8407-1521f71b7212",
+      "type": "goal",
+      "frame_range": [
+        13,
+        13
+      ],
+      "visibility": "visible",
+      "review_status": "reviewed",
+      "note": "近侧球门;可见性=原始结构回波>=5点(客观判定);框=facade实测",
+      "estimated_error_m": 0.3,
+      "box": {
+        "center": [
+          94.3,
+          -26.3,
+          -0.3
+        ],
+        "size": [
+          1.2,
+          4.9,
+          1.9
+        ],
+        "yaw": 1.62
+      }
+    },
+    {
+      "capture_id": "c4cc19fb-3020-4ccc-8407-1521f71b7212",
+      "type": "goal",
+      "frame_range": [
+        16,
+        19
+      ],
+      "visibility": "visible",
+      "review_status": "reviewed",
+      "note": "近侧球门;可见性=原始结构回波>=5点(客观判定);框=facade实测",
+      "estimated_error_m": 0.3,
+      "box": {
+        "center": [
+          94.3,
+          -26.3,
+          -0.3
+        ],
+        "size": [
+          1.2,
+          4.9,
+          1.9
+        ],
+        "yaw": 1.62
+      }
+    },
+    {
+      "capture_id": "c4cc19fb-3020-4ccc-8407-1521f71b7212",
+      "type": "goal",
+      "frame_range": [
+        21,
+        21
+      ],
+      "visibility": "visible",
+      "review_status": "reviewed",
+      "note": "近侧球门;可见性=原始结构回波>=5点(客观判定);框=facade实测",
+      "estimated_error_m": 0.3,
+      "box": {
+        "center": [
+          94.3,
+          -26.3,
+          -0.3
+        ],
+        "size": [
+          1.2,
+          4.9,
+          1.9
+        ],
+        "yaw": 1.62
+      }
+    },
+    {
+      "capture_id": "c4cc19fb-3020-4ccc-8407-1521f71b7212",
+      "type": "goal",
+      "frame_range": [
+        23,
+        23
+      ],
+      "visibility": "visible",
+      "review_status": "reviewed",
+      "note": "近侧球门;可见性=原始结构回波>=5点(客观判定);框=facade实测",
+      "estimated_error_m": 0.3,
+      "box": {
+        "center": [
+          94.3,
+          -26.3,
+          -0.3
+        ],
+        "size": [
+          1.2,
+          4.9,
+          1.9
+        ],
+        "yaw": 1.62
+      }
+    },
+    {
+      "capture_id": "c4cc19fb-3020-4ccc-8407-1521f71b7212",
+      "type": "goal",
+      "frame_range": [
+        25,
+        26
+      ],
+      "visibility": "visible",
+      "review_status": "reviewed",
+      "note": "近侧球门;可见性=原始结构回波>=5点(客观判定);框=facade实测",
+      "estimated_error_m": 0.3,
+      "box": {
+        "center": [
+          94.3,
+          -26.3,
+          -0.3
+        ],
+        "size": [
+          1.2,
+          4.9,
+          1.9
+        ],
+        "yaw": 1.62
+      }
+    },
+    {
+      "capture_id": "c4cc19fb-3020-4ccc-8407-1521f71b7212",
+      "type": "goal",
+      "frame_range": [
+        28,
+        28
+      ],
+      "visibility": "visible",
+      "review_status": "reviewed",
+      "note": "近侧球门;可见性=原始结构回波>=5点(客观判定);框=facade实测",
+      "estimated_error_m": 0.3,
+      "box": {
+        "center": [
+          94.3,
+          -26.3,
+          -0.3
+        ],
+        "size": [
+          1.2,
+          4.9,
+          1.9
+        ],
+        "yaw": 1.62
+      }
+    },
+    {
+      "capture_id": "c4cc19fb-3020-4ccc-8407-1521f71b7212",
+      "type": "goal",
+      "frame_range": [
+        31,
+        35
+      ],
+      "visibility": "visible",
+      "review_status": "reviewed",
+      "note": "近侧球门;可见性=原始结构回波>=5点(客观判定);框=facade实测",
+      "estimated_error_m": 0.3,
+      "box": {
+        "center": [
+          94.3,
+          -26.3,
+          -0.3
+        ],
+        "size": [
+          1.2,
+          4.9,
+          1.9
+        ],
+        "yaw": 1.62
+      }
+    },
+    {
+      "capture_id": "c4cc19fb-3020-4ccc-8407-1521f71b7212",
+      "type": "goal",
+      "frame_range": [
+        37,
+        39
+      ],
+      "visibility": "visible",
+      "review_status": "reviewed",
+      "note": "近侧球门;可见性=原始结构回波>=5点(客观判定);框=facade实测",
+      "estimated_error_m": 0.3,
+      "box": {
+        "center": [
+          94.3,
+          -26.3,
+          -0.3
+        ],
+        "size": [
+          1.2,
+          4.9,
+          1.9
+        ],
+        "yaw": 1.62
+      }
+    },
+    {
+      "capture_id": "c4cc19fb-3020-4ccc-8407-1521f71b7212",
+      "type": "goal",
+      "frame_range": [
+        41,
+        41
+      ],
+      "visibility": "visible",
+      "review_status": "reviewed",
+      "note": "近侧球门;可见性=原始结构回波>=5点(客观判定);框=facade实测",
+      "estimated_error_m": 0.3,
+      "box": {
+        "center": [
+          94.3,
+          -26.3,
+          -0.3
+        ],
+        "size": [
+          1.2,
+          4.9,
+          1.9
+        ],
+        "yaw": 1.62
+      }
+    },
+    {
+      "capture_id": "c4cc19fb-3020-4ccc-8407-1521f71b7212",
+      "type": "goal",
+      "frame_range": [
+        43,
+        43
+      ],
+      "visibility": "visible",
+      "review_status": "reviewed",
+      "note": "近侧球门;可见性=原始结构回波>=5点(客观判定);框=facade实测",
+      "estimated_error_m": 0.3,
+      "box": {
+        "center": [
+          94.3,
+          -26.3,
+          -0.3
+        ],
+        "size": [
+          1.2,
+          4.9,
+          1.9
+        ],
+        "yaw": 1.62
+      }
+    },
+    {
+      "capture_id": "c4cc19fb-3020-4ccc-8407-1521f71b7212",
+      "type": "goal",
+      "frame_range": [
+        46,
+        46
+      ],
+      "visibility": "visible",
+      "review_status": "reviewed",
+      "note": "近侧球门;可见性=原始结构回波>=5点(客观判定);框=facade实测",
+      "estimated_error_m": 0.3,
+      "box": {
+        "center": [
+          94.3,
+          -26.3,
+          -0.3
+        ],
+        "size": [
+          1.2,
+          4.9,
+          1.9
+        ],
+        "yaw": 1.62
+      }
+    },
+    {
+      "capture_id": "c4cc19fb-3020-4ccc-8407-1521f71b7212",
+      "type": "goal",
+      "frame_range": [
+        48,
+        48
+      ],
+      "visibility": "visible",
+      "review_status": "reviewed",
+      "note": "近侧球门;可见性=原始结构回波>=5点(客观判定);框=facade实测",
+      "estimated_error_m": 0.3,
+      "box": {
+        "center": [
+          94.3,
+          -26.3,
+          -0.3
+        ],
+        "size": [
+          1.2,
+          4.9,
+          1.9
+        ],
+        "yaw": 1.62
+      }
+    },
+    {
+      "capture_id": "c4cc19fb-3020-4ccc-8407-1521f71b7212",
+      "type": "goal",
+      "frame_range": [
+        50,
+        50
+      ],
+      "visibility": "visible",
+      "review_status": "reviewed",
+      "note": "近侧球门;可见性=原始结构回波>=5点(客观判定);框=facade实测",
+      "estimated_error_m": 0.3,
+      "box": {
+        "center": [
+          94.3,
+          -26.3,
+          -0.3
+        ],
+        "size": [
+          1.2,
+          4.9,
+          1.9
+        ],
+        "yaw": 1.62
+      }
+    },
+    {
+      "capture_id": "c4cc19fb-3020-4ccc-8407-1521f71b7212",
+      "type": "goal",
+      "frame_range": [
+        52,
+        52
+      ],
+      "visibility": "visible",
+      "review_status": "reviewed",
+      "note": "近侧球门;可见性=原始结构回波>=5点(客观判定);框=facade实测",
+      "estimated_error_m": 0.3,
+      "box": {
+        "center": [
+          94.3,
+          -26.3,
+          -0.3
+        ],
+        "size": [
+          1.2,
+          4.9,
+          1.9
+        ],
+        "yaw": 1.62
+      }
+    },
+    {
+      "capture_id": "c4cc19fb-3020-4ccc-8407-1521f71b7212",
+      "type": "goal",
+      "frame_range": [
+        55,
+        56
+      ],
+      "visibility": "visible",
+      "review_status": "reviewed",
+      "note": "近侧球门;可见性=原始结构回波>=5点(客观判定);框=facade实测",
+      "estimated_error_m": 0.3,
+      "box": {
+        "center": [
+          94.3,
+          -26.3,
+          -0.3
+        ],
+        "size": [
+          1.2,
+          4.9,
+          1.9
+        ],
+        "yaw": 1.62
+      }
+    },
+    {
+      "capture_id": "c4cc19fb-3020-4ccc-8407-1521f71b7212",
+      "type": "goal",
+      "frame_range": [
+        59,
+        59
+      ],
+      "visibility": "visible",
+      "review_status": "reviewed",
+      "note": "近侧球门;可见性=原始结构回波>=5点(客观判定);框=facade实测",
+      "estimated_error_m": 0.3,
+      "box": {
+        "center": [
+          94.3,
+          -26.3,
+          -0.3
+        ],
+        "size": [
+          1.2,
+          4.9,
+          1.9
+        ],
+        "yaw": 1.62
+      }
+    },
+    {
+      "capture_id": "c4cc19fb-3020-4ccc-8407-1521f71b7212",
+      "type": "goal",
+      "frame_range": [
+        62,
+        63
+      ],
+      "visibility": "visible",
+      "review_status": "reviewed",
+      "note": "近侧球门;可见性=原始结构回波>=5点(客观判定);框=facade实测",
+      "estimated_error_m": 0.3,
+      "box": {
+        "center": [
+          94.3,
+          -26.3,
+          -0.3
+        ],
+        "size": [
+          1.2,
+          4.9,
+          1.9
+        ],
+        "yaw": 1.62
+      }
+    },
+    {
+      "capture_id": "c4cc19fb-3020-4ccc-8407-1521f71b7212",
+      "type": "goal",
+      "frame_range": [
+        66,
+        66
+      ],
+      "visibility": "visible",
+      "review_status": "reviewed",
+      "note": "近侧球门;可见性=原始结构回波>=5点(客观判定);框=facade实测",
+      "estimated_error_m": 0.3,
+      "box": {
+        "center": [
+          94.3,
+          -26.3,
+          -0.3
+        ],
+        "size": [
+          1.2,
+          4.9,
+          1.9
+        ],
+        "yaw": 1.62
+      }
+    },
+    {
+      "capture_id": "c4cc19fb-3020-4ccc-8407-1521f71b7212",
+      "type": "goal",
+      "frame_range": [
+        69,
+        69
+      ],
+      "visibility": "visible",
+      "review_status": "reviewed",
+      "note": "近侧球门;可见性=原始结构回波>=5点(客观判定);框=facade实测",
+      "estimated_error_m": 0.3,
+      "box": {
+        "center": [
+          94.3,
+          -26.3,
+          -0.3
+        ],
+        "size": [
+          1.2,
+          4.9,
+          1.9
+        ],
+        "yaw": 1.62
+      }
+    },
+    {
+      "capture_id": "c4cc19fb-3020-4ccc-8407-1521f71b7212",
+      "type": "goal",
+      "frame_range": [
+        75,
+        75
+      ],
+      "visibility": "visible",
+      "review_status": "reviewed",
+      "note": "近侧球门;可见性=原始结构回波>=5点(客观判定);框=facade实测",
+      "estimated_error_m": 0.3,
+      "box": {
+        "center": [
+          94.3,
+          -26.3,
+          -0.3
+        ],
+        "size": [
+          1.2,
+          4.9,
+          1.9
+        ],
+        "yaw": 1.62
+      }
+    },
+    {
+      "capture_id": "c4cc19fb-3020-4ccc-8407-1521f71b7212",
+      "type": "goal",
+      "frame_range": [
+        78,
+        79
+      ],
+      "visibility": "visible",
+      "review_status": "reviewed",
+      "note": "近侧球门;可见性=原始结构回波>=5点(客观判定);框=facade实测",
+      "estimated_error_m": 0.3,
+      "box": {
+        "center": [
+          94.3,
+          -26.3,
+          -0.3
+        ],
+        "size": [
+          1.2,
+          4.9,
+          1.9
+        ],
+        "yaw": 1.62
+      }
+    },
+    {
+      "capture_id": "c4cc19fb-3020-4ccc-8407-1521f71b7212",
+      "type": "goal",
+      "frame_range": [
+        82,
+        83
+      ],
+      "visibility": "visible",
+      "review_status": "reviewed",
+      "note": "近侧球门;可见性=原始结构回波>=5点(客观判定);框=facade实测",
+      "estimated_error_m": 0.3,
+      "box": {
+        "center": [
+          94.3,
+          -26.3,
+          -0.3
+        ],
+        "size": [
+          1.2,
+          4.9,
+          1.9
+        ],
+        "yaw": 1.62
+      }
+    },
+    {
+      "capture_id": "c4cc19fb-3020-4ccc-8407-1521f71b7212",
+      "type": "goal",
+      "frame_range": [
+        86,
+        86
+      ],
+      "visibility": "visible",
+      "review_status": "reviewed",
+      "note": "近侧球门;可见性=原始结构回波>=5点(客观判定);框=facade实测",
+      "estimated_error_m": 0.3,
+      "box": {
+        "center": [
+          94.3,
+          -26.3,
+          -0.3
+        ],
+        "size": [
+          1.2,
+          4.9,
+          1.9
+        ],
+        "yaw": 1.62
+      }
+    },
+    {
+      "capture_id": "c4cc19fb-3020-4ccc-8407-1521f71b7212",
+      "type": "goal",
+      "frame_range": [
+        91,
+        91
+      ],
+      "visibility": "visible",
+      "review_status": "reviewed",
+      "note": "近侧球门;可见性=原始结构回波>=5点(客观判定);框=facade实测",
+      "estimated_error_m": 0.3,
+      "box": {
+        "center": [
+          94.3,
+          -26.3,
+          -0.3
+        ],
+        "size": [
+          1.2,
+          4.9,
+          1.9
+        ],
+        "yaw": 1.62
+      }
+    },
+    {
+      "capture_id": "c4cc19fb-3020-4ccc-8407-1521f71b7212",
+      "type": "goal",
+      "frame_range": [
+        95,
+        95
+      ],
+      "visibility": "visible",
+      "review_status": "reviewed",
+      "note": "近侧球门;可见性=原始结构回波>=5点(客观判定);框=facade实测",
+      "estimated_error_m": 0.3,
+      "box": {
+        "center": [
+          94.3,
+          -26.3,
+          -0.3
+        ],
+        "size": [
+          1.2,
+          4.9,
+          1.9
+        ],
+        "yaw": 1.62
+      }
+    },
+    {
+      "capture_id": "c4cc19fb-3020-4ccc-8407-1521f71b7212",
+      "type": "goal",
+      "frame_range": [
+        100,
+        100
+      ],
+      "visibility": "visible",
+      "review_status": "reviewed",
+      "note": "近侧球门;可见性=原始结构回波>=5点(客观判定);框=facade实测",
+      "estimated_error_m": 0.3,
+      "box": {
+        "center": [
+          94.3,
+          -26.3,
+          -0.3
+        ],
+        "size": [
+          1.2,
+          4.9,
+          1.9
+        ],
+        "yaw": 1.62
+      }
+    },
+    {
+      "capture_id": "c4cc19fb-3020-4ccc-8407-1521f71b7212",
+      "type": "goal",
+      "frame_range": [
+        102,
+        102
+      ],
+      "visibility": "visible",
+      "review_status": "reviewed",
+      "note": "近侧球门;可见性=原始结构回波>=5点(客观判定);框=facade实测",
+      "estimated_error_m": 0.3,
+      "box": {
+        "center": [
+          94.3,
+          -26.3,
+          -0.3
+        ],
+        "size": [
+          1.2,
+          4.9,
+          1.9
+        ],
+        "yaw": 1.62
+      }
+    },
+    {
+      "capture_id": "c4cc19fb-3020-4ccc-8407-1521f71b7212",
+      "type": "goal",
+      "frame_range": [
+        105,
+        107
+      ],
+      "visibility": "visible",
+      "review_status": "reviewed",
+      "note": "近侧球门;可见性=原始结构回波>=5点(客观判定);框=facade实测",
+      "estimated_error_m": 0.3,
+      "box": {
+        "center": [
+          94.3,
+          -26.3,
+          -0.3
+        ],
+        "size": [
+          1.2,
+          4.9,
+          1.9
+        ],
+        "yaw": 1.62
+      }
+    },
+    {
+      "capture_id": "c4cc19fb-3020-4ccc-8407-1521f71b7212",
+      "type": "goal",
+      "frame_range": [
+        113,
+        113
+      ],
+      "visibility": "visible",
+      "review_status": "reviewed",
+      "note": "近侧球门;可见性=原始结构回波>=5点(客观判定);框=facade实测",
+      "estimated_error_m": 0.3,
+      "box": {
+        "center": [
+          94.3,
+          -26.3,
+          -0.3
+        ],
+        "size": [
+          1.2,
+          4.9,
+          1.9
+        ],
+        "yaw": 1.62
+      }
+    },
+    {
+      "capture_id": "c4cc19fb-3020-4ccc-8407-1521f71b7212",
+      "type": "goal",
+      "frame_range": [
+        115,
+        115
+      ],
+      "visibility": "visible",
+      "review_status": "reviewed",
+      "note": "近侧球门;可见性=原始结构回波>=5点(客观判定);框=facade实测",
+      "estimated_error_m": 0.3,
+      "box": {
+        "center": [
+          94.3,
+          -26.3,
+          -0.3
+        ],
+        "size": [
+          1.2,
+          4.9,
+          1.9
+        ],
+        "yaw": 1.62
+      }
+    },
+    {
+      "capture_id": "c4cc19fb-3020-4ccc-8407-1521f71b7212",
+      "type": "goal",
+      "frame_range": [
+        118,
+        118
+      ],
+      "visibility": "visible",
+      "review_status": "reviewed",
+      "note": "近侧球门;可见性=原始结构回波>=5点(客观判定);框=facade实测",
+      "estimated_error_m": 0.3,
+      "box": {
+        "center": [
+          94.3,
+          -26.3,
+          -0.3
+        ],
+        "size": [
+          1.2,
+          4.9,
+          1.9
+        ],
+        "yaw": 1.62
+      }
+    },
+    {
+      "capture_id": "c4cc19fb-3020-4ccc-8407-1521f71b7212",
+      "type": "goal",
+      "frame_range": [
+        120,
+        120
+      ],
+      "visibility": "visible",
+      "review_status": "reviewed",
+      "note": "近侧球门;可见性=原始结构回波>=5点(客观判定);框=facade实测",
+      "estimated_error_m": 0.3,
+      "box": {
+        "center": [
+          94.3,
+          -26.3,
+          -0.3
+        ],
+        "size": [
+          1.2,
+          4.9,
+          1.9
+        ],
+        "yaw": 1.62
+      }
+    },
+    {
+      "capture_id": "c4cc19fb-3020-4ccc-8407-1521f71b7212",
+      "type": "goal",
+      "frame_range": [
+        123,
+        123
+      ],
+      "visibility": "visible",
+      "review_status": "reviewed",
+      "note": "近侧球门;可见性=原始结构回波>=5点(客观判定);框=facade实测",
+      "estimated_error_m": 0.3,
+      "box": {
+        "center": [
+          94.3,
+          -26.3,
+          -0.3
+        ],
+        "size": [
+          1.2,
+          4.9,
+          1.9
+        ],
+        "yaw": 1.62
+      }
+    },
+    {
+      "capture_id": "c4cc19fb-3020-4ccc-8407-1521f71b7212",
+      "type": "goal",
+      "frame_range": [
+        127,
+        127
+      ],
+      "visibility": "visible",
+      "review_status": "reviewed",
+      "note": "近侧球门;可见性=原始结构回波>=5点(客观判定);框=facade实测",
+      "estimated_error_m": 0.3,
+      "box": {
+        "center": [
+          94.3,
+          -26.3,
+          -0.3
+        ],
+        "size": [
+          1.2,
+          4.9,
+          1.9
+        ],
+        "yaw": 1.62
+      }
+    },
+    {
+      "capture_id": "c4cc19fb-3020-4ccc-8407-1521f71b7212",
+      "type": "goal",
+      "frame_range": [
+        133,
+        133
+      ],
+      "visibility": "visible",
+      "review_status": "reviewed",
+      "note": "近侧球门;可见性=原始结构回波>=5点(客观判定);框=facade实测",
+      "estimated_error_m": 0.3,
+      "box": {
+        "center": [
+          94.3,
+          -26.3,
+          -0.3
+        ],
+        "size": [
+          1.2,
+          4.9,
+          1.9
+        ],
+        "yaw": 1.62
+      }
+    },
+    {
+      "capture_id": "c4cc19fb-3020-4ccc-8407-1521f71b7212",
+      "type": "goal",
+      "frame_range": [
+        139,
+        139
+      ],
+      "visibility": "visible",
+      "review_status": "reviewed",
+      "note": "近侧球门;可见性=原始结构回波>=5点(客观判定);框=facade实测",
+      "estimated_error_m": 0.3,
+      "box": {
+        "center": [
+          94.3,
+          -26.3,
+          -0.3
+        ],
+        "size": [
+          1.2,
+          4.9,
+          1.9
+        ],
+        "yaw": 1.62
+      }
+    },
+    {
+      "capture_id": "c4cc19fb-3020-4ccc-8407-1521f71b7212",
+      "type": "goal",
+      "frame_range": [
+        141,
+        143
+      ],
+      "visibility": "visible",
+      "review_status": "reviewed",
+      "note": "近侧球门;可见性=原始结构回波>=5点(客观判定);框=facade实测",
+      "estimated_error_m": 0.3,
+      "box": {
+        "center": [
+          94.3,
+          -26.3,
+          -0.3
+        ],
+        "size": [
+          1.2,
+          4.9,
+          1.9
+        ],
+        "yaw": 1.62
+      }
+    },
+    {
+      "capture_id": "c4cc19fb-3020-4ccc-8407-1521f71b7212",
+      "type": "goal",
+      "frame_range": [
+        145,
+        147
+      ],
+      "visibility": "visible",
+      "review_status": "reviewed",
+      "note": "近侧球门;可见性=原始结构回波>=5点(客观判定);框=facade实测",
+      "estimated_error_m": 0.3,
+      "box": {
+        "center": [
+          94.3,
+          -26.3,
+          -0.3
+        ],
+        "size": [
+          1.2,
+          4.9,
+          1.9
+        ],
+        "yaw": 1.62
+      }
+    },
+    {
+      "capture_id": "c4cc19fb-3020-4ccc-8407-1521f71b7212",
+      "type": "goal",
+      "frame_range": [
+        150,
+        151
+      ],
+      "visibility": "visible",
+      "review_status": "reviewed",
+      "note": "近侧球门;可见性=原始结构回波>=5点(客观判定);框=facade实测",
+      "estimated_error_m": 0.3,
+      "box": {
+        "center": [
+          94.3,
+          -26.3,
+          -0.3
+        ],
+        "size": [
+          1.2,
+          4.9,
+          1.9
+        ],
+        "yaw": 1.62
+      }
+    },
+    {
+      "capture_id": "c4cc19fb-3020-4ccc-8407-1521f71b7212",
+      "type": "goal",
+      "frame_range": [
+        153,
+        153
+      ],
+      "visibility": "visible",
+      "review_status": "reviewed",
+      "note": "近侧球门;可见性=原始结构回波>=5点(客观判定);框=facade实测",
+      "estimated_error_m": 0.3,
+      "box": {
+        "center": [
+          94.3,
+          -26.3,
+          -0.3
+        ],
+        "size": [
+          1.2,
+          4.9,
+          1.9
+        ],
+        "yaw": 1.62
+      }
+    },
+    {
+      "capture_id": "c4cc19fb-3020-4ccc-8407-1521f71b7212",
+      "type": "goal",
+      "frame_range": [
+        155,
+        155
+      ],
+      "visibility": "visible",
+      "review_status": "reviewed",
+      "note": "近侧球门;可见性=原始结构回波>=5点(客观判定);框=facade实测",
+      "estimated_error_m": 0.3,
+      "box": {
+        "center": [
+          94.3,
+          -26.3,
+          -0.3
+        ],
+        "size": [
+          1.2,
+          4.9,
+          1.9
+        ],
+        "yaw": 1.62
+      }
+    },
+    {
+      "capture_id": "c4cc19fb-3020-4ccc-8407-1521f71b7212",
+      "type": "goal",
+      "frame_range": [
+        158,
+        158
+      ],
+      "visibility": "visible",
+      "review_status": "reviewed",
+      "note": "近侧球门;可见性=原始结构回波>=5点(客观判定);框=facade实测",
+      "estimated_error_m": 0.3,
+      "box": {
+        "center": [
+          94.3,
+          -26.3,
+          -0.3
+        ],
+        "size": [
+          1.2,
+          4.9,
+          1.9
+        ],
+        "yaw": 1.62
+      }
+    },
+    {
+      "capture_id": "c4cc19fb-3020-4ccc-8407-1521f71b7212",
+      "type": "goal",
+      "frame_range": [
+        161,
+        162
+      ],
+      "visibility": "visible",
+      "review_status": "reviewed",
+      "note": "近侧球门;可见性=原始结构回波>=5点(客观判定);框=facade实测",
+      "estimated_error_m": 0.3,
+      "box": {
+        "center": [
+          94.3,
+          -26.3,
+          -0.3
+        ],
+        "size": [
+          1.2,
+          4.9,
+          1.9
+        ],
+        "yaw": 1.62
+      }
+    },
+    {
+      "capture_id": "c4cc19fb-3020-4ccc-8407-1521f71b7212",
+      "type": "goal",
+      "frame_range": [
+        164,
+        164
+      ],
+      "visibility": "visible",
+      "review_status": "reviewed",
+      "note": "近侧球门;可见性=原始结构回波>=5点(客观判定);框=facade实测",
+      "estimated_error_m": 0.3,
+      "box": {
+        "center": [
+          94.3,
+          -26.3,
+          -0.3
+        ],
+        "size": [
+          1.2,
+          4.9,
+          1.9
+        ],
+        "yaw": 1.62
+      }
+    },
+    {
+      "capture_id": "c4cc19fb-3020-4ccc-8407-1521f71b7212",
+      "type": "goal",
+      "frame_range": [
+        169,
+        170
+      ],
+      "visibility": "visible",
+      "review_status": "reviewed",
+      "note": "近侧球门;可见性=原始结构回波>=5点(客观判定);框=facade实测",
+      "estimated_error_m": 0.3,
+      "box": {
+        "center": [
+          94.3,
+          -26.3,
+          -0.3
+        ],
+        "size": [
+          1.2,
+          4.9,
+          1.9
+        ],
+        "yaw": 1.62
+      }
+    },
+    {
+      "capture_id": "c4cc19fb-3020-4ccc-8407-1521f71b7212",
+      "type": "goal",
+      "frame_range": [
+        173,
+        175
+      ],
+      "visibility": "visible",
+      "review_status": "reviewed",
+      "note": "近侧球门;可见性=原始结构回波>=5点(客观判定);框=facade实测",
+      "estimated_error_m": 0.3,
+      "box": {
+        "center": [
+          94.3,
+          -26.3,
+          -0.3
+        ],
+        "size": [
+          1.2,
+          4.9,
+          1.9
+        ],
+        "yaw": 1.62
+      }
+    },
+    {
+      "capture_id": "c4cc19fb-3020-4ccc-8407-1521f71b7212",
+      "type": "goal",
+      "frame_range": [
+        190,
+        190
+      ],
+      "visibility": "visible",
+      "review_status": "reviewed",
+      "note": "近侧球门;可见性=原始结构回波>=5点(客观判定);框=facade实测",
+      "estimated_error_m": 0.3,
+      "box": {
+        "center": [
+          94.3,
+          -26.3,
+          -0.3
+        ],
+        "size": [
+          1.2,
+          4.9,
+          1.9
+        ],
+        "yaw": 1.62
+      }
+    },
+    {
+      "capture_id": "c4cc19fb-3020-4ccc-8407-1521f71b7212",
+      "type": "goal",
+      "frame_range": [
+        192,
+        192
+      ],
+      "visibility": "visible",
+      "review_status": "reviewed",
+      "note": "近侧球门;可见性=原始结构回波>=5点(客观判定);框=facade实测",
+      "estimated_error_m": 0.3,
+      "box": {
+        "center": [
+          94.3,
+          -26.3,
+          -0.3
+        ],
+        "size": [
+          1.2,
+          4.9,
+          1.9
+        ],
+        "yaw": 1.62
+      }
+    },
+    {
+      "capture_id": "c4cc19fb-3020-4ccc-8407-1521f71b7212",
+      "type": "goal",
+      "frame_range": [
+        196,
+        196
+      ],
+      "visibility": "visible",
+      "review_status": "reviewed",
+      "note": "近侧球门;可见性=原始结构回波>=5点(客观判定);框=facade实测",
+      "estimated_error_m": 0.3,
+      "box": {
+        "center": [
+          94.3,
+          -26.3,
+          -0.3
+        ],
+        "size": [
+          1.2,
+          4.9,
+          1.9
+        ],
+        "yaw": 1.62
+      }
+    },
+    {
+      "capture_id": "c4cc19fb-3020-4ccc-8407-1521f71b7212",
+      "type": "goal",
+      "frame_range": [
+        4,
+        4
+      ],
+      "visibility": "visible",
+      "review_status": "reviewed",
+      "note": "对面球门；用户 2026-09-23 根据原始点云图纠正身份；可见性=相对地面结构回波每帧>=5点；框=facade实测",
+      "estimated_error_m": 0.3,
+      "box": {
+        "center": [
+          92.7,
+          29.1,
+          -1.05
+        ],
+        "size": [
+          1.0,
+          5.1,
+          1.95
+        ],
+        "yaw": 1.57
+      }
+    },
+    {
+      "capture_id": "c4cc19fb-3020-4ccc-8407-1521f71b7212",
+      "type": "goal",
+      "frame_range": [
+        8,
+        8
+      ],
+      "visibility": "visible",
+      "review_status": "reviewed",
+      "note": "对面球门；用户 2026-09-23 根据原始点云图纠正身份；可见性=相对地面结构回波每帧>=5点；框=facade实测",
+      "estimated_error_m": 0.3,
+      "box": {
+        "center": [
+          92.7,
+          29.1,
+          -1.05
+        ],
+        "size": [
+          1.0,
+          5.1,
+          1.95
+        ],
+        "yaw": 1.57
+      }
+    },
+    {
+      "capture_id": "c4cc19fb-3020-4ccc-8407-1521f71b7212",
+      "type": "goal",
+      "frame_range": [
+        11,
+        11
+      ],
+      "visibility": "visible",
+      "review_status": "reviewed",
+      "note": "对面球门；用户 2026-09-23 根据原始点云图纠正身份；可见性=相对地面结构回波每帧>=5点；框=facade实测",
+      "estimated_error_m": 0.3,
+      "box": {
+        "center": [
+          92.7,
+          29.1,
+          -1.05
+        ],
+        "size": [
+          1.0,
+          5.1,
+          1.95
+        ],
+        "yaw": 1.57
+      }
+    },
+    {
+      "capture_id": "c4cc19fb-3020-4ccc-8407-1521f71b7212",
+      "type": "goal",
+      "frame_range": [
+        14,
+        14
+      ],
+      "visibility": "visible",
+      "review_status": "reviewed",
+      "note": "对面球门；用户 2026-09-23 根据原始点云图纠正身份；可见性=相对地面结构回波每帧>=5点；框=facade实测",
+      "estimated_error_m": 0.3,
+      "box": {
+        "center": [
+          92.7,
+          29.1,
+          -1.05
+        ],
+        "size": [
+          1.0,
+          5.1,
+          1.95
+        ],
+        "yaw": 1.57
+      }
+    },
+    {
+      "capture_id": "c4cc19fb-3020-4ccc-8407-1521f71b7212",
+      "type": "goal",
+      "frame_range": [
+        16,
+        17
+      ],
+      "visibility": "visible",
+      "review_status": "reviewed",
+      "note": "对面球门；用户 2026-09-23 根据原始点云图纠正身份；可见性=相对地面结构回波每帧>=5点；框=facade实测",
+      "estimated_error_m": 0.3,
+      "box": {
+        "center": [
+          92.7,
+          29.1,
+          -1.05
+        ],
+        "size": [
+          1.0,
+          5.1,
+          1.95
+        ],
+        "yaw": 1.57
+      }
+    },
+    {
+      "capture_id": "c4cc19fb-3020-4ccc-8407-1521f71b7212",
+      "type": "goal",
+      "frame_range": [
+        21,
+        21
+      ],
+      "visibility": "visible",
+      "review_status": "reviewed",
+      "note": "对面球门；用户 2026-09-23 根据原始点云图纠正身份；可见性=相对地面结构回波每帧>=5点；框=facade实测",
+      "estimated_error_m": 0.3,
+      "box": {
+        "center": [
+          92.7,
+          29.1,
+          -1.05
+        ],
+        "size": [
+          1.0,
+          5.1,
+          1.95
+        ],
+        "yaw": 1.57
+      }
+    },
+    {
+      "capture_id": "c4cc19fb-3020-4ccc-8407-1521f71b7212",
+      "type": "goal",
+      "frame_range": [
+        25,
+        29
+      ],
+      "visibility": "visible",
+      "review_status": "reviewed",
+      "note": "对面球门；用户 2026-09-23 根据原始点云图纠正身份；可见性=相对地面结构回波每帧>=5点；框=facade实测",
+      "estimated_error_m": 0.3,
+      "box": {
+        "center": [
+          92.7,
+          29.1,
+          -1.05
+        ],
+        "size": [
+          1.0,
+          5.1,
+          1.95
+        ],
+        "yaw": 1.57
+      }
+    },
+    {
+      "capture_id": "c4cc19fb-3020-4ccc-8407-1521f71b7212",
+      "type": "goal",
+      "frame_range": [
+        32,
+        33
+      ],
+      "visibility": "visible",
+      "review_status": "reviewed",
+      "note": "对面球门；用户 2026-09-23 根据原始点云图纠正身份；可见性=相对地面结构回波每帧>=5点；框=facade实测",
+      "estimated_error_m": 0.3,
+      "box": {
+        "center": [
+          92.7,
+          29.1,
+          -1.05
+        ],
+        "size": [
+          1.0,
+          5.1,
+          1.95
+        ],
+        "yaw": 1.57
+      }
+    },
+    {
+      "capture_id": "c4cc19fb-3020-4ccc-8407-1521f71b7212",
+      "type": "goal",
+      "frame_range": [
+        36,
+        36
+      ],
+      "visibility": "visible",
+      "review_status": "reviewed",
+      "note": "对面球门；用户 2026-09-23 根据原始点云图纠正身份；可见性=相对地面结构回波每帧>=5点；框=facade实测",
+      "estimated_error_m": 0.3,
+      "box": {
+        "center": [
+          92.7,
+          29.1,
+          -1.05
+        ],
+        "size": [
+          1.0,
+          5.1,
+          1.95
+        ],
+        "yaw": 1.57
+      }
+    },
+    {
+      "capture_id": "c4cc19fb-3020-4ccc-8407-1521f71b7212",
+      "type": "goal",
+      "frame_range": [
+        40,
+        40
+      ],
+      "visibility": "visible",
+      "review_status": "reviewed",
+      "note": "对面球门；用户 2026-09-23 根据原始点云图纠正身份；可见性=相对地面结构回波每帧>=5点；框=facade实测",
+      "estimated_error_m": 0.3,
+      "box": {
+        "center": [
+          92.7,
+          29.1,
+          -1.05
+        ],
+        "size": [
+          1.0,
+          5.1,
+          1.95
+        ],
+        "yaw": 1.57
+      }
+    },
+    {
+      "capture_id": "c4cc19fb-3020-4ccc-8407-1521f71b7212",
+      "type": "goal",
+      "frame_range": [
+        47,
+        48
+      ],
+      "visibility": "visible",
+      "review_status": "reviewed",
+      "note": "对面球门；用户 2026-09-23 根据原始点云图纠正身份；可见性=相对地面结构回波每帧>=5点；框=facade实测",
+      "estimated_error_m": 0.3,
+      "box": {
+        "center": [
+          92.7,
+          29.1,
+          -1.05
+        ],
+        "size": [
+          1.0,
+          5.1,
+          1.95
+        ],
+        "yaw": 1.57
+      }
+    },
+    {
+      "capture_id": "c4cc19fb-3020-4ccc-8407-1521f71b7212",
+      "type": "goal",
+      "frame_range": [
+        55,
+        55
+      ],
+      "visibility": "visible",
+      "review_status": "reviewed",
+      "note": "对面球门；用户 2026-09-23 根据原始点云图纠正身份；可见性=相对地面结构回波每帧>=5点；框=facade实测",
+      "estimated_error_m": 0.3,
+      "box": {
+        "center": [
+          92.7,
+          29.1,
+          -1.05
+        ],
+        "size": [
+          1.0,
+          5.1,
+          1.95
+        ],
+        "yaw": 1.57
+      }
+    },
+    {
+      "capture_id": "c4cc19fb-3020-4ccc-8407-1521f71b7212",
+      "type": "goal",
+      "frame_range": [
+        59,
+        59
+      ],
+      "visibility": "visible",
+      "review_status": "reviewed",
+      "note": "对面球门；用户 2026-09-23 根据原始点云图纠正身份；可见性=相对地面结构回波每帧>=5点；框=facade实测",
+      "estimated_error_m": 0.3,
+      "box": {
+        "center": [
+          92.7,
+          29.1,
+          -1.05
+        ],
+        "size": [
+          1.0,
+          5.1,
+          1.95
+        ],
+        "yaw": 1.57
+      }
+    },
+    {
+      "capture_id": "c4cc19fb-3020-4ccc-8407-1521f71b7212",
+      "type": "goal",
+      "frame_range": [
+        61,
+        61
+      ],
+      "visibility": "visible",
+      "review_status": "reviewed",
+      "note": "对面球门；用户 2026-09-23 根据原始点云图纠正身份；可见性=相对地面结构回波每帧>=5点；框=facade实测",
+      "estimated_error_m": 0.3,
+      "box": {
+        "center": [
+          92.7,
+          29.1,
+          -1.05
+        ],
+        "size": [
+          1.0,
+          5.1,
+          1.95
+        ],
+        "yaw": 1.57
+      }
+    },
+    {
+      "capture_id": "c4cc19fb-3020-4ccc-8407-1521f71b7212",
+      "type": "goal",
+      "frame_range": [
+        65,
+        65
+      ],
+      "visibility": "visible",
+      "review_status": "reviewed",
+      "note": "对面球门；用户 2026-09-23 根据原始点云图纠正身份；可见性=相对地面结构回波每帧>=5点；框=facade实测",
+      "estimated_error_m": 0.3,
+      "box": {
+        "center": [
+          92.7,
+          29.1,
+          -1.05
+        ],
+        "size": [
+          1.0,
+          5.1,
+          1.95
+        ],
+        "yaw": 1.57
+      }
+    },
+    {
+      "capture_id": "c4cc19fb-3020-4ccc-8407-1521f71b7212",
+      "type": "goal",
+      "frame_range": [
+        68,
+        69
+      ],
+      "visibility": "visible",
+      "review_status": "reviewed",
+      "note": "对面球门；用户 2026-09-23 根据原始点云图纠正身份；可见性=相对地面结构回波每帧>=5点；框=facade实测",
+      "estimated_error_m": 0.3,
+      "box": {
+        "center": [
+          92.7,
+          29.1,
+          -1.05
+        ],
+        "size": [
+          1.0,
+          5.1,
+          1.95
+        ],
+        "yaw": 1.57
+      }
+    },
+    {
+      "capture_id": "c4cc19fb-3020-4ccc-8407-1521f71b7212",
+      "type": "goal",
+      "frame_range": [
+        77,
+        77
+      ],
+      "visibility": "visible",
+      "review_status": "reviewed",
+      "note": "对面球门；用户 2026-09-23 根据原始点云图纠正身份；可见性=相对地面结构回波每帧>=5点；框=facade实测",
+      "estimated_error_m": 0.3,
+      "box": {
+        "center": [
+          92.7,
+          29.1,
+          -1.05
+        ],
+        "size": [
+          1.0,
+          5.1,
+          1.95
+        ],
+        "yaw": 1.57
+      }
+    },
+    {
+      "capture_id": "c4cc19fb-3020-4ccc-8407-1521f71b7212",
+      "type": "goal",
+      "frame_range": [
+        85,
+        85
+      ],
+      "visibility": "visible",
+      "review_status": "reviewed",
+      "note": "对面球门；用户 2026-09-23 根据原始点云图纠正身份；可见性=相对地面结构回波每帧>=5点；框=facade实测",
+      "estimated_error_m": 0.3,
+      "box": {
+        "center": [
+          92.7,
+          29.1,
+          -1.05
+        ],
+        "size": [
+          1.0,
+          5.1,
+          1.95
+        ],
+        "yaw": 1.57
+      }
+    },
+    {
+      "capture_id": "c4cc19fb-3020-4ccc-8407-1521f71b7212",
+      "type": "goal",
+      "frame_range": [
+        89,
+        89
+      ],
+      "visibility": "visible",
+      "review_status": "reviewed",
+      "note": "对面球门；用户 2026-09-23 根据原始点云图纠正身份；可见性=相对地面结构回波每帧>=5点；框=facade实测",
+      "estimated_error_m": 0.3,
+      "box": {
+        "center": [
+          92.7,
+          29.1,
+          -1.05
+        ],
+        "size": [
+          1.0,
+          5.1,
+          1.95
+        ],
+        "yaw": 1.57
+      }
+    },
+    {
+      "capture_id": "c4cc19fb-3020-4ccc-8407-1521f71b7212",
+      "type": "goal",
+      "frame_range": [
+        92,
+        92
+      ],
+      "visibility": "visible",
+      "review_status": "reviewed",
+      "note": "对面球门；用户 2026-09-23 根据原始点云图纠正身份；可见性=相对地面结构回波每帧>=5点；框=facade实测",
+      "estimated_error_m": 0.3,
+      "box": {
+        "center": [
+          92.7,
+          29.1,
+          -1.05
+        ],
+        "size": [
+          1.0,
+          5.1,
+          1.95
+        ],
+        "yaw": 1.57
+      }
+    },
+    {
+      "capture_id": "c4cc19fb-3020-4ccc-8407-1521f71b7212",
+      "type": "goal",
+      "frame_range": [
+        95,
+        96
+      ],
+      "visibility": "visible",
+      "review_status": "reviewed",
+      "note": "对面球门；用户 2026-09-23 根据原始点云图纠正身份；可见性=相对地面结构回波每帧>=5点；框=facade实测",
+      "estimated_error_m": 0.3,
+      "box": {
+        "center": [
+          92.7,
+          29.1,
+          -1.05
+        ],
+        "size": [
+          1.0,
+          5.1,
+          1.95
+        ],
+        "yaw": 1.57
+      }
+    },
+    {
+      "capture_id": "c4cc19fb-3020-4ccc-8407-1521f71b7212",
+      "type": "goal",
+      "frame_range": [
+        99,
+        100
+      ],
+      "visibility": "visible",
+      "review_status": "reviewed",
+      "note": "对面球门；用户 2026-09-23 根据原始点云图纠正身份；可见性=相对地面结构回波每帧>=5点；框=facade实测",
+      "estimated_error_m": 0.3,
+      "box": {
+        "center": [
+          92.7,
+          29.1,
+          -1.05
+        ],
+        "size": [
+          1.0,
+          5.1,
+          1.95
+        ],
+        "yaw": 1.57
+      }
+    },
+    {
+      "capture_id": "c4cc19fb-3020-4ccc-8407-1521f71b7212",
+      "type": "goal",
+      "frame_range": [
+        108,
+        109
+      ],
+      "visibility": "visible",
+      "review_status": "reviewed",
+      "note": "对面球门；用户 2026-09-23 根据原始点云图纠正身份；可见性=相对地面结构回波每帧>=5点；框=facade实测",
+      "estimated_error_m": 0.3,
+      "box": {
+        "center": [
+          92.7,
+          29.1,
+          -1.05
+        ],
+        "size": [
+          1.0,
+          5.1,
+          1.95
+        ],
+        "yaw": 1.57
+      }
+    },
+    {
+      "capture_id": "c4cc19fb-3020-4ccc-8407-1521f71b7212",
+      "type": "goal",
+      "frame_range": [
+        113,
+        113
+      ],
+      "visibility": "visible",
+      "review_status": "reviewed",
+      "note": "对面球门；用户 2026-09-23 根据原始点云图纠正身份；可见性=相对地面结构回波每帧>=5点；框=facade实测",
+      "estimated_error_m": 0.3,
+      "box": {
+        "center": [
+          92.7,
+          29.1,
+          -1.05
+        ],
+        "size": [
+          1.0,
+          5.1,
+          1.95
+        ],
+        "yaw": 1.57
+      }
+    },
+    {
+      "capture_id": "c4cc19fb-3020-4ccc-8407-1521f71b7212",
+      "type": "goal",
+      "frame_range": [
+        121,
+        121
+      ],
+      "visibility": "visible",
+      "review_status": "reviewed",
+      "note": "对面球门；用户 2026-09-23 根据原始点云图纠正身份；可见性=相对地面结构回波每帧>=5点；框=facade实测",
+      "estimated_error_m": 0.3,
+      "box": {
+        "center": [
+          92.7,
+          29.1,
+          -1.05
+        ],
+        "size": [
+          1.0,
+          5.1,
+          1.95
+        ],
+        "yaw": 1.57
+      }
+    },
+    {
+      "capture_id": "c4cc19fb-3020-4ccc-8407-1521f71b7212",
+      "type": "goal",
+      "frame_range": [
+        124,
+        124
+      ],
+      "visibility": "visible",
+      "review_status": "reviewed",
+      "note": "对面球门；用户 2026-09-23 根据原始点云图纠正身份；可见性=相对地面结构回波每帧>=5点；框=facade实测",
+      "estimated_error_m": 0.3,
+      "box": {
+        "center": [
+          92.7,
+          29.1,
+          -1.05
+        ],
+        "size": [
+          1.0,
+          5.1,
+          1.95
+        ],
+        "yaw": 1.57
+      }
+    },
+    {
+      "capture_id": "c4cc19fb-3020-4ccc-8407-1521f71b7212",
+      "type": "goal",
+      "frame_range": [
+        127,
+        127
+      ],
+      "visibility": "visible",
+      "review_status": "reviewed",
+      "note": "对面球门；用户 2026-09-23 根据原始点云图纠正身份；可见性=相对地面结构回波每帧>=5点；框=facade实测",
+      "estimated_error_m": 0.3,
+      "box": {
+        "center": [
+          92.7,
+          29.1,
+          -1.05
+        ],
+        "size": [
+          1.0,
+          5.1,
+          1.95
+        ],
+        "yaw": 1.57
+      }
+    },
+    {
+      "capture_id": "c4cc19fb-3020-4ccc-8407-1521f71b7212",
+      "type": "goal",
+      "frame_range": [
+        140,
+        140
+      ],
+      "visibility": "visible",
+      "review_status": "reviewed",
+      "note": "对面球门；用户 2026-09-23 根据原始点云图纠正身份；可见性=相对地面结构回波每帧>=5点；框=facade实测",
+      "estimated_error_m": 0.3,
+      "box": {
+        "center": [
+          92.7,
+          29.1,
+          -1.05
+        ],
+        "size": [
+          1.0,
+          5.1,
+          1.95
+        ],
+        "yaw": 1.57
+      }
+    },
+    {
+      "capture_id": "c4cc19fb-3020-4ccc-8407-1521f71b7212",
+      "type": "goal",
+      "frame_range": [
+        145,
+        145
+      ],
+      "visibility": "visible",
+      "review_status": "reviewed",
+      "note": "对面球门；用户 2026-09-23 根据原始点云图纠正身份；可见性=相对地面结构回波每帧>=5点；框=facade实测",
+      "estimated_error_m": 0.3,
+      "box": {
+        "center": [
+          92.7,
+          29.1,
+          -1.05
+        ],
+        "size": [
+          1.0,
+          5.1,
+          1.95
+        ],
+        "yaw": 1.57
+      }
+    },
+    {
+      "capture_id": "c4cc19fb-3020-4ccc-8407-1521f71b7212",
+      "type": "goal",
+      "frame_range": [
+        147,
+        148
+      ],
+      "visibility": "visible",
+      "review_status": "reviewed",
+      "note": "对面球门；用户 2026-09-23 根据原始点云图纠正身份；可见性=相对地面结构回波每帧>=5点；框=facade实测",
+      "estimated_error_m": 0.3,
+      "box": {
+        "center": [
+          92.7,
+          29.1,
+          -1.05
+        ],
+        "size": [
+          1.0,
+          5.1,
+          1.95
+        ],
+        "yaw": 1.57
+      }
+    },
+    {
+      "capture_id": "c4cc19fb-3020-4ccc-8407-1521f71b7212",
+      "type": "goal",
+      "frame_range": [
+        152,
+        152
+      ],
+      "visibility": "visible",
+      "review_status": "reviewed",
+      "note": "对面球门；用户 2026-09-23 根据原始点云图纠正身份；可见性=相对地面结构回波每帧>=5点；框=facade实测",
+      "estimated_error_m": 0.3,
+      "box": {
+        "center": [
+          92.7,
+          29.1,
+          -1.05
+        ],
+        "size": [
+          1.0,
+          5.1,
+          1.95
+        ],
+        "yaw": 1.57
+      }
+    },
+    {
+      "capture_id": "c4cc19fb-3020-4ccc-8407-1521f71b7212",
+      "type": "goal",
+      "frame_range": [
+        157,
+        157
+      ],
+      "visibility": "visible",
+      "review_status": "reviewed",
+      "note": "对面球门；用户 2026-09-23 根据原始点云图纠正身份；可见性=相对地面结构回波每帧>=5点；框=facade实测",
+      "estimated_error_m": 0.3,
+      "box": {
+        "center": [
+          92.7,
+          29.1,
+          -1.05
+        ],
+        "size": [
+          1.0,
+          5.1,
+          1.95
+        ],
+        "yaw": 1.57
+      }
+    },
+    {
+      "capture_id": "c4cc19fb-3020-4ccc-8407-1521f71b7212",
+      "type": "goal",
+      "frame_range": [
+        160,
+        161
+      ],
+      "visibility": "visible",
+      "review_status": "reviewed",
+      "note": "对面球门；用户 2026-09-23 根据原始点云图纠正身份；可见性=相对地面结构回波每帧>=5点；框=facade实测",
+      "estimated_error_m": 0.3,
+      "box": {
+        "center": [
+          92.7,
+          29.1,
+          -1.05
+        ],
+        "size": [
+          1.0,
+          5.1,
+          1.95
+        ],
+        "yaw": 1.57
+      }
+    },
+    {
+      "capture_id": "c4cc19fb-3020-4ccc-8407-1521f71b7212",
+      "type": "goal",
+      "frame_range": [
+        165,
+        165
+      ],
+      "visibility": "visible",
+      "review_status": "reviewed",
+      "note": "对面球门；用户 2026-09-23 根据原始点云图纠正身份；可见性=相对地面结构回波每帧>=5点；框=facade实测",
+      "estimated_error_m": 0.3,
+      "box": {
+        "center": [
+          92.7,
+          29.1,
+          -1.05
+        ],
+        "size": [
+          1.0,
+          5.1,
+          1.95
+        ],
+        "yaw": 1.57
+      }
+    },
+    {
+      "capture_id": "c4cc19fb-3020-4ccc-8407-1521f71b7212",
+      "type": "goal",
+      "frame_range": [
+        169,
+        169
+      ],
+      "visibility": "visible",
+      "review_status": "reviewed",
+      "note": "对面球门；用户 2026-09-23 根据原始点云图纠正身份；可见性=相对地面结构回波每帧>=5点；框=facade实测",
+      "estimated_error_m": 0.3,
+      "box": {
+        "center": [
+          92.7,
+          29.1,
+          -1.05
+        ],
+        "size": [
+          1.0,
+          5.1,
+          1.95
+        ],
+        "yaw": 1.57
+      }
+    },
+    {
+      "capture_id": "c4cc19fb-3020-4ccc-8407-1521f71b7212",
+      "type": "goal",
+      "frame_range": [
+        176,
+        176
+      ],
+      "visibility": "visible",
+      "review_status": "reviewed",
+      "note": "对面球门；用户 2026-09-23 根据原始点云图纠正身份；可见性=相对地面结构回波每帧>=5点；框=facade实测",
+      "estimated_error_m": 0.3,
+      "box": {
+        "center": [
+          92.7,
+          29.1,
+          -1.05
+        ],
+        "size": [
+          1.0,
+          5.1,
+          1.95
+        ],
+        "yaw": 1.57
+      }
+    },
+    {
+      "capture_id": "c4cc19fb-3020-4ccc-8407-1521f71b7212",
+      "type": "goal",
+      "frame_range": [
+        178,
+        179
+      ],
+      "visibility": "visible",
+      "review_status": "reviewed",
+      "note": "对面球门；用户 2026-09-23 根据原始点云图纠正身份；可见性=相对地面结构回波每帧>=5点；框=facade实测",
+      "estimated_error_m": 0.3,
+      "box": {
+        "center": [
+          92.7,
+          29.1,
+          -1.05
+        ],
+        "size": [
+          1.0,
+          5.1,
+          1.95
+        ],
+        "yaw": 1.57
+      }
+    },
+    {
+      "capture_id": "c4cc19fb-3020-4ccc-8407-1521f71b7212",
+      "type": "goal",
+      "frame_range": [
+        187,
+        187
+      ],
+      "visibility": "visible",
+      "review_status": "reviewed",
+      "note": "对面球门；用户 2026-09-23 根据原始点云图纠正身份；可见性=相对地面结构回波每帧>=5点；框=facade实测",
+      "estimated_error_m": 0.3,
+      "box": {
+        "center": [
+          92.7,
+          29.1,
+          -1.05
+        ],
+        "size": [
+          1.0,
+          5.1,
+          1.95
+        ],
+        "yaw": 1.57
+      }
+    },
+    {
+      "capture_id": "c4cc19fb-3020-4ccc-8407-1521f71b7212",
+      "type": "goal",
+      "frame_range": [
+        191,
+        192
+      ],
+      "visibility": "visible",
+      "review_status": "reviewed",
+      "note": "对面球门；用户 2026-09-23 根据原始点云图纠正身份；可见性=相对地面结构回波每帧>=5点；框=facade实测",
+      "estimated_error_m": 0.3,
+      "box": {
+        "center": [
+          92.7,
+          29.1,
+          -1.05
+        ],
+        "size": [
+          1.0,
+          5.1,
+          1.95
+        ],
+        "yaw": 1.57
+      }
+    },
+    {
+      "capture_id": "c4cc19fb-3020-4ccc-8407-1521f71b7212",
+      "type": "goal",
+      "frame_range": [
+        197,
+        199
+      ],
+      "visibility": "visible",
+      "review_status": "reviewed",
+      "note": "对面球门；用户 2026-09-23 根据原始点云图纠正身份；可见性=相对地面结构回波每帧>=5点；框=facade实测",
+      "estimated_error_m": 0.3,
+      "box": {
+        "center": [
+          92.7,
+          29.1,
+          -1.05
+        ],
+        "size": [
+          1.0,
+          5.1,
+          1.95
+        ],
+        "yaw": 1.57
+      }
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "label": "SYNTHETIC_GEOMETRY_AND_REAL_NA70_SCAN_PATTERN",
+  "wire_return_status": "NOT_EVALUATED",
+  "geometric_hit_is_return": false,
+  "scene_file": "D:\\Code\\radar\\tools\\scenarios\\uav_single_wire_outdoor_v1.json",
+  "scene_sha256": "c79d755b5efffc92ecb4868da4f97b70d89ab88146a61ce28d550150f1b5ba28",
+  "pcap_file": "D:\\Code\\radar\\radar_capture_data\\1.pcap",
+  "pcap_sha256": "b17d7c17926e670b3d89ba0774c4140feb810e4935971ab57760f4bdd00636cd",
+  "code_sha256": {
+    "runner": "730e6bc7e195bb985584f780b5e7f321208982025b3dd00943306a85ae293f87",
+    "geometry": "9201fa2347f68893342ccde072dc7522581276c9020d004502f5afa0b91e129a",
+    "decoder": "4149f6567dce67e7916b3d09eeb9c3c0a8aaab4cf88e7378ef56e2c061f19212"
+  },
+  "seed": 0,
+  "frame_limit": 20,
+  "install_direction": 1,
+  "mounting_assumption": "decoded install_direction=1 -Y -> world +X; uncalibrated synthetic",
+  "outputs": [
+    "geometry_world.npz",
+    "scene_views.png",
+    "packet_opportunities.jsonl",
+    "summary.json"
+  ]
+}

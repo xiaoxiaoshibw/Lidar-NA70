@@ -1,0 +1,112 @@
+{
+  "schema": "na70-calibration-candidate-v1",
+  "status": "CANDIDATE",
+  "reason": null,
+  "R_imu_lidar": [
+    [
+      0.9708606778725192,
+      -0.21388028963740885,
+      -0.10809609551473202
+    ],
+    [
+      0.20640456724884074,
+      0.9754874869453273,
+      -0.07629755849245244
+    ],
+    [
+      0.1217649324712613,
+      0.051762771541993095,
+      0.9912083114575666
+    ]
+  ],
+  "t_imu_lidar_m": [
+    0.043,
+    0.0,
+    -0.06
+  ],
+  "T_imu_lidar": [
+    [
+      0.9708606778725192,
+      -0.21388028963740885,
+      -0.10809609551473202,
+      0.043
+    ],
+    [
+      0.20640456724884074,
+      0.9754874869453273,
+      -0.07629755849245244,
+      0.0
+    ],
+    [
+      0.1217649324712613,
+      0.051762771541993095,
+      0.9912083114575666,
+      -0.06
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "T_lidar_imu": [
+    [
+      0.9708606778725192,
+      0.20640456724884074,
+      0.1217649324712613,
+      -0.034441113200242644
+    ],
+    [
+      -0.21388028963740885,
+      0.9754874869453273,
+      0.051762771541993095,
+      0.012302618746928166
+    ],
+    [
+      -0.10809609551473202,
+      -0.07629755849245244,
+      0.9912083114575666,
+      0.06412063079458748
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "time_offset_s": 0.01310000000000045,
+  "time_offset_resolution_s": 0.0001,
+  "rotation_provenance": {
+    "source": "run_na70_calibration_synthetic",
+    "status": "SOLVED_CANDIDATE",
+    "angle_deg": [
+      12.002357914623493,
+      -6.993972806993783,
+      2.989378406023061
+    ],
+    "relative_residual": 0.024699184808327394,
+    "observability": "THREE_AXIS"
+  },
+  "translation_provenance": {
+    "method": "mechanical_measurement",
+    "uncertainty_m": 0.002,
+    "note": "SYNTHETIC mechanical lever arm"
+  },
+  "gate": {
+    "rotation_candidate": true,
+    "translation_measured": true,
+    "holdout_validated": false,
+    "requires": "A8 独立留出动作与墙面/立柱对照；未通过前不得写 calibration_frozen.yaml"
+  },
+  "claims": {
+    "calibration_validated": false,
+    "time_sync_validated": false
+  },
+  "limitations": [
+    "t_IL 必须来自光学原点测量或独立验证的估计，不能用零或外壳中心代替",
+    "旋转/时间候选来自角速度对齐，仍需留出动作验证",
+    "候选参数在 A8 通过前不得写成 calibration_frozen.yaml"
+  ]
+}

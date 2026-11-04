@@ -1,0 +1,9 @@
+{
+  "version": "eval-v1",
+  "hit_radius_m": 1.5,
+  "min_confidence": 0.5,
+  "measured_states": ["LOCKED", "TRACKING"],
+  "predicted_states": ["REACQUIRE"],
+  "lost_states": ["LOST"],
+  "counted_visibility": ["visible", "partially_occluded"]
+}

@@ -1,0 +1,22 @@
+source_root: D:/Code/ldiar
+reference: cap_20261013_131958
+nominal_transform_source: sidequests/human_fusion_lab_next/pointset/r01/core.py
+sessions:
+  - [cap_20261013_083254, 蹲下起身_侧面, 225]
+  - [cap_20261013_083218, 蹲下起身_正面, 231]
+  - [cap_20261013_083120, 坐下起身_侧面, 247]
+  - [cap_20261013_083044, 坐下起身_正面, 251]
+  - [cap_20261013_082906, 初始躺地_侧卧, 175]
+  - [cap_20261013_082829, 初始躺地_仰卧, 183]
+  - [cap_20261013_082717, 受控躺下_侧向, 327]
+  - [cap_20261013_082623, 受控躺下_正向, 295]
+voxel_m: 0.05
+background_min_frame_fraction: 0.3
+calibration_quantile: 0.95
+tolerance_cap_m: 0.12
+low_band_upper_m: 0.10
+range_min_m: 0.2
+range_max_m: 15.0
+z_min_m: -0.25
+z_max_m: 2.6
+display_max_points: 3500

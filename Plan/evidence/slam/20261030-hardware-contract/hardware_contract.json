@@ -1,0 +1,93 @@
+{
+  "schema": "na70-yesense-hardware-contract-v1",
+  "generated": "2026-10-30T15:12+08:00",
+  "status": "PARTIAL",
+  "summary": "两路发流、帧结构、单位、时间语义已实测；IMU 型号、NA70 光学原点与精度、雷达工厂状态字语义仍未知。",
+  "lidar": {
+    "model_claim": "NA70 双楔镜激光雷达",
+    "transport": {
+      "source": "192.168.1.66:7000",
+      "destination": "192.168.1.129:2368/udp",
+      "mode": "unicast",
+      "payload_bytes": 1410,
+      "packets_per_second_measured": 1000,
+      "packets_per_frame": 100,
+      "frame_rate_hz_measured": 10.0,
+      "points_per_frame": 20000,
+      "source": "2026-10-30 14:52 与 15:10 Jetson tcpdump 实测；解码经 web/backend/decoder.py"
+    },
+    "device_time_field": {
+      "location": "payload[1400:1408]",
+      "observed": "上电起算的单调秒 + 毫秒（本次首帧 1103.578 s，历史 1.pcap 293.14 s）",
+      "absolute_clock": false,
+      "known": "字段可单调递增，但未与任何绝对时钟对齐",
+      "implication": "跨设备对齐必须估计会话起始偏移；不能当 UTC 用"
+    },
+    "factory_status_word": {
+      "decoded_pitch_offset_deg": -20.48,
+      "decoded_yaw_offset_deg": -20.48,
+      "raw_low_12_bits": 0,
+      "reference_capture_offsets_deg": [0.08, -0.06],
+      "assessment": "低 12 位为 0 与“正常值编码为 2048→0°”矛盾，判为未写入/未设置；语义待厂家确认",
+      "blocking": "确认前不得按 -20.48° 旋转点云，也不得默认按 0°"
+    },
+    "optical_origin": {"known": false, "note": "外壳 90×130×110 mm 是机械尺寸，不等于光学原点"},
+    "range_and_accuracy": {"known": false, "note": "量程/精度/角分辨率未见厂家数据，禁止引用未核实指标"},
+    "observed_echo": {
+      "echo_ratio": "0.09–0.15",
+      "nonzero_range_median_m": 9.8,
+      "invalid_code": "0xFFFF → 1048.56 m，实测 1 例 / 580000 点，应作无效码过滤"
+    }
+  },
+  "imu": {
+    "model_claim": null,
+    "model_evidence": "仅知 YESENSE 协议 + CH9102 USB 串口芯片；无铭牌/订单核实，禁止套用其他型号量程",
+    "transport": {
+      "path": "/dev/serial/by-id/usb-WCH.CN_USB_Single_Serial_0003-if00 → ttyACM0",
+      "baud": 460800,
+      "framing": "8N1",
+      "windows_history": "COM12（历史，非当前设备名）"
+    },
+    "framing": {
+      "header": "0x59 0x53 ('YS')",
+      "frame_length_bytes": 67,
+      "length_rule": "frame = buf[4] + 7",
+      "checksum": "8 位 Fletcher 变体，覆盖 raw[2:-2]",
+      "tid": "16 位小端，+1 递增",
+      "payload_groups": {
+        "0x10": "accel int32×3",
+        "0x20": "gyro int32×3",
+        "0x40": "euler int32×3",
+        "0x41": "quaternion int32×4"
+      },
+      "scale": 1e-06
+    },
+    "units": {
+      "accel": "m/s^2",
+      "accel_evidence": "静置 |a| 中位 9.7726，与 g 值一致（若为 g 单位应约 1.0）",
+      "gyro": "deg/s",
+      "gyro_evidence": "推断：静态幅度约 0.1 deg/s 且与欧拉角变化同量级；若为 rad/s 则静态约 53 deg/s，物理上不成立。待六面/转台确认",
+      "euler": "deg",
+      "quaternion": "无量纲"
+    },
+    "sample_rate_hz_measured": 199.8,
+    "device_sample_timestamp": {
+      "present": false,
+      "evidence": "≥1200 帧中 0x51/0x52 出现 0 次；67 字节帧长被 4 个数据组完全解释，无隐藏时间字段",
+      "implication": "时间等级只能到 host_receive_only，动态标定前必须先解决"
+    },
+    "range_and_bias": {"known": false, "note": "量程/零偏/噪声密度未标定"}
+  },
+  "capture_stack": {
+    "imu_permission": "jetson 用户已加入 dialout（2026-10-30，最小权限处理；未使用 0666）",
+    "lidar_capture": "tcpdump -w，经 sudo -n 启动并用 -Z jetson 降权写文件；停止用 pkill -INT -x tcpdump",
+    "sudo_note": "当前 jetson 用户免密 sudo 可用；若收紧 sudoers，需为 tcpdump 保留最小白名单"
+  },
+  "unknowns": [
+    "IMU 具体型号、量程、出厂轴定义与零偏",
+    "NA70 光学原点、厂商标定参数、精度与量程",
+    "雷达工厂状态字低 12 位为 0 的语义",
+    "雷达包内逐点采样时序模型",
+    "两设备是否存在可配置的硬件触发/同步能力"
+  ]
+}

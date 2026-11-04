@@ -1,0 +1,1658 @@
+{
+  "label": "REAL_PCAP_DIAGNOSTIC_NOT_TRUTH",
+  "derived_from": "Plan\\evidence\\goal-demo\\20260924-yidong-noimu-calibration-final-944\\goal_run.jsonl",
+  "run_sha256": "936a6e94a723627540083a3024df885502e7f8ed0ebaf916153cf50ddfa3d3b2",
+  "capture_id": "f939a3cc-b0b4-48be-9fe1-6587d73de9ce",
+  "config_version": "32a6b7300708441c",
+  "candidates": [
+    {
+      "frame_index": 71,
+      "device_time": 13.464,
+      "center": [
+        94.7416755624307,
+        -23.08481458654303,
+        -0.5093344654791234
+      ],
+      "size": [
+        2.278079279780074,
+        4.454158722444064,
+        2.1445252895355225
+      ],
+      "yaw": 1.5390907248523469,
+      "confidence": 0.821,
+      "coordinate_frame": "unaligned_sensor_window",
+      "reject_reason": "uncompensated_moving_window",
+      "source_ref_count": 181,
+      "source_frames": [
+        52,
+        55,
+        57,
+        58,
+        62,
+        64,
+        66
+      ]
+    },
+    {
+      "frame_index": 124,
+      "device_time": 18.776,
+      "center": [
+        94.86831656669227,
+        -22.33536365875954,
+        1.4678544615756781
+      ],
+      "size": [
+        1.8741533385973113,
+        5.502964705809838,
+        2.532085657119751
+      ],
+      "yaw": 1.5477441773049496,
+      "confidence": 0.766,
+      "coordinate_frame": "unaligned_sensor_window",
+      "reject_reason": "uncompensated_moving_window",
+      "source_ref_count": 414,
+      "source_frames": [
+        106,
+        107,
+        108,
+        109,
+        111,
+        113,
+        114,
+        116,
+        119,
+        121,
+        122,
+        124
+      ]
+    },
+    {
+      "frame_index": 128,
+      "device_time": 19.176,
+      "center": [
+        94.76031561196108,
+        -22.223007388923776,
+        1.203319260133735
+      ],
+      "size": [
+        1.6490810304229175,
+        5.421075352045713,
+        2.950742721557617
+      ],
+      "yaw": 1.6324077603083376,
+      "confidence": 0.857,
+      "coordinate_frame": "unaligned_sensor_window",
+      "reject_reason": "uncompensated_moving_window",
+      "source_ref_count": 372,
+      "source_frames": [
+        109,
+        111,
+        113,
+        114,
+        116,
+        119,
+        121,
+        122,
+        124,
+        128
+      ]
+    },
+    {
+      "frame_index": 129,
+      "device_time": 19.276,
+      "center": [
+        94.745817126279,
+        -22.198479927260397,
+        1.1843879977836766
+      ],
+      "size": [
+        1.6893353760664305,
+        5.407485956651014,
+        2.787240505218506
+      ],
+      "yaw": 1.6685149962571497,
+      "confidence": 0.827,
+      "coordinate_frame": "unaligned_sensor_window",
+      "reject_reason": "uncompensated_moving_window",
+      "source_ref_count": 337,
+      "source_frames": [
+        111,
+        113,
+        114,
+        116,
+        119,
+        121,
+        122,
+        124,
+        128
+      ]
+    },
+    {
+      "frame_index": 130,
+      "device_time": 19.376,
+      "center": [
+        94.745817126279,
+        -22.198479927260397,
+        1.0574751167480794
+      ],
+      "size": [
+        1.6893353760664305,
+        5.407485956651014,
+        2.9848854541778564
+      ],
+      "yaw": 1.6685149962571497,
+      "confidence": 0.799,
+      "coordinate_frame": "unaligned_sensor_window",
+      "reject_reason": "uncompensated_moving_window",
+      "source_ref_count": 337,
+      "source_frames": [
+        111,
+        113,
+        114,
+        116,
+        119,
+        121,
+        122,
+        124,
+        128
+      ]
+    },
+    {
+      "frame_index": 131,
+      "device_time": 19.476,
+      "center": [
+        94.8111410923948,
+        -22.200133690563355,
+        1.268394044572101
+      ],
+      "size": [
+        1.7079198848690518,
+        5.419315038736784,
+        2.614011287689209
+      ],
+      "yaw": 1.6124328649894626,
+      "confidence": 0.807,
+      "coordinate_frame": "unaligned_sensor_window",
+      "reject_reason": "uncompensated_moving_window",
+      "source_ref_count": 307,
+      "source_frames": [
+        113,
+        114,
+        116,
+        119,
+        121,
+        122,
+        124,
+        128,
+        131
+      ]
+    },
+    {
+      "frame_index": 132,
+      "device_time": 19.576,
+      "center": [
+        94.75724151459177,
+        -22.273972498951203,
+        0.8663869530624366
+      ],
+      "size": [
+        1.6934558989451503,
+        5.21300761762453,
+        3.4426701068878174
+      ],
+      "yaw": 1.6681294773261752,
+      "confidence": 0.787,
+      "coordinate_frame": "unaligned_sensor_window",
+      "reject_reason": "uncompensated_moving_window",
+      "source_ref_count": 333,
+      "source_frames": [
+        113,
+        114,
+        116,
+        119,
+        121,
+        122,
+        124,
+        128,
+        131
+      ]
+    },
+    {
+      "frame_index": 136,
+      "device_time": 19.978,
+      "center": [
+        94.88122902027888,
+        -22.281568289691492,
+        -0.06162383834255847
+      ],
+      "size": [
+        1.7994551154981362,
+        5.183702549716449,
+        3.3937935829162598
+      ],
+      "yaw": 1.6306953630303616,
+      "confidence": 0.657,
+      "coordinate_frame": "unaligned_sensor_window",
+      "reject_reason": "uncompensated_moving_window",
+      "source_ref_count": 289,
+      "source_frames": [
+        119,
+        121,
+        122,
+        124,
+        128,
+        131,
+        132,
+        134,
+        135,
+        136
+      ]
+    },
+    {
+      "frame_index": 137,
+      "device_time": 20.078,
+      "center": [
+        94.87789705255891,
+        -22.22278203929292,
+        0.17132943810302304
+      ],
+      "size": [
+        1.7641276616218082,
+        5.29127938715399,
+        2.902169942855835
+      ],
+      "yaw": 1.6284527630179082,
+      "confidence": 0.746,
+      "coordinate_frame": "unaligned_sensor_window",
+      "reject_reason": "uncompensated_moving_window",
+      "source_ref_count": 314,
+      "source_frames": [
+        119,
+        121,
+        122,
+        124,
+        128,
+        131,
+        132,
+        134,
+        135,
+        136,
+        137
+      ]
+    },
+    {
+      "frame_index": 138,
+      "device_time": 20.178,
+      "center": [
+        94.85891997924287,
+        -22.332144654148394,
+        0.31461844631839786
+      ],
+      "size": [
+        1.7423625588470213,
+        5.209676152408054,
+        2.6400578022003174
+      ],
+      "yaw": 1.618660779490006,
+      "confidence": 0.701,
+      "coordinate_frame": "unaligned_sensor_window",
+      "reject_reason": "uncompensated_moving_window",
+      "source_ref_count": 301,
+      "source_frames": [
+        119,
+        121,
+        122,
+        124,
+        128,
+        131,
+        132,
+        134,
+        136,
+        137,
+        138
+      ]
+    },
+    {
+      "frame_index": 140,
+      "device_time": 20.378,
+      "center": [
+        94.59727518099926,
+        -22.272804175253434,
+        0.7087777814658667
+      ],
+      "size": [
+        1.9725844492058313,
+        5.031557148511601,
+        1.8309346437454224
+      ],
+      "yaw": 1.7704044468811764,
+      "confidence": 0.747,
+      "coordinate_frame": "unaligned_sensor_window",
+      "reject_reason": "uncompensated_moving_window",
+      "source_ref_count": 189,
+      "source_frames": [
+        121,
+        122,
+        124,
+        128,
+        131,
+        134,
+        140
+      ]
+    },
+    {
+      "frame_index": 144,
+      "device_time": 20.778,
+      "center": [
+        94.82011596445106,
+        -22.112215596866417,
+        -0.26043706631636465
+      ],
+      "size": [
+        1.0006373142186664,
+        5.360914823991653,
+        2.292665481567383
+      ],
+      "yaw": 1.6247158682639384,
+      "confidence": 0.762,
+      "coordinate_frame": "unaligned_sensor_window",
+      "reject_reason": "uncompensated_moving_window",
+      "source_ref_count": 286,
+      "source_frames": [
+        128,
+        131,
+        132,
+        134,
+        135,
+        136,
+        137,
+        138,
+        140,
+        141,
+        142,
+        144
+      ]
+    },
+    {
+      "frame_index": 154,
+      "device_time": 21.778,
+      "center": [
+        95.35005124564753,
+        -21.168398299463444,
+        -0.15764660077436665
+      ],
+      "size": [
+        1.9196711879263963,
+        5.150664637869584,
+        1.8711340427398682
+      ],
+      "yaw": 1.643762669598232,
+      "confidence": 0.866,
+      "coordinate_frame": "unaligned_sensor_window",
+      "reject_reason": "uncompensated_moving_window",
+      "source_ref_count": 327,
+      "source_frames": [
+        136,
+        137,
+        138,
+        140,
+        141,
+        142,
+        144,
+        145,
+        147,
+        150,
+        151,
+        152,
+        153
+      ]
+    },
+    {
+      "frame_index": 156,
+      "device_time": 21.978,
+      "center": [
+        95.36172113817476,
+        -21.488426522069958,
+        -0.22484322493512776
+      ],
+      "size": [
+        1.9235772763649182,
+        5.807519897252536,
+        2.029358744621277
+      ],
+      "yaw": 1.6695242108349553,
+      "confidence": 0.849,
+      "coordinate_frame": "unaligned_sensor_window",
+      "reject_reason": "uncompensated_moving_window",
+      "source_ref_count": 347,
+      "source_frames": [
+        137,
+        138,
+        140,
+        141,
+        142,
+        144,
+        145,
+        147,
+        150,
+        151,
+        152,
+        153,
+        155
+      ]
+    },
+    {
+      "frame_index": 168,
+      "device_time": 23.178,
+      "center": [
+        95.34640977295673,
+        -21.497206554359565,
+        -0.7380605608255473
+      ],
+      "size": [
+        2.024806635497599,
+        6.132469140245396,
+        3.00891375541687
+      ],
+      "yaw": 1.660244476303864,
+      "confidence": 0.776,
+      "coordinate_frame": "unaligned_sensor_window",
+      "reject_reason": "uncompensated_moving_window",
+      "source_ref_count": 328,
+      "source_frames": [
+        150,
+        151,
+        152,
+        153,
+        155,
+        157,
+        158,
+        161,
+        162,
+        163,
+        166,
+        167,
+        168
+      ]
+    },
+    {
+      "frame_index": 172,
+      "device_time": 23.578,
+      "center": [
+        95.5008949234321,
+        -21.597330606349182,
+        -0.7758268355810118
+      ],
+      "size": [
+        2.2008892844717236,
+        4.322338618208292,
+        1.9984050989151
+      ],
+      "yaw": 1.7081897618894148,
+      "confidence": 0.778,
+      "coordinate_frame": "unaligned_sensor_window",
+      "reject_reason": "uncompensated_moving_window",
+      "source_ref_count": 188,
+      "source_frames": [
+        153,
+        155,
+        157,
+        158,
+        162,
+        166,
+        167,
+        170,
+        172
+      ]
+    },
+    {
+      "frame_index": 173,
+      "device_time": 23.678,
+      "center": [
+        94.73811869081965,
+        -22.07463759953197,
+        -0.8194701281457313
+      ],
+      "size": [
+        1.0113637316709048,
+        5.041701202806951,
+        1.7160205841064453
+      ],
+      "yaw": 1.6791959548515145,
+      "confidence": 0.82,
+      "coordinate_frame": "unaligned_sensor_window",
+      "reject_reason": "uncompensated_moving_window",
+      "source_ref_count": 151,
+      "source_frames": [
+        155,
+        158,
+        162,
+        166,
+        167,
+        170
+      ]
+    },
+    {
+      "frame_index": 176,
+      "device_time": 23.978,
+      "center": [
+        94.89673198705307,
+        -21.88089279448903,
+        -1.483481042955498
+      ],
+      "size": [
+        1.429363893993178,
+        5.466055990024357,
+        1.8350718021392822
+      ],
+      "yaw": 1.6850140241767215,
+      "confidence": 0.729,
+      "coordinate_frame": "unaligned_sensor_window",
+      "reject_reason": "uncompensated_moving_window",
+      "source_ref_count": 293,
+      "source_frames": [
+        157,
+        158,
+        161,
+        162,
+        163,
+        165,
+        166,
+        167,
+        168,
+        169,
+        170,
+        172,
+        174,
+        176
+      ]
+    },
+    {
+      "frame_index": 181,
+      "device_time": 24.478,
+      "center": [
+        94.86879498897626,
+        -22.009609044954423,
+        -1.557584878945463
+      ],
+      "size": [
+        1.6124066455744135,
+        5.266103089980733,
+        2.222658157348633
+      ],
+      "yaw": 1.6477651933884525,
+      "confidence": 0.905,
+      "coordinate_frame": "unaligned_sensor_window",
+      "reject_reason": "uncompensated_moving_window",
+      "source_ref_count": 338,
+      "source_frames": [
+        162,
+        163,
+        165,
+        166,
+        167,
+        168,
+        169,
+        170,
+        172,
+        174,
+        176,
+        178,
+        179,
+        180,
+        181
+      ]
+    },
+    {
+      "frame_index": 183,
+      "device_time": 24.678,
+      "center": [
+        94.80197157133505,
+        -22.06318666404526,
+        -1.6353972065553815
+      ],
+      "size": [
+        1.5210401904414914,
+        5.163392053585955,
+        2.3714683055877686
+      ],
+      "yaw": 1.640076329307573,
+      "confidence": 0.905,
+      "coordinate_frame": "unaligned_sensor_window",
+      "reject_reason": "uncompensated_moving_window",
+      "source_ref_count": 351,
+      "source_frames": [
+        165,
+        166,
+        167,
+        168,
+        169,
+        170,
+        172,
+        174,
+        176,
+        178,
+        179,
+        180,
+        181,
+        182,
+        183
+      ]
+    },
+    {
+      "frame_index": 195,
+      "device_time": 25.878,
+      "center": [
+        94.7090204527839,
+        -21.701832269015547,
+        -1.3340634644189748
+      ],
+      "size": [
+        1.4627092346754165,
+        4.997934805453931,
+        1.7574036121368408
+      ],
+      "yaw": 1.5682818238966287,
+      "confidence": 0.895,
+      "coordinate_frame": "unaligned_sensor_window",
+      "reject_reason": "uncompensated_moving_window",
+      "source_ref_count": 263,
+      "source_frames": [
+        176,
+        178,
+        179,
+        180,
+        181,
+        182,
+        183,
+        185,
+        187,
+        188,
+        189,
+        191,
+        192,
+        193,
+        195
+      ]
+    },
+    {
+      "frame_index": 197,
+      "device_time": 26.078,
+      "center": [
+        94.79012898198562,
+        -21.795984654320733,
+        -1.4744180899599262
+      ],
+      "size": [
+        1.5187737517099071,
+        5.183781287412977,
+        2.0241048336029053
+      ],
+      "yaw": 1.6090247289650474,
+      "confidence": 0.843,
+      "coordinate_frame": "unaligned_sensor_window",
+      "reject_reason": "uncompensated_moving_window",
+      "source_ref_count": 344,
+      "source_frames": [
+        178,
+        179,
+        180,
+        181,
+        182,
+        183,
+        185,
+        187,
+        188,
+        189,
+        191,
+        192,
+        193,
+        195,
+        196,
+        197
+      ]
+    },
+    {
+      "frame_index": 198,
+      "device_time": 26.198,
+      "center": [
+        94.87130203282416,
+        -21.686050005935588,
+        -1.3368520487124802
+      ],
+      "size": [
+        1.2664664082580415,
+        5.037493461373314,
+        1.7493669390678406
+      ],
+      "yaw": 1.634042909984529,
+      "confidence": 0.794,
+      "coordinate_frame": "unaligned_sensor_window",
+      "reject_reason": "uncompensated_moving_window",
+      "source_ref_count": 243,
+      "source_frames": [
+        179,
+        180,
+        181,
+        182,
+        183,
+        185,
+        187,
+        188,
+        189,
+        191,
+        192,
+        193,
+        195,
+        196
+      ]
+    },
+    {
+      "frame_index": 265,
+      "device_time": 32.898,
+      "center": [
+        94.88830196708716,
+        -21.219841689178597,
+        1.4285365129201524
+      ],
+      "size": [
+        2.6023732326387488,
+        5.240265834514325,
+        3.0462636947631836
+      ],
+      "yaw": 1.1967410356320025,
+      "confidence": 0.744,
+      "coordinate_frame": "unaligned_sensor_window",
+      "reject_reason": "uncompensated_moving_window",
+      "source_ref_count": 344,
+      "source_frames": [
+        248,
+        250,
+        252,
+        253,
+        255,
+        256,
+        257,
+        258,
+        260,
+        264,
+        265
+      ]
+    },
+    {
+      "frame_index": 267,
+      "device_time": 33.098,
+      "center": [
+        94.91653296875404,
+        -21.14225034757362,
+        1.1667182921912458
+      ],
+      "size": [
+        2.564423169854867,
+        5.287239378983231,
+        3.581421732902527
+      ],
+      "yaw": 1.2165739296785223,
+      "confidence": 0.711,
+      "coordinate_frame": "unaligned_sensor_window",
+      "reject_reason": "uncompensated_moving_window",
+      "source_ref_count": 376,
+      "source_frames": [
+        248,
+        250,
+        252,
+        253,
+        255,
+        256,
+        257,
+        258,
+        260,
+        264,
+        265,
+        267
+      ]
+    },
+    {
+      "frame_index": 270,
+      "device_time": 33.398,
+      "center": [
+        94.92023495538476,
+        -21.16099164291875,
+        1.4324522893731322
+      ],
+      "size": [
+        2.574748338157665,
+        5.293091670282561,
+        3.0871188640594482
+      ],
+      "yaw": 1.1987488629762026,
+      "confidence": 0.742,
+      "coordinate_frame": "unaligned_sensor_window",
+      "reject_reason": "uncompensated_moving_window",
+      "source_ref_count": 346,
+      "source_frames": [
+        252,
+        253,
+        255,
+        256,
+        257,
+        258,
+        260,
+        264,
+        265,
+        269
+      ]
+    },
+    {
+      "frame_index": 278,
+      "device_time": 34.197,
+      "center": [
+        95.02259604756368,
+        -20.419241676774707,
+        0.31188240478267004
+      ],
+      "size": [
+        1.2736446851271315,
+        5.075494491345035,
+        3.20824658870697
+      ],
+      "yaw": 1.6927695721720861,
+      "confidence": 0.789,
+      "coordinate_frame": "unaligned_sensor_window",
+      "reject_reason": "uncompensated_moving_window",
+      "source_ref_count": 303,
+      "source_frames": [
+        260,
+        264,
+        265,
+        267,
+        269,
+        272,
+        273,
+        276,
+        278
+      ]
+    },
+    {
+      "frame_index": 279,
+      "device_time": 34.297,
+      "center": [
+        95.02259604756368,
+        -20.419241676774707,
+        0.3929901934601039
+      ],
+      "size": [
+        1.2736446851271315,
+        5.075494491345035,
+        3.049719452857971
+      ],
+      "yaw": 1.6927695721720861,
+      "confidence": 0.798,
+      "coordinate_frame": "unaligned_sensor_window",
+      "reject_reason": "uncompensated_moving_window",
+      "source_ref_count": 303,
+      "source_frames": [
+        260,
+        264,
+        265,
+        267,
+        269,
+        272,
+        273,
+        276,
+        278
+      ]
+    },
+    {
+      "frame_index": 280,
+      "device_time": 34.397,
+      "center": [
+        95.03593719962954,
+        -20.438897701161935,
+        0.11811658251660995
+      ],
+      "size": [
+        1.2664027792827262,
+        5.157367543273916,
+        3.2845383882522583
+      ],
+      "yaw": 1.703779322117325,
+      "confidence": 0.755,
+      "coordinate_frame": "unaligned_sensor_window",
+      "reject_reason": "uncompensated_moving_window",
+      "source_ref_count": 278,
+      "source_frames": [
+        264,
+        265,
+        267,
+        269,
+        272,
+        273,
+        276,
+        278
+      ]
+    },
+    {
+      "frame_index": 281,
+      "device_time": 34.497,
+      "center": [
+        95.03511521226783,
+        -20.494632886981314,
+        0.27165272382214356
+      ],
+      "size": [
+        1.270765338313676,
+        5.20825084076038,
+        2.979527711868286
+      ],
+      "yaw": 1.6926041779222663,
+      "confidence": 0.731,
+      "coordinate_frame": "unaligned_sensor_window",
+      "reject_reason": "uncompensated_moving_window",
+      "source_ref_count": 303,
+      "source_frames": [
+        264,
+        265,
+        267,
+        269,
+        272,
+        273,
+        276,
+        278,
+        281
+      ]
+    },
+    {
+      "frame_index": 282,
+      "device_time": 34.597,
+      "center": [
+        95.03511521226783,
+        -20.494632886981314,
+        0.1610828639793509
+      ],
+      "size": [
+        1.270765338313676,
+        5.20825084076038,
+        3.2204136848449707
+      ],
+      "yaw": 1.6926041779222663,
+      "confidence": 0.736,
+      "coordinate_frame": "unaligned_sensor_window",
+      "reject_reason": "uncompensated_moving_window",
+      "source_ref_count": 303,
+      "source_frames": [
+        264,
+        265,
+        267,
+        269,
+        272,
+        273,
+        276,
+        278,
+        281
+      ]
+    },
+    {
+      "frame_index": 283,
+      "device_time": 34.697,
+      "center": [
+        95.03511521226783,
+        -20.494632886981314,
+        0.04783565326542849
+      ],
+      "size": [
+        1.270765338313676,
+        5.20825084076038,
+        3.4441099166870117
+      ],
+      "yaw": 1.6926041779222663,
+      "confidence": 0.734,
+      "coordinate_frame": "unaligned_sensor_window",
+      "reject_reason": "uncompensated_moving_window",
+      "source_ref_count": 303,
+      "source_frames": [
+        264,
+        265,
+        267,
+        269,
+        272,
+        273,
+        276,
+        278,
+        281
+      ]
+    },
+    {
+      "frame_index": 284,
+      "device_time": 34.797,
+      "center": [
+        95.11091719769783,
+        -20.398712321668064,
+        0.19613470782579379
+      ],
+      "size": [
+        1.381378865211404,
+        5.150920909190584,
+        3.121244430541992
+      ],
+      "yaw": 1.6473843516741156,
+      "confidence": 0.663,
+      "coordinate_frame": "unaligned_sensor_window",
+      "reject_reason": "uncompensated_moving_window",
+      "source_ref_count": 269,
+      "source_frames": [
+        265,
+        267,
+        269,
+        272,
+        273,
+        276,
+        278,
+        281
+      ]
+    },
+    {
+      "frame_index": 379,
+      "device_time": 44.297,
+      "center": [
+        94.92713742062375,
+        -23.716497732064422,
+        0.027065114148532965
+      ],
+      "size": [
+        1.7203264174114612,
+        5.247431117227164,
+        1.7074822187423706
+      ],
+      "yaw": 1.498884393809176,
+      "confidence": 0.855,
+      "coordinate_frame": "unaligned_sensor_window",
+      "reject_reason": "uncompensated_moving_window",
+      "source_ref_count": 244,
+      "source_frames": [
+        368,
+        369,
+        371,
+        372,
+        374,
+        375,
+        377,
+        379
+      ]
+    },
+    {
+      "frame_index": 380,
+      "device_time": 44.397,
+      "center": [
+        94.92596631323023,
+        -23.716345000887483,
+        -0.0018625934774993969
+      ],
+      "size": [
+        1.711530763603879,
+        5.24761759253482,
+        1.7767539024353027
+      ],
+      "yaw": 1.4991684053826906,
+      "confidence": 0.873,
+      "coordinate_frame": "unaligned_sensor_window",
+      "reject_reason": "uncompensated_moving_window",
+      "source_ref_count": 246,
+      "source_frames": [
+        368,
+        369,
+        371,
+        372,
+        374,
+        375,
+        377,
+        379
+      ]
+    },
+    {
+      "frame_index": 381,
+      "device_time": 44.497,
+      "center": [
+        94.9245870800763,
+        -23.716170424892383,
+        -0.027806606035239323
+      ],
+      "size": [
+        1.691995668300836,
+        5.247824537306592,
+        1.819657564163208
+      ],
+      "yaw": 1.499484350506328,
+      "confidence": 0.858,
+      "coordinate_frame": "unaligned_sensor_window",
+      "reject_reason": "uncompensated_moving_window",
+      "source_ref_count": 249,
+      "source_frames": [
+        368,
+        369,
+        371,
+        372,
+        374,
+        375,
+        377,
+        379
+      ]
+    },
+    {
+      "frame_index": 382,
+      "device_time": 44.597,
+      "center": [
+        94.92631461841657,
+        -23.716388724228086,
+        0.0153234448652797
+      ],
+      "size": [
+        1.716809131340419,
+        5.247566616329106,
+        1.7282763719558716
+      ],
+      "yaw": 1.4990907019137172,
+      "confidence": 0.842,
+      "coordinate_frame": "unaligned_sensor_window",
+      "reject_reason": "uncompensated_moving_window",
+      "source_ref_count": 245,
+      "source_frames": [
+        368,
+        369,
+        371,
+        372,
+        374,
+        375,
+        377,
+        379
+      ]
+    },
+    {
+      "frame_index": 383,
+      "device_time": 44.697,
+      "center": [
+        94.92596631323023,
+        -23.716345000887483,
+        -0.01148259670534868
+      ],
+      "size": [
+        1.711530763603879,
+        5.24761759253482,
+        1.787002682685852
+      ],
+      "yaw": 1.4991684053826906,
+      "confidence": 0.858,
+      "coordinate_frame": "unaligned_sensor_window",
+      "reject_reason": "uncompensated_moving_window",
+      "source_ref_count": 246,
+      "source_frames": [
+        368,
+        369,
+        371,
+        372,
+        374,
+        375,
+        377,
+        379
+      ]
+    },
+    {
+      "frame_index": 384,
+      "device_time": 44.797,
+      "center": [
+        94.92596631323023,
+        -23.716345000887483,
+        -0.00849164078212672
+      ],
+      "size": [
+        1.711530763603879,
+        5.24761759253482,
+        1.7866284847259521
+      ],
+      "yaw": 1.4991684053826906,
+      "confidence": 0.866,
+      "coordinate_frame": "unaligned_sensor_window",
+      "reject_reason": "uncompensated_moving_window",
+      "source_ref_count": 246,
+      "source_frames": [
+        368,
+        369,
+        371,
+        372,
+        374,
+        375,
+        377,
+        379
+      ]
+    },
+    {
+      "frame_index": 386,
+      "device_time": 44.997,
+      "center": [
+        94.92511380626415,
+        -23.730118427862763,
+        -0.04571781640192052
+      ],
+      "size": [
+        1.6760902838943095,
+        5.236644845413281,
+        1.8467004299163818
+      ],
+      "yaw": 1.5003849878119069,
+      "confidence": 0.86,
+      "coordinate_frame": "unaligned_sensor_window",
+      "reject_reason": "uncompensated_moving_window",
+      "source_ref_count": 252,
+      "source_frames": [
+        368,
+        369,
+        371,
+        372,
+        374,
+        375,
+        377,
+        379
+      ]
+    },
+    {
+      "frame_index": 391,
+      "device_time": 45.497,
+      "center": [
+        94.81590378580992,
+        -23.608164254810102,
+        0.10841007761267107
+      ],
+      "size": [
+        2.113703858719532,
+        4.9811639207938665,
+        1.9812054634094238
+      ],
+      "yaw": 1.5212805270597765,
+      "confidence": 0.879,
+      "coordinate_frame": "unaligned_sensor_window",
+      "reject_reason": "uncompensated_moving_window",
+      "source_ref_count": 268,
+      "source_frames": [
+        372,
+        374,
+        375,
+        377,
+        379,
+        389,
+        391
+      ]
+    },
+    {
+      "frame_index": 394,
+      "device_time": 45.797,
+      "center": [
+        94.49205737843953,
+        -23.82448323556513,
+        0.20462195687315576
+      ],
+      "size": [
+        1.1867098429728928,
+        4.481767230269561,
+        1.7818025350570679
+      ],
+      "yaw": 1.6171895272988142,
+      "confidence": 0.932,
+      "coordinate_frame": "unaligned_sensor_window",
+      "reject_reason": "uncompensated_moving_window",
+      "source_ref_count": 207,
+      "source_frames": [
+        375,
+        377,
+        389,
+        391,
+        393
+      ]
+    },
+    {
+      "frame_index": 395,
+      "device_time": 45.897,
+      "center": [
+        94.51894921617996,
+        -23.545844135478234,
+        0.2166527618503311
+      ],
+      "size": [
+        1.2794742679571436,
+        4.975277246012265,
+        1.756639301776886
+      ],
+      "yaw": 1.5953885734437103,
+      "confidence": 0.913,
+      "coordinate_frame": "unaligned_sensor_window",
+      "reject_reason": "uncompensated_moving_window",
+      "source_ref_count": 201,
+      "source_frames": [
+        377,
+        389,
+        391,
+        393,
+        395
+      ]
+    },
+    {
+      "frame_index": 396,
+      "device_time": 45.997,
+      "center": [
+        94.53490550962836,
+        -23.186042380235076,
+        0.04343659430385283
+      ],
+      "size": [
+        1.3254935391866765,
+        4.25455514913405,
+        2.1116442680358887
+      ],
+      "yaw": 1.6031609091676742,
+      "confidence": 0.912,
+      "coordinate_frame": "unaligned_sensor_window",
+      "reject_reason": "uncompensated_moving_window",
+      "source_ref_count": 219,
+      "source_frames": [
+        377,
+        379,
+        389,
+        391,
+        393,
+        395
+      ]
+    },
+    {
+      "frame_index": 402,
+      "device_time": 46.597,
+      "center": [
+        94.65403542889887,
+        -22.820170801644107,
+        -0.24799364359763798
+      ],
+      "size": [
+        1.518768997503661,
+        6.115359842778069,
+        2.7115302085876465
+      ],
+      "yaw": 1.580984792482646,
+      "confidence": 0.78,
+      "coordinate_frame": "unaligned_sensor_window",
+      "reject_reason": "uncompensated_moving_window",
+      "source_ref_count": 329,
+      "source_frames": [
+        389,
+        391,
+        393,
+        395,
+        397,
+        398,
+        399,
+        400,
+        402
+      ]
+    },
+    {
+      "frame_index": 586,
+      "device_time": 64.997,
+      "center": [
+        94.10444150757164,
+        -25.807249843204268,
+        1.0538789643065538
+      ],
+      "size": [
+        1.7681700280384713,
+        3.8098096944938273,
+        1.835318922996521
+      ],
+      "yaw": 1.4987197075349115,
+      "confidence": 0.755,
+      "coordinate_frame": "unaligned_sensor_window",
+      "reject_reason": "uncompensated_moving_window",
+      "source_ref_count": 160,
+      "source_frames": [
+        568,
+        570,
+        571,
+        575,
+        578,
+        580,
+        582,
+        585
+      ]
+    },
+    {
+      "frame_index": 589,
+      "device_time": 65.297,
+      "center": [
+        94.04379122098726,
+        -25.894339144384453,
+        1.0399445793704953
+      ],
+      "size": [
+        1.9069067312899275,
+        3.6420928305705655,
+        1.8523055911064148
+      ],
+      "yaw": 1.4623039099601371,
+      "confidence": 0.769,
+      "coordinate_frame": "unaligned_sensor_window",
+      "reject_reason": "uncompensated_moving_window",
+      "source_ref_count": 140,
+      "source_frames": [
+        570,
+        571,
+        575,
+        578,
+        580,
+        582,
+        585,
+        589
+      ]
+    },
+    {
+      "frame_index": 761,
+      "device_time": 82.589,
+      "center": [
+        94.12157298560673,
+        -26.229853303664488,
+        -2.0680919630561325
+      ],
+      "size": [
+        1.8233647952309857,
+        3.0904723248987866,
+        2.1324422359466553
+      ],
+      "yaw": 1.3567646224884287,
+      "confidence": 0.811,
+      "coordinate_frame": "unaligned_sensor_window",
+      "reject_reason": "uncompensated_moving_window",
+      "source_ref_count": 147,
+      "source_frames": [
+        743,
+        744,
+        746,
+        748,
+        749,
+        750,
+        753,
+        755,
+        758,
+        759
+      ]
+    },
+    {
+      "frame_index": 766,
+      "device_time": 83.089,
+      "center": [
+        93.96190379039568,
+        -26.178417149351837,
+        -2.116436623467954
+      ],
+      "size": [
+        1.771878311079018,
+        3.1409899189672097,
+        2.2316205501556396
+      ],
+      "yaw": 1.4085944268736483,
+      "confidence": 0.66,
+      "coordinate_frame": "unaligned_sensor_window",
+      "reject_reason": "uncompensated_moving_window",
+      "source_ref_count": 128,
+      "source_frames": [
+        748,
+        749,
+        750,
+        751,
+        753,
+        755,
+        758,
+        759,
+        762
+      ]
+    },
+    {
+      "frame_index": 770,
+      "device_time": 83.489,
+      "center": [
+        93.7896937044809,
+        -26.15259832072829,
+        -1.851734771377239
+      ],
+      "size": [
+        1.3078499172351667,
+        3.1841519042799495,
+        2.067971706390381
+      ],
+      "yaw": 1.4765781189745841,
+      "confidence": 0.912,
+      "coordinate_frame": "unaligned_sensor_window",
+      "reject_reason": "uncompensated_moving_window",
+      "source_ref_count": 116,
+      "source_frames": [
+        753,
+        758,
+        759,
+        762,
+        767,
+        769
+      ]
+    },
+    {
+      "frame_index": 784,
+      "device_time": 84.889,
+      "center": [
+        93.62135794693182,
+        -26.54602805595352,
+        -1.8334919580742444
+      ],
+      "size": [
+        1.3167071407454978,
+        2.305914301985414,
+        2.064457416534424
+      ],
+      "yaw": 1.4485974910457675,
+      "confidence": 0.919,
+      "coordinate_frame": "unaligned_sensor_window",
+      "reject_reason": "uncompensated_moving_window",
+      "source_ref_count": 121,
+      "source_frames": [
+        767,
+        769,
+        773,
+        775,
+        776,
+        777,
+        782,
+        784
+      ]
+    },
+    {
+      "frame_index": 786,
+      "device_time": 85.089,
+      "center": [
+        93.64757354305026,
+        -26.537927985286448,
+        -1.7484193334057498
+      ],
+      "size": [
+        1.2693463088464345,
+        2.3773628213417894,
+        1.892606258392334
+      ],
+      "yaw": 1.4868314903565196,
+      "confidence": 0.932,
+      "coordinate_frame": "unaligned_sensor_window",
+      "reject_reason": "uncompensated_moving_window",
+      "source_ref_count": 114,
+      "source_frames": [
+        767,
+        769,
+        773,
+        775,
+        776,
+        782,
+        784
+      ]
+    },
+    {
+      "frame_index": 797,
+      "device_time": 86.189,
+      "center": [
+        93.70643978997336,
+        -26.502739356283172,
+        -1.8726238879957515
+      ],
+      "size": [
+        1.753379466759397,
+        2.152754771158249,
+        2.3632174730300903
+      ],
+      "yaw": 1.3200818164036345,
+      "confidence": 0.888,
+      "coordinate_frame": "unaligned_sensor_window",
+      "reject_reason": "uncompensated_moving_window",
+      "source_ref_count": 121,
+      "source_frames": [
+        780,
+        782,
+        784,
+        787,
+        788,
+        789,
+        790,
+        792,
+        794
+      ]
+    },
+    {
+      "frame_index": 805,
+      "device_time": 86.989,
+      "center": [
+        93.75185996518272,
+        -26.71980597735645,
+        -1.872789337324265
+      ],
+      "size": [
+        1.777571586486163,
+        2.1013436233090754,
+        2.344969391822815
+      ],
+      "yaw": 1.4123080434493454,
+      "confidence": 0.855,
+      "coordinate_frame": "unaligned_sensor_window",
+      "reject_reason": "uncompensated_moving_window",
+      "source_ref_count": 131,
+      "source_frames": [
+        787,
+        788,
+        789,
+        790,
+        792,
+        794,
+        799,
+        801,
+        803
+      ]
+    }
+  ]
+}

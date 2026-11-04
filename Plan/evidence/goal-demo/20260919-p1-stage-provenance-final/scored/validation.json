@@ -1,0 +1,140 @@
+{
+  "generated_at": 1789829384.7318995,
+  "status": "EVALUATED",
+  "eval_config": {
+    "version": "eval-v1",
+    "hit_radius_m": 1.5,
+    "min_confidence": 0.5,
+    "measured_states": [
+      "LOCKED",
+      "TRACKING"
+    ],
+    "predicted_states": [
+      "REACQUIRE"
+    ],
+    "lost_states": [
+      "LOST"
+    ],
+    "counted_visibility": [
+      "visible",
+      "partially_occluded"
+    ]
+  },
+  "eval_config_version": "8a00d3f92a5901f7",
+  "capture_attribution": "row",
+  "capture_arg": null,
+  "hit_radius_m": 1.5,
+  "min_confidence": 0.5,
+  "goal_labels": 2,
+  "negative_labels": 0,
+  "labels_used": 2,
+  "labels_skipped": 1,
+  "unreviewed_labels_used": 2,
+  "skipped_label_reasons": [
+    "capture_not_in_run"
+  ],
+  "frames_total": 1211,
+  "measurement": {
+    "frames": 11,
+    "positive_outputs": 0,
+    "hits": 0,
+    "misses": 11,
+    "precision": null,
+    "recall": 0.0,
+    "miss_rate": 1.0,
+    "mean_center_error_m": null,
+    "p95_center_error_m": null,
+    "max_center_error_m": null
+  },
+  "prediction": {
+    "measured": {
+      "frames": 0,
+      "positive_outputs": 0,
+      "hits": 0,
+      "misses": 0,
+      "precision": null,
+      "recall": null,
+      "miss_rate": null,
+      "mean_center_error_m": null,
+      "p95_center_error_m": null,
+      "max_center_error_m": null
+    },
+    "predicted": {
+      "frames": 0,
+      "positive_outputs": 0,
+      "hits": 0,
+      "misses": 0,
+      "precision": null,
+      "recall": null,
+      "miss_rate": null,
+      "mean_center_error_m": null,
+      "p95_center_error_m": null,
+      "max_center_error_m": null
+    },
+    "lost": {
+      "frames": 0,
+      "boxes_returned": 0
+    }
+  },
+  "unknown_frames": 1200,
+  "unknown_frames_with_output": 67,
+  "per_goal": [
+    {
+      "capture_id": "c4cc19fb-3020-4ccc-8407-1521f71b7212",
+      "frame_range": [
+        74,
+        83
+      ],
+      "review_status": "PENDING_REVIEW",
+      "visibility": "visible",
+      "truth": {
+        "center_xy": [
+          93.84,
+          -26.53
+        ],
+        "center_z": -0.08,
+        "width": 7.32,
+        "height": 2.44,
+        "yaw": 1.605
+      },
+      "distance_from_origin": 97.52,
+      "frames_in_range": 10,
+      "positive_outputs": 0,
+      "hit_frames": 0,
+      "hit_ratio": 0.0,
+      "first_hit_frame": null,
+      "mean_center_error_m": null,
+      "max_center_error_m": null
+    },
+    {
+      "capture_id": "c4cc19fb-3020-4ccc-8407-1521f71b7212",
+      "frame_range": [
+        0,
+        0
+      ],
+      "review_status": "PENDING_REVIEW",
+      "visibility": "visible",
+      "truth": {
+        "center_xy": [
+          79.75,
+          6.7
+        ],
+        "center_z": 1,
+        "width": 7.32,
+        "height": 2.44,
+        "yaw": 0.826
+      },
+      "distance_from_origin": 80.03,
+      "frames_in_range": 1,
+      "positive_outputs": 0,
+      "hit_frames": 0,
+      "hit_ratio": 0.0,
+      "first_hit_frame": null,
+      "mean_center_error_m": null,
+      "max_center_error_m": null
+    }
+  ],
+  "false_positive_sites": [],
+  "false_positive_site_count": 0,
+  "sites_matching_negatives": 0
+}

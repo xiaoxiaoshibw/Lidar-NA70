@@ -1,0 +1,20 @@
+{
+  "schema_version": "na70-lio-preflight-v1",
+  "lidar_frame": "lidar_link",
+  "imu_frame": "imu_link",
+  "lidar_clock": {"source_origin_s": 0.0, "reference_origin_s": 0.0, "rate": 1.0, "uncertainty_s": null, "evidence": null},
+  "imu_clock": {"source_origin_s": 0.0, "reference_origin_s": 0.0, "rate": 1.0, "uncertainty_s": null, "evidence": null},
+  "T_imu_lidar": null,
+  "calibration_evidence": null,
+  "packet_time_uncertainty_s": null,
+  "max_packet_gap_s": 0.02,
+  "max_imu_gap_s": 0.02,
+  "max_window_points": 400000,
+  "max_imu_samples": 1000000,
+  "gyro_unit": "rad/s",
+  "accel_unit": "m/s^2",
+  "accel_includes_gravity": null,
+  "gyro_range_rad_s": null,
+  "accel_range_m_s2": null,
+  "motion_envelope": {"max_speed_m_s": 0.5, "max_angular_speed_rad_s": 0.17453292519943295, "max_range_m": 50.0, "time_error_budget_m": 0.02}
+}

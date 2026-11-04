@@ -1,0 +1,104 @@
+diff --git a/src/preprocess.cpp b/src/preprocess.cpp
+index 5f171a3..e5503b5 100644
+--- a/src/preprocess.cpp
++++ b/src/preprocess.cpp
+@@ -87,6 +87,10 @@ void Preprocess::process(const sensor_msgs::msg::PointCloud2::UniquePtr &msg, Po
+       mid360_handler(msg);
+       break;
+ 
++    case NA70:
++      na70_handler(msg);
++      break;
++
+     default:
+       default_handler(msg);
+       break;
+@@ -566,6 +570,43 @@ void Preprocess::mid360_handler(const sensor_msgs::msg::PointCloud2::UniquePtr &
+   }
+ }
+ 
++void Preprocess::na70_handler(const sensor_msgs::msg::PointCloud2::UniquePtr &msg)
++{
++  pl_surf.clear();
++  pl_corn.clear();
++  pl_full.clear();
++
++  pcl::PointCloud<na70_ros::Point> pl_orig;
++  pcl::fromROSMsg(*msg, pl_orig);
++  int plsize = pl_orig.points.size();
++  if (plsize == 0)
++    return;
++  pl_surf.reserve(plsize);
++
++  for (int i = 0; i < plsize; i++)
++  {
++    if (i % point_filter_num != 0)
++      continue;
++    const auto &p = pl_orig.points[i];
++    if (!std::isfinite(p.x) || !std::isfinite(p.y) || !std::isfinite(p.z))
++      continue;
++    double range2 = p.x * p.x + p.y * p.y + p.z * p.z;
++    if (range2 < blind * blind)
++      continue;
++    PointType added_pt;
++    added_pt.normal_x = 0;
++    added_pt.normal_y = 0;
++    added_pt.normal_z = 0;
++    added_pt.x = p.x;
++    added_pt.y = p.y;
++    added_pt.z = p.z;
++    added_pt.intensity = p.intensity;
++    // NA70 package stores per-point time in seconds; FAST-LIO curvature is ms.
++    added_pt.curvature = p.time * time_unit_scale;
++    pl_surf.points.push_back(added_pt);
++  }
++}
++
+ void Preprocess::default_handler(const sensor_msgs::msg::PointCloud2::UniquePtr &msg)
+ {
+   pl_surf.clear();
+diff --git a/src/preprocess.h b/src/preprocess.h
+index d4d6ddc..346f14d 100644
+--- a/src/preprocess.h
++++ b/src/preprocess.h
+@@ -16,8 +16,9 @@ enum LID_TYPE
+   AVIA = 1,
+   VELO16,
+   OUST64,
+-  MID360
+-};  //{1, 2, 3}
++  MID360,
++  NA70
++};  //{1, 2, 3, 4, 5}
+ enum TIME_UNIT
+ {
+   SEC = 0,
+@@ -83,6 +84,20 @@ POINT_CLOUD_REGISTER_POINT_STRUCT(velodyne_ros::Point,
+                                                                           intensity)(float, time, time)(uint16_t, ring,
+                                                                                                         ring))
+ 
++namespace na70_ros
++{
++struct EIGEN_ALIGN16 Point
++{
++  PCL_ADD_POINT4D;
++  float intensity;
++  float time;  // seconds, relative to scan start
++  EIGEN_MAKE_ALIGNED_OPERATOR_NEW
++};
++}
++POINT_CLOUD_REGISTER_POINT_STRUCT(na70_ros::Point,
++                                  (float, x, x)(float, y, y)(float, z, z)
++                                  (float, intensity, intensity)(float, time, time))
++
+ namespace ouster_ros
+ {
+ struct EIGEN_ALIGN16 Point
+@@ -159,6 +174,7 @@ private:
+   void oust64_handler(const sensor_msgs::msg::PointCloud2::UniquePtr &msg);
+   void velodyne_handler(const sensor_msgs::msg::PointCloud2::UniquePtr &msg);
+   void mid360_handler(const sensor_msgs::msg::PointCloud2::UniquePtr &msg);
++  void na70_handler(const sensor_msgs::msg::PointCloud2::UniquePtr &msg);
+   void default_handler(const sensor_msgs::msg::PointCloud2::UniquePtr &msg);
+   void give_feature(PointCloudXYZI &pl, vector<orgtype> &types);
+   void pub_func(PointCloudXYZI &pl, const rclcpp::Time &ct);

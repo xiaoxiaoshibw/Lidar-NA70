@@ -1,0 +1,275 @@
+{
+  "scan_total_frames": 662,
+  "audited_frames": 20,
+  "audited_packets": 2000,
+  "audited_rays": 400000,
+  "zero_distance_code_count": 260882,
+  "known_direction_count": 176875,
+  "unknown_direction_count": 223125,
+  "device_time_start": 293.041,
+  "device_time_end": 295.04,
+  "device_time_valid": true,
+  "device_time_monotonic": true,
+  "poses": {
+    "path_start": {
+      "origin_world_m": [
+        0.0,
+        0.0,
+        12.0
+      ],
+      "geometric_opportunity_rays": 12,
+      "packets_with_opportunity": 12,
+      "occupied_bins": 9,
+      "total_bins": 50,
+      "coverage_fraction": 0.18,
+      "largest_uncovered_m": 25.0,
+      "occupied_bin_indices": [
+        25,
+        27,
+        28,
+        34,
+        35,
+        39,
+        46,
+        47,
+        48
+      ]
+    },
+    "path_end": {
+      "origin_world_m": [
+        87.0,
+        0.0,
+        12.0
+      ],
+      "geometric_opportunity_rays": 264,
+      "packets_with_opportunity": 107,
+      "occupied_bins": 12,
+      "total_bins": 50,
+      "coverage_fraction": 0.24,
+      "largest_uncovered_m": 15.0,
+      "occupied_bin_indices": [
+        15,
+        16,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34
+      ]
+    }
+  },
+  "causal_windows": [
+    {
+      "requested_duration_s": null,
+      "packet_count": 100,
+      "actual_span_s": 0.09900000000004638,
+      "partial_window": false,
+      "poses": {
+        "path_start": {
+          "geometric_opportunity_rays": 1,
+          "occupied_bins": 1,
+          "total_bins": 50,
+          "coverage_fraction": 0.02,
+          "largest_uncovered_m": 48.0,
+          "occupied_bin_indices": [
+            48
+          ]
+        },
+        "path_end": {
+          "geometric_opportunity_rays": 8,
+          "occupied_bins": 3,
+          "total_bins": 50,
+          "coverage_fraction": 0.06,
+          "largest_uncovered_m": 25.0,
+          "occupied_bin_indices": [
+            25,
+            26,
+            27
+          ]
+        }
+      }
+    },
+    {
+      "requested_duration_s": 0.5,
+      "packet_count": 500,
+      "actual_span_s": 0.49900000000002365,
+      "partial_window": false,
+      "poses": {
+        "path_start": {
+          "geometric_opportunity_rays": 3,
+          "occupied_bins": 3,
+          "total_bins": 50,
+          "coverage_fraction": 0.06,
+          "largest_uncovered_m": 27.0,
+          "occupied_bin_indices": [
+            27,
+            47,
+            48
+          ]
+        },
+        "path_end": {
+          "geometric_opportunity_rays": 82,
+          "occupied_bins": 10,
+          "total_bins": 50,
+          "coverage_fraction": 0.2,
+          "largest_uncovered_m": 15.0,
+          "occupied_bin_indices": [
+            15,
+            25,
+            26,
+            27,
+            28,
+            29,
+            31,
+            32,
+            33,
+            34
+          ]
+        }
+      }
+    },
+    {
+      "requested_duration_s": 1.0,
+      "packet_count": 1000,
+      "actual_span_s": 0.9990000000000236,
+      "partial_window": false,
+      "poses": {
+        "path_start": {
+          "geometric_opportunity_rays": 7,
+          "occupied_bins": 6,
+          "total_bins": 50,
+          "coverage_fraction": 0.12,
+          "largest_uncovered_m": 25.0,
+          "occupied_bin_indices": [
+            25,
+            27,
+            28,
+            35,
+            47,
+            48
+          ]
+        },
+        "path_end": {
+          "geometric_opportunity_rays": 135,
+          "occupied_bins": 12,
+          "total_bins": 50,
+          "coverage_fraction": 0.24,
+          "largest_uncovered_m": 15.0,
+          "occupied_bin_indices": [
+            15,
+            16,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32,
+            33,
+            34
+          ]
+        }
+      }
+    },
+    {
+      "requested_duration_s": 2.0,
+      "packet_count": 2000,
+      "actual_span_s": 1.9990000000000236,
+      "partial_window": true,
+      "poses": {
+        "path_start": {
+          "geometric_opportunity_rays": 12,
+          "occupied_bins": 9,
+          "total_bins": 50,
+          "coverage_fraction": 0.18,
+          "largest_uncovered_m": 25.0,
+          "occupied_bin_indices": [
+            25,
+            27,
+            28,
+            34,
+            35,
+            39,
+            46,
+            47,
+            48
+          ]
+        },
+        "path_end": {
+          "geometric_opportunity_rays": 264,
+          "occupied_bins": 12,
+          "total_bins": 50,
+          "coverage_fraction": 0.24,
+          "largest_uncovered_m": 15.0,
+          "occupied_bin_indices": [
+            15,
+            16,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32,
+            33,
+            34
+          ]
+        }
+      }
+    },
+    {
+      "requested_duration_s": 5.0,
+      "packet_count": 2000,
+      "actual_span_s": 1.9990000000000236,
+      "partial_window": true,
+      "poses": {
+        "path_start": {
+          "geometric_opportunity_rays": 12,
+          "occupied_bins": 9,
+          "total_bins": 50,
+          "coverage_fraction": 0.18,
+          "largest_uncovered_m": 25.0,
+          "occupied_bin_indices": [
+            25,
+            27,
+            28,
+            34,
+            35,
+            39,
+            46,
+            47,
+            48
+          ]
+        },
+        "path_end": {
+          "geometric_opportunity_rays": 264,
+          "occupied_bins": 12,
+          "total_bins": 50,
+          "coverage_fraction": 0.24,
+          "largest_uncovered_m": 15.0,
+          "occupied_bin_indices": [
+            15,
+            16,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32,
+            33,
+            34
+          ]
+        }
+      }
+    }
+  ]
+}

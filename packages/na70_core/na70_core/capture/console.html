@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NA70 + IMU 采集台</title>
+<style>
+  :root { color-scheme: dark; }
+  * { box-sizing: border-box; }
+  body { margin: 0; font: 15px/1.6 "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+         background: #0d1117; color: #e6edf3; }
+  header { padding: 18px 24px; border-bottom: 1px solid #21262d; display: flex; gap: 16px; align-items: baseline; }
+  header h1 { font-size: 18px; margin: 0; font-weight: 600; }
+  header .hint { color: #8b949e; font-size: 13px; }
+  main { display: grid; grid-template-columns: 360px 1fr; gap: 20px; padding: 20px 24px 40px; }
+  @media (max-width: 900px) { main { grid-template-columns: 1fr; } }
+  section { background: #11161d; border: 1px solid #21262d; border-radius: 10px; padding: 16px; }
+  h2 { font-size: 14px; margin: 0 0 12px; color: #8b949e; font-weight: 600; letter-spacing: .04em; }
+  label { display: block; font-size: 13px; color: #8b949e; margin: 10px 0 4px; }
+  input, select, textarea { width: 100%; padding: 8px 10px; border-radius: 8px; border: 1px solid #30363d;
+         background: #0d1117; color: #e6edf3; font: inherit; }
+  input:disabled, select:disabled, textarea:disabled { opacity: .5; }
+  .row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .actions { display: flex; gap: 10px; margin-top: 16px; flex-wrap: wrap; }
+  button { padding: 10px 16px; border-radius: 8px; border: 1px solid #30363d; background: #21262d;
+           color: #e6edf3; font: inherit; cursor: pointer; }
+  button.primary { background: #238636; border-color: #2ea043; font-weight: 600; }
+  button.danger { background: #7d2020; border-color: #a52a2a; }
+  button:disabled { opacity: .4; cursor: not-allowed; }
+  .state { font-size: 26px; font-weight: 700; letter-spacing: .02em; }
+  .state small { display: block; font-size: 13px; font-weight: 400; color: #8b949e; margin-top: 4px; }
+  .state.rec { color: #3fb950; }
+  .state.fail { color: #f85149; }
+  .tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 12px; margin-top: 14px; }
+  .tile { background: #0d1117; border: 1px solid #21262d; border-radius: 8px; padding: 12px; }
+  .tile b { display: block; font-size: 20px; font-weight: 650; }
+  .tile span { font-size: 12px; color: #8b949e; }
+  .bar { height: 6px; background: #21262d; border-radius: 4px; overflow: hidden; margin-top: 12px; }
+  .bar > i { display: block; height: 100%; background: #2f81f7; width: 0; transition: width .3s; }
+  ul { list-style: none; margin: 0; padding: 0; font-size: 13px; }
+  li { padding: 6px 0; border-bottom: 1px solid #1b2027; display: flex; gap: 8px; justify-content: space-between; }
+  li:last-child { border-bottom: 0; }
+  .ok { color: #3fb950; } .warn { color: #d29922; } .bad { color: #f85149; }
+  .muted { color: #8b949e; font-size: 12px; }
+  code { background: #0d1117; padding: 2px 6px; border-radius: 4px; font-size: 12px; }
+</style>
+</head>
+<body>
+<header>
+  <h1>NA70 + IMU 采集台</h1>
+  <span class="hint">只在本机 127.0.0.1 监听；你只负责摆设备、填测到的东西、点开始。</span>
+</header>
+<main>
+  <div>
+    <section style="margin-bottom:16px">
+      <h2>B1 试录动作卡（尚待验收）</h2>
+      <svg viewBox="0 0 420 150" role="img" aria-label="俯视示意：光学窗朝前，IMU 在机身尾部顶面中线，接口位于机身侧面" style="width:100%;max-width:420px;display:block;margin:auto">
+        <rect x="100" y="30" width="220" height="90" rx="12" fill="#223343" stroke="#8ca7b9" stroke-width="2" />
+        <rect x="93" y="45" width="8" height="60" rx="3" fill="#52c6ec" />
+        <rect x="261" y="64" width="28" height="22" rx="3" fill="#e2a65b" stroke="#ffe0a3" />
+        <rect x="239" y="25" width="30" height="7" rx="2" fill="#a7b4c0" />
+        <path d="M92 75 H40" stroke="#52c6ec" stroke-width="3" marker-end="url(#arrow)" />
+        <defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8 Z" fill="#52c6ec" /></marker></defs>
+        <text x="13" y="60" fill="#c6e5f1" font-size="12">朝墙面</text>
+        <text x="105" y="139" fill="#c6e5f1" font-size="12">光学窗</text>
+        <text x="261" y="110" fill="#ffe0a3" font-size="12">IMU</text>
+        <text x="236" y="19" fill="#c6d8e5" font-size="12">接口侧</text>
+      </svg>
+      <p class="muted">俯视示意，不代表精确尺寸或标定位置。机身顶面朝上，线缆不要拉扯设备。</p>
+      <p>将整机稳固放置，光学窗朝向墙或墙角。保持不动，录制 60 秒；这一批不需要测墙距。</p>
+      <p class="muted">设备、采集入口和浏览器闭环通过检查后，AI 会通知你开始。本页面当前仅供开发验证。</p>
+    </section>
+    <section>
+      <h2>当前状态</h2>
+      <div id="state" class="state">读取中…<small>正在连接采集进程</small></div>
+      <div class="bar"><i id="progress"></i></div>
+      <div class="tiles">
+        <div class="tile"><b id="elapsed">0.0 s</b><span>已录制</span></div>
+        <div class="tile"><b id="remain">—</b><span>剩余</span></div>
+        <div class="tile"><b id="imu-hz">—</b><span>IMU 频率</span></div>
+        <div class="tile"><b id="lidar-mb">—</b><span>雷达数据</span></div>
+      </div>
+      <div class="tiles">
+        <div class="tile"><b id="imu-frames">—</b><span>IMU 帧</span></div>
+        <div class="tile"><b id="imu-errors">—</b><span>校验错 / 断号</span></div>
+        <div class="tile"><b id="disk">—</b><span>磁盘剩余</span></div>
+        <div class="tile"><b id="lidar-drops">—</b><span>抓包丢弃</span></div>
+      </div>
+      <p id="device-state" class="muted">尚未录制，设备数据状态未知。</p>
+      <div class="actions">
+        <button id="btn-start" class="primary">开始录制</button>
+        <button id="btn-stop" class="danger">停止</button>
+        <button id="btn-again">重录</button>
+      </div>
+      <p class="muted" id="msg"></p>
+    </section>
+
+    <section style="margin-top:16px">
+      <h2>本次要录什么</h2>
+      <label>任务</label>
+      <select id="task">
+        <option value="B1">B1 一分钟试录（静置）</option>
+        <option value="B2" disabled>B2 长静置（等待检查）</option>
+        <option value="B3" disabled>B3 六面 / 转动（等待检查）</option>
+        <option value="B4" disabled>B4 墙面距离（等待检查）</option>
+        <option value="B5" disabled>B5 动态标定（等待检查）</option>
+      </select>
+      <div class="row">
+        <div><label>时长（秒）</label><input id="duration" type="number" min="3" max="1800" value="60"></div>
+        <div><label>摆放方向</label>
+          <select id="orientation">
+            <option value="光学窗朝前，顶面朝上">光学窗朝前，顶面朝上</option>
+            <option value="顶面朝上，接口在左">顶面朝上，接口在左</option>
+            <option value="其他（写在备注）">其他（写在备注）</option>
+          </select>
+        </div>
+      </div>
+      <label>墙距（米，测不到就勾“未测”）</label>
+      <div class="row">
+        <input id="distance" type="number" step="0.01" min="0" placeholder="例如 5.02">
+        <label style="margin:8px 0 0"><input id="distance-unknown" type="checkbox" style="width:auto"> 未测</label>
+      </div>
+      <div class="row">
+        <div><label>从哪量到哪</label><input id="basis" placeholder="例如 外壳前面板 → 墙面"></div>
+        <div><label>工具 / 精度</label><input id="tool" placeholder="例如 卷尺 ±5 mm"></div>
+      </div>
+      <details>
+        <summary>温度测量（选填）</summary>
+        <label>测得温度（℃）</label><input id="temperature" type="number" step="0.1" placeholder="未测可留空">
+        <label>测量位置和工具 / 精度</label><input id="temperature-method" placeholder="例如 IMU 附近外壳，表面温度计 ±1℃">
+        <p class="muted">外壳或环境温度不是 IMU 内部温度；只记录实际测得的值。</p>
+      </details>
+      <label>备注</label>
+      <textarea id="note" rows="3" placeholder="场景、可疑点、别人挪过设备等"></textarea>
+    </section>
+  </div>
+
+  <div>
+    <section>
+      <h2>最近会话</h2>
+      <ul id="sessions"><li class="muted">暂无</li></ul>
+    </section>
+    <section style="margin-top:16px">
+      <h2>上次结果与文件</h2>
+      <div id="last" class="muted">还没有完成过会话。</div>
+      <ul id="files" style="margin-top:10px"></ul>
+    </section>
+  </div>
+</main>
+<script>
+const $ = (id) => document.getElementById(id);
+let lastSession = null;
+let timer = null;
+let countdown = false;
+let countdownId = 0;
+
+function fmtBytes(n) {
+  if (n == null) return "—";
+  const gb = n / 1024 ** 3;
+  return gb >= 1 ? gb.toFixed(1) + " GB" : (n / 1024 ** 2).toFixed(0) + " MB";
+}
+function setText(id, value) { $(id).textContent = value == null ? "—" : String(value); }
+function escapeHtml(value) {
+  const node = document.createElement("span");
+  node.textContent = String(value ?? "");
+  return node.innerHTML;
+}
+
+function renderStatus(s) {
+  const el = $("state");
+  const recording = s.state === "recording";
+  el.className = "state" + (recording ? " rec" : (s.state === "failed" ? " fail" : ""));
+  const titles = { idle: "空闲", starting: "正在启动", recording: "正在录制", stopping: "正在停止", failed: "本次失败" };
+  const subs = {
+    idle: lastSession ? "上一段已完成，可以开始新的" : "设备就绪后点开始",
+    starting: "正在打开串口与抓包",
+    recording: `任务 ${s.task || ""} · ${s.session_id || ""}`,
+    stopping: "正在收尾写盘",
+    failed: s.error || "查看最近会话里的失败原因",
+  };
+  el.innerHTML = `${escapeHtml(titles[s.state] || s.state)}<small>${escapeHtml(subs[s.state] || "")}</small>`;
+
+  const devices = s.devices || {};
+  const imu = (devices.imu) || {};
+  const lidar = (devices.lidar) || {};
+  setText("device-state", recording
+    ? `IMU：${imu.state || "未知"}${imu.error ? "（" + imu.error + "）" : ""}；雷达抓包：${lidar.state || "未知"}。抓包进程运行不代表雷达正在发流。`
+    : "未录制时不检查实时数据；请以录制中的状态和结束后的结果为准。");
+  setText("imu-hz", imu.hz != null ? imu.hz.toFixed(1) + " Hz" : "—");
+  setText("imu-frames", imu.frames != null ? imu.frames : "—");
+  setText("imu-errors", imu.checksum_errors != null ? `${imu.checksum_errors} / ${imu.sequence_breaks ?? 0}` : "—");
+  setText("lidar-mb", lidar.pcap_bytes != null ? fmtBytes(lidar.pcap_bytes) : "—");
+  setText("lidar-drops", lidar.dropped != null ? lidar.dropped : "—");
+  setText("disk", fmtBytes(s.disk_free_bytes));
+  const elapsed = recording ? Math.max(0, (Date.now() / 1000 - (s.started_unix || 0))) : 0;
+  setText("elapsed", elapsed.toFixed(1) + " s");
+  setText("remain", recording && s.remaining_s != null ? s.remaining_s.toFixed(1) + " s" : "—");
+  const pct = recording && s.duration_s ? Math.min(100, elapsed / s.duration_s * 100) : 0;
+  $("progress").style.width = pct + "%";
+
+  $("btn-start").disabled = countdown || !["idle", "failed"].includes(s.state);
+  $("btn-stop").disabled = !countdown && !["starting", "recording"].includes(s.state);
+  $("btn-again").disabled = countdown || !(s.state === "idle" && lastSession);
+
+  const list = $("sessions");
+  list.innerHTML = "";
+  (s.sessions || []).forEach((item) => {
+    const li = document.createElement("li");
+    const cls = item.status === "ok" ? "ok" : (item.status === "degraded" ? "warn" : "bad");
+    li.innerHTML = `<span>${escapeHtml(item.session_id)}<br><span class="muted">${escapeHtml(item.task || "")} · ${escapeHtml(item.duration_s ?? "?")} s</span></span>
+                    <span class="${cls}">${escapeHtml(item.status === "unfinalized" ? "未完成（可能中断或仍在录制）" : item.status || "?")}</span>`;
+    li.title = "点击查看会话文件";
+    li.style.cursor = "pointer";
+    li.onclick = () => { renderLast(item); loadFiles(item.session_id); };
+    list.appendChild(li);
+  });
+  if (!list.children.length) list.innerHTML = '<li class="muted">暂无</li>';
+
+  if (s.last && s.last.session_id !== lastSession) {
+    lastSession = s.last.session_id;
+    renderLast(s.last);
+    loadFiles(s.last.session_id);
+  }
+}
+
+function renderLast(last) {
+  const box = $("last");
+  const bad = (last.failed_checks || []).map((c) => `${c.name}：${c.detail}`).join("；");
+  box.innerHTML = `<div>会话 <code>${escapeHtml(last.session_id)}</code></div>
+    <div>结果：<b class="${last.status === "ok" ? "ok" : (last.status === "degraded" ? "warn" : "bad")}">${escapeHtml(last.status)}</b>
+    · 时长 ${escapeHtml(last.duration_s ?? "?")} s</div>
+    <div class="muted">${escapeHtml(last.path || "")}</div>
+    ${bad ? `<div class="warn">需要留意：${escapeHtml(bad)}</div>` : ""}`;
+}
+
+async function loadFiles(session) {
+  const list = $("files");
+  try {
+    const res = await fetch(`/api/files?session=${encodeURIComponent(session)}`);
+    const data = await res.json();
+    list.innerHTML = "";
+    (data.files || []).forEach((file) => {
+      const li = document.createElement("li");
+      li.innerHTML = `<span>${escapeHtml(file.path)}</span><span class="muted">${fmtBytes(file.bytes)}</span>`;
+      list.appendChild(li);
+    });
+  } catch (err) {
+    list.innerHTML = `<li class="bad">读取文件列表失败：${err}</li>`;
+  }
+}
+
+async function poll() {
+  try {
+    const res = await fetch("/api/status", { cache: "no-store" });
+    const data = await res.json();
+    renderStatus(data);
+  } catch (err) {
+    $("state").className = "state fail";
+    $("state").innerHTML = `连不上采集进程<small>${err}</small>`;
+  }
+}
+
+function operatorPayload() {
+  const unknown = $("distance-unknown").checked;
+  return {
+    orientation: $("orientation").value,
+    wall_distance_m: unknown ? null : ($("distance").value ? Number($("distance").value) : null),
+    wall_distance_measured: !unknown && !!$("distance").value,
+    measurement_basis: $("basis").value || null,
+    tool: $("tool").value || null,
+    temperature_c: $("temperature").value ? Number($("temperature").value) : null,
+    temperature_method: $("temperature-method").value || null,
+  };
+}
+
+async function start() {
+  if (countdown) return;
+  countdown = true;
+  const thisCountdown = ++countdownId;
+  $("btn-start").disabled = true;
+  $("btn-again").disabled = true;
+  $("btn-stop").disabled = false;
+  for (let remaining = 3; remaining > 0; remaining--) {
+    $("msg").textContent = `${remaining} 秒后开始，点击停止可取消。`;
+    await new Promise(resolve => setTimeout(resolve, 1000));
+    if (thisCountdown !== countdownId) return;
+  }
+  countdown = false;
+  $("msg").textContent = "正在开始…";
+  try {
+    const res = await fetch("/api/session/start", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        task: $("task").value,
+        duration_s: Number($("duration").value),
+        operator: operatorPayload(),
+        note: $("note").value,
+      }),
+    });
+    const data = await res.json();
+    $("msg").textContent = res.ok ? `正在启动 ${data.session_id}` : `开始失败：${data.error}`;
+  } catch (err) {
+    $("msg").textContent = "启动请求未确认，请检查会话状态后再操作。";
+  }
+  poll();
+}
+
+async function stop() {
+  if (countdown) {
+    countdown = false;
+    countdownId++;
+    $("msg").textContent = "已取消，未开始录制。";
+    poll();
+    return;
+  }
+  $("msg").textContent = "正在停止…";
+  await fetch("/api/session/stop", { method: "POST", headers: { "Content-Type": "application/json" }, body: "{}" });
+  poll();
+}
+
+$("btn-start").onclick = start;
+$("btn-stop").onclick = stop;
+$("btn-again").onclick = start;
+$("distance-unknown").onchange = (e) => { $("distance").disabled = e.target.checked; };
+poll();
+timer = setInterval(poll, 1000);
+</script>
+</body>
+</html>

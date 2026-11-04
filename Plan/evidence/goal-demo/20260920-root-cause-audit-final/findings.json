@@ -1,0 +1,192 @@
+{
+  "label": "REAL_PCAP_DIAGNOSTIC_NOT_GROUND_TRUTH",
+  "diagnostic_neighborhoods": {
+    "x_range": [
+      93,
+      96
+    ],
+    "y_half_width": 0.4
+  },
+  "edges": [
+    {
+      "diagnostic_y": -28.8,
+      "raw_points": 454,
+      "raw_z_min": -1.2670540809631348,
+      "raw_z_max": 0.8741039633750916,
+      "raw_z_span": 2.141158103942871,
+      "after_z_gate_points": 105,
+      "after_z_gate_span": 0.5408087968826294
+    },
+    {
+      "diagnostic_y": -23.8,
+      "raw_points": 354,
+      "raw_z_min": -1.363938570022583,
+      "raw_z_max": 0.7421079874038696,
+      "raw_z_span": 2.106046676635742,
+      "after_z_gate_points": 81,
+      "after_z_gate_span": 0.4403549134731293
+    }
+  ],
+  "shifted_body_components": [
+    {
+      "points": 1513,
+      "center_xy": [
+        94.47389221191406,
+        -26.24056053161621
+      ],
+      "xy_rms_about_median_m": 1.7737383842468262
+    },
+    {
+      "points": 90,
+      "center_xy": [
+        102.40560913085938,
+        -34.44695281982422
+      ],
+      "xy_rms_about_median_m": 1.5762826204299927
+    },
+    {
+      "points": 2,
+      "center_xy": [
+        100.25163269042969,
+        -31.444438934326172
+      ],
+      "xy_rms_about_median_m": 0.028552765026688576
+    },
+    {
+      "points": 1,
+      "center_xy": [
+        98.60076141357422,
+        -35.40118408203125
+      ],
+      "xy_rms_about_median_m": 0.0
+    },
+    {
+      "points": 1,
+      "center_xy": [
+        99.1770248413086,
+        -33.503849029541016
+      ],
+      "xy_rms_about_median_m": 0.0
+    },
+    {
+      "points": 1,
+      "center_xy": [
+        102.7226333618164,
+        -27.774595260620117
+      ],
+      "xy_rms_about_median_m": 0.0
+    }
+  ],
+  "before_counts": {
+    "frames": 1211,
+    "state:SEARCHING": 1105,
+    "range_roi_filter:completed": 1211,
+    "voxel_downsample:skipped": 4,
+    "finite:skipped": 4,
+    "measurement_freshness:completed": 1211,
+    "fresh_candidates": 27,
+    "ground_leveling:skipped": 1198,
+    "z_refine:skipped": 1162,
+    "association:completed": 1211,
+    "voxel_downsample:completed": 1207,
+    "bev_proposal:completed": 1207,
+    "bev_proposal:nonzero_calls": 207,
+    "region_best_selection:completed": 257,
+    "focus_crop:completed": 257,
+    "finite:completed": 257,
+    "range:completed": 257,
+    "z_height:completed": 257,
+    "pole_extract:completed": 257,
+    "local_3d_fallback:completed": 17,
+    "pair_score:skipped": 17,
+    "nms:skipped": 17,
+    "ground_leveling:completed": 13,
+    "state:CANDIDATE": 106,
+    "region_best_selection:nonzero_calls": 55,
+    "pole_extract:nonzero_calls": 252,
+    "pair_score:completed": 240,
+    "pair_score:nonzero_calls": 55,
+    "rejected_candidate_diagnostics:completed": 240,
+    "rejected_candidate_diagnostics:nonzero_calls": 222,
+    "nms:completed": 240,
+    "nms:nonzero_calls": 55,
+    "measurement_freshness:nonzero_calls": 24,
+    "z_refine:completed": 49,
+    "z_refine:nonzero_calls": 49,
+    "association:nonzero_calls": 49,
+    "local_3d_fallback:nonzero_calls": 2
+  },
+  "after_counts": {
+    "frames": 1211,
+    "state:SEARCHING": 1180,
+    "range_roi_filter:completed": 1211,
+    "voxel_downsample:skipped": 4,
+    "finite:skipped": 4,
+    "measurement_freshness:completed": 1211,
+    "fresh_candidates": 6,
+    "ground_leveling:skipped": 741,
+    "z_refine:skipped": 1197,
+    "association:completed": 1211,
+    "voxel_downsample:completed": 1207,
+    "bev_proposal:completed": 1207,
+    "ground_leveling:completed": 470,
+    "bev_proposal:nonzero_calls": 207,
+    "region_best_selection:completed": 257,
+    "focus_crop:completed": 257,
+    "finite:completed": 257,
+    "range:completed": 257,
+    "z_height:completed": 257,
+    "pole_extract:completed": 257,
+    "local_3d_fallback:completed": 100,
+    "pair_score:skipped": 95,
+    "nms:skipped": 95,
+    "state:CANDIDATE": 31,
+    "region_best_selection:nonzero_calls": 14,
+    "pole_extract:nonzero_calls": 196,
+    "pair_score:completed": 162,
+    "pair_score:nonzero_calls": 14,
+    "rejected_candidate_diagnostics:completed": 162,
+    "rejected_candidate_diagnostics:nonzero_calls": 157,
+    "nms:completed": 162,
+    "nms:nonzero_calls": 14,
+    "measurement_freshness:nonzero_calls": 6,
+    "z_refine:completed": 14,
+    "z_refine:nonzero_calls": 14,
+    "association:nonzero_calls": 14,
+    "local_3d_fallback:nonzero_calls": 11
+  },
+  "before_selected_measurement_frames": [
+    595,
+    631,
+    733,
+    740,
+    742,
+    754,
+    861,
+    865,
+    871,
+    873,
+    878,
+    890,
+    892,
+    898,
+    914,
+    1013,
+    1059,
+    1065,
+    1106,
+    1123,
+    1127,
+    1139,
+    1203,
+    1208
+  ],
+  "after_selected_measurement_frames": [
+    595,
+    631,
+    754,
+    890,
+    1013,
+    1059
+  ]
+}

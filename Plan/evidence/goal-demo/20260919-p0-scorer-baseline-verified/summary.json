@@ -1,0 +1,205 @@
+{
+  "label": "REAL_PCAP_WINDOWS",
+  "config_version": "53805d33bfea6111",
+  "config": {
+    "version": 1,
+    "accumulation": {
+      "enabled": true,
+      "window_size": 20,
+      "voxel_size": 0.5,
+      "max_points": 200000,
+      "roi": [
+        84.0,
+        104.0,
+        -36.0,
+        -17.0,
+        -2.0,
+        6.0
+      ],
+      "range": {
+        "min": 50.0,
+        "max": 130.0
+      }
+    },
+    "goal_detection": {
+      "enabled": true,
+      "cell_size": 0.8,
+      "ground_z": [
+        -2.0,
+        0.3
+      ],
+      "pole": {
+        "height": [
+          1.8,
+          4.0
+        ],
+        "min_points": 5,
+        "max_radius": 1.2,
+        "height_tol": 1.2,
+        "base_tol": 1.2
+      },
+      "frame": {
+        "width": [
+          4.8,
+          6.0
+        ],
+        "crossbar_z": [
+          1.8,
+          3.2
+        ]
+      },
+      "scoring": {
+        "min_confidence": 0.5,
+        "lock_confidence": 0.7,
+        "crossbar_weight": 0.3,
+        "geometry_weight": 0.7,
+        "nms_distance": 1.5
+      }
+    },
+    "strategy": {
+      "mode": "staged"
+    },
+    "bev": {
+      "cell_size": 0.8,
+      "min_window_frames": 5,
+      "min_cell_density": 0.55,
+      "min_cell_points": 10,
+      "max_blob_cells": 8,
+      "min_contrast": 1.5,
+      "contrast_ref": 2.5,
+      "span_density_floor": 0.05,
+      "nms_distance": 2.5,
+      "max_regions": 5,
+      "score_weights": {
+        "density": 0.3,
+        "contrast": 0.4,
+        "width": 0.3
+      }
+    },
+    "focus": {
+      "half_size": 6.0,
+      "prefer_single_frame": true,
+      "single_min_confidence": 0.45
+    },
+    "zrefine": {
+      "bin_size": 0.25,
+      "min_points": 30,
+      "max_base_shift": 1.0,
+      "min_height": 0.5
+    },
+    "locking": {
+      "min_frames": 3,
+      "candidate_gap": 3
+    },
+    "tracking": {
+      "lost_frame_threshold": 5,
+      "reacquire": true,
+      "max_center_jump": 6.5,
+      "kalman": true
+    },
+    "webui": {
+      "enable": true,
+      "demo_roi": [
+        84.0,
+        104.0,
+        -36.0,
+        -17.0,
+        -2.0,
+        6.0
+      ],
+      "fps_target": 10,
+      "capture_name_filter": [
+        "9.14_caochang"
+      ],
+      "window_choices": [
+        1,
+        5,
+        10,
+        20,
+        30,
+        60,
+        100
+      ],
+      "speed_choices": [
+        0.5,
+        1,
+        2,
+        5
+      ]
+    }
+  },
+  "env": {
+    "python": "3.12.10",
+    "platform": "Windows-11-10.0.26200-SP0"
+  },
+  "source_hashes": {
+    "tools/run_goal_demo_offline.py": "e92961a312cbbf69bcc9c39be4d7631840129f29b6295765219513a13a3c9d04",
+    "tools/score_goal_detection.py": "cd7a3fc6c8604664d6ac9efbfa07aba2694c152d53e32057168232b50b3548bd",
+    "web/backend/goal_detection/__init__.py": "3fbdbb438cda71ff1b2ed382a51fd7a499c509fc3613b2a1c646755033258804",
+    "web/backend/goal_detection/accumulation.py": "77fbe9c0fb34a34723fa47450997f8dbb8b02a94a4a4dcf45993745c583dfb98",
+    "web/backend/goal_detection/bev.py": "951b3aaa7c528a71ed28e70244f51ac91c608375626bad495d8fa8c0d0a4e69f",
+    "web/backend/goal_detection/buffer.py": "4aa589dedf0a21dc120611c1f5a7a36beb8fadd7e5cbe940777c2db46a39af33",
+    "web/backend/goal_detection/config.py": "63bb6d4ca97e0c346538f072eb9f137e1ccd24e653b3caff3b8919ecc728d181",
+    "web/backend/goal_detection/detector.py": "21eddd5b0b835fe26dd42ad188d8f459e7c00d3708122c7e7ab8a9073a2d7449",
+    "web/backend/goal_detection/focus.py": "28dfe44ae1480d7d74b02bd5c9e0eac3db03fd6a95ae43311c828cb3e1742bbc",
+    "web/backend/goal_detection/geometry.py": "59acb785240925f27a29e479d941ee61cdf5c2026844f63c0e283028be2874d5",
+    "web/backend/goal_detection/observability.py": "9d58fde6a095860270ecc2a87ed044a4bd9cb99d5f73e2a2cb93c77f82fe206f",
+    "web/backend/goal_detection/pipeline.py": "e15c99e3ab4db0113f9f010227204331bd06eb7109a542c6d7333a644ea425bb",
+    "web/backend/goal_detection/tracker.py": "b8a6623c32434176f3e14a7665fb569b3547b6b37e32067596b895e22bcedb3b"
+  },
+  "captures": [
+    "radar_capture_data\\2\\9.14_caochangyou.pcap"
+  ],
+  "window_size": 20,
+  "voxel_size": 0.5,
+  "range": [
+    50.0,
+    130.0
+  ],
+  "strategy": "staged",
+  "memory_samples_kb": [
+    36480,
+    74108,
+    74976,
+    99628,
+    101540,
+    102208,
+    102900,
+    103320
+  ],
+  "frames_per_capture": [
+    {
+      "pcap": "radar_capture_data\\2\\9.14_caochangyou.pcap",
+      "capture_id": "c4cc19fb-3020-4ccc-8407-1521f71b7212",
+      "sha256": "ceca9fc08758f3c35f7b8b1c024bdab90e65f49ab65e39102cdd58dc0c5292db",
+      "frames": 1211,
+      "duration_s": 121.049
+    }
+  ],
+  "total_frames": 1211,
+  "wall_time_s": 26.2,
+  "frame_ms_p50": 21.19,
+  "frame_ms_p95": 23.29,
+  "frame_ms_max": 280.29,
+  "state_counts": {
+    "SEARCHING": 595,
+    "CANDIDATE": 2,
+    "LOCKED": 1,
+    "TRACKING": 188,
+    "REACQUIRE": 282,
+    "LOST": 143
+  },
+  "lock_events": [
+    {
+      "frame_index": 597,
+      "id": 1,
+      "distance": 102.33,
+      "confidence": 0.921,
+      "center": [
+        99.54,
+        -23.68,
+        1.86
+      ]
+    }
+  ]
+}

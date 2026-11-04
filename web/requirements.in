@@ -1,6 +1,11 @@
 fastapi
 uvicorn
 numpy
+matplotlib
 scipy
+-e ../packages/na70_core
+pyransac3d==0.7.0
+opencv-python-headless==4.10.0.84
+pyserial==3.5
 pytest
 httpx

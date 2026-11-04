@@ -1,0 +1,11 @@
+{
+  "evidence_kind": "PUBLIC_DATASET",
+  "url": "https://zenodo.org/api/records/7233945/files/os1_128_01_downsampled.tar.gz/content",
+  "bytes": 426164255,
+  "sha256": "c9ef22dfbeded4e3731a98804c0c9d4360f5039b418d7e2f5a19e85b55da7f94",
+  "publisher_md5": "75ef57e84010217ab8a5f8da511ff2ea",
+  "expected_md5": "75ef57e84010217ab8a5f8da511ff2ea",
+  "sensor": "Ouster OS1-128 + IMU",
+  "na70_validated": false,
+  "archive_status": "EXTRACTED"
+}

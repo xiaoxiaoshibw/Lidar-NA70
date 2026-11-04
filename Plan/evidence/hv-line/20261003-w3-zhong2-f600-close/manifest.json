@@ -1,0 +1,81 @@
+{
+  "schema_version": "na70-wire-w3-run-v1",
+  "status": "COMPLETED",
+  "pcap_path": "radar_capture_data\\2\\9.14_caochangzhong2.pcap",
+  "capture_sha256": "2caa68d6491cb2ba6fd9bae86e04104038fbbf4c7a4e349fa6dcc211adc743ce",
+  "capture_frames": 1298,
+  "install_direction": 1,
+  "end_frame": 600,
+  "requested_duration_s": 1.0,
+  "manual_roi_m": [
+    5.0,
+    30.0,
+    -15.0,
+    15.0,
+    0.0,
+    30.0
+  ],
+  "config": {
+    "schema_version": "na70-wire-config-v1",
+    "fit": {
+      "thresh_m": 0.6,
+      "max_iteration": 400,
+      "min_points": 6,
+      "fixed_seed": 7
+    },
+    "proposal": {
+      "use_manual_roi": true
+    },
+    "validation": {
+      "min_unique_packets": 4,
+      "min_span_m": 1.0,
+      "min_coverage_fraction": 0.25,
+      "max_internal_gap_m": 50.0,
+      "max_rms_orthogonal_m": 0.5,
+      "max_p95_orthogonal_m": 1.0,
+      "max_extrapolation_beyond_support_m": 50.0,
+      "max_window_age_s": 5.0,
+      "span_bin_m": 1.0,
+      "require_direction_known": true
+    }
+  },
+  "config_sha256": "a969533236152edcc28798f4b6f43b4159940bece741f187920f4017a3ca3097",
+  "command": [
+    "D:\\Code\\radar\\web\\.venv\\Scripts\\python.exe",
+    "tools/run_wire_w3_offline.py",
+    "--pcap",
+    "radar_capture_data/2/9.14_caochangzhong2.pcap",
+    "--end-frame",
+    "600",
+    "--duration",
+    "1.0",
+    "--roi",
+    "5.0,30.0,-15.0,15.0,0.0,30.0",
+    "--output",
+    "Plan\\evidence\\hv-line\\20261003-w3-zhong2-f600-close"
+  ],
+  "environment": {
+    "python": "3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "numpy": "2.5.3",
+    "pyransac3d": "D:\\Code\\radar\\web\\.venv\\Lib\\site-packages\\pyransac3d\\__init__.py"
+  },
+  "source_hashes": {
+    "web/backend/decoder.py": "a1ffe8e1fc2bf763bac3d4f9cbced095cbcade103c01302f2db15db60e482f9d",
+    "packages/na70_core/na70_core/__init__.py": "42663f1cb483584e0b3a49b247686191feeb744dfced88fca057a4003db89bb7",
+    "packages/na70_core/na70_core/observations.py": "2893791f2af4292eadd41f16ef92c47a3174814a9e80a30673a4c93350d320bd",
+    "packages/na70_core/na70_core/windows.py": "ea8a1c0d6c9042e6f1a56ca1bcb4d7f36b22380803c0c0a0f7b06c7fe3fab738",
+    "packages/na70_core/na70_core/wire/__init__.py": "09856bc75d30a9c0fb6f1c8b39c841e1e3c939d747a56c64df847c920cd5df6e",
+    "packages/na70_core/na70_core/wire/pipeline.py": "3784d5062a4c9151ff6840f4e047d59e7b4d33d2c2ffa2e724028328661ab846",
+    "packages/na70_core/na70_core/wire/fitting.py": "9c81a9cec591140c879434de73c207fa66bd8697762bc53aecc8964839336f84",
+    "packages/na70_core/na70_core/wire/proposals.py": "01d59237f6b0ae35bd25e9cef02b13ea83bff4aab9ddfc086c8eb917b13221fd",
+    "packages/na70_core/na70_core/wire/validation.py": "ca31f0b76b8d6cf0a21bc55c9736d2d25cba0d4dcaeff5a3b5d49c3db47f11ad",
+    "packages/na70_core/na70_core/wire/config.py": "6a0e7e5f3bdb2caeacaaabefe93e406c110ad519a9979c6f52383c508f81f8ac",
+    "packages/na70_core/na70_core/wire_default.yaml": "341f2060dbcd78f88ce4f07305352e058e242b2a3d41f9bcf70966ccfbcc8181",
+    "tools/run_wire_w3_offline.py": "761f244230d4fb51556c3a7257c84b653ec4b7f66356db9fdfcf8db4a02b28ac"
+  },
+  "wire_return_status": "NOT_EVALUATED",
+  "warnings": [
+    "This run is W3 detection evidence only; real-world HV-line identity and presence require independent reviewed truth."
+  ]
+}

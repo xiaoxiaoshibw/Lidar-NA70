@@ -1,0 +1,6 @@
+[INFO] [1793328277.599131101] [laser_mapping]: p_pre->lidar_type 1
+Multi thread started 
+~~~~/home/radar/na70_lio_ws/src/fast_lio/ file opened
+[INFO] [1793328277.613242831] [laser_mapping]: Node init finished.
+catch sig %d2
+Rebuild thread terminated normally

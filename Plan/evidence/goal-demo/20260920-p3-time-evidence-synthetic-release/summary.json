@@ -1,0 +1,391 @@
+{
+  "label": "SYNTHETIC",
+  "generator": "goal-synthetic-v1",
+  "scenarios": [
+    "static",
+    "translation",
+    "yaw",
+    "translation_yaw",
+    "pitch_roll",
+    "density_drop",
+    "missing_crossbar",
+    "single_post_occlusion",
+    "disappear_reenter",
+    "tree_wall_fence",
+    "similar_pair",
+    "multi_candidate",
+    "fov_edge",
+    "empty_nan",
+    "time_jump"
+  ],
+  "development_seeds": [
+    0,
+    19
+  ],
+  "validation_seeds": [
+    1000,
+    1049
+  ],
+  "default_frames": 200,
+  "truth_not_provided_to_pipeline": true,
+  "limitations": [
+    "sparse geometric approximation, not a physical NA70 simulator",
+    "no rolling scan distortion model",
+    "intensity is randomized rather than material-calibrated"
+  ],
+  "config_version": "df5b5fdd0d151885",
+  "env": {
+    "python": "3.12.10",
+    "platform": "Windows-11-10.0.26200-SP0"
+  },
+  "source_hashes": {
+    "tools/run_goal_synthetic_suite.py": "1f27ec00a0ca9d792e16d546f6aed874c5e2b29e467bd9b656706064a7004d28",
+    "web/backend/goal_detection.yaml": "4772445087c3f5f709fee16002f2b33a84daeec8ace66e995941cd9ebd3b075d",
+    "web/backend/goal_detection/__init__.py": "3fbdbb438cda71ff1b2ed382a51fd7a499c509fc3613b2a1c646755033258804",
+    "web/backend/goal_detection/accumulation.py": "695b7782d1b1a04498c5337682a929575af18eccc05c7b6b39778aba4a30f196",
+    "web/backend/goal_detection/bev.py": "1138bd4c606693c08f5c3673d1081f082edfcf15fef9e742e7d84243d584efa1",
+    "web/backend/goal_detection/buffer.py": "4aa589dedf0a21dc120611c1f5a7a36beb8fadd7e5cbe940777c2db46a39af33",
+    "web/backend/goal_detection/config.py": "1eb2897a2d6e30dcd30d25e0423a7d5d5a2bb233134e3263576c5776dc5167d1",
+    "web/backend/goal_detection/detector.py": "5a99f0c25266f8e9459fcad5fce3a602530f87d390766e5cc15966ec3bc72b6d",
+    "web/backend/goal_detection/focus.py": "28dfe44ae1480d7d74b02bd5c9e0eac3db03fd6a95ae43311c828cb3e1742bbc",
+    "web/backend/goal_detection/geometry.py": "49394ec1ca6da61487c600bfdf28d3ddadce0705171dba6cdeb8ff80e53e1093",
+    "web/backend/goal_detection/observability.py": "b31032e93b3c8f57dc58ef163153d5c8875588cdf80d0a77dbdcfdba59f42c00",
+    "web/backend/goal_detection/pipeline.py": "0180a703288567302e4d59219148344a838ef0f1ace615d611dd2940079b6413",
+    "web/backend/goal_detection/synthetic.py": "a2ffe7c46e59cb37b9115abf2acff9913d61f560e750ddbcc715fed2e1ade45b",
+    "web/backend/goal_detection/tracker.py": "033d913b5717db87e10d3f0935e17d22dce812be534475f7cf6b99ed691a42e0"
+  },
+  "cases": [
+    {
+      "scenario": "static",
+      "seed": 0,
+      "frames": 200,
+      "input_sha256": "dfa9f8c4adaf6ee808b6837e5ed254786edab6a2e56c6e7ce296f39adf811d59",
+      "metrics": {
+        "visible_frames": 200,
+        "hits": 200,
+        "misses": 0,
+        "false_outputs": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "center_error_p95_m": 0.0163,
+        "width_error_p95_m": 0.0466,
+        "height_error_p95_m": 0.0441,
+        "id_switches": 0,
+        "matched_track_ids": [
+          1
+        ],
+        "longest_hit_streak": 200,
+        "false_confirmed_frames_while_absent": 0,
+        "absence_measurement_frames": 0
+      }
+    },
+    {
+      "scenario": "static",
+      "seed": 1000,
+      "frames": 200,
+      "input_sha256": "c9c310449a5a75c5f1bfd431a2d9c2fc52f6081bed28a1d727ef35ce6b9ec2e1",
+      "metrics": {
+        "visible_frames": 200,
+        "hits": 200,
+        "misses": 0,
+        "false_outputs": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "center_error_p95_m": 0.0163,
+        "width_error_p95_m": 0.045,
+        "height_error_p95_m": 0.0421,
+        "id_switches": 0,
+        "matched_track_ids": [
+          1
+        ],
+        "longest_hit_streak": 200,
+        "false_confirmed_frames_while_absent": 0,
+        "absence_measurement_frames": 0
+      }
+    },
+    {
+      "scenario": "translation_yaw",
+      "seed": 0,
+      "frames": 200,
+      "input_sha256": "d787b1d0c78f3356f539e43bff38d8e769d7890c5e75b8ab3712c0b33e6bafd9",
+      "metrics": {
+        "visible_frames": 200,
+        "hits": 200,
+        "misses": 0,
+        "false_outputs": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "center_error_p95_m": 0.0425,
+        "width_error_p95_m": 0.1599,
+        "height_error_p95_m": 0.0471,
+        "id_switches": 0,
+        "matched_track_ids": [
+          1
+        ],
+        "longest_hit_streak": 200,
+        "false_confirmed_frames_while_absent": 0,
+        "absence_measurement_frames": 0
+      }
+    },
+    {
+      "scenario": "translation_yaw",
+      "seed": 1000,
+      "frames": 200,
+      "input_sha256": "799ce9ed3691472e16993c404ded4f73c16318b104b9b04e8e9009892aeb2477",
+      "metrics": {
+        "visible_frames": 200,
+        "hits": 200,
+        "misses": 0,
+        "false_outputs": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "center_error_p95_m": 0.0469,
+        "width_error_p95_m": 0.1654,
+        "height_error_p95_m": 0.045,
+        "id_switches": 0,
+        "matched_track_ids": [
+          1
+        ],
+        "longest_hit_streak": 200,
+        "false_confirmed_frames_while_absent": 0,
+        "absence_measurement_frames": 0
+      }
+    },
+    {
+      "scenario": "disappear_reenter",
+      "seed": 0,
+      "frames": 200,
+      "input_sha256": "80488ac63dea0236e7c006de8051b9846f4cad5c6a5e88e1022771e33b245aca",
+      "metrics": {
+        "visible_frames": 150,
+        "hits": 140,
+        "misses": 10,
+        "false_outputs": 0,
+        "precision": 1.0,
+        "recall": 0.9333,
+        "center_error_p95_m": 0.0162,
+        "width_error_p95_m": 0.0428,
+        "height_error_p95_m": 0.049,
+        "id_switches": 0,
+        "matched_track_ids": [
+          1
+        ],
+        "longest_hit_streak": 70,
+        "false_confirmed_frames_while_absent": 0,
+        "absence_measurement_frames": 0
+      }
+    },
+    {
+      "scenario": "disappear_reenter",
+      "seed": 1000,
+      "frames": 200,
+      "input_sha256": "258a439856f416b6007c80af1db42d9e8d5d4642ab8e0e3d411989c158688b61",
+      "metrics": {
+        "visible_frames": 150,
+        "hits": 148,
+        "misses": 2,
+        "false_outputs": 0,
+        "precision": 1.0,
+        "recall": 0.9867,
+        "center_error_p95_m": 0.0176,
+        "width_error_p95_m": 0.0456,
+        "height_error_p95_m": 0.0416,
+        "id_switches": 0,
+        "matched_track_ids": [
+          1
+        ],
+        "longest_hit_streak": 78,
+        "false_confirmed_frames_while_absent": 0,
+        "absence_measurement_frames": 0
+      }
+    },
+    {
+      "scenario": "density_drop",
+      "seed": 0,
+      "frames": 200,
+      "input_sha256": "32e48216bc28d46c8dd7f98f2c5187d8374bfdb48b4f14e8301f14b7cb3c3676",
+      "metrics": {
+        "visible_frames": 200,
+        "hits": 200,
+        "misses": 0,
+        "false_outputs": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "center_error_p95_m": 0.0218,
+        "width_error_p95_m": 0.1056,
+        "height_error_p95_m": 0.0511,
+        "id_switches": 0,
+        "matched_track_ids": [
+          1
+        ],
+        "longest_hit_streak": 200,
+        "false_confirmed_frames_while_absent": 0,
+        "absence_measurement_frames": 0
+      }
+    },
+    {
+      "scenario": "density_drop",
+      "seed": 1000,
+      "frames": 200,
+      "input_sha256": "f6e333a51346eb049ca2edfe29fca68f2bb63e296b35c55429293733921ed15b",
+      "metrics": {
+        "visible_frames": 200,
+        "hits": 200,
+        "misses": 0,
+        "false_outputs": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "center_error_p95_m": 0.0225,
+        "width_error_p95_m": 0.1659,
+        "height_error_p95_m": 0.0541,
+        "id_switches": 0,
+        "matched_track_ids": [
+          1
+        ],
+        "longest_hit_streak": 200,
+        "false_confirmed_frames_while_absent": 0,
+        "absence_measurement_frames": 0
+      }
+    },
+    {
+      "scenario": "missing_crossbar",
+      "seed": 0,
+      "frames": 200,
+      "input_sha256": "4892d9ab21277a7107d09154eae8699f5e12d8914ffbd322a2b6e66e7edc2b14",
+      "metrics": {
+        "visible_frames": 200,
+        "hits": 200,
+        "misses": 0,
+        "false_outputs": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "center_error_p95_m": 0.0052,
+        "width_error_p95_m": 0.0094,
+        "height_error_p95_m": 0.238,
+        "id_switches": 0,
+        "matched_track_ids": [],
+        "longest_hit_streak": 200,
+        "false_confirmed_frames_while_absent": 0,
+        "absence_measurement_frames": 0
+      }
+    },
+    {
+      "scenario": "missing_crossbar",
+      "seed": 1000,
+      "frames": 200,
+      "input_sha256": "f1672b507b424b23747916e10ec622e723f8f970f29994fca56602869645e332",
+      "metrics": {
+        "visible_frames": 200,
+        "hits": 200,
+        "misses": 0,
+        "false_outputs": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "center_error_p95_m": 0.0065,
+        "width_error_p95_m": 0.0082,
+        "height_error_p95_m": 0.212,
+        "id_switches": 0,
+        "matched_track_ids": [],
+        "longest_hit_streak": 200,
+        "false_confirmed_frames_while_absent": 0,
+        "absence_measurement_frames": 0
+      }
+    },
+    {
+      "scenario": "pitch_roll",
+      "seed": 0,
+      "frames": 200,
+      "input_sha256": "8f8499842f119f8d03260cf8eb0d80192b03af163dea79b5a1db5a8f7c9e3161",
+      "metrics": {
+        "visible_frames": 200,
+        "hits": 117,
+        "misses": 83,
+        "false_outputs": 0,
+        "precision": 1.0,
+        "recall": 0.585,
+        "center_error_p95_m": 0.0595,
+        "width_error_p95_m": 0.1587,
+        "height_error_p95_m": 0.9988,
+        "id_switches": 0,
+        "matched_track_ids": [
+          1
+        ],
+        "longest_hit_streak": 117,
+        "false_confirmed_frames_while_absent": 0,
+        "absence_measurement_frames": 0
+      }
+    },
+    {
+      "scenario": "pitch_roll",
+      "seed": 1000,
+      "frames": 200,
+      "input_sha256": "543025faa6d393f0f44ccf68d41c29d28dd7a4d12cf39707e19f53876be8e38b",
+      "metrics": {
+        "visible_frames": 200,
+        "hits": 109,
+        "misses": 91,
+        "false_outputs": 0,
+        "precision": 1.0,
+        "recall": 0.545,
+        "center_error_p95_m": 0.0573,
+        "width_error_p95_m": 0.1498,
+        "height_error_p95_m": 0.9246,
+        "id_switches": 0,
+        "matched_track_ids": [
+          1
+        ],
+        "longest_hit_streak": 104,
+        "false_confirmed_frames_while_absent": 0,
+        "absence_measurement_frames": 0
+      }
+    },
+    {
+      "scenario": "tree_wall_fence",
+      "seed": 0,
+      "frames": 200,
+      "input_sha256": "b11b7604465a828b2efd8b1ea202e50971aaddef2d1659fbc971481abb8b5437",
+      "metrics": {
+        "visible_frames": 200,
+        "hits": 196,
+        "misses": 4,
+        "false_outputs": 0,
+        "precision": 1.0,
+        "recall": 0.98,
+        "center_error_p95_m": 0.0156,
+        "width_error_p95_m": 0.0414,
+        "height_error_p95_m": 0.0353,
+        "id_switches": 0,
+        "matched_track_ids": [
+          1
+        ],
+        "longest_hit_streak": 196,
+        "false_confirmed_frames_while_absent": 0,
+        "absence_measurement_frames": 0
+      }
+    },
+    {
+      "scenario": "tree_wall_fence",
+      "seed": 1000,
+      "frames": 200,
+      "input_sha256": "e2d94861124032464ae8e6b942971e8774b5bd9536b3e8a012afb4bf034a18cf",
+      "metrics": {
+        "visible_frames": 200,
+        "hits": 197,
+        "misses": 3,
+        "false_outputs": 0,
+        "precision": 1.0,
+        "recall": 0.985,
+        "center_error_p95_m": 0.0159,
+        "width_error_p95_m": 0.0462,
+        "height_error_p95_m": 0.0482,
+        "id_switches": 0,
+        "matched_track_ids": [
+          1
+        ],
+        "longest_hit_streak": 196,
+        "false_confirmed_frames_while_absent": 0,
+        "absence_measurement_frames": 0
+      }
+    }
+  ]
+}

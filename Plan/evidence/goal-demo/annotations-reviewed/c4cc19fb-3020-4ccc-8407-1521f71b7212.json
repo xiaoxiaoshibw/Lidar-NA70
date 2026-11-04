@@ -1,0 +1,62 @@
+{
+  "version": 1,
+  "method": "MANUAL",
+  "labeler": "demo-live",
+  "saved_at": 1789726698.7531734,
+  "capture_id": "c4cc19fb-3020-4ccc-8407-1521f71b7212",
+  "capture_sha256": "ceca9fc08758f3c35f7b8b1c024bdab90e65f49ab65e39102cdd58dc0c5292db",
+  "config_version": "5753554cc85b3d30",
+  "review_status": "PENDING_REVIEW",
+  "provenance": {
+    "derived_from": "web/data/annotations/c4cc19fb-3020-4ccc-8407-1521f71b7212.json",
+    "note": "legacy box-only 标注复制件，可能受当时检测框引导；待按 docs/GOAL_DEBUG_CONTRACT.md 从原始云三视图人工复核。原样保留于 web/data/annotations/。"
+  },
+  "labels": [
+    {
+      "capture_id": "c4cc19fb-3020-4ccc-8407-1521f71b7212",
+      "note": "",
+      "labeler": "",
+      "type": "goal",
+      "frame_range": [
+        74,
+        83
+      ],
+      "box": {
+        "center": [
+          93.84,
+          -26.53,
+          -0.08
+        ],
+        "size": [
+          0.6,
+          7.32,
+          2.44
+        ],
+        "yaw": 1.605
+      }
+    },
+    {
+      "capture_id": "c4cc19fb-3020-4ccc-8407-1521f71b7212",
+      "note": "",
+      "labeler": "",
+      "type": "goal",
+      "frame_range": [
+        0,
+        0
+      ],
+      "box": {
+        "center": [
+          79.75,
+          6.7,
+          1
+        ],
+        "size": [
+          0.6,
+          7.32,
+          2.44
+        ],
+        "yaw": 0.826
+      }
+    }
+  ]
+}

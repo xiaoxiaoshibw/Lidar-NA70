@@ -67,14 +67,14 @@
     130.0
   ],
   "memory_samples_kb": [
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null
+    31388,
+    59640,
+    60048,
+    63428,
+    64828,
+    60444,
+    60008,
+    65500
   ],
   "frames_per_capture": [
     {
@@ -84,10 +84,10 @@
     }
   ],
   "total_frames": 1211,
-  "wall_time_s": 25.97,
-  "frame_ms_p50": 20.34,
-  "frame_ms_p95": 28.16,
-  "frame_ms_max": 45.57,
+  "wall_time_s": 27.62,
+  "frame_ms_p50": 22.2,
+  "frame_ms_p95": 26.86,
+  "frame_ms_max": 40.7,
   "accumulated_points_p50": 9101,
   "accumulated_points_max": 13293,
   "non_monotonic_frames": 0

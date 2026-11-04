@@ -1,0 +1,13 @@
+{
+  "session_id": "20261030-151019",
+  "created_unix": 1793344219.4158523,
+  "created_local": "2026-10-30T15:10:19+0800",
+  "operator": {
+    "notes": [],
+    "imu_port_requested": "/dev/serial/by-id/usb-WCH.CN_USB_Single_Serial_0003-if00",
+    "lidar_iface": "enP8p1s0",
+    "operator_supplied": false,
+    "task": "A1-DUAL3"
+  },
+  "unknown_fields": "留 None 表示未测/未知，不填估算值"
+}

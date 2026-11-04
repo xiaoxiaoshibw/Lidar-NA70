@@ -1,0 +1,28 @@
+{
+  "status": "READ_ONLY_AUDIT",
+  "ui_contract": {
+    "default_window_size": 20,
+    "saved_frame_range_rule": "[max(0,current-window_size+1), current]",
+    "label_74_range_length": 10,
+    "likely_label_74_window_size": 10
+  },
+  "window_74_83": {
+    "raw_points": 200000,
+    "label_center_xy": [93.84, -26.53],
+    "points_within_1_5m": 62,
+    "points_within_3m": 141,
+    "expected_left_pole_center_xy": [93.965, -30.188],
+    "expected_right_pole_center_xy": [93.715, -22.872],
+    "left_pole_points_within_1_2m": 0,
+    "right_pole_points_within_1_2m": 21,
+    "right_pole_points_above_z_0_3": 10,
+    "box_region_z_quantiles": [-1.286, -1.236, -0.324, 0.008, 0.655, 0.727, 0.824]
+  },
+  "window_64_83_default20": {
+    "raw_points": 400000,
+    "expected_left_pole_points_within_1_2m": 0,
+    "expected_right_pole_points_within_1_2m": 21,
+    "interpretation": "The same one-sided support remains when the UI default 20-frame window is used."
+  },
+  "interpretation": "The accumulated window contains points near the saved center but only one expected pole has local support; the label is not sufficient evidence of a visible two-pole goal and remains PENDING_REVIEW."
+}

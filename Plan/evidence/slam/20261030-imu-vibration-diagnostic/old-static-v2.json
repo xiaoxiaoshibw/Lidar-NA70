@@ -1,0 +1,49 @@
+{
+  "schema": "na70-imu-spectrum-diagnostic-v1",
+  "samples": 2007,
+  "sha256": "79ef05fed97b2f3efbfa3f918c3b4005076db9406c854e965ec8763b6a0a4c1d",
+  "nominal_sample_hz": 200.0,
+  "frequency_range_nominal_hz": [
+    0.5859375,
+    89.84375
+  ],
+  "welch_segment_samples": 1024,
+  "axes": {
+    "ax": {
+      "std": 0.006338298444837287,
+      "nominal_peak_hz": 18.1640625,
+      "peak_psd": 6.678296040788018e-06
+    },
+    "ay": {
+      "std": 0.0088543456310372,
+      "nominal_peak_hz": 18.1640625,
+      "peak_psd": 1.690967323132779e-05
+    },
+    "az": {
+      "std": 0.016351720707808187,
+      "nominal_peak_hz": 18.1640625,
+      "peak_psd": 0.00011784017131259911
+    },
+    "gx": {
+      "std": 0.06351408351830465,
+      "nominal_peak_hz": 18.359375,
+      "peak_psd": 0.0003679118962567212
+    },
+    "gy": {
+      "std": 0.05351772649472463,
+      "nominal_peak_hz": 18.75,
+      "peak_psd": 0.000229127384679823
+    },
+    "gz": {
+      "std": 0.04177419274051916,
+      "nominal_peak_hz": 33.984375,
+      "peak_psd": 0.00011059715940629251
+    }
+  },
+  "limits": [
+    "sample index and nominal rate only; device sample times unavailable",
+    "peak frequencies may be aliased or shifted; not evidence of a physical source",
+    "gyro unit inferred, not independently calibrated",
+    "not an Allan variance or noise-density estimate"
+  ]
+}

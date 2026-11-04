@@ -42,9 +42,9 @@ def scene(frames, seed=4, points_per_packet=200):
     return [packet for _ in range(frames) for packet in packets]
 
 
-def upload(client, path, frames=6):
+def upload(client, path, frames=6, payloads=None):
     identifier = str(uuid4())
-    source = make_pcap(path, scene(frames))
+    source = make_pcap(path, payloads if payloads is not None else scene(frames))
     response = client.post('/api/captures', params=dict(id=identifier, filename='synthetic.pcap'),
                            content=source.read_bytes())
     assert response.status_code == 202
@@ -321,6 +321,78 @@ def test_config_overrides_are_recorded_with_the_job(tmp_path):
         validation = json.loads((tmp_path / "store" / identifier / "mapping" / job["job_id"]
                                  / "validation.json").read_text("utf-8"))
         assert validation["config"]["voxel_size"] == 0.5
+
+
+def test_fixed_sensor_scene_requires_a_declaration(tmp_path):
+    with TestClient(create_app(tmp_path / "store")) as client:
+        identifier, _ = upload(client, tmp_path / "synthetic.pcap", frames=2)
+        base = {"pose_source": "fixed_sensor", "stationary_start_frame": 0,
+                "stationary_end_frame": 1}
+        for declaration in (None, " "):
+            config = dict(base)
+            if declaration is not None:
+                config["stationary_declaration"] = declaration
+            response = client.post("/api/mapping/jobs", json={
+                "capture_id": identifier, "config": config})
+            assert response.status_code == 422, response.text
+
+
+def test_fixed_sensor_scene_persists_and_survives_restart(tmp_path):
+    root = tmp_path / "store"
+    with TestClient(create_app(root)) as client:
+        identifier, meta = upload(client, tmp_path / "synthetic.pcap", frames=3)
+        assert meta["status"] == "ready"
+        job = start_job(client, identifier, config={
+            "pose_source": "fixed_sensor",
+            "stationary_start_frame": 0,
+            "stationary_end_frame": 2,
+            "stationary_declaration": "SYNTHETIC fixed sensor",
+        })
+        finished = wait_job(client, job["job_id"])
+        assert finished["status"] == "ready", finished.get("error")
+        assert finished["stage"] == "fixed_sensor_static_scene"
+
+        directory = root / identifier / "mapping" / job["job_id"]
+        validation = json.loads((directory / "validation.json").read_text("utf-8"))
+        assert validation["stage"] == "fixed_sensor_static_scene"
+        assert validation["pose_source"] == "fixed_sensor"
+        assert validation["claims"]["real_capture_ghosting_acceptance"] == "NOT_EVALUATED"
+        assert validation["metrics"]["registered_frames"] == 0
+        ply = (directory / "map.ply").read_bytes()
+        assert ply.startswith(b"ply\n") and len(ply) > len(b"ply\nend_header\n")
+        before_restart = client.get(
+            f"/api/mapping/jobs/{job['job_id']}/map/chunks").json()
+        assert before_restart["returned_voxels"] > 0
+
+    with TestClient(create_app(root)) as client:
+        restored = client.get(f"/api/mapping/jobs/{job['job_id']}").json()
+        assert restored["status"] == "ready"
+        after_restart = client.get(
+            f"/api/mapping/jobs/{job['job_id']}/map/chunks").json()
+        assert after_restart == before_restart
+
+
+def test_fixed_sensor_skips_timestamp_anomaly_and_rejects_out_of_range_interval(tmp_path):
+    # SYNTHETIC: one bad device timestamp between two otherwise valid frames.
+    packets = list(scene(3))
+    packets[110] = packets[110][:1400] + b"\0" * 6 + b"\x03\xe8" + b"\0\0"
+    with TestClient(create_app(tmp_path / "store")) as client:
+        identifier, _ = upload(client, tmp_path / "synthetic-anomaly.pcap", payloads=packets)
+        config = {"pose_source": "fixed_sensor", "stationary_start_frame": 0,
+                  "stationary_end_frame": 2,
+                  "stationary_declaration": "SYNTHETIC fixed sensor"}
+        job = wait_job(client, start_job(client, identifier, config=config)["job_id"])
+        assert job["status"] == "ready", job.get("error")
+        trajectory = client.get(f"/api/mapping/jobs/{job['job_id']}/trajectory").json()
+        assert trajectory["frames"][0]["state"] == "fixed_observation"
+        assert trajectory["frames"][1]["state"] == "timestamp_invalid"
+        assert trajectory["frames"][2]["state"] == "fixed_observation"
+        assert job["metrics"]["fixed_observation_frames"] == 2
+
+        out_of_range = dict(config, stationary_end_frame=3)
+        response = client.post("/api/mapping/jobs", json={
+            "capture_id": identifier, "config": out_of_range})
+        assert response.status_code == 422, response.text
 
 
 def start_config_version():

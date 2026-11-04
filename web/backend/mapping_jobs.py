@@ -43,7 +43,9 @@ import numpy as np
 from .decoder import DECODER_VERSION, decode_frame
 from .capture_validation import summarize
 from .mapping import (
-    ODOMETRY_VERSION, STAGE, configuration, configuration_version, run_odometry, validate_configuration,
+    FIXED_SCENE_STAGE, FIXED_SCENE_VERSION, ODOMETRY_VERSION, STAGE,
+    configuration, configuration_version, run_fixed_scene, run_odometry,
+    validate_configuration,
 )
 
 JOBS_DIRECTORY = "mapping"
@@ -118,11 +120,12 @@ def peak_memory_mb():
 
 def empty_job(job_id: str, capture_id: str, input_sha256, cfg: dict, frame_count: int) -> dict:
     """The job record.  The field names are part of the API contract."""
+    fixed = cfg["pose_source"] == "fixed_sensor"
     return dict(
         job_id=job_id,
         capture_id=capture_id,
         input_sha256=input_sha256,
-        code_version=f"{ODOMETRY_VERSION}+{DECODER_VERSION}",
+        code_version=f"{FIXED_SCENE_VERSION if fixed else ODOMETRY_VERSION}+{DECODER_VERSION}",
         config_version=configuration_version(cfg),
         status="queued",
         progress=0.0,
@@ -136,11 +139,13 @@ def empty_job(job_id: str, capture_id: str, input_sha256, cfg: dict, frame_count
         keyframe_count=0,
         map_point_count=0,
         map_bounds=None,
-        first_frame_index=0,
-        last_frame_index=max(0, frame_count - 1),
+        first_frame_index=cfg["stationary_start_frame"] if fixed else 0,
+        last_frame_index=cfg["stationary_end_frame"] if fixed else max(0, frame_count - 1),
         imu_used=False,
         loop_closure_used=False,
-        stage=STAGE,
+        stage=FIXED_SCENE_STAGE if fixed else STAGE,
+        pose_source=cfg["pose_source"],
+        fixed_sensor_declaration=cfg["stationary_declaration"] if fixed else None,
         error=None,
         elapsed_seconds=None,
         peak_memory_mb=None,
@@ -248,7 +253,8 @@ class MappingJobs:
         if not self.frames:
             raise ValueError("记录尚未就绪，无法开始建图")
         cfg = validate_configuration(cfg or configuration())
-        if cfg['initialization_mode'] == 'stationary_window' and cfg['stationary_end_frame'] >= len(self.frames):
+        if (cfg['initialization_mode'] == 'stationary_window' or cfg['pose_source'] == 'fixed_sensor') \
+                and cfg['stationary_end_frame'] >= len(self.frames):
             raise ValueError("静止初始化区间超出采集帧数")
         job = empty_job(str(uuid4()), self.capture_id, self.input_sha256, cfg, len(self.frames))
         job["capture_preflight"] = preflight or dict(status="未预检", metadata=None, real_movement_acceptance="NOT_EVALUATED")
@@ -305,13 +311,11 @@ class MappingJobs:
             self._save(job)
 
         try:
-            report = run_odometry(
-                loader=lambda index: decode_frame(self.folder / "capture.pcap", self.frames[index]),
-                timelines=[frame["time"] for frame in self.frames],
-                cfg=cfg,
-                cancelled=lambda: self._cancelled(job_id),
-                progress=progress,
-            )
+            loader = lambda index: decode_frame(self.folder / "capture.pcap", self.frames[index])
+            common = dict(cfg=cfg, cancelled=lambda: self._cancelled(job_id), progress=progress)
+            report = (run_fixed_scene(loader, self.frames, **common)
+                      if cfg["pose_source"] == "fixed_sensor" else
+                      run_odometry(loader, [frame["time"] for frame in self.frames], **common))
             if self._cancelled(job_id):
                 raise InterruptedError()
             artifacts = self._persist(job, directory, cfg, report)
@@ -365,14 +369,17 @@ class MappingJobs:
         self._write_trajectory_csv(directory / "trajectory.csv", report)
         self._write_frame_quality(directory / "frame_quality.jsonl", report["frames"])
         _atomic_write_json(directory / "keyframes.json",
-                           dict(version=ODOMETRY_VERSION, keyframes=report["keyframes"]))
+                           dict(version=report["version"], keyframes=report["keyframes"]))
 
         chunk_count, chunk_index = self._write_chunks(directory, voxel_map)
         metrics["chunk_count"] = chunk_count
         map_meta = voxel_map.metadata(
             schema_version=2, map_id=0, coordinate_frame="map",
             segment_semantics="most_recent_observation_source; all segments constrained to map 0",
-            imu_used=False, loop_closure_used=False, stage=STAGE,
+            imu_used=False, loop_closure_used=False, stage=report["stage"],
+            pose_source=cfg["pose_source"],
+            map_origin="capture_lidar_link" if cfg["pose_source"] == "fixed_sensor" else "odometry_reference",
+            source_id_semantics="last_frame_index" if cfg["pose_source"] == "fixed_sensor" else "last_keyframe_id",
             input_sha256=self.input_sha256,
             config_version=configuration_version(cfg),
             chunk_index="map_chunks/index.json",
@@ -442,10 +449,15 @@ class MappingJobs:
         map_meta = report["map"].metadata() if report else {}
         claims = dict(
             engineering_chain="FAILED" if error else ("CANCELLED" if cancelled else "PASSED"),
-            synthetic_algorithm="see web/tests/test_mapping.py (SYNTHETIC)",
+            synthetic_algorithm=("see web/tests/test_mapping_api.py (SYNTHETIC)"
+                                 if cfg["pose_source"] == "fixed_sensor" else
+                                 "see web/tests/test_mapping.py (SYNTHETIC)"),
             real_capture_ghosting_acceptance="NOT_EVALUATED",
             jetson_acceptance="NOT_RUN",
-            initialization_assumption=cfg.get("stationary_declaration") or None,
+            initialization_assumption=(cfg.get("stationary_declaration") or None)
+            if cfg["pose_source"] == "odometry" else None,
+            fixed_sensor_declaration=(cfg.get("stationary_declaration") or None)
+            if cfg["pose_source"] == "fixed_sensor" else None,
         )
         payload = dict(
             job_id=job["job_id"],
@@ -454,7 +466,8 @@ class MappingJobs:
             code_version=job["code_version"],
             config_version=configuration_version(cfg),
             config=cfg,
-            stage=STAGE,
+            stage=job["stage"],
+            pose_source=cfg["pose_source"],
             imu_used=False,
             loop_closure_used=False,
             status=job["status"],
@@ -476,7 +489,9 @@ class MappingJobs:
                              first_frame_index=job["first_frame_index"],
                              last_frame_index=job["last_frame_index"]),
             capture_preflight=job.get("capture_preflight"),
-            capture_validation=summarize(report["frames"] if report else [], job.get("capture_preflight")),
+            capture_validation=(dict(status="NOT_APPLICABLE", reason="fixed_sensor_scene_has_no_odometry")
+                                if cfg["pose_source"] == "fixed_sensor" else
+                                summarize(report["frames"] if report else [], job.get("capture_preflight"))),
             claims=claims,
         )
         _atomic_write_json(directory / "validation.json", payload)

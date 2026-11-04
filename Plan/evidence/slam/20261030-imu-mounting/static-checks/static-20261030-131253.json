@@ -1,0 +1,101 @@
+{
+  "schema": "yesense.static-check.v1",
+  "scope": "SINGLE_POSE_STATIC_CONSISTENCY",
+  "calibration_accepted": false,
+  "thresholds": {
+    "min_samples": 1000,
+    "min_host_span_s": 9.0,
+    "max_accel_axis_std_m_s2": 0.1,
+    "max_accel_norm_std_m_s2": 0.08,
+    "max_gyro_axis_std_deg_s": 0.2,
+    "max_gyro_mean_norm_deg_s": 0.8,
+    "accel_mean_norm_range_m_s2": [
+      9.3,
+      10.3
+    ],
+    "max_host_gap_s": 0.2
+  },
+  "sample_count": 2007,
+  "stream_error_events": 0,
+  "clock": "HOST_RECEIVE_TIME",
+  "device_timestamp_present": false,
+  "unobserved": [
+    "LiDAR_to_IMU_rotation",
+    "LiDAR_to_IMU_translation",
+    "LiDAR_IMU_time_offset",
+    "absolute_yaw",
+    "full_accelerometer_bias_and_scale",
+    "Allan_noise_parameters"
+  ],
+  "assumptions": [
+    "Rigid assembly is physically stationary; IMU alone cannot prove this.",
+    "Units follow YESENSE reference parser; exact hardware model not confirmed.",
+    "Short-term apparent gyro bias only; temperature stability not measured."
+  ],
+  "status": "STATIC_LIKE_WINDOW",
+  "checks": {
+    "sample_count": true,
+    "host_span": true,
+    "accel_axis_std": true,
+    "accel_norm_std": true,
+    "gyro_axis_std": true,
+    "gyro_mean": true,
+    "accel_norm": true,
+    "host_continuity": true,
+    "sequence_continuity": true,
+    "stream_integrity": true,
+    "complete_fields": true
+  },
+  "failed_checks": [],
+  "host_span_s": 10.03200000000652,
+  "host_received_hz": 199.9601275915766,
+  "max_host_gap_s": 0.01600000006146729,
+  "sequence_breaks": 0,
+  "accel_mean_m_s2": [
+    -0.13400293572496264,
+    -0.006294130044843049,
+    9.776318063278525
+  ],
+  "accel_std_m_s2": [
+    0.006338298444837287,
+    0.0088543456310372,
+    0.01635172070780819
+  ],
+  "accel_mean_norm_m_s2": 9.777238427963281,
+  "accel_norm_std_m_s2": 0.016374082456045925,
+  "gyro_mean_deg_s": [
+    0.13843492725460887,
+    -0.10156851519681116,
+    0.002127990533134031
+  ],
+  "gyro_std_deg_s": [
+    0.06351408351830465,
+    0.05351772649472463,
+    0.04177419274051916
+  ],
+  "gyro_bias_candidate_rad_s": [
+    0.0024161452803517594,
+    -0.0017727050065462512,
+    3.7140441254458326e-05
+  ],
+  "specific_force_unit_imu": [
+    -0.013705601710776434,
+    -0.0006437533554302606,
+    0.9999058666011331
+  ],
+  "apparent_gravity_direction_imu": [
+    0.013705601710776434,
+    0.0006437533554302606,
+    -0.9999058666011331
+  ],
+  "gravity_tilt_deg": {
+    "roll": -0.036887817593043555,
+    "pitch": 0.7852977205378456
+  },
+  "tilt_note": "Assumes accelerometer +Z up with gravity specific force; not LiDAR/IMU extrinsic rotation.",
+  "port": "COM12",
+  "baud": 460800,
+  "capture_elapsed_s": 10.047000000020489,
+  "source_file": "static-20261030-131253.jsonl",
+  "source_sha256": "79ef05fed97b2f3efbfa3f918c3b4005076db9406c854e965ec8763b6a0a4c1d"
+}

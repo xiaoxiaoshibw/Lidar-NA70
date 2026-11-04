@@ -1,0 +1,10 @@
+{
+  "session_id": "20261030-160803",
+  "created_unix": 1793347683.445606,
+  "created_local": "2026-10-30T16:08:03+0800",
+  "operator": {
+    "note": "verify note and manifest",
+    "task": "A2-FIXED-VERIFY"
+  },
+  "unknown_fields": "留 None 表示未测/未知，不填估算值"
+}

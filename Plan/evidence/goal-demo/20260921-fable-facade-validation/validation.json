@@ -1,0 +1,1466 @@
+{
+  "generated_at": 1790141756.9904442,
+  "window_evaluation": {
+    "observation_unit": "accumulated_window",
+    "windows_evaluated": 0,
+    "entries": []
+  },
+  "status": "EVALUATED",
+  "eval_config": {
+    "version": "eval-v1",
+    "hit_radius_m": 1.5,
+    "min_confidence": 0.5,
+    "measured_states": [
+      "LOCKED",
+      "TRACKING"
+    ],
+    "predicted_states": [
+      "REACQUIRE"
+    ],
+    "lost_states": [
+      "LOST"
+    ],
+    "counted_visibility": [
+      "visible",
+      "partially_occluded"
+    ]
+  },
+  "eval_config_version": "8a00d3f92a5901f7",
+  "capture_attribution": "row",
+  "capture_arg": "c4cc19fb-3020-4ccc-8407-1521f71b7212",
+  "hit_radius_m": 1.5,
+  "min_confidence": 0.5,
+  "goal_labels": 51,
+  "negative_labels": 1,
+  "labels_used": 52,
+  "labels_skipped": 0,
+  "unreviewed_labels_used": 0,
+  "skipped_label_reasons": [],
+  "frames_total": 1211,
+  "measurement": {
+    "frames": 77,
+    "positive_outputs": 51,
+    "hits": 51,
+    "misses": 26,
+    "precision": 1.0,
+    "recall": 0.662,
+    "miss_rate": 0.338,
+    "mean_center_error_m": 0.119,
+    "p95_center_error_m": 0.322,
+    "max_center_error_m": 0.565
+  },
+  "prediction": {
+    "measured": {
+      "frames": 54,
+      "positive_outputs": 45,
+      "hits": 45,
+      "misses": 9,
+      "precision": 1.0,
+      "recall": 0.833,
+      "miss_rate": 0.167,
+      "mean_center_error_m": 0.111,
+      "p95_center_error_m": 0.314,
+      "max_center_error_m": 0.362
+    },
+    "predicted": {
+      "frames": 8,
+      "positive_outputs": 2,
+      "hits": 2,
+      "misses": 6,
+      "precision": 1.0,
+      "recall": 0.25,
+      "miss_rate": 0.75,
+      "mean_center_error_m": 0.205,
+      "p95_center_error_m": 0.274,
+      "max_center_error_m": 0.282
+    },
+    "lost": {
+      "frames": 0,
+      "boxes_returned": 0
+    }
+  },
+  "unknown_frames": 1134,
+  "unknown_frames_with_output": 1,
+  "per_goal": [
+    {
+      "capture_id": "c4cc19fb-3020-4ccc-8407-1521f71b7212",
+      "frame_range": [
+        4,
+        4
+      ],
+      "review_status": "reviewed",
+      "visibility": "visible",
+      "truth": {
+        "center_xy": [
+          94.3,
+          -26.3
+        ],
+        "center_z": -0.3,
+        "width": 4.9,
+        "height": 1.9,
+        "yaw": 1.62
+      },
+      "distance_from_origin": 97.9,
+      "frames_in_range": 1,
+      "positive_outputs": 0,
+      "hit_frames": 0,
+      "hit_ratio": 0.0,
+      "first_hit_frame": null,
+      "mean_center_error_m": null,
+      "max_center_error_m": null
+    },
+    {
+      "capture_id": "c4cc19fb-3020-4ccc-8407-1521f71b7212",
+      "frame_range": [
+        7,
+        8
+      ],
+      "review_status": "reviewed",
+      "visibility": "visible",
+      "truth": {
+        "center_xy": [
+          94.3,
+          -26.3
+        ],
+        "center_z": -0.3,
+        "width": 4.9,
+        "height": 1.9,
+        "yaw": 1.62
+      },
+      "distance_from_origin": 97.9,
+      "frames_in_range": 2,
+      "positive_outputs": 0,
+      "hit_frames": 0,
+      "hit_ratio": 0.0,
+      "first_hit_frame": null,
+      "mean_center_error_m": null,
+      "max_center_error_m": null
+    },
+    {
+      "capture_id": "c4cc19fb-3020-4ccc-8407-1521f71b7212",
+      "frame_range": [
+        13,
+        13
+      ],
+      "review_status": "reviewed",
+      "visibility": "visible",
+      "truth": {
+        "center_xy": [
+          94.3,
+          -26.3
+        ],
+        "center_z": -0.3,
+        "width": 4.9,
+        "height": 1.9,
+        "yaw": 1.62
+      },
+      "distance_from_origin": 97.9,
+      "frames_in_range": 1,
+      "positive_outputs": 0,
+      "hit_frames": 0,
+      "hit_ratio": 0.0,
+      "first_hit_frame": null,
+      "mean_center_error_m": null,
+      "max_center_error_m": null
+    },
+    {
+      "capture_id": "c4cc19fb-3020-4ccc-8407-1521f71b7212",
+      "frame_range": [
+        16,
+        19
+      ],
+      "review_status": "reviewed",
+      "visibility": "visible",
+      "truth": {
+        "center_xy": [
+          94.3,
+          -26.3
+        ],
+        "center_z": -0.3,
+        "width": 4.9,
+        "height": 1.9,
+        "yaw": 1.62
+      },
+      "distance_from_origin": 97.9,
+      "frames_in_range": 4,
+      "positive_outputs": 0,
+      "hit_frames": 0,
+      "hit_ratio": 0.0,
+      "first_hit_frame": null,
+      "mean_center_error_m": null,
+      "max_center_error_m": null
+    },
+    {
+      "capture_id": "c4cc19fb-3020-4ccc-8407-1521f71b7212",
+      "frame_range": [
+        21,
+        21
+      ],
+      "review_status": "reviewed",
+      "visibility": "visible",
+      "truth": {
+        "center_xy": [
+          94.3,
+          -26.3
+        ],
+        "center_z": -0.3,
+        "width": 4.9,
+        "height": 1.9,
+        "yaw": 1.62
+      },
+      "distance_from_origin": 97.9,
+      "frames_in_range": 1,
+      "positive_outputs": 0,
+      "hit_frames": 0,
+      "hit_ratio": 0.0,
+      "first_hit_frame": null,
+      "mean_center_error_m": null,
+      "max_center_error_m": null
+    },
+    {
+      "capture_id": "c4cc19fb-3020-4ccc-8407-1521f71b7212",
+      "frame_range": [
+        23,
+        23
+      ],
+      "review_status": "reviewed",
+      "visibility": "visible",
+      "truth": {
+        "center_xy": [
+          94.3,
+          -26.3
+        ],
+        "center_z": -0.3,
+        "width": 4.9,
+        "height": 1.9,
+        "yaw": 1.62
+      },
+      "distance_from_origin": 97.9,
+      "frames_in_range": 1,
+      "positive_outputs": 0,
+      "hit_frames": 0,
+      "hit_ratio": 0.0,
+      "first_hit_frame": null,
+      "mean_center_error_m": null,
+      "max_center_error_m": null
+    },
+    {
+      "capture_id": "c4cc19fb-3020-4ccc-8407-1521f71b7212",
+      "frame_range": [
+        25,
+        26
+      ],
+      "review_status": "reviewed",
+      "visibility": "visible",
+      "truth": {
+        "center_xy": [
+          94.3,
+          -26.3
+        ],
+        "center_z": -0.3,
+        "width": 4.9,
+        "height": 1.9,
+        "yaw": 1.62
+      },
+      "distance_from_origin": 97.9,
+      "frames_in_range": 2,
+      "positive_outputs": 2,
+      "hit_frames": 2,
+      "hit_ratio": 1.0,
+      "first_hit_frame": 25,
+      "mean_center_error_m": 0.342,
+      "max_center_error_m": 0.565
+    },
+    {
+      "capture_id": "c4cc19fb-3020-4ccc-8407-1521f71b7212",
+      "frame_range": [
+        28,
+        28
+      ],
+      "review_status": "reviewed",
+      "visibility": "visible",
+      "truth": {
+        "center_xy": [
+          94.3,
+          -26.3
+        ],
+        "center_z": -0.3,
+        "width": 4.9,
+        "height": 1.9,
+        "yaw": 1.62
+      },
+      "distance_from_origin": 97.9,
+      "frames_in_range": 1,
+      "positive_outputs": 0,
+      "hit_frames": 0,
+      "hit_ratio": 0.0,
+      "first_hit_frame": null,
+      "mean_center_error_m": null,
+      "max_center_error_m": null
+    },
+    {
+      "capture_id": "c4cc19fb-3020-4ccc-8407-1521f71b7212",
+      "frame_range": [
+        31,
+        35
+      ],
+      "review_status": "reviewed",
+      "visibility": "visible",
+      "truth": {
+        "center_xy": [
+          94.3,
+          -26.3
+        ],
+        "center_z": -0.3,
+        "width": 4.9,
+        "height": 1.9,
+        "yaw": 1.62
+      },
+      "distance_from_origin": 97.9,
+      "frames_in_range": 5,
+      "positive_outputs": 5,
+      "hit_frames": 5,
+      "hit_ratio": 1.0,
+      "first_hit_frame": 31,
+      "mean_center_error_m": 0.131,
+      "max_center_error_m": 0.255
+    },
+    {
+      "capture_id": "c4cc19fb-3020-4ccc-8407-1521f71b7212",
+      "frame_range": [
+        37,
+        39
+      ],
+      "review_status": "reviewed",
+      "visibility": "visible",
+      "truth": {
+        "center_xy": [
+          94.3,
+          -26.3
+        ],
+        "center_z": -0.3,
+        "width": 4.9,
+        "height": 1.9,
+        "yaw": 1.62
+      },
+      "distance_from_origin": 97.9,
+      "frames_in_range": 3,
+      "positive_outputs": 3,
+      "hit_frames": 3,
+      "hit_ratio": 1.0,
+      "first_hit_frame": 37,
+      "mean_center_error_m": 0.027,
+      "max_center_error_m": 0.035
+    },
+    {
+      "capture_id": "c4cc19fb-3020-4ccc-8407-1521f71b7212",
+      "frame_range": [
+        41,
+        41
+      ],
+      "review_status": "reviewed",
+      "visibility": "visible",
+      "truth": {
+        "center_xy": [
+          94.3,
+          -26.3
+        ],
+        "center_z": -0.3,
+        "width": 4.9,
+        "height": 1.9,
+        "yaw": 1.62
+      },
+      "distance_from_origin": 97.9,
+      "frames_in_range": 1,
+      "positive_outputs": 1,
+      "hit_frames": 1,
+      "hit_ratio": 1.0,
+      "first_hit_frame": 41,
+      "mean_center_error_m": 0.095,
+      "max_center_error_m": 0.095
+    },
+    {
+      "capture_id": "c4cc19fb-3020-4ccc-8407-1521f71b7212",
+      "frame_range": [
+        43,
+        43
+      ],
+      "review_status": "reviewed",
+      "visibility": "visible",
+      "truth": {
+        "center_xy": [
+          94.3,
+          -26.3
+        ],
+        "center_z": -0.3,
+        "width": 4.9,
+        "height": 1.9,
+        "yaw": 1.62
+      },
+      "distance_from_origin": 97.9,
+      "frames_in_range": 1,
+      "positive_outputs": 1,
+      "hit_frames": 1,
+      "hit_ratio": 1.0,
+      "first_hit_frame": 43,
+      "mean_center_error_m": 0.113,
+      "max_center_error_m": 0.113
+    },
+    {
+      "capture_id": "c4cc19fb-3020-4ccc-8407-1521f71b7212",
+      "frame_range": [
+        46,
+        46
+      ],
+      "review_status": "reviewed",
+      "visibility": "visible",
+      "truth": {
+        "center_xy": [
+          94.3,
+          -26.3
+        ],
+        "center_z": -0.3,
+        "width": 4.9,
+        "height": 1.9,
+        "yaw": 1.62
+      },
+      "distance_from_origin": 97.9,
+      "frames_in_range": 1,
+      "positive_outputs": 1,
+      "hit_frames": 1,
+      "hit_ratio": 1.0,
+      "first_hit_frame": 46,
+      "mean_center_error_m": 0.038,
+      "max_center_error_m": 0.038
+    },
+    {
+      "capture_id": "c4cc19fb-3020-4ccc-8407-1521f71b7212",
+      "frame_range": [
+        48,
+        48
+      ],
+      "review_status": "reviewed",
+      "visibility": "visible",
+      "truth": {
+        "center_xy": [
+          94.3,
+          -26.3
+        ],
+        "center_z": -0.3,
+        "width": 4.9,
+        "height": 1.9,
+        "yaw": 1.62
+      },
+      "distance_from_origin": 97.9,
+      "frames_in_range": 1,
+      "positive_outputs": 1,
+      "hit_frames": 1,
+      "hit_ratio": 1.0,
+      "first_hit_frame": 48,
+      "mean_center_error_m": 0.033,
+      "max_center_error_m": 0.033
+    },
+    {
+      "capture_id": "c4cc19fb-3020-4ccc-8407-1521f71b7212",
+      "frame_range": [
+        50,
+        50
+      ],
+      "review_status": "reviewed",
+      "visibility": "visible",
+      "truth": {
+        "center_xy": [
+          94.3,
+          -26.3
+        ],
+        "center_z": -0.3,
+        "width": 4.9,
+        "height": 1.9,
+        "yaw": 1.62
+      },
+      "distance_from_origin": 97.9,
+      "frames_in_range": 1,
+      "positive_outputs": 1,
+      "hit_frames": 1,
+      "hit_ratio": 1.0,
+      "first_hit_frame": 50,
+      "mean_center_error_m": 0.05,
+      "max_center_error_m": 0.05
+    },
+    {
+      "capture_id": "c4cc19fb-3020-4ccc-8407-1521f71b7212",
+      "frame_range": [
+        52,
+        52
+      ],
+      "review_status": "reviewed",
+      "visibility": "visible",
+      "truth": {
+        "center_xy": [
+          94.3,
+          -26.3
+        ],
+        "center_z": -0.3,
+        "width": 4.9,
+        "height": 1.9,
+        "yaw": 1.62
+      },
+      "distance_from_origin": 97.9,
+      "frames_in_range": 1,
+      "positive_outputs": 1,
+      "hit_frames": 1,
+      "hit_ratio": 1.0,
+      "first_hit_frame": 52,
+      "mean_center_error_m": 0.024,
+      "max_center_error_m": 0.024
+    },
+    {
+      "capture_id": "c4cc19fb-3020-4ccc-8407-1521f71b7212",
+      "frame_range": [
+        55,
+        56
+      ],
+      "review_status": "reviewed",
+      "visibility": "visible",
+      "truth": {
+        "center_xy": [
+          94.3,
+          -26.3
+        ],
+        "center_z": -0.3,
+        "width": 4.9,
+        "height": 1.9,
+        "yaw": 1.62
+      },
+      "distance_from_origin": 97.9,
+      "frames_in_range": 2,
+      "positive_outputs": 2,
+      "hit_frames": 2,
+      "hit_ratio": 1.0,
+      "first_hit_frame": 55,
+      "mean_center_error_m": 0.056,
+      "max_center_error_m": 0.056
+    },
+    {
+      "capture_id": "c4cc19fb-3020-4ccc-8407-1521f71b7212",
+      "frame_range": [
+        59,
+        59
+      ],
+      "review_status": "reviewed",
+      "visibility": "visible",
+      "truth": {
+        "center_xy": [
+          94.3,
+          -26.3
+        ],
+        "center_z": -0.3,
+        "width": 4.9,
+        "height": 1.9,
+        "yaw": 1.62
+      },
+      "distance_from_origin": 97.9,
+      "frames_in_range": 1,
+      "positive_outputs": 1,
+      "hit_frames": 1,
+      "hit_ratio": 1.0,
+      "first_hit_frame": 59,
+      "mean_center_error_m": 0.042,
+      "max_center_error_m": 0.042
+    },
+    {
+      "capture_id": "c4cc19fb-3020-4ccc-8407-1521f71b7212",
+      "frame_range": [
+        62,
+        63
+      ],
+      "review_status": "reviewed",
+      "visibility": "visible",
+      "truth": {
+        "center_xy": [
+          94.3,
+          -26.3
+        ],
+        "center_z": -0.3,
+        "width": 4.9,
+        "height": 1.9,
+        "yaw": 1.62
+      },
+      "distance_from_origin": 97.9,
+      "frames_in_range": 2,
+      "positive_outputs": 2,
+      "hit_frames": 2,
+      "hit_ratio": 1.0,
+      "first_hit_frame": 62,
+      "mean_center_error_m": 0.096,
+      "max_center_error_m": 0.128
+    },
+    {
+      "capture_id": "c4cc19fb-3020-4ccc-8407-1521f71b7212",
+      "frame_range": [
+        66,
+        66
+      ],
+      "review_status": "reviewed",
+      "visibility": "visible",
+      "truth": {
+        "center_xy": [
+          94.3,
+          -26.3
+        ],
+        "center_z": -0.3,
+        "width": 4.9,
+        "height": 1.9,
+        "yaw": 1.62
+      },
+      "distance_from_origin": 97.9,
+      "frames_in_range": 1,
+      "positive_outputs": 1,
+      "hit_frames": 1,
+      "hit_ratio": 1.0,
+      "first_hit_frame": 66,
+      "mean_center_error_m": 0.123,
+      "max_center_error_m": 0.123
+    },
+    {
+      "capture_id": "c4cc19fb-3020-4ccc-8407-1521f71b7212",
+      "frame_range": [
+        69,
+        69
+      ],
+      "review_status": "reviewed",
+      "visibility": "visible",
+      "truth": {
+        "center_xy": [
+          94.3,
+          -26.3
+        ],
+        "center_z": -0.3,
+        "width": 4.9,
+        "height": 1.9,
+        "yaw": 1.62
+      },
+      "distance_from_origin": 97.9,
+      "frames_in_range": 1,
+      "positive_outputs": 1,
+      "hit_frames": 1,
+      "hit_ratio": 1.0,
+      "first_hit_frame": 69,
+      "mean_center_error_m": 0.107,
+      "max_center_error_m": 0.107
+    },
+    {
+      "capture_id": "c4cc19fb-3020-4ccc-8407-1521f71b7212",
+      "frame_range": [
+        75,
+        75
+      ],
+      "review_status": "reviewed",
+      "visibility": "visible",
+      "truth": {
+        "center_xy": [
+          94.3,
+          -26.3
+        ],
+        "center_z": -0.3,
+        "width": 4.9,
+        "height": 1.9,
+        "yaw": 1.62
+      },
+      "distance_from_origin": 97.9,
+      "frames_in_range": 1,
+      "positive_outputs": 1,
+      "hit_frames": 1,
+      "hit_ratio": 1.0,
+      "first_hit_frame": 75,
+      "mean_center_error_m": 0.046,
+      "max_center_error_m": 0.046
+    },
+    {
+      "capture_id": "c4cc19fb-3020-4ccc-8407-1521f71b7212",
+      "frame_range": [
+        78,
+        79
+      ],
+      "review_status": "reviewed",
+      "visibility": "visible",
+      "truth": {
+        "center_xy": [
+          94.3,
+          -26.3
+        ],
+        "center_z": -0.3,
+        "width": 4.9,
+        "height": 1.9,
+        "yaw": 1.62
+      },
+      "distance_from_origin": 97.9,
+      "frames_in_range": 2,
+      "positive_outputs": 2,
+      "hit_frames": 2,
+      "hit_ratio": 1.0,
+      "first_hit_frame": 78,
+      "mean_center_error_m": 0.201,
+      "max_center_error_m": 0.3
+    },
+    {
+      "capture_id": "c4cc19fb-3020-4ccc-8407-1521f71b7212",
+      "frame_range": [
+        82,
+        83
+      ],
+      "review_status": "reviewed",
+      "visibility": "visible",
+      "truth": {
+        "center_xy": [
+          94.3,
+          -26.3
+        ],
+        "center_z": -0.3,
+        "width": 4.9,
+        "height": 1.9,
+        "yaw": 1.62
+      },
+      "distance_from_origin": 97.9,
+      "frames_in_range": 2,
+      "positive_outputs": 0,
+      "hit_frames": 0,
+      "hit_ratio": 0.0,
+      "first_hit_frame": null,
+      "mean_center_error_m": null,
+      "max_center_error_m": null
+    },
+    {
+      "capture_id": "c4cc19fb-3020-4ccc-8407-1521f71b7212",
+      "frame_range": [
+        86,
+        86
+      ],
+      "review_status": "reviewed",
+      "visibility": "visible",
+      "truth": {
+        "center_xy": [
+          94.3,
+          -26.3
+        ],
+        "center_z": -0.3,
+        "width": 4.9,
+        "height": 1.9,
+        "yaw": 1.62
+      },
+      "distance_from_origin": 97.9,
+      "frames_in_range": 1,
+      "positive_outputs": 0,
+      "hit_frames": 0,
+      "hit_ratio": 0.0,
+      "first_hit_frame": null,
+      "mean_center_error_m": null,
+      "max_center_error_m": null
+    },
+    {
+      "capture_id": "c4cc19fb-3020-4ccc-8407-1521f71b7212",
+      "frame_range": [
+        91,
+        91
+      ],
+      "review_status": "reviewed",
+      "visibility": "visible",
+      "truth": {
+        "center_xy": [
+          94.3,
+          -26.3
+        ],
+        "center_z": -0.3,
+        "width": 4.9,
+        "height": 1.9,
+        "yaw": 1.62
+      },
+      "distance_from_origin": 97.9,
+      "frames_in_range": 1,
+      "positive_outputs": 0,
+      "hit_frames": 0,
+      "hit_ratio": 0.0,
+      "first_hit_frame": null,
+      "mean_center_error_m": null,
+      "max_center_error_m": null
+    },
+    {
+      "capture_id": "c4cc19fb-3020-4ccc-8407-1521f71b7212",
+      "frame_range": [
+        95,
+        95
+      ],
+      "review_status": "reviewed",
+      "visibility": "visible",
+      "truth": {
+        "center_xy": [
+          94.3,
+          -26.3
+        ],
+        "center_z": -0.3,
+        "width": 4.9,
+        "height": 1.9,
+        "yaw": 1.62
+      },
+      "distance_from_origin": 97.9,
+      "frames_in_range": 1,
+      "positive_outputs": 1,
+      "hit_frames": 1,
+      "hit_ratio": 1.0,
+      "first_hit_frame": 95,
+      "mean_center_error_m": 0.062,
+      "max_center_error_m": 0.062
+    },
+    {
+      "capture_id": "c4cc19fb-3020-4ccc-8407-1521f71b7212",
+      "frame_range": [
+        100,
+        100
+      ],
+      "review_status": "reviewed",
+      "visibility": "visible",
+      "truth": {
+        "center_xy": [
+          94.3,
+          -26.3
+        ],
+        "center_z": -0.3,
+        "width": 4.9,
+        "height": 1.9,
+        "yaw": 1.62
+      },
+      "distance_from_origin": 97.9,
+      "frames_in_range": 1,
+      "positive_outputs": 0,
+      "hit_frames": 0,
+      "hit_ratio": 0.0,
+      "first_hit_frame": null,
+      "mean_center_error_m": null,
+      "max_center_error_m": null
+    },
+    {
+      "capture_id": "c4cc19fb-3020-4ccc-8407-1521f71b7212",
+      "frame_range": [
+        102,
+        102
+      ],
+      "review_status": "reviewed",
+      "visibility": "visible",
+      "truth": {
+        "center_xy": [
+          94.3,
+          -26.3
+        ],
+        "center_z": -0.3,
+        "width": 4.9,
+        "height": 1.9,
+        "yaw": 1.62
+      },
+      "distance_from_origin": 97.9,
+      "frames_in_range": 1,
+      "positive_outputs": 1,
+      "hit_frames": 1,
+      "hit_ratio": 1.0,
+      "first_hit_frame": 102,
+      "mean_center_error_m": 0.045,
+      "max_center_error_m": 0.045
+    },
+    {
+      "capture_id": "c4cc19fb-3020-4ccc-8407-1521f71b7212",
+      "frame_range": [
+        105,
+        107
+      ],
+      "review_status": "reviewed",
+      "visibility": "visible",
+      "truth": {
+        "center_xy": [
+          94.3,
+          -26.3
+        ],
+        "center_z": -0.3,
+        "width": 4.9,
+        "height": 1.9,
+        "yaw": 1.62
+      },
+      "distance_from_origin": 97.9,
+      "frames_in_range": 3,
+      "positive_outputs": 2,
+      "hit_frames": 2,
+      "hit_ratio": 0.667,
+      "first_hit_frame": 105,
+      "mean_center_error_m": 0.325,
+      "max_center_error_m": 0.333
+    },
+    {
+      "capture_id": "c4cc19fb-3020-4ccc-8407-1521f71b7212",
+      "frame_range": [
+        113,
+        113
+      ],
+      "review_status": "reviewed",
+      "visibility": "visible",
+      "truth": {
+        "center_xy": [
+          94.3,
+          -26.3
+        ],
+        "center_z": -0.3,
+        "width": 4.9,
+        "height": 1.9,
+        "yaw": 1.62
+      },
+      "distance_from_origin": 97.9,
+      "frames_in_range": 1,
+      "positive_outputs": 1,
+      "hit_frames": 1,
+      "hit_ratio": 1.0,
+      "first_hit_frame": 113,
+      "mean_center_error_m": 0.037,
+      "max_center_error_m": 0.037
+    },
+    {
+      "capture_id": "c4cc19fb-3020-4ccc-8407-1521f71b7212",
+      "frame_range": [
+        115,
+        115
+      ],
+      "review_status": "reviewed",
+      "visibility": "visible",
+      "truth": {
+        "center_xy": [
+          94.3,
+          -26.3
+        ],
+        "center_z": -0.3,
+        "width": 4.9,
+        "height": 1.9,
+        "yaw": 1.62
+      },
+      "distance_from_origin": 97.9,
+      "frames_in_range": 1,
+      "positive_outputs": 1,
+      "hit_frames": 1,
+      "hit_ratio": 1.0,
+      "first_hit_frame": 115,
+      "mean_center_error_m": 0.326,
+      "max_center_error_m": 0.326
+    },
+    {
+      "capture_id": "c4cc19fb-3020-4ccc-8407-1521f71b7212",
+      "frame_range": [
+        118,
+        118
+      ],
+      "review_status": "reviewed",
+      "visibility": "visible",
+      "truth": {
+        "center_xy": [
+          94.3,
+          -26.3
+        ],
+        "center_z": -0.3,
+        "width": 4.9,
+        "height": 1.9,
+        "yaw": 1.62
+      },
+      "distance_from_origin": 97.9,
+      "frames_in_range": 1,
+      "positive_outputs": 1,
+      "hit_frames": 1,
+      "hit_ratio": 1.0,
+      "first_hit_frame": 118,
+      "mean_center_error_m": 0.069,
+      "max_center_error_m": 0.069
+    },
+    {
+      "capture_id": "c4cc19fb-3020-4ccc-8407-1521f71b7212",
+      "frame_range": [
+        120,
+        120
+      ],
+      "review_status": "reviewed",
+      "visibility": "visible",
+      "truth": {
+        "center_xy": [
+          94.3,
+          -26.3
+        ],
+        "center_z": -0.3,
+        "width": 4.9,
+        "height": 1.9,
+        "yaw": 1.62
+      },
+      "distance_from_origin": 97.9,
+      "frames_in_range": 1,
+      "positive_outputs": 1,
+      "hit_frames": 1,
+      "hit_ratio": 1.0,
+      "first_hit_frame": 120,
+      "mean_center_error_m": 0.086,
+      "max_center_error_m": 0.086
+    },
+    {
+      "capture_id": "c4cc19fb-3020-4ccc-8407-1521f71b7212",
+      "frame_range": [
+        123,
+        123
+      ],
+      "review_status": "reviewed",
+      "visibility": "visible",
+      "truth": {
+        "center_xy": [
+          94.3,
+          -26.3
+        ],
+        "center_z": -0.3,
+        "width": 4.9,
+        "height": 1.9,
+        "yaw": 1.62
+      },
+      "distance_from_origin": 97.9,
+      "frames_in_range": 1,
+      "positive_outputs": 1,
+      "hit_frames": 1,
+      "hit_ratio": 1.0,
+      "first_hit_frame": 123,
+      "mean_center_error_m": 0.078,
+      "max_center_error_m": 0.078
+    },
+    {
+      "capture_id": "c4cc19fb-3020-4ccc-8407-1521f71b7212",
+      "frame_range": [
+        127,
+        127
+      ],
+      "review_status": "reviewed",
+      "visibility": "visible",
+      "truth": {
+        "center_xy": [
+          94.3,
+          -26.3
+        ],
+        "center_z": -0.3,
+        "width": 4.9,
+        "height": 1.9,
+        "yaw": 1.62
+      },
+      "distance_from_origin": 97.9,
+      "frames_in_range": 1,
+      "positive_outputs": 1,
+      "hit_frames": 1,
+      "hit_ratio": 1.0,
+      "first_hit_frame": 127,
+      "mean_center_error_m": 0.015,
+      "max_center_error_m": 0.015
+    },
+    {
+      "capture_id": "c4cc19fb-3020-4ccc-8407-1521f71b7212",
+      "frame_range": [
+        133,
+        133
+      ],
+      "review_status": "reviewed",
+      "visibility": "visible",
+      "truth": {
+        "center_xy": [
+          94.3,
+          -26.3
+        ],
+        "center_z": -0.3,
+        "width": 4.9,
+        "height": 1.9,
+        "yaw": 1.62
+      },
+      "distance_from_origin": 97.9,
+      "frames_in_range": 1,
+      "positive_outputs": 1,
+      "hit_frames": 1,
+      "hit_ratio": 1.0,
+      "first_hit_frame": 133,
+      "mean_center_error_m": 0.022,
+      "max_center_error_m": 0.022
+    },
+    {
+      "capture_id": "c4cc19fb-3020-4ccc-8407-1521f71b7212",
+      "frame_range": [
+        139,
+        139
+      ],
+      "review_status": "reviewed",
+      "visibility": "visible",
+      "truth": {
+        "center_xy": [
+          94.3,
+          -26.3
+        ],
+        "center_z": -0.3,
+        "width": 4.9,
+        "height": 1.9,
+        "yaw": 1.62
+      },
+      "distance_from_origin": 97.9,
+      "frames_in_range": 1,
+      "positive_outputs": 1,
+      "hit_frames": 1,
+      "hit_ratio": 1.0,
+      "first_hit_frame": 139,
+      "mean_center_error_m": 0.05,
+      "max_center_error_m": 0.05
+    },
+    {
+      "capture_id": "c4cc19fb-3020-4ccc-8407-1521f71b7212",
+      "frame_range": [
+        141,
+        143
+      ],
+      "review_status": "reviewed",
+      "visibility": "visible",
+      "truth": {
+        "center_xy": [
+          94.3,
+          -26.3
+        ],
+        "center_z": -0.3,
+        "width": 4.9,
+        "height": 1.9,
+        "yaw": 1.62
+      },
+      "distance_from_origin": 97.9,
+      "frames_in_range": 3,
+      "positive_outputs": 0,
+      "hit_frames": 0,
+      "hit_ratio": 0.0,
+      "first_hit_frame": null,
+      "mean_center_error_m": null,
+      "max_center_error_m": null
+    },
+    {
+      "capture_id": "c4cc19fb-3020-4ccc-8407-1521f71b7212",
+      "frame_range": [
+        145,
+        147
+      ],
+      "review_status": "reviewed",
+      "visibility": "visible",
+      "truth": {
+        "center_xy": [
+          94.3,
+          -26.3
+        ],
+        "center_z": -0.3,
+        "width": 4.9,
+        "height": 1.9,
+        "yaw": 1.62
+      },
+      "distance_from_origin": 97.9,
+      "frames_in_range": 3,
+      "positive_outputs": 3,
+      "hit_frames": 3,
+      "hit_ratio": 1.0,
+      "first_hit_frame": 145,
+      "mean_center_error_m": 0.294,
+      "max_center_error_m": 0.309
+    },
+    {
+      "capture_id": "c4cc19fb-3020-4ccc-8407-1521f71b7212",
+      "frame_range": [
+        150,
+        151
+      ],
+      "review_status": "reviewed",
+      "visibility": "visible",
+      "truth": {
+        "center_xy": [
+          94.3,
+          -26.3
+        ],
+        "center_z": -0.3,
+        "width": 4.9,
+        "height": 1.9,
+        "yaw": 1.62
+      },
+      "distance_from_origin": 97.9,
+      "frames_in_range": 2,
+      "positive_outputs": 0,
+      "hit_frames": 0,
+      "hit_ratio": 0.0,
+      "first_hit_frame": null,
+      "mean_center_error_m": null,
+      "max_center_error_m": null
+    },
+    {
+      "capture_id": "c4cc19fb-3020-4ccc-8407-1521f71b7212",
+      "frame_range": [
+        153,
+        153
+      ],
+      "review_status": "reviewed",
+      "visibility": "visible",
+      "truth": {
+        "center_xy": [
+          94.3,
+          -26.3
+        ],
+        "center_z": -0.3,
+        "width": 4.9,
+        "height": 1.9,
+        "yaw": 1.62
+      },
+      "distance_from_origin": 97.9,
+      "frames_in_range": 1,
+      "positive_outputs": 0,
+      "hit_frames": 0,
+      "hit_ratio": 0.0,
+      "first_hit_frame": null,
+      "mean_center_error_m": null,
+      "max_center_error_m": null
+    },
+    {
+      "capture_id": "c4cc19fb-3020-4ccc-8407-1521f71b7212",
+      "frame_range": [
+        155,
+        155
+      ],
+      "review_status": "reviewed",
+      "visibility": "visible",
+      "truth": {
+        "center_xy": [
+          94.3,
+          -26.3
+        ],
+        "center_z": -0.3,
+        "width": 4.9,
+        "height": 1.9,
+        "yaw": 1.62
+      },
+      "distance_from_origin": 97.9,
+      "frames_in_range": 1,
+      "positive_outputs": 1,
+      "hit_frames": 1,
+      "hit_ratio": 1.0,
+      "first_hit_frame": 155,
+      "mean_center_error_m": 0.302,
+      "max_center_error_m": 0.302
+    },
+    {
+      "capture_id": "c4cc19fb-3020-4ccc-8407-1521f71b7212",
+      "frame_range": [
+        158,
+        158
+      ],
+      "review_status": "reviewed",
+      "visibility": "visible",
+      "truth": {
+        "center_xy": [
+          94.3,
+          -26.3
+        ],
+        "center_z": -0.3,
+        "width": 4.9,
+        "height": 1.9,
+        "yaw": 1.62
+      },
+      "distance_from_origin": 97.9,
+      "frames_in_range": 1,
+      "positive_outputs": 1,
+      "hit_frames": 1,
+      "hit_ratio": 1.0,
+      "first_hit_frame": 158,
+      "mean_center_error_m": 0.139,
+      "max_center_error_m": 0.139
+    },
+    {
+      "capture_id": "c4cc19fb-3020-4ccc-8407-1521f71b7212",
+      "frame_range": [
+        161,
+        162
+      ],
+      "review_status": "reviewed",
+      "visibility": "visible",
+      "truth": {
+        "center_xy": [
+          94.3,
+          -26.3
+        ],
+        "center_z": -0.3,
+        "width": 4.9,
+        "height": 1.9,
+        "yaw": 1.62
+      },
+      "distance_from_origin": 97.9,
+      "frames_in_range": 2,
+      "positive_outputs": 2,
+      "hit_frames": 2,
+      "hit_ratio": 1.0,
+      "first_hit_frame": 161,
+      "mean_center_error_m": 0.109,
+      "max_center_error_m": 0.119
+    },
+    {
+      "capture_id": "c4cc19fb-3020-4ccc-8407-1521f71b7212",
+      "frame_range": [
+        164,
+        164
+      ],
+      "review_status": "reviewed",
+      "visibility": "visible",
+      "truth": {
+        "center_xy": [
+          94.3,
+          -26.3
+        ],
+        "center_z": -0.3,
+        "width": 4.9,
+        "height": 1.9,
+        "yaw": 1.62
+      },
+      "distance_from_origin": 97.9,
+      "frames_in_range": 1,
+      "positive_outputs": 1,
+      "hit_frames": 1,
+      "hit_ratio": 1.0,
+      "first_hit_frame": 164,
+      "mean_center_error_m": 0.066,
+      "max_center_error_m": 0.066
+    },
+    {
+      "capture_id": "c4cc19fb-3020-4ccc-8407-1521f71b7212",
+      "frame_range": [
+        169,
+        170
+      ],
+      "review_status": "reviewed",
+      "visibility": "visible",
+      "truth": {
+        "center_xy": [
+          94.3,
+          -26.3
+        ],
+        "center_z": -0.3,
+        "width": 4.9,
+        "height": 1.9,
+        "yaw": 1.62
+      },
+      "distance_from_origin": 97.9,
+      "frames_in_range": 2,
+      "positive_outputs": 2,
+      "hit_frames": 2,
+      "hit_ratio": 1.0,
+      "first_hit_frame": 169,
+      "mean_center_error_m": 0.053,
+      "max_center_error_m": 0.054
+    },
+    {
+      "capture_id": "c4cc19fb-3020-4ccc-8407-1521f71b7212",
+      "frame_range": [
+        173,
+        175
+      ],
+      "review_status": "reviewed",
+      "visibility": "visible",
+      "truth": {
+        "center_xy": [
+          94.3,
+          -26.3
+        ],
+        "center_z": -0.3,
+        "width": 4.9,
+        "height": 1.9,
+        "yaw": 1.62
+      },
+      "distance_from_origin": 97.9,
+      "frames_in_range": 3,
+      "positive_outputs": 3,
+      "hit_frames": 3,
+      "hit_ratio": 1.0,
+      "first_hit_frame": 173,
+      "mean_center_error_m": 0.045,
+      "max_center_error_m": 0.052
+    },
+    {
+      "capture_id": "c4cc19fb-3020-4ccc-8407-1521f71b7212",
+      "frame_range": [
+        190,
+        190
+      ],
+      "review_status": "reviewed",
+      "visibility": "visible",
+      "truth": {
+        "center_xy": [
+          94.3,
+          -26.3
+        ],
+        "center_z": -0.3,
+        "width": 4.9,
+        "height": 1.9,
+        "yaw": 1.62
+      },
+      "distance_from_origin": 97.9,
+      "frames_in_range": 1,
+      "positive_outputs": 0,
+      "hit_frames": 0,
+      "hit_ratio": 0.0,
+      "first_hit_frame": null,
+      "mean_center_error_m": null,
+      "max_center_error_m": null
+    },
+    {
+      "capture_id": "c4cc19fb-3020-4ccc-8407-1521f71b7212",
+      "frame_range": [
+        192,
+        192
+      ],
+      "review_status": "reviewed",
+      "visibility": "visible",
+      "truth": {
+        "center_xy": [
+          94.3,
+          -26.3
+        ],
+        "center_z": -0.3,
+        "width": 4.9,
+        "height": 1.9,
+        "yaw": 1.62
+      },
+      "distance_from_origin": 97.9,
+      "frames_in_range": 1,
+      "positive_outputs": 0,
+      "hit_frames": 0,
+      "hit_ratio": 0.0,
+      "first_hit_frame": null,
+      "mean_center_error_m": null,
+      "max_center_error_m": null
+    },
+    {
+      "capture_id": "c4cc19fb-3020-4ccc-8407-1521f71b7212",
+      "frame_range": [
+        196,
+        196
+      ],
+      "review_status": "reviewed",
+      "visibility": "visible",
+      "truth": {
+        "center_xy": [
+          94.3,
+          -26.3
+        ],
+        "center_z": -0.3,
+        "width": 4.9,
+        "height": 1.9,
+        "yaw": 1.62
+      },
+      "distance_from_origin": 97.9,
+      "frames_in_range": 1,
+      "positive_outputs": 0,
+      "hit_frames": 0,
+      "hit_ratio": 0.0,
+      "first_hit_frame": null,
+      "mean_center_error_m": null,
+      "max_center_error_m": null
+    }
+  ],
+  "false_positive_sites": [],
+  "false_positive_site_count": 0,
+  "sites_matching_negatives": 0
+}

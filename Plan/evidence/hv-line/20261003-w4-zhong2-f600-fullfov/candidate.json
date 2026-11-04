@@ -1,0 +1,51 @@
+{
+  "schema_version": "na70-wire-pipeline-output-v1",
+  "status": "NO_CURRENT_MEASUREMENT",
+  "geometry_class": null,
+  "first_blocking_stage": "roi_or_proposal",
+  "reject_reason": "NO_PROPOSAL",
+  "candidate_line": null,
+  "stage_trace": [
+    {
+      "stage": "decode",
+      "status": "completed",
+      "input_rays": 200000,
+      "source_window_id": "pcap-2caa68d6-f600-d1.0"
+    },
+    {
+      "stage": "time_quality",
+      "status": "completed"
+    },
+    {
+      "stage": "direction_quality",
+      "status": "completed",
+      "direction_known_count": 82481,
+      "direction_unknown_count": 117519
+    },
+    {
+      "stage": "motion_gate",
+      "status": "skipped",
+      "note": "static PCAP assumed; moving-without-pose rejected by W3 contract"
+    },
+    {
+      "stage": "window_quality",
+      "status": "completed"
+    },
+    {
+      "stage": "valid_return",
+      "status": "completed",
+      "valid_count": 78225
+    },
+    {
+      "stage": "roi_or_proposal",
+      "status": "completed",
+      "input_count": 200000,
+      "candidate_count": 0,
+      "proposal_kind": "full_fov_component",
+      "max_components": 16
+    }
+  ],
+  "window_id": 600,
+  "source_window_id": "pcap-2caa68d6-f600-d1.0",
+  "capture_sha256": "2caa68d6491cb2ba6fd9bae86e04104038fbbf4c7a4e349fa6dcc211adc743ce"
+}

@@ -1,0 +1,60 @@
+{
+  "schema_version": "na70-wire-w4-run-v1",
+  "status": "COMPLETED",
+  "pcap_path": "radar_capture_data\\2\\9.14_caochangzhong2.pcap",
+  "capture_sha256": "2caa68d6491cb2ba6fd9bae86e04104038fbbf4c7a4e349fa6dcc211adc743ce",
+  "capture_frames": 1298,
+  "install_direction": 1,
+  "end_frame": 600,
+  "requested_duration_s": 1.0,
+  "window_packet_count": 1000,
+  "window_quality": "ok",
+  "window_partial": false,
+  "config_sha256": "3d575987e91813b1db12ddd3c7aff2c6fade46727839a91d9e1573012d6ca388",
+  "full_fov_config": {
+    "azimuth_slab_deg": 2.0,
+    "elevation_slab_deg": 2.0,
+    "min_component_points": 6,
+    "min_horizontal_extent_m": 8.0,
+    "max_component_spatial_diameter_m": 120.0,
+    "min_component_span_along_dominant_axis_m": 6.0,
+    "max_components": 16
+  },
+  "command": [
+    "D:\\Code\\radar\\web\\.venv\\Scripts\\python.exe",
+    "tools/run_wire_w4_full_fov_offline.py",
+    "--pcap",
+    "radar_capture_data/2/9.14_caochangzhong2.pcap",
+    "--end-frame",
+    "600",
+    "--duration",
+    "1.0",
+    "--output",
+    "Plan/evidence/hv-line/20261003-w4-zhong2-f600-fullfov"
+  ],
+  "environment": {
+    "python": "3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "numpy": "2.5.3"
+  },
+  "incomplete_frames_skipped": [],
+  "wire_return_status": "NOT_EVALUATED",
+  "warnings": [
+    "Full-FOV UNKNOWN_LINE evidence only; identity requires reviewed truth."
+  ],
+  "source_hashes": {
+    "packages/na70_core/na70_core/wire/pipeline.py": "81c57a0d0c748147b1fa7a49a01ca62c914179c937f78c233b9600e5caf49197",
+    "packages/na70_core/na70_core/wire/proposals.py": "01d59237f6b0ae35bd25e9cef02b13ea83bff4aab9ddfc086c8eb917b13221fd",
+    "packages/na70_core/na70_core/wire/proposal_full_fov.py": "fa6d3dede09470c6168536912ee413c5a7fea45c3974541fba07bbb3e0aadd83",
+    "packages/na70_core/na70_core/wire/fitting.py": "9c81a9cec591140c879434de73c207fa66bd8697762bc53aecc8964839336f84",
+    "packages/na70_core/na70_core/wire/validation.py": "6a14d9f00a3c25cd37778692841e8d70f2658be050cee155816fb88f2c6da7fa",
+    "packages/na70_core/na70_core/wire/constants.py": "18b7e7abf625374fe5c3cbaf08a599a37fdfa6f5546670b9bc21233ef2c103fc",
+    "packages/na70_core/na70_core/wire/config.py": "9557969a02cd94436a50107015cbf7a71cdac4765faf6e536fb1efa5e6990140",
+    "packages/na70_core/na70_core/wire_default.yaml": "000bdbbf2b62d7bb0dbcd71d526954ae45e28413cd48aaea81731abd7ffc549a",
+    "packages/na70_core/na70_core/windows.py": "ade135a99d2682d36755e375c8442d826372523637b3c8495402bb85f61c1894",
+    "packages/na70_core/na70_core/observations.py": "2893791f2af4292eadd41f16ef92c47a3174814a9e80a30673a4c93350d320bd",
+    "web/backend/decoder.py": "a1ffe8e1fc2bf763bac3d4f9cbced095cbcade103c01302f2db15db60e482f9d",
+    "web/backend/thin_wire.py": "a74fa8450913efd78c559a801c46dc4fd96f9f181d0375cc5a9ea94ff11023c8",
+    "tools/run_wire_w4_full_fov_offline.py": "12237002a7a832db99ba90e4fd4a2847554e8bd9baca31f17b98882e611dfa1e"
+  }
+}

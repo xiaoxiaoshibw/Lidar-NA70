@@ -26,6 +26,9 @@ from .mapping_jobs import MappingJobs
 from .turntable_jobs import TurntableJobs
 from .preflight import diagnostics, evaluate, metadata as capture_metadata
 from .motion import ANALYSIS_VERSION, MotionConfig, analyze_capture
+from .demo_api import create_demo_router
+from .local_capture import LocalCaptureRuns
+from .wire_api import WireDetectionRuns, WireRuns
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -207,10 +210,16 @@ class Store:
 
 def create_app(data_dir=None):
     store = Store(Path(data_dir or os.environ.get("NA70_DATA_DIR", ROOT / "data")))
+    wire_runs = WireRuns(store)
+    wire_detection_runs = WireDetectionRuns(store)
+    local_capture_runs = LocalCaptureRuns()
 
     @asynccontextmanager
     async def lifespan(_):
         yield
+        wire_runs.shutdown()
+        wire_detection_runs.shutdown()
+        local_capture_runs.shutdown()
         with store.lock:
             for item in store.items.values():
                 item["cancel"].set()
@@ -223,6 +232,9 @@ def create_app(data_dir=None):
 
     app = FastAPI(title="NA70 Point Cloud Studio", lifespan=lifespan)
     app.state.store = store
+    app.state.wire_runs = wire_runs
+    app.state.wire_detection_runs = wire_detection_runs
+    app.state.local_capture_runs = local_capture_runs
 
     # ------------------------------------------------------------ mapping jobs
     # One implementation, one result layout.  The legacy registration endpoints
@@ -737,6 +749,8 @@ def create_app(data_dir=None):
         key = str(identifier)
         with store.lock:
             item = store.get(key)
+            if wire_runs.has_active_capture(key):
+                raise HTTPException(409, "导线审计正在读取此录制，请等待运行结束")
             item["cancel"].set()
             item["analysis_cancel"].set()
             jobs = store.mapping.pop(key, None)
@@ -750,6 +764,37 @@ def create_app(data_dir=None):
         return Response(status_code=204)
 
     dist = ROOT / "frontend" / "dist"
+    app.include_router(create_demo_router(store))
+    app.include_router(wire_runs.router)
+    app.include_router(wire_detection_runs.router)
+    app.include_router(local_capture_runs.router)
+    if (dist / "capture.html").is_file():
+        @app.get("/capture/")
+        def capture_page():
+            return Response((dist / "capture.html").read_text("utf-8"),
+                            media_type="text/html", headers={"Cache-Control": "no-store"})
+    if (dist / "wire.html").is_file():
+        @app.get("/wire/")
+        def wire_page():
+            return Response((dist / "wire.html").read_text("utf-8"),
+                            media_type="text/html", headers={"Cache-Control": "no-store"})
+    if (dist / "local-capture.html").is_file():
+        @app.get("/local-capture/")
+        def local_capture_page():
+            return Response((dist / "local-capture.html").read_text("utf-8"),
+                            media_type="text/html", headers={"Cache-Control": "no-store"})
+    if (dist / "demo.html").is_file():
+        # 独立 Demo 入口：足球球门识别 / 跟踪演示页，不影响现有单页应用。
+        @app.get("/demo/")
+        def demo_page():
+            return Response((dist / "demo.html").read_text("utf-8"),
+                            media_type="text/html", headers={"Cache-Control": "no-store"})
+    if (dist / "annotate.html").is_file():
+
+        @app.get("/annotate/")
+        def annotate_page():
+            return Response((dist / "annotate.html").read_text("utf-8"),
+                            media_type="text/html", headers={"Cache-Control": "no-store"})
     if dist.is_dir():
         app.mount("/", StaticFiles(directory=dist, html=True), name="frontend")
     return app

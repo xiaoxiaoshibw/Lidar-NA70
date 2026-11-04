@@ -1,0 +1,76 @@
+{
+  "schema": "na70-calibration-synthetic-v1",
+  "evidence_kind": "SYNTHETIC",
+  "six_face": {
+    "status": "SOLVED_CANDIDATE",
+    "matrix_max_abs_error": 0.00025089154075223124,
+    "bias_max_abs_error_m_s2": 0.0006632501708812022,
+    "residual_rms_m_s2": 0.0018212080190687261
+  },
+  "rotation": {
+    "status": "SOLVED_CANDIDATE",
+    "angle_error_deg": 0.012190295431174173,
+    "time_offset_error_s": 0.00010000000000045042,
+    "relative_residual": 0.024699184808327394,
+    "observability": "THREE_AXIS"
+  },
+  "planes": {
+    "status": "FIT",
+    "points": [
+      {
+        "reference_distance_m": 5.0,
+        "measured_distance_m": 5.0000107317530755,
+        "error_m": 1.0731753075532424e-05,
+        "residual_rms_m": 0.003992024580764082
+      },
+      {
+        "reference_distance_m": 10.0,
+        "measured_distance_m": 10.000003468221122,
+        "error_m": 3.468221121849524e-06,
+        "residual_rms_m": 0.003950047010100674
+      },
+      {
+        "reference_distance_m": 20.0,
+        "measured_distance_m": 20.000052222490257,
+        "error_m": 5.222249025749193e-05,
+        "residual_rms_m": 0.004012790171800126
+      }
+    ],
+    "range_slope": 1.000003067388827,
+    "range_intercept_m": -1.3645381494158457e-05,
+    "slope_error": 3.0673888269383554e-06
+  },
+  "candidate": {
+    "status": "CANDIDATE",
+    "inverse_error": 6.661338147750939e-16,
+    "translation_m": [
+      0.043,
+      0.0,
+      -0.06
+    ],
+    "time_offset_s": 0.01310000000000045
+  },
+  "tolerances": {
+    "six_face_matrix_max_abs": 0.01,
+    "six_face_bias_max_abs_m_s2": 0.01,
+    "rotation_angle_deg": 0.2,
+    "time_offset_s": 0.0015,
+    "plane_distance_error_m": 0.01,
+    "range_slope_error": 0.005
+  },
+  "checks": {
+    "six_face_matrix": true,
+    "six_face_bias": true,
+    "rotation_angle": true,
+    "time_offset": true,
+    "plane_distance": true,
+    "range_slope": true,
+    "candidate_inverse": true
+  },
+  "status": "SYNTHETIC_PASS",
+  "claims": {
+    "hardware_validated": false,
+    "field_calibration": false,
+    "time_sync_validated": false
+  }
+}

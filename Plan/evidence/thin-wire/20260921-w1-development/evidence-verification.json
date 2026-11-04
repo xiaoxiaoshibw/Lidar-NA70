@@ -1,0 +1,43 @@
+{
+  "status": "PASS",
+  "scope": "artifact integrity and raw point correspondence, not wire detection",
+  "command": [
+    "D:\\Code\\radar\\web\\.venv\\Scripts\\python.exe",
+    "Plan/evidence/thin-wire/20260921-w1-development/verify_evidence.py",
+    "Plan/evidence/thin-wire/20260921-w1-release"
+  ],
+  "run": "D:\\Code\\radar\\Plan\\evidence\\thin-wire\\20260921-w1-release",
+  "artifact_hashes_checked": 18,
+  "windows": [
+    {
+      "window_id": "primary-f000050-single",
+      "rays": 20000,
+      "sampled_decoder_correspondences": 96,
+      "status": "PASS"
+    },
+    {
+      "window_id": "primary-f000050-0.5s",
+      "rays": 100000,
+      "sampled_decoder_correspondences": 96,
+      "status": "PASS"
+    },
+    {
+      "window_id": "primary-f000050-1s",
+      "rays": 200000,
+      "sampled_decoder_correspondences": 96,
+      "status": "PASS"
+    },
+    {
+      "window_id": "primary-f000050-2s",
+      "rays": 400000,
+      "sampled_decoder_correspondences": 96,
+      "status": "PASS"
+    },
+    {
+      "window_id": "primary-f000050-5s",
+      "rays": 1000000,
+      "sampled_decoder_correspondences": 96,
+      "status": "PASS"
+    }
+  ]
+}

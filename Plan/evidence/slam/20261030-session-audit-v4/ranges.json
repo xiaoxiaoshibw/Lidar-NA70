@@ -1,0 +1,88 @@
+{
+  "schema": "na70-imu-range-run-v1",
+  "status": "OK_NO_SATURATION",
+  "source": "radar_capture_data\\na70_sessions\\20261030-163303\\imu_frames.jsonl",
+  "source_sha256": "a4da1c498aa631dde7e0c6f32ba7aba0a001cb4d017c234e5da077b95e79512c",
+  "configured_ranges": {
+    "gyro_dps": null,
+    "accel_m_s2": null
+  },
+  "segments": [
+    {
+      "schema": "na70-imu-range-v1",
+      "status": "OK_NO_SATURATION",
+      "samples": 12020,
+      "duration_s": 60.05422400000043,
+      "units": {
+        "gyro": "deg/s (inferred, not converted)",
+        "accel": "m/s^2"
+      },
+      "channels": {
+        "accel": {
+          "x": {
+            "min": -1.171115,
+            "max": 0.137292,
+            "p01": -0.96609048,
+            "p99": 0.003305869999999935,
+            "max_abs": 1.171115
+          },
+          "y": {
+            "min": -0.624344,
+            "max": 0.499456,
+            "p01": -0.50687875,
+            "p99": 0.35417698999999947,
+            "max_abs": 0.624344
+          },
+          "z": {
+            "min": 9.29711,
+            "max": 10.17698,
+            "p01": 9.39032669,
+            "p99": 10.1078326,
+            "max_abs": 10.17698
+          }
+        },
+        "gyro": {
+          "x": {
+            "min": -0.89869,
+            "max": 0.959152,
+            "p01": -0.6671220600000001,
+            "p99": 0.65941925,
+            "max_abs": 0.959152
+          },
+          "y": {
+            "min": -1.600405,
+            "max": 1.813199,
+            "p01": -1.37228444,
+            "p99": 1.5449876999999994,
+            "max_abs": 1.813199
+          },
+          "z": {
+            "min": -2.099317,
+            "max": 2.133663,
+            "p01": -1.63223351,
+            "p99": 1.7080330699999984,
+            "max_abs": 2.133663
+          }
+        }
+      },
+      "configured_ranges": {
+        "gyro": null,
+        "accel": null
+      },
+      "event_count": 0,
+      "limits": [
+        "未提供厂家量程时只能报告数值满量程/重复极值，不能证明物理饱和",
+        "角速度单位仍为推断 deg/s",
+        "阈值 98% 与平台长度是开发诊断参数，不是厂家指标"
+      ],
+      "segment": 0
+    }
+  ],
+  "events": [],
+  "event_count": 0,
+  "limits": [
+    "未提供厂家量程时只能报告数值满量程/重复极值，不能证明物理饱和",
+    "角速度单位仍为推断 deg/s；阈值是开发诊断参数",
+    "饱和不改变原始帧；本工具不裁剪、不替换数值"
+  ]
+}

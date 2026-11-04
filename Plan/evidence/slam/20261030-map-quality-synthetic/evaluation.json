@@ -1,0 +1,104 @@
+{
+  "schema": "na70-map-evaluation-v1",
+  "status": "EVALUATED",
+  "map": {
+    "path": "Plan\\evidence\\slam\\20261030-scene-synthetic\\map.ply",
+    "sha256": "331b8cadae17b138dcfc90ccad307105d4d91f587dcce2f7078c03df8023f7d9",
+    "points": 80873
+  },
+  "results": {
+    "planes": {
+      "schema": "na70-map-planes-v1",
+      "status": "EVALUATED",
+      "kind": "PLANE_RESIDUALS",
+      "planes": [
+        {
+          "index": 0,
+          "name": "ground",
+          "status": "EVALUATED",
+          "selected_points": 11009,
+          "points": 11009,
+          "p50_m": 0.0033876895904541016,
+          "p95_m": 0.009757673740386963,
+          "max_m": 0.020127296447753906,
+          "within_threshold": 11009,
+          "within_fraction": 1.0,
+          "threshold_m": 0.05,
+          "mean_signed_m": -1.730300260722794e-05
+        },
+        {
+          "index": 1,
+          "name": "back",
+          "status": "EVALUATED",
+          "selected_points": 19063,
+          "points": 19063,
+          "p50_m": 0.003490447998046875,
+          "p95_m": 0.009983539581298828,
+          "max_m": 0.021363258361816406,
+          "within_threshold": 19063,
+          "within_fraction": 1.0,
+          "threshold_m": 0.05,
+          "mean_signed_m": 6.08022031757543e-05
+        },
+        {
+          "index": 2,
+          "name": "side",
+          "status": "EVALUATED",
+          "selected_points": 11103,
+          "points": 11103,
+          "p50_m": 0.0036423206329345703,
+          "p95_m": 0.010796403884887694,
+          "max_m": 0.0259246826171875,
+          "within_threshold": 11103,
+          "within_fraction": 1.0,
+          "threshold_m": 0.05,
+          "mean_signed_m": 0.00043918583335763087
+        }
+      ],
+      "note": "无 bounds 时平面残差会包含场景中所有点；应给每个平面独立 ROI。",
+      "limitations": [
+        "地图间一致性不等于绝对准确度；两次重建可能共享同一系统误差",
+        "平面残差依赖参考平面的来源与不确定度",
+        "控制点距离只覆盖采样到的位置，不外推整图精度",
+        "未做点云配准；比较前两侧必须已在同一坐标系"
+      ],
+      "claims": {
+        "absolute_accuracy_validated": false
+      }
+    },
+    "control_points": {
+      "schema": "na70-map-control-points-v1",
+      "status": "EVALUATED",
+      "kind": "CONTROL_POINT_DISTANCE",
+      "summary": {
+        "points": 5,
+        "p50_m": 0.03535613684284792,
+        "p95_m": 0.10443894316825733,
+        "max_m": 0.11090685766960837,
+        "within_threshold": 3,
+        "within_fraction": 0.6,
+        "threshold_m": 0.05
+      },
+      "note": "距离方向是控制点→地图点；控制点数量有限时不代表整图精度",
+      "limitations": [
+        "地图间一致性不等于绝对准确度；两次重建可能共享同一系统误差",
+        "平面残差依赖参考平面的来源与不确定度",
+        "控制点距离只覆盖采样到的位置，不外推整图精度",
+        "未做点云配准；比较前两侧必须已在同一坐标系"
+      ],
+      "claims": {
+        "absolute_accuracy_validated": false
+      }
+    }
+  },
+  "claims": {
+    "absolute_accuracy_validated": false,
+    "registration_applied": false
+  },
+  "limits": [
+    "地图间一致性不等于绝对准确度；两次重建可能共享同一系统误差",
+    "平面残差依赖参考平面的来源与不确定度",
+    "控制点距离只覆盖采样到的位置，不外推整图精度",
+    "未做点云配准；比较前两侧必须已在同一坐标系"
+  ]
+}

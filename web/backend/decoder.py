@@ -12,6 +12,7 @@ from pathlib import Path
 from typing import Callable
 
 import numpy as np
+from na70_core import xyz_from_angles
 
 DECODER_VERSION = "ros2-na70-16mm-v1"
 MAGICS = {
@@ -248,6 +249,10 @@ def _frame_payloads(source, offsets: np.ndarray) -> np.ndarray:
 def decode_frame_codes(path: Path, frame: dict, source=None) -> np.ndarray:
     """Return raw distance, pitch, yaw, and intensity codes for ray matching."""
     b = _frame_bytes(path, frame, source)
+    return _codes_from_bytes(b)
+
+
+def _codes_from_bytes(b: np.ndarray) -> np.ndarray:
     codes = np.empty((len(b), 4), dtype=np.uint16)
     codes[:, 0] = (b[:, 0].astype(np.uint16) << 8) | b[:, 1]
     codes[:, 1] = (b[:, 2].astype(np.uint16) << 8) | b[:, 3]
@@ -265,22 +270,9 @@ def decode_frame(path: Path, frame: dict, install_direction: int = 1,
     distance = code(0) * np.float32(16) / np.float32(1000)
     pitch = code(2) * np.float32(0.0258) * np.float32(np.pi) / np.float32(180)
     yaw = code(4) * np.float32(0.0432) * np.float32(np.pi) / np.float32(180)
-    x = distance * np.cos(yaw) * np.cos(pitch)
-    y = distance * np.sin(yaw) * np.cos(pitch)
-    z = distance * np.sin(pitch)
-    xyz = np.column_stack((z, -x, -y) if install_direction == 1 else (z, x, y))
-    p = np.float32(frame["pitch_offset"]) * np.float32(np.pi) / np.float32(180)
-    w = np.float32(frame["yaw_offset"]) * np.float32(np.pi) / np.float32(180)
-    cp, sp, cw, sw = np.cos(p), np.sin(p), np.cos(w), np.sin(w)
-    ry = np.array([[cp, 0, sp], [0, 1, 0], [-sp, 0, cp]], dtype=np.float32)
-    rz = np.array([[cw, -sw, 0], [sw, cw, 0], [0, 0, 1]], dtype=np.float32)
-    rotation = ry @ rz
-    if install_direction == 2:
-        a = np.float32(np.pi)
-        rx = np.array([[1, 0, 0], [0, np.cos(a), -np.sin(a)], [0, np.sin(a), np.cos(a)]], dtype=np.float32)
-        rotation = rx @ rotation
     points = np.empty((len(b), 4), dtype="<f4")
-    points[:, :3] = xyz @ rotation.T
+    points[:, :3] = xyz_from_angles(distance, pitch, yaw, install_direction,
+                                    frame["pitch_offset"], frame["yaw_offset"])
     points[:, 3] = b[:, 6]
     return points
 

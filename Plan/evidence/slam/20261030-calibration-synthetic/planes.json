@@ -1,0 +1,44 @@
+{
+  "planes": [
+    {
+      "reference_distance_m": 5.0,
+      "measured_distance_m": 5.0000107317530755,
+      "error_m": 1.0731753075532424e-05,
+      "residual_rms_m": 0.003992024580764082
+    },
+    {
+      "reference_distance_m": 10.0,
+      "measured_distance_m": 10.000003468221122,
+      "error_m": 3.468221121849524e-06,
+      "residual_rms_m": 0.003950047010100674
+    },
+    {
+      "reference_distance_m": 20.0,
+      "measured_distance_m": 20.000052222490257,
+      "error_m": 5.222249025749193e-05,
+      "residual_rms_m": 0.004012790171800126
+    }
+  ],
+  "range_fit": {
+    "schema": "na70-lidar-range-fit-v1",
+    "status": "FIT",
+    "count": 3,
+    "slope": 1.000003067388827,
+    "intercept_m": -1.3645381494158457e-05,
+    "slope_standard_error": 1.5658069143464883e-06,
+    "intercept_standard_error_m": 2.0713678482531113e-05,
+    "residual_rms_m": 9.764521678877083e-06,
+    "residuals_m": [
+      9.04019043534987e-06,
+      -1.3560285653468895e-05,
+      4.5200952136781325e-06
+    ],
+    "note": "截距混合光学原点与真实测距零偏；原点未独立测量时不得单独解释为测距零偏。",
+    "limitations": [
+      "平面残差低只说明点云自洽，不证明绝对测距或角度正确",
+      "法向距离包含光学原点未知量；原点未测时不能把截距称为测距零偏",
+      "距离/角度真值需独立基准，并随结果记录其精度",
+      "拟合与留出数据必须分开；同组数据残差变小不构成验收"
+    ]
+  }
+}

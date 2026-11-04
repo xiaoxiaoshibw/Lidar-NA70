@@ -1,0 +1,83 @@
+Thu Oct 29 06:18:02 PM UTC 2026
+.....
+=== /home/radar/na70_lio_ws/src/Livox-SDK2 (git) ===
+=== /home/radar/na70_lio_ws/src/fast_lio (git) ===
+=== /home/radar/na70_lio_ws/src/glim (git) ===
+Cloning into '.'...
+Note: switching to '1a197c999e4865f5cab7c9cd25474128413ebbca'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+
+  git switch -c <new-branch-name>
+
+Or undo this operation with:
+
+  git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false
+
+HEAD is now at 1a197c9 fix build with fmt >= 11 (#326) (#327)
+=== /home/radar/na70_lio_ws/src/glim_ros2 (git) ===
+Cloning into '.'...
+Note: switching to '4d4ec524ccf1b02aa09b0af2af767ecc54343798'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+
+  git switch -c <new-branch-name>
+
+Or undo this operation with:
+
+  git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false
+
+HEAD is now at 4d4ec52 rviz: stop appending a duplicate submap on every optimize() (#76)
+=== /home/radar/na70_lio_ws/src/livox_ros_driver2 (git) ===
+Starting >>> glim
+--- stderr: glim
+In file included from /home/radar/na70_lio_ws/src/glim/include/glim/common/imu_validation.hpp:6,
+                 from /home/radar/na70_lio_ws/src/glim/src/glim/common/imu_validation.cpp:1:
+/usr/local/include/gtsam_points/util/runnning_statistics.hpp:7:149: note: ‘#pragma message: Including gtsam_points/util/running_statistics.hpp is deprecated. Please include gtsam_points/util/running_statistics.hpp instead.’
+    7 | #pragma message("Including gtsam_points/util/running_statistics.hpp is deprecated. Please include gtsam_points/util/running_statistics.hpp instead.")
+      |                                                                                                                                                     ^
+In file included from /home/radar/na70_lio_ws/src/glim/src/glim/odometry/callbacks.cpp:3:
+/usr/local/include/gtsam_unstable/nonlinear/FixedLagSmoother.h:17:2: warning: #warning "FixedLagSmoother was moved to the gtsam/nonlinear directory" [-Wcpp]
+   17 | #warning "FixedLagSmoother was moved to the gtsam/nonlinear directory"
+      |  ^~~~~~~
+In file included from /home/radar/na70_lio_ws/src/glim/include/glim/common/imu_validation.hpp:6,
+                 from /home/radar/na70_lio_ws/src/glim/src/glim/odometry/odometry_estimation_imu.cpp:16:
+/usr/local/include/gtsam_points/util/runnning_statistics.hpp:7:149: note: ‘#pragma message: Including gtsam_points/util/running_statistics.hpp is deprecated. Please include gtsam_points/util/running_statistics.hpp instead.’
+    7 | #pragma message("Including gtsam_points/util/running_statistics.hpp is deprecated. Please include gtsam_points/util/running_statistics.hpp instead.")
+      |                                                                                                                                                     ^
+In file included from /usr/local/include/gtsam_points/ann/incremental_covariance_voxelmap.hpp:6,
+                 from /usr/local/include/gtsam_points/ann/ivox_covariance_estimation.hpp:7,
+                 from /home/radar/na70_lio_ws/src/glim/src/glim/odometry/odometry_estimation_ct.cpp:12:
+/usr/local/include/gtsam_points/util/runnning_statistics.hpp:7:149: note: ‘#pragma message: Including gtsam_points/util/running_statistics.hpp is deprecated. Please include gtsam_points/util/running_statistics.hpp instead.’
+    7 | #pragma message("Including gtsam_points/util/running_statistics.hpp is deprecated. Please include gtsam_points/util/running_statistics.hpp instead.")
+      |                                                                                                                                                     ^
+---
+Finished <<< glim [2min 46s]
+Starting >>> glim_ros
+--- stderr: glim_ros
+In this package, headers install destination is set to `include` by ament_auto_package. It is recommended to install `include/glim_ros` instead and will be the default behavior of ament_auto_package from ROS 2 Kilted Kaiju. On distributions before Kilted, ament_auto_package behaves the same way when you use USE_SCOPED_HEADER_INSTALL_DIR option.
+CMake Warning:
+  Manually-specified variables were not used by the project:
+
+    BUILD_WITH_MARCH_NATIVE
+
+
+---
+Finished <<< glim_ros [1min 8s]
+
+Summary: 2 packages finished [3min 54s]
+  2 packages had stderr output: glim glim_ros

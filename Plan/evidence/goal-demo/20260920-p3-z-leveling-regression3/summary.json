@@ -1,0 +1,155 @@
+{
+  "label": "SYNTHETIC",
+  "generator": "goal-synthetic-v1",
+  "scenarios": [
+    "static",
+    "translation",
+    "yaw",
+    "translation_yaw",
+    "pitch_roll",
+    "density_drop",
+    "missing_crossbar",
+    "single_post_occlusion",
+    "disappear_reenter",
+    "tree_wall_fence",
+    "similar_pair",
+    "multi_candidate",
+    "fov_edge",
+    "empty_nan",
+    "time_jump"
+  ],
+  "development_seeds": [
+    0,
+    19
+  ],
+  "validation_seeds": [
+    1000,
+    1049
+  ],
+  "default_frames": 200,
+  "truth_not_provided_to_pipeline": true,
+  "limitations": [
+    "sparse geometric approximation, not a physical NA70 simulator",
+    "no rolling scan distortion model",
+    "intensity is randomized rather than material-calibrated"
+  ],
+  "config_version": "2b72d39786d3ac68",
+  "env": {
+    "python": "3.12.10",
+    "platform": "Windows-11-10.0.26200-SP0"
+  },
+  "source_hashes": {
+    "tools/run_goal_synthetic_suite.py": "1f27ec00a0ca9d792e16d546f6aed874c5e2b29e467bd9b656706064a7004d28",
+    "web/backend/goal_detection.yaml": "599f589e237bd99492c075ee5fb60a5a16ce3209f5b112370aade91e2763661d",
+    "web/backend/goal_detection/__init__.py": "3fbdbb438cda71ff1b2ed382a51fd7a499c509fc3613b2a1c646755033258804",
+    "web/backend/goal_detection/accumulation.py": "695b7782d1b1a04498c5337682a929575af18eccc05c7b6b39778aba4a30f196",
+    "web/backend/goal_detection/bev.py": "1138bd4c606693c08f5c3673d1081f082edfcf15fef9e742e7d84243d584efa1",
+    "web/backend/goal_detection/buffer.py": "4aa589dedf0a21dc120611c1f5a7a36beb8fadd7e5cbe940777c2db46a39af33",
+    "web/backend/goal_detection/config.py": "2908d8349b329ee159d7c558b809003622b4a7d8f633e1d2fd18656a5116fa7a",
+    "web/backend/goal_detection/detector.py": "5a99f0c25266f8e9459fcad5fce3a602530f87d390766e5cc15966ec3bc72b6d",
+    "web/backend/goal_detection/focus.py": "28dfe44ae1480d7d74b02bd5c9e0eac3db03fd6a95ae43311c828cb3e1742bbc",
+    "web/backend/goal_detection/geometry.py": "49394ec1ca6da61487c600bfdf28d3ddadce0705171dba6cdeb8ff80e53e1093",
+    "web/backend/goal_detection/observability.py": "b31032e93b3c8f57dc58ef163153d5c8875588cdf80d0a77dbdcfdba59f42c00",
+    "web/backend/goal_detection/pipeline.py": "cd5cd8db9379040ee2aadaed572e361fb490c2d3d3a942d359073d282d30b321",
+    "web/backend/goal_detection/synthetic.py": "a2ffe7c46e59cb37b9115abf2acff9913d61f560e750ddbcc715fed2e1ade45b",
+    "web/backend/goal_detection/tracker.py": "033d913b5717db87e10d3f0935e17d22dce812be534475f7cf6b99ed691a42e0"
+  },
+  "cases": [
+    {
+      "scenario": "static",
+      "seed": 0,
+      "frames": 200,
+      "input_sha256": "dfa9f8c4adaf6ee808b6837e5ed254786edab6a2e56c6e7ce296f39adf811d59",
+      "metrics": {
+        "visible_frames": 200,
+        "hits": 200,
+        "misses": 0,
+        "false_outputs": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "center_error_p95_m": 0.0163,
+        "width_error_p95_m": 0.0466,
+        "height_error_p95_m": 0.0441,
+        "id_switches": 0,
+        "matched_track_ids": [
+          1
+        ],
+        "longest_hit_streak": 200,
+        "false_confirmed_frames_while_absent": 0,
+        "absence_measurement_frames": 0
+      }
+    },
+    {
+      "scenario": "static",
+      "seed": 1000,
+      "frames": 200,
+      "input_sha256": "c9c310449a5a75c5f1bfd431a2d9c2fc52f6081bed28a1d727ef35ce6b9ec2e1",
+      "metrics": {
+        "visible_frames": 200,
+        "hits": 200,
+        "misses": 0,
+        "false_outputs": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "center_error_p95_m": 0.0163,
+        "width_error_p95_m": 0.045,
+        "height_error_p95_m": 0.0421,
+        "id_switches": 0,
+        "matched_track_ids": [
+          1
+        ],
+        "longest_hit_streak": 200,
+        "false_confirmed_frames_while_absent": 0,
+        "absence_measurement_frames": 0
+      }
+    },
+    {
+      "scenario": "pitch_roll",
+      "seed": 0,
+      "frames": 200,
+      "input_sha256": "8f8499842f119f8d03260cf8eb0d80192b03af163dea79b5a1db5a8f7c9e3161",
+      "metrics": {
+        "visible_frames": 200,
+        "hits": 200,
+        "misses": 0,
+        "false_outputs": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "center_error_p95_m": 0.021,
+        "width_error_p95_m": 0.048,
+        "height_error_p95_m": 0.375,
+        "id_switches": 0,
+        "matched_track_ids": [
+          1
+        ],
+        "longest_hit_streak": 200,
+        "false_confirmed_frames_while_absent": 0,
+        "absence_measurement_frames": 0
+      }
+    },
+    {
+      "scenario": "pitch_roll",
+      "seed": 1000,
+      "frames": 200,
+      "input_sha256": "543025faa6d393f0f44ccf68d41c29d28dd7a4d12cf39707e19f53876be8e38b",
+      "metrics": {
+        "visible_frames": 200,
+        "hits": 200,
+        "misses": 0,
+        "false_outputs": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "center_error_p95_m": 0.0219,
+        "width_error_p95_m": 0.0455,
+        "height_error_p95_m": 0.3681,
+        "id_switches": 0,
+        "matched_track_ids": [
+          1
+        ],
+        "longest_hit_streak": 200,
+        "false_confirmed_frames_while_absent": 0,
+        "absence_measurement_frames": 0
+      }
+    }
+  ]
+}

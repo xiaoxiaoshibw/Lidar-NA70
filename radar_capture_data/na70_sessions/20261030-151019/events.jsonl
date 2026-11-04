@@ -1,0 +1,9 @@
+{"t_unix": 1793344219.416317, "kind": "session_created", "session_id": "20261030-151019"}
+{"t_unix": 1793344219.4166646, "kind": "capture_started", "imu": true, "lidar": true}
+{"t_unix": 1793344219.417679, "kind": "imu_started", "port": "/dev/serial/by-id/usb-WCH.CN_USB_Single_Serial_0003-if00", "baud": 460800, "segment": 0}
+{"t_unix": 1793344219.426051, "kind": "imu_segment_open", "segment": 0, "port": "/dev/serial/by-id/usb-WCH.CN_USB_Single_Serial_0003-if00"}
+{"t_unix": 1793344219.4711199, "kind": "lidar_started", "iface": "enP8p1s0", "port": 2368, "command": "sudo -n tcpdump -i enP8p1s0 -nn -s 0 -U -w /home/jetson/na70-sessions/20261030-151019/raw/lidar.pcap udp port 2368"}
+{"t_unix": 1793344234.4724784, "kind": "capture_stopping", "reason": "duration"}
+{"t_unix": 1793344234.5051093, "kind": "imu_stopped", "frames": 3015, "bytes": 202005, "checksum_errors": 0, "payload_errors": 0, "sequence_breaks": 0, "reconnects": 0, "queue_overflow": 0}
+{"t_unix": 1793344234.7216222, "kind": "lidar_stopped", "pcap_bytes": 22080212, "captured": 15041, "received": 15107, "dropped": 0}
+{"t_unix": 1793344234.785327, "kind": "session_finalized", "status": "ok"}

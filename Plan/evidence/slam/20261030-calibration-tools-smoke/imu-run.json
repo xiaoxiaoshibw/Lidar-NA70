@@ -1,0 +1,250 @@
+{
+  "schema": "na70-imu-run-v1",
+  "status": "REJECTED",
+  "source": "radar_capture_data\\na70_sessions\\a2-browser-155552\\imu_frames.jsonl",
+  "source_sha256": "f1ac58767e76e0020f4896f0cb3f532429c551e6b05429a3c9a37223d79dd3ef",
+  "config": {
+    "version": "imu-static-diagnostic-v1",
+    "window_s": 10.0,
+    "min_samples": 1000,
+    "min_span_s": 9.0,
+    "max_host_gap_s": 0.2,
+    "max_accel_axis_std_m_s2": 0.1,
+    "max_accel_norm_std_m_s2": 0.08,
+    "max_gyro_axis_std_deg_s": 0.2,
+    "max_gyro_mean_norm_deg_s": 0.8,
+    "accel_mean_norm_range_m_s2": [
+      9.3,
+      10.3
+    ]
+  },
+  "sample_count": 12018,
+  "segments": [
+    {
+      "segment": 0,
+      "samples": 12018,
+      "host_span_s": 60.04150799999934,
+      "median_positive_dt_s": 0.050907000000734115,
+      "effective_arrival_hz": 19.643663935914105,
+      "duplicate_host_times": 10838,
+      "max_gap_s": 0.0530029999999897,
+      "gaps_over_1_5_median": 0
+    }
+  ],
+  "windows": [
+    {
+      "segment": 0,
+      "window": 0,
+      "samples": 2007,
+      "host_span_s": 9.98425700000007,
+      "status": "REJECTED",
+      "failed_checks": [
+        "accel_axis_std",
+        "accel_norm_std",
+        "gyro_axis_std"
+      ],
+      "accel_mean_m_s2": [
+        -0.4389110632785251,
+        -0.05300485351270553,
+        9.756864279023407
+      ],
+      "accel_std_m_s2": [
+        0.21836282237892193,
+        0.1951372344676597,
+        0.1650818969807762
+      ],
+      "gyro_mean_deg_s": [
+        0.019690608868958636,
+        0.04999085401096164,
+        0.03560563228699544
+      ],
+      "gyro_std_deg_s": [
+        0.28454399063308267,
+        0.7538887428905311,
+        0.7958979319778463
+      ],
+      "accel_mean_norm_m_s2": 9.766875293319105,
+      "max_host_gap_s": 0.0530029999999897
+    },
+    {
+      "segment": 0,
+      "window": 1,
+      "samples": 1996,
+      "host_span_s": 9.930124999999862,
+      "status": "REJECTED",
+      "failed_checks": [
+        "accel_axis_std",
+        "accel_norm_std",
+        "gyro_axis_std"
+      ],
+      "accel_mean_m_s2": [
+        -0.4366768496993988,
+        -0.05019684418837681,
+        9.758023745490965
+      ],
+      "accel_std_m_s2": [
+        0.21490576293886665,
+        0.19486740023773297,
+        0.16463176680123326
+      ],
+      "gyro_mean_deg_s": [
+        0.017105295090180342,
+        0.050430411823647305,
+        0.035183688877755546
+      ],
+      "gyro_std_deg_s": [
+        0.28223639740514367,
+        0.7530228671573584,
+        0.7897387225568404
+      ],
+      "accel_mean_norm_m_s2": 9.767918601820726,
+      "max_host_gap_s": 0.051274999999805004
+    },
+    {
+      "segment": 0,
+      "window": 2,
+      "samples": 2006,
+      "host_span_s": 9.981474000000162,
+      "status": "REJECTED",
+      "failed_checks": [
+        "accel_axis_std",
+        "accel_norm_std",
+        "gyro_axis_std"
+      ],
+      "accel_mean_m_s2": [
+        -0.439645088235294,
+        -0.051419028414755874,
+        9.757807498504457
+      ],
+      "accel_std_m_s2": [
+        0.21748946915383674,
+        0.19379953657590157,
+        0.16517953417196862
+      ],
+      "gyro_mean_deg_s": [
+        0.023103070787637056,
+        0.05020972033898309,
+        0.03706974626121633
+      ],
+      "gyro_std_deg_s": [
+        0.29125312855067104,
+        0.7564462144444389,
+        0.7836754087652672
+      ],
+      "accel_mean_norm_m_s2": 9.767842079904975,
+      "max_host_gap_s": 0.05125500000031025
+    },
+    {
+      "segment": 0,
+      "window": 3,
+      "samples": 1997,
+      "host_span_s": 9.933577999999216,
+      "status": "REJECTED",
+      "failed_checks": [
+        "accel_axis_std",
+        "accel_norm_std",
+        "gyro_axis_std"
+      ],
+      "accel_mean_m_s2": [
+        -0.44217018377566414,
+        -0.052194982974461714,
+        9.756475612919372
+      ],
+      "accel_std_m_s2": [
+        0.21870771856353713,
+        0.19171315214326093,
+        0.165507375274994
+      ],
+      "gyro_mean_deg_s": [
+        0.020930925888833236,
+        0.053330481722583735,
+        0.037369582373560424
+      ],
+      "gyro_std_deg_s": [
+        0.28366963800777073,
+        0.7587484119919453,
+        0.7827204968167627
+      ],
+      "accel_mean_norm_m_s2": 9.766629673186054,
+      "max_host_gap_s": 0.05122300000039104
+    },
+    {
+      "segment": 0,
+      "window": 4,
+      "samples": 1996,
+      "host_span_s": 9.928827000000638,
+      "status": "REJECTED",
+      "failed_checks": [
+        "accel_axis_std",
+        "accel_norm_std",
+        "gyro_axis_std"
+      ],
+      "accel_mean_m_s2": [
+        -0.44288309969939843,
+        -0.05325471242484967,
+        9.755315436873751
+      ],
+      "accel_std_m_s2": [
+        0.21594725300506284,
+        0.19486121462311445,
+        0.165909042476011
+      ],
+      "gyro_mean_deg_s": [
+        0.021039500501001993,
+        0.05110961072144289,
+        0.03663087374749494
+      ],
+      "gyro_std_deg_s": [
+        0.2888973699272715,
+        0.7583661628284678,
+        0.7874537611285137
+      ],
+      "accel_mean_norm_m_s2": 9.765508731105722,
+      "max_host_gap_s": 0.05115899999964313
+    },
+    {
+      "segment": 0,
+      "window": 5,
+      "samples": 2016,
+      "host_span_s": 10.02870299999995,
+      "status": "REJECTED",
+      "failed_checks": [
+        "accel_axis_std",
+        "accel_norm_std",
+        "gyro_axis_std"
+      ],
+      "accel_mean_m_s2": [
+        -0.4353822078373016,
+        -0.05410779613095251,
+        9.758020638888862
+      ],
+      "accel_std_m_s2": [
+        0.2158643515925624,
+        0.19614512815499813,
+        0.165388360152302
+      ],
+      "gyro_mean_deg_s": [
+        0.01682175595238093,
+        0.04729587500000006,
+        0.036713802083333365
+      ],
+      "gyro_std_deg_s": [
+        0.28206125671976207,
+        0.7586956179109834,
+        0.794893606979658
+      ],
+      "accel_mean_norm_m_s2": 9.767878587978274,
+      "max_host_gap_s": 0.05116199999974924
+    }
+  ],
+  "allan": {
+    "status": "NOT_EVALUATED",
+    "reason": "segment_windows_not_static_like"
+  },
+  "limits": [
+    "仅诊断；不证明物理静止、同步、校准或硬件健康",
+    "Allan 仅为候选分析；短录或运动段不出偏置稳定度",
+    "时间为设备/主机口径由采集清单声明，本工具不推断",
+    "同一主机时刻可批量到达多帧；duplicate_host_times 不是丢帧证明"
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "label": "SYNTHETIC_GEOMETRY_AND_REAL_NA70_SCAN_PATTERN",
+  "wire_return_status": "NOT_EVALUATED",
+  "geometric_hit_is_return": false,
+  "scene_file": "D:\\Code\\radar\\tools\\scenarios\\uav_single_wire_outdoor_v1.json",
+  "scene_sha256": "845f4f348d1b4a5285ac6134a5cf4ee6612476d7927ea7135715230d47a7ccd6",
+  "effective_scene_sha256": "68920b509f7e199b075f48937041e7d8b4e436efb1f31d6eba2696e4af8d9c17",
+  "pcap_file": "D:\\Code\\radar\\radar_capture_data\\1.pcap",
+  "pcap_sha256": "b17d7c17926e670b3d89ba0774c4140feb810e4935971ab57760f4bdd00636cd",
+  "code_sha256": {
+    "runner": "b374b31345353a5374859ffc7bd6fa75d6eae1423ffa666f6f3b71e6224b17a6",
+    "geometry": "c7a84b60eae810a4ecc1b2a73f43ee9f15c6a1278b4b690fcfe0751a76d5073a",
+    "decoder": "a1ffe8e1fc2bf763bac3d4f9cbced095cbcade103c01302f2db15db60e482f9d"
+  },
+  "seed": 0,
+  "frame_limit": 60,
+  "install_direction": 1,
+  "wire_absent": false,
+  "wire_range_m": 150.0,
+  "mounting_assumption": "decoded install_direction=1 -Y -> world +X, synthetic pitch down from scene; uncalibrated",
+  "outputs": [
+    "effective_scene.json",
+    "geometry_world.npz",
+    "scene_views.png",
+    "packet_opportunities.jsonl",
+    "summary.json"
+  ]
+}

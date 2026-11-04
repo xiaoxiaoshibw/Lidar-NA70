@@ -1,0 +1,161 @@
+{
+  "label": "REAL_PCAP_WINDOWS",
+  "config_version": "274d9bd427d91c00",
+  "config": {
+    "version": 1,
+    "accumulation": {
+      "enabled": true,
+      "window_size": 10,
+      "voxel_size": 0.5,
+      "max_points": 200000,
+      "roi": [
+        84.0,
+        104.0,
+        -36.0,
+        -17.0,
+        -2.0,
+        6.0
+      ],
+      "range": {
+        "min": 50.0,
+        "max": 130.0
+      }
+    },
+    "goal_detection": {
+      "enabled": true,
+      "cell_size": 0.8,
+      "ground_z": [
+        -2.0,
+        0.3
+      ],
+      "pole": {
+        "height": [
+          1.8,
+          4.0
+        ],
+        "min_points": 5,
+        "max_radius": 1.2,
+        "height_tol": 1.2,
+        "base_tol": 1.2
+      },
+      "frame": {
+        "width": [
+          4.8,
+          6.0
+        ],
+        "crossbar_z": [
+          1.8,
+          3.2
+        ]
+      },
+      "scoring": {
+        "min_confidence": 0.5,
+        "lock_confidence": 0.7,
+        "crossbar_weight": 0.3,
+        "geometry_weight": 0.7,
+        "nms_distance": 1.5
+      }
+    },
+    "strategy": {
+      "mode": "staged"
+    },
+    "bev": {
+      "cell_size": 0.8,
+      "min_window_frames": 5,
+      "min_cell_density": 0.55,
+      "min_cell_points": 10,
+      "max_blob_cells": 8,
+      "min_contrast": 1.5,
+      "contrast_ref": 2.5,
+      "span_density_floor": 0.05,
+      "nms_distance": 2.5,
+      "max_regions": 5,
+      "score_weights": {
+        "density": 0.3,
+        "contrast": 0.4,
+        "width": 0.3
+      }
+    },
+    "focus": {
+      "half_size": 6.0,
+      "prefer_single_frame": true,
+      "single_min_confidence": 0.45
+    },
+    "zrefine": {
+      "bin_size": 0.25,
+      "min_points": 30,
+      "max_base_shift": 1.0,
+      "min_height": 0.5
+    },
+    "locking": {
+      "min_frames": 3,
+      "candidate_gap": 3
+    },
+    "tracking": {
+      "lost_frame_threshold": 5,
+      "reacquire": true,
+      "max_center_jump": 6.5,
+      "kalman": true
+    },
+    "webui": {
+      "enable": true,
+      "demo_roi": [
+        84.0,
+        104.0,
+        -36.0,
+        -17.0,
+        -2.0,
+        6.0
+      ],
+      "fps_target": 10,
+      "capture_name_filter": [
+        "9.14_caochang"
+      ],
+      "window_choices": [
+        1,
+        5,
+        10,
+        20,
+        30,
+        60,
+        100
+      ],
+      "speed_choices": [
+        0.5,
+        1,
+        2,
+        5
+      ]
+    }
+  },
+  "captures": [
+    "web\\data\\c4cc19fb-3020-4ccc-8407-1521f71b7212\\capture.pcap"
+  ],
+  "window_size": 10,
+  "voxel_size": 0.5,
+  "range": [
+    50.0,
+    130.0
+  ],
+  "strategy": "staged",
+  "memory_samples_kb": [
+    30868,
+    62308
+  ],
+  "frames_per_capture": [
+    {
+      "pcap": "web\\data\\c4cc19fb-3020-4ccc-8407-1521f71b7212\\capture.pcap",
+      "frames": 180,
+      "duration_s": 121.049
+    }
+  ],
+  "total_frames": 180,
+  "wall_time_s": 2.25,
+  "frame_ms_p50": 10.17,
+  "frame_ms_p95": 10.97,
+  "frame_ms_max": 15.67,
+  "state_counts": {
+    "SEARCHING": 180
+  },
+  "lock_events": []
+}

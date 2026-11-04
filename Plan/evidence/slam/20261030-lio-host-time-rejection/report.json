@@ -1,0 +1,13 @@
+{
+  "status": "BLOCKED",
+  "block_reasons": [
+    "IMU CSV requires device_time_s,gx,gy,gz,ax,ay,az"
+  ],
+  "measurement_status": "NOT_EVALUATED",
+  "deskew_applied": false,
+  "claims": {
+    "lio_validated": false,
+    "slam_validated": false
+  },
+  "evidence_kind": "REAL_PCAP_DIAGNOSTIC"
+}

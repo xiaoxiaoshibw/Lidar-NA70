@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 610" role="img" aria-label="SYNTHETIC 架空导线与机载雷达户外场景俯视和正视示意">
+  <rect width="1100" height="610" fill="#fff"/>
+  <style>
+    text { font-family: "Microsoft YaHei", "Noto Sans CJK SC", sans-serif; fill: #222; font-size: 16px; }
+    .title { font-size: 25px; font-weight: 700; }
+    .small { font-size: 13px; fill: #555; }
+    .axis { stroke: #999; stroke-width: 1.5; }
+    .wire { stroke: #d02c2c; stroke-width: 5; fill: none; }
+    .pole { fill: #666; }
+    .path { stroke: #2372a8; stroke-width: 4; stroke-dasharray: 9 7; fill: none; }
+  </style>
+  <text x="35" y="43" class="title">单根架空导线 · 机载 NA70 场景概念图</text>
+  <text x="820" y="43" fill="#b3261e">SYNTHETIC · 非探测结果</text>
+  <rect x="35" y="70" width="500" height="455" rx="9" fill="#f8faf8" stroke="#bbb"/>
+  <rect x="565" y="70" width="500" height="455" rx="9" fill="#f8faf8" stroke="#bbb"/>
+  <text x="55" y="105" font-weight="700">俯视 XY：向 +x 接近</text>
+  <line x1="83" y1="350" x2="485" y2="350" class="axis"/>
+  <text x="460" y="377" class="small">+x</text>
+  <line x1="83" y1="350" x2="83" y2="145" class="axis"/>
+  <text x="60" y="151" class="small">+y</text>
+  <line x1="365" y1="145" x2="365" y2="425" class="wire"/>
+  <circle cx="365" cy="145" r="8" class="pole"/>
+  <circle cx="365" cy="425" r="8" class="pole"/>
+  <text x="376" y="210">导线 x≈35 m</text>
+  <path d="M83 285 L255 285" class="path"/>
+  <polygon points="255,285 235,273 235,297" fill="#2372a8"/>
+  <text x="85" y="267">无人机路径：x=0→22 m</text>
+  <circle cx="235" cy="338" r="23" fill="#6d9c55" opacity=".75"/>
+  <text x="177" y="389" class="small">树木</text>
+  <line x1="290" y1="200" x2="290" y2="145" stroke="#7a664b" stroke-width="5"/>
+  <text x="250" y="190" class="small">围栏</text>
+  <text x="55" y="494" class="small">红线是真值几何；蓝色为假设飞行路径。图中无 NA70 回波。</text>
+  <text x="585" y="105" font-weight="700">沿导线正视 YZ：下垂与离地高度</text>
+  <line x1="630" y1="440" x2="1000" y2="440" class="axis"/>
+  <text x="970" y="466" class="small">+y</text>
+  <line x1="630" y1="440" x2="630" y2="145" class="axis"/>
+  <text x="610" y="151" class="small">+z</text>
+  <rect x="673" y="165" width="10" height="275" class="pole"/>
+  <rect x="947" y="165" width="10" height="275" class="pole"/>
+  <path d="M678 192 Q815 232 952 192" class="wire"/>
+  <text x="796" y="184" class="small">两端 19 m；中点 17.5 m</text>
+  <circle cx="815" cy="284" r="11" fill="#2372a8"/>
+  <text x="831" y="289" class="small">无人机 z=12 m</text>
+  <line x1="815" y1="212" x2="815" y2="273" stroke="#555" stroke-width="1.5" stroke-dasharray="3 3"/>
+  <text x="832" y="257" class="small">仅几何间隔</text>
+  <text x="586" y="493" class="small">端点 y=±25 m，示例直径 20 mm；尺寸均为场景参数。</text>
+  <text x="37" y="558" class="small">用途：评审场景和扫描覆盖；真实细线回波、有效距离、识别率与实时性仍待独立实测。</text>
+</svg>

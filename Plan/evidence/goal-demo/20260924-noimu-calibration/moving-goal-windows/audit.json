@@ -1,0 +1,1881 @@
+{
+  "input_sha256": "02d55634baec13211fcc251e2f77135caf983c10f4893560fe69ea1ed3423f9c",
+  "source_hashes": {
+    "tools/run_goal_demo_offline.py": "8c6c659dd625d2f8909b55b878211dc6f742aeba9ab855d9c48b98ce12cdd627",
+    "tools/score_goal_detection.py": "6f00b90be01c6ea56c363b24fc243cf94af062faae5ff7c69b5a49c40ceacbc0",
+    "web/backend/goal_detection.yaml": "6341db9c2aaf30fc8396d4af07161c839db2dec8de6c56a5a936c09c74164aaf",
+    "web/backend/goal_detection/__init__.py": "3fbdbb438cda71ff1b2ed382a51fd7a499c509fc3613b2a1c646755033258804",
+    "web/backend/goal_detection/accumulation.py": "695b7782d1b1a04498c5337682a929575af18eccc05c7b6b39778aba4a30f196",
+    "web/backend/goal_detection/annotate_analysis.py": "f09d4a2d1c9565dc4efc8a4cd6c6cfc80ad9fd94f7900cf74862ca9421a025bd",
+    "web/backend/goal_detection/bev.py": "1138bd4c606693c08f5c3673d1081f082edfcf15fef9e742e7d84243d584efa1",
+    "web/backend/goal_detection/buffer.py": "4aa589dedf0a21dc120611c1f5a7a36beb8fadd7e5cbe940777c2db46a39af33",
+    "web/backend/goal_detection/config.py": "5e6a08596e26d3dea63c9641e090cdb4e52c8e110ea8a262c1ab868b8c673ca0",
+    "web/backend/goal_detection/detector.py": "460182e7a26063bf124d9caaf0ea4d6dac1a13f4615cc73e6f0b981f4a6c4e34",
+    "web/backend/goal_detection/facade.py": "1344852cd90f391250db8ef73526c42fb8e957e29772e5ee8ab2a8eb4d36596a",
+    "web/backend/goal_detection/focus.py": "28dfe44ae1480d7d74b02bd5c9e0eac3db03fd6a95ae43311c828cb3e1742bbc",
+    "web/backend/goal_detection/geometry.py": "49394ec1ca6da61487c600bfdf28d3ddadce0705171dba6cdeb8ff80e53e1093",
+    "web/backend/goal_detection/ground.py": "d343769eb60781b578fc46a8741df08204a9485a86f5faffa6008e41735e8e37",
+    "web/backend/goal_detection/observability.py": "b31032e93b3c8f57dc58ef163153d5c8875588cdf80d0a77dbdcfdba59f42c00",
+    "web/backend/goal_detection/pipeline.py": "d121ce2677841ab05c0d8683972864a0a6e26506be6e21ab9b495140baa5923f",
+    "web/backend/goal_detection/synthetic.py": "80f2b922543d2efb14f93ec94c9cf50e359f5f998fa087b17b6a2495e79795cf",
+    "web/backend/goal_detection/tracker.py": "4d34e204f9153e0f02cf9005454e75fb5dc0948ad676a4a0681ee82ed5950b05",
+    "web/backend/goal_detection/window_annotation.py": "9d59bd23311ce05a483f0c99d0441427b46cd0205e09dd5e17027940a004e29b"
+  },
+  "tool_sha256": "f23d25f5b2835dd15c1987777e203dc7957a3212009cc1934513854376ebafd4",
+  "command": [
+    "tools\\audit_goal_static.py",
+    "--pcap",
+    "radar_capture_data\\2\\9.14_caochangyidong.pcap",
+    "--output",
+    "Plan\\evidence\\goal-demo\\20260924-noimu-calibration\\moving-goal-windows",
+    "--motion-status",
+    "moving",
+    "--windows",
+    "112:131,158:177,250:269,380:399",
+    "--roi",
+    "91,99,-28,-16,-3,6"
+  ],
+  "python": "3.12.10",
+  "numpy": "2.5.3",
+  "config": {
+    "version": 1,
+    "accumulation": {
+      "enabled": true,
+      "window_size": 20,
+      "voxel_size": 0.5,
+      "max_points": 200000,
+      "roi": [
+        91.0,
+        99.0,
+        -28.0,
+        -16.0,
+        -3.0,
+        6.0
+      ],
+      "range": {
+        "min": 50.0,
+        "max": 130.0
+      }
+    },
+    "goal_detection": {
+      "enabled": true,
+      "cell_size": 0.8,
+      "ground_z": [
+        -2.0,
+        0.3
+      ],
+      "pole": {
+        "height": [
+          1.8,
+          4.0
+        ],
+        "min_points": 5,
+        "max_radius": 1.2,
+        "height_tol": 1.2,
+        "base_tol": 1.2,
+        "grid_offsets": [
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.4,
+            0.0
+          ],
+          [
+            0.0,
+            0.4
+          ],
+          [
+            0.4,
+            0.4
+          ]
+        ],
+        "neighbor_radius": 0.8,
+        "neighbor_xy_radius": 0.65,
+        "neighbor_min_seed_points": 2,
+        "neighbor_max_base_gap": 0.65
+      },
+      "frame": {
+        "width": [
+          4.8,
+          6.0
+        ],
+        "crossbar_z": [
+          1.8,
+          3.2
+        ]
+      },
+      "scoring": {
+        "min_confidence": 0.5,
+        "lock_confidence": 0.7,
+        "crossbar_weight": 0.3,
+        "geometry_weight": 0.7,
+        "nms_distance": 1.5
+      },
+      "diagnostics": {
+        "enabled": true,
+        "max_rejected_candidates": 64,
+        "max_raw_refs_per_candidate": 4096
+      },
+      "z_leveling": {
+        "enabled": true,
+        "reference_roi": "detection",
+        "fit_quantile": 0.35,
+        "min_points": 100,
+        "min_abs_slope": 0.005,
+        "min_xy_span": 1.0,
+        "min_xy_minor_std": 0.25,
+        "max_source_age_seconds": 20.0,
+        "max_below_plane_fraction": 0.1,
+        "max_abs_slope": 0.12,
+        "max_residual": 0.15
+      },
+      "facade": {
+        "enabled": true,
+        "z_band": [
+          0.25,
+          4.0
+        ],
+        "min_points": 30,
+        "edge_bin_size": 0.2,
+        "edge_bin_min_points": 3,
+        "edge_continuity_bins": 2,
+        "edge_fit_band": 0.35,
+        "edge_inlier_band": 0.2,
+        "edge_min_points": 15,
+        "edge_min_height": 1.0,
+        "edge_max_residual": 0.45,
+        "edge_min_inlier": 0.6,
+        "top_bin_min_points": 3,
+        "top_margin": 0.3,
+        "top_tol": 0.35,
+        "top_min_coverage": 0.7,
+        "top_max_residual": 0.35,
+        "top_min_bins": 4,
+        "width_band": [
+          2.0,
+          12.0
+        ],
+        "min_height": 1.2,
+        "max_height": 5.0,
+        "lateral_max": 1.5,
+        "facade_trim_sigma": 3.0,
+        "proposal_cell_size": 1.0,
+        "proposal_min_points": 12,
+        "proposal_max_span": 24.0,
+        "proposal_max_regions": 8
+      }
+    },
+    "strategy": {
+      "mode": "staged"
+    },
+    "bev": {
+      "cell_size": 0.8,
+      "min_window_frames": 5,
+      "min_cell_density": 0.55,
+      "min_cell_points": 10,
+      "max_blob_cells": 8,
+      "min_contrast": 1.5,
+      "contrast_ref": 2.5,
+      "span_density_floor": 0.05,
+      "nms_distance": 2.5,
+      "max_regions": 5,
+      "score_weights": {
+        "density": 0.3,
+        "contrast": 0.4,
+        "width": 0.3
+      }
+    },
+    "focus": {
+      "half_size": 6.0,
+      "prefer_single_frame": true,
+      "single_min_confidence": 0.45,
+      "accumulated_min_current_points": 1
+    },
+    "zrefine": {
+      "bin_size": 0.25,
+      "min_points": 30,
+      "max_base_shift": 1.0,
+      "min_height": 0.5
+    },
+    "locking": {
+      "min_frames": 3,
+      "candidate_gap": 3
+    },
+    "tracking": {
+      "lost_frame_threshold": 5,
+      "reacquire": true,
+      "reacquire_min_frames": 2,
+      "reacquire_timeout": 30,
+      "max_center_jump": 6.5,
+      "kalman": true,
+      "nominal_dt": 0.1,
+      "min_dt": 0.01,
+      "max_dt": 0.5,
+      "evidence": {
+        "recent_max_age_frames": 3,
+        "recent_max_age_seconds": 0.35,
+        "signature_history_size": 256
+      },
+      "association": {
+        "min_score": 0.35,
+        "bearing_scale_rad": 0.5235987756,
+        "weights": {
+          "center": 0.35,
+          "bearing": 0.1,
+          "size": 0.15,
+          "yaw": 0.1,
+          "detection": 0.25,
+          "history": 0.05
+        }
+      }
+    },
+    "webui": {
+      "enable": true,
+      "demo_roi": [
+        84.0,
+        104.0,
+        -36.0,
+        -17.0,
+        -2.0,
+        6.0
+      ],
+      "fps_target": 10,
+      "capture_name_filter": [
+        "9.14_caochang"
+      ],
+      "window_choices": [
+        1,
+        5,
+        10,
+        20,
+        30,
+        60,
+        100
+      ],
+      "speed_choices": [
+        0.5,
+        1,
+        2,
+        5
+      ]
+    },
+    "annotate_analysis": {
+      "brush_radius": 1.0,
+      "min_region_points": 40,
+      "trim_percentile": 1.0,
+      "end_band_fraction": 0.3,
+      "post_bin_size": 0.15,
+      "post_column_radius": 0.6,
+      "base_z_quantile": 0.05,
+      "top_z_quantile": 0.95,
+      "min_post_points": 8,
+      "min_width": 1.0,
+      "min_thickness": 0.1,
+      "max_thickness": 2.0,
+      "multi_split_width_threshold": 8.0,
+      "cluster_cell_size": 1.0,
+      "cluster_link_cells": 1,
+      "cluster_min_cell_points": 3,
+      "min_cluster_points": 20,
+      "max_clusters": 4
+    }
+  },
+  "config_version": "7908e6a99be26d50",
+  "annotation_version": "diagnostic-window-v2",
+  "windows": [
+    {
+      "frame_range": [
+        112,
+        131
+      ],
+      "device_time_range": [
+        17.465,
+        19.476
+      ],
+      "duration_seconds": 2.0109999999999992,
+      "cloud_id": "raw-window:c267b5eb48d0c9a87c35dee6",
+      "coordinate_frame": "lidar_link",
+      "motion_status": "moving",
+      "motion_source": "CLI --motion-status",
+      "review_status": "PENDING_REVIEW",
+      "observation_unit": "accumulated_window",
+      "raw_points": 400000,
+      "range_points": 56442,
+      "roi_points": 392,
+      "ground_model": {
+        "enabled": false,
+        "source": "accumulated",
+        "input_points": 0,
+        "reference_roi": "detection",
+        "source_age_seconds": 2.0109999999999992,
+        "source_frame_range": [
+          112,
+          131
+        ],
+        "motion_status": "moving",
+        "reason": "moving_ground_window",
+        "source_attempts": [
+          {
+            "enabled": false,
+            "source": "single",
+            "input_points": 0,
+            "reference_roi": "detection",
+            "source_frame_range": [
+              131,
+              131
+            ],
+            "source_age_seconds": 0.0,
+            "motion_status": "single_frame",
+            "reason": "insufficient_ground_points"
+          },
+          {
+            "enabled": false,
+            "source": "accumulated",
+            "input_points": 0,
+            "reference_roi": "detection",
+            "source_age_seconds": 2.0109999999999992,
+            "source_frame_range": [
+              112,
+              131
+            ],
+            "motion_status": "moving",
+            "reason": "moving_ground_window"
+          }
+        ],
+        "height_reference": "sensor_z",
+        "latency_ms": 0.154
+      },
+      "absolute_filtered": {
+        "points": 343,
+        "z_span": 2.265005350112915,
+        "z_min": 0.44178980588912964,
+        "z_max": 2.7067952156066895
+      },
+      "relative_filtered": null,
+      "components": {
+        "edge_a": {
+          "raw": {
+            "points": 56,
+            "z_span": 2.229032516479492,
+            "z_min": 0.12738700211048126,
+            "z_max": 2.356419563293457
+          },
+          "absolute": {
+            "points": 51,
+            "z_span": 1.7033472061157227,
+            "z_min": 0.6530723571777344,
+            "z_max": 2.356419563293457
+          },
+          "relative": null,
+          "raw_refs": [
+            [
+              113,
+              8349
+            ],
+            [
+              113,
+              8350
+            ],
+            [
+              113,
+              8351
+            ],
+            [
+              113,
+              8352
+            ],
+            [
+              113,
+              8353
+            ],
+            [
+              113,
+              16505
+            ],
+            [
+              113,
+              16506
+            ],
+            [
+              113,
+              16507
+            ],
+            [
+              113,
+              16508
+            ],
+            [
+              113,
+              16509
+            ],
+            [
+              113,
+              16510
+            ],
+            [
+              113,
+              16511
+            ],
+            [
+              113,
+              16512
+            ],
+            [
+              113,
+              16513
+            ],
+            [
+              114,
+              14478
+            ],
+            [
+              114,
+              14479
+            ],
+            [
+              114,
+              14480
+            ],
+            [
+              114,
+              14481
+            ],
+            [
+              114,
+              14482
+            ],
+            [
+              116,
+              4436
+            ],
+            [
+              116,
+              4437
+            ],
+            [
+              116,
+              4438
+            ],
+            [
+              116,
+              4439
+            ],
+            [
+              116,
+              4440
+            ],
+            [
+              116,
+              4441
+            ],
+            [
+              119,
+              4168
+            ],
+            [
+              119,
+              4170
+            ],
+            [
+              119,
+              19681
+            ],
+            [
+              121,
+              15499
+            ],
+            [
+              121,
+              15500
+            ],
+            [
+              121,
+              15502
+            ],
+            [
+              121,
+              15503
+            ],
+            [
+              121,
+              15504
+            ],
+            [
+              121,
+              15505
+            ],
+            [
+              122,
+              16397
+            ],
+            [
+              122,
+              16398
+            ],
+            [
+              122,
+              16399
+            ],
+            [
+              122,
+              16400
+            ],
+            [
+              122,
+              16402
+            ],
+            [
+              124,
+              9723
+            ],
+            [
+              124,
+              9724
+            ],
+            [
+              124,
+              9725
+            ],
+            [
+              124,
+              9726
+            ],
+            [
+              124,
+              9727
+            ],
+            [
+              124,
+              10554
+            ],
+            [
+              124,
+              10555
+            ],
+            [
+              124,
+              10556
+            ],
+            [
+              128,
+              9562
+            ],
+            [
+              128,
+              9565
+            ],
+            [
+              128,
+              9566
+            ],
+            [
+              128,
+              9567
+            ],
+            [
+              131,
+              1468
+            ],
+            [
+              131,
+              1470
+            ],
+            [
+              131,
+              1471
+            ],
+            [
+              131,
+              1472
+            ],
+            [
+              131,
+              1474
+            ]
+          ],
+          "role": "diagnostic_neighborhood_not_truth"
+        },
+        "edge_b": {
+          "raw": {
+            "points": 34,
+            "z_span": 1.8509740829467773,
+            "z_min": 0.6424805521965027,
+            "z_max": 2.493454694747925
+          },
+          "absolute": {
+            "points": 34,
+            "z_span": 1.8509740829467773,
+            "z_min": 0.6424805521965027,
+            "z_max": 2.493454694747925
+          },
+          "relative": null,
+          "raw_refs": [
+            [
+              113,
+              8389
+            ],
+            [
+              113,
+              8390
+            ],
+            [
+              114,
+              5486
+            ],
+            [
+              114,
+              5487
+            ],
+            [
+              114,
+              5488
+            ],
+            [
+              114,
+              14439
+            ],
+            [
+              114,
+              14440
+            ],
+            [
+              114,
+              14441
+            ],
+            [
+              114,
+              14442
+            ],
+            [
+              114,
+              14443
+            ],
+            [
+              114,
+              14444
+            ],
+            [
+              116,
+              4473
+            ],
+            [
+              116,
+              4474
+            ],
+            [
+              116,
+              4475
+            ],
+            [
+              116,
+              4476
+            ],
+            [
+              116,
+              4477
+            ],
+            [
+              116,
+              15709
+            ],
+            [
+              116,
+              15710
+            ],
+            [
+              116,
+              15711
+            ],
+            [
+              119,
+              4134
+            ],
+            [
+              119,
+              4135
+            ],
+            [
+              121,
+              15467
+            ],
+            [
+              121,
+              15469
+            ],
+            [
+              122,
+              16433
+            ],
+            [
+              122,
+              16434
+            ],
+            [
+              122,
+              16435
+            ],
+            [
+              124,
+              10589
+            ],
+            [
+              124,
+              10590
+            ],
+            [
+              124,
+              10591
+            ],
+            [
+              128,
+              9532
+            ],
+            [
+              128,
+              9533
+            ],
+            [
+              131,
+              1437
+            ],
+            [
+              131,
+              1438
+            ],
+            [
+              131,
+              1439
+            ]
+          ],
+          "role": "diagnostic_neighborhood_not_truth"
+        }
+      },
+      "geometry_after": null
+    },
+    {
+      "frame_range": [
+        158,
+        177
+      ],
+      "device_time_range": [
+        22.079,
+        24.078
+      ],
+      "duration_seconds": 1.9989999999999988,
+      "cloud_id": "raw-window:dc12cea90595aa362c440d91",
+      "coordinate_frame": "lidar_link",
+      "motion_status": "moving",
+      "motion_source": "CLI --motion-status",
+      "review_status": "PENDING_REVIEW",
+      "observation_unit": "accumulated_window",
+      "raw_points": 400000,
+      "range_points": 54548,
+      "roi_points": 410,
+      "ground_model": {
+        "enabled": false,
+        "source": "accumulated",
+        "input_points": 0,
+        "reference_roi": "detection",
+        "source_age_seconds": 1.9989999999999988,
+        "source_frame_range": [
+          158,
+          177
+        ],
+        "motion_status": "moving",
+        "reason": "moving_ground_window",
+        "source_attempts": [
+          {
+            "enabled": false,
+            "source": "single",
+            "input_points": 0,
+            "reference_roi": "detection",
+            "source_frame_range": [
+              177,
+              177
+            ],
+            "source_age_seconds": 0.0,
+            "motion_status": "single_frame",
+            "reason": "insufficient_ground_points"
+          },
+          {
+            "enabled": false,
+            "source": "accumulated",
+            "input_points": 0,
+            "reference_roi": "detection",
+            "source_age_seconds": 1.9989999999999988,
+            "source_frame_range": [
+              158,
+              177
+            ],
+            "motion_status": "moving",
+            "reason": "moving_ground_window"
+          }
+        ],
+        "height_reference": "sensor_z",
+        "latency_ms": 0.106
+      },
+      "absolute_filtered": {
+        "points": 0,
+        "z_span": null,
+        "z_min": null,
+        "z_max": null
+      },
+      "relative_filtered": null,
+      "components": {
+        "edge_a": {
+          "raw": {
+            "points": 42,
+            "z_span": 1.7693431377410889,
+            "z_min": -2.1602425575256348,
+            "z_max": -0.3908993899822235
+          },
+          "absolute": {
+            "points": 0,
+            "z_span": null,
+            "z_min": null,
+            "z_max": null
+          },
+          "relative": null,
+          "raw_refs": [
+            [
+              162,
+              7530
+            ],
+            [
+              162,
+              7531
+            ],
+            [
+              162,
+              7532
+            ],
+            [
+              162,
+              7533
+            ],
+            [
+              162,
+              7534
+            ],
+            [
+              162,
+              7535
+            ],
+            [
+              163,
+              10866
+            ],
+            [
+              163,
+              10867
+            ],
+            [
+              163,
+              10868
+            ],
+            [
+              163,
+              10869
+            ],
+            [
+              163,
+              10870
+            ],
+            [
+              166,
+              7250
+            ],
+            [
+              166,
+              7251
+            ],
+            [
+              166,
+              7252
+            ],
+            [
+              166,
+              7254
+            ],
+            [
+              166,
+              7255
+            ],
+            [
+              166,
+              7256
+            ],
+            [
+              167,
+              2980
+            ],
+            [
+              167,
+              2981
+            ],
+            [
+              167,
+              2982
+            ],
+            [
+              167,
+              2983
+            ],
+            [
+              167,
+              2984
+            ],
+            [
+              167,
+              18728
+            ],
+            [
+              167,
+              18729
+            ],
+            [
+              167,
+              18730
+            ],
+            [
+              167,
+              18731
+            ],
+            [
+              167,
+              18732
+            ],
+            [
+              167,
+              18734
+            ],
+            [
+              167,
+              18735
+            ],
+            [
+              170,
+              5930
+            ],
+            [
+              170,
+              5931
+            ],
+            [
+              170,
+              5933
+            ],
+            [
+              170,
+              5935
+            ],
+            [
+              170,
+              5936
+            ],
+            [
+              174,
+              6736
+            ],
+            [
+              174,
+              6737
+            ],
+            [
+              174,
+              6739
+            ],
+            [
+              174,
+              6740
+            ],
+            [
+              176,
+              15165
+            ],
+            [
+              176,
+              15167
+            ],
+            [
+              176,
+              15168
+            ],
+            [
+              176,
+              15171
+            ]
+          ],
+          "role": "diagnostic_neighborhood_not_truth"
+        },
+        "edge_b": {
+          "raw": {
+            "points": 48,
+            "z_span": 1.8951433897018433,
+            "z_min": -2.350809335708618,
+            "z_max": -0.4556659162044525
+          },
+          "absolute": {
+            "points": 0,
+            "z_span": null,
+            "z_min": null,
+            "z_max": null
+          },
+          "relative": null,
+          "raw_refs": [
+            [
+              158,
+              6074
+            ],
+            [
+              158,
+              6075
+            ],
+            [
+              158,
+              6076
+            ],
+            [
+              158,
+              6077
+            ],
+            [
+              158,
+              6078
+            ],
+            [
+              160,
+              3061
+            ],
+            [
+              160,
+              3063
+            ],
+            [
+              160,
+              3064
+            ],
+            [
+              160,
+              3065
+            ],
+            [
+              161,
+              3752
+            ],
+            [
+              161,
+              3753
+            ],
+            [
+              161,
+              3754
+            ],
+            [
+              161,
+              3755
+            ],
+            [
+              161,
+              3756
+            ],
+            [
+              162,
+              7497
+            ],
+            [
+              162,
+              7498
+            ],
+            [
+              162,
+              7499
+            ],
+            [
+              163,
+              10900
+            ],
+            [
+              163,
+              10902
+            ],
+            [
+              163,
+              10903
+            ],
+            [
+              163,
+              10904
+            ],
+            [
+              163,
+              10905
+            ],
+            [
+              165,
+              10681
+            ],
+            [
+              165,
+              10682
+            ],
+            [
+              166,
+              7286
+            ],
+            [
+              166,
+              7287
+            ],
+            [
+              166,
+              7288
+            ],
+            [
+              167,
+              3016
+            ],
+            [
+              167,
+              3017
+            ],
+            [
+              167,
+              3018
+            ],
+            [
+              167,
+              18765
+            ],
+            [
+              167,
+              18766
+            ],
+            [
+              167,
+              18767
+            ],
+            [
+              168,
+              14513
+            ],
+            [
+              168,
+              14514
+            ],
+            [
+              168,
+              14515
+            ],
+            [
+              168,
+              14516
+            ],
+            [
+              170,
+              5967
+            ],
+            [
+              170,
+              5968
+            ],
+            [
+              170,
+              5969
+            ],
+            [
+              172,
+              14526
+            ],
+            [
+              172,
+              14527
+            ],
+            [
+              174,
+              6773
+            ],
+            [
+              174,
+              6774
+            ],
+            [
+              174,
+              6775
+            ],
+            [
+              176,
+              15132
+            ],
+            [
+              176,
+              15133
+            ],
+            [
+              176,
+              15134
+            ]
+          ],
+          "role": "diagnostic_neighborhood_not_truth"
+        }
+      },
+      "geometry_after": null
+    },
+    {
+      "frame_range": [
+        250,
+        269
+      ],
+      "device_time_range": [
+        31.299,
+        33.298
+      ],
+      "duration_seconds": 1.9990000000000023,
+      "cloud_id": "raw-window:9a98485d9b66a87b93f643df",
+      "coordinate_frame": "lidar_link",
+      "motion_status": "moving",
+      "motion_source": "CLI --motion-status",
+      "review_status": "PENDING_REVIEW",
+      "observation_unit": "accumulated_window",
+      "raw_points": 400000,
+      "range_points": 58658,
+      "roi_points": 476,
+      "ground_model": {
+        "enabled": false,
+        "source": "accumulated",
+        "input_points": 0,
+        "reference_roi": "detection",
+        "source_age_seconds": 1.9990000000000023,
+        "source_frame_range": [
+          250,
+          269
+        ],
+        "motion_status": "moving",
+        "reason": "moving_ground_window",
+        "source_attempts": [
+          {
+            "enabled": false,
+            "source": "single",
+            "input_points": 0,
+            "reference_roi": "detection",
+            "source_frame_range": [
+              269,
+              269
+            ],
+            "source_age_seconds": 0.0,
+            "motion_status": "single_frame",
+            "reason": "insufficient_ground_points"
+          },
+          {
+            "enabled": false,
+            "source": "accumulated",
+            "input_points": 0,
+            "reference_roi": "detection",
+            "source_age_seconds": 1.9990000000000023,
+            "source_frame_range": [
+              250,
+              269
+            ],
+            "motion_status": "moving",
+            "reason": "moving_ground_window"
+          }
+        ],
+        "height_reference": "sensor_z",
+        "latency_ms": 0.159
+      },
+      "absolute_filtered": {
+        "points": 406,
+        "z_span": 2.925206184387207,
+        "z_min": 0.41839468479156494,
+        "z_max": 3.3436009883880615
+      },
+      "relative_filtered": null,
+      "components": {
+        "edge_a": {
+          "raw": {
+            "points": 5,
+            "z_span": 0.040396809577941895,
+            "z_min": 0.4602782726287842,
+            "z_max": 0.5006750822067261
+          },
+          "absolute": {
+            "points": 5,
+            "z_span": 0.040396809577941895,
+            "z_min": 0.4602782726287842,
+            "z_max": 0.5006750822067261
+          },
+          "relative": null,
+          "raw_refs": [
+            [
+              253,
+              3880
+            ],
+            [
+              253,
+              3881
+            ],
+            [
+              253,
+              3882
+            ],
+            [
+              253,
+              3883
+            ],
+            [
+              253,
+              3884
+            ]
+          ],
+          "role": "diagnostic_neighborhood_not_truth"
+        },
+        "edge_b": {
+          "raw": {
+            "points": 55,
+            "z_span": 3.174612522125244,
+            "z_min": -0.23724423348903656,
+            "z_max": 2.937368392944336
+          },
+          "absolute": {
+            "points": 47,
+            "z_span": 2.4406559467315674,
+            "z_min": 0.49671241641044617,
+            "z_max": 2.937368392944336
+          },
+          "relative": null,
+          "raw_refs": [
+            [
+              250,
+              15349
+            ],
+            [
+              250,
+              15352
+            ],
+            [
+              252,
+              7295
+            ],
+            [
+              252,
+              7296
+            ],
+            [
+              252,
+              7297
+            ],
+            [
+              252,
+              7298
+            ],
+            [
+              252,
+              7299
+            ],
+            [
+              252,
+              7300
+            ],
+            [
+              253,
+              3834
+            ],
+            [
+              253,
+              3835
+            ],
+            [
+              253,
+              3836
+            ],
+            [
+              253,
+              3837
+            ],
+            [
+              255,
+              11566
+            ],
+            [
+              255,
+              11568
+            ],
+            [
+              255,
+              11569
+            ],
+            [
+              255,
+              11570
+            ],
+            [
+              255,
+              11571
+            ],
+            [
+              256,
+              8077
+            ],
+            [
+              256,
+              8078
+            ],
+            [
+              256,
+              8081
+            ],
+            [
+              256,
+              8083
+            ],
+            [
+              257,
+              4587
+            ],
+            [
+              257,
+              4589
+            ],
+            [
+              257,
+              4590
+            ],
+            [
+              257,
+              4591
+            ],
+            [
+              257,
+              4592
+            ],
+            [
+              257,
+              4594
+            ],
+            [
+              258,
+              1106
+            ],
+            [
+              258,
+              1108
+            ],
+            [
+              258,
+              1109
+            ],
+            [
+              260,
+              17284
+            ],
+            [
+              260,
+              17285
+            ],
+            [
+              260,
+              17291
+            ],
+            [
+              264,
+              6321
+            ],
+            [
+              264,
+              6322
+            ],
+            [
+              264,
+              6323
+            ],
+            [
+              264,
+              6324
+            ],
+            [
+              264,
+              6325
+            ],
+            [
+              264,
+              6326
+            ],
+            [
+              264,
+              6327
+            ],
+            [
+              265,
+              5004
+            ],
+            [
+              265,
+              5005
+            ],
+            [
+              265,
+              5006
+            ],
+            [
+              265,
+              5007
+            ],
+            [
+              267,
+              13573
+            ],
+            [
+              267,
+              13574
+            ],
+            [
+              267,
+              13575
+            ],
+            [
+              267,
+              13576
+            ],
+            [
+              267,
+              13577
+            ],
+            [
+              267,
+              13578
+            ],
+            [
+              267,
+              13579
+            ],
+            [
+              267,
+              13580
+            ],
+            [
+              269,
+              3831
+            ],
+            [
+              269,
+              3836
+            ],
+            [
+              269,
+              3837
+            ]
+          ],
+          "role": "diagnostic_neighborhood_not_truth"
+        }
+      },
+      "geometry_after": null
+    },
+    {
+      "frame_range": [
+        380,
+        399
+      ],
+      "device_time_range": [
+        44.298,
+        46.297
+      ],
+      "duration_seconds": 1.9989999999999952,
+      "cloud_id": "raw-window:003f6c9e0e1a30b5cde2bcae",
+      "coordinate_frame": "lidar_link",
+      "motion_status": "moving",
+      "motion_source": "CLI --motion-status",
+      "review_status": "PENDING_REVIEW",
+      "observation_unit": "accumulated_window",
+      "raw_points": 400000,
+      "range_points": 56739,
+      "roi_points": 275,
+      "ground_model": {
+        "enabled": false,
+        "source": "accumulated",
+        "input_points": 0,
+        "reference_roi": "detection",
+        "source_age_seconds": 1.9989999999999952,
+        "source_frame_range": [
+          380,
+          399
+        ],
+        "motion_status": "moving",
+        "reason": "moving_ground_window",
+        "source_attempts": [
+          {
+            "enabled": false,
+            "source": "single",
+            "input_points": 0,
+            "reference_roi": "detection",
+            "source_frame_range": [
+              399,
+              399
+            ],
+            "source_age_seconds": 0.0,
+            "motion_status": "single_frame",
+            "reason": "insufficient_ground_points"
+          },
+          {
+            "enabled": false,
+            "source": "accumulated",
+            "input_points": 0,
+            "reference_roi": "detection",
+            "source_age_seconds": 1.9989999999999952,
+            "source_frame_range": [
+              380,
+              399
+            ],
+            "motion_status": "moving",
+            "reason": "moving_ground_window"
+          }
+        ],
+        "height_reference": "sensor_z",
+        "latency_ms": 0.167
+      },
+      "absolute_filtered": {
+        "points": 207,
+        "z_span": 0.7945458889007568,
+        "z_min": 0.30070701241493225,
+        "z_max": 1.0952528715133667
+      },
+      "relative_filtered": null,
+      "components": {
+        "edge_a": {
+          "raw": {
+            "points": 38,
+            "z_span": 1.6715680360794067,
+            "z_min": -0.5942028760910034,
+            "z_max": 1.0773651599884033
+          },
+          "absolute": {
+            "points": 29,
+            "z_span": 0.5319780111312866,
+            "z_min": 0.5453871488571167,
+            "z_max": 1.0773651599884033
+          },
+          "relative": null,
+          "raw_refs": [
+            [
+              389,
+              17978
+            ],
+            [
+              389,
+              17981
+            ],
+            [
+              389,
+              17982
+            ],
+            [
+              389,
+              17983
+            ],
+            [
+              389,
+              17984
+            ],
+            [
+              391,
+              2777
+            ],
+            [
+              391,
+              2778
+            ],
+            [
+              391,
+              2779
+            ],
+            [
+              391,
+              2780
+            ],
+            [
+              391,
+              2781
+            ],
+            [
+              391,
+              2782
+            ],
+            [
+              391,
+              2783
+            ],
+            [
+              391,
+              2784
+            ],
+            [
+              391,
+              15261
+            ],
+            [
+              391,
+              15268
+            ],
+            [
+              393,
+              12495
+            ],
+            [
+              393,
+              12501
+            ],
+            [
+              393,
+              12502
+            ],
+            [
+              395,
+              9689
+            ],
+            [
+              395,
+              9690
+            ],
+            [
+              395,
+              9692
+            ],
+            [
+              397,
+              6878
+            ],
+            [
+              397,
+              6879
+            ],
+            [
+              397,
+              6882
+            ],
+            [
+              397,
+              6883
+            ],
+            [
+              397,
+              6884
+            ],
+            [
+              398,
+              11665
+            ],
+            [
+              398,
+              11669
+            ],
+            [
+              398,
+              11670
+            ],
+            [
+              398,
+              11671
+            ],
+            [
+              398,
+              11672
+            ],
+            [
+              399,
+              4156
+            ],
+            [
+              399,
+              4157
+            ],
+            [
+              399,
+              4158
+            ],
+            [
+              399,
+              4159
+            ],
+            [
+              399,
+              4160
+            ],
+            [
+              399,
+              4161
+            ],
+            [
+              399,
+              4164
+            ]
+          ],
+          "role": "diagnostic_neighborhood_not_truth"
+        },
+        "edge_b": {
+          "raw": {
+            "points": 11,
+            "z_span": 1.447500467300415,
+            "z_min": -0.7054517269134521,
+            "z_max": 0.7420487999916077
+          },
+          "absolute": {
+            "points": 4,
+            "z_span": 0.0038367509841918945,
+            "z_min": 0.7382120490074158,
+            "z_max": 0.7420487999916077
+          },
+          "relative": null,
+          "raw_refs": [
+            [
+              397,
+              6924
+            ],
+            [
+              397,
+              6925
+            ],
+            [
+              397,
+              6926
+            ],
+            [
+              398,
+              11621
+            ],
+            [
+              398,
+              11622
+            ],
+            [
+              398,
+              11623
+            ],
+            [
+              398,
+              11624
+            ],
+            [
+              399,
+              4205
+            ],
+            [
+              399,
+              4206
+            ],
+            [
+              399,
+              4207
+            ],
+            [
+              399,
+              4208
+            ]
+          ],
+          "role": "diagnostic_neighborhood_not_truth"
+        }
+      },
+      "geometry_after": null
+    }
+  ]
+}

@@ -1,0 +1,59 @@
+{
+  "status": "PUBLIC_DATASET_SMOKE_COMPLETED",
+  "environment": "WSL2_HUMBLE_X86_64",
+  "evidence_kind": "PUBLIC_DATASET",
+  "command": [
+    "ros2",
+    "run",
+    "glim_ros",
+    "glim_rosbag",
+    "/home/radar/na70_lio_ws/public-zenodo-example/bag/os1_128_01_downsampled",
+    "--ros-args",
+    "-p",
+    "config_path:=/home/radar/na70_lio_ws/public-smoke-30s-final/config",
+    "-p",
+    "auto_quit:=true",
+    "-p",
+    "dump_path:=/home/radar/na70_lio_ws/public-smoke-30s-final/dump",
+    "-p",
+    "playback_duration:=30.0"
+  ],
+  "duration_requested_s": 30.0,
+  "elapsed_s": 6.639376115999994,
+  "exit_code": 0,
+  "trajectory_rows": {
+    "odom_lidar.txt": 270,
+    "traj_imu.txt": 270,
+    "odom_imu.txt": 270,
+    "traj_lidar.txt": 270
+  },
+  "versions": {
+    "glim": "1a197c999e4865f5cab7c9cd25474128413ebbca",
+    "glim_ros2": "4d4ec524ccf1b02aa09b0af2af767ecc54343798"
+  },
+  "runner_sha256": "09fd57076a69324000c355f914e342307c6007ee9d4957b5ea6e3aee019f3bfe",
+  "configuration_sha256": {
+    "config.json": "8fad0b50b1a9a895744543aa173d25c22c7918e2c119195a1327b7544ac05a95",
+    "config_global_mapping_cpu.json": "1c01083275bd75b131ce3b856bd4e1dde2a18c35276c61352ad4956d06f90c06",
+    "config_global_mapping_gpu.json": "1496d97fcd47d3671845c045e0da3cc505ef016b07d57d08a6cb82a15522c80d",
+    "config_global_mapping_pose_graph.json": "ceb2a6e2e88ddbc79125f899e9397381b657e93e084a32900231c40a7b8b8765",
+    "config_logging.json": "471a97b149fa5523386d3b9551420f377340a32d158da28d164b637ff22d0e09",
+    "config_odometry_cpu.json": "b3f8fadd09067b2afd8e13e55731cbba323f623c86da74f44bbd04b700c819ea",
+    "config_odometry_ct.json": "6070c9b20e11acb551f78d293d8358c34359e0b464e09979b3b19225de123570",
+    "config_odometry_gpu.json": "db14a8d5e3e6ddd1e03071c97f5b8e82017ef7d124b60040eb3fae03820eb291",
+    "config_preprocess.json": "68d2996d4cdab4c4daace3647e6eed934092cc6529aefd0dc71d4409226eb31d",
+    "config_ros.json": "58b99a9ddad24b9ff9688cfee49b8a1c3be294246e7fa38094ee88fc69b5c119",
+    "config_sensors.json": "a187073f2354e5bf8bedef626684e964969df43153d29f88d4103af744c0b92a",
+    "config_sub_mapping_cpu.json": "5aa34e56c91c5dfbbc627b2b60375a91a6c8b092adfa2b82bbd09d86aec15dec",
+    "config_sub_mapping_gpu.json": "bdc934a120fc457837190714eb888526e5a5c007762c3af6f72f4ea72f3dc380",
+    "config_sub_mapping_passthrough.json": "78807724166f5096ced9fb3a19fc9cb9fcb0994209c9486f573337da99c0e6b8",
+    "config_viewer.json": "fe56516a660923cec871d8c15041d4f7fcf6ff08cb4146054b2146e14c03d6c5"
+  },
+  "quality_warnings": [
+    "[2026-10-30 10:48:20.096] [odom] [warning] not enough IMU measurements integrated between 508.4654704 and 508.56578615. N=0"
+  ],
+  "input_quality_status": "REQUIRES_REVIEW",
+  "accuracy_status": "NOT_EVALUATED",
+  "na70_validated": false,
+  "jetson_validated": false
+}

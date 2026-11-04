@@ -1,0 +1,15 @@
+{
+  "valid_points": 1241651,
+  "per_frame_min": 962,
+  "per_frame_max": 3140,
+  "range_min": [
+    3.364,
+    -10.136,
+    1.631
+  ],
+  "range_max": [
+    11.625,
+    -0.121,
+    6.257
+  ]
+}

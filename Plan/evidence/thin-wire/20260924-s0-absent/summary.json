@@ -1,0 +1,165 @@
+{
+  "scan_total_frames": 662,
+  "audited_frames": 20,
+  "audited_packets": 2000,
+  "audited_rays": 400000,
+  "zero_distance_code_count": 260882,
+  "known_direction_count": 176875,
+  "unknown_direction_count": 223125,
+  "device_time_start": 293.041,
+  "device_time_end": 295.04,
+  "device_time_valid": true,
+  "device_time_monotonic": true,
+  "poses": {
+    "path_start": {
+      "origin_world_m": [
+        0.0,
+        0.0,
+        12.0
+      ],
+      "geometric_opportunity_rays": 0,
+      "packets_with_opportunity": 0,
+      "occupied_bins": 0,
+      "total_bins": 50,
+      "coverage_fraction": 0.0,
+      "largest_uncovered_m": 50.0,
+      "occupied_bin_indices": []
+    },
+    "path_end": {
+      "origin_world_m": [
+        37.0,
+        0.0,
+        12.0
+      ],
+      "geometric_opportunity_rays": 0,
+      "packets_with_opportunity": 0,
+      "occupied_bins": 0,
+      "total_bins": 50,
+      "coverage_fraction": 0.0,
+      "largest_uncovered_m": 50.0,
+      "occupied_bin_indices": []
+    }
+  },
+  "causal_windows": [
+    {
+      "requested_duration_s": null,
+      "packet_count": 100,
+      "actual_span_s": 0.09900000000004638,
+      "partial_window": false,
+      "poses": {
+        "path_start": {
+          "geometric_opportunity_rays": 0,
+          "occupied_bins": 0,
+          "total_bins": 50,
+          "coverage_fraction": 0.0,
+          "largest_uncovered_m": 50.0,
+          "occupied_bin_indices": []
+        },
+        "path_end": {
+          "geometric_opportunity_rays": 0,
+          "occupied_bins": 0,
+          "total_bins": 50,
+          "coverage_fraction": 0.0,
+          "largest_uncovered_m": 50.0,
+          "occupied_bin_indices": []
+        }
+      }
+    },
+    {
+      "requested_duration_s": 0.5,
+      "packet_count": 500,
+      "actual_span_s": 0.49900000000002365,
+      "partial_window": false,
+      "poses": {
+        "path_start": {
+          "geometric_opportunity_rays": 0,
+          "occupied_bins": 0,
+          "total_bins": 50,
+          "coverage_fraction": 0.0,
+          "largest_uncovered_m": 50.0,
+          "occupied_bin_indices": []
+        },
+        "path_end": {
+          "geometric_opportunity_rays": 0,
+          "occupied_bins": 0,
+          "total_bins": 50,
+          "coverage_fraction": 0.0,
+          "largest_uncovered_m": 50.0,
+          "occupied_bin_indices": []
+        }
+      }
+    },
+    {
+      "requested_duration_s": 1.0,
+      "packet_count": 1000,
+      "actual_span_s": 0.9990000000000236,
+      "partial_window": false,
+      "poses": {
+        "path_start": {
+          "geometric_opportunity_rays": 0,
+          "occupied_bins": 0,
+          "total_bins": 50,
+          "coverage_fraction": 0.0,
+          "largest_uncovered_m": 50.0,
+          "occupied_bin_indices": []
+        },
+        "path_end": {
+          "geometric_opportunity_rays": 0,
+          "occupied_bins": 0,
+          "total_bins": 50,
+          "coverage_fraction": 0.0,
+          "largest_uncovered_m": 50.0,
+          "occupied_bin_indices": []
+        }
+      }
+    },
+    {
+      "requested_duration_s": 2.0,
+      "packet_count": 2000,
+      "actual_span_s": 1.9990000000000236,
+      "partial_window": true,
+      "poses": {
+        "path_start": {
+          "geometric_opportunity_rays": 0,
+          "occupied_bins": 0,
+          "total_bins": 50,
+          "coverage_fraction": 0.0,
+          "largest_uncovered_m": 50.0,
+          "occupied_bin_indices": []
+        },
+        "path_end": {
+          "geometric_opportunity_rays": 0,
+          "occupied_bins": 0,
+          "total_bins": 50,
+          "coverage_fraction": 0.0,
+          "largest_uncovered_m": 50.0,
+          "occupied_bin_indices": []
+        }
+      }
+    },
+    {
+      "requested_duration_s": 5.0,
+      "packet_count": 2000,
+      "actual_span_s": 1.9990000000000236,
+      "partial_window": true,
+      "poses": {
+        "path_start": {
+          "geometric_opportunity_rays": 0,
+          "occupied_bins": 0,
+          "total_bins": 50,
+          "coverage_fraction": 0.0,
+          "largest_uncovered_m": 50.0,
+          "occupied_bin_indices": []
+        },
+        "path_end": {
+          "geometric_opportunity_rays": 0,
+          "occupied_bins": 0,
+          "total_bins": 50,
+          "coverage_fraction": 0.0,
+          "largest_uncovered_m": 50.0,
+          "occupied_bin_indices": []
+        }
+      }
+    }
+  ]
+}

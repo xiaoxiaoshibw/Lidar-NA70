@@ -1,0 +1,106 @@
+{
+  "schema": "na70-capture-quality-v1",
+  "status": "ok",
+  "stop_reason": "duration",
+  "duration_s": 5.281,
+  "overlap_s": 5.145,
+  "time_level": "host_receive_only",
+  "measurement_limits": [
+    "IMU 无设备采样时间戳：主机到达时间不是采样时间",
+    "雷达包内时间未核实，PCAP 时间为主机抓包时间",
+    "两路同一主机只提供关联，不构成硬件同步",
+    "overlap_s 仅表示采集进程运行窗口，不证明两路数据连续有效"
+  ],
+  "checks": [
+    {
+      "name": "imu_frames",
+      "ok": true,
+      "detail": "1027 帧"
+    },
+    {
+      "name": "imu_rate",
+      "ok": true,
+      "detail": "199.6 Hz（期望 150–260）"
+    },
+    {
+      "name": "imu_checksum",
+      "ok": true,
+      "detail": "0 个校验错误"
+    },
+    {
+      "name": "imu_payload",
+      "ok": true,
+      "detail": "0 个载荷错误"
+    },
+    {
+      "name": "imu_reconnect",
+      "ok": true,
+      "detail": "0 次打开或读取失败"
+    },
+    {
+      "name": "imu_sequence",
+      "ok": true,
+      "detail": "0 次 tid 断号"
+    },
+    {
+      "name": "imu_overflow",
+      "ok": true,
+      "detail": "0 帧写队列溢出"
+    },
+    {
+      "name": "imu_worker",
+      "ok": true,
+      "detail": "采集线程正常"
+    },
+    {
+      "name": "lidar_bytes",
+      "ok": true,
+      "detail": "7442784 字节"
+    },
+    {
+      "name": "lidar_drops",
+      "ok": true,
+      "detail": "内核丢弃 0"
+    },
+    {
+      "name": "overlap",
+      "ok": true,
+      "detail": "采集进程窗口 5.15 s，覆盖较短窗口 100%"
+    }
+  ],
+  "imu": {
+    "state": "stopped",
+    "error": "",
+    "worker_error": "",
+    "port": "/dev/serial/by-id/usb-WCH.CN_USB_Single_Serial_0003-if00",
+    "baud": 460800,
+    "segment": 0,
+    "frames": 1027,
+    "bytes": 68858,
+    "hz": 199.6,
+    "last_frame_age_s": null,
+    "checksum_errors": 0,
+    "payload_errors": 0,
+    "sequence_breaks": 0,
+    "reconnects": 0,
+    "queue_overflow": 0,
+    "discarded_bytes": 49,
+    "first_tid": 9468,
+    "last_tid": 10494,
+    "started_unix": 1793348713.4474986,
+    "ended_unix": 1793348718.593493
+  },
+  "lidar": {
+    "state": "stopped",
+    "iface": "enP8p1s0",
+    "port": 2368,
+    "pcap": "/home/jetson/na70-sessions/20261030-162513/raw/lidar.pcap",
+    "pcap_bytes": 7442784,
+    "started_unix": 1793348713.4481301,
+    "ended_unix": 1793348718.7272968,
+    "captured": 5070,
+    "received": 5118,
+    "dropped": 0
+  },
+  "warnings": []
+}

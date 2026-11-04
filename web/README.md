@@ -1,6 +1,8 @@
 # NA70 点云工作台
 
-Windows 本机 Web 应用：导入经典 PCAP，按项目 ROS2 驱动解码、组帧，在浏览器回放三维 XYZI 点云，并离线提取和跟踪移动点。数据、缓存和分析结果均保存在本机。
+Windows 本机 Web 应用：导入经典 PCAP，按项目 ROS2 驱动解码、组帧，在浏览器回放三维 XYZI 点云；提供采集预检、球门标注与跟踪、历史建图验收和导线 W1 原始回波诊断。数据、缓存和分析结果均保存在本机。
+
+当前路线决策以 [Plan/README.md](../Plan/README.md) 为准。球门识别仍是已记录的近期主线；导线分支现提供 [W1 原始回波工作台](../docs/NA70_WIRE_ARCHITECTURE.md)及离线工具 `tools/audit_thin_wire.py`。两者只做原始观测诊断，真实细线回波归属仍为 `NOT_EVALUATED`，W3/W4/W5 识别与运动接口尚未启用。
 
 ## 启动
 
@@ -45,7 +47,7 @@ cd D:\Code\radar\web
 6. 支持 1／5／10／20／100／200／500 帧，以及 **整包全部点**。整包按批渐进加载，可在加载时改变视角或切换窗口取消加载。文件开头窗口包含后续帧；达到窗口长度后使用截至当前帧的历史窗口。因此密集叠加用于空间展示，不能把窗口内点都视为当前时刻的观测。运动会形成拖影，叠加不含运动补偿。
 7. 默认 **全部点、不抽样**，取消原先 40 万点上限；显存有限时可手动选择 100／400／800 万点预算。只剔除零距离及非有限坐标，HUD 分别显示非零渲染点数与原始点数。
 8. 导入记录在重启后保留；点击文件条目可重新打开。垃圾桶只删除本应用的导入副本和索引，不删除原文件。
-9. 点击左侧「开始本机分析」。程序使用全片原始俯仰码、航向码和距离码建立射线历史，不要求文件开头无人。分析后保留 200 帧叠加：属于运动点带的点为红色，并在该点带持续期间保持红色，形成沿运动方向拉伸的时空点带；单帧用于检查某个时刻。画面左上显示当前帧候选点、移动点数与运动点带数量，选中点带时追加显示该点带的编号、速度、位移、路径长度和局部截面尺寸。右侧「移动点带」列表可点击跳转并高亮该点带的轨迹中心线；可导出逐帧 CSV 与点带 CSV。关闭右侧「红色高亮移动点」可查看原始着色。
+9. 主工作台当前提供原始点云、历史配准和地图视图，球门与导线功能通过顶部导航进入各自工作台。移动点带分析的后端与历史证据保留，入口已退出当前验收流程；下述算法说明仅作历史功能记录。
 
 分析使用固定雷达的全片射线历史、距离众数背景，随后把候选点放到联合 (x, y, z, t) 四维空间做体素化加加权 DBSCAN 聚类，再按持续时间、时间片覆盖、起终点位移、速度、PCA 主轴比、时间-位置回归残差和直度判别点带，最后按时间片恢复每一时刻的局部目标并做片段合并。它只比较再次扫到同一原始方向时的距离，避免把双楔镜扫描轨迹变化误判为移动。
 
@@ -97,6 +99,43 @@ JSON 包含 `version`、`fields`、`dtype`、`index`、`capture_time`、`end_tim
 前端缓存所选窗口及少量预取帧；整包模式缓存整包，其内存开销随文件点数增长。读取最多 4 个并发请求，每批 25 帧渐进更新，GPU 缓冲按固定 25 帧分块复用；着色、大小和透明度用着色器更新，不重建全部点坐标。跳转或换文件时取消旧请求，释放不再使用的 GPU BufferGeometry。显示参数不会修改解码数据。
 
 缓存位于 `web/data/<uuid>/`：`capture.pcap`、`meta.json`、`frames.json`、分析后的 `analysis.json` 和 `analysis_masks.bin`。可用 `NA70_DATA_DIR` 指定其他目录。该目录仅应由本应用管理；已导入的捕获文件应视为不可变。如需换文件，请移除后重新导入。
+
+## 页面互通
+
+四个页面（主工作台 `/`、标注工作台 `/annotate/`、跟踪 Demo `/demo/`、导线工作台 `/wire/`）顶部共用互通导航（`frontend/src/PageNav.tsx`）。生产环境链接指向后端路由；Vite 开发模式使用对应 `.html` 入口。
+
+## 导线工作台（/wire/）
+
+导线页使用 `/api/wire` 的独立持久化运行接口。可从已导入的 PCAP 创建 W1 原始诊断，选配独立背景录制和终点帧；运行状态、逐窗原始统计、逐包时间线、有限抽样的正／侧／俯视投影与每个抽样点的原始帧／包／点身份可在重启后回看。抽样仅用于浏览，窗口指标来自完整原始数据。运行目录保存配置、输入与源码哈希；缺少独立目标位置和复核时，界面始终显示 `NOT_EVALUATED`，不会把 ROI 点数认定为导线回波。
+
+接口分为 `GET /api/wire/capabilities`、`POST/GET /api/wire/runs`、`GET /api/wire/runs/{run_id}`、`GET /api/wire/runs/{run_id}/windows/{window_id}` 与其 `/cloud` 子资源。后续 W3 人工 ROI、W4 全视场和 W5 运动接口先在 capabilities 中标为不可用；数据和验收语义见[导线调试契约](../docs/NA70_WIRE_DEBUG_ACCEPTANCE.md)。
+
+## Demo 页（/demo/）
+
+独立入口 `http://127.0.0.1:8765/demo/`：足球球门远距离识别 / 锁定 / 跟踪演示（LiDAR-only，无 IMU）。与主页面并列，不影响现有功能。
+
+- 采集列表只显示适合演示的目标场景数据（按 `backend/goal_detection.yaml → webui.capture_name_filter` 文件名过滤）。
+- 会话以真实帧率（≈10 Hz）回放所选 PCAP，逐帧运行可调滑动窗口叠加 + 球门几何检测 + 状态机跟踪；默认 20 帧来自 `9.14_caochangyou.pcap` 对照（20 帧比 10 帧更早锁定且连续跟踪帧更多），不是不可修改的常数。`叠加帧数`（1–100）与`回放速度`（0.5–5×）可调，变更自动重启会话。
+- 视图：单帧 / 叠加点云切换；ROI、立柱、轨迹、debug 图层；下方面板显示叠加状态（Accumulation n/N、FPS、点数）与目标状态（Goal ID、距离、置信度、State、Age）。右上 `Pipeline / Algorithm Inspector` 显示当帧实际执行分支，例如 Range/ROI、Voxel、BEV、FOV crop、Z、立柱、柱对、NMS 和 Association；未运行分支显示 `skipped / 未执行`，不会用 0 ms 冒充。当前 Stage 可见点为青色、候选支撑点为橙色、拒绝点为暗灰色。
+- 接口：`GET /api/demo/captures`、`POST/GET/DELETE /api/demo/sessions*`、`GET /api/demo/sessions/{id}/cloud?mode=single|accumulated`（帧二进制 v1）、`GET /api/demo/sessions/{id}/debug`。可观察性接口为 `GET .../pipeline`、`GET .../debug/cloud?source=&stage=&candidate_id=`（帧二进制 v3，`classification` 与候选 `highlight` 分离）、`GET .../provenance?voxel_index=`、`GET .../logs`、`GET .../metrics`、`GET/PUT .../config` 与 `GET .../snapshot`；最后一个接口把当前 Pipeline、候选、关联、日志、指标和配置版本一次性输出给 Codex/AI。会话在内存中，服务重启后需重新开始。
+- 算法阈值集中在 `backend/goal_detection.yaml`；离线整片运行与证据见 `tools/run_goal_demo_offline.py` 与 `Plan/evidence/goal-demo/`。状态机与检测仅使用几何特征，不输出「检测到 N 个人」类语义结论；候选≠语义确认。
+- **分级检测策略（`strategy.mode: staged`，窗口长度可配置，当前默认 10 帧）**：第 1 级 BEV 在纯 XY 平面按「双致密 blob + 跨度密度对比」提议球门区域（忽略 z，容忍 yaw 拖影）；锁定后第 2 级把检测收缩到候选周围 6 m FOV——同一时间最多一个球门假设；第 3 级在 FOV 内用 z 直方图众数估地面、修正包围盒高度；聚焦后位置优先取当前单帧（抑制拖影平均）。预锁定阶段强候选（≥lock_confidence）优先并允许跳转，围栏缺口等低置信度结构无法锁定。`strategy.mode: poles` 保留旧的全图检测行为作对照。状态面板显示「策略 / FOV」，勾选 debug 可见 BEV 区域标记。
+- **实时标注对比（/demo/ 页勾选「标注」）**：回放可暂停（控制条「暂停/继续」），点云上单击生成标准球门框（自动朝向雷达）、拖框平移、拖黄把手旋转，与系统跟踪绿框同屏对比；面板实时给出中心偏差 Δ / 宽度差 / 高度差，供人工直观判断跟踪是否正确；「保存标注」写入 `/api/demo/annotations`（labeler=demo-live，评分器可对账），「清除」移除。
+- **框来源可追溯**：每个帧内候选包含 `candidate_id`、检测分解分数、距离/方位/宽高、8 个旋转框角点、AABB、体素支撑索引、原始 `(frame,point)` 引用与拒绝原因；Track ID 才表示跨帧身份。点击候选只把该候选的支撑点高亮。Detection Score 与 Association 调试信息分开；P3 将统一实际关联决策和展示分数。
+- **无 IMU 边界**：当前 ID 是短时传感器坐标系关联。雷达移动/转动时允许框在传感器坐标中连续移动；缩窄 FOV 只在 LOCKED/TRACKING/REACQUIRE 使用，失锁后恢复全图搜索。它不恢复世界坐标，也不宣称 SLAM。合成测试包含随机噪声、树/高墙干扰和逐帧平移+yaw，验证短时 ID 连续性。
+- **Synthetic 套件**：`tools/run_goal_synthetic_suite.py` 运行 15 类带独立真值的场景，按 seed 复现点云、传感器运动、遮挡和干扰物，输出 precision/recall、框误差、ID switch、最长连续命中和目标缺席期间错误确认。它显式标记 `SYNTHETIC`，用于开发失败定位，不替代真实标注或设备验收。
+
+## 标注工作台（/annotate/）
+
+独立入口 `http://127.0.0.1:8765/annotate/`：球门检测的人工标注页面，与 demo 页分离。标注人是语义判定的唯一来源；系统只负责把画笔/点选变成可复查的标注。
+
+- 流程（画笔工作流）：选采集 → 时间轴拖动/点击定位（或空格播放、←/→ 步进）→ 在 2D 俯视点云上**用画笔沿球门轮廓涂画**（B 键画笔模式，M 键移动视图，N 键负样本点选）→ 画完一组按**回车（脚本分析并入列）**或 **G（直接入列，不跑分析）**，同一画面可连续标注多组 → **Ctrl+S 一次性保存全部**。画错了 Ctrl+Z/删除撤销上一笔、Esc 清空，无需逐点改坐标；已保存标注可在列表中定位（跳到其帧区间）或删除。
+- 脚本分析（可选）：后端对画笔区域做纯几何测量（主轴双立柱密度峰 → 柱心/门宽/柱高/厚度/朝向），返回提案框并显式给出宽度/高度是否在 `goal_detection.yaml` 常规区间的检查与警告；提案是否采用由标注人决定，不自动保存。分析阈值在 `goal_detection.yaml` 的 `annotate_analysis` 段。
+- 点云叠加：**原始全量点**（无体素化、无距离/ROI 过滤），20 帧起可选（20/30/50/100/200），显示的点集即标注所指的点集。`POST /api/demo/annotate/cloud`（`voxel: 0` 为原始模式）返回的 meta 显式声明 `filtering: "none"`，前端校验后渲染。
+- 视频轨道：底部时间轴按帧索引铺满全片，刻度用真实设备时间，悬停显示 帧/时间/包数/点数；帧号、设备时间、包数全部来自同一份解码帧索引，当前叠加窗口以蓝色带显示，已保存标注按帧区间画绿/红带。标注保存前强制「叠加云窗口 = 时间轴当前窗口」且记录 `window_context`（帧区间、设备时间区间、时长、cloud_id），防止标注与实际错位。
+- 存储位置 `web/data/annotations/<capture_id>.json`，goal 标注存框（center/size/yaw）或纯画笔区域（strokes，无框，评分器按 no_truth 跳过几何评价），每条标注带唯一 `label_id`；绑定采集 SHA-256、配置版本、标注人与时间，原子写盘、服务重启后保留。数据契约见 `docs/GOAL_DEBUG_CONTRACT.md` §1.1。
+- 对账：`tools/score_goal_detection.py` 读标注 + 逐帧检测日志，输出命中率、首个命中帧、中心误差与误检点清单（含负样本匹配），产物写 `Plan/evidence/goal-demo/<run>-validation/`。
+- 接口：`GET /api/demo/annotate/timeline`（逐帧对齐数据）、`POST /api/demo/annotate/cloud`（按需原始/体素叠加）、`POST /api/demo/annotate/analyze`（画笔几何分析）、`GET/POST/DELETE /api/demo/annotations`（按 `label_id` 删除）。回放会话 `/api/demo/sessions*` 仍服务于 Demo 页。
 
 ## 开发和验证
 

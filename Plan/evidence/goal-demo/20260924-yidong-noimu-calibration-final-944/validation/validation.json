@@ -1,0 +1,88 @@
+{
+  "generated_at": 1790220974.9005399,
+  "window_evaluation": {
+    "observation_unit": "accumulated_window",
+    "windows_evaluated": 0,
+    "entries": []
+  },
+  "status": "NOT_EVALUATED",
+  "eval_config": {
+    "version": "eval-v1",
+    "hit_radius_m": 1.5,
+    "min_confidence": 0.5,
+    "measured_states": [
+      "LOCKED",
+      "TRACKING"
+    ],
+    "predicted_states": [
+      "REACQUIRE"
+    ],
+    "lost_states": [
+      "LOST"
+    ],
+    "counted_visibility": [
+      "visible",
+      "partially_occluded"
+    ]
+  },
+  "eval_config_version": "8a00d3f92a5901f7",
+  "capture_attribution": "row",
+  "capture_arg": "f939a3cc-b0b4-48be-9fe1-6587d73de9ce",
+  "hit_radius_m": 1.5,
+  "min_confidence": 0.5,
+  "goal_labels": 0,
+  "negative_labels": 0,
+  "labels_used": 0,
+  "labels_skipped": 0,
+  "unreviewed_labels_used": 0,
+  "skipped_label_reasons": [],
+  "frames_total": 944,
+  "measurement": {
+    "frames": 0,
+    "positive_outputs": 0,
+    "hits": 0,
+    "misses": 0,
+    "precision": null,
+    "recall": null,
+    "miss_rate": null,
+    "mean_center_error_m": null,
+    "p95_center_error_m": null,
+    "max_center_error_m": null
+  },
+  "prediction": {
+    "measured": {
+      "frames": 0,
+      "positive_outputs": 0,
+      "hits": 0,
+      "misses": 0,
+      "precision": null,
+      "recall": null,
+      "miss_rate": null,
+      "mean_center_error_m": null,
+      "p95_center_error_m": null,
+      "max_center_error_m": null
+    },
+    "predicted": {
+      "frames": 0,
+      "positive_outputs": 0,
+      "hits": 0,
+      "misses": 0,
+      "precision": null,
+      "recall": null,
+      "miss_rate": null,
+      "mean_center_error_m": null,
+      "p95_center_error_m": null,
+      "max_center_error_m": null
+    },
+    "lost": {
+      "frames": 0,
+      "boxes_returned": 0
+    }
+  },
+  "unknown_frames": 944,
+  "unknown_frames_with_output": 0,
+  "per_goal": [],
+  "false_positive_sites": [],
+  "false_positive_site_count": 0,
+  "sites_matching_negatives": 0
+}

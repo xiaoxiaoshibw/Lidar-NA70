@@ -1,0 +1,64 @@
+{
+  "schema_version": "na70-lio-session-manifest-v1",
+  "argv": [
+    "--pcap",
+    "../radar_capture_data/1.pcap",
+    "--end-frame",
+    "50",
+    "--duration",
+    "0.1",
+    "--evidence-kind",
+    "REAL_PCAP_DIAGNOSTIC",
+    "--output",
+    "../Plan/evidence/slam/20261030-development/old-pcap-input-final"
+  ],
+  "evidence_kind": "REAL_PCAP_DIAGNOSTIC",
+  "platform": "Windows-11-10.0.26300-SP0",
+  "python": "3.12.10",
+  "pcap_sha256": "b17d7c17926e670b3d89ba0774c4140feb810e4935971ab57760f4bdd00636cd",
+  "imu_sha256": null,
+  "config": {
+    "schema_version": "na70-lio-preflight-v1",
+    "lidar_frame": "lidar_link",
+    "imu_frame": "imu_link",
+    "lidar_clock": {
+      "source_origin_s": 0.0,
+      "reference_origin_s": 0.0,
+      "rate": 1.0,
+      "uncertainty_s": null,
+      "evidence": null
+    },
+    "imu_clock": {
+      "source_origin_s": 0.0,
+      "reference_origin_s": 0.0,
+      "rate": 1.0,
+      "uncertainty_s": null,
+      "evidence": null
+    },
+    "T_imu_lidar": null,
+    "calibration_evidence": null,
+    "packet_time_uncertainty_s": null,
+    "max_packet_gap_s": 0.02,
+    "max_imu_gap_s": 0.02,
+    "max_window_points": 400000,
+    "max_imu_samples": 1000000,
+    "gyro_unit": "rad/s",
+    "accel_unit": "m/s^2",
+    "accel_includes_gravity": null,
+    "gyro_range_rad_s": null,
+    "accel_range_m_s2": null,
+    "motion_envelope": {
+      "max_speed_m_s": 0.5,
+      "max_angular_speed_rad_s": 0.17453292519943295,
+      "max_range_m": 50.0,
+      "time_error_budget_m": 0.02
+    }
+  },
+  "config_sha256": "62939eae5565eb64ec6814a3bd1b1ac98f979f5c3cf087af99701b063c6d1976",
+  "source_sha256": {
+    "tools\\prepare_lio_session.py": "d5d6ec5dbb8350ef871c3c2d42d6cbfa27dc0d73a037c3864ce9a81b89f1c70c",
+    "packages\\na70_core\\na70_core\\lio.py": "9b1fae36f75db48f94385405a1c11e93602784f01d5777959d60bb2c92bd1c63",
+    "web\\backend\\decoder.py": "a1ffe8e1fc2bf763bac3d4f9cbced095cbcade103c01302f2db15db60e482f9d",
+    "web\\backend\\thin_wire.py": "a74fa8450913efd78c559a801c46dc4fd96f9f181d0375cc5a9ea94ff11023c8"
+  }
+}

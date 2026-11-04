@@ -1,0 +1,27 @@
+{
+  "schema": "na70-imu-raw-audit-v1",
+  "status": "failed",
+  "errors": [
+    "raw parse errors: checksum=1, payload=0"
+  ],
+  "raw_bytes": 805820,
+  "matched_frames": 12026,
+  "mismatches": 0,
+  "checksum_errors": 1,
+  "payload_errors": 0,
+  "checksum_events": [
+    {
+      "chunk_start": 0,
+      "chunk_bytes": 748,
+      "host_unix_s": 1793348523.841246,
+      "errors": 1
+    }
+  ],
+  "discarded_bytes": 77,
+  "pending_bytes": 0,
+  "segment_resets": 0,
+  "limits": [
+    "uses the capture parser; not independent protocol validation",
+    "host receive timestamps are not device sampling timestamps"
+  ]
+}

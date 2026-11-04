@@ -1,0 +1,271 @@
+{
+  "scan_total_frames": 662,
+  "audited_frames": 60,
+  "audited_packets": 6000,
+  "audited_rays": 1200000,
+  "zero_distance_code_count": 784109,
+  "known_direction_count": 526290,
+  "unknown_direction_count": 673710,
+  "device_time_start": 293.041,
+  "device_time_end": 299.04,
+  "device_time_valid": true,
+  "device_time_monotonic": true,
+  "poses": {
+    "path_start": {
+      "origin_world_m": [
+        0.0,
+        0.0,
+        12.0
+      ],
+      "geometric_opportunity_rays": 13,
+      "opportunities_with_zero_distance_code": 0,
+      "opportunities_with_nonzero_distance_code_unattributed": 13,
+      "packets_with_opportunity": 13,
+      "occupied_bins": 11,
+      "total_bins": 50,
+      "coverage_fraction": 0.22,
+      "largest_uncovered_m": 22.0,
+      "occupied_bin_indices": [
+        22,
+        23,
+        28,
+        30,
+        32,
+        34,
+        36,
+        40,
+        42,
+        44,
+        48
+      ]
+    },
+    "path_end": {
+      "origin_world_m": [
+        137.0,
+        0.0,
+        12.0
+      ],
+      "geometric_opportunity_rays": 835,
+      "opportunities_with_zero_distance_code": 85,
+      "opportunities_with_nonzero_distance_code_unattributed": 750,
+      "packets_with_opportunity": 315,
+      "occupied_bins": 12,
+      "total_bins": 50,
+      "coverage_fraction": 0.24,
+      "largest_uncovered_m": 15.0,
+      "occupied_bin_indices": [
+        15,
+        16,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34
+      ]
+    }
+  },
+  "causal_windows": [
+    {
+      "requested_duration_s": null,
+      "packet_count": 100,
+      "actual_span_s": 0.09900000000004638,
+      "partial_window": false,
+      "poses": {
+        "path_start": {
+          "geometric_opportunity_rays": 0,
+          "occupied_bins": 0,
+          "total_bins": 50,
+          "coverage_fraction": 0.0,
+          "largest_uncovered_m": 50.0,
+          "occupied_bin_indices": []
+        },
+        "path_end": {
+          "geometric_opportunity_rays": 10,
+          "occupied_bins": 4,
+          "total_bins": 50,
+          "coverage_fraction": 0.08,
+          "largest_uncovered_m": 25.0,
+          "occupied_bin_indices": [
+            25,
+            26,
+            30,
+            34
+          ]
+        }
+      }
+    },
+    {
+      "requested_duration_s": 0.5,
+      "packet_count": 500,
+      "actual_span_s": 0.49900000000002365,
+      "partial_window": false,
+      "poses": {
+        "path_start": {
+          "geometric_opportunity_rays": 3,
+          "occupied_bins": 3,
+          "total_bins": 50,
+          "coverage_fraction": 0.06,
+          "largest_uncovered_m": 30.0,
+          "occupied_bin_indices": [
+            30,
+            36,
+            48
+          ]
+        },
+        "path_end": {
+          "geometric_opportunity_rays": 61,
+          "occupied_bins": 11,
+          "total_bins": 50,
+          "coverage_fraction": 0.22,
+          "largest_uncovered_m": 15.0,
+          "occupied_bin_indices": [
+            15,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32,
+            33,
+            34
+          ]
+        }
+      }
+    },
+    {
+      "requested_duration_s": 1.0,
+      "packet_count": 1000,
+      "actual_span_s": 0.9990000000000236,
+      "partial_window": false,
+      "poses": {
+        "path_start": {
+          "geometric_opportunity_rays": 3,
+          "occupied_bins": 3,
+          "total_bins": 50,
+          "coverage_fraction": 0.06,
+          "largest_uncovered_m": 30.0,
+          "occupied_bin_indices": [
+            30,
+            36,
+            48
+          ]
+        },
+        "path_end": {
+          "geometric_opportunity_rays": 135,
+          "occupied_bins": 11,
+          "total_bins": 50,
+          "coverage_fraction": 0.22,
+          "largest_uncovered_m": 15.0,
+          "occupied_bin_indices": [
+            15,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32,
+            33,
+            34
+          ]
+        }
+      }
+    },
+    {
+      "requested_duration_s": 2.0,
+      "packet_count": 2000,
+      "actual_span_s": 1.9990000000000236,
+      "partial_window": false,
+      "poses": {
+        "path_start": {
+          "geometric_opportunity_rays": 4,
+          "occupied_bins": 4,
+          "total_bins": 50,
+          "coverage_fraction": 0.08,
+          "largest_uncovered_m": 22.0,
+          "occupied_bin_indices": [
+            22,
+            30,
+            36,
+            48
+          ]
+        },
+        "path_end": {
+          "geometric_opportunity_rays": 272,
+          "occupied_bins": 12,
+          "total_bins": 50,
+          "coverage_fraction": 0.24,
+          "largest_uncovered_m": 15.0,
+          "occupied_bin_indices": [
+            15,
+            16,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32,
+            33,
+            34
+          ]
+        }
+      }
+    },
+    {
+      "requested_duration_s": 5.0,
+      "packet_count": 5000,
+      "actual_span_s": 4.999000000000024,
+      "partial_window": false,
+      "poses": {
+        "path_start": {
+          "geometric_opportunity_rays": 9,
+          "occupied_bins": 8,
+          "total_bins": 50,
+          "coverage_fraction": 0.16,
+          "largest_uncovered_m": 22.0,
+          "occupied_bin_indices": [
+            22,
+            28,
+            30,
+            32,
+            34,
+            36,
+            44,
+            48
+          ]
+        },
+        "path_end": {
+          "geometric_opportunity_rays": 706,
+          "occupied_bins": 12,
+          "total_bins": 50,
+          "coverage_fraction": 0.24,
+          "largest_uncovered_m": 15.0,
+          "occupied_bin_indices": [
+            15,
+            16,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32,
+            33,
+            34
+          ]
+        }
+      }
+    }
+  ]
+}

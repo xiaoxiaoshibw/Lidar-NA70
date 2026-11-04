@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "na70-core"
+version = "0.1.0"
+description = "NA70 source-preserving observation contracts"
+requires-python = ">=3.10"
+dependencies = ["numpy>=1.23"]
+
+# pyRANSAC-3D is used only by the W3+ fitting stage. Keep it lazily imported
+# inside na70_core.wire.fitting so headless/test environments without Apache
+# pyransac3d can still use RayBatch/PacketWindowRing/geometry.
+[project.optional-dependencies]
+wire = ["pyransac3d==0.7.0"]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["na70_core*"]

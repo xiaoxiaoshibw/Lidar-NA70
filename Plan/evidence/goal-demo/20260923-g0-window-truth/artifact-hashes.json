@@ -1,0 +1,13 @@
+{
+ "labels_reviewed": "bb522145b8c66deaa4ef093515d6df04245b2fd4faa7b67b8afb100a8d52ccc6",
+ "component_proposal": "643b195158b73f220ac8bfd90e7a617095428504d19b9b3dd4cfade95626f395",
+ "far_window_audit": "e7430877d4c38012360c17b8118635fecc6d114d694e28459bebf47e7805a6ea",
+ "near_window_audit": "b432e5abc6570ddf38f95512858cefd2fab813a97de108fcba1b5757c128ac89",
+ "historical_locks_review": "d91c39f16b7b76ff894274b30759bc2cffd523e8732ecd46a5d75431aa314103",
+ "scorer": "6f00b90be01c6ea56c363b24fc243cf94af062faae5ff7c69b5a49c40ceacbc0",
+ "audit_tool": "e0269fb3036d6b186c5559904b674a4498a22d2b87b8e5304da02c6fc8171b35",
+ "annotate_spec": "e3e693f9ea600d38ac1d524abff434e044952da5bd3777b5aa16f43dc9efa75c",
+ "ground_tests": "003d3cfd28cdeb5275e0ae7738ad76b41eef1f5f8b13fb257d02ea63bff57be6",
+ "generated_at": "2026-09-23 19:50:58",
+ "correction": "2026-09-23 用户确认对面结构也是球门；旧标注哈希已替换。"
+}

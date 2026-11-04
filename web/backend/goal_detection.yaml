@@ -2,7 +2,7 @@
   "version": 1,
   "accumulation": {
     "enabled": true,
-    "window_size": 10,
+    "window_size": 20,
     "voxel_size": 0.5,
     "max_points": 200000,
     "roi": null,
@@ -13,32 +13,169 @@
   },
   "goal_detection": {
     "enabled": true,
-    "ground_z": [-2.0, 1.0],
+    "cell_size": 0.8,
+    "ground_z": [-2.0, 0.3],
     "pole": {
       "height": [1.8, 4.0],
-      "min_points": 8,
-      "max_radius": 1.2
+      "min_points": 5,
+      "max_radius": 1.2,
+      "height_tol": 1.2,
+      "base_tol": 1.2,
+      "grid_offsets": [[0.0, 0.0], [0.4, 0.0], [0.0, 0.4], [0.4, 0.4]],
+      "neighbor_radius": 0.8,
+      "neighbor_xy_radius": 0.65,
+      "neighbor_min_seed_points": 2,
+      "neighbor_max_base_gap": 0.65
     },
     "frame": {
-      "width": [5.0, 9.5],
+      "width": [4.8, 6.0],
       "crossbar_z": [1.8, 3.2]
     },
     "scoring": {
       "min_confidence": 0.5,
-      "lock_confidence": 0.7
+      "lock_confidence": 0.7,
+      "crossbar_weight": 0.3,
+      "geometry_weight": 0.7,
+      "nms_distance": 1.5
+    },
+    "diagnostics": {
+      "enabled": true,
+      "max_rejected_candidates": 64,
+      "max_raw_refs_per_candidate": 4096
+    },
+    "z_leveling": {
+      "enabled": true,
+      "reference_roi": "detection",
+      "fit_quantile": 0.35,
+      "min_points": 100,
+      "min_abs_slope": 0.005,
+      "min_xy_span": 1.0,
+      "min_xy_minor_std": 0.25,
+      "max_source_age_seconds": 20.0,
+      "max_below_plane_fraction": 0.1,
+      "max_abs_slope": 0.12,
+      "max_residual": 0.15
+    },
+    "facade": {
+      "enabled": true,
+      "z_band": [0.25, 4.0],
+      "min_points": 30,
+      "edge_bin_size": 0.2,
+      "edge_bin_min_points": 3,
+      "edge_continuity_bins": 2,
+      "edge_fit_band": 0.35,
+      "edge_inlier_band": 0.2,
+      "edge_min_points": 15,
+      "edge_min_height": 1.0,
+      "edge_max_residual": 0.45,
+      "edge_min_inlier": 0.6,
+      "top_bin_min_points": 3,
+      "top_margin": 0.3,
+      "top_tol": 0.35,
+      "top_min_coverage": 0.7,
+      "top_max_residual": 0.35,
+      "top_min_bins": 4,
+      "width_band": [2.0, 12.0],
+      "min_height": 1.2,
+      "max_height": 5.0,
+      "lateral_max": 1.5,
+      "facade_trim_sigma": 3.0,
+      "proposal_cell_size": 1.0,
+      "proposal_min_points": 12,
+      "proposal_max_span": 24.0,
+      "proposal_max_regions": 8
     }
   },
+  "strategy": {
+    "mode": "staged"
+  },
+  "bev": {
+    "cell_size": 0.8,
+    "min_window_frames": 5,
+    "min_cell_density": 0.55,
+    "min_cell_points": 10,
+    "max_blob_cells": 8,
+    "min_contrast": 1.5,
+    "contrast_ref": 2.5,
+    "span_density_floor": 0.05,
+    "nms_distance": 2.5,
+    "max_regions": 5,
+    "score_weights": {
+      "density": 0.3,
+      "contrast": 0.4,
+      "width": 0.3
+    }
+  },
+  "focus": {
+    "half_size": 6.0,
+    "prefer_single_frame": true,
+    "single_min_confidence": 0.45,
+    "accumulated_min_current_points": 1
+  },
+  "zrefine": {
+    "bin_size": 0.25,
+    "min_points": 30,
+    "max_base_shift": 1.0,
+    "min_height": 0.5
+  },
   "locking": {
-    "min_frames": 3
+    "min_frames": 3,
+    "candidate_gap": 3
   },
   "tracking": {
     "lost_frame_threshold": 5,
     "reacquire": true,
-    "max_center_jump": 3.0,
-    "kalman": true
+    "reacquire_min_frames": 2,
+    "reacquire_timeout": 30,
+    "max_center_jump": 6.5,
+    "kalman": true,
+    "nominal_dt": 0.1,
+    "min_dt": 0.01,
+    "max_dt": 0.5,
+    "evidence": {
+      "recent_max_age_frames": 3,
+      "recent_max_age_seconds": 0.35,
+      "signature_history_size": 256
+    },
+    "association": {
+      "min_score": 0.35,
+      "bearing_scale_rad": 0.5235987756,
+      "weights": {
+        "center": 0.35,
+        "bearing": 0.1,
+        "size": 0.15,
+        "yaw": 0.1,
+        "detection": 0.25,
+        "history": 0.05
+      }
+    }
   },
   "webui": {
     "enable": true,
-    "fps_target": 10
+    "demo_roi": [84.0, 104.0, -36.0, -17.0, -2.0, 6.0],
+    "fps_target": 10,
+    "capture_name_filter": ["9.14_caochang"],
+    "window_choices": [1, 5, 10, 20, 30, 60, 100],
+    "speed_choices": [0.5, 1, 2, 5]
+  },
+  "annotate_analysis": {
+    "brush_radius": 1.0,
+    "min_region_points": 40,
+    "trim_percentile": 1.0,
+    "end_band_fraction": 0.3,
+    "post_bin_size": 0.15,
+    "post_column_radius": 0.6,
+    "base_z_quantile": 0.05,
+    "top_z_quantile": 0.95,
+    "min_post_points": 8,
+    "min_width": 1.0,
+    "min_thickness": 0.1,
+    "max_thickness": 2.0,
+    "multi_split_width_threshold": 8.0,
+    "cluster_cell_size": 1.0,
+    "cluster_link_cells": 1,
+    "cluster_min_cell_points": 3,
+    "min_cluster_points": 20,
+    "max_clusters": 4
   }
 }

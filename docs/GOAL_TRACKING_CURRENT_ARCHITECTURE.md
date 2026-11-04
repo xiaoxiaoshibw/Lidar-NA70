@@ -113,3 +113,12 @@
 5. **内存**：10 帧 × 20000 点 float32 仅约 3.2 MB，安全；风险在"整包模式"式的无界缓存——叠加器必须是固定环形窗口，检测输出只留目标级状态，不缓存原始点历史。
 6. **前端重复渲染管线**：`CloudView.tsx` 与 `App` 耦合（视图模式、失败帧、建图 job 逻辑），抽公共组件有回归风险。Demo 第一版倾向独立轻量 viewer（复用着色器与相机参数），不重构现有组件。
 7. **与主计划的关系**：本项目 `Plan/MASTER_开发与验收总计划.md` 主线是 R0–R8 里程计 + 建图；goal tracking demo 是用户新增的独立功能线，不得阻塞或改写 R7 证据纪律（真实数据证据不加 SYNTHETIC 标记、失败事实保留）。
+
+## 8. 增补（2026-09-21）：facade 策略
+
+2026-09-21 新增第三种策略 `strategy.mode: "facade"`（`backend/goal_detection/facade.py`），作为主线计划 G2「人工 ROI 内含网面几何」的实现：
+
+- 在地面相对坐标中鲁棒拟合球门立面（2-D PCA + 截尾），在立面 u 轴直方图上由外向内定位左右边界（密度聚集 + 内点率门控），按逐 bin 上沿的鲁棒中线测横梁；全程不使用三维连通——网面不再把两侧边界连成宽柱（20260920 根因审计的三项阻断之 tree/net 项由此绕开）。
+- 测量输入为 ROI 过滤后的原始窗口点（非体素累积云），候选来源引用为精确 `(frame, point)` 对（`_annotate_raw_window_candidates` / `_attach_raw_window_source_refs`）。
+- 无可信地面模型时拒绝测量（G1 语义）；ROI 为必选（pipeline 构造时校验）；配置在 `goal_detection.facade` 段。
+- 首次真实结果与边界见 `Plan/evidence/goal-demo/20260921-fable-facade/REPORT.md`（DEVELOPMENT / MANUAL_ROI / NOT_EVALUATED）。

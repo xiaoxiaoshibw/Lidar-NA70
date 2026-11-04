@@ -1,0 +1,6 @@
+libgtsam-notbb-dev	4.3.0
+libgtsam-points-dev	1.2.2
+libiridescence-dev	1.0.2
+libmetis-dev	5.1.0.dfsg-7build2
+ros-humble-pcl-ros	2.4.5-2jammy.20260915.212316
+ros-humble-ros-base	0.10.0-1jammy.20260804.204550

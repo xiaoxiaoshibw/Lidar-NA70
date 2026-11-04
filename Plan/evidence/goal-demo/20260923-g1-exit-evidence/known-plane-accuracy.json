@@ -1,0 +1,32 @@
+[
+ {
+  "case": "水平-安装偏置2.26m",
+  "status": "enabled",
+  "p95_error_m": 0.0,
+  "max_error_m": 0.0
+ },
+ {
+  "case": "低坡度0.1%",
+  "status": "enabled",
+  "p95_error_m": 0.0,
+  "max_error_m": 0.0
+ },
+ {
+  "case": "坡度2%/3%",
+  "status": "enabled",
+  "p95_error_m": 0.0,
+  "max_error_m": 0.0
+ },
+ {
+  "case": "噪声σ=2.5cm",
+  "status": "enabled",
+  "p95_error_m": 0.0827,
+  "max_error_m": 0.1308
+ },
+ {
+  "case": "pitch/roll等效倾斜",
+  "status": "enabled",
+  "p95_error_m": 0.0522,
+  "max_error_m": 0.0792
+ }
+]

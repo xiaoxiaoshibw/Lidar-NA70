@@ -52,11 +52,16 @@ test('dense default, full real capture, camera controls and sparse-mode recovery
   await page.screenshot({ path: path.resolve('../test-results/dense-full-top.png') });
   await page.getByRole('button', { name: '反射率', exact: true }).click();
   await expect(page.locator('.legend')).toContainText('反射率');
-  // Playback preserves density instead of collapsing back to sparse single frames.
+  // Return from full-capture inspection to the 200-frame rolling window;
+  // playback must preserve this selected density.
+  await page.getByLabel('叠加帧数').selectOption('200');
+  await expect(page.getByLabel('叠加帧数')).toHaveValue('200');
   await page.getByTitle('播放', { exact: true }).click();
   await expect(page.getByLabel('叠加帧数')).toHaveValue('200');
+  await expect(page.getByText('预览最多 100 万点，暂停恢复完整密度', { exact: false })).toBeVisible();
   await page.waitForTimeout(3000);
   await page.getByTitle('暂停', { exact: true }).click();
+  await expect(page.getByText('预览最多 100 万点，暂停恢复完整密度', { exact: false })).toHaveCount(0);
   expect(Number(await page.getByLabel('回放时间轴').inputValue())).toBeGreaterThan(15);
   await expect(page.getByTestId('point-count')).toContainText('原始 4,000,000 点');
   await page.getByLabel('回放时间轴').fill('400');

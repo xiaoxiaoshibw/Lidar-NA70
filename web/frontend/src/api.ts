@@ -1,3 +1,5 @@
+import { parseCloudPoints, parseMotionMask } from './lib/cloudBinary';
+
 export type Capture = { id: string; filename: string; size: number; status: string; progress: number; frame_count: number; duration: number; valid_packets: number; invalid_packets: number; ignored_packets: number; warnings: string[]; error: string | null; created_at: number; sha256?: string; analysis_status: string; analysis_progress: number; analysis_error: string | null; background_seconds?: number; analysis_seconds?: number; moving_frames?: number; moving_tracks?: number };
 export type FrameInfo = { index: number; time: number; capture_time: number; end_time: number; device_time: number | null; frame_id: string; point_count: number; complete: boolean; packet_count: number };
 export type MotionTarget = { band_id: number; id: number; label: string; status: string; position: number[]; velocity: number[]; speed: number; minimum: number[]; maximum: number[]; size: number[]; point_count: number; slice_index: number; time: number; duration: number; displacement: number; trajectory_length: number; linearity: number; score: number; time_start: number; time_end: number };
@@ -20,23 +22,13 @@ export async function readFrame(id: string, index: number, signal: AbortSignal, 
   const response = await fetch(jobId ? `/api/mapping/jobs/${jobId}/frames/${index}/cloud` : `/api/captures/${id}/frames/${index}`, { signal });
   if (!response.ok) throw new Error((await response.json()).detail || '读取点云失败');
   const buffer = await response.arrayBuffer();
-  if (buffer.byteLength < 4) throw new Error('点云响应截断');
-  const length = new DataView(buffer).getUint32(0, true);
-  if (length % 4 || length > buffer.byteLength - 4) throw new Error('点云元数据无效');
-  const meta = JSON.parse(new TextDecoder().decode(new Uint8Array(buffer, 4, length)));
-  if (meta.version !== 1 || meta.dtype !== 'float32-le' || buffer.byteLength - 4 - length !== meta.point_count * 16) throw new Error('点云格式或长度不匹配');
-  return { meta, points: new Float32Array(buffer, 4 + length) };
+  return parseCloudPoints<FrameInfo>(buffer, '点云', [1], 4);
 }
 export async function readMotionFrame(id: string, index: number, signal: AbortSignal): Promise<{ meta: MotionFrameInfo; mask: Uint8Array }> {
   const response = await fetch(`/api/captures/${id}/analysis/frames/${index}`, { signal });
   if (!response.ok) throw new Error((await response.json()).detail || '读取运动分析结果失败');
   const buffer = await response.arrayBuffer();
-  if (buffer.byteLength < 4) throw new Error('运动分析响应截断');
-  const length = new DataView(buffer).getUint32(0, true);
-  if (length % 4 || length > buffer.byteLength - 4) throw new Error('运动分析元数据无效');
-  const meta = JSON.parse(new TextDecoder().decode(new Uint8Array(buffer, 4, length))) as MotionFrameInfo & { version: number; dtype: string };
-  if (meta.version !== 1 || meta.dtype !== 'uint8' || buffer.byteLength - 4 - length !== meta.point_count) throw new Error('运动分析格式或长度不匹配');
-  return { meta, mask: new Uint8Array(buffer, 4 + length) };
+  return parseMotionMask<MotionFrameInfo>(buffer, '运动分析');
 }
 export const clock = (seconds: number) => `${Math.floor(seconds / 60).toString().padStart(2, '0')}:${(seconds % 60).toFixed(2).padStart(5, '0')}`;
 
@@ -48,6 +40,7 @@ export const clock = (seconds: number) => `${Math.floor(seconds / 60).toString()
 export type Bounds = { minimum: number[]; maximum: number[] };
 export type MappingMetrics = {
   initialization_frames?: number; registered_frames?: number; recovered_frames?: number;
+  fixed_observation_frames?: number; selected_frame_count?: number;
   frame_count: number; accepted_frames: number; rejected_frames: number; tracking_lost_frames: number;
   keyframe_count: number | null; accepted_ratio: number; rejected_ratio: number;
   first_tracking_lost_time: number | null; max_continuous_tracking_s: number;
@@ -64,10 +57,11 @@ export type MappingJob = {
   frame_count: number; accepted_frames: number; rejected_frames: number; tracking_lost_frames: number;
   keyframe_count: number; map_point_count: number; map_bounds: Bounds | null;
   first_frame_index: number; last_frame_index: number; imu_used: boolean; loop_closure_used: boolean;
-  stage: string; error: string | null; elapsed_seconds: number | null; peak_memory_mb: number | null;
+  stage: string; pose_source?: 'odometry' | 'fixed_sensor'; fixed_sensor_declaration?: string | null;
+  error: string | null; elapsed_seconds: number | null; peak_memory_mb: number | null;
   metrics: MappingMetrics;
 };
-export type FrameState = 'reference' | 'accepted' | 'quality_failed' | 'insufficient_points' | 'degenerate_geometry' | 'timestamp_invalid' | 'tracking_lost' | 'reinitialized';
+export type FrameState = 'reference' | 'accepted' | 'fixed_observation' | 'pending' | 'quality_failed' | 'insufficient_points' | 'degenerate_geometry' | 'timestamp_invalid' | 'tracking_lost' | 'reinitialized';
 export type MappingFrame = {
   spacing?: { within_frame?: { p50: number } | null }; submap_frame_count?: number; normal_matrix_ratio?: number | null;
   index: number; timestamp: number; state: FrameState; reason: string;
@@ -91,7 +85,7 @@ export type MapMetadata = {
   voxel_count: number; chunk_count: number; max_voxels: number;
   segments: Array<{ segment_id: number; voxels: number; observations: number }>;
   minimum: number[] | null; maximum: number[] | null;
-  imu_used: boolean; loop_closure_used: boolean; stage: string; input_sha256: string | null;
+  imu_used: boolean; loop_closure_used: boolean; stage: string; pose_source?: 'odometry' | 'fixed_sensor'; input_sha256: string | null;
   config_version: string; chunk_index: string; chunks: MapChunkInfo[];
 };
 export type MapChunk = { id: string; key: number[]; minimum: number[]; maximum: number[]; voxel_count: number; total_voxels: number; voxels: number[][] };
@@ -104,13 +98,13 @@ export type MapChunkResponse = {
 // green = accepted, yellow = quality gate failed, orange = degenerate geometry,
 // red = tracking lost, grey = not processed.  Rejected frames are never hidden.
 export const STATE_COLOR: Record<string, string> = {
-  accepted: '#2f8f6a', reference: '#2f8f6a', reinitialized: '#4aa8d8',
+  accepted: '#2f8f6a', reference: '#2f8f6a', fixed_observation: '#2f8f6a', reinitialized: '#4aa8d8',
   quality_failed: '#d8a22f', insufficient_points: '#d8a22f',
   degenerate_geometry: '#e07a1f', timestamp_invalid: '#b45fd0',
   tracking_lost: '#c8392a', pending: '#334350',
 };
 export const STATE_LABEL: Record<string, string> = {
-  accepted: '已接受', reference: '参考帧', reinitialized: '重新初始化', quality_failed: '质量不达标',
+  accepted: '已接受', reference: '参考帧', fixed_observation: '固定观测', reinitialized: '重新初始化', quality_failed: '质量不达标',
   insufficient_points: '点数不足', degenerate_geometry: '几何退化', tracking_lost: '跟踪失锁',
   timestamp_invalid: '时间戳异常', pending: '未处理',
 };

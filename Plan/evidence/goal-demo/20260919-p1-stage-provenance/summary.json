@@ -1,0 +1,211 @@
+{
+  "label": "REAL_PCAP_WINDOWS",
+  "schema_version": "goal-run-v1.1",
+  "config_version": "3dcc848989868c1f",
+  "config": {
+    "version": 1,
+    "accumulation": {
+      "enabled": true,
+      "window_size": 20,
+      "voxel_size": 0.5,
+      "max_points": 200000,
+      "roi": [
+        84.0,
+        104.0,
+        -36.0,
+        -17.0,
+        -2.0,
+        6.0
+      ],
+      "range": {
+        "min": 50.0,
+        "max": 130.0
+      }
+    },
+    "goal_detection": {
+      "enabled": true,
+      "cell_size": 0.8,
+      "ground_z": [
+        -2.0,
+        0.3
+      ],
+      "pole": {
+        "height": [
+          1.8,
+          4.0
+        ],
+        "min_points": 5,
+        "max_radius": 1.2,
+        "height_tol": 1.2,
+        "base_tol": 1.2
+      },
+      "frame": {
+        "width": [
+          4.8,
+          6.0
+        ],
+        "crossbar_z": [
+          1.8,
+          3.2
+        ]
+      },
+      "scoring": {
+        "min_confidence": 0.5,
+        "lock_confidence": 0.7,
+        "crossbar_weight": 0.3,
+        "geometry_weight": 0.7,
+        "nms_distance": 1.5
+      },
+      "diagnostics": {
+        "enabled": true,
+        "max_rejected_candidates": 64,
+        "max_raw_refs_per_candidate": 4096
+      }
+    },
+    "strategy": {
+      "mode": "staged"
+    },
+    "bev": {
+      "cell_size": 0.8,
+      "min_window_frames": 5,
+      "min_cell_density": 0.55,
+      "min_cell_points": 10,
+      "max_blob_cells": 8,
+      "min_contrast": 1.5,
+      "contrast_ref": 2.5,
+      "span_density_floor": 0.05,
+      "nms_distance": 2.5,
+      "max_regions": 5,
+      "score_weights": {
+        "density": 0.3,
+        "contrast": 0.4,
+        "width": 0.3
+      }
+    },
+    "focus": {
+      "half_size": 6.0,
+      "prefer_single_frame": true,
+      "single_min_confidence": 0.45
+    },
+    "zrefine": {
+      "bin_size": 0.25,
+      "min_points": 30,
+      "max_base_shift": 1.0,
+      "min_height": 0.5
+    },
+    "locking": {
+      "min_frames": 3,
+      "candidate_gap": 3
+    },
+    "tracking": {
+      "lost_frame_threshold": 5,
+      "reacquire": true,
+      "max_center_jump": 6.5,
+      "kalman": true
+    },
+    "webui": {
+      "enable": true,
+      "demo_roi": [
+        84.0,
+        104.0,
+        -36.0,
+        -17.0,
+        -2.0,
+        6.0
+      ],
+      "fps_target": 10,
+      "capture_name_filter": [
+        "9.14_caochang"
+      ],
+      "window_choices": [
+        1,
+        5,
+        10,
+        20,
+        30,
+        60,
+        100
+      ],
+      "speed_choices": [
+        0.5,
+        1,
+        2,
+        5
+      ]
+    }
+  },
+  "env": {
+    "python": "3.12.10",
+    "platform": "Windows-11-10.0.26200-SP0"
+  },
+  "source_hashes": {
+    "tools/run_goal_demo_offline.py": "d63e94a9c8d2aa8a2294acd561cce67946e12916ebd7b141e67ab50128dfe017",
+    "tools/score_goal_detection.py": "cd7a3fc6c8604664d6ac9efbfa07aba2694c152d53e32057168232b50b3548bd",
+    "web/backend/goal_detection/__init__.py": "3fbdbb438cda71ff1b2ed382a51fd7a499c509fc3613b2a1c646755033258804",
+    "web/backend/goal_detection/accumulation.py": "3b461facb05f299506899ccb6601f4d6141a4b7a0a6ce1e4bc05bc62dd691ad1",
+    "web/backend/goal_detection/bev.py": "a6369df427dc6866b3b48ff876422f4dca6e683b88f37c6a1e51b25ded4692c7",
+    "web/backend/goal_detection/buffer.py": "4aa589dedf0a21dc120611c1f5a7a36beb8fadd7e5cbe940777c2db46a39af33",
+    "web/backend/goal_detection/config.py": "7f373b1a267a4f6672d3e82c4d8d4d0e07a6c35d23a1945779127e1a3fb45457",
+    "web/backend/goal_detection/detector.py": "5cb4df1074fa8b2dcdf5c4e60d201017ba5c507544b3eef8c87a4271d6349f90",
+    "web/backend/goal_detection/focus.py": "28dfe44ae1480d7d74b02bd5c9e0eac3db03fd6a95ae43311c828cb3e1742bbc",
+    "web/backend/goal_detection/geometry.py": "530f8057ab69c436e63f3bc1bc1b1ba75de4a8d6d60f6d7b7cc432080666d126",
+    "web/backend/goal_detection/observability.py": "a376f2e6995210c718faf2c9e38165422f1b293317a217a364875e39569fcf02",
+    "web/backend/goal_detection/pipeline.py": "0eed6339873109feb37062cd0fbb3e55b669ef86b4c12306f168145bf85ff50f",
+    "web/backend/goal_detection/tracker.py": "08cb644b2a3dc01f55056735f0405261d9fe242a2386aca45623ec59bfab005e"
+  },
+  "captures": [
+    "radar_capture_data\\2\\9.14_caochangyou.pcap"
+  ],
+  "window_size": 20,
+  "voxel_size": 0.5,
+  "range": [
+    50.0,
+    130.0
+  ],
+  "strategy": "staged",
+  "memory_samples_kb": [
+    36964,
+    79180,
+    80520,
+    108912,
+    116972,
+    119716,
+    125108,
+    124980
+  ],
+  "frames_per_capture": [
+    {
+      "pcap": "radar_capture_data\\2\\9.14_caochangyou.pcap",
+      "capture_id": "c4cc19fb-3020-4ccc-8407-1521f71b7212",
+      "sha256": "ceca9fc08758f3c35f7b8b1c024bdab90e65f49ab65e39102cdd58dc0c5292db",
+      "frames": 1211,
+      "duration_s": 121.049
+    }
+  ],
+  "total_frames": 1211,
+  "wall_time_s": 58.15,
+  "frame_ms_p50": 47.44,
+  "frame_ms_p95": 63.1,
+  "frame_ms_max": 458.1,
+  "state_counts": {
+    "SEARCHING": 595,
+    "CANDIDATE": 2,
+    "LOCKED": 1,
+    "TRACKING": 188,
+    "REACQUIRE": 282,
+    "LOST": 143
+  },
+  "lock_events": [
+    {
+      "frame_index": 597,
+      "id": 1,
+      "distance": 102.33,
+      "confidence": 0.921,
+      "center": [
+        99.54,
+        -23.68,
+        1.86
+      ]
+    }
+  ]
+}

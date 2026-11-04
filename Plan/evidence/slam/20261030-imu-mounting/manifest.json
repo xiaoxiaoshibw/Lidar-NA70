@@ -1,0 +1,96 @@
+{
+  "date": "2026-10-30",
+  "timezone": "Asia/Shanghai",
+  "environment": "WINDOWS_LOCAL_PYTHON312_USB_SERIAL",
+  "repository_head": "3e21ede34d11c026960c263911a5ee230b544e9b",
+  "repository_dirty": true,
+  "monitor_source_path": "C:\\Users\\30680\\.codex\\visualizations\\2026\\10\\30\\01a18b22-c2bd-7412-8664-9bcfa61a3a9b\\imu-live",
+  "scope": "mounting illustration and short static IMU observations",
+  "claims": {
+    "usb_yesense_protocol_observed": true,
+    "exact_imu_model_confirmed": false,
+    "lidar_intrinsic_calibrated": false,
+    "lidar_imu_extrinsic_calibrated": false,
+    "hardware_synchronized": false,
+    "na70_lio_validated": false,
+    "jetson_validated": false
+  },
+  "model_position_is_measured_extrinsic": false,
+  "files": [
+    {
+      "path": "monitor-source/calibration.py",
+      "bytes": 4276,
+      "sha256": "d520d07356fa301d64b0dd7cfbfbaa5562435c6975ec275ec5fb3c0107578821"
+    },
+    {
+      "path": "monitor-source/index.html",
+      "bytes": 13458,
+      "sha256": "b2cb3c06dfe4bea2f338c54ac5f2c675f5d8c109b1d59499cf283dc8a0324dbd"
+    },
+    {
+      "path": "monitor-source/model.html",
+      "bytes": 10075,
+      "sha256": "468e0597cfa9c61db8c8a5d4be8d6b86b8d2787f2224dffa6ffa09dc0e34687e"
+    },
+    {
+      "path": "monitor-source/model.js",
+      "bytes": 12287,
+      "sha256": "5d4ea240387c60b983d996c633df517b91ba9046ac2bb41ddfdf6c534d7c1c32"
+    },
+    {
+      "path": "monitor-source/monitor.py",
+      "bytes": 11978,
+      "sha256": "4c8ac506ae553ad2df951aad560fecb0c5f136dc51fa2044b66c868ea785a91b"
+    },
+    {
+      "path": "monitor-source/README.md",
+      "bytes": 3549,
+      "sha256": "98134ccc691a8d24a7ea8a2ed89a081616e24cf5a6feabb5089b6b7b71c8c09b"
+    },
+    {
+      "path": "monitor-source/start.ps1",
+      "bytes": 102,
+      "sha256": "48fcfcdeb81baf9c4d908595694b1d2d8d78a03b72fdd295c03b16b58b2333a6"
+    },
+    {
+      "path": "na70-yesense-approx-mm.obj",
+      "bytes": 19928,
+      "sha256": "5d21083708d55e214149150ee43466be4e33b19b917d3cc7a7becc90cac1ffd1"
+    },
+    {
+      "path": "na70-yesense-model.json",
+      "bytes": 1243,
+      "sha256": "c684b48bb5d84b66ff123eeab413faaf8aa34aa63c15e59d70891f5fcb6435f9"
+    },
+    {
+      "path": "static-checks/static-20261030-131202.json",
+      "bytes": 1352,
+      "sha256": "a5a4e4353a93f45736377055e99a3b3f34b019a789bda1b737c453acd665cec3"
+    },
+    {
+      "path": "static-checks/static-20261030-131202.jsonl",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "static-checks/static-20261030-131253.json",
+      "bytes": 2910,
+      "sha256": "98f9545dc3cac86572d84bfe296b265177155b4b13bba199125f205f875df83a"
+    },
+    {
+      "path": "static-checks/static-20261030-131253.jsonl",
+      "bytes": 1061043,
+      "sha256": "79ef05fed97b2f3efbfa3f918c3b4005076db9406c854e965ec8763b6a0a4c1d"
+    },
+    {
+      "path": "static-checks/static-20261030-132003.json",
+      "bytes": 2858,
+      "sha256": "7e2a45f7a4ed7fe7fe6885662d9fcf9b5e0122cf5547ae60d39ddc85b8824b15"
+    },
+    {
+      "path": "static-checks/static-20261030-132003.jsonl",
+      "bytes": 1066666,
+      "sha256": "458ccf2253fff2206f5c5d29925247fb3d45ea408d414d6137d1ec58decda138"
+    }
+  ]
+}

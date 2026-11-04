@@ -1,0 +1,15 @@
+{
+  "session_id": "20261030-162203",
+  "created_unix": 1793348523.7491302,
+  "created_local": "2026-10-30T16:22:03+0800",
+  "operator": {
+    "orientation": "光学窗朝前，顶面朝上",
+    "wall_distance_m": null,
+    "wall_distance_measured": false,
+    "measurement_basis": null,
+    "tool": null,
+    "note": "A2 browser engineering diagnostic; not B1 calibration data",
+    "task": "B1"
+  },
+  "unknown_fields": "留 None 表示未测/未知，不填估算值"
+}

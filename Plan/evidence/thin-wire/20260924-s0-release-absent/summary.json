@@ -1,0 +1,169 @@
+{
+  "scan_total_frames": 662,
+  "audited_frames": 60,
+  "audited_packets": 6000,
+  "audited_rays": 1200000,
+  "zero_distance_code_count": 784109,
+  "known_direction_count": 526290,
+  "unknown_direction_count": 673710,
+  "device_time_start": 293.041,
+  "device_time_end": 299.04,
+  "device_time_valid": true,
+  "device_time_monotonic": true,
+  "poses": {
+    "path_start": {
+      "origin_world_m": [
+        0.0,
+        0.0,
+        12.0
+      ],
+      "geometric_opportunity_rays": 0,
+      "opportunities_with_zero_distance_code": 0,
+      "opportunities_with_nonzero_distance_code_unattributed": 0,
+      "packets_with_opportunity": 0,
+      "occupied_bins": 0,
+      "total_bins": 50,
+      "coverage_fraction": 0.0,
+      "largest_uncovered_m": 50.0,
+      "occupied_bin_indices": []
+    },
+    "path_end": {
+      "origin_world_m": [
+        37.0,
+        0.0,
+        12.0
+      ],
+      "geometric_opportunity_rays": 0,
+      "opportunities_with_zero_distance_code": 0,
+      "opportunities_with_nonzero_distance_code_unattributed": 0,
+      "packets_with_opportunity": 0,
+      "occupied_bins": 0,
+      "total_bins": 50,
+      "coverage_fraction": 0.0,
+      "largest_uncovered_m": 50.0,
+      "occupied_bin_indices": []
+    }
+  },
+  "causal_windows": [
+    {
+      "requested_duration_s": null,
+      "packet_count": 100,
+      "actual_span_s": 0.09900000000004638,
+      "partial_window": false,
+      "poses": {
+        "path_start": {
+          "geometric_opportunity_rays": 0,
+          "occupied_bins": 0,
+          "total_bins": 50,
+          "coverage_fraction": 0.0,
+          "largest_uncovered_m": 50.0,
+          "occupied_bin_indices": []
+        },
+        "path_end": {
+          "geometric_opportunity_rays": 0,
+          "occupied_bins": 0,
+          "total_bins": 50,
+          "coverage_fraction": 0.0,
+          "largest_uncovered_m": 50.0,
+          "occupied_bin_indices": []
+        }
+      }
+    },
+    {
+      "requested_duration_s": 0.5,
+      "packet_count": 500,
+      "actual_span_s": 0.49900000000002365,
+      "partial_window": false,
+      "poses": {
+        "path_start": {
+          "geometric_opportunity_rays": 0,
+          "occupied_bins": 0,
+          "total_bins": 50,
+          "coverage_fraction": 0.0,
+          "largest_uncovered_m": 50.0,
+          "occupied_bin_indices": []
+        },
+        "path_end": {
+          "geometric_opportunity_rays": 0,
+          "occupied_bins": 0,
+          "total_bins": 50,
+          "coverage_fraction": 0.0,
+          "largest_uncovered_m": 50.0,
+          "occupied_bin_indices": []
+        }
+      }
+    },
+    {
+      "requested_duration_s": 1.0,
+      "packet_count": 1000,
+      "actual_span_s": 0.9990000000000236,
+      "partial_window": false,
+      "poses": {
+        "path_start": {
+          "geometric_opportunity_rays": 0,
+          "occupied_bins": 0,
+          "total_bins": 50,
+          "coverage_fraction": 0.0,
+          "largest_uncovered_m": 50.0,
+          "occupied_bin_indices": []
+        },
+        "path_end": {
+          "geometric_opportunity_rays": 0,
+          "occupied_bins": 0,
+          "total_bins": 50,
+          "coverage_fraction": 0.0,
+          "largest_uncovered_m": 50.0,
+          "occupied_bin_indices": []
+        }
+      }
+    },
+    {
+      "requested_duration_s": 2.0,
+      "packet_count": 2000,
+      "actual_span_s": 1.9990000000000236,
+      "partial_window": false,
+      "poses": {
+        "path_start": {
+          "geometric_opportunity_rays": 0,
+          "occupied_bins": 0,
+          "total_bins": 50,
+          "coverage_fraction": 0.0,
+          "largest_uncovered_m": 50.0,
+          "occupied_bin_indices": []
+        },
+        "path_end": {
+          "geometric_opportunity_rays": 0,
+          "occupied_bins": 0,
+          "total_bins": 50,
+          "coverage_fraction": 0.0,
+          "largest_uncovered_m": 50.0,
+          "occupied_bin_indices": []
+        }
+      }
+    },
+    {
+      "requested_duration_s": 5.0,
+      "packet_count": 5000,
+      "actual_span_s": 4.999000000000024,
+      "partial_window": false,
+      "poses": {
+        "path_start": {
+          "geometric_opportunity_rays": 0,
+          "occupied_bins": 0,
+          "total_bins": 50,
+          "coverage_fraction": 0.0,
+          "largest_uncovered_m": 50.0,
+          "occupied_bin_indices": []
+        },
+        "path_end": {
+          "geometric_opportunity_rays": 0,
+          "occupied_bins": 0,
+          "total_bins": 50,
+          "coverage_fraction": 0.0,
+          "largest_uncovered_m": 50.0,
+          "occupied_bin_indices": []
+        }
+      }
+    }
+  ]
+}

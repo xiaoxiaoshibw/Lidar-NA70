@@ -1,0 +1,39 @@
+{
+  "version": 1,
+  "method": "MANUAL",
+  "labeler": "",
+  "saved_at": 1789720418.0005522,
+  "capture_id": "f939a3cc-b0b4-48be-9fe1-6587d73de9ce",
+  "capture_sha256": "02d55634baec13211fcc251e2f77135caf983c10f4893560fe69ea1ed3423f9c",
+  "config_version": "cf89fd9b114d8300",
+  "review_status": "PENDING_REVIEW",
+  "provenance": {
+    "derived_from": "web/data/annotations/f939a3cc-b0b4-48be-9fe1-6587d73de9ce.json",
+    "note": "legacy box-only 标注复制件，可能受当时检测框引导；待按 docs/GOAL_DEBUG_CONTRACT.md 从原始云三视图人工复核。原样保留于 web/data/annotations/。"
+  },
+  "labels": [
+    {
+      "capture_id": "f939a3cc-b0b4-48be-9fe1-6587d73de9ce",
+      "note": "",
+      "labeler": "",
+      "type": "goal",
+      "frame_range": [
+        238,
+        257
+      ],
+      "box": {
+        "center": [
+          94.79,
+          -21.76,
+          2.64
+        ],
+        "size": [
+          1.2,
+          6.32,
+          2.44
+        ],
+        "yaw": 1.586
+      }
+    }
+  ]
+}

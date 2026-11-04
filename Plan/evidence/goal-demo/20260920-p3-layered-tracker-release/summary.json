@@ -1,0 +1,143 @@
+{
+  "label": "SYNTHETIC",
+  "generator": "goal-synthetic-v1",
+  "scenarios": [
+    "static",
+    "translation",
+    "yaw",
+    "translation_yaw",
+    "pitch_roll",
+    "density_drop",
+    "missing_crossbar",
+    "single_post_occlusion",
+    "disappear_reenter",
+    "tree_wall_fence",
+    "similar_pair",
+    "multi_candidate",
+    "fov_edge",
+    "empty_nan",
+    "time_jump"
+  ],
+  "development_seeds": [
+    0,
+    19
+  ],
+  "validation_seeds": [
+    1000,
+    1049
+  ],
+  "default_frames": 200,
+  "truth_not_provided_to_pipeline": true,
+  "limitations": [
+    "sparse geometric approximation, not a physical NA70 simulator",
+    "no rolling scan distortion model",
+    "intensity is randomized rather than material-calibrated"
+  ],
+  "config_version": "5437516cf736cc21",
+  "source_hashes": {
+    "tools/run_goal_synthetic_suite.py": "72109ef939cc199f98038b9134cf289f669b36c5c345d49b1400b88b19257310",
+    "web/backend/goal_detection.yaml": "a07ce8666ab7bf1bbafd3c15c9d77806304fb99cf7fd82a674ebdcf17dfab1d0",
+    "web/backend/goal_detection/__init__.py": "3fbdbb438cda71ff1b2ed382a51fd7a499c509fc3613b2a1c646755033258804",
+    "web/backend/goal_detection/accumulation.py": "0c4359b5cb6d006c65c59f039f0b715e2b80bb1951190f67fc0fd5df6d49655d",
+    "web/backend/goal_detection/bev.py": "1138bd4c606693c08f5c3673d1081f082edfcf15fef9e742e7d84243d584efa1",
+    "web/backend/goal_detection/buffer.py": "4aa589dedf0a21dc120611c1f5a7a36beb8fadd7e5cbe940777c2db46a39af33",
+    "web/backend/goal_detection/config.py": "8024a10f5fe91baa331dee724b16d72e24a7d0392d71adc09c8efcf038fa7996",
+    "web/backend/goal_detection/detector.py": "149d8256353f2abd3f4b0d77f5e11cc3f1643557affcd5820e6a645eb85442e4",
+    "web/backend/goal_detection/focus.py": "28dfe44ae1480d7d74b02bd5c9e0eac3db03fd6a95ae43311c828cb3e1742bbc",
+    "web/backend/goal_detection/geometry.py": "49394ec1ca6da61487c600bfdf28d3ddadce0705171dba6cdeb8ff80e53e1093",
+    "web/backend/goal_detection/observability.py": "b31032e93b3c8f57dc58ef163153d5c8875588cdf80d0a77dbdcfdba59f42c00",
+    "web/backend/goal_detection/pipeline.py": "5c894be104a56073a81121c7721b75b880ab57d1dc2dcbc2ff20e809bf24f5db",
+    "web/backend/goal_detection/synthetic.py": "a2ffe7c46e59cb37b9115abf2acff9913d61f560e750ddbcc715fed2e1ade45b",
+    "web/backend/goal_detection/tracker.py": "c6b2e52de181655a947b8bcb0febb3d79fdf1b05c9efdfbca43377bdcd2d6216"
+  },
+  "cases": [
+    {
+      "scenario": "static",
+      "seed": 0,
+      "frames": 200,
+      "metrics": {
+        "visible_frames": 200,
+        "hits": 200,
+        "misses": 0,
+        "false_outputs": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "center_error_p95_m": 0.0163,
+        "width_error_p95_m": 0.0466,
+        "height_error_p95_m": 0.0441,
+        "id_switches": 0,
+        "matched_track_ids": [
+          1
+        ],
+        "longest_hit_streak": 200,
+        "false_confirmed_frames_while_absent": 0
+      }
+    },
+    {
+      "scenario": "static",
+      "seed": 1000,
+      "frames": 200,
+      "metrics": {
+        "visible_frames": 200,
+        "hits": 200,
+        "misses": 0,
+        "false_outputs": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "center_error_p95_m": 0.0163,
+        "width_error_p95_m": 0.045,
+        "height_error_p95_m": 0.0421,
+        "id_switches": 0,
+        "matched_track_ids": [
+          1
+        ],
+        "longest_hit_streak": 200,
+        "false_confirmed_frames_while_absent": 0
+      }
+    },
+    {
+      "scenario": "translation_yaw",
+      "seed": 0,
+      "frames": 200,
+      "metrics": {
+        "visible_frames": 200,
+        "hits": 200,
+        "misses": 0,
+        "false_outputs": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "center_error_p95_m": 0.0425,
+        "width_error_p95_m": 0.1599,
+        "height_error_p95_m": 0.0471,
+        "id_switches": 0,
+        "matched_track_ids": [
+          1
+        ],
+        "longest_hit_streak": 200,
+        "false_confirmed_frames_while_absent": 0
+      }
+    },
+    {
+      "scenario": "translation_yaw",
+      "seed": 1000,
+      "frames": 200,
+      "metrics": {
+        "visible_frames": 200,
+        "hits": 200,
+        "misses": 0,
+        "false_outputs": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "center_error_p95_m": 0.0469,
+        "width_error_p95_m": 0.1654,
+        "height_error_p95_m": 0.045,
+        "id_switches": 0,
+        "matched_track_ids": [
+          1
+        ],
+        "longest_hit_streak": 200,
+        "false_confirmed_frames_while_absent": 0
+      }
+    }
+  ]
+}

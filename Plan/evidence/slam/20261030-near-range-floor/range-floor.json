@@ -1,0 +1,77 @@
+{
+  "schema": "na70-near-range-floor-v1",
+  "finding": "decoded distance codes never fall below 468 (7.488 m); codes 1..467 absent in every sampled capture",
+  "unit": "distance code x 16 mm",
+  "sessions": [
+    {
+      "session": "20261030-163303",
+      "source": "radar_capture_data/na70_sessions/20261030-163303/raw/lidar.pcap",
+      "frames_sampled": 40,
+      "rays_sampled": 800000,
+      "zero_code_ratio": 0.8966,
+      "min_nonzero_code": 468,
+      "min_range_m": 7.488,
+      "codes_1_to_467": 0,
+      "codes_468_to_600": 40807
+    },
+    {
+      "session": "a2-browser-155552",
+      "source": "radar_capture_data/na70_sessions/a2-browser-155552/lidar.pcap",
+      "frames_sampled": 40,
+      "rays_sampled": 800000,
+      "zero_code_ratio": 0.894,
+      "min_nonzero_code": 468,
+      "min_range_m": 7.488,
+      "codes_1_to_467": 0
+    },
+    {
+      "session": "20261030-151019",
+      "source": "radar_capture_data/na70_sessions/20261030-151019/raw/lidar.pcap",
+      "frames_sampled": 40,
+      "rays_sampled": 800000,
+      "zero_code_ratio": 0.889,
+      "min_nonzero_code": 468,
+      "min_range_m": 7.488,
+      "codes_1_to_467": 0
+    },
+    {
+      "session": "1.pcap (classic outdoor capture)",
+      "source": "radar_capture_data/1.pcap",
+      "frames_sampled": 40,
+      "rays_sampled": 800000,
+      "zero_code_ratio": 0.654,
+      "min_nonzero_code": 468,
+      "min_range_m": 7.488,
+      "codes_1_to_467": 0
+    }
+  ],
+  "full_session_histogram": {
+    "session": "20261030-163303",
+    "frames": 600,
+    "rays": 11999000,
+    "zero_code_rays": 10757342,
+    "valid_returns": 1241651,
+    "range_bins_m": {
+      "0.01-0.5": 0,
+      "0.5-1.0": 0,
+      "1.0-2.0": 0,
+      "2.0-3.0": 0,
+      "3.0-4.0": 0,
+      "4.0-6.0": 0,
+      "6.0-7.488": 0,
+      "7.488-10.0": 675495,
+      "10.0-15.0": 566156,
+      "over_15.0": 7
+    }
+  },
+  "implications": {
+    "extrinsic_rotation_capture": "wall must be at least 8 m away (prefer 9-15 m); a 2-5 m wall yields zero returns",
+    "static_and_six_face_batches": "not affected",
+    "tool_defaults": "calibrate_na70_rotation_planes min_range=1.0 m is below the data floor and does not drop points",
+    "not_verified": [
+      "whether the floor is a configurable device start distance or a firmware minimum",
+      "the vendor-spec minimum ranging distance",
+      "no device configuration command was sent"
+    ]
+  }
+}

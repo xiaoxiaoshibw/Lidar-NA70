@@ -1,0 +1,11 @@
+{
+  "date": "2026-10-30",
+  "timezone": "Asia/Shanghai",
+  "source": "user-reported router device page",
+  "device_name": "yahboom",
+  "wifi_ipv4": "192.168.31.168",
+  "router_reported_mac": "DC:4A:9E:DF:DC:AA",
+  "connection_duration_at_observation_s": 203,
+  "address_assignment": "DHCP, not reserved by this task",
+  "network_modified": false
+}

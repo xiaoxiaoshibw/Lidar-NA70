@@ -21,7 +21,7 @@ def cloud(index, xyz, time=None):
 
 def test_default_configuration_loads_and_hashes():
     cfg = load_configuration()
-    assert cfg["accumulation"]["window_size"] == 10
+    assert cfg["accumulation"]["window_size"] == 20
     version = configuration_version(cfg)
     assert len(version) == 16 and version == configuration_version(load_configuration())
 
@@ -42,6 +42,9 @@ def test_invalid_values_rejected():
         load_configuration(overrides={"accumulation": {"voxel_size": -1}})
     with pytest.raises(ValueError):
         load_configuration(overrides={"accumulation": {"range": {"min": 5.0, "max": 3.0}}})
+    with pytest.raises(ValueError):
+        load_configuration(overrides={
+            "goal_detection": {"diagnostics": {"max_rejected_candidates": 0}}})
 
 
 def test_window_accumulates_up_to_size():
@@ -61,6 +64,16 @@ def test_window_size_slides():
     assert np.allclose(sorted(xyz[:, 0]), [102, 103, 104], atol=0.6)
 
 
+def test_no_stale_cache_when_window_first_fills():
+    # 回归：窗口首次填满的那一帧必须包含全部 window_size 个点
+    acc = Accumulator(base_cfg(window_size=3, voxel_size=0.5,
+                               range={"min": 0.0, "max": 130.0}))
+    for i in range(6):
+        stats = acc.push(cloud(i, [[100 + i, 0, 2]]))
+        xyz, _ = acc.accumulated()
+        assert stats["accumulated_points"] == len(xyz) == min(i + 1, 3)
+
+
 def test_voxel_merge_collapses_coincident_points():
     acc = Accumulator(base_cfg(window_size=10, voxel_size=0.5))
     for i in range(10):
@@ -68,6 +81,26 @@ def test_voxel_merge_collapses_coincident_points():
     xyz, intensity = acc.accumulated()
     assert len(xyz) == 1
     assert intensity[0] == pytest.approx(100.0)
+    assert acc.provenance.output_count == 1
+    sources = acc.provenance.sources_for(0)
+    assert sources.shape == (10, 2)
+    assert set(map(tuple, sources.tolist())) == {(frame, 0) for frame in range(10)}
+
+
+def test_provenance_survives_filtering_and_point_cap():
+    acc = Accumulator(base_cfg(window_size=2, voxel_size=0.5, max_points=2,
+                               range={"min": 50.0, "max": 130.0}))
+    acc.push(cloud(10, [[10, 0, 0], [100.01, 0, 2], [110, 0, 2]]))
+    acc.push(cloud(11, [[100.02, 0, 2], [120, 0, 2], [500, 0, 0]]))
+    xyz, _ = acc.accumulated()
+    assert len(xyz) == acc.provenance.output_count == 2
+    all_sources = np.vstack([acc.provenance.sources_for(i) for i in range(len(xyz))])
+    # Near/far rejected points (10,0) and (11,2) can never appear as sources.
+    assert (10, 0) not in set(map(tuple, all_sources.tolist()))
+    assert (11, 2) not in set(map(tuple, all_sources.tolist()))
+    assert acc.last_trace[0]["reason_counts"]["outside_range"] == 2
+    assert acc.last_trace[1]["aggregate_count"] == 4
+    assert acc.cloud_id.startswith("acc:10-11:")
 
 
 def test_range_gate_drops_near_and_far():

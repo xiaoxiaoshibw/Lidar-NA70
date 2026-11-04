@@ -1,0 +1,119 @@
+{
+  "schema_version": "na70-wire-synthetic-run-v1",
+  "data_label": "SYNTHETIC",
+  "warning": "Synthetic evidence tests code behaviour only; it is not NA70 wire-detection capability evidence.",
+  "seed_base": 0,
+  "duration_s": 0.3,
+  "config_sha256": "5ddc072ee63b582459a885485450a480df7ffaef615ce4c033fd9e762ae8e156",
+  "command": [
+    "D:\\Code\\radar\\web\\.venv\\Scripts\\python.exe",
+    "tools/run_wire_synthetic_matrix.py",
+    "--output",
+    "Plan/evidence/hv-line/20261003-synthetic-matrix-v2",
+    "--strict"
+  ],
+  "environment": {
+    "python": "3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "numpy": "2.5.3"
+  },
+  "source_hashes": {
+    "packages/na70_core/na70_core/wire/synthetic.py": "f7aadb9c3cd807737759acd755b23f865a8bbbf362e750ba34bc719663bce555",
+    "packages/na70_core/na70_core/wire/pipeline.py": "4e39c27efbfdf60ac6963ab2d296ebb86f719b50bcc2e3dacfc7205711257127",
+    "packages/na70_core/na70_core/wire/fitting.py": "9c81a9cec591140c879434de73c207fa66bd8697762bc53aecc8964839336f84",
+    "packages/na70_core/na70_core/wire/validation.py": "8e30bf2aeea717dde5ef769419f72b96e2a4893779155be302549a168d1fef1b",
+    "packages/na70_core/na70_core/wire/proposals.py": "01d59237f6b0ae35bd25e9cef02b13ea83bff4aab9ddfc086c8eb917b13221fd",
+    "packages/na70_core/na70_core/windows.py": "ade135a99d2682d36755e375c8442d826372523637b3c8495402bb85f61c1894",
+    "packages/na70_core/na70_core/observations.py": "2893791f2af4292eadd41f16ef92c47a3174814a9e80a30673a4c93350d320bd",
+    "packages/na70_core/na70_core/wire_default.yaml": "f2fde3be153c71246567db833a13b9eb1c7cb722dab1795fc552a017ec9273c3",
+    "tools/run_wire_synthetic_matrix.py": "53b25c2abc09d4774f8604664f9580e2a5ea95f0e828cf5932dcda8a5eddb9f1"
+  },
+  "scenarios": [
+    {
+      "scenario": "single_wire_50m",
+      "status": "MEASURED_CURRENT",
+      "first_blocking_stage": null,
+      "reject_reason": null,
+      "behaviour_pass": true
+    },
+    {
+      "scenario": "sag_wire_100m",
+      "status": "MEASURED_CURRENT",
+      "first_blocking_stage": null,
+      "reject_reason": null,
+      "behaviour_pass": true
+    },
+    {
+      "scenario": "sparse_wire_200m",
+      "status": "MEASURED_CURRENT",
+      "first_blocking_stage": null,
+      "reject_reason": null,
+      "behaviour_pass": true
+    },
+    {
+      "scenario": "ultra_sparse_wire_200m",
+      "status": "UNKNOWN",
+      "first_blocking_stage": "fit",
+      "reject_reason": "INSUFFICIENT_SUPPORT",
+      "behaviour_pass": true
+    },
+    {
+      "scenario": "trees_only_negative",
+      "status": "MEASURED_CURRENT",
+      "first_blocking_stage": null,
+      "reject_reason": null,
+      "behaviour_pass": true
+    },
+    {
+      "scenario": "fence_rails_line_negative",
+      "status": "MEASURED_CURRENT",
+      "first_blocking_stage": null,
+      "reject_reason": null,
+      "behaviour_pass": true
+    },
+    {
+      "scenario": "building_edge_180m",
+      "status": "MEASURED_CURRENT",
+      "first_blocking_stage": null,
+      "reject_reason": null,
+      "behaviour_pass": true
+    },
+    {
+      "scenario": "crossing_wires",
+      "status": "MEASURED_CURRENT",
+      "first_blocking_stage": null,
+      "reject_reason": null,
+      "behaviour_pass": true
+    },
+    {
+      "scenario": "occluded_wire_gap60",
+      "status": "UNKNOWN",
+      "first_blocking_stage": "finite_support",
+      "reject_reason": "LARGE_GAP",
+      "behaviour_pass": true
+    },
+    {
+      "scenario": "catenary_wire_150m",
+      "status": "MEASURED_CURRENT",
+      "first_blocking_stage": null,
+      "reject_reason": null,
+      "behaviour_pass": true
+    },
+    {
+      "scenario": "partial_occlusion_150m",
+      "status": "MEASURED_CURRENT",
+      "first_blocking_stage": null,
+      "reject_reason": null,
+      "behaviour_pass": true
+    },
+    {
+      "scenario": "time_jump_window",
+      "status": "MEASURED_CURRENT",
+      "first_blocking_stage": null,
+      "reject_reason": null,
+      "behaviour_pass": true
+    }
+  ],
+  "behaviour_pass_count": 12,
+  "scenario_count": 12
+}

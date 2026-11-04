@@ -1,0 +1,261 @@
+{
+  "date": "2026-10-30",
+  "timezone": "Asia/Shanghai",
+  "hostname": "yahboom",
+  "architecture": "aarch64",
+  "addresses": [
+    {
+      "ifindex": 1,
+      "ifname": "lo",
+      "flags": [
+        "LOOPBACK",
+        "UP",
+        "LOWER_UP"
+      ],
+      "mtu": 65536,
+      "qdisc": "noqueue",
+      "operstate": "UNKNOWN",
+      "group": "default",
+      "txqlen": 1000,
+      "addr_info": [
+        {
+          "family": "inet",
+          "local": "127.0.0.1",
+          "prefixlen": 8,
+          "scope": "host",
+          "label": "lo",
+          "valid_life_time": 4294967295,
+          "preferred_life_time": 4294967295
+        }
+      ]
+    },
+    {
+      "ifindex": 2,
+      "ifname": "enP8p1s0",
+      "flags": [
+        "BROADCAST",
+        "MULTICAST",
+        "UP",
+        "LOWER_UP"
+      ],
+      "mtu": 1500,
+      "qdisc": "mq",
+      "operstate": "UP",
+      "group": "default",
+      "txqlen": 1000,
+      "addr_info": [
+        {
+          "family": "inet",
+          "local": "192.168.1.129",
+          "prefixlen": 24,
+          "broadcast": "192.168.1.255",
+          "scope": "global",
+          "noprefixroute": true,
+          "label": "enP8p1s0",
+          "valid_life_time": 4294967295,
+          "preferred_life_time": 4294967295
+        },
+        {
+          "family": "inet",
+          "local": "192.168.127.100",
+          "prefixlen": 24,
+          "broadcast": "192.168.127.255",
+          "scope": "global",
+          "noprefixroute": true,
+          "label": "enP8p1s0",
+          "valid_life_time": 4294967295,
+          "preferred_life_time": 4294967295
+        },
+        {
+          "family": "inet",
+          "local": "192.168.3.129",
+          "prefixlen": 24,
+          "broadcast": "192.168.3.255",
+          "scope": "global",
+          "noprefixroute": true,
+          "label": "enP8p1s0",
+          "valid_life_time": 4294967295,
+          "preferred_life_time": 4294967295
+        }
+      ]
+    },
+    {
+      "ifindex": 4,
+      "ifname": "wlP1p1s0",
+      "flags": [
+        "BROADCAST",
+        "MULTICAST",
+        "UP",
+        "LOWER_UP"
+      ],
+      "mtu": 1500,
+      "qdisc": "mq",
+      "operstate": "UP",
+      "group": "default",
+      "txqlen": 1000,
+      "addr_info": [
+        {
+          "family": "inet",
+          "local": "192.168.31.168",
+          "prefixlen": 24,
+          "broadcast": "192.168.31.255",
+          "scope": "global",
+          "dynamic": true,
+          "noprefixroute": true,
+          "label": "wlP1p1s0",
+          "valid_life_time": 43119,
+          "preferred_life_time": 43119
+        }
+      ]
+    },
+    {
+      "ifindex": 8,
+      "ifname": "zt6q3kbgiw",
+      "flags": [
+        "BROADCAST",
+        "MULTICAST",
+        "UP",
+        "LOWER_UP"
+      ],
+      "mtu": 2800,
+      "qdisc": "pfifo_fast",
+      "operstate": "UNKNOWN",
+      "group": "default",
+      "txqlen": 1000,
+      "addr_info": [
+        {
+          "family": "inet",
+          "local": "10.218.44.186",
+          "prefixlen": 24,
+          "broadcast": "10.218.44.255",
+          "scope": "global",
+          "label": "zt6q3kbgiw",
+          "valid_life_time": 4294967295,
+          "preferred_life_time": 4294967295
+        }
+      ]
+    },
+    {
+      "ifindex": 9,
+      "ifname": "docker0",
+      "flags": [
+        "NO-CARRIER",
+        "BROADCAST",
+        "MULTICAST",
+        "UP"
+      ],
+      "mtu": 1500,
+      "qdisc": "noqueue",
+      "operstate": "DOWN",
+      "group": "default",
+      "addr_info": [
+        {
+          "family": "inet",
+          "local": "172.17.0.1",
+          "prefixlen": 16,
+          "broadcast": "172.17.255.255",
+          "scope": "global",
+          "label": "docker0",
+          "valid_life_time": 4294967295,
+          "preferred_life_time": 4294967295
+        }
+      ]
+    }
+  ],
+  "routes": [
+    {
+      "dst": "default",
+      "gateway": "192.168.3.1",
+      "dev": "enP8p1s0",
+      "protocol": "static",
+      "metric": 100,
+      "flags": []
+    },
+    {
+      "dst": "10.218.44.0/24",
+      "dev": "zt6q3kbgiw",
+      "protocol": "kernel",
+      "scope": "link",
+      "prefsrc": "10.218.44.186",
+      "flags": []
+    },
+    {
+      "dst": "169.254.0.0/16",
+      "dev": "zt6q3kbgiw",
+      "scope": "link",
+      "metric": 1000,
+      "flags": []
+    },
+    {
+      "dst": "172.17.0.0/16",
+      "dev": "docker0",
+      "protocol": "kernel",
+      "scope": "link",
+      "prefsrc": "172.17.0.1",
+      "flags": [
+        "linkdown"
+      ]
+    },
+    {
+      "dst": "192.168.1.0/24",
+      "dev": "enP8p1s0",
+      "protocol": "kernel",
+      "scope": "link",
+      "prefsrc": "192.168.1.129",
+      "metric": 100,
+      "flags": []
+    },
+    {
+      "dst": "192.168.3.0/24",
+      "dev": "enP8p1s0",
+      "protocol": "kernel",
+      "scope": "link",
+      "prefsrc": "192.168.3.129",
+      "metric": 100,
+      "flags": []
+    },
+    {
+      "dst": "192.168.31.0/24",
+      "dev": "wlP1p1s0",
+      "protocol": "kernel",
+      "scope": "link",
+      "prefsrc": "192.168.31.168",
+      "metric": 600,
+      "flags": []
+    },
+    {
+      "dst": "192.168.127.0/24",
+      "dev": "enP8p1s0",
+      "protocol": "kernel",
+      "scope": "link",
+      "prefsrc": "192.168.127.100",
+      "metric": 100,
+      "flags": []
+    }
+  ],
+  "active_profiles": "enP8p1s0:ethernet:connected:codex-na70-switch\nzt6q3kbgiw:tun:connected (externally):zt6q3kbgiw\nwlP1p1s0:wifi:connected:codex-xiaomi52bf\ndocker0:bridge:connected (externally):docker0\np2p-dev-wlP1p1s0:wifi-p2p:disconnected:\nl4tbr0:bridge:unmanaged:\ncan0:can:unmanaged:\nusb0:ethernet:unmanaged:\nusb1:ethernet:unmanaged:\nlo:loopback:unmanaged:",
+  "wifi": {
+    "ssid": "Xiaomi_52BF",
+    "ipv4": "192.168.31.168/24",
+    "default_route": false
+  },
+  "verified": {
+    "ssh_wired_192_168_3_129": true,
+    "wired_gateway_ping": true,
+    "wifi_gateway_ping": true,
+    "wifi_secret_saved_in_NetworkManager": true,
+    "new_profiles_autoconnect": true,
+    "rollback_timer_stopped": true
+  },
+  "limits": {
+    "reboot_test_performed": false,
+    "radar_udp2368_packets_during_5s_probe": 0,
+    "radar_data_received_verified": false,
+    "imu_serial_access_for_jetson": false,
+    "hardware_synchronization_verified": false
+  },
+  "old_profiles_preserved": [
+    "wired-static",
+    "H3C_n6-506"
+  ]
+}

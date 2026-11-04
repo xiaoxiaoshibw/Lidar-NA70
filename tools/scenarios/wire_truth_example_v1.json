@@ -1,0 +1,26 @@
+{
+  "schema_version": "wire-truth-example-v1",
+  "note": "示例格式；所有条目 review_status=unreviewed，因此评分输出为 NOT_EVALUATED。真实验收前替换为 reviewed truth。",
+  "truths": [
+    {
+      "truth_set_id": "example-unreviewed-1",
+      "capture_sha256": "2caa68d6491cb2ba6fd9bae86e04104038fbbf4c7a4e349fa6dcc211adc743ce",
+      "capture_role": "target_present",
+      "review_status": "unreviewed",
+      "reviewer": null,
+      "target": {
+        "geometry_kind": "measured_segment",
+        "frame_id": "lidar_link",
+        "endpoints_m": [[80.0, -10.0, 6.0], [80.0, 10.0, 6.0]],
+        "position_uncertainty_m": null,
+        "survey_method": "placeholder",
+        "wire_diameter_mm": null,
+        "wire_material": null
+      },
+      "acquisition": {"sensor_mount": "example", "install_direction": 1,
+                      "static_evidence": null, "weather": null,
+                      "background_pair_capture_sha256": null,
+                      "sensor_settings": "example"}
+    }
+  ]
+}

@@ -1,0 +1,378 @@
+{
+  "input_sha256": "ceca9fc08758f3c35f7b8b1c024bdab90e65f49ab65e39102cdd58dc0c5292db",
+  "source_hashes": {
+    "tools/run_goal_demo_offline.py": "a2b064862eace7e3fcbdde2ef619a9c73302ac8f64805dd8699b24a3190875b9",
+    "tools/score_goal_detection.py": "0d8eca4a8e8008085bd74feff703f757ce2ac5b8fb149cdfa1bd43ca34965916",
+    "web/backend/goal_detection.yaml": "443e416e54808477b22424a786799ee3fd99f06210a321910684ecf54da13559",
+    "web/backend/goal_detection/__init__.py": "3fbdbb438cda71ff1b2ed382a51fd7a499c509fc3613b2a1c646755033258804",
+    "web/backend/goal_detection/accumulation.py": "695b7782d1b1a04498c5337682a929575af18eccc05c7b6b39778aba4a30f196",
+    "web/backend/goal_detection/annotate_analysis.py": "0f419c1deba109a852a507bdbc0ed2b9c667a5253da93a024036a6b0609e4300",
+    "web/backend/goal_detection/bev.py": "1138bd4c606693c08f5c3673d1081f082edfcf15fef9e742e7d84243d584efa1",
+    "web/backend/goal_detection/buffer.py": "4aa589dedf0a21dc120611c1f5a7a36beb8fadd7e5cbe940777c2db46a39af33",
+    "web/backend/goal_detection/config.py": "5639672f2bef3d0fed2c02f006a64e87628d1c0146184f969eecd08665005dac",
+    "web/backend/goal_detection/detector.py": "460182e7a26063bf124d9caaf0ea4d6dac1a13f4615cc73e6f0b981f4a6c4e34",
+    "web/backend/goal_detection/focus.py": "28dfe44ae1480d7d74b02bd5c9e0eac3db03fd6a95ae43311c828cb3e1742bbc",
+    "web/backend/goal_detection/geometry.py": "49394ec1ca6da61487c600bfdf28d3ddadce0705171dba6cdeb8ff80e53e1093",
+    "web/backend/goal_detection/ground.py": "9c7f2d2270716a12cfae52b5e66c72e120590d53399b8b195658c908b23248e3",
+    "web/backend/goal_detection/observability.py": "b31032e93b3c8f57dc58ef163153d5c8875588cdf80d0a77dbdcfdba59f42c00",
+    "web/backend/goal_detection/pipeline.py": "daf7ee643e7f092de2d45feaafc38acc3d826673ee0b062ea2c2352dccef898a",
+    "web/backend/goal_detection/synthetic.py": "a2ffe7c46e59cb37b9115abf2acff9913d61f560e750ddbcc715fed2e1ade45b",
+    "web/backend/goal_detection/tracker.py": "033d913b5717db87e10d3f0935e17d22dce812be534475f7cf6b99ed691a42e0",
+    "web/backend/goal_detection/window_annotation.py": "9d59bd23311ce05a483f0c99d0441427b46cd0205e09dd5e17027940a004e29b"
+  },
+  "tool_sha256": "523f7857ea1aa14772213faaa27cc412ea7ed524919107b6dd4c46d8d048334b",
+  "command": [
+    "tools/audit_goal_static.py",
+    "--pcap",
+    "radar_capture_data/2/9.14_caochangyou.pcap",
+    "--output",
+    "Plan/evidence/goal-demo/20260921-g0-g1-static/old153-context",
+    "--confirmed-static-until",
+    "20",
+    "--windows",
+    "144:153",
+    "--roi",
+    "110,124,-8,8,-2,10"
+  ],
+  "python": "3.12.10",
+  "numpy": "2.5.3",
+  "config": {
+    "version": 1,
+    "accumulation": {
+      "enabled": true,
+      "window_size": 20,
+      "voxel_size": 0.5,
+      "max_points": 200000,
+      "roi": [
+        110.0,
+        124.0,
+        -8.0,
+        8.0,
+        -2.0,
+        10.0
+      ],
+      "range": {
+        "min": 50.0,
+        "max": 130.0
+      }
+    },
+    "goal_detection": {
+      "enabled": true,
+      "cell_size": 0.8,
+      "ground_z": [
+        -2.0,
+        0.3
+      ],
+      "pole": {
+        "height": [
+          1.8,
+          4.0
+        ],
+        "min_points": 5,
+        "max_radius": 1.2,
+        "height_tol": 1.2,
+        "base_tol": 1.2,
+        "grid_offsets": [
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.4,
+            0.0
+          ],
+          [
+            0.0,
+            0.4
+          ],
+          [
+            0.4,
+            0.4
+          ]
+        ],
+        "neighbor_radius": 0.8,
+        "neighbor_xy_radius": 0.65,
+        "neighbor_min_seed_points": 2,
+        "neighbor_max_base_gap": 0.65
+      },
+      "frame": {
+        "width": [
+          4.8,
+          6.0
+        ],
+        "crossbar_z": [
+          1.8,
+          3.2
+        ]
+      },
+      "scoring": {
+        "min_confidence": 0.5,
+        "lock_confidence": 0.7,
+        "crossbar_weight": 0.3,
+        "geometry_weight": 0.7,
+        "nms_distance": 1.5
+      },
+      "diagnostics": {
+        "enabled": true,
+        "max_rejected_candidates": 64,
+        "max_raw_refs_per_candidate": 4096
+      },
+      "z_leveling": {
+        "enabled": true,
+        "fit_quantile": 0.35,
+        "min_points": 100,
+        "min_abs_slope": 0.005,
+        "min_xy_span": 1.0,
+        "min_xy_minor_std": 0.25,
+        "max_source_age_seconds": 20.0,
+        "max_below_plane_fraction": 0.1,
+        "max_abs_slope": 0.12,
+        "max_residual": 0.15
+      }
+    },
+    "strategy": {
+      "mode": "staged"
+    },
+    "bev": {
+      "cell_size": 0.8,
+      "min_window_frames": 5,
+      "min_cell_density": 0.55,
+      "min_cell_points": 10,
+      "max_blob_cells": 8,
+      "min_contrast": 1.5,
+      "contrast_ref": 2.5,
+      "span_density_floor": 0.05,
+      "nms_distance": 2.5,
+      "max_regions": 5,
+      "score_weights": {
+        "density": 0.3,
+        "contrast": 0.4,
+        "width": 0.3
+      }
+    },
+    "focus": {
+      "half_size": 6.0,
+      "prefer_single_frame": true,
+      "single_min_confidence": 0.45,
+      "accumulated_min_current_points": 1
+    },
+    "zrefine": {
+      "bin_size": 0.25,
+      "min_points": 30,
+      "max_base_shift": 1.0,
+      "min_height": 0.5
+    },
+    "locking": {
+      "min_frames": 3,
+      "candidate_gap": 3
+    },
+    "tracking": {
+      "lost_frame_threshold": 5,
+      "reacquire": true,
+      "reacquire_min_frames": 2,
+      "reacquire_timeout": 30,
+      "max_center_jump": 6.5,
+      "kalman": true,
+      "nominal_dt": 0.1,
+      "min_dt": 0.01,
+      "max_dt": 0.5,
+      "evidence": {
+        "recent_max_age_frames": 3,
+        "recent_max_age_seconds": 0.35,
+        "signature_history_size": 256
+      },
+      "association": {
+        "min_score": 0.35,
+        "bearing_scale_rad": 0.5235987756,
+        "weights": {
+          "center": 0.35,
+          "bearing": 0.1,
+          "size": 0.15,
+          "yaw": 0.1,
+          "detection": 0.25,
+          "history": 0.05
+        }
+      }
+    },
+    "webui": {
+      "enable": true,
+      "demo_roi": [
+        84.0,
+        104.0,
+        -36.0,
+        -17.0,
+        -2.0,
+        6.0
+      ],
+      "fps_target": 10,
+      "capture_name_filter": [
+        "9.14_caochang"
+      ],
+      "window_choices": [
+        1,
+        5,
+        10,
+        20,
+        30,
+        60,
+        100
+      ],
+      "speed_choices": [
+        0.5,
+        1,
+        2,
+        5
+      ]
+    },
+    "annotate_analysis": {
+      "brush_radius": 1.0,
+      "min_region_points": 40,
+      "trim_percentile": 1.0,
+      "end_band_fraction": 0.3,
+      "post_bin_size": 0.15,
+      "post_column_radius": 0.6,
+      "base_z_quantile": 0.05,
+      "top_z_quantile": 0.95,
+      "min_post_points": 8,
+      "min_width": 1.0,
+      "min_thickness": 0.1,
+      "max_thickness": 2.0
+    }
+  },
+  "config_version": "74fd5f1885bb438a",
+  "annotation_version": "diagnostic-window-v2",
+  "windows": [
+    {
+      "frame_range": [
+        144,
+        153
+      ],
+      "device_time_range": [
+        33.244,
+        34.243
+      ],
+      "duration_seconds": 0.9990000000000023,
+      "cloud_id": "raw-window:be1bbbf00e4bc59ff8edae3b",
+      "coordinate_frame": "lidar_link",
+      "motion_status": "confirmed_static",
+      "motion_source": "user statement: first 20 seconds static",
+      "review_status": "PENDING_REVIEW",
+      "observation_unit": "accumulated_window",
+      "raw_points": 200000,
+      "range_points": 26195,
+      "roi_points": 6833,
+      "ground_model": {
+        "enabled": false,
+        "source": "accumulated",
+        "input_points": 2392,
+        "source_age_seconds": 0.9990000000000023,
+        "source_frame_range": [
+          144,
+          153
+        ],
+        "motion_status": "confirmed_static",
+        "rank": 3,
+        "inlier_points": 424,
+        "xy_span_m": [
+          9.641334533691406,
+          15.315672874450684
+        ],
+        "xy_minor_std_m": 1.675333595880427,
+        "slope": 0.11571827985070335,
+        "residual_std": 0.08448921531363093,
+        "residual_p95": 0.14373691149317605,
+        "below_plane_fraction": 0.1431289331186887,
+        "slope_x": 0.11550453892138565,
+        "slope_y": -0.007030062600276255,
+        "intercept": -13.85772492551509,
+        "reason": "points_below_ground_plane",
+        "source_attempts": [
+          {
+            "enabled": false,
+            "source": "single",
+            "input_points": 0,
+            "source_frame_range": [
+              153,
+              153
+            ],
+            "source_age_seconds": 0.0,
+            "motion_status": "single_frame",
+            "reason": "insufficient_ground_points"
+          },
+          {
+            "enabled": false,
+            "source": "accumulated",
+            "input_points": 2392,
+            "source_age_seconds": 0.9990000000000023,
+            "source_frame_range": [
+              144,
+              153
+            ],
+            "motion_status": "confirmed_static",
+            "rank": 3,
+            "inlier_points": 424,
+            "xy_span_m": [
+              9.641334533691406,
+              15.315672874450684
+            ],
+            "xy_minor_std_m": 1.675333595880427,
+            "slope": 0.11571827985070335,
+            "residual_std": 0.08448921531363093,
+            "residual_p95": 0.14373691149317605,
+            "below_plane_fraction": 0.1431289331186887,
+            "slope_x": 0.11550453892138565,
+            "slope_y": -0.007030062600276255,
+            "intercept": -13.85772492551509,
+            "reason": "points_below_ground_plane"
+          }
+        ],
+        "height_reference": "sensor_z",
+        "latency_ms": 3.682
+      },
+      "absolute_filtered": {
+        "points": 4265,
+        "z_span": 8.991950988769531,
+        "z_min": 0.30026423931121826,
+        "z_max": 9.292215347290039
+      },
+      "relative_filtered": null,
+      "components": {
+        "edge_a": {
+          "raw": {
+            "points": 0,
+            "z_span": null,
+            "z_min": null,
+            "z_max": null
+          },
+          "absolute": {
+            "points": 0,
+            "z_span": null,
+            "z_min": null,
+            "z_max": null
+          },
+          "relative": null,
+          "raw_refs": [],
+          "role": "diagnostic_neighborhood_not_truth"
+        },
+        "edge_b": {
+          "raw": {
+            "points": 0,
+            "z_span": null,
+            "z_min": null,
+            "z_max": null
+          },
+          "absolute": {
+            "points": 0,
+            "z_span": null,
+            "z_min": null,
+            "z_max": null
+          },
+          "relative": null,
+          "raw_refs": [],
+          "role": "diagnostic_neighborhood_not_truth"
+        }
+      },
+      "geometry_after": null
+    }
+  ]
+}

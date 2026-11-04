@@ -1,0 +1,53 @@
+{
+  "schema_version": "na70-wire-score-v1",
+  "status": "NOT_EVALUATED",
+  "hit_radius_m": 5.0,
+  "reviewed_truth_count": 0,
+  "detection_row_count": 3,
+  "metrics": {
+    "tp": 0,
+    "fp": 0,
+    "fn": 0,
+    "precision": null,
+    "recall": null,
+    "fp_per_minute": null
+  },
+  "rows": [
+    {
+      "label": "detection-0",
+      "truth_id": null,
+      "status": "NOT_EVALUATED",
+      "direction_angle_deg": null,
+      "span_overlap_m": null
+    },
+    {
+      "label": "detection-1",
+      "truth_id": null,
+      "status": "NOT_EVALUATED",
+      "direction_angle_deg": null,
+      "span_overlap_m": null
+    },
+    {
+      "label": "detection-2",
+      "truth_id": null,
+      "status": "NOT_EVALUATED",
+      "direction_angle_deg": null,
+      "span_overlap_m": null
+    }
+  ],
+  "unreviewed_truth_count": 1,
+  "command": [
+    "D:\\Code\\radar\\web\\.venv\\Scripts\\python.exe",
+    "tools/score_wire_run.py",
+    "--run",
+    "Plan/evidence/hv-line/20261003-w4a-compare-real-zhong2",
+    "--truth",
+    "tools/scenarios/wire_truth_example_v1.json"
+  ],
+  "environment": {
+    "python": "3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]",
+    "platform": "Windows-11-10.0.26200-SP0"
+  },
+  "truth_sha256": "a5789baa0779983f74b5f804804fa384ff10d621d72a41642dde41901d4fecdb",
+  "run_dir": "Plan\\evidence\\hv-line\\20261003-w4a-compare-real-zhong2"
+}

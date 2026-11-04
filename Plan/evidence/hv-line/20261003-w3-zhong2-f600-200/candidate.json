@@ -1,0 +1,162 @@
+{
+  "schema_version": "na70-wire-pipeline-output-v1",
+  "status": "MEASURED_CURRENT",
+  "geometry_class": "LINE_STRUCTURE",
+  "first_blocking_stage": null,
+  "reject_reason": null,
+  "candidate_line": {
+    "direction": [
+      -0.015571245565513378,
+      -0.4352492888006077,
+      -0.9001753123198302
+    ],
+    "point_on_line": [
+      226.80506896972656,
+      -3.8144524097442627,
+      19.57279396057129
+    ],
+    "segment_endpoints_sensor_m": [
+      [
+        226.81228641865647,
+        -3.6127094277532055,
+        19.99003542769136
+      ],
+      [
+        226.74621460272587,
+        -5.459556603373841,
+        16.1704169334199
+      ]
+    ],
+    "nearest_distance_m": 227.0399932861328,
+    "unique_packet_count": 8,
+    "unique_frame_count": 7,
+    "span_m": 4.243194011206519,
+    "coverage_fraction": 1.0,
+    "largest_internal_gap_m": 1.4745301495459695,
+    "rms_orthogonal_m": 0.36902873849779344,
+    "p95_orthogonal_m": 0.5856194656183984,
+    "source_timestamp_last_s": 152.569,
+    "window_age_s": 0.04100000000002524,
+    "source_ray_indices": [
+      32814,
+      32815,
+      32816,
+      32817,
+      57233,
+      57234,
+      57235,
+      57236,
+      81369,
+      81370,
+      81371,
+      81372,
+      81373,
+      81374,
+      105831,
+      105832,
+      105833,
+      105834,
+      143070,
+      143071,
+      167199,
+      167200,
+      167201,
+      167202,
+      167203,
+      167204,
+      167205,
+      191657,
+      191658,
+      191659,
+      191660
+    ],
+    "inlier_source_ids_count": 31,
+    "source_ids_sha256": null
+  },
+  "stage_trace": [
+    {
+      "stage": "decode",
+      "status": "completed",
+      "input_rays": 200000,
+      "source_window_id": "pcap-2caa68d6-f600-d1.0"
+    },
+    {
+      "stage": "time_quality",
+      "status": "completed"
+    },
+    {
+      "stage": "window_quality",
+      "status": "completed"
+    },
+    {
+      "stage": "valid_return",
+      "status": "completed",
+      "valid_count": 78225,
+      "direction_known_count": 82481
+    },
+    {
+      "stage": "roi_or_proposal",
+      "status": "completed",
+      "input_count": 200000,
+      "output_count": 107,
+      "aabb": [
+        190.0,
+        240.0,
+        -15.0,
+        15.0,
+        0.0,
+        50.0
+      ]
+    },
+    {
+      "stage": "fit",
+      "status": "completed",
+      "seed": 7,
+      "thresh_m": 0.6,
+      "iterations": 400,
+      "inlier_ray_count": 31
+    },
+    {
+      "stage": "finite_support",
+      "status": "completed",
+      "ok": true,
+      "reject_reason": null,
+      "unique_packet_count": 8,
+      "unique_frame_count": 7,
+      "span_m": 4.243194011206519,
+      "span_bin_m": 1.0,
+      "coverage_fraction": 1.0,
+      "largest_internal_gap_m": 1.4745301495459695,
+      "rms_orthogonal_m": 0.36902873849779344,
+      "p95_orthogonal_m": 0.5856194656183984,
+      "nearest_distance_m": 227.0399932861328,
+      "source_timestamp_last_s": 152.569,
+      "window_age_s": 0.04100000000002524
+    },
+    {
+      "stage": "background_check",
+      "status": "skipped",
+      "note": "no background pairing available in this run"
+    },
+    {
+      "stage": "freshness",
+      "status": "completed",
+      "window_age_s": 0.04100000000002524,
+      "window_age_max_s": 5.0
+    },
+    {
+      "stage": "association",
+      "status": "skipped",
+      "note": "single window run"
+    },
+    {
+      "stage": "output",
+      "status": "completed",
+      "geometry_class": "LINE_STRUCTURE",
+      "output_status": "MEASURED_CURRENT"
+    }
+  ],
+  "window_id": 600,
+  "source_window_id": "pcap-2caa68d6-f600-d1.0",
+  "capture_sha256": "2caa68d6491cb2ba6fd9bae86e04104038fbbf4c7a4e349fa6dcc211adc743ce"
+}

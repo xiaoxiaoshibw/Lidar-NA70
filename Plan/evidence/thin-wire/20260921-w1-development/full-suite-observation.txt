@@ -1,0 +1,25 @@
+Captured test result excerpts from the tool session; this is not a complete shell log.
+
+Environment: Windows, Python 3.12.10. Working directory: D:/Code/radar/web
+Command:
+.\.venv\Scripts\python.exe -m pytest tests -q --tb=short --basetemp=test-results/w1-full-20260921-v1 -o cache_dir=test-results/w1-cache-20260921-v1
+
+Result: 1 failed, 292 passed, 2 warnings in 91.72s.
+Failure: tests/test_turntable.py::test_turntable_api_job_survives_service_restart
+backend/turntable_jobs.py:105 archive.write(path, path.name)
+FileNotFoundError: job.json.tmp disappeared between directory enumeration and ZIP writing.
+Failing file:
+D:/Code/radar/web/test-results/w1-full-20260921-v1/test_turntable_api_job_survive0/store/turntable_mapping/42f82fcf-d450-4c03-a1a4-23baf67a114b/job.json.tmp
+
+Independent rerun, before the final W1 source-age test was added:
+.\.venv\Scripts\python.exe -m pytest tests/test_turntable.py::test_turntable_api_job_survives_service_restart tests/test_thin_wire.py -q --tb=short --basetemp=test-results/w1-targeted-20260921-v2 -o cache_dir=test-results/w1-cache-20260921-v2
+Result: 24 passed, 2 warnings in 6.57s (23 W1 cases and the turntable test).
+
+The failure remains recorded. No changes were made to the turntable implementation.
+The final W1/decoder focused result is in targeted-pytest-final.log.
+
+Earlier environment-only attempt:
+.\.venv\Scripts\python.exe -m pytest tests/test_thin_wire.py -q
+Result: 23 setup errors, pytest could not access its existing user TEMP directory.
+The sandbox-external rerun was approved and passed all 23 then-existing W1 tests.
+Later commands used new workspace-local test-results directories and completed under the sandbox.

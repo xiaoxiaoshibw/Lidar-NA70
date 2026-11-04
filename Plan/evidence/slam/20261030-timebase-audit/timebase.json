@@ -1,0 +1,71 @@
+{
+  "schema": "na70-imu-timebase-v1",
+  "status": "OK_HOST_TIME_ONLY",
+  "time_level": "C_HOST_RECEIVE_ONLY",
+  "source": {
+    "frames": "radar_capture_data\\na70_sessions\\a2-browser-155552\\imu_frames.jsonl",
+    "frames_sha256": "f1ac58767e76e0020f4896f0cb3f532429c551e6b05429a3c9a37223d79dd3ef",
+    "chunks": "radar_capture_data\\na70_sessions\\a2-browser-155552\\imu_chunks.jsonl",
+    "chunks_sha256": "45b41d46ba8d8b283d8b2d619b2e65d02f7025dbf04c4766cbf51904751bc6f1"
+  },
+  "device_time": {
+    "sample_us_present": 0,
+    "ready_us_present": 0,
+    "sample_tag": "0x51",
+    "ready_tag": "0x52"
+  },
+  "batches": {
+    "frames": 12018,
+    "unique_host_times": 1180,
+    "frames_per_batch_min": 10,
+    "frames_per_batch_median": 10.0,
+    "frames_per_batch_max": 11,
+    "batch_interval_median_s": 0.050907000000734115,
+    "batch_interval_p95_s": 0.05104399999991074,
+    "batch_interval_max_s": 0.0530029999999897,
+    "host_span_s": 60.04150799999934
+  },
+  "segments": [
+    {
+      "segment": 0,
+      "frames": 12018,
+      "first_s": 5772.119735,
+      "last_s": 5832.161243,
+      "unique_host_times": 1180,
+      "frames_per_batch_min": 10,
+      "frames_per_batch_median": 10.0,
+      "frames_per_batch_max": 11,
+      "batch_interval_median_s": 0.050907000000734115,
+      "batch_interval_p95_s": 0.05104399999991074,
+      "batch_interval_max_s": 0.0530029999999897,
+      "host_span_s": 60.04150799999934
+    }
+  ],
+  "sequence": {
+    "tid_gap_events": 0,
+    "events": [],
+    "estimated_missing_frames": 0,
+    "device_boundary_60000_to_1": 0
+  },
+  "host_time_bound": {
+    "conservative_s": 0.0530029999999897,
+    "median_batch_interval_s": 0.050907000000734115,
+    "meaning": "批内帧的真实采样时刻可能落在上一批到达至本批到达之间；这是上界，不是同步误差"
+  },
+  "checks": {
+    "frame_time_monotonic": true,
+    "chunk_time_monotonic": true,
+    "all_frame_times_match_chunk": true,
+    "device_time_absent": true
+  },
+  "limits": [
+    "主机接收时间不是设备采样时间；批内真实采样时刻未知",
+    "批量间隔只给出保守上界，不是可用的时间同步误差",
+    "tid 连续只说明序号未断，不证明没有丢帧或时钟正确",
+    "没有 sample_us/ready_us 时不得生成 device_time_s"
+  ],
+  "claims": {
+    "time_sync_validated": false,
+    "device_time_validated": false
+  }
+}

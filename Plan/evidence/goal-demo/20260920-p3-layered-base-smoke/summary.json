@@ -1,0 +1,132 @@
+{
+  "label": "SYNTHETIC",
+  "generator": "goal-synthetic-v1",
+  "scenarios": [
+    "static",
+    "translation",
+    "yaw",
+    "translation_yaw",
+    "pitch_roll",
+    "density_drop",
+    "missing_crossbar",
+    "single_post_occlusion",
+    "disappear_reenter",
+    "tree_wall_fence",
+    "similar_pair",
+    "multi_candidate",
+    "fov_edge",
+    "empty_nan",
+    "time_jump"
+  ],
+  "development_seeds": [
+    0,
+    19
+  ],
+  "validation_seeds": [
+    1000,
+    1049
+  ],
+  "default_frames": 200,
+  "truth_not_provided_to_pipeline": true,
+  "limitations": [
+    "sparse geometric approximation, not a physical NA70 simulator",
+    "no rolling scan distortion model",
+    "intensity is randomized rather than material-calibrated"
+  ],
+  "config_version": "ef5b5b26a65c19fb",
+  "source_hashes": {
+    "tools/run_goal_synthetic_suite.py": "d6479a05e3453bf43adbd7c894a4dbcbe994b898d2463d70273b8e0d16b72336",
+    "web/backend/goal_detection/synthetic.py": "a2ffe7c46e59cb37b9115abf2acff9913d61f560e750ddbcc715fed2e1ade45b",
+    "web/backend/goal_detection.yaml": "d711a10d6a5102d51e0edd0336e6cd379d16ee601009d7d8b25565fda8370d1c"
+  },
+  "cases": [
+    {
+      "scenario": "static",
+      "seed": 0,
+      "frames": 200,
+      "metrics": {
+        "visible_frames": 200,
+        "hits": 200,
+        "misses": 0,
+        "false_outputs": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "center_error_p95_m": 0.0163,
+        "width_error_p95_m": 0.0466,
+        "height_error_p95_m": 0.0441,
+        "id_switches": 0,
+        "matched_track_ids": [
+          1
+        ],
+        "longest_hit_streak": 200,
+        "false_confirmed_frames_while_absent": 0
+      }
+    },
+    {
+      "scenario": "static",
+      "seed": 1000,
+      "frames": 200,
+      "metrics": {
+        "visible_frames": 200,
+        "hits": 200,
+        "misses": 0,
+        "false_outputs": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "center_error_p95_m": 0.0163,
+        "width_error_p95_m": 0.045,
+        "height_error_p95_m": 0.0421,
+        "id_switches": 0,
+        "matched_track_ids": [
+          1
+        ],
+        "longest_hit_streak": 200,
+        "false_confirmed_frames_while_absent": 0
+      }
+    },
+    {
+      "scenario": "translation_yaw",
+      "seed": 0,
+      "frames": 200,
+      "metrics": {
+        "visible_frames": 200,
+        "hits": 200,
+        "misses": 0,
+        "false_outputs": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "center_error_p95_m": 0.0425,
+        "width_error_p95_m": 0.1599,
+        "height_error_p95_m": 0.0471,
+        "id_switches": 0,
+        "matched_track_ids": [
+          1
+        ],
+        "longest_hit_streak": 200,
+        "false_confirmed_frames_while_absent": 0
+      }
+    },
+    {
+      "scenario": "translation_yaw",
+      "seed": 1000,
+      "frames": 200,
+      "metrics": {
+        "visible_frames": 200,
+        "hits": 200,
+        "misses": 0,
+        "false_outputs": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "center_error_p95_m": 0.0469,
+        "width_error_p95_m": 0.1654,
+        "height_error_p95_m": 0.045,
+        "id_switches": 0,
+        "matched_track_ids": [
+          1
+        ],
+        "longest_hit_streak": 200,
+        "false_confirmed_frames_while_absent": 0
+      }
+    }
+  ]
+}

@@ -1,0 +1,212 @@
+{
+  "label": "SYNTHETIC",
+  "generator": "goal-synthetic-v1",
+  "scenarios": [
+    "static",
+    "translation",
+    "yaw",
+    "translation_yaw",
+    "pitch_roll",
+    "density_drop",
+    "missing_crossbar",
+    "single_post_occlusion",
+    "disappear_reenter",
+    "tree_wall_fence",
+    "similar_pair",
+    "multi_candidate",
+    "fov_edge",
+    "empty_nan",
+    "time_jump"
+  ],
+  "development_seeds": [
+    0,
+    19
+  ],
+  "validation_seeds": [
+    1000,
+    1049
+  ],
+  "default_frames": 200,
+  "truth_not_provided_to_pipeline": true,
+  "limitations": [
+    "sparse geometric approximation, not a physical NA70 simulator",
+    "no rolling scan distortion model",
+    "intensity is randomized rather than material-calibrated"
+  ],
+  "config_version": "b3293fa3507bc3b3",
+  "source_hashes": {
+    "tools/run_goal_synthetic_suite.py": "d6479a05e3453bf43adbd7c894a4dbcbe994b898d2463d70273b8e0d16b72336",
+    "web/backend/goal_detection/synthetic.py": "a2ffe7c46e59cb37b9115abf2acff9913d61f560e750ddbcc715fed2e1ade45b",
+    "web/backend/goal_detection.yaml": "a0471027ef004522657b7cb26cdbc2e2465fd9e809d4c573ec1cf690f567d83e"
+  },
+  "cases": [
+    {
+      "scenario": "static",
+      "seed": 0,
+      "frames": 200,
+      "metrics": {
+        "visible_frames": 200,
+        "hits": 1,
+        "misses": 199,
+        "false_outputs": 0,
+        "precision": 1.0,
+        "recall": 0.005,
+        "center_error_p95_m": 0.0035,
+        "width_error_p95_m": 0.0006,
+        "height_error_p95_m": 0.113,
+        "id_switches": 0,
+        "matched_track_ids": [],
+        "longest_hit_streak": 1,
+        "false_confirmed_frames_while_absent": 0
+      }
+    },
+    {
+      "scenario": "static",
+      "seed": 1000,
+      "frames": 200,
+      "metrics": {
+        "visible_frames": 200,
+        "hits": 155,
+        "misses": 45,
+        "false_outputs": 0,
+        "precision": 1.0,
+        "recall": 0.775,
+        "center_error_p95_m": 0.0163,
+        "width_error_p95_m": 0.0396,
+        "height_error_p95_m": 0.0406,
+        "id_switches": 0,
+        "matched_track_ids": [
+          1
+        ],
+        "longest_hit_streak": 155,
+        "false_confirmed_frames_while_absent": 0
+      }
+    },
+    {
+      "scenario": "translation_yaw",
+      "seed": 0,
+      "frames": 200,
+      "metrics": {
+        "visible_frames": 200,
+        "hits": 178,
+        "misses": 22,
+        "false_outputs": 0,
+        "precision": 1.0,
+        "recall": 0.89,
+        "center_error_p95_m": 0.0503,
+        "width_error_p95_m": 0.1573,
+        "height_error_p95_m": 0.0473,
+        "id_switches": 0,
+        "matched_track_ids": [
+          1
+        ],
+        "longest_hit_streak": 176,
+        "false_confirmed_frames_while_absent": 0
+      }
+    },
+    {
+      "scenario": "translation_yaw",
+      "seed": 1000,
+      "frames": 200,
+      "metrics": {
+        "visible_frames": 200,
+        "hits": 46,
+        "misses": 154,
+        "false_outputs": 1,
+        "precision": 0.9787,
+        "recall": 0.23,
+        "center_error_p95_m": 1.0372,
+        "width_error_p95_m": 0.3457,
+        "height_error_p95_m": 0.0533,
+        "id_switches": 0,
+        "matched_track_ids": [
+          1
+        ],
+        "longest_hit_streak": 40,
+        "false_confirmed_frames_while_absent": 0
+      }
+    },
+    {
+      "scenario": "density_drop",
+      "seed": 0,
+      "frames": 200,
+      "metrics": {
+        "visible_frames": 200,
+        "hits": 1,
+        "misses": 199,
+        "false_outputs": 0,
+        "precision": 1.0,
+        "recall": 0.005,
+        "center_error_p95_m": 0.009,
+        "width_error_p95_m": 0.0378,
+        "height_error_p95_m": 0.104,
+        "id_switches": 0,
+        "matched_track_ids": [],
+        "longest_hit_streak": 1,
+        "false_confirmed_frames_while_absent": 0
+      }
+    },
+    {
+      "scenario": "density_drop",
+      "seed": 1000,
+      "frames": 200,
+      "metrics": {
+        "visible_frames": 200,
+        "hits": 0,
+        "misses": 200,
+        "false_outputs": 0,
+        "precision": null,
+        "recall": 0.0,
+        "center_error_p95_m": null,
+        "width_error_p95_m": null,
+        "height_error_p95_m": null,
+        "id_switches": 0,
+        "matched_track_ids": [],
+        "longest_hit_streak": 0,
+        "false_confirmed_frames_while_absent": 0
+      }
+    },
+    {
+      "scenario": "disappear_reenter",
+      "seed": 0,
+      "frames": 200,
+      "metrics": {
+        "visible_frames": 150,
+        "hits": 2,
+        "misses": 148,
+        "false_outputs": 0,
+        "precision": 1.0,
+        "recall": 0.0133,
+        "center_error_p95_m": 0.0238,
+        "width_error_p95_m": 0.0364,
+        "height_error_p95_m": 0.1085,
+        "id_switches": 0,
+        "matched_track_ids": [],
+        "longest_hit_streak": 1,
+        "false_confirmed_frames_while_absent": 0
+      }
+    },
+    {
+      "scenario": "disappear_reenter",
+      "seed": 1000,
+      "frames": 200,
+      "metrics": {
+        "visible_frames": 150,
+        "hits": 25,
+        "misses": 125,
+        "false_outputs": 0,
+        "precision": 1.0,
+        "recall": 0.1667,
+        "center_error_p95_m": 0.0169,
+        "width_error_p95_m": 0.0337,
+        "height_error_p95_m": 0.05,
+        "id_switches": 0,
+        "matched_track_ids": [
+          1
+        ],
+        "longest_hit_streak": 25,
+        "false_confirmed_frames_while_absent": 5
+      }
+    }
+  ]
+}

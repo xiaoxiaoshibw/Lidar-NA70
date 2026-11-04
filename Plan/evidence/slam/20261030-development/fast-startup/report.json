@@ -1,0 +1,15 @@
+{
+  "environment": "WSL2_HUMBLE_X86_64",
+  "command": [
+    "/home/radar/na70_lio_ws/install/fast_lio/lib/fast_lio/fastlio_mapping",
+    "--ros-args",
+    "--params-file",
+    "/home/radar/na70_lio_ws/src/fast_lio/config/avia.yaml"
+  ],
+  "initialized": true,
+  "graceful_shutdown": true,
+  "exit_code": 0,
+  "status": "STARTUP_SMOKE_PASSED",
+  "na70_validated": false,
+  "slam_validated": false
+}

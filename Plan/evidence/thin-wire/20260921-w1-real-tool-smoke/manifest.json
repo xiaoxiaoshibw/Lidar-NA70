@@ -1,0 +1,162 @@
+{
+  "schema_version": "thin-wire-w1-v1",
+  "status": "COMPLETED",
+  "wire_return_status": "NOT_EVALUATED",
+  "config": {
+    "schema_version": "thin-wire-w1-v1",
+    "window_seconds": [
+      0.5,
+      1.0,
+      2.0,
+      5.0
+    ],
+    "include_single_frame": true,
+    "install_direction": 1,
+    "max_packet_gap_s": 0.05,
+    "time_epsilon_s": 1e-06,
+    "max_window_points": 2000000,
+    "max_windows": 64,
+    "render_max_points": 60000,
+    "render_dpi": 150,
+    "target_roi": null,
+    "background_rois": [],
+    "target_reference": null,
+    "acquisition": {
+      "data_label": "REAL_PCAP_DIAGNOSTIC",
+      "capture_role": "unknown",
+      "static_status": "unknown",
+      "static_evidence": null,
+      "target_distance_m": null,
+      "wire_diameter_mm": null,
+      "wire_material": null,
+      "wire_orientation": null,
+      "sensor_settings": null,
+      "background_pairing_evidence": null,
+      "notes": null
+    }
+  },
+  "config_sha256": "8831701b6220786708aa5a311a3b03a8204191d883f3d37e7cd58e4755e946ea",
+  "command": [
+    "D:\\Code\\radar\\web\\.venv\\Scripts\\python.exe",
+    "D:\\Code\\radar\\tools\\audit_thin_wire.py",
+    "--pcap",
+    "radar_capture_data/1.pcap",
+    "--end-frame",
+    "50",
+    "--output",
+    "Plan/evidence/thin-wire/20260921-w1-real-tool-smoke"
+  ],
+  "environment": {
+    "python": "3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "numpy": "2.5.3"
+  },
+  "coordinate_frame": "lidar_link",
+  "decoder_version": "ros2-na70-16mm-v1",
+  "source_hashes": {
+    "web/backend/thin_wire.py": "9fba047c04189446e74ad8527022a78aa405bfe0ee6a8be4c1f8bf238ecc3b28",
+    "web/backend/decoder.py": "4149f6567dce67e7916b3d09eeb9c3c0a8aaab4cf88e7378ef56e2c061f19212",
+    "web/backend/thin_wire_plot.py": "7d65a48a4e5a58a010449ceae656d071f071a183dda93911546ae9a561a6314d",
+    "tools/audit_thin_wire.py": "5913cbd119c3f29b54d0177b61d2f6094071697f17f43efdfd40c76e2ffbc5c9",
+    "tools/thin_wire_config.yaml": "be8ca63159c525de7c4344a8f8ba466cde84bf52b1754cb75fd5c01de9c6228b"
+  },
+  "inputs": [
+    {
+      "role": "primary",
+      "path": "D:\\Code\\radar\\radar_capture_data\\1.pcap",
+      "sha256": "b17d7c17926e670b3d89ba0774c4140feb810e4935971ab57760f4bdd00636cd",
+      "capture_id": "pcap-b17d7c17926e670b",
+      "frame_count": 662,
+      "valid_packets": 66173,
+      "invalid_records": 0,
+      "ignored_records": 0,
+      "warnings": [],
+      "incomplete_frames": 1,
+      "missing_device_packets": null,
+      "time_boundaries": [
+        {
+          "index": 0,
+          "frame_index": 0,
+          "local_index": 0,
+          "device_time": 293.041,
+          "capture_time": 1788761321.646532,
+          "segment": 0,
+          "boundary_reason": "capture_start"
+        }
+      ]
+    }
+  ],
+  "windows": [
+    {
+      "window_id": "primary-f000050-single",
+      "raw_file": "raw_windows/primary-f000050-single.npz",
+      "figures": [
+        "figures/primary-f000050-single-overview.png",
+        "figures/primary-f000050-single-timeline.png"
+      ]
+    },
+    {
+      "window_id": "primary-f000050-0.5s",
+      "raw_file": "raw_windows/primary-f000050-0.5s.npz",
+      "figures": [
+        "figures/primary-f000050-0.5s-overview.png",
+        "figures/primary-f000050-0.5s-timeline.png"
+      ]
+    },
+    {
+      "window_id": "primary-f000050-1s",
+      "raw_file": "raw_windows/primary-f000050-1s.npz",
+      "figures": [
+        "figures/primary-f000050-1s-overview.png",
+        "figures/primary-f000050-1s-timeline.png"
+      ]
+    },
+    {
+      "window_id": "primary-f000050-2s",
+      "raw_file": "raw_windows/primary-f000050-2s.npz",
+      "figures": [
+        "figures/primary-f000050-2s-overview.png",
+        "figures/primary-f000050-2s-timeline.png"
+      ]
+    },
+    {
+      "window_id": "primary-f000050-5s",
+      "raw_file": "raw_windows/primary-f000050-5s.npz",
+      "figures": [
+        "figures/primary-f000050-5s-overview.png",
+        "figures/primary-f000050-5s-timeline.png"
+      ]
+    }
+  ],
+  "evidence_gaps": [
+    "target_roi_missing",
+    "independent_target_position_not_reviewed",
+    "fixed_sensor_and_target_not_confirmed",
+    "target_presence_not_confirmed",
+    "wire_diameter_missing",
+    "same_site_background_pair_not_verified",
+    "independent_repeat_recordings_require_review",
+    "target_attribution_requires_review"
+  ],
+  "window_count": 5,
+  "artifacts": {
+    "figures/primary-f000050-0.5s-overview.png": "5981d504f4eebe0373b9706741fb122934a7b7de122baa37a3269395b13d3ad3",
+    "figures/primary-f000050-0.5s-timeline.png": "277d08049e47eeac7ce8e1e53596271782a5bac9b6cbba4de57b35b94225b272",
+    "figures/primary-f000050-1s-overview.png": "0b6ba0ac752eedd18db7ed2608e9cfb086643111989b4998f525abe5baa0b811",
+    "figures/primary-f000050-1s-timeline.png": "682e47b50ec081271f70fad763f233830e8bf50f5e563a5fc256e7b7a5e57cf4",
+    "figures/primary-f000050-2s-overview.png": "48c0d7037e038b6cc1beab66cb34f1cd3dd70e854a6ecabda4158d002f686246",
+    "figures/primary-f000050-2s-timeline.png": "9324e0cd2ebc3647302799e38576628d813db4347a760cc4889960ab6e91182b",
+    "figures/primary-f000050-5s-overview.png": "c4634620f507297d7fe31b5d4b2657e3c33e3efeb7facf5c37cd7625a8dc96b9",
+    "figures/primary-f000050-5s-timeline.png": "aa87b73e334d9634d557746ce05a9ef38efb9c5491c514e918d229aa009a688c",
+    "figures/primary-f000050-single-overview.png": "9d0b76df42179aa17edd632149b5c4868c452b938cc605e6a3ce7c606a691624",
+    "figures/primary-f000050-single-timeline.png": "6fae7295b13ede2d758bfccfcbeed5c463785ba712fb5c721ca1195687203603",
+    "packet_metrics.jsonl": "0ea6a63fc51a7d8dc5fcb86bd3048230d8276a87c0abc08fc467c4d623266553",
+    "raw_windows/primary-f000050-0.5s.npz": "0423cebc18410f06b830682b2d0d9dad29aec2920f5d5a93a40e7ce0afbec363",
+    "raw_windows/primary-f000050-1s.npz": "f299eaf54642bc313bd3dc046a9665c390f71936b772578c85211965b9001f52",
+    "raw_windows/primary-f000050-2s.npz": "639ce14f77b4d1061fd74dd238492904a7e5c20b65e672461202e8181e78a5df",
+    "raw_windows/primary-f000050-5s.npz": "be84c21ae679e555b418dfb571632701f083b8db5041b564eb7cd7eb8ec5c115",
+    "raw_windows/primary-f000050-single.npz": "a6c7805434cf7e588a1de7000d822fd7eef99cca33c7661973543d1b09130b1d",
+    "REPORT.md": "18c85a73427e0ae705b42d495a3e13913dcb7cdd2f67e020fcd23eeff997b377",
+    "window_metrics.jsonl": "295275cc904e867e49839205bd6e2f22d5f162d22f231fd0115796b52f33f507"
+  }
+}

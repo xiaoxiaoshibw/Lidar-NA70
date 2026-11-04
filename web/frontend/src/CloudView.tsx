@@ -12,7 +12,7 @@ export type RangeMeasurement = {
   vertical: number;
 };
 export type ViewHandle = { view: (name: string) => void };
-export type MapCloud = { key: string; positions: Float32Array; intensity: Float32Array };
+export type MapCloud = { key: string; positions: Float32Array; intensity: Float32Array; support?: Float32Array };
 export type Marker = { position: number[]; color: [number, number, number] };
 type Cloud = { key: string; mesh: THREE.Points; count: number; samples: THREE.Vector3[]; bounds: THREE.Box3; positions: Float32Array };
 type World = { scene: THREE.Scene; camera: THREE.OrthographicCamera; renderer: THREE.WebGLRenderer; controls: OrbitControls; material: THREE.ShaderMaterial; chunks: Map<number, Cloud>; map: Cloud | null; grid: THREE.GridHelper; axes: THREE.AxesHelper; overlay: THREE.Group; center: THREE.Vector3; radius: number; bodyCenter: THREE.Vector3; bodyRadius: number; span: number; autoFit: boolean; capture: string };
@@ -25,6 +25,7 @@ const vertexShader = `
   attribute float intensity;
   attribute float motion;
   attribute float tint;
+  attribute float support;
   varying float value;
   varying float radius;
   varying float moving;
@@ -35,7 +36,7 @@ const vertexShader = `
     radius = length(position);
     moving = motion;
     tinted = tint;
-    value = mode < 0.5 ? position.z : (mode < 1.5 ? intensity : radius);
+    value = mode < 0.5 ? position.z : (mode < 1.5 ? intensity : (mode < 2.5 ? radius : log2(1.0 + support)));
     gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
     gl_PointSize = pointSize;
   }
@@ -140,13 +141,14 @@ function nearestSample(w: World, event: MouseEvent, maxPixels = 18) {
   }
   return target?.clone() ?? null;
 }
-function buildCloud(material: THREE.ShaderMaterial, key: string, positions: Float32Array, intensity: ArrayLike<number>, tint: number, sampleBudget = 512): Cloud {
+function buildCloud(material: THREE.ShaderMaterial, key: string, positions: Float32Array, intensity: ArrayLike<number>, tint: number, sampleBudget = 512, support?: Float32Array): Cloud {
   const count = Math.floor(positions.length / 3);
   const geometry = new THREE.BufferGeometry();
   geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
   geometry.setAttribute('intensity', new THREE.BufferAttribute(intensity instanceof Uint8Array ? intensity : new Uint8Array(intensity), 1));
   geometry.setAttribute('motion', new THREE.BufferAttribute(new Uint8Array(count), 1));
   geometry.setAttribute('tint', new THREE.BufferAttribute(tint ? new Uint8Array(count).fill(1) : new Uint8Array(count), 1));
+  geometry.setAttribute('support', new THREE.BufferAttribute(support ?? new Float32Array(count), 1));
   const bounds = new THREE.Box3(), point = new THREE.Vector3(), samples: THREE.Vector3[] = [];
   const stride = Math.max(1, Math.floor(count / sampleBudget));
   for (let i = 0; i < count; i++) {
@@ -164,13 +166,13 @@ function disposeCloud(w: World, cloud: Cloud) {
 }
 
 export const CloudView = forwardRef<ViewHandle, {
-  frames: Frame[]; settings: Settings; capture: string; focusIndex: number; trail?: number[][]; selectedBand?: number | null;
+  frames: Frame[]; settings: Settings; capture: string; focusIndex: number; playbackActive?: boolean; trail?: number[][]; selectedBand?: number | null;
   map?: MapCloud | null; trajectory?: number[][][]; markers?: Marker[];
   activeTool?: ViewerTool; measurement?: RangeMeasurement | null;
   onMeasure?: (measurement: RangeMeasurement | null) => void;
   onStats: (count: number, fps: number, camera: { azimuth: number; polar: number }) => void;
   onChunkNeeded?: (box: { min: number[]; max: number[] }) => void;
-}>(function CloudView({ frames, settings, capture, focusIndex, trail, selectedBand, map, trajectory, markers, activeTool = 'navigate', measurement, onMeasure, onStats, onChunkNeeded }, ref) {
+}>(function CloudView({ frames, settings, capture, focusIndex, playbackActive = false, trail, selectedBand, map, trajectory, markers, activeTool = 'navigate', measurement, onMeasure, onStats, onChunkNeeded }, ref) {
   const host = useRef<HTMLDivElement>(null);
   const world = useRef<World | null>(null);
   const stats = useRef(onStats); stats.current = onStats;
@@ -280,7 +282,12 @@ export const CloudView = forwardRef<ViewHandle, {
       w.chunks.clear(); w.capture = capture; w.autoFit = true;
     }
     const total = frames.reduce((sum, frame) => sum + frame.meta.point_count, 0);
-    const stride = settings.budget === 0 ? 1 : Math.max(1, Math.ceil(total / settings.budget));
+    // Dense raw windows remain available when paused. During playback, draw a
+    // bounded preview so frame loading and GPU uploads can keep up with time.
+    const displayBudget = playbackActive
+      ? Math.min(settings.budget || Number.POSITIVE_INFINITY, 1_000_000)
+      : settings.budget;
+    const stride = displayBudget === 0 ? 1 : Math.max(1, Math.ceil(total / displayBudget));
     const groups = new Map<number, Frame[]>();
     for (const frame of frames) { const group = Math.floor(frame.meta.index / 25); if (!groups.has(group)) groups.set(group, []); groups.get(group)!.push(frame); }
     for (const [id, chunk] of w.chunks) if (!groups.has(id)) { w.scene.remove(chunk.mesh); chunk.mesh.geometry.dispose(); w.chunks.delete(id); }
@@ -307,12 +314,13 @@ export const CloudView = forwardRef<ViewHandle, {
       geometry.setAttribute('intensity', new THREE.BufferAttribute(intensities.subarray(0,n), 1));
       geometry.setAttribute('motion', new THREE.BufferAttribute(motions.subarray(0,n), 1));
       geometry.setAttribute('tint', new THREE.BufferAttribute(new Uint8Array(n), 1));
+      geometry.setAttribute('support', new THREE.BufferAttribute(new Float32Array(n), 1));
       const mesh = new THREE.Points(geometry, w.material); mesh.frustumCulled = false;
       const old = w.chunks.get(id); if (old) { w.scene.remove(old.mesh); old.mesh.geometry.dispose(); }
       w.chunks.set(id, { key, mesh, count: n, samples, bounds, positions: positions.subarray(0, n * 3) }); w.scene.add(mesh);
     }
     refit(w);
-  }, [frames, capture, settings.budget]);
+  }, [frames, capture, settings.budget, playbackActive]);
 
   // The fused map is produced by the backend and arrives as voxel chunks. The
   // browser never transforms a point to build it.
@@ -325,7 +333,7 @@ export const CloudView = forwardRef<ViewHandle, {
     }
     if (w.map?.key === key) return;
     if (w.map) disposeCloud(w, w.map);
-    w.map = buildCloud(w.material, key, map.positions, map.intensity, 1, 1024);
+    w.map = buildCloud(w.material, key, map.positions, map.intensity, 1, 1024, map.support);
     w.scene.add(w.map.mesh);
     refit(w);
   }, [map, capture]);
@@ -345,7 +353,7 @@ export const CloudView = forwardRef<ViewHandle, {
     w.material.transparent = settings.opacity < 1; w.material.depthWrite = settings.opacity === 1;
     u.minDistance.value = settings.min; u.maxDistance.value = settings.max;
     u.showMotion.value = settings.showMotion ? 1 : 0;
-    u.mode.value = settings.color === 'height' ? 0 : settings.color === 'intensity' ? 1 : 2;
+    u.mode.value = settings.color === 'height' ? 0 : settings.color === 'intensity' ? 1 : settings.color === 'support' ? 3 : 2;
     const clouds = [...w.chunks.values(), ...(w.map ? [w.map] : [])];
     const values: number[] = []; let n = 0;
     for (const cloud of clouds) {
@@ -356,9 +364,17 @@ export const CloudView = forwardRef<ViewHandle, {
       }
       for (const p of cloud.samples) { const d = p.length(); if (d >= settings.min && d <= settings.max) values.push(settings.color === 'height' ? p.z : d); }
     }
-    u.low.value = settings.color === 'intensity' ? 0 : quantile(values,.02);
-    u.high.value = settings.color === 'intensity' ? 255 : quantile(values,.98);
-    count.current = n; stats.current(n, measuredFps.current, cameraAngles(w)); setLegend([u.low.value,u.high.value]);
+    if (settings.color === 'support' && map?.support?.length) {
+      const sampled = Array.from(map.support.filter((_, i) => i % Math.max(1, Math.floor(map.support!.length / 2048)) === 0));
+      u.low.value = Math.log2(1 + quantile([...sampled], .02));
+      u.high.value = Math.log2(1 + quantile(sampled, .98));
+      setLegend([Math.pow(2, u.low.value) - 1, Math.pow(2, u.high.value) - 1]);
+    } else {
+      u.low.value = settings.color === 'intensity' ? 0 : quantile(values,.02);
+      u.high.value = settings.color === 'intensity' ? 255 : quantile(values,.98);
+      setLegend([u.low.value, u.high.value]);
+    }
+    count.current = n; stats.current(n, measuredFps.current, cameraAngles(w));
   }, [frames, settings, capture, map]);
 
   useEffect(() => {
@@ -443,6 +459,6 @@ export const CloudView = forwardRef<ViewHandle, {
 
   return <><div className={`cloud-canvas ${activeTool === 'range' ? 'range-cursor' : ''}`} ref={host} data-testid="cloud-canvas" />
     {error && <div className="canvas-error">{error}</div>}
-    {frames.length > 0 && <div className="legend"><span>{settings.color === 'height' ? '高度 Z · m' : settings.color === 'intensity' ? '反射率' : '距离 · m'}</span><div className="spectrum"/><div className="legend-values"><span>{legend[0].toFixed(1)}</span><span>{legend[1].toFixed(1)}</span></div></div>}
+    {(frames.length > 0 || map) && <div className="legend"><span>{settings.color === 'height' ? '高度 Z · m' : settings.color === 'intensity' ? '反射率' : settings.color === 'support' ? '每体素回波数 · 对数色阶' : '距离 · m'}</span><div className="spectrum"/><div className="legend-values"><span>{legend[0].toFixed(settings.color === 'support' ? 0 : 1)}</span><span>{legend[1].toFixed(settings.color === 'support' ? 0 : 1)}</span></div></div>}
   </>;
 });
