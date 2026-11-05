@@ -8,8 +8,9 @@ Ethernet/IPv4/UDP 帧头写入经典 PCAP 2.4（network=1），``web/backend/dec
 
 局限（写入日志与质量报告）：
 
-* Windows 拿不到内核丢包计数，``dropped`` 恒为 0，不代表真的零丢包。
-* 合成帧头的 MAC 置零、IP 头校验和为真实计算，但源 MAC 无法从 UDP socket 得知。
+* Windows 拿不到内核丢包计数，``dropped`` 为 None（未知）。
+* 合成帧头的 MAC 置零。通配绑定时目标 IP 无法由 recvfrom 得知，填 0.0.0.0；
+  指定绑定地址时填绑定地址，均不是抓到的网络帧。
 """
 
 from __future__ import annotations
@@ -40,18 +41,6 @@ def _ip_checksum(header):
     return (~total) & 0xFFFF
 
 
-def local_ip_toward(peer):
-    """取本机到 peer 的路由源地址（UDP connect 不发包）。"""
-    probe = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-    try:
-        probe.connect((peer, 9))
-        return probe.getsockname()[0]
-    except OSError:
-        return "0.0.0.0"
-    finally:
-        probe.close()
-
-
 class UdpLidarCapture:
     """与 ``LidarCapture`` 同一鸭子接口的 UDP 抓包器（读线程 + PCAP 落盘）。"""
 
@@ -73,7 +62,7 @@ class UdpLidarCapture:
         self.started_mono = None
         self.ended_unix = None
         self.ended_mono = None
-        self.stats = {"captured": 0, "received": 0, "dropped": 0}
+        self.stats = {"captured": 0, "received": 0, "dropped": None}
         self.state = "idle"
         self.error = ""
         self._lock = threading.Lock()
@@ -85,6 +74,7 @@ class UdpLidarCapture:
         self._arrivals = deque()
         self._worker_error = ""
         self._local_ip = None
+        self._synthetic_destination_ip = "0.0.0.0"
 
     # ------------------------------------------------------------- internals
     def _log_line(self, message):
@@ -96,9 +86,14 @@ class UdpLidarCapture:
         if self._socket_factory is not None:
             return self._socket_factory()
         sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-        sock.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
-        sock.bind((self.bind_host, self.port))
-        sock.settimeout(0.2)
+        try:
+            if hasattr(socket, "SO_EXCLUSIVEADDRUSE"):
+                sock.setsockopt(socket.SOL_SOCKET, socket.SO_EXCLUSIVEADDRUSE, 1)
+            sock.bind((self.bind_host, self.port))
+            sock.settimeout(0.2)
+        except Exception:
+            sock.close()
+            raise
         return sock
 
     def _frame(self, payload, src_ip, dst_ip, src_port):
@@ -153,11 +148,8 @@ class UdpLidarCapture:
                 while self._arrivals and self._arrivals[0] < cutoff:
                     self._arrivals.popleft()
             src_ip, src_port = sender[0], sender[1]
-            if self._local_ip is None:
-                self._local_ip = local_ip_toward(src_ip)
-                self._log_line(f"local_ip={self._local_ip} sender={src_ip}:{src_port}")
             try:
-                self._write_record(self._frame(payload, src_ip, self._local_ip, src_port), unix)
+                self._write_record(self._frame(payload, src_ip, self._synthetic_destination_ip, src_port), unix)
             except OSError as exc:
                 self._record_worker_error(exc)
                 break
@@ -181,9 +173,24 @@ class UdpLidarCapture:
             self._log.close()
             self._log = None
             raise LidarError(f"无法绑定 UDP 端口 {self.port}（被占用或防火墙拦截）：{exc}") from exc
-        self._pcap_file = open(self.pcap, "wb")
-        self._pcap_file.write(struct.pack("<IHHiIII", 0xA1B2C3D4, 2, 4, 0, 0, 65535, 1))
-        self._pcap_file.flush()
+        bound_ip = self._sock.getsockname()[0]
+        self._local_ip = bound_ip if bound_ip != "0.0.0.0" else None
+        self._synthetic_destination_ip = self._local_ip or "0.0.0.0"
+        self._log_line(f"bound_ip={bound_ip} synthetic_destination_ip={self._synthetic_destination_ip} "
+                       "destination_source=bound_address_or_unknown; headers=synthesized")
+        try:
+            self._pcap_file = open(self.pcap, "wb")
+            self._pcap_file.write(struct.pack("<IHHiIII", 0xA1B2C3D4, 2, 4, 0, 0, 65535, 1))
+            self._pcap_file.flush()
+        except Exception:
+            self._sock.close()
+            self._sock = None
+            if self._pcap_file is not None:
+                self._pcap_file.close()
+                self._pcap_file = None
+            self._log.close()
+            self._log = None
+            raise
         self.started_unix = self.wall()
         self.started_mono = self.clock()
         self._stop.clear()
@@ -210,10 +217,10 @@ class UdpLidarCapture:
                 self._sock.close()
             except OSError:
                 pass
-            self._sock = None
         self._thread.join(timeout=timeout)
         if self._thread.is_alive():
             raise LidarError("UDP 读取线程未停止，保留文件句柄")
+        self._sock = None
         self._thread = None
         self.ended_unix = self.wall()
         self.ended_mono = self.clock()
@@ -234,7 +241,7 @@ class UdpLidarCapture:
         self.session.event("lidar_stopped",
                            pcap_bytes=self.pcap.stat().st_size if self.pcap.exists() else 0,
                            **self.stats,
-                           note="dropped 由 tcpdump 才可得，UDP 采集恒 0 不代表零丢包")
+                           note="UDP 采集无法获取内核丢包计数")
         return self.status()
 
     # ----------------------------------------------------------------- status
@@ -245,7 +252,7 @@ class UdpLidarCapture:
             arrivals = tuple(self._arrivals)
             state, error = self.state, self.error
         now = self.clock()
-        recent = len(arrivals)
+        recent = sum(t >= now - self.rate_window for t in arrivals)
         if state == "live":
             span = min(self.rate_window, max(now - (self.started_mono or now), 1e-6))
             rate = recent / span if recent else 0.0
@@ -261,6 +268,8 @@ class UdpLidarCapture:
             "bind_host": self.bind_host or "0.0.0.0",
             "port": self.port,
             "local_ip": self._local_ip,
+            "synthetic_destination_ip": self._synthetic_destination_ip,
+            "destination_source": "bound_address" if self._local_ip else "unknown",
             "pcap": str(self.pcap),
             "pcap_bytes": size,
             "started_unix": self.started_unix,

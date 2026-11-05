@@ -1,0 +1,110 @@
+{
+  "schema": "na70-capture-session-v1",
+  "session_id": "20261104-170341",
+  "created_unix": 1793783021.615761,
+  "created_local": "2026-11-04T17:03:41+0800",
+  "finalized_unix": 1793783121.9613333,
+  "status": "degraded",
+  "host": {
+    "hostname": "小小史",
+    "platform": "Windows-11-10.0.26300-SP0",
+    "machine": "AMD64",
+    "python": "3.12.10",
+    "user": "30680"
+  },
+  "operator": {
+    "note": "",
+    "task": "MANUAL-100S"
+  },
+  "devices": {
+    "imu": {
+      "protocol": "YESENSE 0x59/0x53, 67 B frames",
+      "port": "COM12",
+      "baud": 460800,
+      "units": {
+        "accel": "m/s^2",
+        "gyro": "deg/s",
+        "euler": "deg"
+      },
+      "unit_evidence": {
+        "accel": "verified",
+        "gyro": "inferred",
+        "euler": "inferred"
+      },
+      "sample_time_field": false,
+      "sample_time_frames": 0,
+      "time_level": "host_receive_only"
+    },
+    "lidar": {
+      "iface": null,
+      "udp_port": 2368,
+      "payload_bytes_expected": 1410,
+      "capture": "udp socket (synthesized Ethernet/IP/UDP headers, raw payload only)"
+    }
+  },
+  "windows": {
+    "session": {
+      "start_unix": 1793783021.6167617,
+      "end_unix": 1793783121.9593332
+    },
+    "imu": {
+      "start_unix": 1793783021.646631,
+      "end_unix": 1793783121.9291718
+    },
+    "lidar": {
+      "start_unix": 1793783021.6486304,
+      "end_unix": 1793783121.9573324
+    },
+    "overlap_s": 100.281
+  },
+  "notes": [
+    "IMU 实测 200.0 Hz"
+  ],
+  "files": [
+    {
+      "path": "events.jsonl",
+      "bytes": 1039,
+      "sha256": "b5718a658e7364f31e4811b421a5639f787369dc70f33e0fcee8b92cbfb0a188"
+    },
+    {
+      "path": "imu_frames.jsonl",
+      "bytes": 5334244,
+      "sha256": "c661d5510be9e797e4d5fecd5dcf812bb0ab676f6b80957ddf629c454adee92b"
+    },
+    {
+      "path": "imu_host_receive.csv",
+      "bytes": 3264597,
+      "sha256": "5f7cd54afd3df0541b34bfda090bce471b2b18584b07dcba3802567332173632"
+    },
+    {
+      "path": "operator.json",
+      "bytes": 263,
+      "sha256": "a6a4b8e77d3699ea409771d922ab6a797014859d8e03e79422a6293c1e608b81"
+    },
+    {
+      "path": "quality.json",
+      "bytes": 2857,
+      "sha256": "9bdf777b4979668d67f66e2d26bab78fa4e5fa5a5306e3bfc4b1dd9f1c5b3fb8"
+    },
+    {
+      "path": "raw/imu.bin",
+      "bytes": 1343488,
+      "sha256": "f5ab2ae326ffbdbeb35bab62f5d640666dbcf904d162f5be37de5f1d491bde8c"
+    },
+    {
+      "path": "raw/imu_chunks.jsonl",
+      "bytes": 16542,
+      "sha256": "c161a6e25147ef34fb539e720a08e12eb219d91cd33d84d00c4f3ed48fc45ed2"
+    },
+    {
+      "path": "raw/lidar-udp.log",
+      "bytes": 69,
+      "sha256": "2902a05c526cec6617e22f3a7155b54b871630e171d82d5ce20858465b9cbc31"
+    },
+    {
+      "path": "raw/lidar.pcap",
+      "bytes": 122359292,
+      "sha256": "e0e4d9f73d4332f0ac40aad18f264d26d1cbb1888756c2d837ba828a71bc3128"
+    }
+  ]
+}

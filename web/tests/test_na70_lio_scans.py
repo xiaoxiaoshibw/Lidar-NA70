@@ -48,6 +48,14 @@ def test_time_quality_reports_packet_gap():
     assert report["points_per_packet"] == 200
 
 
+def test_time_quality_checks_frame_boundary_and_equal_packet_times():
+    points, _ = frame(2)
+    scans = build_scans([(points, [10.0, 10.0]), (points, [10.5, 10.51])])
+    report = time_quality(scans, max_packet_gap_s=0.2)
+    assert report["max_packet_gap_s"] == pytest.approx(0.5)
+    assert report["gaps_over_limit"] == 1
+
+
 def test_save_load_roundtrip_without_pickle(tmp_path):
     scans = build_scans([frame(2)])
     path = save_npz(tmp_path / "scans.npz", scans, note="SYNTHETIC")

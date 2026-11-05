@@ -1,0 +1,136 @@
+{
+  "python": "3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]",
+  "executable": "D:\\Code\\radar\\web\\.venv\\Scripts\\python.exe",
+  "commands": {
+    "integrity": {
+      "argv": [
+        "D:\\Code\\radar\\web\\.venv\\Scripts\\python.exe",
+        "tools/audit_na70_session.py",
+        "radar_capture_data\\na70_sessions\\20261104-170341"
+      ],
+      "exit_code": 0
+    },
+    "imu-replay": {
+      "argv": [
+        "D:\\Code\\radar\\web\\.venv\\Scripts\\python.exe",
+        "tools/audit_na70_imu.py",
+        "radar_capture_data\\na70_sessions\\20261104-170341"
+      ],
+      "exit_code": 0
+    },
+    "overlap": {
+      "argv": [
+        "D:\\Code\\radar\\web\\.venv\\Scripts\\python.exe",
+        "tools/audit_na70_overlap.py",
+        "radar_capture_data\\na70_sessions\\20261104-170341\\raw\\lidar.pcap",
+        "radar_capture_data\\na70_sessions\\20261104-170341\\raw\\imu_chunks.jsonl"
+      ],
+      "exit_code": 0
+    },
+    "timebase": {
+      "argv": [
+        "D:\\Code\\radar\\web\\.venv\\Scripts\\python.exe",
+        "tools/audit_na70_imu_timebase.py",
+        "--frames",
+        "radar_capture_data\\na70_sessions\\20261104-170341\\imu_frames.jsonl",
+        "--chunks",
+        "radar_capture_data\\na70_sessions\\20261104-170341\\raw\\imu_chunks.jsonl",
+        "--output",
+        "D:\\Code\\radar\\Plan\\evidence\\slam\\20261104-session-independent-recheck\\timebase.json"
+      ],
+      "exit_code": 0
+    }
+  },
+  "inventory": [
+    {
+      "path": "radar_capture_data\\na70_sessions\\20261104-170341\\events.jsonl",
+      "bytes": 1039,
+      "sha256": "b5718a658e7364f31e4811b421a5639f787369dc70f33e0fcee8b92cbfb0a188"
+    },
+    {
+      "path": "radar_capture_data\\na70_sessions\\20261104-170341\\imu_frames.jsonl",
+      "bytes": 5334244,
+      "sha256": "c661d5510be9e797e4d5fecd5dcf812bb0ab676f6b80957ddf629c454adee92b"
+    },
+    {
+      "path": "radar_capture_data\\na70_sessions\\20261104-170341\\imu_host_receive.csv",
+      "bytes": 3264597,
+      "sha256": "5f7cd54afd3df0541b34bfda090bce471b2b18584b07dcba3802567332173632"
+    },
+    {
+      "path": "radar_capture_data\\na70_sessions\\20261104-170341\\manifest.json",
+      "bytes": 2971,
+      "sha256": "e87d2ddb21a7e1ec42ab4941919388f6e179392da10a8897a1b3f016feaae864"
+    },
+    {
+      "path": "radar_capture_data\\na70_sessions\\20261104-170341\\operator.json",
+      "bytes": 263,
+      "sha256": "a6a4b8e77d3699ea409771d922ab6a797014859d8e03e79422a6293c1e608b81"
+    },
+    {
+      "path": "radar_capture_data\\na70_sessions\\20261104-170341\\quality.json",
+      "bytes": 2857,
+      "sha256": "9bdf777b4979668d67f66e2d26bab78fa4e5fa5a5306e3bfc4b1dd9f1c5b3fb8"
+    },
+    {
+      "path": "radar_capture_data\\na70_sessions\\20261104-170341\\raw\\imu.bin",
+      "bytes": 1343488,
+      "sha256": "f5ab2ae326ffbdbeb35bab62f5d640666dbcf904d162f5be37de5f1d491bde8c"
+    },
+    {
+      "path": "radar_capture_data\\na70_sessions\\20261104-170341\\raw\\imu_chunks.jsonl",
+      "bytes": 16542,
+      "sha256": "c161a6e25147ef34fb539e720a08e12eb219d91cd33d84d00c4f3ed48fc45ed2"
+    },
+    {
+      "path": "radar_capture_data\\na70_sessions\\20261104-170341\\raw\\lidar-udp.log",
+      "bytes": 69,
+      "sha256": "2902a05c526cec6617e22f3a7155b54b871630e171d82d5ce20858465b9cbc31"
+    },
+    {
+      "path": "radar_capture_data\\na70_sessions\\20261104-170341\\raw\\lidar.pcap",
+      "bytes": 122359292,
+      "sha256": "e0e4d9f73d4332f0ac40aad18f264d26d1cbb1888756c2d837ba828a71bc3128"
+    },
+    {
+      "path": "tools\\audit_na70_session.py",
+      "bytes": 6603,
+      "sha256": "7a6a2927b58fe4103915bbf4e1ba86fc28bfbaa17159643d30e9eea31a0ff928"
+    },
+    {
+      "path": "tools\\audit_na70_imu.py",
+      "bytes": 4511,
+      "sha256": "d0c23ac92f9b797410b76e2e40a9689222a73a7d994e6c263af2743595278192"
+    },
+    {
+      "path": "tools\\audit_na70_overlap.py",
+      "bytes": 2780,
+      "sha256": "62ee11b23674b8417c5c06644ab153ee2832d114524fbaba23dd0a9fcf6da54e"
+    },
+    {
+      "path": "tools\\audit_na70_imu_timebase.py",
+      "bytes": 9479,
+      "sha256": "f5a51981e6bf2b330b4d3725f0a40d3910da27471ca02f9433a7b0117ee9dc0c"
+    },
+    {
+      "path": "packages\\na70_core\\na70_core\\capture\\yesense.py",
+      "bytes": 5286,
+      "sha256": "40388d444bc8184a32e7f0198dbb96fea73ed981a20306bee05b7d666c3076c9"
+    },
+    {
+      "path": "packages\\na70_core\\na70_core\\capture\\imu.py",
+      "bytes": 15847,
+      "sha256": "7d81df1d4ea0503e87224f4edd90c6d90b00c61be1f5a6e7c39898d90e6062f7"
+    },
+    {
+      "path": "web\\backend\\decoder.py",
+      "bytes": 12940,
+      "sha256": "a1ffe8e1fc2bf763bac3d4f9cbced095cbcade103c01302f2db15db60e482f9d"
+    },
+    {
+      "path": "Plan\\evidence\\slam\\20261104-session-independent-recheck\\recheck.py",
+      "bytes": 2280,
+      "sha256": "2317a2d5c0a3bef5821b1c1f9de9b0ebb4393cf10cc2013040316cf7dea94b31"
+    }
+  ]
+}

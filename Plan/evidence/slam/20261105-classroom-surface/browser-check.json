@@ -1,0 +1,16 @@
+{
+  "data": {
+    "traces": 6,
+    "types": [
+      "mesh3d",
+      "scatter3d",
+      "mesh3d",
+      "scatter3d",
+      "mesh3d",
+      "scatter3d"
+    ],
+    "buttons": 3,
+    "webgl": true
+  },
+  "errors": []
+}

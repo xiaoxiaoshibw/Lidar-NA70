@@ -1,0 +1,14 @@
+{
+  "status": "PASS",
+  "checks": [
+    "nearest-degree boundaries",
+    "yaw unwrap",
+    "all selected observations accounted once",
+    "actual-angle bins",
+    "rigid rotation preserves range",
+    "raw distance-code correspondence",
+    "source-index bounds",
+    "per-batch counts"
+  ],
+  "geometry_accuracy_validated": false
+}

@@ -38,7 +38,7 @@ def _fmt(value):
 class ImuRecorder:
     def __init__(self, session, port, *, baud=460800, queue_max=20000,
                  flush_interval=1.0, reconnect_delay=1.0, read_timeout=0.05,
-                 clock=time.monotonic, wall=time.time, serial_factory=None,
+                 clock=time.perf_counter, wall=time.time, serial_factory=None,
                  max_read_bytes=8192, rate_window=2.0):
         self.session = session
         self.port = str(port)
@@ -50,6 +50,8 @@ class ImuRecorder:
         self.clock = clock
         self.wall = wall
         self.max_read_bytes = int(max_read_bytes)
+        if self.max_read_bytes < 1:
+            raise ValueError("max_read_bytes must be positive")
         self.rate_window = float(rate_window)
         self._serial_factory = serial_factory
         self._lock = threading.Lock()
@@ -57,6 +59,8 @@ class ImuRecorder:
         self._queue = queue.Queue(maxsize=self.queue_max)
         self._reader = None
         self._writer = None
+        self._device = None
+        self._device_lock = threading.Lock()
         self._raw = None
         self._chunks = None
         self._frames_file = None
@@ -116,7 +120,9 @@ class ImuRecorder:
         self._reader = threading.Thread(target=self._run_worker, args=(self._read_loop,), name="imu-reader", daemon=True)
         self._writer.start()
         self._reader.start()
-        self.session.event("imu_started", port=self.port, baud=self.baud, segment=self.segment)
+        self.session.event("imu_started", port=self.port, baud=self.baud, segment=self.segment,
+                           monotonic_clock=getattr(self.clock, "__name__", "injected"),
+                           wall_clock=getattr(self.wall, "__name__", "injected"))
         return self
 
     # ------------------------------------------------------------------- stop
@@ -124,6 +130,13 @@ class ImuRecorder:
         if self._reader is None:
             return self.status()
         self._stop.set()
+        # 某些串口驱动可能不按配置的超时返回；取消阻塞读取以保证收尾。
+        with self._device_lock:
+            if self._device is not None and hasattr(self._device, "cancel_read"):
+                try:
+                    self._device.cancel_read()
+                except (OSError, ValueError) as exc:
+                    self.session.event("imu_cancel_read_failed", error=str(exc))
         self._reader.join(timeout=timeout)
         if self._reader.is_alive():
             raise RuntimeError("IMU 读取线程未停止，保留文件句柄")
@@ -188,20 +201,31 @@ class ImuRecorder:
                     break
                 continue
             with device:
-                if self.frames:
-                    self.segment += 1  # 已有数据后重连 → 新 segment，避免混段
-                self._set_state("live")
-                self.session.event("imu_segment_open", segment=self.segment, port=self.port)
-                while not self._stop.is_set():
-                    try:
-                        chunk = device.read(self.max_read_bytes)
-                    except Exception as exc:  # noqa: BLE001
-                        self.reconnects += 1
-                        self._set_state("disconnected", str(exc))
-                        self.session.event("imu_read_failed", error=str(exc), segment=self.segment)
-                        break
-                    if chunk:
-                        self._on_chunk(parser, chunk)
+                with self._device_lock:
+                    self._device = device
+                try:
+                    if self.frames:
+                        self.segment += 1  # 已有数据后重连 → 新 segment，避免混段
+                    self._set_state("live")
+                    self.session.event("imu_segment_open", segment=self.segment, port=self.port)
+                    while not self._stop.is_set():
+                        try:
+                            # 已排队的字节尽快返回；空队列只等待 1 字节。
+                            # 这里记录的仍是主机读取完成时间，不是设备采样时间。
+                            waiting = device.in_waiting
+                            chunk = device.read(min(self.max_read_bytes, max(1, waiting)))
+                        except Exception as exc:  # noqa: BLE001
+                            if self._stop.is_set():
+                                break
+                            self.reconnects += 1
+                            self._set_state("disconnected", str(exc))
+                            self.session.event("imu_read_failed", error=str(exc), segment=self.segment)
+                            break
+                        if chunk:
+                            self._on_chunk(parser, chunk)
+                finally:
+                    with self._device_lock:
+                        self._device = None
                 parser.reset()
                 self.discarded_bytes += parser.discarded_bytes
                 parser.discarded_bytes = 0

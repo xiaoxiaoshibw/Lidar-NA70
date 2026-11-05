@@ -14,6 +14,7 @@ export default defineConfig({
     { name: 'cloud-binary', testMatch: /cloud-binary\.spec\.ts/ },
     { name: 'capture', testMatch: /capture\.spec\.ts/ },
     { name: 'capture-hardware', testMatch: /capture-hardware\.spec\.ts/ },
+    { name: 'local-capture', testMatch: /local-capture\.spec\.ts/ },
   ],
   use: { baseURL: process.env.NA70_E2E_BASE_URL || 'http://127.0.0.1:8765', browserName: 'chromium', viewport: { width: 1440, height: 960 }, screenshot: 'only-on-failure', trace: 'retain-on-failure', launchOptions: { args: ['--use-angle=d3d11'] } },
   outputDir: '../test-results/browser', reporter: [['list'], ['json', { outputFile: '../test-results/playwright.json' }]],

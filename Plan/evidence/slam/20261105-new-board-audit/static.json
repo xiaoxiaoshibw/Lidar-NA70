@@ -1,0 +1,100 @@
+{
+  "schema": "na70-imu-static-v1",
+  "status": "REJECTED",
+  "sample_count": 4185,
+  "segments": [
+    0
+  ],
+  "windows": [
+    {
+      "segment": 0,
+      "window": 0,
+      "samples": 2001,
+      "host_span_s": 9.99993299995549,
+      "status": "REJECTED",
+      "failed_checks": [
+        "accel_axis_std",
+        "accel_norm_std",
+        "gyro_axis_std"
+      ],
+      "accel_mean_m_s2": [
+        0.133866428285857,
+        0.1976261634182909,
+        9.77877646926537
+      ],
+      "accel_std_m_s2": [
+        0.3036575648806265,
+        0.3716845386483463,
+        0.18370346361440257
+      ],
+      "gyro_mean_deg_s": [
+        0.1619714292853574,
+        -0.11612424537731134,
+        -0.030306072463768156
+      ],
+      "gyro_std_deg_s": [
+        0.39504194100000795,
+        0.29538043050796753,
+        0.07310729783171607
+      ],
+      "accel_mean_norm_m_s2": 9.78168929975531,
+      "max_host_gap_s": 0.01926700002513826
+    },
+    {
+      "segment": 0,
+      "window": 1,
+      "samples": 2184,
+      "host_span_s": 10.915072999894619,
+      "status": "REJECTED",
+      "failed_checks": [
+        "accel_axis_std",
+        "accel_norm_std",
+        "gyro_axis_std"
+      ],
+      "accel_mean_m_s2": [
+        0.12900577655677647,
+        0.19666568589743616,
+        9.775281696428571
+      ],
+      "accel_std_m_s2": [
+        0.302635957406912,
+        0.3710000597687256,
+        0.18189685338331
+      ],
+      "gyro_mean_deg_s": [
+        0.16999657417582428,
+        -0.11728087133699625,
+        -0.030750666208791154
+      ],
+      "gyro_std_deg_s": [
+        0.3940575376018715,
+        0.29317701332896523,
+        0.07703829726699757
+      ],
+      "accel_mean_norm_m_s2": 9.77811086697865,
+      "max_host_gap_s": 0.025040999986231327
+    }
+  ],
+  "config": {
+    "version": "imu-static-diagnostic-v1",
+    "window_s": 10.0,
+    "min_samples": 1000,
+    "min_span_s": 9.0,
+    "max_host_gap_s": 0.2,
+    "max_accel_axis_std_m_s2": 0.1,
+    "max_accel_norm_std_m_s2": 0.08,
+    "max_gyro_axis_std_deg_s": 0.2,
+    "max_gyro_mean_norm_deg_s": 0.8,
+    "accel_mean_norm_range_m_s2": [
+      9.3,
+      10.3
+    ]
+  },
+  "source_sha256": "084d24ba13f8cb7da9d26367b99b5a66c49824611e5a819dbfe7fe05f029adff",
+  "limits": [
+    "仅静置一致性诊断，不能证明物理静止或校准成功",
+    "阈值为开发阈值，非厂家指标",
+    "角速度单位仍为推断，时间为主机接收时间",
+    "不验证流完整性、同步、外参或 Allan 噪声参数"
+  ]
+}

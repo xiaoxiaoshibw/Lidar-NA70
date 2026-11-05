@@ -1,0 +1,57 @@
+
+Algorithm : SHA256
+Hash      : E0E4D9F73D4332F0AC40AAD18F264D26D1CBB1888756C2D837BA828A71BC3128
+Path      : D:\Code\radar\radar_capture_data\na70_sessions\20261104-170341\raw\lidar.pcap
+
+Algorithm : SHA256
+Hash      : C661D5510BE9E797E4D5FECD5DCF812BB0AB676F6B80957DDF629C454ADEE92B
+Path      : D:\Code\radar\radar_capture_data\na70_sessions\20261104-170341\imu_frames.jsonl
+
+Algorithm : SHA256
+Hash      : A47F91943BF8E907969CA673958244BC52A9960A520CD51C55DC47093374E6A3
+Path      : D:\Code\radar\Plan\evidence\slam\20261104-lio-diagnostic\lio-package-margin1s\imu.npz
+
+Algorithm : SHA256
+Hash      : E4ED74C719DDA7BE7B73DD3EEBB2AC4CED4A982BF56858235F3F4ECF75465B85
+Path      : D:\Code\radar\Plan\evidence\slam\20261104-lio-diagnostic\lio-package-margin1s\scans.npz
+
+Algorithm : SHA256
+Hash      : 687C85B38E5E3C16C7B9078AACE3BA535FDF2C1D15C965C9ADF9B70C4FF08654
+Path      : D:\Code\radar\Plan\evidence\slam\20261104-lio-diagnostic\trajectory.csv
+
+Algorithm : SHA256
+Hash      : 713460DDB0B273013BA61C10F0A81647BA7433FB2445068260BA1D5326154C60
+Path      : D:\Code\radar\Plan\evidence\slam\20261104-lio-diagnostic\fastlio-config.yaml
+
+Algorithm : SHA256
+Hash      : CE9E13FF1F01BBBEB974C948A8BCFDDD7745A92C35CEE9301E26042966C35061
+Path      : D:\Code\radar\Plan\evidence\slam\20261104-lio-diagnostic\fastlio.log
+
+Algorithm : SHA256
+Hash      : 813A6B6E05EAC7D976BDCD57C2F655CDA6F94207494FEA62C2D5031850A46A7F
+Path      : D:\Code\radar\tools\lio\replay_na70_package.py
+
+Algorithm : SHA256
+Hash      : 09396F69D092AF9CCEBB46C25DE347F24FE564858218B05A5F9514E0BD651884
+Path      : D:\Code\radar\tools\lio\apply_fast_lio_na70_patch.py
+
+Algorithm : SHA256
+Hash      : 81C002208BC0126860CF45952D2F954F883A96EB33A02AD826F9A8EDEEB52523
+Path      : D:\Code\radar\Plan\evidence\slam\20261104-lio-jump-investigation\analyze.py
+
+Algorithm : SHA256
+Hash      : C22250CA26C21853DE2D07781F03D36475B67203A41CC7F74105945C4BB30E16
+Path      : D:\Code\radar\Plan\evidence\slam\20261104-lio-jump-investigation\probe.py
+
+Algorithm : SHA256
+Hash      : 50746C492A4C8448640A5EB77D5A40875865A7C9AC896BA749A0991D473C0E15
+Path      : D:\Code\radar\Plan\evidence\slam\20261104-lio-jump-investigation\replay_candidate.py
+
+Algorithm : SHA256
+Hash      : AFEEE274BDEDA870DB5CE4FDE8C9329849BDB87DBC393207F1367992C76485C2
+Path      : D:\Code\radar\Plan\evidence\slam\20261104-lio-jump-investigation\run_probe.sh
+
+Algorithm : SHA256
+Hash      : 78A56B3AE1F4EA865DA91327566FDD1961B90104EC4202752397ED66BF085C9F
+Path      : D:\Code\radar\Plan\evidence\slam\20261104-lio-jump-investigation\run_probe_candidate.sh
+

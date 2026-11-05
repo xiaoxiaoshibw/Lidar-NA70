@@ -1,0 +1,29 @@
+{
+  "selection": "0 <= IMU host Unix receive time - first LiDAR host packet <= 80 s",
+  "rows": 15894,
+  "host_batches": 130,
+  "relative_first_quaternion_angle_deg_p50_p90_max": [
+    5.184806408201726,
+    7.8789670550653845,
+    11.845749881929523
+  ],
+  "gyro_units_assumed": "deg/s unverified",
+  "gyro_norm_p50_p90_p99_max": [
+    3.7089379097950514,
+    9.8304717876369,
+    21.05448540544884,
+    33.56974376356157
+  ],
+  "device_euler_units_assumed": "deg unverified, no wrap correction",
+  "euler_min_pitch_roll_yaw": [
+    -16.243572,
+    -0.986717,
+    -63.810428
+  ],
+  "euler_max_pitch_roll_yaw": [
+    -2.504462,
+    5.830736,
+    -52.006244
+  ],
+  "limits": "fused device attitude only; no inferred position or independent attitude truth; host receive not sample time"
+}

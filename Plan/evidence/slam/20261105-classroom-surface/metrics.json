@@ -1,0 +1,102 @@
+{
+  "status": "OBSERVED_SURFACE_PROTOTYPE",
+  "seconds": 4.0,
+  "python": "3.12.10",
+  "open3d": "0.20.0",
+  "config": {
+    "voxel_m": 0.08,
+    "max_range_m": 20,
+    "normal_radius_m": 0.3,
+    "normal_max_nn": 40,
+    "ball_radii_m": [
+      0.12,
+      0.2,
+      0.3
+    ],
+    "max_triangle_edge_m": 0.4,
+    "outlier_neighbors": 20,
+    "outlier_std_ratio": 2.5
+  },
+  "generator_sha256": "92f0efbcabf1d933eaa37f4d92f7f9058bcf3ecadb60c4f152bca0a909082f55",
+  "scenes": [
+    {
+      "name": "rotation_plus",
+      "source": "D:\\Code\\radar\\Plan\\evidence\\slam\\20261105-classroom-rotation-prototype\\plus.ply",
+      "source_sha256": "54b10bc5104d8f240399cad25a7cc711aca41181ba017ddb86ca72c3a34bc168",
+      "input_points": 20605,
+      "filtered_points": 18149,
+      "mesh_vertices": 12022,
+      "mesh_triangles": 16728,
+      "maximum_edge_m": 0.39944993428463593,
+      "bounds_m": [
+        [
+          -1.11785,
+          -6.2362,
+          0.7279
+        ],
+        [
+          12.6493,
+          10.8498,
+          7.7676
+        ]
+      ],
+      "watertight": false,
+      "calibration_validated": false,
+      "three_walls_verified": false
+    },
+    {
+      "name": "static",
+      "source": "D:\\Code\\radar\\Plan\\evidence\\slam\\20261105-classroom-static\\static_observations.ply",
+      "source_sha256": "70778b25dc788f374ca842b2bbfee9577fff1cbd2cff9f20a615e846c0e9c544",
+      "input_points": 50371,
+      "filtered_points": 15505,
+      "mesh_vertices": 12301,
+      "mesh_triangles": 23648,
+      "maximum_edge_m": 0.39962229945565103,
+      "bounds_m": [
+        [
+          3.40335,
+          -12.7202,
+          0.6381
+        ],
+        [
+          11.05345,
+          1.174,
+          5.9544
+        ]
+      ],
+      "watertight": false,
+      "calibration_validated": false,
+      "three_walls_verified": false
+    },
+    {
+      "name": "rotation_minus",
+      "source": "D:\\Code\\radar\\Plan\\evidence\\slam\\20261105-classroom-rotation-prototype\\minus.ply",
+      "source_sha256": "ac8a69825a381dc8ef252f64afc04c0e830234d01d1de11548a06f4794fa8197",
+      "input_points": 29537,
+      "filtered_points": 25803,
+      "mesh_vertices": 19119,
+      "mesh_triangles": 24279,
+      "maximum_edge_m": 0.39981632032722253,
+      "bounds_m": [
+        [
+          -10.1786,
+          -15.8367,
+          0.7279
+        ],
+        [
+          9.8619,
+          4.0784,
+          7.5131
+        ]
+      ],
+      "watertight": false,
+      "calibration_validated": false,
+      "three_walls_verified": false
+    }
+  ],
+  "method": "Open3D ball pivoting; statistical outliers; edge cap; no pose registration; no hole completion",
+  "sources": [
+    "https://www.open3d.org/docs/release/tutorial/geometry/surface_reconstruction.html"
+  ]
+}

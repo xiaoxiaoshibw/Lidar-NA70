@@ -104,7 +104,8 @@ class CaptureRunner:
     # ---------------------------------------------------------------- reporting
     def status(self):
         started = getattr(self.imu, "started_mono", None) if self.imu is not None else None
-        payload = {"elapsed_s": round(self.clock() - started, 3) if started else 0.0,
+        imu_clock = getattr(self.imu, "clock", self.clock)
+        payload = {"elapsed_s": round(imu_clock() - started, 3) if started is not None else 0.0,
                    "stop_reason": self.stop_reason}
         if self.imu is not None:
             payload["imu"] = self.imu.status()
@@ -157,7 +158,7 @@ class CaptureRunner:
                            "detail": f"{lidar_status['pcap_bytes']} 字节"})
             drops = lidar_status["dropped"]
             checks.append({"name": "lidar_drops", "ok": drops == 0,
-                           "detail": f"内核丢弃 {drops}"})
+                           "detail": "内核丢包计数不可用" if drops is None else f"内核丢弃 {drops}"})
         if self.stop_reason == "disk_low":
             checks.append({"name": "disk_space", "ok": False, "detail": "磁盘空间不足，提前停止"})
         if self.stop_reason == "user":
@@ -218,10 +219,12 @@ class CaptureRunner:
                 "time_level": time_level,
             } if self.imu is not None else None,
             "lidar": {
-                "iface": self.lidar.iface if self.lidar else None,
+                "iface": getattr(self.lidar, "iface", None) if self.lidar else None,
                 "udp_port": self.lidar.port if self.lidar else None,
                 "payload_bytes_expected": 1410,
                 "capture": getattr(self.lidar, "capture_method", "tcpdump -w (raw bytes only)"),
+                "synthetic_destination_ip": lidar_status.get("synthetic_destination_ip"),
+                "destination_source": lidar_status.get("destination_source"),
             } if self.lidar is not None else None,
         }
         windows = {

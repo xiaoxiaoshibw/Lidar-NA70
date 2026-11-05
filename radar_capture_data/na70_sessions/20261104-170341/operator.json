@@ -1,0 +1,10 @@
+{
+  "session_id": "20261104-170341",
+  "created_unix": 1793783021.615761,
+  "created_local": "2026-11-04T17:03:41+0800",
+  "operator": {
+    "note": "",
+    "task": "MANUAL-100S"
+  },
+  "unknown_fields": "留 None 表示未测/未知，不填估算值"
+}

@@ -1,0 +1,1 @@
+{"status": "EXPORTED_BLOCKED", "points": 2000000, "block_reasons": ["calibration_missing", "imu_does_not_bracket_scan", "motion_envelope_unverified", "time_level_C"], "output": "Plan\\evidence\\slam\\20261104-lio-diagnostic\\lio-package"}

@@ -1,0 +1,23 @@
+{
+  "status": "DIAGNOSTIC_ONLY",
+  "origin_unix_s": 1793783021.64863,
+  "frames": 834,
+  "last_frame_complete": false,
+  "imu_batches": 164,
+  "imu_frames": 20052,
+  "imu_first_s": 0.620678186416626,
+  "imu_last_s": 100.26053714752197,
+  "trajectory_poses": 81,
+  "trajectory_first_s": 2.7153780460357666,
+  "trajectory_last_s": 13.104860067367554,
+  "sources": {
+    "radar_capture_data\\na70_sessions\\20261104-170341\\raw\\lidar.pcap": "e0e4d9f73d4332f0ac40aad18f264d26d1cbb1888756c2d837ba828a71bc3128",
+    "radar_capture_data\\na70_sessions\\20261104-170341\\imu_frames.jsonl": "c661d5510be9e797e4d5fecd5dcf812bb0ab676f6b80957ddf629c454adee92b",
+    "Plan\\evidence\\slam\\20261104-lio-diagnostic\\trajectory.csv": "687c85b38e5e3c16c7b9078aace3ba535fdf2c1d15c965c9adf9b70c4ff08654"
+  },
+  "generator_sha256": "94cc61442a83f859ca886ccef2e7b964dc30c077f31f3add9bd1d1a5e8af5724",
+  "template_sha256": "f2ae5858c7b52f84fa8b4945fb4923644573d9d760d3da29536a63221a953d9a",
+  "model_sha256": "5d21083708d55e214149150ee43466be4e33b19b917d3cc7a7becc90cac1ffd1",
+  "page_sha256": "839126af9502338e3bfee331df7869ed4f811cdd02dbd9fef20ad0fc5704386e",
+  "points_per_frame": 1200
+}

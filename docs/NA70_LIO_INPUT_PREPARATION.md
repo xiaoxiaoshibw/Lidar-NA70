@@ -10,7 +10,7 @@
 
 ## 输入格式
 
-USB IMU 型号尚未知，先由实际设备驱动输出规范 CSV：
+用户确认使用 WHEELTEC（轮趣）IMU，仓库现场照片 `tools/imu_live/photos/top.png` 可见 WHEELTEC 丝印；本次串口输出符合 YESENSE 协议。具体产品子型号及其量程、同步能力仍需核实。用于输入预检时，由实际设备驱动输出规范 CSV：
 
 ```csv
 device_time_s,gx,gy,gz,ax,ay,az

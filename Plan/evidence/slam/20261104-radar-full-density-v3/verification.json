@@ -1,0 +1,18 @@
+{
+  "status": "PASS",
+  "frames_checked": 834,
+  "source_indices_and_xyzi_preserved": true,
+  "new_candidate_points": 6600738,
+  "previous_exported_points": 1000800,
+  "frames_with_1200_sampling_mismatch": 0,
+  "compare_frames_91_to_100": {
+    "all_le_150": 79005,
+    "old_le_150": 10109,
+    "all_le_50": 51925,
+    "old_le_50": 6669
+  },
+  "page_bytes": 179899740,
+  "page_parse_both_versions_seconds": 1.1263873998541385,
+  "template_sha256": "40a4e40bb4fd6ba63f9f2a47a35119091a266b5c12efd82914859c9e94eec9eb",
+  "page_sha256": "596f82fa88cd553ae18ac88934b96f26f9a8c0cb9f10c7527c3d7702d7d3d402"
+}

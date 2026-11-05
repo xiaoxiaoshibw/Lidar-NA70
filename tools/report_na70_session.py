@@ -116,6 +116,7 @@ def report(session, *, config_path=DEFAULT_CONFIG, skip_overlap=False):
             "frames_per_batch_median": (timebase_result.get("batches") or {}).get("frames_per_batch_median"),
             "batch_interval_max_s": (timebase_result.get("batches") or {}).get("batch_interval_max_s"),
             "host_time_bound_s": (timebase_result.get("host_time_bound") or {}).get("conservative_s"),
+            "host_time_bound_note": (timebase_result.get("host_time_bound") or {}).get("meaning"),
             "segments": run_result.get("segments"),
             "static_windows": [(window.get("window"), window.get("status"))
                                for window in run_result.get("windows", [])],

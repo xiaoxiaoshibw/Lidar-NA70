@@ -1,0 +1,128 @@
+{
+  "pcap_sha256": "e0e4d9f73d4332f0ac40aad18f264d26d1cbb1888756c2d837ba828a71bc3128",
+  "scope": "all windows end at zero-based frame 100; display mask only",
+  "max_display_range_m": 150,
+  "display_max_points_per_frame": 1200,
+  "frames": {
+    "10": {
+      "frame_range": [
+        91,
+        100
+      ],
+      "packet_host_range_s": [
+        10.853768110275269,
+        12.046911001205444
+      ],
+      "rays": 200000,
+      "eligible": 93610,
+      "eligible_within_150": 79005,
+      "selected_before_150": 12000,
+      "selected_within_150": 10109,
+      "range_bins_m": [
+        0,
+        10,
+        20,
+        50,
+        100,
+        150
+      ],
+      "eligible_range_bin_counts": [
+        14089,
+        20537,
+        17298,
+        6381,
+        20700
+      ],
+      "eligible_range_quantiles_m_p10_p50_p90": [
+        8.559999465942383,
+        25.07200050354004,
+        119.583984375
+      ],
+      "eligible_z_quantiles_m_p10_p50_p90": [
+        -1.1844880819320678,
+        2.5024373531341553,
+        31.678212356567382
+      ]
+    },
+    "50": {
+      "frame_range": [
+        51,
+        100
+      ],
+      "packet_host_range_s": [
+        6.068156003952026,
+        12.046911001205444
+      ],
+      "rays": 1000000,
+      "eligible": 474840,
+      "eligible_within_150": 400483,
+      "selected_before_150": 60000,
+      "selected_within_150": 50594,
+      "range_bins_m": [
+        0,
+        10,
+        20,
+        50,
+        100,
+        150
+      ],
+      "eligible_range_bin_counts": [
+        65976,
+        114232,
+        85231,
+        31961,
+        103083
+      ],
+      "eligible_range_quantiles_m_p10_p50_p90": [
+        8.831998825073242,
+        24.11199951171875,
+        119.27999114990234
+      ],
+      "eligible_z_quantiles_m_p10_p50_p90": [
+        -1.0649166822433471,
+        2.5898754596710205,
+        32.95787353515625
+      ]
+    },
+    "100": {
+      "frame_range": [
+        1,
+        100
+      ],
+      "packet_host_range_s": [
+        0.11426806449890137,
+        12.046911001205444
+      ],
+      "rays": 2000000,
+      "eligible": 955681,
+      "eligible_within_150": 799844,
+      "selected_before_150": 120000,
+      "selected_within_150": 100417,
+      "range_bins_m": [
+        0,
+        10,
+        20,
+        50,
+        100,
+        150
+      ],
+      "eligible_range_bin_counts": [
+        131225,
+        234043,
+        171968,
+        62593,
+        200015
+      ],
+      "eligible_range_quantiles_m_p10_p50_p90": [
+        8.847999572753906,
+        23.503997802734375,
+        118.89600372314453
+      ],
+      "eligible_z_quantiles_m_p10_p50_p90": [
+        -1.0183162212371826,
+        2.6040626764297485,
+        33.216782379150395
+      ]
+    }
+  }
+}

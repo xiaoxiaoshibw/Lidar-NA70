@@ -1,0 +1,20 @@
+[
+  {
+    "scene": "rotation_plus",
+    "vertices_supported_by_input": true,
+    "max_input_distance_m": 0.0,
+    "triangles": 16728
+  },
+  {
+    "scene": "static",
+    "vertices_supported_by_input": true,
+    "max_input_distance_m": 0.0,
+    "triangles": 23648
+  },
+  {
+    "scene": "rotation_minus",
+    "vertices_supported_by_input": true,
+    "max_input_distance_m": 0.0,
+    "triangles": 24279
+  }
+]

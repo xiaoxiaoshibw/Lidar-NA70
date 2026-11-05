@@ -43,7 +43,8 @@ def test_batched_host_time_reports_conservative_bound(tmp_path):
     assert result["batches"]["unique_host_times"] == 6
     assert result["batches"]["frames_per_batch_min"] == 10
     assert abs(result["batches"]["batch_interval_median_s"] - 0.05) < 1e-9
-    assert abs(result["host_time_bound"]["conservative_s"] - 0.05) < 1e-9
+    assert result["host_time_bound"]["conservative_s"] is None
+    assert "上界未知" in result["host_time_bound"]["meaning"]
     assert result["sequence"]["tid_gap_events"] == 0
 
 

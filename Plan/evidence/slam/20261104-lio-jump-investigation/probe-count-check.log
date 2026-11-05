@@ -1,0 +1,2 @@
+probe.json source-stamp-counts-equal: False received: 1568 expected: 2812 clouds: 92
+probe-candidate.json source-stamp-counts-equal: True received: 2812 expected: 2812 clouds: 85

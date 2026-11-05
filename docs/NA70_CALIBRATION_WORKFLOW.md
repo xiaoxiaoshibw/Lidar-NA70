@@ -22,7 +22,21 @@
 
 `t_mono` 是主机单调时钟；`segment` 在断流/重连时递增。没有设备采样时间时，所有速率、窗口和 Allan 结果都是主机口径，不得写成设备口径。跨 segment 的连续运动不能直接拼接。
 
-## 0.1 一键标定批采入口（等待现场数据）
+2026-11-04 后的新 IMU 录制使用 `perf_counter` 记录主机读取完成时刻，`imu_started` 事件记录时钟函数名；旧会话的单调时钟来源保持原样。不同单调时钟的数值不能直接相减。读取同一批的帧仍共享主机时间，批次间隔也不能在缓冲和传输延迟未知时作为采样时间误差上界。
+
+## 0.1 Windows 本机双流接收
+
+2026-11-05 新增独立 **Qt 桌面入口**：双击 `启动雷达IMU录制.bat`，可枚举串口、一键双流录制、到时停止、自动生成逐包主机时间关联 CSV 与报告，无需 Web 服务。关联仍不等于设备采样同步或真实空间标定。完整用法见 [Qt 录制说明](NA70_QT_CAPTURE.md)。原 WebUI 与 60 秒脚本入口继续保留。
+
+双击桌面“雷达和IMU录制60秒”快捷方式，或项目根目录的 `一键录制60秒.bat`，可直接采集 60 秒；默认使用本次实测的 `COM12`、460800 波特及雷达 UDP 2368。录制窗口会显示状态、结果和保存路径；如果重新连接后串口号变化，先在设备管理器核对，并在 `tools/capture_local_60s.ps1` 修改默认串口。
+
+运行 `启动WebUI.bat`，打开 `http://127.0.0.1:8765/local-capture/`。将 IMU 接到本机 USB，填写设备管理器中的串口名（例如 `COM3`，默认 460800 波特）；将 NA70 网口连接本机，确认雷达 UDP 目的地址为本机雷达网卡的 IPv4 地址，端口为 2368。页面提供本机地址提示，多网卡时应核对实际连接雷达的地址。
+
+点击“开始接收”，观察 IMU 和雷达计数；点击“停止”并等待收尾。时长留空仍有 1800 秒上限，到时自动停止。会话目录显示在页面，默认为 `radar_capture_data/na70_sessions/<session>/`：`raw/imu.bin` 保存串口原始字节，`raw/lidar.pcap` 保存 UDP 数据；PCAP 的网络帧头由接收程序合成。另有接收时间和会话元数据供后续处理。本机 UDP 接收无法获取内核丢包数，质量记录因此为 `degraded`，不表示已确认丢包。原始采集不代表时间同步或现场验收已通过。
+
+UDP 通配绑定时，`recvfrom` 不提供实际接收目标地址：新会话在合成 IP 头填 `0.0.0.0`，并在状态和 manifest 标记 `destination_source: unknown`；指定本机地址绑定时使用绑定地址并标记 `bound_address`。这两种头均为合成，不能当作原始抓包。旧版本按到发送方的路由推测本机地址，多网卡时可能错误；不要用旧 PCAP 合成目标地址认定实际网卡或重写原始 PCAP。
+
+## 0.2 一键标定批采入口（等待现场数据）
 
 现场数据通过两个双击入口采集；两者都要求先用 `启动标定连接.bat`（或 `tools/start_capture_tunnel.ps1`）把本机 8791 转发到 Jetson 8792 采集服务。采集期间数据只落 Jetson，结束后自动 `scp` 回 `radar_capture_data/na70_sessions/`：
 
@@ -62,17 +76,17 @@ web\.venv\Scripts\python.exe tools\check_na70_imu_static.py <imu_frames.jsonl>
 ```powershell
 web\.venv\Scripts\python.exe tools\audit_na70_imu_timebase.py `
   --frames radar_capture_data\na70_sessions\<session>\imu_frames.jsonl `
-  --chunks radar_capture_data\na70_sessions\<session>\imu_chunks.jsonl `
+  --chunks radar_capture_data\na70_sessions\<session>\raw\imu_chunks.jsonl `
   --output Plan\evidence\slam\<run>\timebase.json
 ```
 
 报告：帧数、唯一主机时刻（批次数）、每批帧数、批次间隔中位/P95/最大、是否出现 `sample_us`/`ready_us`、tid 断号与估计缺失帧、时间等级。
 
-实测 60 s 工程会话：12,018 帧 / 1,180 批，每批 10–11 帧，批次间隔中位 50.9 ms、最大 53.0 ms，无设备时间字段，时间等级为 **C（仅主机接收）**。按 `e ≈ (v + r·|ω|)·δt`，53 ms 在 `v=0.5 m/s, r=50 m, ω=10°/s` 下约 0.49 m，不能支撑动态 B5 或移动 SLAM 的时间对齐。静态 B1–B4 不受毫秒级同步阻挡，但也不能给出时间偏移。
+实测 60 s 工程会话：12,018 帧 / 1,180 批，每批 10–11 帧，批次间隔中位 50.9 ms、最大 53.0 ms，无设备时间字段，时间等级为 **C（仅主机接收）**。53 ms 只是观察到的主机批次间隔；缓冲与传输延迟未知，不能作为采样时间误差或同步误差的上界。该数据不能支持可信动态时间对齐；静态 B1–B4 也不能给出时间偏移。
 
 ### 1.2 设备时间 CSV 导出（仅当 0x51 存在）
 
-当前固件不输出 0x51/0x52，所以**现在不应生成** `imu_device.csv`。若以后固件或厂家上位机配置开始输出采样时间，采集侧会自动把 `sample_time_field` 标为 true，时间等级记为 `device_field_present_unverified`（仍需验证语义，不等于同步）。此时用：
+当前审计的会话未检测到 0x51/0x52，因此不能为这些会话生成 `imu_device.csv`，这不证明设备或固件一定不支持相应字段。若后续采集出现采样时间字段，采集侧会自动把 `sample_time_field` 标为 true，时间等级记为 `device_field_present_unverified`（仍需验证语义，不等于同步）。此时用：
 
 ```powershell
 web\.venv\Scripts\python.exe tools\export_na70_imu_device_csv.py `
@@ -321,7 +335,7 @@ web\.venv\Scripts\python.exe tools\evaluate_na70_map.py `
 
 ```powershell
 web\.venv\Scripts\python.exe tools\export_na70_lio_scans.py `
-  --pcap radar_capture_data\na70_sessions\<session>\lidar.pcap `
+  --pcap radar_capture_data\na70_sessions\<session>\raw\lidar.pcap `
   --imu-frames radar_capture_data\na70_sessions\<session>\imu_frames.jsonl `
   --start-frame 1 --max-frames 50 `
   --calibration Plan\evidence\slam\<run>\calibration_candidate.json `
@@ -338,6 +352,7 @@ web\.venv\Scripts\python.exe tools\export_na70_lio_scans.py `
 关键纪律：
 
 - 每包 200 点复制同一包时间；点数不等于 `200 × 包数` 直接拒绝，不补点、不截断。
+- 包间隔统计覆盖整个所选范围，包括帧边界；相同的接收时间不表示采样时间相同或零延迟。
 - `lio_ready` 恒为 false；`block_reasons` 会列出 `time_level_C`、`calibration_missing`/`calibration_candidate_unverified`、`motion_envelope_unverified`、`imu_does_not_bracket_scan`、`packet_gap_over_limit`。
 - 真实 60 s 会话前 5 帧 smoke：100,000 点、500 包、最大包间隔 1.147 ms；IMU 首样本比首雷达包晚 **19.204 ms**，因此该段判不覆盖，见 [LIO 包 smoke](evidence/slam/20261030-lio-package-smoke/REPORT.md)。
 - 导出包不是 SLAM 结果；消费方仍须实现 NA70 专用 handler 并验证时间/外参/运动包络。

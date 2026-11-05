@@ -1,0 +1,156 @@
+
+### tools/export_na70_lio_scans.py --help
+usage: export_na70_lio_scans.py [-h] --pcap PCAP --imu-frames IMU_FRAMES
+                                [--calibration CALIBRATION]
+                                [--start-frame START_FRAME]
+                                [--max-frames MAX_FRAMES]
+                                [--imu-margin-s IMU_MARGIN_S]
+                                [--max-packet-gap-s MAX_PACKET_GAP_S]
+                                [--install-direction {1,2}] --output OUTPUT
+
+Export a session's decoded scans and IMU samples as one LIO input package. The
+package keeps packet-level time, original frame/packet/point indices and an
+explicit time-quality/blocker list. It does not deskew, transform points, or
+claim LIO readiness: the consumer must check the time level, calibration and
+motion envelope.
+
+options:
+  -h, --help            show this help message and exit
+  --pcap PCAP
+  --imu-frames IMU_FRAMES
+  --calibration CALIBRATION
+  --start-frame START_FRAME
+  --max-frames MAX_FRAMES
+  --imu-margin-s IMU_MARGIN_S
+  --max-packet-gap-s MAX_PACKET_GAP_S
+  --install-direction {1,2}
+  --output OUTPUT
+
+### tools/prepare_lio_session.py --help
+usage: prepare_lio_session.py [-h] --pcap PCAP [--imu-csv IMU_CSV]
+                              [--config CONFIG] --end-frame END_FRAME
+                              [--duration DURATION]
+                              [--install-direction {1,2}] --evidence-kind
+                              {SYNTHETIC,PUBLIC_DATASET,REAL_PCAP_DIAGNOSTIC}
+                              --output OUTPUT
+
+Audit PCAP + normalized IMU CSV; export packet-timed diagnostic inputs. Run
+with web/.venv/Scripts/python.exe. No USB decoding, clock fitting or SLAM.
+Exit 0: supplied input declarations pass, 2: blocked/invalid. Never
+overwrites.
+
+options:
+  -h, --help            show this help message and exit
+  --pcap PCAP
+  --imu-csv IMU_CSV
+  --config CONFIG
+  --end-frame END_FRAME
+  --duration DURATION
+  --install-direction {1,2}
+  --evidence-kind {SYNTHETIC,PUBLIC_DATASET,REAL_PCAP_DIAGNOSTIC}
+  --output OUTPUT
+
+### tools/calibrate_na70_rotation_planes.py --help
+usage: calibrate_na70_rotation_planes.py [-h] --pcap PCAP --imu-frames
+                                         IMU_FRAMES
+                                         [--start-frame START_FRAME]
+                                         [--end-frame END_FRAME]
+                                         [--frame-step FRAME_STEP]
+                                         [--min-range MIN_RANGE]
+                                         [--max-range MAX_RANGE] [--roi ROI]
+                                         [--ransac-threshold RANSAC_THRESHOLD]
+                                         [--ransac-iterations RANSAC_ITERATIONS]
+                                         [--min-inlier-ratio MIN_INLIER_RATIO]
+                                         [--max-points MAX_POINTS]
+                                         [--max-offset MAX_OFFSET]
+                                         [--step STEP] --output OUTPUT
+
+Estimate R_IL and a LiDAR-IMU time offset from a dominant wall sequence.
+Windows-native alternative to LIO-based calibration: per-frame RANSAC plane
+normal + device quaternion. Requires a large flat wall facing the sensor and a
+slow three-axis rotation. Returns a rotation/time candidate only; translation
+still needs a mechanical measurement.
+
+options:
+  -h, --help            show this help message and exit
+  --pcap PCAP
+  --imu-frames IMU_FRAMES
+  --start-frame START_FRAME
+  --end-frame END_FRAME
+  --frame-step FRAME_STEP
+  --min-range MIN_RANGE
+  --max-range MAX_RANGE
+  --roi ROI
+  --ransac-threshold RANSAC_THRESHOLD
+  --ransac-iterations RANSAC_ITERATIONS
+  --min-inlier-ratio MIN_INLIER_RATIO
+  --max-points MAX_POINTS
+  --max-offset MAX_OFFSET
+  --step STEP
+  --output OUTPUT
+
+### tools/build_na70_scene.py --help
+usage: build_na70_scene.py [-h] --pcap PCAP --poses POSES
+                           [--pose-frame {imu,lidar}]
+                           [--calibration CALIBRATION]
+                           [--install-direction {1,2}]
+                           [--start-frame START_FRAME]
+                           [--max-frames MAX_FRAMES] [--voxel-size VOXEL_SIZE]
+                           [--max-gap-s MAX_GAP_S] --output OUTPUT
+
+Assemble a NA70 scene from a PCAP and a traceable pose trajectory. Poses must
+be in the same clock as the PCAP packet capture times. The tool is an assembly
+step only: it interpolates a supplied trajectory, applies the pose at each
+point's packet time, voxel-downsamples, and writes provenance. A
+``--calibration`` file is required for IMU-frame poses and must contain both
+``R_imu_lidar`` and ``t_imu_lidar``; a missing translation is not filled with
+zero. LiDAR-frame poses need no extrinsic.
+
+options:
+  -h, --help            show this help message and exit
+  --pcap PCAP
+  --poses POSES
+  --pose-frame {imu,lidar}
+  --calibration CALIBRATION
+  --install-direction {1,2}
+  --start-frame START_FRAME
+  --max-frames MAX_FRAMES
+  --voxel-size VOXEL_SIZE
+  --max-gap-s MAX_GAP_S
+  --output OUTPUT
+
+### tools/lio/replay_na70_package.py --help
+usage: replay_na70_package.py [-h] --package PACKAGE [--pace PACE]
+                              [--linger LINGER]
+                              [--discovery-wait DISCOVERY_WAIT]
+                              [--frames FRAMES]
+
+Replay a NA70 LIO package as ROS2 PointCloud2 + Imu for FAST-LIO. Run inside
+WSL2/Humble after sourcing ROS2: python3 tools/lio/replay_na70_package.py
+--package <dir> --pace 0.1 --linger 3 The scan header stamp is the frame
+start; each point's `time` field is seconds relative to that start. IMU
+samples are published up to the scan end before the scan so FAST-LIO can
+synchronise. This is a plumbing prototype, not a calibration or accuracy
+claim.
+
+options:
+  -h, --help            show this help message and exit
+  --package PACKAGE
+  --pace PACE           seconds between scans
+  --linger LINGER
+  --discovery-wait DISCOVERY_WAIT
+  --frames FRAMES
+
+### tools/lio/record_na70_fastlio_output.py --help
+usage: record_na70_fastlio_output.py [-h] --odom ODOM [--cloud CLOUD]
+                                     [--duration DURATION]
+
+Record FAST-LIO /Odometry and the latest /cloud_registered to files. Run
+alongside the launch/replay in the same shell (CycloneDDS) so discovery is
+shared. Outputs are diagnostic, not accuracy evidence.
+
+options:
+  -h, --help           show this help message and exit
+  --odom ODOM
+  --cloud CLOUD
+  --duration DURATION

@@ -5,6 +5,7 @@ const PAGES = [
   { key: 'demo', label: '跟踪 Demo', sub: '球门识别 · 跟踪', href: '/demo/', devHref: '/demo.html' },
   { key: 'wire', label: '导线工作台', sub: 'W1 原始回波', href: '/wire/', devHref: '/wire.html' },
   { key: 'capture', label: '标定采集', sub: '雷达 · IMU', href: '/capture/', devHref: '/capture.html' },
+  { key: 'local-capture', label: '本机双流接收', sub: 'IMU USB · 雷达网口', href: '/local-capture/', devHref: '/local-capture.html' },
 ];
 
 function currentPage(): string {
@@ -12,6 +13,7 @@ function currentPage(): string {
   if (path.startsWith('/annotate')) return 'annotate';
   if (path.startsWith('/demo')) return 'demo';
   if (path.startsWith('/wire')) return 'wire';
+  if (path.startsWith('/local-capture')) return 'local-capture';
   if (path.startsWith('/capture')) return 'capture';
   return 'main';
 }

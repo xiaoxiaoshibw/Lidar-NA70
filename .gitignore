@@ -3,6 +3,7 @@ __pycache__/
 *.py[cod]
 *.egg-info/
 .venv/
+.venv-qt/
 venv/
 .mypy_cache/
 
@@ -26,6 +27,8 @@ web/.venv-kiss/
 # ===== 大数据文件（不入库） =====
 *.pcap
 radar_capture_data/lidar-imu/
+radar_capture_data/na70_associations/
+radar_capture_data/na70_sessions/associations/
 
 # ===== 操作系统文件 =====
 Thumbs.db
@@ -44,3 +47,9 @@ desktop.ini
 imu.bin
 radar_capture_data/video/
 radar_capture_data/na70_sessions/fixed-long-160920/imu_frames.jsonl
+radar_capture_data/na70_sessions/.capture.lock
+radar_capture_data/na70_sessions/*/raw/
+radar_capture_data/na70_sessions/*/imu_frames.jsonl
+radar_capture_data/na70_sessions/*/imu_host_receive.csv
+Plan/evidence/slam/**/index.html
+*.npz

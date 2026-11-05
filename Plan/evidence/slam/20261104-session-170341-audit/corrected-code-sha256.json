@@ -1,0 +1,18 @@
+[
+  {
+    "path": "tools/audit_na70_imu_timebase.py",
+    "sha256": "f5a51981e6bf2b330b4d3725f0a40d3910da27471ca02f9433a7b0117ee9dc0c"
+  },
+  {
+    "path": "tools/report_na70_session.py",
+    "sha256": "ca1c14eaccccc808bde75ac4edf249eefad6a46b82be6a5a3f86482f572814a1"
+  },
+  {
+    "path": "web/tests/test_na70_imu_timebase.py",
+    "sha256": "08dd4f245ed4b88c80e345a018652cea0ff674517ec1d09d0805dc66824256c9"
+  },
+  {
+    "path": "web/tests/test_na70_session_report.py",
+    "sha256": "2db1e372ce05103e5823bb87f266aa1a98755545849d83f24f56746376904ee8"
+  }
+]

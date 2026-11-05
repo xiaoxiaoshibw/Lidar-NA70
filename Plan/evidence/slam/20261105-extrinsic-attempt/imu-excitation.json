@@ -1,0 +1,24 @@
+{
+  "stationary_gyro_mean_deg_s": [
+    0.17107133600000085,
+    -0.12247284199999973,
+    -0.03436437825000009
+  ],
+  "motion_gyro_rms_deg_s": [
+    0.32275778234970304,
+    0.24461554158893575,
+    4.251718243600517
+  ],
+  "motion_second_moment_eigenvalues_deg2_s2": [
+    18.07946966245227,
+    0.1485449489607101,
+    0.013102760806673969
+  ],
+  "weak_to_strong": 0.0007247314800326246,
+  "dominant_axis_imu": [
+    -0.0010303348482234482,
+    0.011404659897276563,
+    0.9999344339219088
+  ],
+  "note": "host-window bias corrected; descriptive motion excitation, not a calibration solution"
+}

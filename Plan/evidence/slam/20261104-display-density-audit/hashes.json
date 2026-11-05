@@ -1,0 +1,34 @@
+[
+  {
+    "Path": "D:\\Code\\radar\\radar_capture_data\\na70_sessions\\20261104-170341\\raw\\lidar.pcap",
+    "Hash": "E0E4D9F73D4332F0AC40AAD18F264D26D1CBB1888756C2D837BA828A71BC3128"
+  },
+  {
+    "Path": "D:\\Code\\radar\\radar_capture_data\\na70_sessions\\20261104-170341\\imu_frames.jsonl",
+    "Hash": "C661D5510BE9E797E4D5FECD5DCF812BB0AB676F6B80957DDF629C454ADEE92B"
+  },
+  {
+    "Path": "D:\\Code\\radar\\web\\backend\\decoder.py",
+    "Hash": "A1FFE8E1FC2BF763BAC3D4F9CBCED095CBCADE103C01302F2DB15DB60E482F9D"
+  },
+  {
+    "Path": "D:\\Code\\radar\\tools\\na70_host_timeline_export.py",
+    "Hash": "94CC61442A83F859CA886CCEF2E7B964DC30C077F31F3ADD9BD1D1A5E8AF5724"
+  },
+  {
+    "Path": "D:\\Code\\radar\\Plan\\evidence\\slam\\20261104-display-density-audit\\analyze.py",
+    "Hash": "87DCBC9697B1D44CC80A0C413F273974CF9C2B0250DF91F33FAE8F100DD11468"
+  },
+  {
+    "Path": "D:\\Code\\radar\\Plan\\evidence\\slam\\20261104-display-density-audit\\analyze_imu_80s.py",
+    "Hash": "FE3E636A1C77F23BE75F61692B6AE6CB84A7676C42DBA5910945AC920FA79F1B"
+  },
+  {
+    "Path": "D:\\Code\\radar\\Plan\\evidence\\slam\\20261104-display-density-audit\\plot_comparison.py",
+    "Hash": "742B1973FE0CBEC92D529BB0539187135EF2A3215DE127DEA2EF7C8CAE41B75A"
+  },
+  {
+    "Path": "D:\\Code\\radar\\Plan\\evidence\\slam\\20261104-display-density-audit\\stack-comparison.png",
+    "Hash": "BDA7114CE81B747A4920EB20D95D1583522C6D21D5FCD8B84A3A0B4AB08524A9"
+  }
+]

@@ -1,0 +1,21 @@
+{
+  "source": "Plan\\evidence\\slam\\20261104-lio-diagnostic\\lio-package-margin1s\\scans.npz",
+  "prior_within_frame_max_s": 0.008003950119018555,
+  "frame_boundary_max_s": 0.0032351016998291016,
+  "frame_boundary_gaps_over_0_2_s": 0,
+  "updated": {
+    "time_quality": "PACKET_APPROXIMATION",
+    "frames": 100,
+    "points": 2000000,
+    "session_span_s": 11.943145036697388,
+    "max_packet_gap_s": 0.008003950119018555,
+    "gaps_over_limit": 0,
+    "points_per_packet": 200,
+    "limitations": [
+      "逐点时间由包时间复制，属于 PACKET_APPROXIMATION，不是实测逐点时间",
+      "包内采样时序仍未核实；不能用本包宣称逐点去畸变",
+      "主机接收时间与设备采样时间必须由 manifest 的时间等级区分",
+      "源引用只保证帧/包/点索引，不保证硬件时钟"
+    ]
+  }
+}

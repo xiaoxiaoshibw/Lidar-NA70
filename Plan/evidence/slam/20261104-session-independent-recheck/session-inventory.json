@@ -1,0 +1,30 @@
+{
+  "platform": "Windows-11-10.0.26300-SP0",
+  "python": "3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]",
+  "pyserial": "3.5",
+  "serial_ports": [
+    "COM6",
+    "COM4",
+    "COM5",
+    "COM3"
+  ],
+  "session_directories": [
+    "20261030-151019",
+    "20261030-163303",
+    "20261104-161036",
+    "20261104-161220",
+    "20261104-165942",
+    "20261104-170341",
+    "a2-browser-155552",
+    "fixed-long-160920",
+    "v3-162203",
+    "v4-browser-163303"
+  ],
+  "chunk_count": 164,
+  "chunk_byte_counts": {
+    "8192": 164
+  },
+  "unix_gap_median_s": 0.610083818435669,
+  "unix_gap_max_s": 0.6158292293548584,
+  "note": "Recorded host read-completion times and sizes; they do not bound sample age or prove synchronization."
+}

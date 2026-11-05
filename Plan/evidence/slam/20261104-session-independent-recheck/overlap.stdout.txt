@@ -1,0 +1,19 @@
+{
+  "schema": "na70-host-overlap-v1",
+  "status": "observed",
+  "lidar_packets": 83351,
+  "imu_chunks": 164,
+  "lidar_first_unix_s": 1793783021.64863,
+  "lidar_last_unix_s": 1793783121.955334,
+  "imu_first_unix_s": 1793783022.269308,
+  "imu_last_unix_s": 1793783121.909167,
+  "host_overlap_s": 99.639859,
+  "max_lidar_capture_gap_s": 0.027931,
+  "max_imu_chunk_gap_s": 0.615829,
+  "invalid_packets": 0,
+  "warnings": [],
+  "limits": [
+    "host receive times do not establish sensor sampling times or synchronization",
+    "overlap of endpoints does not prove continuous valid data"
+  ]
+}

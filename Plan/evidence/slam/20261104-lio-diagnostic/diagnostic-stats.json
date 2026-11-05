@@ -1,0 +1,32 @@
+{
+  "status": "DIAGNOSTIC_ONLY",
+  "trajectory": {
+    "poses": 81,
+    "time_span_s": 10.389482021331787,
+    "nonpositive_time_steps": 0,
+    "max_gap_s": 0.36054301261901855,
+    "max_step_m": 3.5286461512305363,
+    "path_length_m": 43.5067858567367,
+    "max_distance_from_first_m": 41.765762304680116,
+    "end_distance_from_first_m": 41.76466054495507
+  },
+  "assembled_map": {
+    "points": 550214,
+    "finite_points": 550214,
+    "distance_from_map_origin_percentiles_m": {
+      "p50": 110.03626251220703,
+      "p90": 189.19488067626952,
+      "p99": 305.4335870361328,
+      "max": 1055.2310791015625
+    },
+    "points_over_100m_from_map_origin": 290052,
+    "source_frames": 86
+  },
+  "ate_rpe_absolute_accuracy": "NOT_EVALUATED",
+  "double_image_plane_consistency": "NOT_EVALUATED: no independently defined scene ROIs or stable reference planes",
+  "limits": [
+    "trajectory and map use unverified identity extrinsic and host-receive time",
+    "map-origin radius is not exact range; it only flags extreme spatial extent",
+    "point cloud is accumulated by pose interpolation, not a globally optimized map"
+  ]
+}

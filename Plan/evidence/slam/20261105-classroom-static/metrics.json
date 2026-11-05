@@ -1,0 +1,25 @@
+{
+  "source": "D:\\Code\\radar\\radar_capture_data\\na70_sessions\\20261105-162858-351200\\raw\\lidar.pcap",
+  "sha256": "fb21e8e1067a6ea513190e4840543080edf6f240ce4010ece2f019139f16447b",
+  "frames": 173,
+  "duration_s": 20.97976303100586,
+  "rays": 3454600,
+  "selected_returns": 1239102,
+  "min_range_m": 7.4879984855651855,
+  "range_quantiles_m": [
+    7.4879984855651855,
+    7.567999362945557,
+    8.272000312805176,
+    10.191999435424805,
+    10.736000061035156,
+    11.407999038696289,
+    295.8559875488281
+  ],
+  "under_8m": 80465,
+  "under_10m": 364735,
+  "under_20m": 1238893,
+  "under_35m": 1239094,
+  "voxel_m": 0.05,
+  "voxel_count": 50371,
+  "limits": "sensor coordinates; static accumulation; no registration or extrinsic validation; 0xFFFF excluded for display with manufacturer semantics unverified"
+}

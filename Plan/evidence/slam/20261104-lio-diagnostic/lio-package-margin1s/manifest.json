@@ -1,0 +1,59 @@
+{
+  "schema": "na70-lio-scan-package-v1",
+  "status": "EXPORTED_BLOCKED",
+  "lio_ready": false,
+  "block_reasons": [
+    "calibration_missing",
+    "motion_envelope_unverified",
+    "time_level_C"
+  ],
+  "time_source": "host_receive_only",
+  "time_quality": {
+    "time_quality": "PACKET_APPROXIMATION",
+    "frames": 100,
+    "points": 2000000,
+    "session_span_s": 11.943145036697388,
+    "max_packet_gap_s": 0.008003950119018555,
+    "gaps_over_limit": 0,
+    "points_per_packet": 200,
+    "limitations": [
+      "逐点时间由包时间复制，属于 PACKET_APPROXIMATION，不是实测逐点时间",
+      "包内采样时序仍未核实；不能用本包宣称逐点去畸变",
+      "主机接收时间与设备采样时间必须由 manifest 的时间等级区分",
+      "源引用只保证帧/包/点索引，不保证硬件时钟"
+    ]
+  },
+  "scans": {
+    "start_frame": 10,
+    "frames": 100,
+    "points": 2000000,
+    "origin_unix_s": 1793783022.817715,
+    "end_unix_s": 1793783034.76086
+  },
+  "imu": {
+    "samples": 2812,
+    "device_time_present": false,
+    "device_time_wraps": 0,
+    "first_unix_s": 1793783022.269308,
+    "last_unix_s": 1793783035.717834,
+    "brackets_scan": true,
+    "source": "radar_capture_data\\na70_sessions\\20261104-170341\\imu_frames.jsonl",
+    "source_sha256": "c661d5510be9e797e4d5fecd5dcf812bb0ab676f6b80957ddf629c454adee92b"
+  },
+  "calibration": null,
+  "files": {
+    "pcap": {
+      "path": "radar_capture_data\\na70_sessions\\20261104-170341\\raw\\lidar.pcap",
+      "sha256": "e0e4d9f73d4332f0ac40aad18f264d26d1cbb1888756c2d837ba828a71bc3128"
+    },
+    "scans": {
+      "path": "scans.npz",
+      "sha256": "e4ed74c719dda7be7b73dd3eebb2ac4ced4a982bf56858235f3f4ecf75465b85"
+    },
+    "imu": {
+      "path": "imu.npz",
+      "sha256": "a47f91943bf8e907969ca673958244bc52a9960a520cd51c55dc47093374e6a3"
+    }
+  },
+  "note": "逐点时间为包级近似；适配器/滤波器仍需检查时间等级、外参与运动包络。"
+}

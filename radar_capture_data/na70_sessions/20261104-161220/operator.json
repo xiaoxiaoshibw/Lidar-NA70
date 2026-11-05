@@ -1,0 +1,10 @@
+{
+  "session_id": "20261104-161220",
+  "created_unix": 1793779940.7787075,
+  "created_local": "2026-11-04T16:12:20+0800",
+  "operator": {
+    "note": "",
+    "task": "TEST-DUAL"
+  },
+  "unknown_fields": "留 None 表示未测/未知，不填估算值"
+}

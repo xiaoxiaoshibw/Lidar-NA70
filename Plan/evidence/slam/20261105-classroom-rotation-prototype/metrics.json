@@ -1,0 +1,40 @@
+{
+  "status": "DIAGNOSTIC_ASSUMPTIONS_UNVERIFIED",
+  "pcap_sha256": "62f0e37a6d7ddf4bdc6b685cf0168bb132ce14dce88ef663e088a355a0d6a4ae",
+  "imu_sha256": "397e6f65e8f7dfa81c94a01d959a48877ab8ff43ec0ca12c8b0c45b88c988cda",
+  "frames_selected": 115,
+  "yaw_range_deg": [
+    -0.08800980651925501,
+    160.23007470521804
+  ],
+  "voxel_m": 0.1,
+  "range_max_m": 20,
+  "frame_step": 5,
+  "ray_stride": 4,
+  "candidates": [
+    {
+      "sign": 1,
+      "voxel_count": 20605,
+      "selected_points": 62511
+    },
+    {
+      "sign": -1,
+      "voxel_count": 29537,
+      "selected_points": 62511
+    }
+  ],
+  "assumptions": [
+    "IMU yaw rotates about lidar Z",
+    "two possible signs",
+    "fixed position",
+    "host receive midpoint interpolation",
+    "frame-level motion approximation",
+    "no translation compensation",
+    "no scan registration"
+  ],
+  "limitations": [
+    "not calibrated",
+    "no independent geometry validation",
+    "65535 excluded as diagnostic only"
+  ]
+}

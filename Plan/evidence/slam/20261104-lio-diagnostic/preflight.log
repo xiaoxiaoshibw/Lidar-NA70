@@ -1,0 +1,1 @@
+{"status": "BLOCKED", "block_reasons": ["IMU CSV requires device_time_s,gx,gy,gz,ax,ay,az"], "output": "Plan\\evidence\\slam\\20261104-lio-diagnostic\\preflight"}

@@ -1,0 +1,463 @@
+{
+  "status": "DIAGNOSTIC_ONLY",
+  "poses": 81,
+  "largest_steps": [
+    {
+      "pose_indices_zero_based": [
+        77,
+        78
+      ],
+      "start_unix_s": 1793783034.401329,
+      "end_unix_s": 1793783034.532156,
+      "dt_s": 0.1308269500732422,
+      "position_step_m": 3.5286461512305363,
+      "orientation_step_deg": 2.014830216980477,
+      "imu_host_frames_in_closed_interval": 122,
+      "imu_distinct_host_times_in_closed_interval": 1,
+      "gyro_norm_deg_s_min_max_unvalidated": [
+        0.14700786104491148,
+        7.206645992012928
+      ],
+      "accel_norm_m_s2_min_max_unvalidated": [
+        9.53298363737807,
+        10.032719897317028
+      ],
+      "preceding_batch_unix_s": 1793783033.883272,
+      "following_batch_unix_s": 1793783035.103839,
+      "nearest_scan_ends": [
+        {
+          "source_frame": 97,
+          "frame_start_unix_s": 1793783034.408053,
+          "frame_end_unix_s": 1793783034.532156,
+          "rays": 20000,
+          "rays_range_ge_100m": 3140,
+          "rays_range_ge_1000m": 0,
+          "max_range_m": 694.3198852539062
+        },
+        {
+          "source_frame": 98,
+          "frame_start_unix_s": 1793783034.533153,
+          "frame_end_unix_s": 1793783034.648491,
+          "rays": 20000,
+          "rays_range_ge_100m": 2947,
+          "rays_range_ge_1000m": 0,
+          "max_range_m": 694.4320068359375
+        }
+      ]
+    },
+    {
+      "pose_indices_zero_based": [
+        49,
+        50
+      ],
+      "start_unix_s": 1793783030.817997,
+      "end_unix_s": 1793783030.936588,
+      "dt_s": 0.1185910701751709,
+      "position_step_m": 3.33504331476809,
+      "orientation_step_deg": 2.0042875331163983,
+      "imu_host_frames_in_closed_interval": 123,
+      "imu_distinct_host_times_in_closed_interval": 1,
+      "gyro_norm_deg_s_min_max_unvalidated": [
+        0.6071547609506163,
+        5.140090806088935
+      ],
+      "accel_norm_m_s2_min_max_unvalidated": [
+        9.523808409285751,
+        10.012057602164852
+      ],
+      "preceding_batch_unix_s": 1793783030.213972,
+      "following_batch_unix_s": 1793783031.438199,
+      "nearest_scan_ends": [
+        {
+          "source_frame": 67,
+          "frame_start_unix_s": 1793783030.820081,
+          "frame_end_unix_s": 1793783030.944771,
+          "rays": 20000,
+          "rays_range_ge_100m": 3519,
+          "rays_range_ge_1000m": 0,
+          "max_range_m": 704.9439697265625
+        },
+        {
+          "source_frame": 66,
+          "frame_start_unix_s": 1793783030.69537,
+          "frame_end_unix_s": 1793783030.817997,
+          "rays": 20000,
+          "rays_range_ge_100m": 3720,
+          "rays_range_ge_1000m": 0,
+          "max_range_m": 354.4319763183594
+        }
+      ]
+    },
+    {
+      "pose_indices_zero_based": [
+        72,
+        73
+      ],
+      "start_unix_s": 1793783033.814296,
+      "end_unix_s": 1793783033.928274,
+      "dt_s": 0.11397790908813477,
+      "position_step_m": 3.295204947760516,
+      "orientation_step_deg": 0.7339061363087481,
+      "imu_host_frames_in_closed_interval": 122,
+      "imu_distinct_host_times_in_closed_interval": 1,
+      "gyro_norm_deg_s_min_max_unvalidated": [
+        0.5465864599621911,
+        4.990625931849531
+      ],
+      "accel_norm_m_s2_min_max_unvalidated": [
+        9.595978660509934,
+        10.01378481469569
+      ],
+      "preceding_batch_unix_s": 1793783033.273938,
+      "following_batch_unix_s": 1793783034.493209,
+      "nearest_scan_ends": [
+        {
+          "source_frame": 92,
+          "frame_start_unix_s": 1793783033.816524,
+          "frame_end_unix_s": 1793783033.928274,
+          "rays": 20000,
+          "rays_range_ge_100m": 3301,
+          "rays_range_ge_1000m": 0,
+          "max_range_m": 695.3759155273438
+        },
+        {
+          "source_frame": 91,
+          "frame_start_unix_s": 1793783033.696543,
+          "frame_end_unix_s": 1793783033.814296,
+          "rays": 20000,
+          "rays_range_ge_100m": 3628,
+          "rays_range_ge_1000m": 0,
+          "max_range_m": 694.5918579101562
+        }
+      ]
+    },
+    {
+      "pose_indices_zero_based": [
+        68,
+        69
+      ],
+      "start_unix_s": 1793783033.219653,
+      "end_unix_s": 1793783033.344159,
+      "dt_s": 0.12450599670410156,
+      "position_step_m": 3.284125498150237,
+      "orientation_step_deg": 0.7769147286772222,
+      "imu_host_frames_in_closed_interval": 123,
+      "imu_distinct_host_times_in_closed_interval": 1,
+      "gyro_norm_deg_s_min_max_unvalidated": [
+        0.4016759768333177,
+        4.859840459091944
+      ],
+      "accel_norm_m_s2_min_max_unvalidated": [
+        9.522757375004048,
+        9.946838623161531
+      ],
+      "preceding_batch_unix_s": 1793783032.658515,
+      "following_batch_unix_s": 1793783033.883272,
+      "nearest_scan_ends": [
+        {
+          "source_frame": 87,
+          "frame_start_unix_s": 1793783033.22064,
+          "frame_end_unix_s": 1793783033.344159,
+          "rays": 20000,
+          "rays_range_ge_100m": 3728,
+          "rays_range_ge_1000m": 0,
+          "max_range_m": 363.1039733886719
+        },
+        {
+          "source_frame": 88,
+          "frame_start_unix_s": 1793783033.345164,
+          "frame_end_unix_s": 1793783033.45999,
+          "rays": 20000,
+          "rays_range_ge_100m": 3741,
+          "rays_range_ge_1000m": 0,
+          "max_range_m": 694.095947265625
+        }
+      ]
+    },
+    {
+      "pose_indices_zero_based": [
+        39,
+        40
+      ],
+      "start_unix_s": 1793783029.506289,
+      "end_unix_s": 1793783029.631403,
+      "dt_s": 0.12511396408081055,
+      "position_step_m": 3.0047907285879263,
+      "orientation_step_deg": 1.661538819221849,
+      "imu_host_frames_in_closed_interval": 122,
+      "imu_distinct_host_times_in_closed_interval": 1,
+      "gyro_norm_deg_s_min_max_unvalidated": [
+        0.39408077508170836,
+        4.428852921756378
+      ],
+      "accel_norm_m_s2_min_max_unvalidated": [
+        9.577866206030286,
+        10.009794662845287
+      ],
+      "preceding_batch_unix_s": 1793783028.994155,
+      "following_batch_unix_s": 1793783030.213972,
+      "nearest_scan_ends": [
+        {
+          "source_frame": 56,
+          "frame_start_unix_s": 1793783029.50929,
+          "frame_end_unix_s": 1793783029.631403,
+          "rays": 20000,
+          "rays_range_ge_100m": 3864,
+          "rays_range_ge_1000m": 0,
+          "max_range_m": 695.5198974609375
+        },
+        {
+          "source_frame": 57,
+          "frame_start_unix_s": 1793783029.632402,
+          "frame_end_unix_s": 1793783029.752969,
+          "rays": 20000,
+          "rays_range_ge_100m": 4055,
+          "rays_range_ge_1000m": 0,
+          "max_range_m": 695.5999755859375
+        }
+      ]
+    },
+    {
+      "pose_indices_zero_based": [
+        63,
+        64
+      ],
+      "start_unix_s": 1793783032.61457,
+      "end_unix_s": 1793783032.731366,
+      "dt_s": 0.11679601669311523,
+      "position_step_m": 2.9698393903444837,
+      "orientation_step_deg": 2.544352320078119,
+      "imu_host_frames_in_closed_interval": 122,
+      "imu_distinct_host_times_in_closed_interval": 1,
+      "gyro_norm_deg_s_min_max_unvalidated": [
+        0.2898066887099054,
+        3.9822928761610443
+      ],
+      "accel_norm_m_s2_min_max_unvalidated": [
+        9.5475438181702,
+        10.09425042646268
+      ],
+      "preceding_batch_unix_s": 1793783032.048503,
+      "following_batch_unix_s": 1793783033.273938,
+      "nearest_scan_ends": [
+        {
+          "source_frame": 82,
+          "frame_start_unix_s": 1793783032.61557,
+          "frame_end_unix_s": 1793783032.731366,
+          "rays": 20000,
+          "rays_range_ge_100m": 3476,
+          "rays_range_ge_1000m": 0,
+          "max_range_m": 694.8159790039062
+        },
+        {
+          "source_frame": 81,
+          "frame_start_unix_s": 1793783032.502398,
+          "frame_end_unix_s": 1793783032.61457,
+          "rays": 20000,
+          "rays_range_ge_100m": 3246,
+          "rays_range_ge_1000m": 0,
+          "max_range_m": 694.7039184570312
+        }
+      ]
+    },
+    {
+      "pose_indices_zero_based": [
+        54,
+        55
+      ],
+      "start_unix_s": 1793783031.427947,
+      "end_unix_s": 1793783031.551487,
+      "dt_s": 0.12353992462158203,
+      "position_step_m": 2.871117381418364,
+      "orientation_step_deg": 1.7444989081178106,
+      "imu_host_frames_in_closed_interval": 122,
+      "imu_distinct_host_times_in_closed_interval": 1,
+      "gyro_norm_deg_s_min_max_unvalidated": [
+        0.39168404401634743,
+        3.5782973749748637
+      ],
+      "accel_norm_m_s2_min_max_unvalidated": [
+        9.60597835234876,
+        9.992184841729362
+      ],
+      "preceding_batch_unix_s": 1793783030.829117,
+      "following_batch_unix_s": 1793783032.048503,
+      "nearest_scan_ends": [
+        {
+          "source_frame": 72,
+          "frame_start_unix_s": 1793783031.433554,
+          "frame_end_unix_s": 1793783031.551487,
+          "rays": 20000,
+          "rays_range_ge_100m": 2894,
+          "rays_range_ge_1000m": 0,
+          "max_range_m": 695.9840087890625
+        },
+        {
+          "source_frame": 71,
+          "frame_start_unix_s": 1793783031.305589,
+          "frame_end_unix_s": 1793783031.430348,
+          "rays": 20000,
+          "rays_range_ge_100m": 2609,
+          "rays_range_ge_1000m": 0,
+          "max_range_m": 331.16796875
+        }
+      ]
+    },
+    {
+      "pose_indices_zero_based": [
+        34,
+        35
+      ],
+      "start_unix_s": 1793783028.663146,
+      "end_unix_s": 1793783029.023689,
+      "dt_s": 0.36054301261901855,
+      "position_step_m": 2.86118773811647,
+      "orientation_step_deg": 1.8198215371496762,
+      "imu_host_frames_in_closed_interval": 123,
+      "imu_distinct_host_times_in_closed_interval": 1,
+      "gyro_norm_deg_s_min_max_unvalidated": [
+        0.22223996624144812,
+        4.780346635758227
+      ],
+      "accel_norm_m_s2_min_max_unvalidated": [
+        9.555224732375633,
+        9.98850018838334
+      ],
+      "preceding_batch_unix_s": 1793783028.378527,
+      "following_batch_unix_s": 1793783029.603941,
+      "nearest_scan_ends": [
+        {
+          "source_frame": 51,
+          "frame_start_unix_s": 1793783028.906073,
+          "frame_end_unix_s": 1793783029.026872,
+          "rays": 20000,
+          "rays_range_ge_100m": 2935,
+          "rays_range_ge_1000m": 0,
+          "max_range_m": 703.02392578125
+        },
+        {
+          "source_frame": 50,
+          "frame_start_unix_s": 1793783028.784739,
+          "frame_end_unix_s": 1793783028.904068,
+          "rays": 20000,
+          "rays_range_ge_100m": 5136,
+          "rays_range_ge_1000m": 0,
+          "max_range_m": 695.2319946289062
+        }
+      ]
+    },
+    {
+      "pose_indices_zero_based": [
+        58,
+        59
+      ],
+      "start_unix_s": 1793783032.030253,
+      "end_unix_s": 1793783032.156438,
+      "dt_s": 0.12618517875671387,
+      "position_step_m": 2.850409118789052,
+      "orientation_step_deg": 1.4689889090143455,
+      "imu_host_frames_in_closed_interval": 122,
+      "imu_distinct_host_times_in_closed_interval": 1,
+      "gyro_norm_deg_s_min_max_unvalidated": [
+        0.25971107506226987,
+        4.222602674441558
+      ],
+      "accel_norm_m_s2_min_max_unvalidated": [
+        9.606763160630171,
+        9.964187644518544
+      ],
+      "preceding_batch_unix_s": 1793783031.438199,
+      "following_batch_unix_s": 1793783032.658515,
+      "nearest_scan_ends": [
+        {
+          "source_frame": 77,
+          "frame_start_unix_s": 1793783032.03325,
+          "frame_end_unix_s": 1793783032.158438,
+          "rays": 20000,
+          "rays_range_ge_100m": 3888,
+          "rays_range_ge_1000m": 0,
+          "max_range_m": 693.9359130859375
+        },
+        {
+          "source_frame": 78,
+          "frame_start_unix_s": 1793783032.159436,
+          "frame_end_unix_s": 1793783032.264604,
+          "rays": 20000,
+          "rays_range_ge_100m": 3415,
+          "rays_range_ge_1000m": 0,
+          "max_range_m": 695.0880126953125
+        }
+      ]
+    },
+    {
+      "pose_indices_zero_based": [
+        43,
+        44
+      ],
+      "start_unix_s": 1793783030.106816,
+      "end_unix_s": 1793783030.2332528,
+      "dt_s": 0.12643671035766602,
+      "position_step_m": 2.849458657699037,
+      "orientation_step_deg": 2.563604023758651,
+      "imu_host_frames_in_closed_interval": 122,
+      "imu_distinct_host_times_in_closed_interval": 1,
+      "gyro_norm_deg_s_min_max_unvalidated": [
+        0.33490091195605903,
+        5.436797510347981
+      ],
+      "accel_norm_m_s2_min_max_unvalidated": [
+        9.523066180247515,
+        10.003448777660733
+      ],
+      "preceding_batch_unix_s": 1793783029.603941,
+      "following_batch_unix_s": 1793783030.829117,
+      "nearest_scan_ends": [
+        {
+          "source_frame": 61,
+          "frame_start_unix_s": 1793783030.10861,
+          "frame_end_unix_s": 1793783030.233253,
+          "rays": 20000,
+          "rays_range_ge_100m": 3665,
+          "rays_range_ge_1000m": 0,
+          "max_range_m": 694.2239379882812
+        },
+        {
+          "source_frame": 62,
+          "frame_start_unix_s": 1793783030.234267,
+          "frame_end_unix_s": 1793783030.351125,
+          "rays": 20000,
+          "rays_range_ge_100m": 3486,
+          "rays_range_ge_1000m": 0,
+          "max_range_m": 694.5919189453125
+        }
+      ]
+    }
+  ],
+  "step_comparison_by_batch_host_time": {
+    "batch_present": {
+      "intervals": 17,
+      "median_step_m": 2.850409118789052,
+      "max_step_m": 3.5286461512305363
+    },
+    "no_batch": {
+      "intervals": 63,
+      "median_step_m": 0.00045483085033605003,
+      "max_step_m": 0.0031130449113079732
+    }
+  },
+  "imu": {
+    "samples": 2812,
+    "distinct_host_times": 23,
+    "duplicate_consecutive_timestamps": 2789,
+    "max_batch_frames": 123,
+    "max_gap_between_batch_host_times_s": 0.6156280040740967,
+    "no_interpolation": true
+  },
+  "replay_publisher": {
+    "max_imu_frames_published_before_one_scan": 244,
+    "publisher_qos_depth": 20,
+    "fastlio_subscriber_qos_depth": 10,
+    "received_count": "NOT_RECORDED"
+  },
+  "interpretation": "Trajectory and timestamps are diagnostic output and host receive times; no inference about real motion or clock error bounds."
+}

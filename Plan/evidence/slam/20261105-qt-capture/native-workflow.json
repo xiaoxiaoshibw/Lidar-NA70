@@ -1,0 +1,62 @@
+{
+  "ok": true,
+  "report": {
+    "capture_failed_checks": [
+      {
+        "detail": "内核丢包计数不可用",
+        "name": "lidar_drops",
+        "ok": false
+      }
+    ],
+    "capture_status": "degraded",
+    "claims": {
+      "R_IL": null,
+      "extrinsics_validated": false,
+      "sampling_error_bound_s": null,
+      "t_IL_m": null,
+      "time_sync_validated": false
+    },
+    "decoder_version": "ros2-na70-16mm-v1",
+    "decoder_warnings": [],
+    "files": {
+      "imu_batches.csv": "df6ab72e278565ee0a816b358ddb13cb2076e8f02fea761111235cae123191f1",
+      "packet_imu.csv": "127e632e83fcc28a2ca47feaf3ffade6c5d1764f96adda72d50ce56fa659856d"
+    },
+    "generator_sha256": "57f6d2a49cb7dbb5132824c4801f422f505b6b0d4afe8adcd3deafe29666eb9d",
+    "host_overlap_s": 99.63985896110535,
+    "ignored_packets": 0,
+    "imu_batches": 164,
+    "imu_frames": 20052,
+    "invalid_packets": 0,
+    "lidar_frames": 834,
+    "lidar_packets": 83351,
+    "limits": [
+      "主机到达时间仅用于粗关联，不是传感器采样时间。",
+      "同批 IMU 帧共享时间，保留整批行号，不插值或假造逐帧时间。",
+      "间隔门限用于发现主机数据空洞，不是同步误差上界。",
+      "外参与设备时钟关系待独立标定；端点重叠不保证连续有效。"
+    ],
+    "max_host_batch_gap_s": 0.1,
+    "output": "D:\\Code\\radar\\radar_capture_data\\na70_sessions\\associations\\20261104-170341-20261105-123906-507300",
+    "packet_status_counts": {
+      "host_bracketed": 68,
+      "host_gap": 82712,
+      "outside_imu_range": 571
+    },
+    "schema": "na70-host-association-v1",
+    "session": "D:\\Code\\radar\\radar_capture_data\\na70_sessions\\20261104-170341",
+    "sources": {
+      "D:\\Code\\radar\\radar_capture_data\\na70_sessions\\20261104-170341\\imu_frames.jsonl": {
+        "bytes": 5334244,
+        "sha256": "c661d5510be9e797e4d5fecd5dcf812bb0ab676f6b80957ddf629c454adee92b"
+      },
+      "D:\\Code\\radar\\radar_capture_data\\na70_sessions\\20261104-170341\\raw\\lidar.pcap": {
+        "bytes": 122359292,
+        "sha256": "e0e4d9f73d4332f0ac40aad18f264d26d1cbb1888756c2d837ba828a71bc3128"
+      }
+    },
+    "status": "PARTIAL_HOST_ASSOCIATION",
+    "time_basis": "HOST_RECEIVE_ONLY"
+  },
+  "session": "D:\\Code\\radar\\radar_capture_data\\na70_sessions\\20261104-170341"
+}

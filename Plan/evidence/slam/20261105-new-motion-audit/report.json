@@ -1,0 +1,114 @@
+{
+  "schema": "na70-session-report-v1",
+  "status": "REJECTED_NOT_STATIC",
+  "session": "radar_capture_data\\na70_sessions\\20261105-162734-639900",
+  "files": {
+    "frames": "radar_capture_data\\na70_sessions\\20261105-162734-639900\\imu_frames.jsonl",
+    "frames_sha256": "397e6f65e8f7dfa81c94a01d959a48877ab8ff43ec0ca12c8b0c45b88c988cda",
+    "chunks": "radar_capture_data\\na70_sessions\\20261105-162734-639900\\raw\\imu_chunks.jsonl",
+    "chunks_sha256": "a48d6297add75ae7f83aa1eab751cb1da1856d1193aff44647486351d28972e9",
+    "pcap": "radar_capture_data\\na70_sessions\\20261105-162734-639900\\raw\\lidar.pcap",
+    "pcap_sha256": "62f0e37a6d7ddf4bdc6b685cf0168bb132ce14dce88ef663e088a355a0d6a4ae"
+  },
+  "time_level": "C_HOST_RECEIVE_ONLY",
+  "device_time_present": false,
+  "saturation_suspected": false,
+  "static_baseline_usable": false,
+  "checks": {
+    "timebase": "OK_HOST_TIME_ONLY",
+    "ranges": "OK_NO_SATURATION",
+    "gyro_unit": "DEG_S_CONFIRMED",
+    "static": "REJECTED",
+    "overlap": "observed"
+  },
+  "summary": {
+    "frames": 14183,
+    "batches": 14169,
+    "frames_per_batch_median": 1.0,
+    "batch_interval_max_s": 0.02588100009597838,
+    "host_time_bound_s": null,
+    "host_time_bound_note": "采样时间和接收时间差的上界未知；批次间隔不是已验证的延迟上界或同步误差",
+    "segments": [
+      {
+        "segment": 0,
+        "samples": 14183,
+        "host_span_s": 70.91759600001387,
+        "median_positive_dt_s": 0.005001000128686428,
+        "effective_arrival_hz": 199.9600028530017,
+        "duplicate_host_times": 14,
+        "max_gap_s": 0.02588100009597838,
+        "gaps_over_1_5_median": 24
+      }
+    ],
+    "static_windows": [
+      [
+        0,
+        "REJECTED"
+      ],
+      [
+        1,
+        "REJECTED"
+      ],
+      [
+        2,
+        "REJECTED"
+      ],
+      [
+        3,
+        "REJECTED"
+      ],
+      [
+        4,
+        "REJECTED"
+      ],
+      [
+        5,
+        "REJECTED"
+      ],
+      [
+        6,
+        "REJECTED"
+      ]
+    ],
+    "allan": {
+      "status": "NOT_EVALUATED",
+      "reason": "segment_windows_not_static_like"
+    },
+    "range_events": 0,
+    "gyro_unit": {
+      "status": "DEG_S_CONFIRMED",
+      "scale": 1.019364338978631,
+      "cosine": 0.9729042860347816,
+      "reason": "scale near one and direction consistent"
+    },
+    "overlap": {
+      "schema": "na70-host-overlap-v1",
+      "status": "observed",
+      "lidar_packets": 57285,
+      "imu_chunks": 28643,
+      "lidar_first_unix_s": 1793867254.876622,
+      "lidar_last_unix_s": 1793867325.85462,
+      "imu_first_unix_s": 1793867254.890237,
+      "imu_last_unix_s": 1793867325.806186,
+      "host_overlap_s": 70.915949,
+      "max_lidar_capture_gap_s": 0.007999,
+      "max_imu_chunk_gap_s": 0.026295,
+      "invalid_packets": 0,
+      "warnings": [],
+      "limits": [
+        "host receive times do not establish sensor sampling times or synchronization",
+        "overlap of endpoints does not prove continuous valid data"
+      ]
+    }
+  },
+  "verdicts": {
+    "may_be_used_as_static_baseline": false,
+    "may_be_used_for_dynamic_calibration": false,
+    "reason": "无设备采样时间；主机批量到达限制对齐精度"
+  },
+  "limits": [
+    "本报告只汇总诊断，不代替原始字节审计、标定或同步验证",
+    "静态窗口通过不等于物理静止；量程未知时无饱和只是无证据",
+    "主机接收时间不能升级为设备采样时间"
+  ]
+}

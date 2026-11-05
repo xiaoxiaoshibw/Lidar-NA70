@@ -1,0 +1,76 @@
+{
+  "files": [
+    {
+      "path": "events.jsonl",
+      "bytes": 1039,
+      "sha256": "b5718a658e7364f31e4811b421a5639f787369dc70f33e0fcee8b92cbfb0a188",
+      "listed_in_manifest": true,
+      "manifest_match": true
+    },
+    {
+      "path": "imu_frames.jsonl",
+      "bytes": 5334244,
+      "sha256": "c661d5510be9e797e4d5fecd5dcf812bb0ab676f6b80957ddf629c454adee92b",
+      "listed_in_manifest": true,
+      "manifest_match": true
+    },
+    {
+      "path": "imu_host_receive.csv",
+      "bytes": 3264597,
+      "sha256": "5f7cd54afd3df0541b34bfda090bce471b2b18584b07dcba3802567332173632",
+      "listed_in_manifest": true,
+      "manifest_match": true
+    },
+    {
+      "path": "manifest.json",
+      "bytes": 2971,
+      "sha256": "e87d2ddb21a7e1ec42ab4941919388f6e179392da10a8897a1b3f016feaae864",
+      "listed_in_manifest": false,
+      "manifest_match": null
+    },
+    {
+      "path": "operator.json",
+      "bytes": 263,
+      "sha256": "a6a4b8e77d3699ea409771d922ab6a797014859d8e03e79422a6293c1e608b81",
+      "listed_in_manifest": true,
+      "manifest_match": true
+    },
+    {
+      "path": "quality.json",
+      "bytes": 2857,
+      "sha256": "9bdf777b4979668d67f66e2d26bab78fa4e5fa5a5306e3bfc4b1dd9f1c5b3fb8",
+      "listed_in_manifest": true,
+      "manifest_match": true
+    },
+    {
+      "path": "raw/imu.bin",
+      "bytes": 1343488,
+      "sha256": "f5ab2ae326ffbdbeb35bab62f5d640666dbcf904d162f5be37de5f1d491bde8c",
+      "listed_in_manifest": true,
+      "manifest_match": true
+    },
+    {
+      "path": "raw/imu_chunks.jsonl",
+      "bytes": 16542,
+      "sha256": "c161a6e25147ef34fb539e720a08e12eb219d91cd33d84d00c4f3ed48fc45ed2",
+      "listed_in_manifest": true,
+      "manifest_match": true
+    },
+    {
+      "path": "raw/lidar-udp.log",
+      "bytes": 69,
+      "sha256": "2902a05c526cec6617e22f3a7155b54b871630e171d82d5ce20858465b9cbc31",
+      "listed_in_manifest": true,
+      "manifest_match": true
+    },
+    {
+      "path": "raw/lidar.pcap",
+      "bytes": 122359292,
+      "sha256": "e0e4d9f73d4332f0ac40aad18f264d26d1cbb1888756c2d837ba828a71bc3128",
+      "listed_in_manifest": true,
+      "manifest_match": true
+    }
+  ],
+  "declared_but_missing": [],
+  "manifest_self_hash_note": "manifest does not list itself; computed hash is recorded above"
+}

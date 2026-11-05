@@ -1,0 +1,16 @@
+{
+  "scope": "difference between packet-host-yaw and per-frame yaw-midrange approximation, not ground-truth distortion",
+  "frame_yaw_span_deg_p50_p95_max": [
+    0.16364513571213868,
+    0.8197096028241275,
+    1.386503387623236
+  ],
+  "point_displacement_m_p50_p95_max": [
+    0.014607703069238557,
+    0.059372067426120806,
+    0.20385154183876417
+  ],
+  "packet_motion_compensation_only": true,
+  "translation_compensated": false,
+  "device_point_times_known": false
+}

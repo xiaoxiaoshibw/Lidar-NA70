@@ -1,0 +1,12 @@
+{
+  "version": "na70-qt-capture-v1",
+  "session_root": "radar_capture_data/na70_sessions",
+  "preferred_imu_port": "COM12",
+  "imu_baud": 460800,
+  "lidar_port": 2368,
+  "duration_s": 60,
+  "max_duration_s": 1800,
+  "min_free_bytes": 2147483648,
+  "poll_interval_s": 0.25,
+  "max_host_batch_gap_s": 0.1
+}

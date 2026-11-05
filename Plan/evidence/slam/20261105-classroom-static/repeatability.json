@@ -1,0 +1,11 @@
+{
+  "voxel_m": 0.1,
+  "range_max_m": 20,
+  "first_half_voxels": 11778,
+  "second_half_voxels": 11778,
+  "first_to_second_median_m": 0.0,
+  "first_to_second_p95_m": 0.09999999999999964,
+  "second_to_first_median_m": 0.0,
+  "second_to_first_p95_m": 0.09999999999999964,
+  "note": "sensor-frame repeatability only, not accuracy; no registration"
+}

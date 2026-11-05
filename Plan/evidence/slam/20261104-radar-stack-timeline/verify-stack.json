@@ -1,0 +1,52 @@
+{
+  "status": "PASS",
+  "same_data_as_previous_timeline": {
+    "frames": true,
+    "batches": true,
+    "poses": true,
+    "model": true,
+    "origin_unix_s": true,
+    "sources": true,
+    "points_per_frame": true
+  },
+  "windows": [
+    {
+      "requested": 100,
+      "first_frame": 0,
+      "last_frame": 0,
+      "actual_frames": 1,
+      "start_s": 0.0,
+      "end_s": 0.11327505111694336,
+      "sampled_points": 1200,
+      "last_frame_complete": true
+    },
+    {
+      "requested": 10,
+      "first_frame": 51,
+      "last_frame": 60,
+      "actual_frames": 10,
+      "start_s": 6.068156003952026,
+      "end_s": 7.2554380893707275,
+      "sampled_points": 12000,
+      "last_frame_complete": true
+    },
+    {
+      "requested": 100,
+      "first_frame": 734,
+      "last_frame": 833,
+      "actual_frames": 100,
+      "start_s": 88.2271180152893,
+      "end_s": 100.30670404434204,
+      "sampled_points": 120000,
+      "last_frame_complete": false
+    }
+  ],
+  "code_sha256": {
+    "tools/na70_host_timeline_view.html": "f2ae5858c7b52f84fa8b4945fb4923644573d9d760d3da29536a63221a953d9a",
+    "tools/na70_host_timeline_export.py": "94cc61442a83f859ca886ccef2e7b964dc30c077f31f3add9bd1d1a5e8af5724",
+    "web/tests/test_na70_timeline_stack.cjs": "cb5230d27e3d95851893d2b1f32b52f867ccd14efdf1ca1a44764b550b42e8da",
+    "web/tests/test_na70_timeline_ui.cjs": "ebd3e89d5fe35d7e1c9ae18d14590144662dc0307498fb2ee5d5706a78c9381b",
+    "web/tests/test_na70_timeline_math.cjs": "ddd1e6de4fdcdfae790b4f6b9d2276c4cf31e1405780681a913b20bf9a91e9ca",
+    "web/tests/test_na70_host_timeline_export.py": "327f9b74859f5d6000acc032957b529dcf90faf25aa0c944ddc54899726adf9a"
+  }
+}

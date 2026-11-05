@@ -1,0 +1,38 @@
+{
+  "evidence": "SYNTHETIC",
+  "transport": "pyserial loop:// (not Windows serial driver)",
+  "pyserial_version": "3.5",
+  "producer": "67 bytes / 5 ms; scheduling is approximate",
+  "results": [
+    {
+      "mode": "old",
+      "timeout_s": 0.05,
+      "read_calls": 13,
+      "bytes_per_read_min": 670,
+      "bytes_per_read_median": 737,
+      "bytes_per_read_max": 871,
+      "read_duration_s_median": 0.06199999991804361,
+      "read_duration_s_max": 0.06300000008195639
+    },
+    {
+      "mode": "old",
+      "timeout_s": null,
+      "read_calls": 2,
+      "bytes_per_read_min": 8192,
+      "bytes_per_read_median": 8192.0,
+      "bytes_per_read_max": 8192,
+      "read_duration_s_median": 0.6094999999040738,
+      "read_duration_s_max": 0.6099999998696148
+    },
+    {
+      "mode": "available_or_one",
+      "timeout_s": 0.05,
+      "read_calls": 198,
+      "bytes_per_read_min": 1,
+      "bytes_per_read_median": 33.5,
+      "bytes_per_read_max": 200,
+      "read_duration_s_median": 0.0,
+      "read_duration_s_max": 0.01600000006146729
+    }
+  ]
+}

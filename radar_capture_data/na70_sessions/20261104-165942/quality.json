@@ -1,0 +1,112 @@
+{
+  "schema": "na70-capture-quality-v1",
+  "status": "failed",
+  "stop_reason": "duration",
+  "duration_s": 100.334,
+  "overlap_s": 100.297,
+  "time_level": "host_receive_only",
+  "measurement_limits": [
+    "IMU 无设备采样时间戳：主机到达时间不是采样时间",
+    "雷达包内时间未核实，PCAP 时间为主机抓包时间",
+    "两路同一主机只提供关联，不构成硬件同步",
+    "overlap_s 仅表示采集进程运行窗口，不证明两路数据连续有效"
+  ],
+  "checks": [
+    {
+      "name": "imu_frames",
+      "ok": true,
+      "detail": "20052 帧"
+    },
+    {
+      "name": "imu_rate",
+      "ok": true,
+      "detail": "199.9 Hz（期望 150–260）"
+    },
+    {
+      "name": "imu_checksum",
+      "ok": true,
+      "detail": "0 个校验错误"
+    },
+    {
+      "name": "imu_payload",
+      "ok": true,
+      "detail": "0 个载荷错误"
+    },
+    {
+      "name": "imu_reconnect",
+      "ok": true,
+      "detail": "0 次打开或读取失败"
+    },
+    {
+      "name": "imu_sequence",
+      "ok": true,
+      "detail": "0 次 tid 断号"
+    },
+    {
+      "name": "imu_overflow",
+      "ok": true,
+      "detail": "0 帧写队列溢出"
+    },
+    {
+      "name": "imu_worker",
+      "ok": true,
+      "detail": "采集线程正常"
+    },
+    {
+      "name": "lidar_bytes",
+      "ok": false,
+      "detail": "24 字节"
+    },
+    {
+      "name": "lidar_drops",
+      "ok": false,
+      "detail": "内核丢包计数不可用"
+    },
+    {
+      "name": "overlap",
+      "ok": true,
+      "detail": "采集进程窗口 100.30 s，覆盖较短窗口 100%"
+    }
+  ],
+  "imu": {
+    "state": "stopped",
+    "error": "",
+    "worker_error": "",
+    "port": "COM12",
+    "baud": 460800,
+    "segment": 0,
+    "frames": 20052,
+    "bytes": 1343488,
+    "hz": 199.9,
+    "last_frame_age_s": null,
+    "checksum_errors": 0,
+    "payload_errors": 0,
+    "sequence_breaks": 0,
+    "reconnects": 0,
+    "queue_overflow": 0,
+    "discarded_bytes": 4,
+    "sample_time_frames": 0,
+    "first_tid": 35638,
+    "last_tid": 55689,
+    "started_unix": 1793782782.373494,
+    "ended_unix": 1793782882.6746328
+  },
+  "lidar": {
+    "state": "stopped",
+    "error": "",
+    "worker_error": "",
+    "bind_host": "0.0.0.0",
+    "port": 2368,
+    "local_ip": null,
+    "pcap": "D:\\Code\\radar\\radar_capture_data\\na70_sessions\\20261104-165942\\raw\\lidar.pcap",
+    "pcap_bytes": 24,
+    "started_unix": 1793782782.3775644,
+    "ended_unix": 1793782882.7030349,
+    "packets_per_sec": 0.0,
+    "captured": 0,
+    "received": 0,
+    "dropped": null,
+    "capture_method": "udp socket (synthesized Ethernet/IP/UDP headers, raw payload only)"
+  },
+  "warnings": []
+}

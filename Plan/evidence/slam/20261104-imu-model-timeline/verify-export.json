@@ -1,0 +1,13 @@
+{
+  "status": "PASS",
+  "source_frames": 20052,
+  "receive_batches": 164,
+  "fields": [
+    "tid",
+    "quaternion",
+    "euler",
+    "gyro",
+    "accel"
+  ],
+  "batch_time_preserved": true
+}

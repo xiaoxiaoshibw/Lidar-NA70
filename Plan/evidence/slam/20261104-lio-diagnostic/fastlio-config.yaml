@@ -1,0 +1,47 @@
+/**:
+    ros__parameters:
+        feature_extract_enable: false
+        point_filter_num: 1
+        max_iteration: 3
+        filter_size_surf: 0.3
+        filter_size_map: 0.3
+        cube_side_length: 500.0
+        runtime_pos_log_enable: true
+        map_file_path: "./na70_diagnostic.pcd"
+
+        common:
+            lid_topic:  "/na70/points"
+            imu_topic:  "/na70/imu"
+            time_sync_en: false
+            time_offset_lidar_to_imu: 0.0
+
+        preprocess:
+            lidar_type: 5          # NA70 handler added by tools/lio/apply_fast_lio_na70_patch.py
+            scan_line: 1
+            scan_rate: 10
+            timestamp_unit: 0      # PointCloud2 `time` field is seconds
+            blind: 0.5
+
+        mapping:
+            acc_cov: 0.1
+            gyr_cov: 0.1
+            b_acc_cov: 0.0001
+            b_gyr_cov: 0.0001
+            fov_degree: 360.0
+            det_range: 100.0
+            extrinsic_est_en: false
+            # DIAGNOSTIC ONLY: identity until a validated T_imu_lidar exists.
+            extrinsic_T: [0.0, 0.0, 0.0]
+            extrinsic_R: [1.0, 0.0, 0.0,
+                          0.0, 1.0, 0.0,
+                          0.0, 0.0, 1.0]
+
+        publish:
+            path_en: true
+            scan_publish_en: true
+            dense_publish_en: true
+            scan_bodyframe_pub_en: true
+
+        pcd_save:
+            pcd_save_en: true
+            interval: -1

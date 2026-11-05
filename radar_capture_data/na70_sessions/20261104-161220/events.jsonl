@@ -1,0 +1,9 @@
+{"t_unix": 1793779940.7797074, "kind": "session_created", "session_id": "20261104-161220"}
+{"t_unix": 1793779940.7807107, "kind": "capture_started", "imu": true, "lidar": true}
+{"t_unix": 1793779940.7817075, "kind": "imu_started", "port": "COM12", "baud": 460800, "segment": 0}
+{"t_unix": 1793779940.7827072, "kind": "lidar_started", "bind_host": "0.0.0.0", "port": 2368, "capture": "udp_socket"}
+{"t_unix": 1793779940.7907126, "kind": "imu_segment_open", "segment": 0, "port": "COM12"}
+{"t_unix": 1793779950.781695, "kind": "capture_stopping", "reason": "duration"}
+{"t_unix": 1793779951.2063, "kind": "imu_stopped", "frames": 2078, "bytes": 139264, "checksum_errors": 0, "payload_errors": 0, "sequence_breaks": 0, "reconnects": 0, "queue_overflow": 0}
+{"t_unix": 1793779951.2073007, "kind": "lidar_stopped", "pcap_bytes": 14022360, "captured": 9552, "received": 9552, "dropped": null, "note": "UDP 采集无法获取内核丢包计数"}
+{"t_unix": 1793779951.2083008, "kind": "session_finalized", "status": "degraded"}

@@ -1,0 +1,51 @@
+{
+  "schema": "na70-imu-host-timeline-diagnostic-v1",
+  "status": "DIAGNOSTIC_ONLY",
+  "source": "radar_capture_data\\na70_sessions\\20261104-170341\\imu_frames.jsonl",
+  "source_sha256": "c661d5510be9e797e4d5fecd5dcf812bb0ab676f6b80957ddf629c454adee92b",
+  "frames": 20052,
+  "time_source": "HOST_RECEIVE_ONLY",
+  "host_start_unix_s": 1793783022.269308,
+  "host_end_unix_s": 1793783121.909167,
+  "host_span_s": 99.63985896110535,
+  "distinct_host_timestamps": 164,
+  "batch_frame_count_min_max": [
+    122,
+    123
+  ],
+  "host_batch_gap_median_max_s": [
+    0.610083818435669,
+    0.6158292293548584
+  ],
+  "quaternion_order_convention": "wxyz, based on existing capture CSV labels; frame direction unverified",
+  "quaternion_norm_min_max": [
+    0.9999985882060034,
+    1.0000000133645
+  ],
+  "angular_distance_from_first_deg_max": 84.08904869861087,
+  "within_batch_first_to_last_orientation_change_deg_max": 17.96664781010424,
+  "euler_recorded_first": [
+    -4.559445,
+    2.681645,
+    -55.539192
+  ],
+  "euler_recorded_last": [
+    -6.944912,
+    -0.177743,
+    2.447311
+  ],
+  "has_any_sample_us": false,
+  "has_any_ready_us": false,
+  "position_trajectory": "NOT_EVALUATED",
+  "limitations": [
+    "Frame timestamps are receive completion times shared by each batch; sample times are unknown.",
+    "The orientation magnitude is derived from device-fused quaternions and is not independent ground truth.",
+    "Quaternion coordinate frame, direction, installation, accelerometer bias and gyro units remain unverified.",
+    "No independent position, velocity, timing or bias reference exists for a credible IMU position trajectory."
+  ],
+  "environment": {
+    "python": "3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]",
+    "numpy": "2.5.3",
+    "platform": "Windows-11-10.0.26300-SP0"
+  }
+}

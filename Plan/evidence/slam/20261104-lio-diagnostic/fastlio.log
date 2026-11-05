@@ -1,0 +1,121 @@
+[INFO] [launch]: All log files can be found below /home/radar/.ros/log/2026-11-04-17-23-18-859721-localhost-32
+[INFO] [launch]: Default logging verbosity is set to INFO
+[INFO] [fastlio_mapping-1]: process started with pid [34]
+[fastlio_mapping-1] [INFO] [1793784199.294845814] [laser_mapping]: p_pre->lidar_type 5
+[fastlio_mapping-1] Multi thread started 
+[fastlio_mapping-1] ~~~~/home/radar/na70_lio_ws/src/fast_lio/ file opened
+[fastlio_mapping-1] [INFO] [1793784199.305838460] [laser_mapping]: Node init finished.
+[fastlio_mapping-1] [WARN] [1793784215.474846809] [laser_mapping]: No point, skip this scan!
+[fastlio_mapping-1] 
+[fastlio_mapping-1] [WARN] [1793784215.484859120] [laser_mapping]: No point, skip this scan!
+[fastlio_mapping-1] 
+[fastlio_mapping-1] [WARN] [1793784215.494910033] [laser_mapping]: No point, skip this scan!
+[fastlio_mapping-1] 
+[fastlio_mapping-1] [WARN] [1793784215.504852407] [laser_mapping]: No point, skip this scan!
+[fastlio_mapping-1] 
+[fastlio_mapping-1] IMU Initial Done
+[fastlio_mapping-1] [WARN] [1793784216.635011200] [laser_mapping]: No point, skip this scan!
+[fastlio_mapping-1] 
+[fastlio_mapping-1] [WARN] [1793784216.644848138] [laser_mapping]: No point, skip this scan!
+[fastlio_mapping-1] 
+[fastlio_mapping-1] [WARN] [1793784216.654905726] [laser_mapping]: No point, skip this scan!
+[fastlio_mapping-1] 
+[fastlio_mapping-1] [WARN] [1793784216.664892946] [laser_mapping]: No point, skip this scan!
+[fastlio_mapping-1] 
+[fastlio_mapping-1] [WARN] [1793784216.674884223] [laser_mapping]: No point, skip this scan!
+[fastlio_mapping-1] 
+[fastlio_mapping-1] [INFO] [1793784217.811249985] [laser_mapping]: Initialize the map kdtree
+[fastlio_mapping-1] [ mapping ]: time: IMU + Map + Input Downsample: 0.000472 ave match: 0.010908 ave solve: 0.002842  ave ICP: 0.016043  map incre: 0.004214 ave total: 0.020729 icp: 0.014504 construct H: 0.000653 
+[fastlio_mapping-1] [ mapping ]: time: IMU + Map + Input Downsample: 0.000450 ave match: 0.009986 ave solve: 0.001821  ave ICP: 0.010113  map incre: 0.004899 ave total: 0.018095 icp: 0.012200 construct H: 0.000393 
+[fastlio_mapping-1] [ mapping ]: time: IMU + Map + Input Downsample: 0.000493 ave match: 0.009535 ave solve: 0.001545  ave ICP: 0.009855  map incre: 0.004631 ave total: 0.017057 icp: 0.011353 construct H: 0.000304 
+[fastlio_mapping-1] [ mapping ]: time: IMU + Map + Input Downsample: 0.002460 ave match: 0.009776 ave solve: 0.001551  ave ICP: 0.012837  map incre: 0.017634 ave total: 0.021025 icp: 0.011542 construct H: 0.000350 
+[fastlio_mapping-1] [ mapping ]: time: IMU + Map + Input Downsample: 0.000622 ave match: 0.010684 ave solve: 0.001688  ave ICP: 0.016949  map incre: 0.007686 ave total: 0.021872 icp: 0.012558 construct H: 0.000408 
+[fastlio_mapping-1] [ mapping ]: time: IMU + Map + Input Downsample: 0.000641 ave match: 0.010407 ave solve: 0.001667  ave ICP: 0.010834  map incre: 0.005769 ave total: 0.021100 icp: 0.012236 construct H: 0.000382 
+[fastlio_mapping-1] [ mapping ]: time: IMU + Map + Input Downsample: 0.000574 ave match: 0.010574 ave solve: 0.001661  ave ICP: 0.013544  map incre: 0.004269 ave total: 0.020713 icp: 0.012384 construct H: 0.000359 
+[fastlio_mapping-1] [ mapping ]: time: IMU + Map + Input Downsample: 0.000549 ave match: 0.010485 ave solve: 0.001747  ave ICP: 0.012498  map incre: 0.004812 ave total: 0.020356 icp: 0.012371 construct H: 0.000355 
+[fastlio_mapping-1] [ mapping ]: time: IMU + Map + Input Downsample: 0.001710 ave match: 0.010470 ave solve: 0.001656  ave ICP: 0.011564  map incre: 0.014952 ave total: 0.021231 icp: 0.012252 construct H: 0.000325 
+[fastlio_mapping-1] [ mapping ]: time: IMU + Map + Input Downsample: 0.000525 ave match: 0.010371 ave solve: 0.001590  ave ICP: 0.010683  map incre: 0.009259 ave total: 0.021154 icp: 0.012079 construct H: 0.000307 
+[fastlio_mapping-1] [ mapping ]: time: IMU + Map + Input Downsample: 0.000362 ave match: 0.010359 ave solve: 0.001525  ave ICP: 0.011404  map incre: 0.004833 ave total: 0.020740 icp: 0.011994 construct H: 0.000290 
+[fastlio_mapping-1] [ mapping ]: time: IMU + Map + Input Downsample: 0.000685 ave match: 0.010329 ave solve: 0.001483  ave ICP: 0.011343  map incre: 0.006212 ave total: 0.020532 icp: 0.011917 construct H: 0.000276 
+[fastlio_mapping-1] [ mapping ]: time: IMU + Map + Input Downsample: 0.000557 ave match: 0.010208 ave solve: 0.001430  ave ICP: 0.009813  map incre: 0.009904 ave total: 0.020512 icp: 0.011737 construct H: 0.000268 
+[fastlio_mapping-1] [ mapping ]: time: IMU + Map + Input Downsample: 0.001950 ave match: 0.010607 ave solve: 0.001430  ave ICP: 0.017771  map incre: 0.015669 ave total: 0.021575 icp: 0.012132 construct H: 0.000258 
+[fastlio_mapping-1] [ mapping ]: time: IMU + Map + Input Downsample: 0.001042 ave match: 0.010697 ave solve: 0.001442  ave ICP: 0.013865  map incre: 0.008866 ave total: 0.021721 icp: 0.012232 construct H: 0.000259 
+[fastlio_mapping-1] [ mapping ]: time: IMU + Map + Input Downsample: 0.000535 ave match: 0.010794 ave solve: 0.001409  ave ICP: 0.013426  map incre: 0.004778 ave total: 0.021535 icp: 0.012293 construct H: 0.000252 
+[fastlio_mapping-1] [ mapping ]: time: IMU + Map + Input Downsample: 0.000396 ave match: 0.010698 ave solve: 0.001388  ave ICP: 0.010533  map incre: 0.004097 ave total: 0.021152 icp: 0.012173 construct H: 0.000246 
+[fastlio_mapping-1] [ mapping ]: time: IMU + Map + Input Downsample: 0.000475 ave match: 0.010755 ave solve: 0.001369  ave ICP: 0.013037  map incre: 0.007360 ave total: 0.021136 icp: 0.012208 construct H: 0.000242 
+[fastlio_mapping-1] [ mapping ]: time: IMU + Map + Input Downsample: 0.001544 ave match: 0.010801 ave solve: 0.001329  ave ICP: 0.012674  map incre: 0.019713 ave total: 0.021810 icp: 0.012211 construct H: 0.000239 
+[fastlio_mapping-1] [ mapping ]: time: IMU + Map + Input Downsample: 0.000403 ave match: 0.010647 ave solve: 0.001298  ave ICP: 0.008669  map incre: 0.006497 ave total: 0.021498 icp: 0.012024 construct H: 0.000233 
+[fastlio_mapping-1] [ mapping ]: time: IMU + Map + Input Downsample: 0.000495 ave match: 0.010571 ave solve: 0.001271  ave ICP: 0.010021  map incre: 0.006297 ave total: 0.021275 icp: 0.011918 construct H: 0.000229 
+[fastlio_mapping-1] [ mapping ]: time: IMU + Map + Input Downsample: 0.000402 ave match: 0.010526 ave solve: 0.001262  ave ICP: 0.010923  map incre: 0.003904 ave total: 0.021000 icp: 0.011863 construct H: 0.000223 
+[fastlio_mapping-1] [ mapping ]: time: IMU + Map + Input Downsample: 0.000714 ave match: 0.010456 ave solve: 0.001239  ave ICP: 0.009946  map incre: 0.004640 ave total: 0.020752 icp: 0.011768 construct H: 0.000219 
+[fastlio_mapping-1] [ mapping ]: time: IMU + Map + Input Downsample: 0.002386 ave match: 0.010646 ave solve: 0.001242  ave ICP: 0.016635  map incre: 0.015717 ave total: 0.021335 icp: 0.011959 construct H: 0.000216 
+[fastlio_mapping-1] [ mapping ]: time: IMU + Map + Input Downsample: 0.000650 ave match: 0.010680 ave solve: 0.001292  ave ICP: 0.014302  map incre: 0.013112 ave total: 0.021604 icp: 0.012044 construct H: 0.000219 
+[fastlio_mapping-1] [ mapping ]: time: IMU + Map + Input Downsample: 0.000529 ave match: 0.010926 ave solve: 0.001304  ave ICP: 0.019337  map incre: 0.006300 ave total: 0.021779 icp: 0.012300 construct H: 0.000232 
+[fastlio_mapping-1] [ mapping ]: time: IMU + Map + Input Downsample: 0.000554 ave match: 0.011222 ave solve: 0.001339  ave ICP: 0.021506  map incre: 0.006377 ave total: 0.022026 icp: 0.012631 construct H: 0.000232 
+[fastlio_mapping-1] [ mapping ]: time: IMU + Map + Input Downsample: 0.000921 ave match: 0.011353 ave solve: 0.001335  ave ICP: 0.016405  map incre: 0.005962 ave total: 0.022071 icp: 0.012758 construct H: 0.000229 
+[fastlio_mapping-1] [pcl::VoxelGrid::applyFilter] Leaf size is too small for the input dataset. Integer indices would overflow.
+[fastlio_mapping-1] [pcl::VoxelGrid::applyFilter] Leaf size is too small for the input dataset. Integer indices would overflow.
+[fastlio_mapping-1] [pcl::VoxelGrid::applyFilter] Leaf size is too small for the input dataset. Integer indices would overflow.
+[fastlio_mapping-1] [pcl::VoxelGrid::applyFilter] Leaf size is too small for the input dataset. Integer indices would overflow.
+[fastlio_mapping-1] [pcl::VoxelGrid::applyFilter] Leaf size is too small for the input dataset. Integer indices would overflow.
+[fastlio_mapping-1] [ mapping ]: time: IMU + Map + Input Downsample: 0.002510 ave match: 0.011382 ave solve: 0.001321  ave ICP: 0.013473  map incre: 0.010792 ave total: 0.022233 icp: 0.012771 construct H: 0.000225 
+[fastlio_mapping-1] [ mapping ]: time: IMU + Map + Input Downsample: 0.000407 ave match: 0.011362 ave solve: 0.001327  ave ICP: 0.012507  map incre: 0.009516 ave total: 0.022240 icp: 0.012756 construct H: 0.000224 
+[fastlio_mapping-1] [ mapping ]: time: IMU + Map + Input Downsample: 0.001561 ave match: 0.011325 ave solve: 0.001314  ave ICP: 0.011423  map incre: 0.009159 ave total: 0.022237 icp: 0.012705 construct H: 0.000222 
+[fastlio_mapping-1] [ mapping ]: time: IMU + Map + Input Downsample: 0.000462 ave match: 0.011255 ave solve: 0.001296  ave ICP: 0.010074  map incre: 0.005816 ave total: 0.022053 icp: 0.012616 construct H: 0.000218 
+[fastlio_mapping-1] [ mapping ]: time: IMU + Map + Input Downsample: 0.003178 ave match: 0.011374 ave solve: 0.001297  ave ICP: 0.016866  map incre: 0.014242 ave total: 0.022424 icp: 0.012735 construct H: 0.000220 
+[fastlio_mapping-1] [ mapping ]: time: IMU + Map + Input Downsample: 0.000532 ave match: 0.011307 ave solve: 0.001295  ave ICP: 0.010591  map incre: 0.008416 ave total: 0.022339 icp: 0.012666 construct H: 0.000223 
+[fastlio_mapping-1] [ mapping ]: time: IMU + Map + Input Downsample: 0.000511 ave match: 0.011250 ave solve: 0.001278  ave ICP: 0.010254  map incre: 0.006981 ave total: 0.022207 icp: 0.012591 construct H: 0.000220 
+[fastlio_mapping-1] [ mapping ]: time: IMU + Map + Input Downsample: 0.034984 ave match: 0.011442 ave solve: 0.001394  ave ICP: 0.025889  map incre: 0.022205 ave total: 0.023898 icp: 0.012950 construct H: 0.000245 
+[fastlio_mapping-1] [ mapping ]: time: IMU + Map + Input Downsample: 0.000094 ave match: 0.011564 ave solve: 0.001471  ave ICP: 0.020714  map incre: 0.010806 ave total: 0.024107 icp: 0.013153 construct H: 0.000253 
+[fastlio_mapping-1] [ mapping ]: time: IMU + Map + Input Downsample: 0.000092 ave match: 0.011674 ave solve: 0.001519  ave ICP: 0.019774  map incre: 0.007012 ave total: 0.024180 icp: 0.013321 construct H: 0.000263 
+[fastlio_mapping-1] [ mapping ]: time: IMU + Map + Input Downsample: 0.000082 ave match: 0.011816 ave solve: 0.001562  ave ICP: 0.021138  map incre: 0.006739 ave total: 0.024277 icp: 0.013516 construct H: 0.000283 
+[fastlio_mapping-1] [ mapping ]: time: IMU + Map + Input Downsample: 0.000112 ave match: 0.011851 ave solve: 0.001603  ave ICP: 0.017138  map incre: 0.006572 ave total: 0.024265 icp: 0.013602 construct H: 0.000291 
+[fastlio_mapping-1] [ mapping ]: time: IMU + Map + Input Downsample: 0.001638 ave match: 0.011966 ave solve: 0.001585  ave ICP: 0.018015  map incre: 0.013530 ave total: 0.024483 icp: 0.013697 construct H: 0.000289 
+[fastlio_mapping-1] [ mapping ]: time: IMU + Map + Input Downsample: 0.000499 ave match: 0.011931 ave solve: 0.001576  ave ICP: 0.011908  map incre: 0.008979 ave total: 0.024409 icp: 0.013650 construct H: 0.000290 
+[fastlio_mapping-1] [ mapping ]: time: IMU + Map + Input Downsample: 0.000367 ave match: 0.011859 ave solve: 0.001557  ave ICP: 0.009917  map incre: 0.004687 ave total: 0.024190 icp: 0.013558 construct H: 0.000286 
+[fastlio_mapping-1] [ mapping ]: time: IMU + Map + Input Downsample: 0.000404 ave match: 0.011768 ave solve: 0.001535  ave ICP: 0.008720  map incre: 0.004510 ave total: 0.023950 icp: 0.013443 construct H: 0.000282 
+[fastlio_mapping-1] [pcl::VoxelGrid::applyFilter] Leaf size is too small for the input dataset. Integer indices would overflow.
+[fastlio_mapping-1] [pcl::VoxelGrid::applyFilter] Leaf size is too small for the input dataset. Integer indices would overflow.
+[fastlio_mapping-1] [pcl::VoxelGrid::applyFilter] Leaf size is too small for the input dataset. Integer indices would overflow.
+[fastlio_mapping-1] [pcl::VoxelGrid::applyFilter] Leaf size is too small for the input dataset. Integer indices would overflow.
+[fastlio_mapping-1] [pcl::VoxelGrid::applyFilter] Leaf size is too small for the input dataset. Integer indices would overflow.
+[fastlio_mapping-1] [ mapping ]: time: IMU + Map + Input Downsample: 0.001498 ave match: 0.011781 ave solve: 0.001525  ave ICP: 0.014455  map incre: 0.014113 ave total: 0.024086 icp: 0.013445 construct H: 0.000281 
+[fastlio_mapping-1] [ mapping ]: time: IMU + Map + Input Downsample: 0.000455 ave match: 0.011750 ave solve: 0.001515  ave ICP: 0.011576  map incre: 0.007190 ave total: 0.023980 icp: 0.013400 construct H: 0.000278 
+[fastlio_mapping-1] [ mapping ]: time: IMU + Map + Input Downsample: 0.000419 ave match: 0.011700 ave solve: 0.001502  ave ICP: 0.010589  map incre: 0.006802 ave total: 0.023849 icp: 0.013336 construct H: 0.000277 
+[fastlio_mapping-1] [ mapping ]: time: IMU + Map + Input Downsample: 0.000381 ave match: 0.011613 ave solve: 0.001489  ave ICP: 0.008675  map incre: 0.006068 ave total: 0.023667 icp: 0.013234 construct H: 0.000274 
+[fastlio_mapping-1] [ mapping ]: time: IMU + Map + Input Downsample: 0.000386 ave match: 0.011530 ave solve: 0.001474  ave ICP: 0.008559  map incre: 0.004907 ave total: 0.023467 icp: 0.013134 construct H: 0.000270 
+[fastlio_mapping-1] [ mapping ]: time: IMU + Map + Input Downsample: 0.000442 ave match: 0.011457 ave solve: 0.001457  ave ICP: 0.008798  map incre: 0.006317 ave total: 0.023308 icp: 0.013042 construct H: 0.000268 
+[fastlio_mapping-1] [ mapping ]: time: IMU + Map + Input Downsample: 0.001308 ave match: 0.011682 ave solve: 0.001450  ave ICP: 0.024317  map incre: 0.022364 ave total: 0.023792 icp: 0.013257 construct H: 0.000267 
+[fastlio_mapping-1] [ mapping ]: time: IMU + Map + Input Downsample: 0.000079 ave match: 0.011740 ave solve: 0.001449  ave ICP: 0.016445  map incre: 0.008050 ave total: 0.023807 icp: 0.013314 construct H: 0.000267 
+[fastlio_mapping-1] [ mapping ]: time: IMU + Map + Input Downsample: 0.000087 ave match: 0.011866 ave solve: 0.001451  ave ICP: 0.020305  map incre: 0.007125 ave total: 0.023877 icp: 0.013441 construct H: 0.000266 
+[fastlio_mapping-1] [ mapping ]: time: IMU + Map + Input Downsample: 0.000085 ave match: 0.012002 ave solve: 0.001451  ave ICP: 0.020958  map incre: 0.007474 ave total: 0.023963 icp: 0.013576 construct H: 0.000266 
+[fastlio_mapping-1] [ mapping ]: time: IMU + Map + Input Downsample: 0.000086 ave match: 0.012204 ave solve: 0.001462  ave ICP: 0.025523  map incre: 0.009574 ave total: 0.024167 icp: 0.013789 construct H: 0.000268 
+[fastlio_mapping-1] [ mapping ]: time: IMU + Map + Input Downsample: 0.001434 ave match: 0.012200 ave solve: 0.001448  ave ICP: 0.013080  map incre: 0.016863 ave total: 0.024296 icp: 0.013769 construct H: 0.000265 
+[fastlio_mapping-1] [ mapping ]: time: IMU + Map + Input Downsample: 0.000794 ave match: 0.012207 ave solve: 0.001443  ave ICP: 0.014079  map incre: 0.010515 ave total: 0.024315 icp: 0.013769 construct H: 0.000264 
+[fastlio_mapping-1] [ mapping ]: time: IMU + Map + Input Downsample: 0.000330 ave match: 0.012116 ave solve: 0.001430  ave ICP: 0.007902  map incre: 0.004221 ave total: 0.024111 icp: 0.013665 construct H: 0.000262 
+[fastlio_mapping-1] [ mapping ]: time: IMU + Map + Input Downsample: 0.000377 ave match: 0.012027 ave solve: 0.001416  ave ICP: 0.007725  map incre: 0.005275 ave total: 0.023929 icp: 0.013561 construct H: 0.000259 
+[fastlio_mapping-1] [ mapping ]: time: IMU + Map + Input Downsample: 0.004041 ave match: 0.012183 ave solve: 0.001426  ave ICP: 0.023786  map incre: 0.013053 ave total: 0.024211 icp: 0.013725 construct H: 0.000260 
+[fastlio_mapping-1] [ mapping ]: time: IMU + Map + Input Downsample: 0.000552 ave match: 0.012149 ave solve: 0.001422  ave ICP: 0.011761  map incre: 0.011036 ave total: 0.024197 icp: 0.013688 construct H: 0.000260 
+[fastlio_mapping-1] [ mapping ]: time: IMU + Map + Input Downsample: 0.000382 ave match: 0.012138 ave solve: 0.001417  ave ICP: 0.012945  map incre: 0.006868 ave total: 0.024132 icp: 0.013670 construct H: 0.000258 
+[fastlio_mapping-1] [ mapping ]: time: IMU + Map + Input Downsample: 0.000420 ave match: 0.012073 ave solve: 0.001411  ave ICP: 0.009352  map incre: 0.007572 ave total: 0.024025 icp: 0.013598 construct H: 0.000256 
+[fastlio_mapping-1] [ mapping ]: time: IMU + Map + Input Downsample: 0.000436 ave match: 0.012029 ave solve: 0.001405  ave ICP: 0.010560  map incre: 0.006657 ave total: 0.023925 icp: 0.013548 construct H: 0.000254 
+[fastlio_mapping-1] [ mapping ]: time: IMU + Map + Input Downsample: 0.001919 ave match: 0.012020 ave solve: 0.001393  ave ICP: 0.012379  map incre: 0.012627 ave total: 0.023971 icp: 0.013525 construct H: 0.000252 
+[fastlio_mapping-1] [ mapping ]: time: IMU + Map + Input Downsample: 0.000429 ave match: 0.011964 ave solve: 0.001391  ave ICP: 0.009814  map incre: 0.009789 ave total: 0.023912 icp: 0.013466 construct H: 0.000251 
+[fastlio_mapping-1] [ mapping ]: time: IMU + Map + Input Downsample: 0.000357 ave match: 0.011917 ave solve: 0.001382  ave ICP: 0.009880  map incre: 0.011242 ave total: 0.023875 icp: 0.013409 construct H: 0.000250 
+[fastlio_mapping-1] [ mapping ]: time: IMU + Map + Input Downsample: 0.000405 ave match: 0.011919 ave solve: 0.001374  ave ICP: 0.013182  map incre: 0.004868 ave total: 0.023796 icp: 0.013402 construct H: 0.000248 
+[fastlio_mapping-1] [ mapping ]: time: IMU + Map + Input Downsample: 0.000447 ave match: 0.011864 ave solve: 0.001365  ave ICP: 0.009070  map incre: 0.003741 ave total: 0.023643 icp: 0.013336 construct H: 0.000246 
+[fastlio_mapping-1] [ mapping ]: time: IMU + Map + Input Downsample: 0.001816 ave match: 0.011860 ave solve: 0.001357  ave ICP: 0.012750  map incre: 0.015294 ave total: 0.023732 icp: 0.013324 construct H: 0.000244 
+[fastlio_mapping-1] [ mapping ]: time: IMU + Map + Input Downsample: 0.000561 ave match: 0.011836 ave solve: 0.001361  ave ICP: 0.012165  map incre: 0.014694 ave total: 0.023784 icp: 0.013302 construct H: 0.000245 
+[fastlio_mapping-1] [ mapping ]: time: IMU + Map + Input Downsample: 0.000482 ave match: 0.011793 ave solve: 0.001354  ave ICP: 0.009932  map incre: 0.007482 ave total: 0.023702 icp: 0.013252 construct H: 0.000244 
+[fastlio_mapping-1] [ mapping ]: time: IMU + Map + Input Downsample: 0.000499 ave match: 0.011752 ave solve: 0.001348  ave ICP: 0.009949  map incre: 0.006343 ave total: 0.023607 icp: 0.013204 construct H: 0.000244 
+[fastlio_mapping-1] [ mapping ]: time: IMU + Map + Input Downsample: 0.002010 ave match: 0.011718 ave solve: 0.001342  ave ICP: 0.010416  map incre: 0.011154 ave total: 0.023607 icp: 0.013163 construct H: 0.000243 
+[fastlio_mapping-1] [ mapping ]: time: IMU + Map + Input Downsample: 0.000372 ave match: 0.011678 ave solve: 0.001341  ave ICP: 0.010470  map incre: 0.008329 ave total: 0.023548 icp: 0.013123 construct H: 0.000241 
+[fastlio_mapping-1] [ mapping ]: time: IMU + Map + Input Downsample: 0.000428 ave match: 0.011652 ave solve: 0.001335  ave ICP: 0.010881  map incre: 0.004626 ave total: 0.023448 icp: 0.013091 construct H: 0.000240 
+[fastlio_mapping-1] [ mapping ]: time: IMU + Map + Input Downsample: 0.000375 ave match: 0.011641 ave solve: 0.001326  ave ICP: 0.011622  map incre: 0.004861 ave total: 0.023362 icp: 0.013069 construct H: 0.000238 
+[fastlio_mapping-1] [ mapping ]: time: IMU + Map + Input Downsample: 0.000438 ave match: 0.011613 ave solve: 0.001321  ave ICP: 0.010770  map incre: 0.006586 ave total: 0.023291 icp: 0.013036 construct H: 0.000237 
+[fastlio_mapping-1] [ mapping ]: time: IMU + Map + Input Downsample: 0.001466 ave match: 0.011604 ave solve: 0.001316  ave ICP: 0.012016  map incre: 0.014028 ave total: 0.023344 icp: 0.013020 construct H: 0.000236 
+[fastlio_mapping-1] [ mapping ]: time: IMU + Map + Input Downsample: 0.000369 ave match: 0.011572 ave solve: 0.001312  ave ICP: 0.010315  map incre: 0.006142 ave total: 0.023263 icp: 0.012984 construct H: 0.000235 
+[fastlio_mapping-1] [ mapping ]: time: IMU + Map + Input Downsample: 0.000420 ave match: 0.011537 ave solve: 0.001303  ave ICP: 0.009592  map incre: 0.004903 ave total: 0.023159 icp: 0.012940 construct H: 0.000234 
+[fastlio_mapping-1] catch sig %d2
+[fastlio_mapping-1] Rebuild thread terminated normally
+[INFO] [fastlio_mapping-1]: process has finished cleanly [pid 34]

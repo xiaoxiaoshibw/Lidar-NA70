@@ -1,0 +1,16 @@
+{
+  "status": "INSUFFICIENT_DATA",
+  "reason": "fewer than three usable intervals",
+  "batches": 164,
+  "source": "radar_capture_data\\na70_sessions\\20261104-170341\\imu_frames.jsonl",
+  "source_sha256": "c661d5510be9e797e4d5fecd5dcf812bb0ab676f6b80957ddf629c454adee92b",
+  "config": {
+    "max_dt_s": 0.2,
+    "min_rate_deg_s": 0.05,
+    "stride": 1
+  },
+  "units": {
+    "recorded_gyro": "unknown; tested against deg/s",
+    "quaternion": "(w,x,y,z) assumed"
+  }
+}

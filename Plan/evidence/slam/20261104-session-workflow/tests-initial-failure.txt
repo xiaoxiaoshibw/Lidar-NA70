@@ -1,0 +1,2 @@
+首次并行运行：web/.venv/Scripts/python.exe -m pytest tests/test_lidar_udp.py tests/test_local_capture_api.py tests/test_local_capture_dual_stream.py -q
+结果 14 passed, 1 failed：test_runner_records_imu_and_udp_together，断言 IMU 帧数 10，实际 0；此时串口修复正在并行修改，原 FakeSerial 尚未实现 in_waiting。随后测试替身遵循新接口后复测，详见 tests-final.log。此失败不是硬件实验。

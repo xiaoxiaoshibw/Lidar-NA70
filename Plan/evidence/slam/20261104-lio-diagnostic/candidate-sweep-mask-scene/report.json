@@ -1,0 +1,454 @@
+{
+  "status": "DIAGNOSTIC_ONLY_CANDIDATE_FILTER",
+  "filter": "sweeps.valid_mask: distance code > 0 and neither angle code == 0xffff",
+  "interpretation": "UNVERIFIED: conflicts with RayBatch valid_return and direction_known contract; not a manufacturer-verified rule",
+  "removed_rays_before_time_filter": 1050405,
+  "per_frame_removed": [
+    {
+      "frame": 10,
+      "removed": 10945
+    },
+    {
+      "frame": 11,
+      "removed": 9361
+    },
+    {
+      "frame": 12,
+      "removed": 10912
+    },
+    {
+      "frame": 13,
+      "removed": 11048
+    },
+    {
+      "frame": 14,
+      "removed": 9082
+    },
+    {
+      "frame": 15,
+      "removed": 11159
+    },
+    {
+      "frame": 16,
+      "removed": 9996
+    },
+    {
+      "frame": 17,
+      "removed": 10633
+    },
+    {
+      "frame": 18,
+      "removed": 10501
+    },
+    {
+      "frame": 19,
+      "removed": 10305
+    },
+    {
+      "frame": 20,
+      "removed": 10534
+    },
+    {
+      "frame": 21,
+      "removed": 10398
+    },
+    {
+      "frame": 22,
+      "removed": 11401
+    },
+    {
+      "frame": 23,
+      "removed": 10448
+    },
+    {
+      "frame": 24,
+      "removed": 10668
+    },
+    {
+      "frame": 25,
+      "removed": 9539
+    },
+    {
+      "frame": 26,
+      "removed": 10968
+    },
+    {
+      "frame": 27,
+      "removed": 11779
+    },
+    {
+      "frame": 28,
+      "removed": 10147
+    },
+    {
+      "frame": 29,
+      "removed": 11500
+    },
+    {
+      "frame": 30,
+      "removed": 10040
+    },
+    {
+      "frame": 31,
+      "removed": 9743
+    },
+    {
+      "frame": 32,
+      "removed": 10380
+    },
+    {
+      "frame": 33,
+      "removed": 10749
+    },
+    {
+      "frame": 34,
+      "removed": 10773
+    },
+    {
+      "frame": 35,
+      "removed": 10940
+    },
+    {
+      "frame": 36,
+      "removed": 9320
+    },
+    {
+      "frame": 37,
+      "removed": 9732
+    },
+    {
+      "frame": 38,
+      "removed": 11396
+    },
+    {
+      "frame": 39,
+      "removed": 9560
+    },
+    {
+      "frame": 40,
+      "removed": 10824
+    },
+    {
+      "frame": 41,
+      "removed": 10517
+    },
+    {
+      "frame": 42,
+      "removed": 9708
+    },
+    {
+      "frame": 43,
+      "removed": 10388
+    },
+    {
+      "frame": 44,
+      "removed": 9854
+    },
+    {
+      "frame": 45,
+      "removed": 10546
+    },
+    {
+      "frame": 46,
+      "removed": 8670
+    },
+    {
+      "frame": 47,
+      "removed": 11153
+    },
+    {
+      "frame": 48,
+      "removed": 10471
+    },
+    {
+      "frame": 49,
+      "removed": 9305
+    },
+    {
+      "frame": 50,
+      "removed": 10776
+    },
+    {
+      "frame": 51,
+      "removed": 10348
+    },
+    {
+      "frame": 52,
+      "removed": 9018
+    },
+    {
+      "frame": 53,
+      "removed": 10435
+    },
+    {
+      "frame": 54,
+      "removed": 9808
+    },
+    {
+      "frame": 55,
+      "removed": 10631
+    },
+    {
+      "frame": 56,
+      "removed": 9985
+    },
+    {
+      "frame": 57,
+      "removed": 9503
+    },
+    {
+      "frame": 58,
+      "removed": 9863
+    },
+    {
+      "frame": 59,
+      "removed": 11145
+    },
+    {
+      "frame": 60,
+      "removed": 9315
+    },
+    {
+      "frame": 61,
+      "removed": 10054
+    },
+    {
+      "frame": 62,
+      "removed": 9684
+    },
+    {
+      "frame": 63,
+      "removed": 11140
+    },
+    {
+      "frame": 64,
+      "removed": 10488
+    },
+    {
+      "frame": 65,
+      "removed": 9460
+    },
+    {
+      "frame": 66,
+      "removed": 10806
+    },
+    {
+      "frame": 67,
+      "removed": 9903
+    },
+    {
+      "frame": 68,
+      "removed": 10801
+    },
+    {
+      "frame": 69,
+      "removed": 10895
+    },
+    {
+      "frame": 70,
+      "removed": 9770
+    },
+    {
+      "frame": 71,
+      "removed": 11085
+    },
+    {
+      "frame": 72,
+      "removed": 10210
+    },
+    {
+      "frame": 73,
+      "removed": 10922
+    },
+    {
+      "frame": 74,
+      "removed": 9904
+    },
+    {
+      "frame": 75,
+      "removed": 10525
+    },
+    {
+      "frame": 76,
+      "removed": 10345
+    },
+    {
+      "frame": 77,
+      "removed": 11427
+    },
+    {
+      "frame": 78,
+      "removed": 10891
+    },
+    {
+      "frame": 79,
+      "removed": 10303
+    },
+    {
+      "frame": 80,
+      "removed": 10904
+    },
+    {
+      "frame": 81,
+      "removed": 11296
+    },
+    {
+      "frame": 82,
+      "removed": 11268
+    },
+    {
+      "frame": 83,
+      "removed": 10948
+    },
+    {
+      "frame": 84,
+      "removed": 10944
+    },
+    {
+      "frame": 85,
+      "removed": 10326
+    },
+    {
+      "frame": 86,
+      "removed": 10872
+    },
+    {
+      "frame": 87,
+      "removed": 10286
+    },
+    {
+      "frame": 88,
+      "removed": 10998
+    },
+    {
+      "frame": 89,
+      "removed": 11143
+    },
+    {
+      "frame": 90,
+      "removed": 11121
+    },
+    {
+      "frame": 91,
+      "removed": 10925
+    },
+    {
+      "frame": 92,
+      "removed": 11056
+    },
+    {
+      "frame": 93,
+      "removed": 11116
+    },
+    {
+      "frame": 94,
+      "removed": 11334
+    },
+    {
+      "frame": 95,
+      "removed": 10436
+    },
+    {
+      "frame": 96,
+      "removed": 11044
+    },
+    {
+      "frame": 97,
+      "removed": 10131
+    },
+    {
+      "frame": 98,
+      "removed": 9820
+    },
+    {
+      "frame": 99,
+      "removed": 10417
+    },
+    {
+      "frame": 100,
+      "removed": 10111
+    },
+    {
+      "frame": 101,
+      "removed": 10862
+    },
+    {
+      "frame": 102,
+      "removed": 11049
+    },
+    {
+      "frame": 103,
+      "removed": 10868
+    },
+    {
+      "frame": 104,
+      "removed": 10687
+    },
+    {
+      "frame": 105,
+      "removed": 11348
+    },
+    {
+      "frame": 106,
+      "removed": 11194
+    },
+    {
+      "frame": 107,
+      "removed": 10767
+    },
+    {
+      "frame": 108,
+      "removed": 11284
+    },
+    {
+      "frame": 109,
+      "removed": 11017
+    }
+  ],
+  "map": {
+    "points": 549777,
+    "voxels": 549777,
+    "input_points": 949595,
+    "valid_points": 796482,
+    "frames": 100,
+    "frames_with_points": 86,
+    "dropped": {
+      "outside": 123699,
+      "gap": 29414,
+      "nonfinite": 0
+    },
+    "voxel_size_m": 0.1,
+    "bounds": {
+      "minimum": [
+        5.865359086808948,
+        -478.3465412533439,
+        -2.916392881001854
+      ],
+      "maximum": [
+        679.8243452896837,
+        164.45046616924432,
+        233.83067824520685
+      ]
+    },
+    "mean_points_per_voxel": 1.448736487703196,
+    "max_points_per_voxel": 112,
+    "trajectory_frame": "lidar",
+    "extrinsic_supplied": false,
+    "limitations": [
+      "地图质量取决于输入位姿；本模块不产生、不优化位姿",
+      "包级时间仍是近似：逐点时间若由包时间复制，必须随结果声明",
+      "跨轨迹缺口/超出覆盖的点被丢弃，不插值外推",
+      "体素代表点是首个实测点，不是质心；来源引用保留",
+      "当前实现把全段体素保存在内存；长录（数分钟以上）需分块/流式落盘，尚未实现"
+    ]
+  },
+  "origin_radius_percentiles_m": {
+    "p50": 110.14868927001953,
+    "p90": 189.20101623535157,
+    "p99": 305.443974609375,
+    "max": 700.7780151367188
+  },
+  "trajectory_unchanged": true,
+  "trajectory_and_calibration_validated": false,
+  "physical_accuracy": "NOT_EVALUATED"
+}

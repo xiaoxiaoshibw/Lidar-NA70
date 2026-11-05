@@ -45,6 +45,17 @@ def test_export_writes_blocked_packet_time_package(tmp_path):
     assert (output / "REPORT.md").is_file()
 
 
+def test_export_blocks_gap_at_frame_boundary(tmp_path):
+    timestamps = [i * 0.001 for i in range(100)] + [0.6 + i * 0.001 for i in range(100)]
+    pcap = make_pcap(tmp_path / "SYNTHETIC-gap.pcap", [payload()] * 200,
+                     timestamps=timestamps)
+    frames = write_imu(tmp_path / "imu_frames.jsonl", count=900)
+    manifest = module.export(pcap, frames, tmp_path / "package", max_frames=2)
+    assert manifest["time_quality"]["max_packet_gap_s"] > 0.5
+    assert manifest["time_quality"]["gaps_over_limit"] == 1
+    assert "packet_gap_over_limit" in manifest["block_reasons"]
+
+
 def test_export_reports_device_time_field(tmp_path):
     pcap = make_pcap(tmp_path / "SYNTHETIC-lio-device.pcap", [payload()] * 100)
     rows = [{"t_mono": 1000.0 + index * 0.001,

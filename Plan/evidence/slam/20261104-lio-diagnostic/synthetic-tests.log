@@ -1,0 +1,16 @@
+
+=================================== ERRORS ====================================
+________ ERROR collecting tests/test_na70_calibration_batch_report.py _________
+ImportError while importing test module 'D:\Code\radar\web\tests\test_na70_calibration_batch_report.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+C:\Users\30680\scoop\apps\python312\current\Lib\importlib\__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+web\tests\test_na70_calibration_batch_report.py:18: in <module>
+    from backend import decoder
+E   ModuleNotFoundError: No module named 'backend'
+=========================== short test summary info ===========================
+ERROR web\tests\test_na70_calibration_batch_report.py
+!!!!!!!!!!!!!!!!!!! Interrupted: 1 error during collection !!!!!!!!!!!!!!!!!!!!
+1 error in 1.15s

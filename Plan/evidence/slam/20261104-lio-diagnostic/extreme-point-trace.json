@@ -1,0 +1,35 @@
+{
+  "map_voxel_index": 0,
+  "map_xyz_m": [
+    -830.7764282226562,
+    462.9486389160156,
+    -457.167236328125
+  ],
+  "source_frame": 96,
+  "ray_index_in_frame": 8403,
+  "packet_index_in_frame": 42,
+  "ray_index_in_packet": 3,
+  "pcap_absolute_byte_offset": 14154559,
+  "raw_ray_hex": "ffffffffffffff",
+  "raw_codes_distance_pitch_yaw_intensity": [
+    65535,
+    65535,
+    65535,
+    255
+  ],
+  "range_code_times_16mm_m": 1048.56,
+  "decoded_sensor_xyz_m": [
+    -703.8372192382812,
+    558.847412109375,
+    -540.16748046875
+  ],
+  "sensor_xyz_norm_m": 1048.56005859375,
+  "packet_host_time_s": 1793783033.154339,
+  "reconstructed_map_xyz_m": [
+    -830.7764357631087,
+    462.94865014558235,
+    -457.16724814845685
+  ],
+  "match_error_m": 1.7963347034189817e-05,
+  "limits": "Matching reproduces the saved voxel; physical return validity is not established."
+}

@@ -1,0 +1,42 @@
+{
+  "git_head": "751faab3efcc7fadba9f264cf68cd364d616416f",
+  "git_branch": "master",
+  "python": "Python 3.12.10",
+  "os": "Microsoft Windows NT 10.0.26300.0",
+  "files": [
+    {
+      "path": "packages/na70_core/na70_core/capture/imu.py",
+      "sha256": "7d81df1d4ea0503e87224f4edd90c6d90b00c61be1f5a6e7c39898d90e6062f7"
+    },
+    {
+      "path": "packages/na70_core/na70_core/capture/lidar_udp.py",
+      "sha256": "1a4b50aa359344fa93445ba36365cd12738914543aeb842cab2301b20de874fd"
+    },
+    {
+      "path": "packages/na70_core/na70_core/capture/runner.py",
+      "sha256": "3feca8ae4b99952b9c0af77a5794dbdf58124f980bc5cff905519400dd3ea2ba"
+    },
+    {
+      "path": "tools/audit_na70_imu_timebase.py",
+      "sha256": "f5a51981e6bf2b330b4d3725f0a40d3910da27471ca02f9433a7b0117ee9dc0c"
+    },
+    {
+      "path": "tools/report_na70_session.py",
+      "sha256": "ca1c14eaccccc808bde75ac4edf249eefad6a46b82be6a5a3f86482f572814a1"
+    },
+    {
+      "path": "web/backend/decoder.py",
+      "sha256": "a1ffe8e1fc2bf763bac3d4f9cbced095cbcade103c01302f2db15db60e482f9d"
+    },
+    {
+      "path": "web/tests/test_na70_capture.py",
+      "sha256": "61205bd30adcb75357dc52b38ba2417df73cbec5c06bbe9bb1339d21f5aa0020"
+    },
+    {
+      "path": "web/tests/test_lidar_udp.py",
+      "sha256": "062a95c51906ef44954c77b57195a0417ebdc4148a7b633154f9f270cc127be3"
+    }
+  ],
+  "test_command": "cd web; .\\.venv\\Scripts\\python.exe -m pytest tests/test_lidar_udp.py tests/test_local_capture_api.py tests/test_local_capture_dual_stream.py tests/test_na70_capture.py tests/test_na70_imu_timebase.py tests/test_na70_session_report.py -q",
+  "test_result": "62 passed, 2 warnings"
+}

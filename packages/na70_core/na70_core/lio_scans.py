@@ -144,15 +144,10 @@ def time_quality(scans, *, max_packet_gap_s=0.2):
         raise TypeError("scans must be a ScanSet")
     if not np.isfinite(float(max_packet_gap_s)) or max_packet_gap_s <= 0:
         raise ValueError("max_packet_gap_s must be finite and positive")
-    packet_times = []
-    for index in range(len(scans.frame_start_s)):
-        packet_times.append(scans.point_time_s[scans.frame_offsets[index]:scans.frame_offsets[index + 1]])
-    gaps = []
-    for times in packet_times:
-        unique = np.unique(times)
-        if len(unique) > 1:
-            gaps.extend(np.diff(unique).tolist())
-    gaps = np.asarray(gaps, dtype=np.float64)
+    # Packet identities, rather than unique timestamps, preserve equal-time
+    # packets and include the gap across each frame boundary.
+    packet_starts = np.r_[True, np.diff(scans.packet_index) != 0]
+    gaps = np.diff(scans.point_time_s[packet_starts])
     return {
         "time_quality": "PACKET_APPROXIMATION",
         "frames": int(len(scans.frame_start_s)),

@@ -6,6 +6,7 @@ import queue
 import subprocess
 import struct
 import sys
+import threading
 import time
 from pathlib import Path
 
@@ -42,9 +43,16 @@ class FakeSerial:
         self.chunks = list(chunks)
         self.closed = False
 
-    def read(self, _size):
+    @property
+    def in_waiting(self):
+        return len(self.chunks[0]) if self.chunks else 0
+
+    def read(self, size):
         if self.chunks:
-            return self.chunks.pop(0)
+            result, self.chunks[0] = self.chunks[0][:size], self.chunks[0][size:]
+            if not self.chunks[0]:
+                self.chunks.pop(0)
+            return result
         time.sleep(0.005)
         return b""
 
@@ -238,9 +246,102 @@ def test_imu_recorder_writes_raw_frames_and_host_csv(tmp_path):
     assert len(csv_lines) == 31
     frames = [json.loads(line) for line in (session.path / "imu_frames.jsonl").read_text("utf-8").splitlines()]
     assert len(frames) == 30
+    events = [json.loads(line) for line in (session.path / "events.jsonl").read_text("utf-8").splitlines()]
+    started = next(event for event in events if event["kind"] == "imu_started")
+    assert started["monotonic_clock"] == "perf_counter"
+    assert started["wall_clock"] == "time"
+    assert all(frame["t_mono"] == chunks[0]["t_mono"] for frame in frames)
     assert frames[0]["accel"] == pytest.approx([0.0, 0.0, 9.8])
     # 停机后仍要报告整段平均频率，不能因为“最近 2 秒”为空就变成 0 Hz
     assert status["hz"] > 0
+
+
+def test_imu_reads_available_bytes_when_driver_waits_for_full_request(tmp_path):
+    # SYNTHETIC: model a driver that ignores its timeout and emits 67 B/5 ms.
+    class BlockingSerial:
+        def __init__(self):
+            self.started = time.monotonic()
+            self.offset = 0
+            self.stream = b"".join(build_frame(i) for i in range(200))
+            self.cancelled = threading.Event()
+
+        @property
+        def in_waiting(self):
+            produced = min(len(self.stream), int((time.monotonic() - self.started) / .005) * 67)
+            return max(0, produced - self.offset)
+
+        def read(self, size):
+            while self.in_waiting < size and not self.cancelled.wait(.001):
+                pass
+            count = min(size, self.in_waiting)
+            data = self.stream[self.offset:self.offset + count]
+            self.offset += count
+            return data
+
+        def cancel_read(self):
+            self.cancelled.set()
+
+        def __enter__(self):
+            return self
+
+        def __exit__(self, *_args):
+            pass
+
+    old = BlockingSerial()
+    started = time.monotonic()
+    assert len(old.read(8192)) == 8192
+    assert time.monotonic() - started >= .5
+
+    serial = BlockingSerial()
+    session = CaptureSession(tmp_path / "sessions", session_id="imu-latency")
+    recorder = ImuRecorder(session, "fake", serial_factory=lambda *_: serial, flush_interval=.05)
+    recorder.start()
+    deadline = time.monotonic() + 2
+    while recorder.frames < 40 and time.monotonic() < deadline:
+        time.sleep(.005)
+    status = recorder.stop()
+    chunks = [json.loads(line) for line in (session.path / "raw/imu_chunks.jsonl").read_text("utf-8").splitlines()]
+    assert status["frames"] >= 40
+    assert len(chunks) > 20
+    assert max(chunk["bytes"] for chunk in chunks) < 8192
+    assert (session.path / "raw/imu.bin").read_bytes() == serial.stream[:status["bytes"]]
+    assert status["worker_error"] == ""
+
+
+def test_imu_stop_cancels_blocking_read_and_saves_returned_tail(tmp_path):
+    class CancelledSerial(FakeSerial):
+        def __init__(self):
+            super().__init__([])
+            self.reading = threading.Event()
+            self.cancelled = threading.Event()
+
+        def read(self, size):
+            assert size == 1
+            self.reading.set()
+            assert self.cancelled.wait(2)
+            return b"Y"  # a byte delivered with cancellation must still be saved
+
+        def cancel_read(self):
+            self.cancelled.set()
+
+    serial = CancelledSerial()
+    session = CaptureSession(tmp_path / "sessions", session_id="imu-stop")
+    recorder = ImuRecorder(session, "fake", serial_factory=lambda *_: serial)
+    recorder.start()
+    assert serial.reading.wait(2)
+    status = recorder.stop(timeout=2)
+    assert status["bytes"] == 1
+    assert status["discarded_bytes"] == 1
+    assert status["reconnects"] == 0
+    assert (session.path / "raw/imu.bin").read_bytes() == b"Y"
+
+
+def test_runner_elapsed_uses_imu_clock_domain(tmp_path):
+    session = CaptureSession(tmp_path, session_id="clock-domain")
+    recorder = ImuRecorder(session, "fake", clock=lambda: 105.0)
+    recorder.started_mono = 100.0
+    runner = CaptureRunner(session, imu=recorder, clock=lambda: 10_000.0)
+    assert runner.status()["elapsed_s"] == 5.0
 
 
 def test_imu_recorder_counts_device_sample_time(tmp_path):

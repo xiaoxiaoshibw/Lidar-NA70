@@ -1,0 +1,103 @@
+{
+  "head": "751faab3efcc7fadba9f264cf68cd364d616416f",
+  "git_status_short": " M Plan/README.md\n M docs/NA70_CALIBRATION_WORKFLOW.md\n M docs/NA70_LIO_INPUT_PREPARATION.md\n M packages/na70_core/na70_core/capture/imu.py\n M packages/na70_core/na70_core/capture/lidar_udp.py\n M packages/na70_core/na70_core/capture/runner.py\n M packages/na70_core/na70_core/capture/yesense.py\n M packages/na70_core/na70_core/lio_scans.py\n M tools/audit_na70_imu_timebase.py\n M tools/report_na70_session.py\n M web/backend/local_capture.py\n M web/frontend/playwright.config.ts\n M web/frontend/src/PageNav.tsx\n M web/frontend/src/local-capture-main.tsx\n D web/frontend/src/localcapture/LocalCaptureWorkbench.tsx\n M web/frontend/vite.config.ts\n M web/tests/test_na70_capture.py\n M web/tests/test_na70_imu_timebase.py\n M web/tests/test_na70_lio_export.py\n M web/tests/test_na70_lio_scans.py\n M web/tests/test_na70_session_report.py\n?? Plan/evidence/slam/20261104-encoding-investigation/\n?? Plan/evidence/slam/20261104-lio-continuity-audit/\n?? Plan/evidence/slam/20261104-lio-diagnostic/\n?? Plan/evidence/slam/20261104-lio-jump-investigation/\n?? Plan/evidence/slam/20261104-serial-capture-fix/\n?? Plan/evidence/slam/20261104-session-170341-audit/\n?? Plan/evidence/slam/20261104-session-independent-recheck/\n?? Plan/evidence/slam/20261104-session-workflow/\n?? radar_capture_data/na70_sessions/.capture.lock\n?? radar_capture_data/na70_sessions/20261104-161036/\n?? radar_capture_data/na70_sessions/20261104-161220/\n?? radar_capture_data/na70_sessions/20261104-165942/\n?? radar_capture_data/na70_sessions/20261104-170341/\n?? tools/capture_local_60s.ps1\n?? web/frontend/tests/local-capture.spec.ts\n?? web/tests/test_capture_local_60s.py\n?? web/tests/test_lidar_udp.py\n?? web/tests/test_local_capture_api.py\n?? web/tests/test_local_capture_dual_stream.py\n?? \"\\344\\270\\200\\351\\224\\256\\345\\275\\225\\345\\210\\26660\\347\\247\\222.bat\"\n",
+  "platform": "Windows-11-10.0.26300-SP0",
+  "python": "3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]",
+  "numpy": "2.5.3",
+  "pytest": "9.1.1",
+  "pyserial": "3.5",
+  "files": {
+    "radar_capture_data/na70_sessions/20261104-170341/raw/lidar.pcap": {
+      "bytes": 122359292,
+      "sha256": "e0e4d9f73d4332f0ac40aad18f264d26d1cbb1888756c2d837ba828a71bc3128"
+    },
+    "radar_capture_data/na70_sessions/20261104-170341/raw/imu.bin": {
+      "bytes": 1343488,
+      "sha256": "f5ab2ae326ffbdbeb35bab62f5d640666dbcf904d162f5be37de5f1d491bde8c"
+    },
+    "radar_capture_data/na70_sessions/20261104-170341/raw/imu_chunks.jsonl": {
+      "bytes": 16542,
+      "sha256": "c161a6e25147ef34fb539e720a08e12eb219d91cd33d84d00c4f3ed48fc45ed2"
+    },
+    "radar_capture_data/na70_sessions/20261104-170341/imu_frames.jsonl": {
+      "bytes": 5334244,
+      "sha256": "c661d5510be9e797e4d5fecd5dcf812bb0ab676f6b80957ddf629c454adee92b"
+    },
+    "Plan/evidence/slam/20261104-lio-diagnostic/lio-package-margin1s/scans.npz": {
+      "bytes": 12069925,
+      "sha256": "e4ed74c719dda7be7b73dd3eebb2ac4ced4a982bf56858235f3f4ecf75465b85"
+    },
+    "Plan/evidence/slam/20261104-lio-diagnostic/lio-package-margin1s/imu.npz": {
+      "bytes": 115179,
+      "sha256": "a47f91943bf8e907969ca673958244bc52a9960a520cd51c55dc47093374e6a3"
+    },
+    "Plan/evidence/slam/20261104-lio-diagnostic/lio-package-margin1s/manifest.json": {
+      "bytes": 2053,
+      "sha256": "510453270a9f70cca5571f299f346ee955f28064661f0444c4598d5d62119e39"
+    },
+    "Plan/evidence/slam/20261104-lio-diagnostic/trajectory.csv": {
+      "bytes": 12746,
+      "sha256": "687c85b38e5e3c16c7b9078aace3ba535fdf2c1d15c965c9adf9b70c4ff08654"
+    },
+    "Plan/evidence/slam/20261104-lio-diagnostic/fastlio-config.yaml": {
+      "bytes": 1416,
+      "sha256": "713460ddb0b273013ba61c10f0a81647ba7433fb2445068260ba1d5326154c60"
+    },
+    "Plan/evidence/slam/20261104-lio-diagnostic/fastlio.log": {
+      "bytes": 20523,
+      "sha256": "ce9e13ff1f01bbbeb974c948a8bcfddd7745a92c35cee9301e26042966c35061"
+    },
+    "Plan/evidence/slam/20261104-lio-diagnostic/run_fastlio_diagnostic.sh": {
+      "bytes": 1417,
+      "sha256": "87f41bb6170df6ddbbc101838a650baccaf7f7dbebef13289073aea7ee0f71dd"
+    },
+    "packages/na70_core/na70_core/lio_scans.py": {
+      "bytes": 8297,
+      "sha256": "648888e752facb86541f2e6edfcf702f0fbb4128bbce874342fd5cf7858c6142"
+    },
+    "web/tests/test_na70_lio_scans.py": {
+      "bytes": 2770,
+      "sha256": "374236d8b9f653e1c92f71e21f21dbfc1f2321cdf3257dbfe28928ef01f438a9"
+    },
+    "web/tests/test_na70_lio_export.py": {
+      "bytes": 5478,
+      "sha256": "90780a35f70599fd23adc57c4fe4e3b4ecac370962203309ce171bc00fbdea20"
+    },
+    "docs/NA70_CALIBRATION_WORKFLOW.md": {
+      "bytes": 24345,
+      "sha256": "920c36d7a8532a267b17be83f084f952fb204ce95417a40b10832d34a1783cec"
+    },
+    "Plan/README.md": {
+      "bytes": 49495,
+      "sha256": "08aba7c8911a18fbfdbdf35a3143ac7dacbcd20867daa1a2fbdee1f97e078345"
+    },
+    "web/backend/decoder.py": {
+      "bytes": 12940,
+      "sha256": "a1ffe8e1fc2bf763bac3d4f9cbced095cbcade103c01302f2db15db60e482f9d"
+    },
+    "tools/export_na70_lio_scans.py": {
+      "bytes": 8727,
+      "sha256": "ca202a5074fdf8649cff279ab15174c755a61a8ab4fa27ca3596769ddd78f225"
+    },
+    "tools/lio/replay_na70_package.py": {
+      "bytes": 7089,
+      "sha256": "813a6b6e05eac7d976bdcd57c2f655cda6f94207494fea62c2d5031850a46a7f"
+    },
+    "tools/lio/apply_fast_lio_na70_patch.py": {
+      "bytes": 4638,
+      "sha256": "09396f69d092af9ccebb46c25de347f24fe564858218b05a5f9514e0bd651884"
+    },
+    "tools/lio/na70_fast_lio.yaml": {
+      "bytes": 1416,
+      "sha256": "713460ddb0b273013ba61c10f0a81647ba7433fb2445068260ba1d5326154c60"
+    },
+    "Plan/evidence/slam/20261104-lio-continuity-audit/check_packet_gaps.py": {
+      "bytes": 1088,
+      "sha256": "41969d4a420298799f5340c93f9092617694b98a9aeea52853b275d0530c305c"
+    },
+    "Plan/evidence/slam/20261104-lio-continuity-audit/provenance.py": {
+      "bytes": 2443,
+      "sha256": "fb8dda21bc8f2e0f5361e55abd1c0dd29c7fb7b712eb125b9bc4ae8d90abcd25"
+    }
+  }
+}

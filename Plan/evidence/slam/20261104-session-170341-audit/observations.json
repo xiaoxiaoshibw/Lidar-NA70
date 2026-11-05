@@ -1,0 +1,492 @@
+{
+  "decoder_version": "ros2-na70-16mm-v1",
+  "lidar": {
+    "valid_packets": 83351,
+    "invalid_packets": 0,
+    "ignored_packets": 0,
+    "warnings": [],
+    "frame_count": 834,
+    "complete_100_packet_bundles": 833,
+    "incomplete_bundles": [
+      {
+        "index": 833,
+        "packet_count": 51
+      }
+    ],
+    "host_span_s": 100.30670404434204,
+    "mean_packet_rate_endpoint_hz": 830.951438332117,
+    "packet_counts_per_full_host_second": [
+      857,
+      855,
+      826,
+      830,
+      834,
+      837,
+      850,
+      825,
+      845,
+      824,
+      843,
+      835,
+      839,
+      823,
+      836,
+      845,
+      822,
+      817,
+      829,
+      807,
+      835,
+      835,
+      823,
+      841,
+      841,
+      854,
+      821,
+      832,
+      806,
+      833,
+      838,
+      837,
+      838,
+      837,
+      835,
+      831,
+      822,
+      838,
+      828,
+      838,
+      834,
+      823,
+      819,
+      815,
+      830,
+      826,
+      810,
+      830,
+      824,
+      854,
+      838,
+      840,
+      816,
+      822,
+      847,
+      829,
+      817,
+      835,
+      831,
+      828,
+      848,
+      827,
+      844,
+      811,
+      811,
+      840,
+      834,
+      852,
+      828,
+      814,
+      848,
+      824,
+      844,
+      843,
+      845,
+      837,
+      839,
+      842,
+      837,
+      803,
+      810,
+      828,
+      830,
+      830,
+      845,
+      834,
+      814,
+      832,
+      829,
+      832,
+      830,
+      800,
+      851,
+      818,
+      829,
+      814,
+      832,
+      805,
+      827,
+      816
+    ],
+    "final_partial_second_packets": 264,
+    "gap_quantiles_s_p50_p90_p95_p99_max": [
+      0.0010039806365966797,
+      0.0020101070404052734,
+      0.002437114715576172,
+      0.0035439753532409655,
+      0.02793097496032715
+    ],
+    "gaps_over_5ms": 176,
+    "gaps_over_10ms": 13,
+    "zero_host_gaps": 8113,
+    "backwards_host_gaps": 0,
+    "device_tail_decoded_count": 83351,
+    "device_tail_null_count": 0,
+    "device_tail_first_values": [
+      28.494,
+      28.495,
+      28.496,
+      28.497,
+      28.498,
+      28.5,
+      28.501,
+      28.502,
+      28.503,
+      28.504
+    ],
+    "device_tail_last_values": [
+      128.798,
+      128.799,
+      128.8,
+      128.801,
+      128.802,
+      128.803,
+      128.804,
+      128.805,
+      128.806,
+      128.807
+    ],
+    "device_tail_unique_values": 83347,
+    "device_tail_backwards": 0,
+    "device_tail_delta_rounded_milliseconds": {
+      "0": 4,
+      "1": 69289,
+      "2": 11657,
+      "3": 1980,
+      "4": 349,
+      "5": 56,
+      "6": 12,
+      "7": 2,
+      "8": 1
+    },
+    "device_tail_interpretation": "decoder-parsed tail only; semantics, epoch, clock mapping and packet measurement time are unverified"
+  },
+  "comparison_20261104_161220": {
+    "source": "radar_capture_data\\na70_sessions\\20261104-161220\\raw\\lidar.pcap",
+    "valid_packets": 9552,
+    "invalid_packets": 0,
+    "host_span_s": 10.423593044281006,
+    "mean_packet_rate_endpoint_hz": 916.2867314011495,
+    "device_tail_first_s": 13.977,
+    "device_tail_last_s": 24.4,
+    "device_tail_delta_rounded_milliseconds": {
+      "1": 8759,
+      "2": 715,
+      "3": 74,
+      "4": 3
+    },
+    "limits": "short engineering session; unknown device state/traffic/load; host observations do not identify cause"
+  },
+  "imu": {
+    "chunk_size_counts": {
+      "8192": 164
+    },
+    "window_statistics": [
+      {
+        "host_start_offset_s": 0,
+        "frames": 2078,
+        "gyro_rms_recorded": [
+          1.292494416502382,
+          1.768942360339777,
+          1.4770854396288562
+        ],
+        "gyro_mean_recorded": [
+          0.1439288835418667,
+          -0.1843492560153994,
+          -0.5646561876804628
+        ],
+        "accel_mean_recorded": [
+          0.6953518556304139,
+          0.5017721058710306,
+          9.74054077767084
+        ],
+        "euler_min_recorded": [
+          -5.29463,
+          1.950274,
+          -61.986064
+        ],
+        "euler_max_recorded": [
+          -2.504462,
+          4.033334,
+          -55.296716
+        ]
+      },
+      {
+        "host_start_offset_s": 10,
+        "frames": 1956,
+        "gyro_rms_recorded": [
+          1.9289889080647047,
+          3.1629203705710727,
+          1.8824159244299477
+        ],
+        "gyro_mean_recorded": [
+          0.42352102147239207,
+          -0.18431413599182042,
+          0.2240462407975456
+        ],
+        "accel_mean_recorded": [
+          0.9852683205521464,
+          0.5624281462167693,
+          9.711162199386479
+        ],
+        "euler_min_recorded": [
+          -7.629935,
+          1.996676,
+          -62.578032
+        ],
+        "euler_max_recorded": [
+          -4.776485,
+          5.389788,
+          -58.214192
+        ]
+      },
+      {
+        "host_start_offset_s": 20,
+        "frames": 2079,
+        "gyro_rms_recorded": [
+          2.4529668365015587,
+          3.95047640172545,
+          1.916881272827668
+        ],
+        "gyro_mean_recorded": [
+          0.17182080567580552,
+          -0.30797885906685873,
+          0.15732123857623867
+        ],
+        "accel_mean_recorded": [
+          1.2310474699374698,
+          0.7930539634439644,
+          9.66505211640213
+        ],
+        "euler_min_recorded": [
+          -10.958089,
+          2.998382,
+          -59.459248
+        ],
+        "euler_max_recorded": [
+          -5.221354,
+          5.830736,
+          -56.775232
+        ]
+      },
+      {
+        "host_start_offset_s": 30,
+        "frames": 1956,
+        "gyro_rms_recorded": [
+          2.8594266683281155,
+          3.906245573226267,
+          3.1201291917249803
+        ],
+        "gyro_mean_recorded": [
+          -0.03464457106339501,
+          -0.24808979141104295,
+          -0.5026452960122701
+        ],
+        "accel_mean_recorded": [
+          1.4206356385480543,
+          0.32168738139059255,
+          9.662696021472394
+        ],
+        "euler_min_recorded": [
+          -10.389132,
+          0.036163,
+          -61.698072
+        ],
+        "euler_max_recorded": [
+          -5.964413,
+          4.829336,
+          -52.264392
+        ]
+      },
+      {
+        "host_start_offset_s": 40,
+        "frames": 1957,
+        "gyro_rms_recorded": [
+          2.636864392219463,
+          3.619964150057183,
+          3.4841417668794716
+        ],
+        "gyro_mean_recorded": [
+          -0.0687491854879918,
+          0.005443067961165445,
+          0.6121489320388336
+        ],
+        "accel_mean_recorded": [
+          1.5436077112927964,
+          0.21560702554930958,
+          9.64634158150228
+        ],
+        "euler_min_recorded": [
+          -10.276335,
+          -0.447722,
+          -63.810428
+        ],
+        "euler_max_recorded": [
+          -6.819399,
+          3.575889,
+          -52.006244
+        ]
+      },
+      {
+        "host_start_offset_s": 50,
+        "frames": 2078,
+        "gyro_rms_recorded": [
+          3.1047907515481046,
+          4.6836574814656275,
+          3.5319941876421588
+        ],
+        "gyro_mean_recorded": [
+          0.3291733604427331,
+          -0.041703881616939414,
+          0.20488004090471565
+        ],
+        "accel_mean_recorded": [
+          1.5086594157844082,
+          0.36457786092396566,
+          9.645133346968219
+        ],
+        "euler_min_recorded": [
+          -10.657701,
+          0.21624,
+          -57.521692
+        ],
+        "euler_max_recorded": [
+          -5.3871,
+          5.691465,
+          -52.548916
+        ]
+      },
+      {
+        "host_start_offset_s": 60,
+        "frames": 1956,
+        "gyro_rms_recorded": [
+          4.269327209953103,
+          5.987752015508814,
+          3.970137446697979
+        ],
+        "gyro_mean_recorded": [
+          0.31616045705521556,
+          -0.5336171211656444,
+          -0.5796748778118617
+        ],
+        "accel_mean_recorded": [
+          1.792222502044989,
+          0.34438479856850673,
+          9.598044308282212
+        ],
+        "euler_min_recorded": [
+          -13.297284,
+          -0.126057,
+          -58.4353
+        ],
+        "euler_max_recorded": [
+          -7.162346,
+          5.216891,
+          -52.44484
+        ]
+      },
+      {
+        "host_start_offset_s": 70,
+        "frames": 1957,
+        "gyro_rms_recorded": [
+          5.355766335650158,
+          7.030738728343142,
+          5.164898697316159
+        ],
+        "gyro_mean_recorded": [
+          -0.2895866234031674,
+          0.2279123428717429,
+          -0.23098687480838
+        ],
+        "accel_mean_recorded": [
+          1.8727731394992306,
+          0.2526242560040881,
+          9.577955846193152
+        ],
+        "euler_min_recorded": [
+          -16.243572,
+          -0.986717,
+          -60.622208
+        ],
+        "euler_max_recorded": [
+          -5.790795,
+          4.624777,
+          -55.837312
+        ]
+      },
+      {
+        "host_start_offset_s": 80,
+        "frames": 2078,
+        "gyro_rms_recorded": [
+          2.463001206011013,
+          2.494229808951712,
+          9.974737624851615
+        ],
+        "gyro_mean_recorded": [
+          -0.9488978772858515,
+          0.014308459576515907,
+          -7.2566262603464855
+        ],
+        "accel_mean_recorded": [
+          1.420543859480268,
+          0.04764955293551492,
+          9.669628841674692
+        ],
+        "euler_min_recorded": [
+          -9.624038,
+          -0.548335,
+          -136.48104
+        ],
+        "euler_max_recorded": [
+          -6.948945,
+          1.41612,
+          -51.80888
+        ]
+      },
+      {
+        "host_start_offset_s": 90,
+        "frames": 1957,
+        "gyro_rms_recorded": [
+          3.508763521357263,
+          2.563337562648632,
+          20.72598452215682
+        ],
+        "gyro_mean_recorded": [
+          1.884788936126729,
+          0.03765557894736869,
+          14.051725457843617
+        ],
+        "accel_mean_recorded": [
+          1.1597565804803278,
+          0.04566568216658157,
+          9.707317504854355
+        ],
+        "euler_min_recorded": [
+          -9.226586,
+          -1.025494,
+          -139.210768
+        ],
+        "euler_max_recorded": [
+          -4.514955,
+          2.200449,
+          24.816368
+        ]
+      }
+    ],
+    "limitations": "RMS includes bias, vibration and motion; cannot infer translation or motion type or certified physical units from these statistics."
+  },
+  "limits": [
+    "100-packet bundles are decoder groupings, not proof of complete device scans or no missing UDP datagrams",
+    "packet counts/host gaps alone cannot establish device transmit rate or packet loss",
+    "IMU host receive timestamps are batched and not device sampling times"
+  ]
+}

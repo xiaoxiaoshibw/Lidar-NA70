@@ -1,0 +1,86 @@
+{
+  "schema": "na70-scene-build-v1",
+  "status": "BUILT",
+  "evidence_kind": "REAL_PCAP",
+  "inputs": {
+    "pcap": "radar_capture_data\\na70_sessions\\20261104-170341\\raw\\lidar.pcap",
+    "pcap_sha256": "e0e4d9f73d4332f0ac40aad18f264d26d1cbb1888756c2d837ba828a71bc3128",
+    "poses": "Plan\\evidence\\slam\\20261104-lio-diagnostic\\trajectory-for-scene.csv",
+    "poses_sha256": "7bc90399f11a12e62d7ef730e36ec2c62609cd9d13387580daaef4c6ea44d53e",
+    "calibration": null,
+    "calibration_sha256": null
+  },
+  "trajectory": {
+    "frame": "lidar",
+    "samples": 81,
+    "start_s": 1793783024.364008,
+    "end_s": 1793783034.75349,
+    "clock_assumption": "pose t_s shares the PCAP packet_capture_time clock"
+  },
+  "calibration_meta": null,
+  "build": {
+    "install_direction": 1,
+    "start_frame": 10,
+    "frames_decoded": 100,
+    "voxel_size_m": 0.1,
+    "max_gap_s": 0.3,
+    "deskew": "POSE_INTERPOLATED_AT_PACKET_TIME"
+  },
+  "map": {
+    "points": 550214,
+    "voxels": 550214,
+    "input_points": 2000000,
+    "valid_points": 1679800,
+    "frames": 100,
+    "frames_with_points": 86,
+    "dropped": {
+      "outside": 260800,
+      "gap": 59400,
+      "nonfinite": 0
+    },
+    "voxel_size_m": 0.1,
+    "bounds": {
+      "minimum": [
+        -830.7764357631087,
+        -478.3465412533439,
+        -457.16724814845685
+      ],
+      "maximum": [
+        679.8243452896837,
+        462.94865014558235,
+        233.83067824520685
+      ]
+    },
+    "mean_points_per_voxel": 3.052993925999702,
+    "max_points_per_voxel": 51918,
+    "trajectory_frame": "lidar",
+    "extrinsic_supplied": false,
+    "limitations": [
+      "地图质量取决于输入位姿；本模块不产生、不优化位姿",
+      "包级时间仍是近似：逐点时间若由包时间复制，必须随结果声明",
+      "跨轨迹缺口/超出覆盖的点被丢弃，不插值外推",
+      "体素代表点是首个实测点，不是质心；来源引用保留",
+      "当前实现把全段体素保存在内存；长录（数分钟以上）需分块/流式落盘，尚未实现"
+    ]
+  },
+  "map_file": {
+    "path": "map.ply",
+    "sha256": "a4a9f9c4cc6349526181ee743953691977faf80549effb01fb175e0780690a14",
+    "bytes": 11554692
+  },
+  "trajectory_file": {
+    "path": "trajectory.csv",
+    "sha256": "185a073578e44f91f0227b9f5ef7f71c9a7a43edef7d714e8b95f837ed11ec29",
+    "bytes": 8509
+  },
+  "claims": {
+    "map_accuracy_validated": false,
+    "pose_truth": false,
+    "hardware_sync_validated": false
+  },
+  "limitations": [
+    "地图只反映输入位姿；位姿错误会直接进入地图",
+    "逐点时间由包接收时间复制，不是已验证的逐点设备时间",
+    "未做回环、全局优化或与独立控制点对账；准确度 NOT_EVALUATED"
+  ]
+}

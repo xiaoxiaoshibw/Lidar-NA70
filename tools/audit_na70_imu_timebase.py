@@ -4,8 +4,8 @@ The current YESENSE stream has no device sample timestamp, and USB reads deliver
 several frames per host instant.  This tool quantifies that structure:
 
 * how many frames share one host receive instant (batch size);
-* the interval between unique receive instants, and therefore a conservative
-  bound on any frame's true sampling time inside its batch;
+* the interval between unique receive instants; this alone cannot bound sample
+  age without independently established buffering and transport delays;
 * whether ``sample_us`` / ``ready_us`` device-time fields are present;
 * tid continuity, expected 60000->1 boundary, and missing-frame estimates.
 
@@ -30,7 +30,7 @@ from na70_core.capture.yesense import SAMPLE_TIME_GROUP, READY_TIME_GROUP, tid_f
 
 LIMITATIONS = (
     "主机接收时间不是设备采样时间；批内真实采样时刻未知",
-    "批量间隔只给出保守上界，不是可用的时间同步误差",
+    "批次间隔不能单独界定采样年龄或同步误差；缓冲与传输延迟的上界未知",
     "tid 连续只说明序号未断，不证明没有丢帧或时钟正确",
     "没有 sample_us/ready_us 时不得生成 device_time_s",
 )
@@ -181,9 +181,9 @@ def audit(frames_path, chunks_path):
         "segments": [{"segment": key, **value} for key, value in sorted(segments.items())],
         "sequence": _sequence(frames),
         "host_time_bound": {
-            "conservative_s": batches["batch_interval_max_s"],
+            "conservative_s": None,
             "median_batch_interval_s": batches["batch_interval_median_s"],
-            "meaning": "批内帧的真实采样时刻可能落在上一批到达至本批到达之间；这是上界，不是同步误差",
+            "meaning": "采样时间和接收时间差的上界未知；批次间隔不是已验证的延迟上界或同步误差",
         },
         "checks": {
             "frame_time_monotonic": True,

@@ -1,0 +1,20 @@
+{
+  "git_head": "751faab3efcc7fadba9f264cf68cd364d616416f",
+  "python": "3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]",
+  "platform": "Windows-11-10.0.26300-SP0",
+  "numpy": "2.5.3",
+  "code_sha256": {
+    "web/backend/decoder.py": "a1ffe8e1fc2bf763bac3d4f9cbced095cbcade103c01302f2db15db60e482f9d",
+    "tools/audit_na70_session.py": "7a6a2927b58fe4103915bbf4e1ba86fc28bfbaa17159643d30e9eea31a0ff928",
+    "tools/audit_na70_imu.py": "d0c23ac92f9b797410b76e2e40a9689222a73a7d994e6c263af2743595278192",
+    "tools/audit_na70_overlap.py": "62ee11b23674b8417c5c06644ab153ee2832d114524fbaba23dd0a9fcf6da54e",
+    "tools/audit_na70_imu_timebase.py": "49854082fde6002f4e82f3c3cd2f1a0dae98f6e6bbe391d14499d93ea6a1f6cf",
+    "tools/audit_na70_imu_ranges.py": "829a5ee2bd71ee30d4988c88fe2d3e9507d5e66da8415e93d6e593150843782c",
+    "tools/report_na70_session.py": "eabab219797eb5bf9253df3b11f528a9169a25bbed402e80bfbfa4100a97e131",
+    "tools/verify_na70_gyro_unit.py": "91f2bee706f8c8c4be7b2bf3d3aa32a286d97ffff990ece57da3335b2b9bbf1a",
+    "tools/analyze_na70_imu_run.py": "80f28d7a34ab252ba74ba9264c1df94fe82547f38c58933920a9584e73295c96",
+    "tools/lio/static_check.yaml": "72e47a2cad5cfa4ffdd3b5456ac406d5174d739e50bf9ba33046e08969668bdd"
+  },
+  "script_sha256": "be39ff8a18cc6fdfef84a5d58a4beeeea5e0238161e450ade71b593c1e055efd",
+  "comparison_pcap_sha256": "5f71ae88d15b7620ee84bea2b38af9f2ed860c4aeaa387318820781faffb6117"
+}

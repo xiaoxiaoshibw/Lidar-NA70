@@ -1,0 +1,23 @@
+{
+  "session_id": "20261105-162734-639900",
+  "created_unix": 1793867254.8446283,
+  "created_local": "2026-11-05T16:27:34+0800",
+  "operator": {
+    "application": "na70-qt-capture-v1",
+    "config": {
+      "version": "na70-qt-capture-v1",
+      "session_root": "D:\\Code\\radar\\radar_capture_data\\na70_sessions",
+      "preferred_imu_port": "COM12",
+      "imu_baud": 460800,
+      "lidar_port": 2368,
+      "duration_s": 100,
+      "max_duration_s": 1800,
+      "min_free_bytes": 2147483648,
+      "poll_interval_s": 0.25,
+      "max_host_batch_gap_s": 0.1,
+      "imu_port": "COM12"
+    },
+    "task": "QT-DUAL-CAPTURE"
+  },
+  "unknown_fields": "留 None 表示未测/未知，不填估算值"
+}

@@ -1,0 +1,1 @@
+{"voxel_m":0.08,"max_range_m":20,"normal_radius_m":0.3,"normal_max_nn":40,"ball_radii_m":[0.12,0.2,0.3],"max_triangle_edge_m":0.4,"outlier_neighbors":20,"outlier_std_ratio":2.5}

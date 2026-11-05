@@ -1,0 +1,274 @@
+{
+  "schema": "na70-imu-static-v1",
+  "status": "REJECTED",
+  "sample_count": 14183,
+  "segments": [
+    0
+  ],
+  "windows": [
+    {
+      "segment": 0,
+      "window": 0,
+      "samples": 2000,
+      "host_span_s": 9.99516799999401,
+      "status": "REJECTED",
+      "failed_checks": [
+        "accel_axis_std",
+        "accel_norm_std",
+        "gyro_axis_std"
+      ],
+      "accel_mean_m_s2": [
+        -0.11340231550000014,
+        0.31012741750000006,
+        9.77556918900001
+      ],
+      "accel_std_m_s2": [
+        0.34573090361893993,
+        0.4663157177787428,
+        0.21982375756322114
+      ],
+      "gyro_mean_deg_s": [
+        0.16988400449999977,
+        -0.12132153449999973,
+        -0.036255185000000016
+      ],
+      "gyro_std_deg_s": [
+        0.3439574434864787,
+        0.25327966273952907,
+        0.13488399928120784
+      ],
+      "accel_mean_norm_m_s2": 9.781144721819235,
+      "max_host_gap_s": 0.017917999997735023
+    },
+    {
+      "segment": 0,
+      "window": 1,
+      "samples": 2000,
+      "host_span_s": 9.995392999844626,
+      "status": "REJECTED",
+      "failed_checks": [
+        "accel_axis_std",
+        "accel_norm_std",
+        "gyro_axis_std"
+      ],
+      "accel_mean_m_s2": [
+        -0.11880419000000014,
+        0.3150116295000009,
+        9.772909496999993
+      ],
+      "accel_std_m_s2": [
+        0.2298261591363755,
+        0.3303726574532806,
+        0.14471064983857726
+      ],
+      "gyro_mean_deg_s": [
+        0.17225866750000005,
+        -0.12362414950000024,
+        -0.032473571500000034
+      ],
+      "gyro_std_deg_s": [
+        0.31450319226877205,
+        0.22695997137361065,
+        0.1066318129131191
+      ],
+      "accel_mean_norm_m_s2": 9.778706806057459,
+      "max_host_gap_s": 0.02588100009597838
+    },
+    {
+      "segment": 0,
+      "window": 2,
+      "samples": 2000,
+      "host_span_s": 9.995571000035852,
+      "status": "REJECTED",
+      "failed_checks": [
+        "accel_axis_std",
+        "gyro_axis_std",
+        "gyro_mean_norm"
+      ],
+      "accel_mean_m_s2": [
+        -0.08908287800000012,
+        0.31281325600000004,
+        9.775237474500019
+      ],
+      "accel_std_m_s2": [
+        0.1577498009826261,
+        0.18950912421057448,
+        0.07349611140949226
+      ],
+      "gyro_mean_deg_s": [
+        0.1634936119999998,
+        -0.10638574100000009,
+        1.8219325814999983
+      ],
+      "gyro_std_deg_s": [
+        0.2074500829797147,
+        0.136942866687039,
+        1.6773394279450884
+      ],
+      "accel_mean_norm_m_s2": 9.780646991643835,
+      "max_host_gap_s": 0.006973000010475516
+    },
+    {
+      "segment": 0,
+      "window": 3,
+      "samples": 2000,
+      "host_span_s": 9.995201999787241,
+      "status": "REJECTED",
+      "failed_checks": [
+        "accel_axis_std",
+        "accel_norm_std",
+        "gyro_axis_std",
+        "gyro_mean_norm"
+      ],
+      "accel_mean_m_s2": [
+        -0.007285558999999999,
+        0.31565215699999993,
+        9.776363947999997
+      ],
+      "accel_std_m_s2": [
+        0.13929552384200186,
+        0.18068478119480647,
+        0.08225294332766656
+      ],
+      "gyro_mean_deg_s": [
+        0.17323819500000032,
+        -0.09683410800000025,
+        2.8009980065000004
+      ],
+      "gyro_std_deg_s": [
+        0.516545305223981,
+        0.3527248103630994,
+        1.3297728280780796
+      ],
+      "accel_mean_norm_m_s2": 9.78146110800134,
+      "max_host_gap_s": 0.0252639998216182
+    },
+    {
+      "segment": 0,
+      "window": 4,
+      "samples": 2000,
+      "host_span_s": 9.995236000046134,
+      "status": "REJECTED",
+      "failed_checks": [
+        "accel_axis_std",
+        "accel_norm_std",
+        "gyro_axis_std",
+        "gyro_mean_norm"
+      ],
+      "accel_mean_m_s2": [
+        0.08134465100000017,
+        0.2613767174999999,
+        9.776854215
+      ],
+      "accel_std_m_s2": [
+        0.18625608237701233,
+        0.20864772924064695,
+        0.11080854626302636
+      ],
+      "gyro_mean_deg_s": [
+        0.15956601000000026,
+        -0.07603833149999994,
+        3.5835298834999953
+      ],
+      "gyro_std_deg_s": [
+        0.4009770471884384,
+        0.2948254332001233,
+        3.0972863781133033
+      ],
+      "accel_mean_norm_m_s2": 9.78068571635244,
+      "max_host_gap_s": 0.021715000038966537
+    },
+    {
+      "segment": 0,
+      "window": 5,
+      "samples": 2000,
+      "host_span_s": 9.995320999994874,
+      "status": "REJECTED",
+      "failed_checks": [
+        "accel_axis_std",
+        "accel_norm_std",
+        "gyro_axis_std",
+        "gyro_mean_norm"
+      ],
+      "accel_mean_m_s2": [
+        0.13591174950000007,
+        0.1598670540000001,
+        9.777495897000005
+      ],
+      "accel_std_m_s2": [
+        0.18298770707565906,
+        0.18177648206814526,
+        0.10553303699984938
+      ],
+      "gyro_mean_deg_s": [
+        0.16527860800000033,
+        -0.07629056299999999,
+        4.009899166500005
+      ],
+      "gyro_std_deg_s": [
+        0.2091560144415354,
+        0.2110793063821426,
+        3.1203534096839
+      ],
+      "accel_mean_norm_m_s2": 9.779747210151125,
+      "max_host_gap_s": 0.009787000017240644
+    },
+    {
+      "segment": 0,
+      "window": 6,
+      "samples": 2183,
+      "host_span_s": 10.916062999982387,
+      "status": "REJECTED",
+      "failed_checks": [
+        "accel_axis_std",
+        "accel_norm_std",
+        "gyro_axis_std",
+        "gyro_mean_norm"
+      ],
+      "accel_mean_m_s2": [
+        0.10471118873110406,
+        0.01985868437929459,
+        9.778234401740725
+      ],
+      "accel_std_m_s2": [
+        0.16127968717995886,
+        0.12981992075938933,
+        0.09658434293823957
+      ],
+      "gyro_mean_deg_s": [
+        0.15745817224003703,
+        -0.08005028172240024,
+        3.081348890059555
+      ],
+      "gyro_std_deg_s": [
+        0.08001067738157402,
+        0.12879694145998277,
+        3.707971468225482
+      ],
+      "accel_mean_norm_m_s2": 9.778815205114398,
+      "max_host_gap_s": 0.012887000106275082
+    }
+  ],
+  "config": {
+    "version": "imu-static-diagnostic-v1",
+    "window_s": 10.0,
+    "min_samples": 1000,
+    "min_span_s": 9.0,
+    "max_host_gap_s": 0.2,
+    "max_accel_axis_std_m_s2": 0.1,
+    "max_accel_norm_std_m_s2": 0.08,
+    "max_gyro_axis_std_deg_s": 0.2,
+    "max_gyro_mean_norm_deg_s": 0.8,
+    "accel_mean_norm_range_m_s2": [
+      9.3,
+      10.3
+    ]
+  },
+  "source_sha256": "397e6f65e8f7dfa81c94a01d959a48877ab8ff43ec0ca12c8b0c45b88c988cda",
+  "limits": [
+    "仅静置一致性诊断，不能证明物理静止或校准成功",
+    "阈值为开发阈值，非厂家指标",
+    "角速度单位仍为推断，时间为主机接收时间",
+    "不验证流完整性、同步、外参或 Allan 噪声参数"
+  ]
+}

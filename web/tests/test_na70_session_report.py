@@ -42,7 +42,8 @@ def test_static_session_is_ready(tmp_path):
     assert result["saturation_suspected"] is False
     assert result["static_baseline_usable"] is True
     assert result["checks"]["overlap"] == "SKIPPED_NO_PCAP"
-    assert abs(result["summary"]["host_time_bound_s"] - 0.05) < 1e-9
+    assert result["summary"]["host_time_bound_s"] is None
+    assert "上界未知" in result["summary"]["host_time_bound_note"]
     assert result["verdicts"]["may_be_used_for_dynamic_calibration"] is False
 
 
