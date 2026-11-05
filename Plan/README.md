@@ -1,5 +1,9 @@
 # NA70 当前开发计划与路线记录
 
+2026-11-05 执行 [NA70 LIO 算法优化 AI 执行计划](NA70_LIO算法优化AI执行计划.md)（T1–T3 全部交付）：`lio_scans.py` 新增声明式逐点时间插值模式 `POINT_INTERPOLATED_UNIFORM_PACKET_GAP`（`--point-time-mode interpolated`，默认 packet 行为回归不变，gap≤0 退化共享、末包 fallback 计数）；新增 FOV 实测工具 `tools/measure_na70_fov.py`，两个独立工程会话实测 pitch 跨度一致为 34.959°（码 2133–3488）、azimuth ~360°，据此把 `tools/lio/na70_fast_lio.yaml` 修正为 `fov_degree: 35.0`、`filter_size_surf/map: 0.15`、`blind: 7.4`（近距下限证据），WSL2 同段数据新配置重放对比仅记录内部统计（路径 43.5→30.3 m 等，不归因）。SYNTHETIC 全量回归 590 passed / 2 failed（缺 `1.pcap`/`2.pcap` 环境性预存）/ 3 skipped。**插值是声明近似非实测逐点时间；设备时间戳、陀螺单位、外参未解决；动态 LIO 保持 `DIAGNOSTIC_ONLY`**。证据 [20261105-lio-point-time-and-config](evidence/slam/20261105-lio-point-time-and-config/REPORT.md)、[重放对比](evidence/slam/20261105-lio-config-replay/REPORT.md)。
+
+2026-11-05 新增 [NA70 LIO 算法优化 AI 执行计划](NA70_LIO算法优化AI执行计划.md)（PLAN_READY，未执行）：两项纯软件任务——`lio_scans.py` 声明式逐点时间插值（`POINT_INTERPOLATED_UNIFORM_PACKET_GAP`，默认 packet 行为不变）与 FOV 实测工具＋FAST-LIO 配置修正（fov_degree/filter_size/blind）。不解决设备时间戳、陀螺单位、外参；动态 LIO 保持 `DIAGNOSTIC_ONLY`。
+
 2026-11-05 Qt 本机录制入口：按用户要求新增 `启动雷达IMU录制.bat`，独立 Qt 窗口复用已有双流采集核心，支持串口枚举、定时/手动停止、安全退出、质量提示与录完自动逐包主机时间关联；不需启动 Web 服务。`packet_imu.csv` 保留每包源索引与前后 IMU 完整接收批次的行号，间隔过大、序号中断、跨 segment 与范围外均标记，时间倒退拒绝。设备采样同步、真实外参仍未验证；未知矩阵与误差界保持 null。用法见 [Qt 录制说明](../docs/NA70_QT_CAPTURE.md)，测试及旧真实会话复核见 [Qt 证据](evidence/slam/20261105-qt-capture/REPORT.md)。
 
 2026-11-04 后续离线复核：没有更新的现场会话；修复 LIO 包审计遗漏帧边界包间隔的问题，合成回归及真实包复算见[连续性复核](evidence/slam/20261104-lio-continuity-audit/REPORT.md)。全 FF 原码与回放突发风险分别保存在该报告引用的独立证据中；厂家语义、实际 FAST-LIO 接收完整性、真实同步与外参仍未验证，动态 LIO 保持 `DIAGNOSTIC_ONLY`。

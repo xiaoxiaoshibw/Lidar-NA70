@@ -75,3 +75,24 @@ python3 /mnt/d/Code/radar/tools/lio/run_glim_example.py \
 回放工具复制配置到独立输出目录，使用作者示例外参、CPU 里程计/位姿图、关闭 GUI；保存配置哈希、日志、资源统计、轨迹和质量警告。公开示例当前有一条 `not enough IMU measurements ... N=0` 警告，故输入质量仍需复核，不能将进程正常退出当精度通过。运行结果见[开发证据](../Plan/evidence/slam/20261030-development/REPORT.md)。
 
 当前固定 Zenodo Ouster OS1-128＋IMU 的 ROS2 下采样示例，下载后验证发布方 MD5/大小并保存 SHA-256，再检查归档路径和展开大小。这是上游环境对照，不是 NA70 非重复扫描验收；FAST-LIO/GLIM 的 NA70 实测接入与现场标定仍需后续完成。所有构建/回放证据标记 `WSL2_HUMBLE_X86_64`，不替代 Jetson/ARM。
+
+## 逐点时间模式（2026-11-05 新增，声明近似）
+
+`lio_scans.build_scans(frames, *, points_per_packet=200, point_time_mode="packet")` 支持两种声明模式：
+
+- `packet`（默认）：整包 200 点复制同一包时间，声明 `PACKET_APPROXIMATION`；默认行为与历史导出逐字节一致。
+- `interpolated`：包内点序在 `gap_k = t_{k+1} - t_k`（会话内下一包，允许跨帧边界）上均匀插值：`t_k + gap_k × i / N`；声明 `POINT_INTERPOLATED_UNIFORM_PACKET_GAP`。`gap_k <= 0`（含主机时间重复的观测事实）的包退化为共享包时间（`packets_collapsed`）；会话最后一个包沿用上一个正 gap，否则共享包时间（`packets_fallback`）。
+
+**插值不是实测逐点时间**：包内真实采样时序仍未核实，本模式只是把"包内均匀"作为显式声明交给下游，去畸变精度仍受此假设限制。两种模式都保证 `point_time_s` 非递减，`load_npz` 校验不变。
+
+`tools/export_na70_lio_scans.py` 增加 `--point-time-mode {packet,interpolated}`，默认 `packet`；manifest 顶层写 `point_time_mode`，`time_quality` 写 `point_time_mode`、`packets_interpolated`、`packets_collapsed`、`packets_fallback`。
+
+## NA70 FOV 实测工具（2026-11-05 新增）
+
+`tools/measure_na70_fov.py` 用 `web/backend/decoder.py` 解码经典 PCAP，输出有效回波（距离码 >0 且两角度码均非 0xFFFF）的 azimuth/pitch 码最小/最大值及换算角度（×0.0432 / ×0.0258），按帧与全会话统计，并记录 0xFFFF 与零码射线计数——这些口径的厂家语义未核实，仅记录不下结论。
+
+```powershell
+web\.venv\Scripts\python.exe tools\measure_na70_fov.py --pcap <session.pcap> --output <new>\fov.json
+```
+
+`--output` 指向不存在的文件，不覆盖任何已有输出。注意：NA70 是非重复扫描，铺满完整 pattern 需要长时间（建议 ≥60 s 静止）会话；短会话或运动会话的最小/最大角度只是下界估计。`tools/lio/na70_fast_lio.yaml` 的 `fov_degree` 应取实测值（向上取整到 5°），配置注释写明证据目录；`blind` 不低于 7.4（实测近距下限，见 `Plan/evidence/slam/20261030-near-range-floor/REPORT.md`）。

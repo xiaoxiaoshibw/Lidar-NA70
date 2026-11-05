@@ -1,0 +1,197 @@
+[INFO] [launch]: All log files can be found below /home/radar/.ros/log/2026-11-05-22-10-38-879799-localhost-27
+[INFO] [launch]: Default logging verbosity is set to INFO
+[INFO] [fastlio_mapping-1]: process started with pid [29]
+[fastlio_mapping-1] [INFO] [1793887839.370189138] [laser_mapping]: p_pre->lidar_type 5
+[fastlio_mapping-1] Multi thread started 
+[fastlio_mapping-1] ~~~~/home/radar/na70_lio_ws/src/fast_lio/ file opened
+[fastlio_mapping-1] [INFO] [1793887839.382980059] [laser_mapping]: Node init finished.
+[fastlio_mapping-1] [WARN] [1793887855.532138667] [laser_mapping]: No point, skip this scan!
+[fastlio_mapping-1] 
+[fastlio_mapping-1] [WARN] [1793887855.542056167] [laser_mapping]: No point, skip this scan!
+[fastlio_mapping-1] 
+[fastlio_mapping-1] [WARN] [1793887855.552039241] [laser_mapping]: No point, skip this scan!
+[fastlio_mapping-1] 
+[fastlio_mapping-1] [WARN] [1793887855.562200451] [laser_mapping]: No point, skip this scan!
+[fastlio_mapping-1] 
+[fastlio_mapping-1] IMU Initial Done
+[fastlio_mapping-1] [WARN] [1793887856.672317154] [laser_mapping]: No point, skip this scan!
+[fastlio_mapping-1] 
+[fastlio_mapping-1] [WARN] [1793887856.682076199] [laser_mapping]: No point, skip this scan!
+[fastlio_mapping-1] 
+[fastlio_mapping-1] [WARN] [1793887856.692064870] [laser_mapping]: No point, skip this scan!
+[fastlio_mapping-1] 
+[fastlio_mapping-1] [pcl::VoxelGrid::applyFilter] Leaf size is too small for the input dataset. Integer indices would overflow.
+[fastlio_mapping-1] [INFO] [1793887857.828763664] [laser_mapping]: Initialize the map kdtree
+[fastlio_mapping-1] [pcl::VoxelGrid::applyFilter] Leaf size is too small for the input dataset. Integer indices would overflow.
+[fastlio_mapping-1] [pcl::VoxelGrid::applyFilter] Leaf size is too small for the input dataset. Integer indices would overflow.
+[fastlio_mapping-1] [pcl::VoxelGrid::applyFilter] Leaf size is too small for the input dataset. Integer indices would overflow.
+[fastlio_mapping-1] [pcl::VoxelGrid::applyFilter] Leaf size is too small for the input dataset. Integer indices would overflow.
+[fastlio_mapping-1] [pcl::VoxelGrid::applyFilter] Leaf size is too small for the input dataset. Integer indices would overflow.
+[fastlio_mapping-1] [pcl::VoxelGrid::applyFilter] Leaf size is too small for the input dataset. Integer indices would overflow.
+[fastlio_mapping-1] [pcl::VoxelGrid::applyFilter] Leaf size is too small for the input dataset. Integer indices would overflow.
+[fastlio_mapping-1] [pcl::VoxelGrid::applyFilter] Leaf size is too small for the input dataset. Integer indices would overflow.
+[fastlio_mapping-1] [pcl::VoxelGrid::applyFilter] Leaf size is too small for the input dataset. Integer indices would overflow.
+[fastlio_mapping-1] [ mapping ]: time: IMU + Map + Input Downsample: 0.000105 ave match: 0.017350 ave solve: 0.005220  ave ICP: 0.026088  map incre: 0.009678 ave total: 0.035871 icp: 0.023482 construct H: 0.001415 
+[fastlio_mapping-1] [ mapping ]: time: IMU + Map + Input Downsample: 0.000101 ave match: 0.017053 ave solve: 0.004142  ave ICP: 0.020355  map incre: 0.008413 ave total: 0.032370 icp: 0.021774 construct H: 0.000895 
+[fastlio_mapping-1] [ mapping ]: time: IMU + Map + Input Downsample: 0.000107 ave match: 0.016401 ave solve: 0.003961  ave ICP: 0.019371  map incre: 0.007790 ave total: 0.030669 icp: 0.020890 construct H: 0.000755 
+[fastlio_mapping-1] [ mapping ]: time: IMU + Map + Input Downsample: 0.000102 ave match: 0.015378 ave solve: 0.003592  ave ICP: 0.015225  map incre: 0.007343 ave total: 0.028669 icp: 0.019411 construct H: 0.000671 
+[fastlio_mapping-1] [ mapping ]: time: IMU + Map + Input Downsample: 0.002218 ave match: 0.015381 ave solve: 0.003159  ave ICP: 0.017287  map incre: 0.022676 ave total: 0.031372 icp: 0.018904 construct H: 0.000583 
+[fastlio_mapping-1] [ mapping ]: time: IMU + Map + Input Downsample: 0.000118 ave match: 0.015491 ave solve: 0.003357  ave ICP: 0.020691  map incre: 0.011242 ave total: 0.031485 icp: 0.019164 construct H: 0.000552 
+[fastlio_mapping-1] [ mapping ]: time: IMU + Map + Input Downsample: 0.000109 ave match: 0.015968 ave solve: 0.003376  ave ICP: 0.022858  map incre: 0.008635 ave total: 0.031502 icp: 0.019652 construct H: 0.000525 
+[fastlio_mapping-1] [ mapping ]: time: IMU + Map + Input Downsample: 0.000165 ave match: 0.016428 ave solve: 0.003376  ave ICP: 0.023803  map incre: 0.010678 ave total: 0.031895 icp: 0.020137 construct H: 0.000526 
+[fastlio_mapping-1] [ mapping ]: time: IMU + Map + Input Downsample: 0.000146 ave match: 0.017265 ave solve: 0.003323  ave ICP: 0.027323  map incre: 0.012378 ave total: 0.032778 icp: 0.020906 construct H: 0.000515 
+[fastlio_mapping-1] [pcl::VoxelGrid::applyFilter] Leaf size is too small for the input dataset. Integer indices would overflow.
+[fastlio_mapping-1] [pcl::VoxelGrid::applyFilter] Leaf size is too small for the input dataset. Integer indices would overflow.
+[fastlio_mapping-1] [pcl::VoxelGrid::applyFilter] Leaf size is too small for the input dataset. Integer indices would overflow.
+[fastlio_mapping-1] [pcl::VoxelGrid::applyFilter] Leaf size is too small for the input dataset. Integer indices would overflow.
+[fastlio_mapping-1] [pcl::VoxelGrid::applyFilter] Leaf size is too small for the input dataset. Integer indices would overflow.
+[fastlio_mapping-1] [pcl::VoxelGrid::applyFilter] Leaf size is too small for the input dataset. Integer indices would overflow.
+[fastlio_mapping-1] [pcl::VoxelGrid::applyFilter] Leaf size is too small for the input dataset. Integer indices would overflow.
+[fastlio_mapping-1] [pcl::VoxelGrid::applyFilter] Leaf size is too small for the input dataset. Integer indices would overflow.
+[fastlio_mapping-1] [pcl::VoxelGrid::applyFilter] Leaf size is too small for the input dataset. Integer indices would overflow.
+[fastlio_mapping-1] [pcl::VoxelGrid::applyFilter] Leaf size is too small for the input dataset. Integer indices would overflow.
+[fastlio_mapping-1] [pcl::VoxelGrid::applyFilter] Leaf size is too small for the input dataset. Integer indices would overflow.
+[fastlio_mapping-1] [pcl::VoxelGrid::applyFilter] Leaf size is too small for the input dataset. Integer indices would overflow.
+[fastlio_mapping-1] [pcl::VoxelGrid::applyFilter] Leaf size is too small for the input dataset. Integer indices would overflow.
+[fastlio_mapping-1] [pcl::VoxelGrid::applyFilter] Leaf size is too small for the input dataset. Integer indices would overflow.
+[fastlio_mapping-1] [pcl::VoxelGrid::applyFilter] Leaf size is too small for the input dataset. Integer indices would overflow.
+[fastlio_mapping-1] [pcl::VoxelGrid::applyFilter] Leaf size is too small for the input dataset. Integer indices would overflow.
+[fastlio_mapping-1] [pcl::VoxelGrid::applyFilter] Leaf size is too small for the input dataset. Integer indices would overflow.
+[fastlio_mapping-1] [pcl::VoxelGrid::applyFilter] Leaf size is too small for the input dataset. Integer indices would overflow.
+[fastlio_mapping-1] [pcl::VoxelGrid::applyFilter] Leaf size is too small for the input dataset. Integer indices would overflow.
+[fastlio_mapping-1] [ mapping ]: time: IMU + Map + Input Downsample: 0.001569 ave match: 0.017816 ave solve: 0.003452  ave ICP: 0.028161  map incre: 0.028198 ave total: 0.035293 icp: 0.021593 construct H: 0.000495 
+[fastlio_mapping-1] [ mapping ]: time: IMU + Map + Input Downsample: 0.000147 ave match: 0.017970 ave solve: 0.003599  ave ICP: 0.025225  map incre: 0.015045 ave total: 0.035759 icp: 0.021897 construct H: 0.000501 
+[fastlio_mapping-1] [ mapping ]: time: IMU + Map + Input Downsample: 0.000116 ave match: 0.017961 ave solve: 0.003529  ave ICP: 0.021118  map incre: 0.012004 ave total: 0.035549 icp: 0.021806 construct H: 0.000493 
+[fastlio_mapping-1] [ mapping ]: time: IMU + Map + Input Downsample: 0.000109 ave match: 0.018052 ave solve: 0.003572  ave ICP: 0.024037  map incre: 0.010254 ave total: 0.035461 icp: 0.021956 construct H: 0.000523 
+[fastlio_mapping-1] [ mapping ]: time: IMU + Map + Input Downsample: 0.000110 ave match: 0.018151 ave solve: 0.003622  ave ICP: 0.024551  map incre: 0.010957 ave total: 0.035472 icp: 0.022120 construct H: 0.000595 
+[fastlio_mapping-1] [ mapping ]: time: IMU + Map + Input Downsample: 0.000116 ave match: 0.018568 ave solve: 0.003586  ave ICP: 0.028150  map incre: 0.013490 ave total: 0.035891 icp: 0.022505 construct H: 0.000591 
+[fastlio_mapping-1] [ mapping ]: time: IMU + Map + Input Downsample: 0.001329 ave match: 0.018631 ave solve: 0.003480  ave ICP: 0.021932  map incre: 0.013153 ave total: 0.035924 icp: 0.022446 construct H: 0.000575 
+[fastlio_mapping-1] [ mapping ]: time: IMU + Map + Input Downsample: 0.000124 ave match: 0.018956 ave solve: 0.003443  ave ICP: 0.027360  map incre: 0.016976 ave total: 0.036426 icp: 0.022719 construct H: 0.000563 
+[fastlio_mapping-1] [ mapping ]: time: IMU + Map + Input Downsample: 0.000111 ave match: 0.019440 ave solve: 0.003367  ave ICP: 0.030317  map incre: 0.015291 ave total: 0.036942 icp: 0.023112 construct H: 0.000551 
+[fastlio_mapping-1] [ mapping ]: time: IMU + Map + Input Downsample: 0.000158 ave match: 0.019911 ave solve: 0.003315  ave ICP: 0.031202  map incre: 0.017098 ave total: 0.037548 icp: 0.023521 construct H: 0.000544 
+[fastlio_mapping-1] [ mapping ]: time: IMU + Map + Input Downsample: 0.001516 ave match: 0.020124 ave solve: 0.003271  ave ICP: 0.027052  map incre: 0.039775 ave total: 0.039088 icp: 0.023679 construct H: 0.000539 
+[fastlio_mapping-1] [ mapping ]: time: IMU + Map + Input Downsample: 0.000119 ave match: 0.020058 ave solve: 0.003247  ave ICP: 0.021903  map incre: 0.011671 ave total: 0.038831 icp: 0.023581 construct H: 0.000538 
+[fastlio_mapping-1] [ mapping ]: time: IMU + Map + Input Downsample: 0.000121 ave match: 0.019930 ave solve: 0.003202  ave ICP: 0.020067  map incre: 0.012424 ave total: 0.038548 icp: 0.023401 construct H: 0.000532 
+[fastlio_mapping-1] [ mapping ]: time: IMU + Map + Input Downsample: 0.000112 ave match: 0.019848 ave solve: 0.003148  ave ICP: 0.020349  map incre: 0.010003 ave total: 0.038197 icp: 0.023258 construct H: 0.000526 
+[fastlio_mapping-1] [ mapping ]: time: IMU + Map + Input Downsample: 0.000126 ave match: 0.019752 ave solve: 0.003094  ave ICP: 0.019755  map incre: 0.011089 ave total: 0.037896 icp: 0.023099 construct H: 0.000519 
+[fastlio_mapping-1] [ mapping ]: time: IMU + Map + Input Downsample: 0.002074 ave match: 0.019755 ave solve: 0.003062  ave ICP: 0.022644  map incre: 0.030670 ave total: 0.038595 icp: 0.023065 construct H: 0.000515 
+[fastlio_mapping-1] [ mapping ]: time: IMU + Map + Input Downsample: 0.000116 ave match: 0.019680 ave solve: 0.003095  ave ICP: 0.022064  map incre: 0.017626 ave total: 0.038642 icp: 0.023016 construct H: 0.000517 
+[fastlio_mapping-1] [ mapping ]: time: IMU + Map + Input Downsample: 0.000123 ave match: 0.019709 ave solve: 0.003102  ave ICP: 0.024475  map incre: 0.015076 ave total: 0.038680 icp: 0.023061 construct H: 0.000525 
+[fastlio_mapping-1] [ mapping ]: time: IMU + Map + Input Downsample: 0.000117 ave match: 0.019645 ave solve: 0.003128  ave ICP: 0.022644  map incre: 0.012856 ave total: 0.038571 icp: 0.023037 construct H: 0.000539 
+[fastlio_mapping-1] [pcl::VoxelGrid::applyFilter] Leaf size is too small for the input dataset. Integer indices would overflow.
+[fastlio_mapping-1] [pcl::VoxelGrid::applyFilter] Leaf size is too small for the input dataset. Integer indices would overflow.
+[fastlio_mapping-1] [pcl::VoxelGrid::applyFilter] Leaf size is too small for the input dataset. Integer indices would overflow.
+[fastlio_mapping-1] [pcl::VoxelGrid::applyFilter] Leaf size is too small for the input dataset. Integer indices would overflow.
+[fastlio_mapping-1] [pcl::VoxelGrid::applyFilter] Leaf size is too small for the input dataset. Integer indices would overflow.
+[fastlio_mapping-1] [pcl::VoxelGrid::applyFilter] Leaf size is too small for the input dataset. Integer indices would overflow.
+[fastlio_mapping-1] [pcl::VoxelGrid::applyFilter] Leaf size is too small for the input dataset. Integer indices would overflow.
+[fastlio_mapping-1] [pcl::VoxelGrid::applyFilter] Leaf size is too small for the input dataset. Integer indices would overflow.
+[fastlio_mapping-1] [pcl::VoxelGrid::applyFilter] Leaf size is too small for the input dataset. Integer indices would overflow.
+[fastlio_mapping-1] [pcl::VoxelGrid::applyFilter] Leaf size is too small for the input dataset. Integer indices would overflow.
+[fastlio_mapping-1] [pcl::VoxelGrid::applyFilter] Leaf size is too small for the input dataset. Integer indices would overflow.
+[fastlio_mapping-1] [pcl::VoxelGrid::applyFilter] Leaf size is too small for the input dataset. Integer indices would overflow.
+[fastlio_mapping-1] [pcl::VoxelGrid::applyFilter] Leaf size is too small for the input dataset. Integer indices would overflow.
+[fastlio_mapping-1] [pcl::VoxelGrid::applyFilter] Leaf size is too small for the input dataset. Integer indices would overflow.
+[fastlio_mapping-1] [pcl::VoxelGrid::applyFilter] Leaf size is too small for the input dataset. Integer indices would overflow.
+[fastlio_mapping-1] [pcl::VoxelGrid::applyFilter] Leaf size is too small for the input dataset. Integer indices would overflow.
+[fastlio_mapping-1] [pcl::VoxelGrid::applyFilter] Leaf size is too small for the input dataset. Integer indices would overflow.
+[fastlio_mapping-1] [pcl::VoxelGrid::applyFilter] Leaf size is too small for the input dataset. Integer indices would overflow.
+[fastlio_mapping-1] [pcl::VoxelGrid::applyFilter] Leaf size is too small for the input dataset. Integer indices would overflow.
+[fastlio_mapping-1] [pcl::VoxelGrid::applyFilter] Leaf size is too small for the input dataset. Integer indices would overflow.
+[fastlio_mapping-1] [ mapping ]: time: IMU + Map + Input Downsample: 0.001406 ave match: 0.019689 ave solve: 0.003119  ave ICP: 0.024220  map incre: 0.026931 ave total: 0.039053 icp: 0.023066 construct H: 0.000539 
+[fastlio_mapping-1] [ mapping ]: time: IMU + Map + Input Downsample: 0.000114 ave match: 0.019667 ave solve: 0.003114  ave ICP: 0.022385  map incre: 0.015113 ave total: 0.039005 icp: 0.023035 construct H: 0.000538 
+[fastlio_mapping-1] [ mapping ]: time: IMU + Map + Input Downsample: 0.000123 ave match: 0.019612 ave solve: 0.003084  ave ICP: 0.020599  map incre: 0.009369 ave total: 0.038717 icp: 0.022948 construct H: 0.000533 
+[fastlio_mapping-1] [ mapping ]: time: IMU + Map + Input Downsample: 0.000120 ave match: 0.019572 ave solve: 0.003053  ave ICP: 0.020727  map incre: 0.008404 ave total: 0.038422 icp: 0.022870 construct H: 0.000527 
+[fastlio_mapping-1] [ mapping ]: time: IMU + Map + Input Downsample: 0.000113 ave match: 0.019527 ave solve: 0.003020  ave ICP: 0.020423  map incre: 0.009492 ave total: 0.038167 icp: 0.022787 construct H: 0.000521 
+[fastlio_mapping-1] [ mapping ]: time: IMU + Map + Input Downsample: 0.001970 ave match: 0.019526 ave solve: 0.003005  ave ICP: 0.022587  map incre: 0.031051 ave total: 0.038680 icp: 0.022771 construct H: 0.000519 
+[fastlio_mapping-1] [ mapping ]: time: IMU + Map + Input Downsample: 0.000105 ave match: 0.019514 ave solve: 0.003012  ave ICP: 0.022674  map incre: 0.013751 ave total: 0.038619 icp: 0.022761 construct H: 0.000521 
+[fastlio_mapping-1] [ mapping ]: time: IMU + Map + Input Downsample: 0.000115 ave match: 0.019510 ave solve: 0.003020  ave ICP: 0.023079  map incre: 0.011835 ave total: 0.038519 icp: 0.022762 construct H: 0.000521 
+[fastlio_mapping-1] [ mapping ]: time: IMU + Map + Input Downsample: 0.000133 ave match: 0.019538 ave solve: 0.003001  ave ICP: 0.023435  map incre: 0.019774 ave total: 0.038649 icp: 0.022768 construct H: 0.000518 
+[fastlio_mapping-1] [ mapping ]: time: IMU + Map + Input Downsample: 0.000112 ave match: 0.019443 ave solve: 0.002977  ave ICP: 0.018353  map incre: 0.009945 ave total: 0.038380 icp: 0.022645 construct H: 0.000514 
+[fastlio_mapping-1] [ mapping ]: time: IMU + Map + Input Downsample: 0.001456 ave match: 0.019434 ave solve: 0.003002  ave ICP: 0.023670  map incre: 0.025477 ave total: 0.038693 icp: 0.022661 construct H: 0.000513 
+[fastlio_mapping-1] [ mapping ]: time: IMU + Map + Input Downsample: 0.000112 ave match: 0.019327 ave solve: 0.002997  ave ICP: 0.018313  map incre: 0.014858 ave total: 0.038558 icp: 0.022546 construct H: 0.000510 
+[fastlio_mapping-1] [ mapping ]: time: IMU + Map + Input Downsample: 0.000113 ave match: 0.019253 ave solve: 0.002970  ave ICP: 0.018685  map incre: 0.008103 ave total: 0.038274 icp: 0.022446 construct H: 0.000506 
+[fastlio_mapping-1] [ mapping ]: time: IMU + Map + Input Downsample: 0.000114 ave match: 0.019178 ave solve: 0.002948  ave ICP: 0.018494  map incre: 0.009438 ave total: 0.038030 icp: 0.022346 construct H: 0.000503 
+[fastlio_mapping-1] [ mapping ]: time: IMU + Map + Input Downsample: 0.000110 ave match: 0.019090 ave solve: 0.002925  ave ICP: 0.017650  map incre: 0.008066 ave total: 0.037747 icp: 0.022232 construct H: 0.000499 
+[fastlio_mapping-1] [ mapping ]: time: IMU + Map + Input Downsample: 0.001907 ave match: 0.019160 ave solve: 0.002932  ave ICP: 0.026080  map incre: 0.024673 ave total: 0.038085 icp: 0.022310 construct H: 0.000498 
+[fastlio_mapping-1] [ mapping ]: time: IMU + Map + Input Downsample: 0.000107 ave match: 0.019224 ave solve: 0.002924  ave ICP: 0.025309  map incre: 0.014063 ave total: 0.038116 icp: 0.022370 construct H: 0.000495 
+[fastlio_mapping-1] [ mapping ]: time: IMU + Map + Input Downsample: 0.000119 ave match: 0.019171 ave solve: 0.002912  ave ICP: 0.019524  map incre: 0.010871 ave total: 0.037951 icp: 0.022302 construct H: 0.000492 
+[fastlio_mapping-1] [ mapping ]: time: IMU + Map + Input Downsample: 0.000125 ave match: 0.019103 ave solve: 0.002890  ave ICP: 0.018159  map incre: 0.009987 ave total: 0.037745 icp: 0.022209 construct H: 0.000488 
+[fastlio_mapping-1] [ mapping ]: time: IMU + Map + Input Downsample: 0.000117 ave match: 0.019090 ave solve: 0.002879  ave ICP: 0.021286  map incre: 0.011696 ave total: 0.037648 icp: 0.022183 construct H: 0.000486 
+[fastlio_mapping-1] [pcl::VoxelGrid::applyFilter] Leaf size is too small for the input dataset. Integer indices would overflow.
+[fastlio_mapping-1] [pcl::VoxelGrid::applyFilter] Leaf size is too small for the input dataset. Integer indices would overflow.
+[fastlio_mapping-1] [pcl::VoxelGrid::applyFilter] Leaf size is too small for the input dataset. Integer indices would overflow.
+[fastlio_mapping-1] [pcl::VoxelGrid::applyFilter] Leaf size is too small for the input dataset. Integer indices would overflow.
+[fastlio_mapping-1] [pcl::VoxelGrid::applyFilter] Leaf size is too small for the input dataset. Integer indices would overflow.
+[fastlio_mapping-1] [pcl::VoxelGrid::applyFilter] Leaf size is too small for the input dataset. Integer indices would overflow.
+[fastlio_mapping-1] [pcl::VoxelGrid::applyFilter] Leaf size is too small for the input dataset. Integer indices would overflow.
+[fastlio_mapping-1] [pcl::VoxelGrid::applyFilter] Leaf size is too small for the input dataset. Integer indices would overflow.
+[fastlio_mapping-1] [pcl::VoxelGrid::applyFilter] Leaf size is too small for the input dataset. Integer indices would overflow.
+[fastlio_mapping-1] [pcl::VoxelGrid::applyFilter] Leaf size is too small for the input dataset. Integer indices would overflow.
+[fastlio_mapping-1] [pcl::VoxelGrid::applyFilter] Leaf size is too small for the input dataset. Integer indices would overflow.
+[fastlio_mapping-1] [pcl::VoxelGrid::applyFilter] Leaf size is too small for the input dataset. Integer indices would overflow.
+[fastlio_mapping-1] [pcl::VoxelGrid::applyFilter] Leaf size is too small for the input dataset. Integer indices would overflow.
+[fastlio_mapping-1] [pcl::VoxelGrid::applyFilter] Leaf size is too small for the input dataset. Integer indices would overflow.
+[fastlio_mapping-1] [pcl::VoxelGrid::applyFilter] Leaf size is too small for the input dataset. Integer indices would overflow.
+[fastlio_mapping-1] [pcl::VoxelGrid::applyFilter] Leaf size is too small for the input dataset. Integer indices would overflow.
+[fastlio_mapping-1] [pcl::VoxelGrid::applyFilter] Leaf size is too small for the input dataset. Integer indices would overflow.
+[fastlio_mapping-1] [pcl::VoxelGrid::applyFilter] Leaf size is too small for the input dataset. Integer indices would overflow.
+[fastlio_mapping-1] [pcl::VoxelGrid::applyFilter] Leaf size is too small for the input dataset. Integer indices would overflow.
+[fastlio_mapping-1] [ mapping ]: time: IMU + Map + Input Downsample: 0.001079 ave match: 0.019082 ave solve: 0.002862  ave ICP: 0.021170  map incre: 0.025146 ave total: 0.037847 icp: 0.022155 construct H: 0.000483 
+[fastlio_mapping-1] [ mapping ]: time: IMU + Map + Input Downsample: 0.000082 ave match: 0.019038 ave solve: 0.002906  ave ICP: 0.023113  map incre: 0.011763 ave total: 0.037789 icp: 0.022169 construct H: 0.000496 
+[fastlio_mapping-1] [ mapping ]: time: IMU + Map + Input Downsample: 0.000103 ave match: 0.018997 ave solve: 0.002893  ave ICP: 0.019596  map incre: 0.010485 ave total: 0.037640 icp: 0.022114 construct H: 0.000493 
+[fastlio_mapping-1] [ mapping ]: time: IMU + Map + Input Downsample: 0.000122 ave match: 0.018972 ave solve: 0.002874  ave ICP: 0.019973  map incre: 0.010679 ave total: 0.037508 icp: 0.022067 construct H: 0.000490 
+[fastlio_mapping-1] [ mapping ]: time: IMU + Map + Input Downsample: 0.000106 ave match: 0.018981 ave solve: 0.002854  ave ICP: 0.021641  map incre: 0.010412 ave total: 0.037407 icp: 0.022054 construct H: 0.000488 
+[fastlio_mapping-1] [ mapping ]: time: IMU + Map + Input Downsample: 0.001272 ave match: 0.018969 ave solve: 0.002824  ave ICP: 0.019888  map incre: 0.030519 ave total: 0.037672 icp: 0.022008 construct H: 0.000482 
+[fastlio_mapping-1] [ mapping ]: time: IMU + Map + Input Downsample: 0.000091 ave match: 0.018854 ave solve: 0.002807  ave ICP: 0.014893  map incre: 0.014379 ave total: 0.037521 icp: 0.021874 construct H: 0.000481 
+[fastlio_mapping-1] [ mapping ]: time: IMU + Map + Input Downsample: 0.000120 ave match: 0.018883 ave solve: 0.002811  ave ICP: 0.023929  map incre: 0.011746 ave total: 0.037490 icp: 0.021905 construct H: 0.000487 
+[fastlio_mapping-1] [ mapping ]: time: IMU + Map + Input Downsample: 0.000107 ave match: 0.018840 ave solve: 0.002791  ave ICP: 0.018438  map incre: 0.008587 ave total: 0.037308 icp: 0.021840 construct H: 0.000484 
+[fastlio_mapping-1] [ mapping ]: time: IMU + Map + Input Downsample: 0.001295 ave match: 0.018822 ave solve: 0.002770  ave ICP: 0.019733  map incre: 0.025506 ave total: 0.037467 icp: 0.021798 construct H: 0.000481 
+[fastlio_mapping-1] [ mapping ]: time: IMU + Map + Input Downsample: 0.000101 ave match: 0.018788 ave solve: 0.002772  ave ICP: 0.020053  map incre: 0.018929 ave total: 0.037494 icp: 0.021764 construct H: 0.000487 
+[fastlio_mapping-1] [ mapping ]: time: IMU + Map + Input Downsample: 0.000113 ave match: 0.018708 ave solve: 0.002754  ave ICP: 0.016062  map incre: 0.009584 ave total: 0.037299 icp: 0.021664 construct H: 0.000484 
+[fastlio_mapping-1] [ mapping ]: time: IMU + Map + Input Downsample: 0.000108 ave match: 0.018679 ave solve: 0.002751  ave ICP: 0.019824  map incre: 0.011930 ave total: 0.037210 icp: 0.021629 construct H: 0.000482 
+[fastlio_mapping-1] [ mapping ]: time: IMU + Map + Input Downsample: 0.000120 ave match: 0.018657 ave solve: 0.002735  ave ICP: 0.019716  map incre: 0.007668 ave total: 0.037053 icp: 0.021594 construct H: 0.000479 
+[fastlio_mapping-1] [ mapping ]: time: IMU + Map + Input Downsample: 0.001776 ave match: 0.018719 ave solve: 0.002722  ave ICP: 0.024904  map incre: 0.041518 ave total: 0.037548 icp: 0.021640 construct H: 0.000476 
+[fastlio_mapping-1] [ mapping ]: time: IMU + Map + Input Downsample: 0.000111 ave match: 0.018720 ave solve: 0.002714  ave ICP: 0.021304  map incre: 0.018764 ave total: 0.037589 icp: 0.021631 construct H: 0.000476 
+[fastlio_mapping-1] [ mapping ]: time: IMU + Map + Input Downsample: 0.000117 ave match: 0.018767 ave solve: 0.002727  ave ICP: 0.025856  map incre: 0.013016 ave total: 0.037610 icp: 0.021691 construct H: 0.000480 
+[fastlio_mapping-1] [ mapping ]: time: IMU + Map + Input Downsample: 0.000112 ave match: 0.018846 ave solve: 0.002742  ave ICP: 0.028001  map incre: 0.012990 ave total: 0.037663 icp: 0.021782 construct H: 0.000479 
+[fastlio_mapping-1] [ mapping ]: time: IMU + Map + Input Downsample: 0.000114 ave match: 0.018882 ave solve: 0.002734  ave ICP: 0.023822  map incre: 0.010136 ave total: 0.037610 icp: 0.021809 construct H: 0.000478 
+[fastlio_mapping-1] [pcl::VoxelGrid::applyFilter] Leaf size is too small for the input dataset. Integer indices would overflow.
+[fastlio_mapping-1] [pcl::VoxelGrid::applyFilter] Leaf size is too small for the input dataset. Integer indices would overflow.
+[fastlio_mapping-1] [pcl::VoxelGrid::applyFilter] Leaf size is too small for the input dataset. Integer indices would overflow.
+[fastlio_mapping-1] [pcl::VoxelGrid::applyFilter] Leaf size is too small for the input dataset. Integer indices would overflow.
+[fastlio_mapping-1] [pcl::VoxelGrid::applyFilter] Leaf size is too small for the input dataset. Integer indices would overflow.
+[fastlio_mapping-1] [pcl::VoxelGrid::applyFilter] Leaf size is too small for the input dataset. Integer indices would overflow.
+[fastlio_mapping-1] [pcl::VoxelGrid::applyFilter] Leaf size is too small for the input dataset. Integer indices would overflow.
+[fastlio_mapping-1] [pcl::VoxelGrid::applyFilter] Leaf size is too small for the input dataset. Integer indices would overflow.
+[fastlio_mapping-1] [pcl::VoxelGrid::applyFilter] Leaf size is too small for the input dataset. Integer indices would overflow.
+[fastlio_mapping-1] [pcl::VoxelGrid::applyFilter] Leaf size is too small for the input dataset. Integer indices would overflow.
+[fastlio_mapping-1] [pcl::VoxelGrid::applyFilter] Leaf size is too small for the input dataset. Integer indices would overflow.
+[fastlio_mapping-1] [pcl::VoxelGrid::applyFilter] Leaf size is too small for the input dataset. Integer indices would overflow.
+[fastlio_mapping-1] [pcl::VoxelGrid::applyFilter] Leaf size is too small for the input dataset. Integer indices would overflow.
+[fastlio_mapping-1] [pcl::VoxelGrid::applyFilter] Leaf size is too small for the input dataset. Integer indices would overflow.
+[fastlio_mapping-1] [pcl::VoxelGrid::applyFilter] Leaf size is too small for the input dataset. Integer indices would overflow.
+[fastlio_mapping-1] [pcl::VoxelGrid::applyFilter] Leaf size is too small for the input dataset. Integer indices would overflow.
+[fastlio_mapping-1] [pcl::VoxelGrid::applyFilter] Leaf size is too small for the input dataset. Integer indices would overflow.
+[fastlio_mapping-1] [pcl::VoxelGrid::applyFilter] Leaf size is too small for the input dataset. Integer indices would overflow.
+[fastlio_mapping-1] [ mapping ]: time: IMU + Map + Input Downsample: 0.000968 ave match: 0.018900 ave solve: 0.002719  ave ICP: 0.022269  map incre: 0.031594 ave total: 0.037863 icp: 0.021811 construct H: 0.000475 
+[fastlio_mapping-1] [ mapping ]: time: IMU + Map + Input Downsample: 0.000122 ave match: 0.018960 ave solve: 0.002755  ave ICP: 0.029027  map incre: 0.015336 ave total: 0.037959 icp: 0.021911 construct H: 0.000480 
+[fastlio_mapping-1] [ mapping ]: time: IMU + Map + Input Downsample: 0.000125 ave match: 0.018978 ave solve: 0.002766  ave ICP: 0.024184  map incre: 0.015092 ave total: 0.037979 icp: 0.021938 construct H: 0.000483 
+[fastlio_mapping-1] [ mapping ]: time: IMU + Map + Input Downsample: 0.000106 ave match: 0.018999 ave solve: 0.002762  ave ICP: 0.023318  map incre: 0.011635 ave total: 0.037938 icp: 0.021954 construct H: 0.000481 
+[fastlio_mapping-1] [ mapping ]: time: IMU + Map + Input Downsample: 0.000102 ave match: 0.019036 ave solve: 0.002751  ave ICP: 0.023896  map incre: 0.012786 ave total: 0.037922 icp: 0.021977 construct H: 0.000479 
+[fastlio_mapping-1] [ mapping ]: time: IMU + Map + Input Downsample: 0.001429 ave match: 0.019159 ave solve: 0.002755  ave ICP: 0.031626  map incre: 0.054023 ave total: 0.038596 icp: 0.022105 construct H: 0.000480 
+[fastlio_mapping-1] [ mapping ]: time: IMU + Map + Input Downsample: 0.000122 ave match: 0.019210 ave solve: 0.002769  ave ICP: 0.027148  map incre: 0.019792 ave total: 0.038710 icp: 0.022169 construct H: 0.000482 
+[fastlio_mapping-1] [ mapping ]: time: IMU + Map + Input Downsample: 0.000129 ave match: 0.019201 ave solve: 0.002768  ave ICP: 0.021610  map incre: 0.012957 ave total: 0.038656 icp: 0.022158 construct H: 0.000484 
+[fastlio_mapping-1] [ mapping ]: time: IMU + Map + Input Downsample: 0.000076 ave match: 0.019172 ave solve: 0.002777  ave ICP: 0.020837  map incre: 0.015311 ave total: 0.038624 icp: 0.022137 construct H: 0.000483 
+[fastlio_mapping-1] [ mapping ]: time: IMU + Map + Input Downsample: 0.000152 ave match: 0.019151 ave solve: 0.002768  ave ICP: 0.019985  map incre: 0.010823 ave total: 0.038525 icp: 0.022105 construct H: 0.000481 
+[fastlio_mapping-1] [ mapping ]: time: IMU + Map + Input Downsample: 0.001184 ave match: 0.019162 ave solve: 0.002755  ave ICP: 0.022273  map incre: 0.032507 ave total: 0.038749 icp: 0.022102 construct H: 0.000480 
+[fastlio_mapping-1] [ mapping ]: time: IMU + Map + Input Downsample: 0.000106 ave match: 0.019142 ave solve: 0.002756  ave ICP: 0.020743  map incre: 0.015977 ave total: 0.038724 icp: 0.022082 construct H: 0.000482 
+[fastlio_mapping-1] [ mapping ]: time: IMU + Map + Input Downsample: 0.000133 ave match: 0.019149 ave solve: 0.002748  ave ICP: 0.022245  map incre: 0.011423 ave total: 0.038663 icp: 0.022079 construct H: 0.000481 
+[fastlio_mapping-1] [ mapping ]: time: IMU + Map + Input Downsample: 0.000126 ave match: 0.019173 ave solve: 0.002741  ave ICP: 0.023567  map incre: 0.010069 ave total: 0.038602 icp: 0.022095 construct H: 0.000482 
+[fastlio_mapping-1] [ mapping ]: time: IMU + Map + Input Downsample: 0.000102 ave match: 0.019135 ave solve: 0.002728  ave ICP: 0.018072  map incre: 0.009847 ave total: 0.038473 icp: 0.022043 construct H: 0.000480 
+[fastlio_mapping-1] [ mapping ]: time: IMU + Map + Input Downsample: 0.001522 ave match: 0.019167 ave solve: 0.002720  ave ICP: 0.024238  map incre: 0.034115 ave total: 0.038731 icp: 0.022066 construct H: 0.000479 
+[fastlio_mapping-1] [ mapping ]: time: IMU + Map + Input Downsample: 0.000107 ave match: 0.019135 ave solve: 0.002721  ave ICP: 0.019847  map incre: 0.023624 ave total: 0.038789 icp: 0.022034 construct H: 0.000482 
+[fastlio_mapping-1] [ mapping ]: time: IMU + Map + Input Downsample: 0.000115 ave match: 0.019215 ave solve: 0.002719  ave ICP: 0.028793  map incre: 0.012186 ave total: 0.038816 icp: 0.022111 construct H: 0.000481 
+[fastlio_mapping-1] catch sig %d2
+[fastlio_mapping-1] Rebuild thread terminated normally
+[INFO] [fastlio_mapping-1]: process has finished cleanly [pid 29]

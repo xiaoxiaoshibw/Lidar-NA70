@@ -58,7 +58,8 @@ def _calibration(path):
 
 
 def export(pcap, imu_frames, output, *, calibration_path=None, start_frame=0,
-           max_frames=None, imu_margin_s=0.1, max_packet_gap_s=0.2, install_direction=1):
+           max_frames=None, imu_margin_s=0.1, max_packet_gap_s=0.2, install_direction=1,
+           point_time_mode="packet"):
     output = Path(output)
     scan = decoder.scan_pcap(pcap)
     end = len(scan.frames) if max_frames is None else min(len(scan.frames), start_frame + max_frames)
@@ -70,7 +71,7 @@ def export(pcap, imu_frames, output, *, calibration_path=None, start_frame=0,
             frame = scan.frames[index]
             points = decoder.decode_frame(pcap, frame, install_direction, source=source)
             frames.append((points, np.asarray(frame["packet_capture_times"], dtype=np.float64)))
-    scans = lio_scans.build_scans(frames)
+    scans = lio_scans.build_scans(frames, point_time_mode=point_time_mode)
     quality = lio_scans.time_quality(scans, max_packet_gap_s=max_packet_gap_s)
     origin_unix = float(frames[0][1][0])
     end_unix = float(frames[-1][1][-1])
@@ -122,6 +123,7 @@ def export(pcap, imu_frames, output, *, calibration_path=None, start_frame=0,
         "lio_ready": False,
         "block_reasons": sorted(set(reasons)),
         "time_source": time_source,
+        "point_time_mode": point_time_mode,
         "time_quality": quality,
         "scans": {"start_frame": start_frame, "frames": end - start_frame,
                   "points": int(len(scans.points)), "origin_unix_s": origin_unix,
@@ -138,7 +140,9 @@ def export(pcap, imu_frames, output, *, calibration_path=None, start_frame=0,
             "scans": {"path": "scans.npz", "sha256": sha256(output / "scans.npz")},
             "imu": {"path": "imu.npz", "sha256": sha256(output / "imu.npz")},
         },
-        "note": "逐点时间为包级近似；适配器/滤波器仍需检查时间等级、外参与运动包络。",
+        "note": ("逐点时间为包级近似（PACKET_APPROXIMATION）" if point_time_mode == "packet"
+                 else "逐点时间为包间隔均匀插值（POINT_INTERPOLATED_UNIFORM_PACKET_GAP 声明近似，非实测逐点时间）"
+                 ) + "；适配器/滤波器仍需检查时间等级、外参与运动包络。",
     }
     (output / "manifest.json").write_text(
         json.dumps(manifest, ensure_ascii=False, indent=2, allow_nan=False) + "\n", encoding="utf-8")
@@ -146,9 +150,13 @@ def export(pcap, imu_frames, output, *, calibration_path=None, start_frame=0,
         "# NA70 LIO 扫描包\n\n"
         f"- 状态：**{manifest['status']}**，`lio_ready=false`\n"
         f"- 帧：{manifest['scans']['frames']}，点：{manifest['scans']['points']}\n"
-        f"- 时间源：`{time_source}`；时间质量：`{quality['time_quality']}`\n"
+        f"- 时间源：`{time_source}`；时间质量：`{quality['time_quality']}`"
+        f"（point_time_mode=`{point_time_mode}`）\n"
         f"- 阻塞项：{', '.join(manifest['block_reasons'])}\n\n"
-        "逐点时间由包时间复制，不是实测逐点时间；本包不执行去畸变、坐标变换或 SLAM。\n",
+        + ("逐点时间由包时间复制，不是实测逐点时间；"
+           if point_time_mode == "packet"
+           else "逐点时间由包内点序在包间隔上均匀插值，是声明近似，不是实测逐点时间；")
+        + "本包不执行去畸变、坐标变换或 SLAM。\n",
         encoding="utf-8")
     return manifest
 
@@ -163,6 +171,9 @@ def main(argv=None):
     parser.add_argument("--imu-margin-s", type=float, default=0.1)
     parser.add_argument("--max-packet-gap-s", type=float, default=0.2)
     parser.add_argument("--install-direction", type=int, choices=(1, 2), default=1)
+    parser.add_argument("--point-time-mode", choices=("packet", "interpolated"), default="packet",
+                        help="packet: copy packet time to every point (default); "
+                             "interpolated: spread points uniformly across the packet gap")
     parser.add_argument("--output", required=True, type=Path)
     args = parser.parse_args(argv)
     try:
@@ -170,7 +181,8 @@ def main(argv=None):
                           calibration_path=args.calibration, start_frame=args.start_frame,
                           max_frames=args.max_frames, imu_margin_s=args.imu_margin_s,
                           max_packet_gap_s=args.max_packet_gap_s,
-                          install_direction=args.install_direction)
+                          install_direction=args.install_direction,
+                          point_time_mode=args.point_time_mode)
     except (OSError, ValueError, TypeError, KeyError, decoder.CaptureError) as exc:
         print(json.dumps({"status": "INVALID_DATA", "error": str(exc)}, ensure_ascii=False))
         return 2

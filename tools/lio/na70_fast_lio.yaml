@@ -3,8 +3,9 @@
         feature_extract_enable: false
         point_filter_num: 1
         max_iteration: 3
-        filter_size_surf: 0.3
-        filter_size_map: 0.3
+        # 0.15: 室内 10–30 m 场景的尺度假设（Mid-70 惯例 0.1–0.15），不是验收阈值。
+        filter_size_surf: 0.15
+        filter_size_map: 0.15
         cube_side_length: 500.0
         runtime_pos_log_enable: true
         map_file_path: "./na70_diagnostic.pcd"
@@ -20,14 +21,20 @@
             scan_line: 1
             scan_rate: 10
             timestamp_unit: 0      # PointCloud2 `time` field is seconds
-            blind: 0.5
+            # 7.4 m: 实测近距下限（距离码 468 = 7.488 m，码 1–467 从未出现），
+            # 证据 Plan/evidence/slam/20261030-near-range-floor/REPORT.md；取 7.4 留裕量。
+            blind: 7.4
 
         mapping:
             acc_cov: 0.1
             gyr_cov: 0.1
             b_acc_cov: 0.0001
             b_gyr_cov: 0.0001
-            fov_degree: 360.0
+            # 来自 Plan/evidence/slam/20261105-lio-point-time-and-config 实测：
+            # pitch 码 2133–3488（跨度 34.959°，两个独立会话 20261104-170341 与
+            # 20261105-162734-639900 完全一致，向上取整到 5°）；azimuth 码覆盖 ~360°。
+            # 非重复扫描实测为下界估计（会话 70–100 s）；不再是 UNMEASURED_PLACEHOLDER。
+            fov_degree: 35.0
             det_range: 100.0
             extrinsic_est_en: false
             # DIAGNOSTIC ONLY: identity until a validated T_imu_lidar exists.

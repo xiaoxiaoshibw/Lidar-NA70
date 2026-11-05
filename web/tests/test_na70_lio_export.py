@@ -4,6 +4,7 @@ import json
 from pathlib import Path
 
 import numpy as np
+import pytest
 
 from na70_core import lio_scans
 from test_decoder import make_pcap, payload
@@ -107,3 +108,51 @@ def test_export_rejects_missing_imu(tmp_path):
     assert module.main(["--pcap", str(pcap), "--imu-frames", str(empty),
                         "--max-frames", "1", "--output", str(tmp_path / "bad")]) == 2
     assert not (tmp_path / "bad").exists()
+
+
+def test_export_default_manifest_declares_packet_mode(tmp_path):
+    pcap = make_pcap(tmp_path / "SYNTHETIC-lio-packet.pcap", [payload()] * 200)
+    frames = write_imu(tmp_path / "imu-packet.jsonl")
+    manifest = module.export(pcap, frames, tmp_path / "package-packet", max_frames=1)
+    assert manifest["point_time_mode"] == "packet"
+    assert manifest["time_quality"]["point_time_mode"] == "packet"
+    assert manifest["time_quality"]["time_quality"] == "PACKET_APPROXIMATION"
+    assert manifest["time_quality"]["packets_interpolated"] == 0
+    assert manifest["time_quality"]["packets_collapsed"] == 0
+    assert manifest["time_quality"]["packets_fallback"] == 0
+    assert "包级近似" in manifest["note"]
+
+
+def test_export_interpolated_mode_passthrough_and_manifest(tmp_path):
+    pcap = make_pcap(tmp_path / "SYNTHETIC-lio-interp.pcap", [payload()] * 200)
+    frames = write_imu(tmp_path / "imu-interp.jsonl")
+    output = tmp_path / "package-interp"
+    # CLI passthrough, not just the export() call.
+    assert module.main(["--pcap", str(pcap), "--imu-frames", str(frames),
+                        "--max-frames", "2", "--point-time-mode", "interpolated",
+                        "--output", str(output)]) == 0
+    manifest = json.loads((output / "manifest.json").read_text(encoding="utf-8"))
+    assert manifest["point_time_mode"] == "interpolated"
+    quality = manifest["time_quality"]
+    assert quality["time_quality"] == "POINT_INTERPOLATED_UNIFORM_PACKET_GAP"
+    assert quality["point_time_mode"] == "interpolated"
+    assert quality["packets_fallback"] == 1
+    assert quality["packets_interpolated"] + quality["packets_collapsed"] + \
+        quality["packets_fallback"] == quality["frames"] * 100
+    assert "声明近似" in manifest["note"]
+    arrays = lio_scans.load_npz(output / "scans.npz")  # roundtrip validation
+    packet_starts = np.r_[True, np.diff(arrays["packet_index"]) != 0]
+    # Interpolated mode: points inside one packet are no longer all identical.
+    assert np.any(np.diff(arrays["point_time_s"][~packet_starts]) != 0)
+    assert "声明近似" in (output / "REPORT.md").read_text(encoding="utf-8")
+
+
+def test_export_rejects_unknown_point_time_mode(tmp_path):
+    pcap = make_pcap(tmp_path / "SYNTHETIC-lio-mode.pcap", [payload()] * 100)
+    frames = write_imu(tmp_path / "imu-mode.jsonl")
+    # argparse rejects the unknown choice before any export runs.
+    with pytest.raises(SystemExit):
+        module.main(["--pcap", str(pcap), "--imu-frames", str(frames),
+                     "--max-frames", "1", "--point-time-mode", "measured",
+                     "--output", str(tmp_path / "bad-mode")])
+    assert not (tmp_path / "bad-mode").exists()
