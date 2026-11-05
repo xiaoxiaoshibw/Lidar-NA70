@@ -329,6 +329,27 @@ web\.venv\Scripts\python.exe tools\evaluate_na70_map.py `
 
 工具不做配准、不缩放；两侧必须已在同一坐标系。结果只写 `REFERENCE_CONSISTENCY`/`PLANE_RESIDUALS`/`CONTROL_POINT_DISTANCE`，不写绝对准确度通过。
 
+### 6.2 多站位静止合并（P2 前置，等待多站位数据）
+
+多个静止站位点云（各自传感器坐标系的 5 cm 体素均值 PLY）合并为一张图：第一站锚定全局系，后续站位经确定性 yaw 多起点 trimmed ICP 对齐到已合并云，fitness/RMSE 不过门槛的站位被显式拒绝并记录，绝不静默平均。
+
+```powershell
+web\.venv\Scripts\python.exe tools\merge_na70_station_clouds.py `
+  --station s0=Plan\evidence\slam\<dir>\station0.ply `
+  --station s1=Plan\evidence\slam\<dir>\station1.ply `
+  --voxel 0.05 --fitness-gate 0.3 `
+  --initial-yaw-deg 30 --initial-translation 1.0 -0.7 0.25 `
+  --views --out-dir Plan\evidence\slam\<dir>\merged
+```
+
+产物：`merged.ply`（均值保持体素 + 观测数）、`merge-report.json`（逐站配准、seed 表、拒绝原因、输入哈希）、`merge-views.png`。
+
+关键纪律（SYNTHETIC 与真实数据实测，见 `na70_core/registration.py` LIMITATIONS）：
+
+- fitness/RMSE 只是自洽性指标；合并系即第一站传感器系，本身任意，`ACCURACY_NOT_EVALUATED`。
+- 真实教室静止单站实测：周期性桌椅结构下 8/16/24 个纯 yaw seed 全部落入自洽错误锁（fitness 0.998）；必须配合 `--initial-yaw-deg/--initial-translation` 操作员先验，并对照 seed 表审计 `merge-views.png`（先验 35°/真值 31° 时恢复误差 0.15°/2.2 cm）。
+- 站位采集要求相邻共视、所有可见面 ≥7.5 m（近距盲区 7.488 m）、每站静止 60 s+。
+
 ## 7. LIO 扫描包导出
 
 将一段 PCAP + IMU 帧导出为 LIO 适配器可读的包：
@@ -358,6 +379,19 @@ web\.venv\Scripts\python.exe tools\export_na70_lio_scans.py `
 - 导出包不是 SLAM 结果；消费方仍须实现 NA70 专用 handler 并验证时间/外参/运动包络。
 
 WSL2/Humble 原型已把该包接到固定 FAST-LIO（补丁 `ROS2/src/na70_lio/patches/fast_lio_na70_handler.patch`）：FAST-LIO 能消费 5 帧真实包并完成 IMU 初始化与一次地图更新，但仅 1 行轨迹、无 PCD，FastDDS 发现失败需 CycloneDDS，短包投递跑次间不稳定，时间等级 C/单位外参，状态 `PROTOTYPE_CONSUMED_5_FRAMES / NO_VALID_TRAJECTORY / NOT_EVALUATED`。详见 [原型报告](evidence/slam/20261030-na70-fastlio-prototype/REPORT.md)。
+
+### 7.1 重放轨迹对比（canonical 工具）
+
+重放产物 `trajectory.csv`（TUM 列序）的内部统计对比与三视图由 `tools/compare_lios_replays.py` 统一产出，指标与证据 REPORT 表格逐字一致（20261105 已对 20261104 旧配置 / 20261105 新配置两份真实轨迹复算核对：81/85 位姿、43.507/30.312 m 路径长度等 14 项全对上）：
+
+```powershell
+web\.venv\Scripts\python.exe tools\compare_lios_replays.py `
+  --run old=Plan\evidence\slam\<old>\trajectory.csv `
+  --run new=Plan\evidence\slam\<new>\trajectory.csv `
+  --out-dir Plan\evidence\slam\<new>\compare
+```
+
+产物：`replay-comparison.json`（逐 run 指标 + 源哈希）、`replay-comparison.png`（三视图，▲起点 ▽终点）。下次采集用 `--point-time-mode interpolated` 与 packet 模式同段重放后，即用本工具出对比证据。边界：各轨迹位于各自地图系不共坐标，仅内部统计，不归因参数、不宣称精度改善。
 
 ## 8. SYNTHETIC 回归证据
 

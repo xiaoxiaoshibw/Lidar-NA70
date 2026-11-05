@@ -31,3 +31,7 @@
 ## 补充（2026-11-05，对比图）
 
 `trajectory-comparison.png`：两次运行的位姿轨迹三视图（X-Y/X-Z/Y-Z，▲起点 ▽终点）。仅内部统计可视化，坐标是各自地图系，两轨迹不共坐标系；不归因、不宣称改善。绘图脚本按上表 CSV 复算生成。
+
+## 补充（2026-11-06，对比工具 canonical 化）
+
+重放对比的统计复算与三视图此后由 canonical 工具 `tools/compare_lios_replays.py` 产出（本目录 `trajectory-comparison.png` 为当时临时绘图，保留不动）。已用该工具对本目录与 [20261104](../../20261104-lio-diagnostic/REPORT.md) 两份 `trajectory.csv` 复算，上表 14 项统计全部逐字吻合（81/85 位姿、10.389/10.511 s、43.507/30.312 m、0.361/0.244 s、0.119/0.120 s、41.753/29.834 m、3.529/2.902 m）。复现命令见 `docs/NA70_CALIBRATION_WORKFLOW.md` §7.1。下次采集 `--point-time-mode interpolated` 与 packet 同段重放的对比即用此工具出证据；边界声明不变（各轨迹不共坐标、仅内部统计、不归因、`ACCURACY_NOT_EVALUATED`）。
