@@ -30,6 +30,8 @@
 - 当前跟踪文件的常见凭据文件名与令牌签名扫描：命中数 0。
 - Git 历史对象检查：超过 100 MiB 的单个文件数为 0。
 - 新增导航中的本地链接逐项检查；发布记录本身随本次提交补齐。
-- 后端回归结果在检查结束后补充到本记录。
+- `web/.venv/Scripts/python.exe -m pytest tests -q`（工作目录 `web/`）：611 passed、2 failed、3 skipped，239.13 s。两项失败均为 `test_real_captures_random_access`，所需 `radar_capture_data/1.pcap`、`2.pcap` 待恢复，异常为 `FileNotFoundError`。测试结果按原样保存。
+- `git fsck --full --no-reflogs --unreachable --no-progress`：发现游离 blob 465 个、tree 562 个，额外游离 commit 数为 0。原始 13 次提交完整保留，游离文件对象的路线归属与时间上下文需进一步考证。
+- 首次推送已完成：GitHub `main` 接收归档提交 `4298980` 及全部父提交。
 
 检查用于确认本次归档的软件与文档状态。各算法现场效果与性能沿用原实验报告的输入、环境及阶段口径。
