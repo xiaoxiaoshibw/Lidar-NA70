@@ -1,5 +1,9 @@
 # NA70 当前开发计划与路线记录
 
+2026-11-11 Jetson 实时点云观察：在 Orin 的 `~/na70-live-web` 部署本机监听的 NA70 Web 页面，通过 SSH 转发访问；UDP 2368 接收连续 100 包组成一帧，支持最近 1/5/10/20/30 帧滑动叠加，默认 10 帧。现场浏览器已显示真实回波并验证叠加切换；先前 30 秒录制的真实 PCAP 因回波极少不代表后续可见点云。该工具未做运动补偿或检测，不能作为细线识别、定位同步或 Jetson 性能验收。部署、数据位置和验证边界见[现场记录](evidence/slam/20261111-jetson-live-view/REPORT.md)，使用方式见[工具说明](../tools/na70_live_web/README.md)。
+
+2026-11-06 新路线决策：按用户最新目标，当前感知主线切换为 **NA70 搭载移动载体时实时检测并持续跟踪细线**，以[细线回波验证与逐级开发计划](细线回波验证与逐级开发计划.md)为执行入口；这覆盖并取代 2026-09-21 的足球门近期优先级。阶段门仍按 W1 真实细线回波与独立真值 → W2 可用距离/时长 → W3 线段提取 → W4 全视场提议 → W5 运动补偿、连续跟踪和实时部署推进。现有 W1 真实细线归属仍为 `NOT_EVALUATED`，W2–W5 未通过。运动识别的关键前置条件是可信逐点时间、雷达/IMU 外参和同步位姿；目前 IMU 只有主机接收时间（时间等级 C）、陀螺单位和真实外参未确认，动态 LIO 仍 `DIAGNOSTIC_ONLY`。因此本次切换是目标/路线决策，不是实时运动识别已实现或已验收。首轮应使用有独立位置真值的受控细线场景，先核实其真实回波和距离/积累窗口，再开展移动测试；最终实时性能仍需 Jetson Orin Nano/Humble 实测。
+
 2026-11-05 执行 [NA70 LIO 算法优化 AI 执行计划](NA70_LIO算法优化AI执行计划.md)（T1–T3 全部交付）：`lio_scans.py` 新增声明式逐点时间插值模式 `POINT_INTERPOLATED_UNIFORM_PACKET_GAP`（`--point-time-mode interpolated`，默认 packet 行为回归不变，gap≤0 退化共享、末包 fallback 计数）；新增 FOV 实测工具 `tools/measure_na70_fov.py`，两个独立工程会话实测 pitch 跨度一致为 34.959°（码 2133–3488）、azimuth ~360°，据此把 `tools/lio/na70_fast_lio.yaml` 修正为 `fov_degree: 35.0`、`filter_size_surf/map: 0.15`、`blind: 7.4`（近距下限证据），WSL2 同段数据新配置重放对比仅记录内部统计（路径 43.5→30.3 m 等，不归因）。SYNTHETIC 全量回归 590 passed / 2 failed（缺 `1.pcap`/`2.pcap` 环境性预存）/ 3 skipped。**插值是声明近似非实测逐点时间；设备时间戳、陀螺单位、外参未解决；动态 LIO 保持 `DIAGNOSTIC_ONLY`**。证据 [20261105-lio-point-time-and-config](evidence/slam/20261105-lio-point-time-and-config/REPORT.md)、[重放对比](evidence/slam/20261105-lio-config-replay/REPORT.md)。
 
 2026-11-05 新增 [NA70 LIO 算法优化 AI 执行计划](NA70_LIO算法优化AI执行计划.md)（PLAN_READY，未执行）：两项纯软件任务——`lio_scans.py` 声明式逐点时间插值（`POINT_INTERPOLATED_UNIFORM_PACKET_GAP`，默认 packet 行为不变）与 FOV 实测工具＋FAST-LIO 配置修正（fov_degree/filter_size/blind）。不解决设备时间戳、陀螺单位、外参；动态 LIO 保持 `DIAGNOSTIC_ONLY`。
@@ -133,7 +137,7 @@
 
 2026-09-23 补充（G0/G1 证据）：历史 frame 153/597 复核、近侧球门部件级提案、标注工作台用例和 G1 高度对照证据已完成。因对面结构改判为球门，G0 要求的 reviewed 背景窗口现为 0，G0 门禁重新打开；G1 技术证据保留，阶段退出应待 G0 真值门禁补齐后复核。见 [G1 报告](evidence/goal-demo/20260923-g1-exit-evidence/REPORT.md)。
 
-此前细线 W1 的工具与证据完整保留：[计划](细线回波验证与逐级开发计划.md)、[工具/验证记录](evidence/thin-wire/20260921-w1-development/REPORT.md)、[现场采集卡](../docs/THIN_WIRE_W1_CAPTURE_CARD.md)。W1 真实回波归属仍 `NOT_EVALUATED`，W2–W5 未开始；当前暂停，不删除代码或证据，也不将足球门结果外推为细线能力。
+细线 W1 的工具与证据完整保留：[计划](细线回波验证与逐级开发计划.md)、[工具/验证记录](evidence/thin-wire/20260921-w1-development/REPORT.md)、[现场采集卡](../docs/THIN_WIRE_W1_CAPTURE_CARD.md)。按 2026-11-06 新路线决策，本分支恢复为当前感知主线；W1 真实回波归属仍 `NOT_EVALUATED`，W2–W5 尚未通过，不将足球门或诊断性 LIO 结果外推为运动中细线能力。
 
 足球门当前基线仍为真实全片无 LOCKED/TRACKING、待复核标注 0/11。已确认绝对高度截断、BEV 统计口径和球网宽连通组件三项阻断；第一轮先修真值和高度，不用降低锁定阈值掩盖检测失败。固定点转台保留为独立路线。
 
@@ -161,7 +165,7 @@ recall 达到 1.000；真实主 PCAP 标注零命中仍按 FAIL 保留，P3 未�
 
 版本：v2.0
 日期：2026-09-10
-当前主线：Windows 本机 PCAP 离线分析与 WebUI 验收
+当前开发环境：Windows 本机 PCAP 离线分析与 WebUI 验收；当前感知目标见本页最新路线决策。
 
 ## 1. 历史目标（非当前主线）
 
@@ -212,7 +216,7 @@ NA70 PCAP
 2. [足球门识别主线开发计划.md](足球门识别主线开发计划.md)：球门路线入口，G0–G1 门禁和既有状态保留。
 3. [GOAL_P3_真实球门检测修复执行计划.md](GOAL_P3_真实球门检测修复执行计划.md)：球门根因细节与历史实验矩阵参考。
 4. [GOAL_P3_下一窗口交接提示词.md](GOAL_P3_下一窗口交接提示词.md)：球门分支基线和历史交接。
-5. [细线回波验证与逐级开发计划.md](细线回波验证与逐级开发计划.md)：暂停的细线 W1–W5 路线，已完成工具保留。
+5. [细线回波验证与逐级开发计划.md](细线回波验证与逐级开发计划.md)：当前运动中细线实时检测路线；W1 工具已完成，真实归属与运动实时能力仍待验证。
 6. `固定点转台操场建图计划.md`：独立转台路线、采集、算法、门禁和验收入口。
 7. `MASTER_开发与验收总计划.md`：历史移动建图状态、失败证据和后续扩展路线。
 8. `当前开发执行手册.md`：无 IMU 移动建图历史执行手册。

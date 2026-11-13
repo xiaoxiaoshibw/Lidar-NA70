@@ -2,7 +2,7 @@
 
 Windows 本机 Web 应用：导入经典 PCAP，按项目 ROS2 驱动解码、组帧，在浏览器回放三维 XYZI 点云；提供采集预检、球门标注与跟踪、历史建图验收和导线 W1 原始回波诊断。数据、缓存和分析结果均保存在本机。
 
-当前路线决策以 [Plan/README.md](../Plan/README.md) 为准。球门识别仍是已记录的近期主线；导线分支现提供 [W1 原始回波工作台](../docs/NA70_WIRE_ARCHITECTURE.md)及离线工具 `tools/audit_thin_wire.py`。两者只做原始观测诊断，真实细线回波归属仍为 `NOT_EVALUATED`，W3/W4/W5 识别与运动接口尚未启用。
+当前目标为移动载体上的细线检测与持续跟踪，路线决策见 [Plan/README.md](../Plan/README.md) 最新条目。WebUI 提供 W1 原始回波工作台；W3 人工 ROI 和 W4 全视场提议工具位于离线 CLI，Web 接口能力由 `/api/wire/capabilities` 声明。球门与建图页面保留开发、调试和历史实验入口。各路线实现、进度与复现条件见 [算法分类](../docs/ALGORITHM_PROGRESS.md)、[历史路线](../docs/ALGORITHM_HISTORY.md) 和 [复现指南](../docs/REPRODUCIBILITY.md)。
 
 ## 启动
 
